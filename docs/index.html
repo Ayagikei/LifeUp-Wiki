@@ -8,6 +8,7 @@
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+  <script src="./js/edit_button_header.js"></script>
 </head>
 
 <body>
@@ -23,19 +24,19 @@
       // logo: "/_media/icon.png",
       homepage: 'Introduction.md',
       plugins: [
-          EditOnGithubPlugin.create(
-        'https://github.com/Ayagikei/LifeUp-Wiki/tree/master/',
-        null,
-        function(file) {
-            return 'edit on git'
-        }
-      )
+        EditOnGithubPlugin.create(
+          'https://github.com/Ayagikei/LifeUp-Wiki/tree/master/docs/',
+          null,
+          function (file) {
+            return 'Edit on git'
+          }
+        )
       ]
     }
   </script>
   <!-- Docsify v4 -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
-  <script src="//cdn.jsdelivr.net/npm/docsify-edit-on-github"></script>
+
   <script type="text/javascript">
     var autoReplace = getQueryString("checkLn");
     console.log(autoReplace);

@@ -1,4 +1,4 @@
-# Summary
+# Introduction
 
 > LifeUp, to upgrade your life.
 
@@ -105,4 +105,5 @@ However, everyone can contribute their translation.
 
 - App Privacy Terms & Policy: http://lifeup.hdonghong.top/privacy-terms.html
 
-- Contact Email: kei.ayagi@gmail.com
+- [Contact Email](mailto:kei.ayagi@gmail.com;im.hdonghong@gmail.com)
+
