@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
@@ -15,31 +15,20 @@
   <div id="app"></div>
   <script>
     window.$docsify = {
-      name: '人升',
+      name: 'LifeUp',
       repo: '',
       loadNavbar: true,
       coverpage: false,
       loadSidebar: true,
-      homepage: 'README.md',
       auto2top: true,
+      // logo: "/_media/icon.png",
+      homepage: 'Introduction.md',
       plugins: [
-      // function (hook) {
-      //     var footer = [
-      //       '<hr/>',
-      //       '<footer>',
-      //       '<span><a href="http://www.beian.miit.gov.cn" target="_blank">粤ICP备2021011894号-1</a></span>',
-      //       '</footer>'
-      //     ].join('');
-
-      //     hook.afterEach(function (html) {
-      //       return html + footer;
-      //     });
-      //   },
         EditOnGithubPlugin.create(
           'https://github.com/Ayagikei/LifeUp-Wiki/tree/master/docs/',
-          "https://github.com/Ayagikei/LifeUp-Wiki/tree/master/docs/zh-cn/",
+          null,
           function (file) {
-            return '编辑'
+            return 'Edit on git'
           }
         )
       ]
@@ -52,7 +41,6 @@
       navigator.serviceWorker.register('sw.js')
     }
   </script>
-  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
 </body>
 
 </html>
