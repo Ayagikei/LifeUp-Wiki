@@ -5,6 +5,8 @@
   - [截图展示](introduction/screenshots.md)
 
   - [更新日志](introduction/release_log.md)
+
+  - [开发计划](introduction/development_plan.md)
   
   - [隐私协议](introduction/privacy-trems.md)
 

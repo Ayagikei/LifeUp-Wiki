@@ -1,0 +1,56 @@
+# 后台运行
+
+## 为什么需要设置后台运行？
+
+- EMUI（华为）设备会优化掉番茄钟的提醒功能
+- 如果你使用的是默认的应用通知提醒方式，在不设置后台运行的情况下，很大概率会接收不到通知
+- 桌面小部件刷新也可能会被系统优化掉，导致小部件加载异常
+- **（推荐）在遇到以上问题后，再进行配置后台运行，否则可能会影响耗电量**
+
+
+
+## 如何设置后台运行
+
+### 通用设置
+
+1. 在系统的多任务管理界面，锁定应用
+2. 在系统中查找应用的后台管理设置（或者电源优化设置），将人升设置为「允许后台运行」
+3. （试验性，可能导致耗电增加）在《人升》中的事项设置界面，开启「快速创建常驻通知」
+
+
+
+### 华为/荣耀
+
+1. 打开设置
+2. 搜索`“应用启动管理”`并点击
+4. 找到“人升”，设置手动管理，允许自启动
+
+
+
+**操作截图如下：**
+
+<img src="_media/background_running/emui_01.jpg" alt="emui_01" style="zoom:50%;" />
+
+<img src="_media/background_running/emui_02.jpg" alt="emui_02" style="zoom:50%;" />
+
+<img src="_media/background_running/emui_02.jpg" alt="emui_03" style="zoom:50%;" />
+
+
+### 魅族
+
+1. 打开`手机管家`应用
+2. 点击`权限管理`
+3. 点击`后台管理`
+4. 找到《人升》，选择`允许后台运行`
+5. （可选）多任务界面中，长按锁定《人升》
+
+
+
+**操作截图如下：**
+
+<img src="_media/background_running/flyme_01.jpg" alt="flyme_01" style="zoom:50%;" />
+
+<img src="_media/background_running/flyme_02.jpg" alt="flyme_01" style="zoom:50%;" />
+
+<img src="_media/background_running/flyme_03.jpg" alt="flyme_01" style="zoom:50%;" />
+

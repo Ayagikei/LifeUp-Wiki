@@ -1,5 +1,50 @@
 # Release Log
 
+## Timeline
+
+![timeline](_media/release_log/timeline.png)
+
+## Log
+
+**1.82.1 (2021/03/12)**
+
+1. Fixed some issues about smart lists
+2. Fixed an issue where progress bar might not changed after completed a task
+3. Fixed an issue with force complete an count task
+4. Fixed an issue where displaying "NULL" in the overdue bottom dialog
+
+**1.82.0 (2021/03/11)**
+
+1. Smart lists
+2. Redesigned attributes icons
+3. New item effect "Countdown"
+4. Pomodoro timer will continue to record extra time after completed timer, and you can choose to update the focus time and get extra reward.
+5. Count tasks now can be force completed when not reached target times.
+6. Now you can choose to complete an unstarted tasks, and decide whether to postpone the time
+7. More issuses fixed and improvements
+
+**1.81.6**
+
+1. Fixed isuues about pomodoro reminder hint
+
+**1.81.5 (2021/03/02)**
+
+1. Italian translation(partial)
+2. Fixed notification icon
+3. Fixed the reminder not working well with weekday repeat
+4. Fixed "take photo" selection not working
+5. More minor fixes
+
+**1.81.0~1.81.4**
+
+1. Redesign some UI and animations
+2. Task will be auto completed when all sub-tasks of it is completed
+3. Fixed bug about multi exps changed
+4. Fixed bug about dropbox restore
+5. Now you can return item without getting coins
+6. 12-hour clock display setting
+7. Freeze/Unfreeze multible tasks
+
 **1.80.7（2021/01/26)**
 
 1. Add shop item statistic
