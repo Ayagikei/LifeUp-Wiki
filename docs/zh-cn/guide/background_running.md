@@ -29,11 +29,11 @@
 
 **操作截图如下：**
 
-<img src="_media/background_running/emui_01.jpg" alt="emui_01" style="zoom:50%;" />
+![](_media/background_running/emui_01.jpg ':size=50%')
 
-<img src="_media/background_running/emui_02.jpg" alt="emui_02" style="zoom:50%;" />
+![](_media/background_running/emui_02.jpg ':size=50%')
 
-<img src="_media/background_running/emui_02.jpg" alt="emui_03" style="zoom:50%;" />
+![](_media/background_running/emui_03.jpg ':size=50%')
 
 
 ### 魅族
@@ -48,9 +48,9 @@
 
 **操作截图如下：**
 
-<img src="_media/background_running/flyme_01.jpg" alt="flyme_01" style="zoom:50%;" />
 
-<img src="_media/background_running/flyme_02.jpg" alt="flyme_01" style="zoom:50%;" />
+![](_media/background_running/flyme_01.jpg ':size=50%')
 
-<img src="_media/background_running/flyme_03.jpg" alt="flyme_01" style="zoom:50%;" />
+![](_media/background_running/flyme_02.jpg ':size=50%')
 
+![](_media/background_running/flyme_03.jpg ':size=50%')

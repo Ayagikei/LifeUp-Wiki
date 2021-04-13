@@ -53,23 +53,23 @@
 
 #### 重复频次
 ##### 艾宾浩斯记忆法的时间表
-![](_media/tasks/task_07.jpg ':size=30%')
+![](/_media/tasks/task_07.jpg ':size=30%')
 
 依次重复频率为当天→1天后→2天后→4天后→7天后→15天后→30天后
 
 <br />
 
 ##### 设置忽略日（每周几，如工作日事项）
-![](_media/tasks/task_05.jpg ':size=30%')
+![](/_media/tasks/task_05.jpg ':size=30%')
 
-![](_media/tasks/task_06.jpg ':size=30%')
+![](/_media/tasks/task_06.jpg ':size=30%')
 
 设置重复频率为`每日`之后，会出现一个`设置忽略`的按钮。
 
 <br />
 
 #### 完成奖励
-![](_media/tasks/task_08.jpg ':size=30%')
+![](/_media/tasks/task_08.jpg ':size=30%')
 
 - 仅文本
 其实这是实现**商店功能**前的替代品。
@@ -88,7 +88,7 @@
 
 设置你想进行重复事项的目标次数，达到目标后，事项会自动终止。
 
-![](_media/tasks/task_11.jpg ':size=30%')
+![](/_media/tasks/task_11.jpg ':size=30%')
 
 **比如你想立个小目标，坚持30天学外语。**
 
@@ -99,10 +99,10 @@
 <br />
 
 #### 计数事项
-![](_media/tasks/task_09.jpg ':size=30%')
+![](/_media/tasks/task_09.jpg ':size=30%')
 点击`事项类型`可以将事项设置为「计数事项」。
 
-![](_media/tasks/task_10.jpg ':size=30%')
+![](/_media/tasks/task_10.jpg ':size=30%')
 
 计数事项会在你点击「完成小圆圈」的时候，弹框让你记录完成次数。
 只有达到或超过了目标次数，才会标记为「完成状态」。
@@ -129,7 +129,7 @@
 
 #### 1. 普通待办事项/琐事/购物清单
 
-![](_media/tasks/task_01.jpg ':size=30%')
+![](/_media/tasks/task_01.jpg ':size=30%')
 
 这种类型的事项，不需要关心“期限时间”，重复频次默认也是“单次”。
 
@@ -139,7 +139,7 @@
 
 #### 2. 习惯养成（每日早起、每周跑步等）
 
-![](_media/tasks/task_02.jpg ':size=30%')
+![](/_media/tasks/task_02.jpg ':size=30%')
 
 调整**“重复频次”**为相应的“每日”或者“每周”后，再根据情况看要不要调整**“期限日期”**。
 
@@ -156,7 +156,7 @@
 
 #### 3. 每周一-周日
 
-![](_media/tasks/task_03.jpg ':size=30%')
+![](/_media/tasks/task_03.jpg ':size=30%')
 
 通过期限时间和重复频次的配合，**你能轻松地设置出“星期一”到“星期日”的每周事项。**
 
@@ -168,7 +168,7 @@
 
 #### 4. 当天23:00-第二天2:00
 
-![](_media/tasks/task_04.jpg ':size=30%')
+![](/_media/tasks/task_04.jpg ':size=30%')
 
 通过开始时间、期限时间和重复频次的配合，你能轻松地设置出情况很复杂的待办事项。
 
@@ -178,9 +178,9 @@
 
 #### 5. 指定每周几（仅工作日、仅周末等）
 
-![](_media/tasks/task_05.jpg ':size=30%')
+![](/_media/tasks/task_05.jpg ':size=30%')
 
-![](_media/tasks/task_06.jpg ':size=30%')
+![](/_media/tasks/task_06.jpg ':size=30%')
 
 设置“重复频次”为“每日”后，在“重复频次”的输入框右侧点击“设置忽略”。然后就能指定每周几重复了。
 
@@ -213,11 +213,11 @@
 
 ### 清单分类
 
-![](_media/tasks/list_01.jpg ':size=30%')
+![](/_media/tasks/list_01.jpg ':size=30%')
 
 在`告示板`界面右上角，可以点击第一个按钮（即`清单`按钮），进入选择清单界面。
 
-![](_media/tasks/list_02.jpg ':size=30%')
+![](/_media/tasks/list_02.jpg ':size=30%')
 
 点击列表项目右侧的按钮有额外菜单
 
@@ -244,13 +244,13 @@
 
 ### 筛选排序
 
-![](_media/tasks/options_01.jpg ':size=30%')
+![](/_media/tasks/options_01.jpg ':size=30%')
 
 更多选项
 
 在`告示板`界面右上角，点击最右侧的按钮（即`更多选项`按钮），可以进行`筛选`和`排序`设置。
 
- ![](_media/tasks/options_02.jpg ':size=30%')
+ ![](/_media/tasks/options_02.jpg ':size=30%')
  
  时间筛选设置
 
@@ -268,11 +268,11 @@
 
 ## ▌稍后阅读
 
-![](_media/tasks/read_01.jpg ':size=30%')
+![](/_media/tasks/read_01.jpg ':size=30%')
 
 在其他应用选择“其他”分享
 
-![](_media/tasks/read_02.jpg ':size=30%')
+![](/_media/tasks/read_02.jpg ':size=30%')
 
 快速建立「稍后阅读」事项
 

@@ -6,6 +6,14 @@
 
 ## Log
 
+**1.82.4-alpha01/beta (2021/03/25)**
+1. Fixed rewards of loot boxes
+2. View feelings of selected tasks
+3. Exp/random coin rewards for custom achievement
+4. Tasks in the smart list now will be grouped by list
+5. Yearly repeatation
+6. More improvements and bug fixes
+
 **1.82.1 (2021/03/12)**
 
 1. Fixed some issues about smart lists

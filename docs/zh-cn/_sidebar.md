@@ -20,8 +20,9 @@
 
   - [备份](guide/backup.md)
 
-  - [施工中]()
+  - [商品](guide/shop_item.md.md)
 
+  - [后台运行](guide/background_running.md)
 
 - 更新介绍
 
