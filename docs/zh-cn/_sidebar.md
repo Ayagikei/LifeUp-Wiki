@@ -16,11 +16,13 @@
 
   - [常见问题](guide/faq.md)
 
-  - [事项详解](guide/tasks.md)
+  - [事项](guide/tasks.md)
+
+  - [属性](guide/attributes.md)
+
+  - [商品](guide/shop_item.md)
 
   - [备份](guide/backup.md)
-
-  - [商品](guide/shop_item.md.md)
 
   - [后台运行](guide/background_running.md)
 

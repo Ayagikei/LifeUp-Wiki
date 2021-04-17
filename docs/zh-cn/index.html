@@ -23,6 +23,10 @@
       loadSidebar: true,
       homepage: 'README.md',
       auto2top: true,
+      toc: {
+        tocMaxLevel: 5,
+        target: 'h2, h3, h4, h5, h6'
+      },
       plugins: [
         // function (hook) {
         //     var footer = [
@@ -48,6 +52,7 @@
   </script>
   <!-- Docsify v4 -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+  <script src="//unpkg.com/docsify-plugin-toc"></script>
   <script>
     if (typeof navigator.serviceWorker !== 'undefined') {
       navigator.serviceWorker.register('sw.js')
