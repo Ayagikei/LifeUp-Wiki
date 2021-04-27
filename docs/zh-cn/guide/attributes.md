@@ -1,6 +1,6 @@
 # 属性
 
-![](_media/attributes/attr_01.jpg)
+![](_media/attributes/attr_01.jpg ':size=30%')
 
 **属性**是《人升》中的一个 RPG （角色扮演）游戏化元素。
 
@@ -21,15 +21,19 @@
 
 所以，属性会有默认定义的六种属性，适用范围定义，自动经验值奖励计算。
 
-![](_media/attributes/attr_03.jpg)
+![](_media/attributes/attr_03.jpg ':size=30%')
 
 用户只需要设置事项的「重要」、「困难」程度，以及选中事项所相关的属性即可利用上该机制。
 
 但也因此，属性在定制化方面还比较弱。
 
-![](_media/attributes/attr_02.jpg)
+![](_media/attributes/attr_02.jpg ':size=30%')
 
 属性的默认定义如图所示。
+
+### 人生等级
+
+人生等级的经验值获取与总经验值成正相关，用于衡量“所有属性的平均完成情况”。
 
 ### 自定义属性
 
@@ -54,6 +58,6 @@
 
 ## 与自定义成就联动
 
-![](_media/attributes/attr_04.jpg)
+![](_media/attributes/attr_04.jpg ':size=30%')
 
 另外，属性能够与`自定义成就`机制相配合，实现某个属性达到某个等级后，获取到某些特殊商品奖励的功能。

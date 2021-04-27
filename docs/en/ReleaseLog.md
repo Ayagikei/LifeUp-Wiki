@@ -6,6 +6,55 @@
 
 ## Log
 
+**1.82.8 (2021/04/28)**
+
+(Part of the translation is provided by Google Translate and may not be accurate)
+
+**features**
+
+1. Added the current complete streak display
+2. The shop item countdown effect is optimized, and two operations of ending and pausing are added; it is calculated in absolute time when it is abnormally terminated
+3. Support for setting the vibration mode and bell switch of the Pomodoro separately
+4. Partially supports preview of future deadlines of ongoing events in the calendar
+5. Support restarting single and unlimited events
+6. Modify the data display on the "Me" page, and change "Overdue" and "Give Up" to "Achievement (Unlocked)" and "Feelings"; now the statistics page displays the number of "Overdue" and "Abandoned"
+7. Support to directly apply to create widgets from the "desktop widgets" setting page (only in Android 8 or higher)
+
+**improvements**
+
+1. Support for viewing large images of shop items
+2. Optimize the power consumption problem that may be caused by step counting
+3. Fix some display problems when the font is too large
+4. Optimize the cancellation of unlimited items
+5. Optimize the display of Pomodoro notifications and add a progress bar display
+6. After the event is completed, remove the notification reminder that is currently being displayed
+7. Optimize the income and expenditure statistics of gold coins
+8. Add some user guidelines and tips
+9.  When editing items, support clearing the product reward selection
+10. When dealing with continuous crashes, add "Known Issues" notice
+11. Optimize the display effect when the attribute is not selected
+
+【repair】
+1. After the homepage sorts the list, the status should be refreshed immediately
+2. Fix the issue that the details page will not refresh the subtask list immediately
+3. Forcibly fix the crash problem of Weibo authorized login
+4. Fix the problem that the name of the item that may be displayed in the Pomodoro notification is incorrect
+5. Fixed an issue where the Pomodoro’s notification countdown display was inaccurate
+6. Fix the issue that the reward box will not pop up when the item and achievement only have merchandise rewards
+7. Fix the problem of not being able to purchase 0 gold coins under certain circumstances
+8. Optimize the calculation method of repairing Ebbinghaus items
+9. Optimize the calculation method of the number of completions today for unlimited events 
+
+**1.82.7 (2021/04/10)**
+1. Fixed the UI display when empty data in the [Moments] screen
+2. Font size will follow system settings again
+3. Update English and Portuguese translation
+
+**1.82.5 (2021/04/02)**
+
+1. Fixed some issue about pomodoro record
+2. Added some new guide
+
 **1.82.4-alpha01/beta (2021/03/25)**
 1. Fixed rewards of loot boxes
 2. View feelings of selected tasks
