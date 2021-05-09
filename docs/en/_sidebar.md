@@ -10,4 +10,6 @@
 
 - User Guide
 
-  - [Working on it]()
+  - [FAQ](guide/faq.md)
+
+  - [Background Running](guide/background_running.md)
