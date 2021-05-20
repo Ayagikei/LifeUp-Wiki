@@ -8,6 +8,8 @@
 
   - [Support us](Support_us.md)
 
+  - [Privacy Terms & Policy](introduction/privacy-terms.md)
+
 - User Guide
 
   - [FAQ](guide/faq.md)
