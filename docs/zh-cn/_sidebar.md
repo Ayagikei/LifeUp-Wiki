@@ -1,17 +1,13 @@
 - 概览
 
   - [应用介绍](README.md)
-
   - [截图展示](introduction/screenshots.md)
-
   - [更新日志](introduction/release_log.md)
-
   - [开发计划](introduction/development_plan.md)
-  
   - [隐私协议](introduction/privacy-trems.md)
-
   - [建设人升](introduction/support_us.md)
-
+  - [捐赠明细](introduction/donation.md)
+  
 - 用户指引
 
   - [常见问题](guide/faq.md)

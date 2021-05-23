@@ -6,9 +6,109 @@
 
 ## Log
 
-**1.82.8 (2021/04/28)**
-
 (Part of the translation is provided by Google Translate and may not be accurate)
+
+**1.83.0-alpha04 (2021/05/23)**
+
+1. Support the free configuration, sorting and disabling of the bottom module
+   Modules need to be adapted gradually in the future, and currently only support some functional modules (such as Pomodoro, historical unadapted)
+2. The second pause mode is added to the countdown effect of the product, which will stay in the notification bar and can be resumed at any time
+    And add the "experimental" logo
+3. When choosing to skip the Pomodoro, add a reminder that you cannot get a Pomodoro
+4. Add a hint to expand and collapse the sample task
+5. Fix the crash that may be caused by the layout at the top of the list on some pages
+6. Optimize the network error prompt when the network is disconnected
+7. Optimized the gold coin reward reminder when completing the sub-tasks, changed to non-obstructive Toast reminder 
+
+**1.83.0-alpha03 (2021/05)**
+
+1. Fix the problem that the empty layout display of the composite page may exceed the screen
+2. Fix the problem that the "Charm" attribute name of the newly created page is displayed incorrectly
+3. Fix some issues with gold coin settings
+4. Optimize the animation effect of the achievement page to adapt to the scene at the bottom navigation bar
+    (Adapted but the interface is not ready yet, please wait for subsequent updates)
+5. Upgrade the target SDK version to Android11
+6. Fix the empty layout display problem of the "Moment" page
+7. Fix the problem of abnormal interest calculation 
+
+**1.83.0-alpha02 (2021/05/16)**
+
+1. Fix the problem that synthetic recipes can be created in the "All" list
+2. After entering the synthesis system interface, no matter which list you are in, the actual display content is the "All" list.
+3. Simple repair of the calculation method of ATM interest 
+
+**1.83.0-alpha01 (2021/05/16)**
+
+1. A complete synthesis system, supporting any N-to-N synthesis implementation
+   - Checklist
+   - New/Edit
+   - Synthesis dialog
+   - Night mode and multi-language support
+   - "Entrance" is at the top of the store page
+2. Refactoring the internal code of the new item page
+    For the scalability of the application, we have almost completely sorted out the code of the newly created items, and may also redesign the UI in the future.
+    Subsequent alpha updates will also add "target repeat date", "relative reminder time", "penalty type items (to be determined)" and other functions.
+    If you encounter a problem, you can switch to the old version of the page at any time.
+
+3. Add ATM entrance at the top of the store
+4. The item attachment supports up to 9 pictures, and the storage path has been adjusted
+5. Team TAG function
+    The implementation is built-in, but the specific TAG content has not been configured yet, so it will not be displayed for the time being 
+
+**1.82.16 (2021/05)**
+
+1. Fix the problem that the example items cannot execute the overdue logic correctly (only valid for new users)
+2. Fix the problem that the number of completions of infinite items in certain scenarios will be missing 1 time 
+
+**1.82.15 (2021/05)**
+
+1. Fix the background sound effect playback problem 
+
+**1.82.14 (2021/05)**
+
+-
+
+**1.82.13 (2021/05)**
+
+1. Fix the problem that unlimited items may cause the list to load slowly and the cancellation count is inaccurate
+2. Fix the problem that the completion of the task in the desktop widget may be played multiple times to complete the sound effect
+3. Fix the problem that the total count of the top items in the smart list is not accurate
+4. Support delete all local data and delete account functions
+5. Fix the problem that the editing of subtasks of team items cannot be inherited 
+
+**1.82.12 (2021/05)**
+
+1. Fix the counting problem of undo complete infinite items
+2. Fix the issue that the frozen items will still be reminded
+3. Some optimizations have been made to the list switching, which may increase the switching speed of old devices and add loading animations
+4. Fix the problem that the custom rest end sound effect does not take effect, and supports setting the end sound effect of commodity timing
+5. Fix the problem that Pomodoro cannot count the concentration time when using the "skip" operation
+6. Fix the problem that the pause button of the product countdown does not take effect 
+
+**1.82.11 (2021/05)**
+
+1. Fix the counting problem of undo complete infinite items
+2. Fix the issue that the frozen items will still be reminded
+3. Some optimizations have been made to the list switching, which may increase the switching speed of old devices and add loading animations
+4. Fix the problem that the custom rest end sound effect does not take effect, and supports setting the end sound effect of commodity timing
+5. Support Russian language
+
+**1.82.10 (2021/05)**
+
+1. Fix the problem that Pomodoro cannot count the concentration time when using the "skip" operation
+2. Fix the problem that the pause button of the product countdown does not take effect
+3. Capture a crash caused by failure to create a calendar reminder 
+
+**1.82.9 (2021/05)**
+
+1. Fix the problem that the time limit of the copied item may be emptied, and it may cause a crash when repeated 
+2. Optimize the refresh speed after completing unlimited items
+2. Fix the problem of calculating reminder time for team tasks
+3. Fix the problem that the completion of sliding may cause the animation to not end correctly and remain blank
+4. Team tasks should support sliding abandonment
+5. The product introduction in the purchase window supports sliding browsing 
+
+**1.82.8 (2021/04/28)**
 
 **features**
 
