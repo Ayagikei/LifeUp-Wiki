@@ -8,6 +8,38 @@
 
 (Part of the translation is provided by Google Translate and may not be accurate)
 
+**1.83.7 (2021/06/24)** 
+
+1. The list is sorted by gold coin added 
+2. Add language selection to the guide page 
+3. Optimize the loading speed of achievement page 
+4. Change QQ group to join information with one click 
+5. Fixed the problem that continuous clicking during unpacking may trigger inventory changes multiple times
+6. Fixed the incorrect display of single overdue items in the daily items list
+
+**1.83.6 (2021/06/22)**
+
+Features
+1. (Members) Support independent setting of card background
+2. The delete record function now supports deleting thoughts, warehouses, and timing records
+3. System achievements can choose whether to get experience points or gold coin rewards
+4. Event search function
+5. Support local automatic backup to "download" folder (Android 10 and above)
+
+Optimization
+1. Improve the default notification reminder calling method, which can theoretically enhance the notification success rate above Android6
+2. Increase the notification priority of the Pomodoro timer to [High], improve the survival probability of the background timer and the notification display
+3. On the page, add QQ group and official website links, optimize the UI, QQ supports one-click group addition
+4. Improve the trigger timing of achievement notifications, which should be reminded immediately after triggering on the homepage
+5. Add a check box of "Apply to current list only" in the "Filter" option of the item list, and separate the default and all list options
+6. Add animation effects when compositing
+7. Feedback Increase the feedback channel of the Rabbit Xiaochao community, which is convenient for uploading pictures and tracking issues
+8. Increase the relative value display in the counting item input box
+9. Optimize the unselected Tab display effect
+10. Remove the random prompt when clicking on the avatar, and click to enter the personal homepage instead
+11. When the gold coin reward is not set, it will be displayed as "not set" instead of "0"
+12. When the probability of unboxing setting is lower than 0.01%, it will no longer display "0.00%" but change to "<0.01%"
+
 **1.83.0-alpha04 (2021/05/23)**
 
 1. Support the free configuration, sorting and disabling of the bottom module

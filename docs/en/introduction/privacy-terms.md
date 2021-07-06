@@ -32,15 +32,15 @@ Also, we do not collect any photos unless summited by users, do not use camera w
 
 **The application is an offline first application and does not have an build-in online synchronization function, so most of the data is stored locally on the user's mobile phone.**
 
-For example, all the local tasks you created, all the thoughts recorded, the dynamics of the design, and the shop items.
+For example, all the local tasks you created, all the feelings recorded, the achievements you designed, and the shop items.
 
 **Only the content you actively share publicly in the "World" module will be stored on the server. And these contents all support deletion and destruction operations.**
 
-For example, the team you created in the "World" module, the news published after joining the team after completing the task, the products that are actively shared, and so on.
+For example, the team you created in the "World" module, the activities you published after completing the team tasks, the shop items that are actively shared, and so on.
 
 #### 1.4 Crash Report
 
-The App also uses ACRA/Firebase Crashlytics to collect crash report  info, but it will not be associated with any personal information.
+The App also uses ACRA/Firebase Crashlytics to collect crash report infomation, but it will not be associated with any personal information.
 
 #### 1.5 Account deletion/Data deletion
 

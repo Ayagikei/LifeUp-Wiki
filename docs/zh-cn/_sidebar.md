@@ -20,7 +20,12 @@
 
   - [备份](guide/backup.md)
 
-  - [后台运行](guide/background_running.md)
+  - [兼容性配置](guide/compatibility.md)
+    - [后台运行](guide/background_running.md)
+  
+- 用户分享
+
+  - [人升体系建设参考手册](guide/user/system_01.md)
 
 - 更新介绍
 
