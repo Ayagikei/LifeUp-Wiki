@@ -8,6 +8,73 @@
 
 (Part of the translation is provided by Google Translate and may not be accurate)
 
+**1.83.16 (2021/08/20)**
+
+1. Fix the crash and ineffectiveness of avatar modification in offline mode
+2. Optimize the interaction of product unpacking effect selection
+3. Fix the focus problem of some long text input boxes
+4. Fix the issue that the reminder deadline and time are displayed incorrectly in some cases
+5. Fix the problem that the related configuration changes of the concise mode will not take effect immediately 
+
+**1.83.15**
+
+1. Support marking penalties tasks in app widgets
+2. Fix the abnormal behavior of "folding non-seven days' matter"
+3. The upper limit of the number of impression pictures has been increased to 9 pictures
+4. The login page will show the last login method
+5. When the penalty is cancelled (marked as completed), no additional reward will be given
+6. The smart list now supports displaying completed items
+7. Fix the abnormal situation of automatically backing up to the download folder in some cases
+8. Fix some UI display problems 
+
+**1.83.14**
+
+1. Fix the issue that Pomodoro may not record the time length when executing "skip"
+2. Fix the problem that penalty items will be executed overdue and penalty logic
+3. Fix issues related to editing penalties
+4. Fix issues related to selecting pictures in landscape mode
+5. Fix the occasional restore failure when restoring a backup from a custom path 
+
+
+**1.83.8-1.83.13**
+Features
+1. Support independent setting of card background
+2. The delete record function now supports deleting thoughts, warehouses, and timing records
+3. System achievements can choose whether to get experience points or gold coin rewards
+4. Event search function
+5. Support local automatic backup to "download" folder (Android 10 and above) 
+
+Improvements
+1. Improve the default notification reminder calling method, which can theoretically enhance the notification success rate above Android6
+2. Increase the notification priority of the Pomodoro timer to [High], improve the survival probability of the background timer and the notification display
+3. On the page, add QQ group and official website links, optimize the UI, QQ supports one-click group addition
+4. Improve the trigger timing of achievement notifications, which should be reminded immediately after triggering on the homepage
+5. Add a check box of "Apply to current list only" in the "Filter" option of the item list, and separate the default and all list options
+6. Add animation effects when compositing
+7. Feedback Increase the feedback channel of the Rabbit Xiaochao community, which is convenient for uploading pictures and tracking issues
+8. Increase the relative value display in the counting item input box
+9. Optimize the unselected Tab display effect
+10. Remove the random prompt when clicking on the avatar, and click to enter the personal homepage instead
+11. When the gold coin reward is not set, it will be displayed as "not set" instead of "0"
+12. When the probability of unboxing setting is lower than 0.01%, it will no longer display "0.00%" but change to "<0.01%"
+13. Feel that the switch is no longer memorized, and it is turned off by default
+14. Optimize the application process for calendar and camera permissions
+15. Optimize the click effect and display effect of some pages
+16. Optimize the calendar reminder method, try to solve the problem that some devices may delete the calendar account 
+
+Fixes
+1. Fix the crash problem of continuous filtering on the impression page
+2. Try to fix the rare crash of the dialog box that is set out of the box
+3. Fix the problem that when the input box is long, clicking on the text will automatically jump to the bottom
+4. Fix the issue that random gold coin rewards cannot be set when creating a team
+5. The domestic distribution version completely removes Firebase related dependencies
+6. Fix the occasional exception when refreshing the achievement list page
+7. Fix an occasional abnormal crash when selecting the built-in icon
+8. Fix the problem that the subtasks are still visible when returning to the details page after deleting all subtasks
+9. Fix the problem that the name of the synthetic default list cannot be edited
+10. Fix the problem that the filter box will be displayed on the profile page
+11. Fix the problem that the team item cannot be inherited after setting the product reward 
+
 **1.83.7 (2021/06/24)** 
 
 1. The list is sorted by gold coin added 
