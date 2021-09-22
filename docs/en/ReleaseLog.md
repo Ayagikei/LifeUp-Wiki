@@ -8,6 +8,66 @@
 
 (Part of the translation is provided by Google Translate and may not be accurate)
 
+**1.84.1 (2021/09/20)**
+
+1. Fix the problem that the target repeat count cannot be cleared during editing
+
+
+
+**1.84.0 (2021/09/19)**
+
+***Features***
+
+1. Skill system (attribute customization)
+
+   All the original mechanisms are adapted to the attribute customization system, such as achievement attributes reaching unlock conditions, product experience rewards, etc.
+
+2. Customize the edible effect of the Pomodoro, allowing you to change the experience value and attribute types
+
+3. The store icon supports changing the cropping style (store settings)
+
+4. The product details will now display a list of usage effects
+
+5. Add member theme color #6bab8b
+
+6. Support deleting reminder calendar account
+
+
+
+***Improvements***
+
+1. The Pomodoro page supports horizontal display
+
+2. Added the description of "Loanable Amount" in the product settings
+
+3. Add a reminder of the file size of the cloud synchronization
+
+4. Upgrade Facebook and Dropbox related dependencies
+
+5. Part of the page UI display and text optimization
+
+6. Optimize the interaction of new subtasks
+
+
+
+***Fixes***
+
+1. Fix the problem that the default icon version of the attribute is inconsistent
+
+2. Fix the problem that quick click to open the box may cause repeated unboxing or crash
+
+3. Fix the problem that calendar events that have been reminded will not be removed synchronously when deleting items
+
+4. Fix the abnormal status after setting the item from "Completed" to "Overdue" on the history page. The historical data should be automatically repaired when upgrading to the new version
+
+5. Fix the problem that the currently selected list is incorrectly marked in the list selection dialog when creating a new product; and the display of the "all" list is removed
+
+6. Fix the problem of editing other content + target repetition times, the editing will fail again
+
+7. Create a new achievement page, fix the problem that the attribute selection cannot be edited and left blank
+
+8. Other minor bug fixes and optimizations 
+
 **1.83.16 (2021/08/20)**
 
 1. Fix the crash and ineffectiveness of avatar modification in offline mode
