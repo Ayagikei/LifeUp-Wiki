@@ -8,6 +8,212 @@
 
 (Part of the translation is provided by Google Translate and may not be accurate)
 
+**1.86.0 (-Official version to be released-)**
+
+**Feature**
+
+1. Achievement sub-category: Divide categories, automatically count category counts
+2. Google Drive backup
+3. Picture management function (in the backup page)
+4. Product random gold coin effect
+5. Batch copy of achievements
+6. Step counting supports multiple input of steps and multiple rewards
+7. Pomodoro supports setting up commodity exchange
+8. Support custom return discount ratio
+9. Use exclusive format for backup (some systems support direct opening and import backup)
+10. Simple synthesis supports batch operation
+11. Newly added custom sound effect option: commodity use
+12. New achievement unlocking condition: current ATM deposit
+13. Statistics on the number of times that negative matters support the detail page
+14. "All" list supports renaming
+15. The naming and description of notification channels for unified applications
+
+**Improvements**
+
+1. Prioritize achievements that have been unlocked but not received rewards
+2. The Pomodoro Today’s focus time on the status page will be displayed in hours according to the time.
+3. The warehouse adds commodity description display
+4. New account registration will pop up a confirmation dialog
+5. Support for displaying maintenance announcements
+6. Added "Skip" confirmation dialog for Pomodoro Extra Time
+7. Support saving data when uninstalling the application (system support required)
+8. Optimize backup and recovery logic
+9. Optimize the overdue logic of single items and unlimited items, and support editing
+10. Optimize the chart statistics time basis of unlimited events, based on the completion time rather than the deadline time
+11. The compact mode card will also show the overdue time of single and unlimited items
+12. Try to improve the survival rate of the countdown function in the background
+13. Optimize the impression function:
+    -On by default
+    -The team task setting page does not display the "Impressions" switch that does not actually take effect
+    -Remove the confusing feeling switch memory function
+14. Select the pop-up window for the list of commodities and warehouses to increase the number of commodities displayed
+15. When the notification bar continues to time, the vibration effect in progress will also be cancelled
+16. The dynamic text in the world module supports selected copy
+17. Optimize the data refresh animation effect of the custom achievement page
+18. Optimize the recovery logic, display the "Loading" dialog box instead of directly stuck interface
+19. Optimized the problem that the bottom button may not be seen in the "Crash pop-up window"
+20. Click the task notification reminder, and now it will jump to the list page where the task is located
+21. Custom attribute icon, now supports selecting application built-in icon library
+22. Optimize the "Read Later" sharing operation name instead of directly displaying the application name
+23. Optimized the notification of achievement unlocking, the achievement description will now be displayed
+24. When the desktop widget enters the homepage, it will automatically jump to the "delegation" module
+25. Optimized the display of copywriting after the completion of the day list
+26. Optimize the operation copy and sequence of the product countdown effect
+27. When all attributes are hidden, the status page no longer displays the "Attribute" card
+
+**Fixes**
+
+1. Fix a rare crash issue when unlocking pop-up windows for achievements
+2. Fix the display problem that one task may squeeze multiple lines when emptying desktop widgets with insufficient width
+3. Fix the issue that the first exercise authorization for step counting may support the display of the total number of steps accumulated by the sensor
+4. Fix the crash or recovery confusion when pausing a countdown and then starting another countdown
+5. Fix the problem that the 0-minute countdown effect of the product can be entered and it will crash
+6. Fix the problem that the name of the currently selected list is not refreshed in time when renaming the currently selected list on the page of adding or editing items
+7. Fix the abnormal display of cards with repeated frequency of "annual"
+8. Fix the problem that custom gold coins will not take effect in time in some cases
+9. Fix the issue that widgets will display frozen items
+10. Fix the problem that the custom achievement does not display the "long press operation" prompt
+11. Fix the problem that the total experience value of the "My" page does not count the experience value of the custom attribute
+12. Fix the problem that the "Impressions" page refreshes back to the top after previewing the picture abnormally
+13. Fix the problem that the static shortcut of "Tomato" will only jump to the homepage when the application has been started under MIUI system
+14. Fixed an issue where non-members might also load custom backgrounds
+15. Fixed the problem that the number of gold coins on the store page was not refreshed in time
+16. Fix the problem that the calendar cannot be turned to the next year
+17. Fix the problem that the list name on the widget will not be refreshed in time after the name of the list is modified
+
+**Release Candidate -> Official Version**
+
+1. Optimize the success rate of uploading large files on Google Drive, increase the retry and optimize the block strategy
+2. Fixed the problem that members may not display the button for individual custom task backgrounds in a non-Chinese environment
+3. The backup of Google Drive/DropBox failed and jumped to the backup page instead of the WebDAV configuration page
+4. Add a pop-up window description of Google Play verification failure, and provide data export path
+5. The nickname of the "My" page changes color according to the membership status
+6. Eliminate the floating point error problem of ATM interest rate in most scenarios
+7. When deleting local data, custom background, attribute picture and sound effect files will also be deleted synchronously
+8. Fix the abnormal problem of step count chart
+9. Fix the problem that the properties of the new to-do page are not refreshed after clicking the question mark button of the property from the new to-do page, jumping to the property customization page for editing, and returning to the new to-do page
+10. When customizing the effect of the product, clicking outside the pop-up window will no longer automatically cancel the pop-up window, avoiding the loss of editing content
+11. Optimize the foreign language UI problem of the product setting page (the Russian text is too long)
+12. Attempt to fix the crash of color toast on some models
+13. Fix the problem that the use button can still be clicked when the warehouse page is selected
+14. Fix the logic of displaying overdue single tasks in the smart list, and adapt to the new overdue time storage method
+15. When the warehouse is selected, the toggle list should be deselected 
+
+**1.85.4 (2021/12/08)**
+
+Regular bug fix version, the next feature version is still under development~
+
+1. Fix the problem that the default icon of the gold coin of the widget in the non-dark mode is not displayed correctly
+2. Fix the problem that the animation of the progress bar does not play normally in the case of continuous upgrade/downgrade
+3. Fix the problem that the number of gold coins on the warehouse page is not updated in time
+4. Fix the issue that the deadline may be forcibly changed when editing the "day of the week" item
+5. Fix the problem that screen rotation may cause the information of the changed subtasks to be lost when editing items
+6. Fix the problem that the number of gold coins does not actually take effect when creating new or editing products
+7. The display conditions of the annual completion times on the amendment details page
+8. Optimize the storage of pictures in the app, and should not be scanned by the system photo album
+9. Optimize the description of the feeling switch
+10. Fix some crashes
+
+**1.85.3 (2021/11/18)**
+
+1. Optimize the time calculation method of the timing, will make up for the CPU sleep time
+2. Fix the problem that editing the icon while copying the product will cause the original product icon to be lost
+3. Other minor bug fixes (such as team tag)
+
+**1.85.2 (2021/11/07)**
+
+1. Fix the problem that records and rewards cannot be generated during settlement after the timing is suspended
+2. Fix that using the "move to" operation under the smart list will cause the list to display inaccurately
+3. Fix the problem that the current value display of "Current number of gold coins" does not match the actual calculation (the current value display does not include ATM deposits)
+4. Fix the problem that the record and reward will be repeated after the Pomodoro work is over, and then the skip button is clicked twice in a row
+
+**1.85.1 (2021/11/02)**
+
+0. Fix loading problem of feelings list
+
+**1.85.0 2021/10/20)**
+*Feature*
+
+1. Pomodoro supports positive timing mode
+2. Paste multiple lines of text to quickly create subtasks
+3. Commodity support copy operation
+4. Swipe to switch the direction of the list of items, support reverse (settings-items)
+5. Support clearing the Pomodoro to get the record
+6. The Pomodoro adds a forced horizontal and vertical screen switch button
+7. Achievement unlocking conditions have been increased:
+   ● The number of products obtained by synthesis
+   ● Cumulative acquisition quantity of goods
+   ● The current quantity of the product
+   ● Life level
+   ● (Repetitive) the focus time of the task
+8. The skill icon also supports multiple cropping settings
+9. Static shortcut:
+   ● New task
+   ● Enter the Pomodoro page
+10. Sound effect customization increased:
+    ● Obtain achievement rewards (including system achievements and custom achievements)
+    ● Unpacking
+    ● Synthesis (including simple synthesis and synthesis)
+    ● Notification sound effect
+11. Gold coin icon customization
+12. Product use effect supports setting multiple experience value change effects
+13. Changes to the experience pie chart adaptation skills
+14. The history page supports status filtering
+15. Team tag function
+
+*Improve*
+
+1. When the subtask gold coin reward is 0, the gold coin reward will not be displayed in the details
+2. Create a new achievement list page and add a guide to "Create Achievement"
+3. Optimize the icon display of widgets
+4. Complete subtasks to add sound effects (details, new pages)
+5. After entering content on the new or editing (items, products, achievements, synthesis) page, click the return button, and a confirmation box to discard changes should pop up
+6. Sort optimization of product creation (in the case of custom sorting, newly added products should be the top priority)
+7. When editing items/products, the input method should not pop up automatically
+8. New item page should support horizontal screen and no data loss
+9. Member theme color adaptation for desktop widgets
+10. Optimize the product selection box, change the display and then load the data asynchronously
+11. The warehouse label also adds "composite" and "ATM" entrances
+12. Put the [Set as complete] and [Undo] operations in the history change status back to the first level menu
+13. Add the Pomodoro quick entry for details of the event
+14. Optimization of the sorting of the "All" list of the store (addition of the option of grouping by list, only stores)
+15. After selecting the days of the week to repeat, the deadline time should be calculated again. (Prevent the user from choosing a work day to repeat, and the deadline still stays on Saturday and Sunday.)
+16. When returning to the "Delegation" page, if the "+" button is not displayed, the display will be triggered.
+
+*Fixes*
+
+
+1. Fixed the problem that the progress on the list was not refreshed in time when the achievement page was configured to the bottom navigation bar
+2. The state switching problem of historical items is fixed
+3. Negative countdown overdue display repair
+4. The achievement of gold coins should be included in the deposit in the ATM
+5. Fixed the problem that when the Pomodoro is paused, reentering the Pomodoro twice will cause the time to be cleared
+6. Fix the purchase restriction may become invalid under certain circumstances
+7. Fix the problem that countdown records will repeat in rare cases
+8. Fix the problem that clicking different task cards in quick succession may cause the task content of one of the cards to be blank after returning to the page
+9. Logic adjustment of automatic calculation of gold coins and experience points
+10. Fixed some crashes
+
+
+**1.84.4 (2021/10/09)**
+
+1. Fix the problem that the built-in icon may not be displayed
+
+2. Update Q group
+
+**1.84.3 (2021/10)**
+
+1. Update overseas text
+
+**1.84.2 (2021/09/26)**
+
+1. Fix the deadlock problem that may be caused by synthesis
+
+2. Fix the problem of abnormal usage effects displayed in the product details that are not available
+
+3. Optimize the visual effect of rounded corners of widgets
+
+
 **1.84.1 (2021/09/20)**
 
 1. Fix the problem that the target repeat count cannot be cleared during editing
