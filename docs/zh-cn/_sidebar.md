@@ -7,7 +7,6 @@
   - [隐私协议](introduction/privacy-trems.md)
   - [建设人升](introduction/support_us.md)
   - [捐赠明细](introduction/donation.md)
-  
 - 用户指引
 
   - [常见问题](guide/faq.md)
@@ -22,25 +21,16 @@
 
   - [兼容性配置](guide/compatibility.md)
     - [后台运行](guide/background_running.md)
-  
 - 用户分享
 
   - [人升体系建设参考手册](guide/user/system_01.md)
-
 - 更新介绍
-
+  - [1.86.0 - 成就子分类](features/186.md)
   - [1.80.0 - 开箱](features/180.md)
-
   - [1.78.0 + 1.79.0 - 成就解锁条件与计时统计](features/178-9.md)
-
   - [1.76.0 + 1.77.0 - 商品效果与橱窗](features/176-7.md)
-
   - [1.75.0 - 番茄钟](features/175.md)
-
   - [1.74.0 - 用户成就](features/174.md)
-
   - [1.70.0 - 简洁模式](features/170.md)
-
   - [1.69.0 - 子任务](features/169.md)
-
   - [1.68.0 - 系统成就与日历](features/168.md)
