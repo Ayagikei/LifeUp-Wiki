@@ -8,7 +8,7 @@
 
 (Part of the translation is provided by Google Translate and may not be accurate)
 
-**1.86.0 (-Official version to be released-)**
+**1.86.0（2022/1/20）**
 
 **Feature**
 
