@@ -9,6 +9,8 @@
   - [捐赠明细](introduction/donation.md)
 - 用户指引
 
+  - [快速开始](guide/hello_lifeup.md)
+
   - [常见问题](guide/faq.md)
 
   - [事项](guide/tasks.md)
@@ -20,7 +22,9 @@
   - [备份](guide/backup.md)
 
   - [兼容性配置](guide/compatibility.md)
-    - [后台运行](guide/background_running.md)
+
+  - [后台运行](guide/background_running.md)
+
 - 用户分享
 
   - [人升体系建设参考手册](guide/user/system_01.md)

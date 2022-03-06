@@ -8,6 +8,80 @@
 
 (Part of the translation is provided by Google Translate and may not be accurate)
 
+**1.87.1（2022/3/07）**
+
+1. The sorting menu of shop and inventory explicitly displays "custom" sorting
+2. Fix the problem that abnormal sorting may occur in the inventory
+3. Added a button to jump to email feedback on the feedback page
+4. Optimize the prompt for restore failure due to database version problems
+5. Fixed the problem that the number of coins in the compact mode card is not displayed
+
+**1.87.0 official version (2022/3/04)**
+
+1. Fix the problem that the custom card background will zoom abnormally in some cases
+2. Fixed an issue where clicking on the task reminder notification may jump to the wrong task details when continuously receiving task reminders
+3. Fixed the problem that the numbers on the card were not refreshed normally when sliding to increase the count task count
+4. Added new  guide task for some language
+
+**1.87.0-rc02（2022/2/25）**
+
+1. Improve error handling and prompts for recovery operations
+2. Optimize the interaction of setting "day of the week", and increase the warning of abnormal setting (start-period is not on the same day)
+3. Optimize the night mode color matching of some pages
+4. Fix the problem that the cache may be displayed incorrectly in the picture selection box and picture management
+5. Fixed the problem that the "Download" operation in the backup conflict pop-up window does not support Google Drive/Dropbox
+6. Fix the problem that the search of the store may show wrong results
+7. Fix the problem that the top of the task may fail
+8. Fix some UI exceptions and text issues
+
+**1.87.0-rc01（2022/2/23）**
+
+**✨Feature**
+
+1. Achievement sub-category supports folding operation
+2. Introduce the Material You design style switch (experimental)
+3. Inventory supports sorting by shop
+4. Inventory supports commodity "star" operation
+5. The shop supports select all operations
+6. Shop and Inventory related operations support selecting MAX quantity
+7. Tasks support continuous creation
+8. Task support configuration: The description of the product reward will be automatically added to the card remarks (that is, "Reward: [a product] x1" will be automatically displayed) 
+9. The task supports the specified freezing duration
+
+**⚡️Improvements**
+
+1. Add a "Skip" button to the backup conflict pop-up window
+2. Play version supports French/Polish
+3. Task click notification reminder now supports jumping to task details
+4. When editing the time related to the task, the default pop-up window will point to the time before editing instead of the current time
+5. Each list selection entry of the store supports "Rename", "Delete", "New" operations
+6. Extension page UI redesign
+7. Added a second confirmation pop-up window for "Delete Calendar Account"
+8. The product will no longer be automatically removed from the shelf if it is sold out
+9. The "Get up early" task in the example task is changed to 0 penalty
+10. When getting an item reward, if the item quantity is negative, a related warning will now appear
+11. Optimize the random algorithm of gold coins in the effect of commodity use
+12. "Set as complete" operation adds complete sound effect
+13. Optimize some UI display in night mode
+14. Optimize the performance of the task list
+
+**🐛Fixes**
+
+1. Fix the abnormality of "unconcerned" copy in some languages
+2. Fix the problem that the product icon on the "Return" pop-up window may display abnormally
+3. Fix the problem that the task may be repeatedly generated when the task is completed quickly
+4. Fix the problem that the memory of the current list of the "synthesis" system may be invalid
+5. Fix the problem that QQ login may not be possible in the horizontal screen state
+6. Fixed the issue that when editing a recipe in the [All] list in the "Synthesis" system, the recipe might disappear from the original list
+7. Fixed an issue where clicking to complete an infinite task multiple times in a row may cause the display of the number of completions to return to zero
+8. Fixed the issue that the backup interval could not be set to "Monthly"
+9. Fix the problem that the experience icon is not displayed in the simple mode
+10. Fix the problem that the "Achievements" and "Achievement List" columns are missing in the picture management
+11. Fix the problem that the task details page does not support abandoning team tasks
+12. Fix the problem that the guide of the world module is not displayed correctly
+13. Fix the problem that the product can be successfully shared when the image upload fails, but the local image will be overwritten
+14. Fix some rare crashes and exceptions
+
 **1.86.0（2022/1/20）**
 
 **Feature**
