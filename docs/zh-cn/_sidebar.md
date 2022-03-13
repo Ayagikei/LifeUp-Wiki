@@ -24,11 +24,11 @@
   - [兼容性配置](guide/compatibility.md)
 
   - [后台运行](guide/background_running.md)
-
 - 用户分享
 
   - [人升体系建设参考手册](guide/user/system_01.md)
 - 更新介绍
+  - [1.87.0 - 列表优化](features/187.md)
   - [1.86.0 - 成就子分类](features/186.md)
   - [1.80.0 - 开箱](features/180.md)
   - [1.78.0 + 1.79.0 - 成就解锁条件与计时统计](features/178-9.md)
