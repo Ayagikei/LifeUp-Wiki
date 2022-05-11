@@ -8,6 +8,58 @@
 
 (Part of the translation is provided by Google Translate and may not be accurate)
 
+**1.88.4 (2022/4/21)**
+
+1. Fix the problem that warehouse search will cause crash
+2. Fix the display disorder of custom background and history page
+3. Fix the UI overlap problem when editing
+4. Fix the problem that the quantity may be displayed abnormally when the achievement is rewarded with goods
+5. Fix the problem that the completion times of achievement calculation items may not match the actual times in some special cases
+6. Fix the problem that the title may disappear when the history page is clicked quickly
+7. When creating or editing an item, after clicking on the property, the soft keyboard cannot be popped up by clicking the input box that is in focus again.
+8. Fixed the crash issue when setting monthly purchase limit in French language
+
+**1.88.3 (2022/4/09)**
+
+1. Fixed that after restoring the backup, the cloud backup will prompt a conflict problem
+2. Fixed the problem that the edited task start time and subtask reminder time did not select the filled time by default
+3. Fix the problem that other effects will only be calculated once during batch simple synthesis
+4. Fixed the issue that any attribute of the system achievement reaching level 10 would not be counted into the custom attribute
+5. Fixed the abnormal display of the text UI on the "My" page for non-members
+
+**1.88.2(-)**
+
+> Updates included in 1.88.3
+
+**1.88.1 (2022/4/02)**
+
+1. Fix a crash caused by backup reminder
+
+**1.88.0 (2022/3/30)**
+
+✨Features
+
+1. Added the function of sharing "random tasks" in the world module
+2. Counting items can optionally set the coefficient to affect the number of items
+3. Support setting loan interest rate
+4. Picture management supports one-click filtering of unused pictures + select all operations
+5. Support custom image cropping size (that is, use higher-definition icons, membership functions)
+6. Explicitly display the "feelings" switch within the achievement
+7. Optimize the sorting algorithm of the "All" list
+
+⚡️Optimized
+
+1. Optimize the visual effects of some pop-up windows
+2. Optimize the interaction of backup/restore functions
+3. Optimize the loading speed of the delegated page
+4. Greatly optimized the loading speed of the product selection pop-up window
+
+
+🐛 Fixes
+1. Fixed the problem of custom background disorder
+2. Fixed the problem that the task may be created to the deleted list
+3. Some crash bug fixes
+
 **1.87.1（2022/3/07）**
 
 1. The sorting menu of shop and inventory explicitly displays "custom" sorting

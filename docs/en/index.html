@@ -28,6 +28,11 @@
         tocMaxLevel: 5,
         target: 'h2, h3, h4, h5, h6'
       },
+      search: {
+        maxAge: 86400000, // 过期时间，单位毫秒，默认一天
+        paths: 'auto',
+        depth: 6,
+      },
       // logo: "/_media/icon.png",
       homepage: 'Introduction.md',
       plugins: [
@@ -44,6 +49,7 @@
   <!-- Docsify v4 -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
   <script src="//unpkg.com/docsify-plugin-toc"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
   <script>
     // if (typeof navigator.serviceWorker !== 'undefined') {
     //   navigator.serviceWorker.register('sw.js')
