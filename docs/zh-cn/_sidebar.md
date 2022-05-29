@@ -10,23 +10,17 @@
 - 用户指引
 
   - [快速开始](guide/hello_lifeup.md)
-
   - [常见问题](guide/faq.md)
-
   - [事项](guide/tasks.md)
-
   - [属性](guide/attributes.md)
-
   - [商品](guide/shop_item.md)
-
   - [备份](guide/backup.md)
-
   - [兼容性配置](guide/compatibility.md)
-
   - [后台运行](guide/background_running.md)
 - 用户分享
 
-  - [人升体系建设参考手册](guide/user/system_01.md)
+  - [体系建设参考手册](guide/user/system_01.md)
+  - [体系相关视频](guide/user/system_02.md)
 - 更新介绍
   - [1.87.0 - 列表优化](features/187.md)
   - [1.86.0 - 成就子分类](features/186.md)

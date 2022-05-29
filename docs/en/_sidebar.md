@@ -12,6 +12,8 @@
 
 - User Guide
 
+  - [Hello, LifeUp World](guide/hello_lifeup.md)
+
   - [FAQ](guide/faq.md)
 
   - [Background Running](guide/background_running.md)

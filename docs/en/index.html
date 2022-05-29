@@ -7,7 +7,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <meta name="description" content="Description">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-  <link rel="stylesheet" href="./css/lifeup.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css">
+  <link rel="stylesheet" href="./css/lifeup_vue_override.css">
+  <!-- <link rel="stylesheet" href="./css/lifeup.css"> -->
   <link rel="icon" href="_media/icon_small.webp">
   <link rel="stylesheet" href="https://unpkg.com/docsify-toc@1.0.0/dist/toc.css">
   <script src="./js/edit_button_header.js"></script>
@@ -28,6 +30,8 @@
         tocMaxLevel: 5,
         target: 'h2, h3, h4, h5, h6'
       },
+      themeColor: '#44a8f0',
+      formatUpdated: '{MM}/{DD} {HH}:{mm}',
       search: {
         maxAge: 86400000, // 过期时间，单位毫秒，默认一天
         paths: 'auto',
@@ -42,7 +46,19 @@
           function (file) {
             return 'Edit on git'
           }
-        )
+        ),
+        function (hook) {
+          var footer = [
+            '<hr/>',
+            '<footer>',
+            '<span>Proudly published with <a href="https://github.com/docsifyjs/docsify" target="_blank">docsify</a>.</span>',
+            '</footer>'
+          ].join('');
+
+          hook.afterEach(function (html) {
+            return html + footer;
+          });
+        }
       ]
     }
   </script>
@@ -50,6 +66,7 @@
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
   <script src="//unpkg.com/docsify-plugin-toc"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/js/docsify-themeable.min.js"></script>
   <script>
     // if (typeof navigator.serviceWorker !== 'undefined') {
     //   navigator.serviceWorker.register('sw.js')

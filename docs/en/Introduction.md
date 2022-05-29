@@ -10,7 +10,9 @@
 Now available in Google Play as a paid application, which you can get it with one-time cost.
 There is no In-App-Purchase or Ad in the app.
 
-[GooglePlay](../html/googleplay.html ':include :type=iframe height=120px')
+<a href='https://play.google.com/store/apps/details?id=net.sarasarasa.lifeup&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1' target="_blank"><img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" style="
+    height: 100px;
+"></a>
 
 If you feel dissatisfied after the purchase, feel free to contact the developer at any time to request a refund.
 
