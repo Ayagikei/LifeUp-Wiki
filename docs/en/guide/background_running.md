@@ -39,4 +39,5 @@ It is recommended to perform the following operations after encountering actual 
 
 1. Check your BATTERT options in the system SETTINGS app and disable the battery optimization for LifeUp.
 2. Lock LifeUp in your multitasking pane.
-3. Enable the `Quick Add notification` in the Task Setting screen.
+3. (Optional but may help) Enable the `Quick Add notification` in the Task Setting screen.
+4. When using functions such as Pomodoro and Reminder, make sure that you have turned on the LifeUp notifications, and have not turned on Do Not Disturb and special power saving modes.
