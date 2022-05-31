@@ -20,7 +20,7 @@
 
 ## 激励体系
 
-![激励体系](/introduction/_media/readme/motivation.jpg ':size=100%')
+![激励体系](/introduction/_media/readme/motivation.png ':size=100%')
 
 《人升》的激励体系基于**仪式感**，这几大功能都是可以相辅相成，互相影响的。
 

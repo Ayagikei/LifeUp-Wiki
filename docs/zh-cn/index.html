@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="./css/lifeup_simple.css">
   <link rel="stylesheet" href="./css/toc_1.3.1.css">
   <!-- <link rel="stylesheet" href="./css/lifeup_vue.css"> -->
-    <link rel="stylesheet" href="./css/lifeup_vue_override.css">
+  <link rel="stylesheet" href="./css/lifeup_vue_override.css">
   <link rel="icon" href="_media/icon_small.webp">
   <script src="./js/edit_button_header.js"></script>
 </head>
@@ -39,6 +39,10 @@
         paths: 'auto',
         depth: 6,
         placeholder: '输入进行搜索...'
+      },
+      pagination: {
+        crossChapter: true,
+        crossChapterText: true,
       },
       formatUpdated: '{MM}/{DD} {HH}:{mm}',
       alias: {
@@ -83,7 +87,7 @@
     //   isMobile = isIphone || isAndroid;
 
     // if (isMobile) {
-    //   setTimeout(function () { 
+    //   setTimeout(function () {
     //     var elements = document.getElementsByClassName("sidebar-toggle")
     //   var menu = elements[0]
     //   console.log("is null = " + menu)
@@ -97,6 +101,7 @@
   <script src="./js/zoom-image.min.js"></script>
   <script src="./js/search.min.js"></script>
   <script src="./js/docsify-themeable.min.js"></script>
+  <script src="./js/docsify-pagination.min.js"></script>
 </body>
 
 </html>
