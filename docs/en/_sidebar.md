@@ -1,4 +1,4 @@
-- Getting Started
+- Introduction
 
   - [Introduction to LifeUp](Introduction.md)
 
@@ -10,7 +10,7 @@
 
   - [Privacy Terms & Policy](introduction/privacy-terms.md)
 
-- User Guide
+- Getting Started
 
   - [Hello, LifeUp World](guide/hello_lifeup.md)
 

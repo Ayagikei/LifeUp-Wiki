@@ -10,7 +10,7 @@
 
 
 
-**LifeUp is a special gamify To-Do and habit development application.**
+**LifeUp is a unique gamify To-Do and habit forming android application.**
 
 It is different from some gamify app that is incorporated into the built -in game.
 
@@ -58,5 +58,8 @@ But before your use, you may want to know the following information:
 
 
 
+---
 
+## Contact Us
 
+If you have any further feedback or questions, or need help with the refund, **please feel free to reach out to us by email at kei.ayagi@gmail.com.**
