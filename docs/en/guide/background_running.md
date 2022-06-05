@@ -41,3 +41,15 @@ It is recommended to perform the following operations after encountering actual 
 2. Lock LifeUp in your multitasking pane.
 3. (Optional but may help) Enable the `Quick Add notification` in the Task Setting screen.
 4. When using functions such as Pomodoro and Reminder, make sure that you have turned on the LifeUp notifications, and have not turned on Do Not Disturb and special power saving modes.
+
+---
+
+### App Widgets not working
+
+1. First open LifeUp and let it run normally
+2. Re-enable a new app widget (if abnormal, you can try several times)
+3. If it expires after a period of time, please configure it according to https://wiki.lifeupapp.fun/en/#/guide/background_running
+4. If you are using a non-system launcher app, please switch to the system launcher first.
+5. If you are using a non-default system theme, try switching back to the system default theme (some themes will break  app widgets )
+6. If none of the above works, please try restarting the phone
+7. Try changing other launcher programs to rule out the problem from the launcher app.

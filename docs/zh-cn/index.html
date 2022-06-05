@@ -49,6 +49,13 @@
         // 修复繁体版本的跳转问题
         '/%2F=': '/guide/hello_lifeup'
       },
+      tabs: {
+        persist: true,      // default
+        sync: true,      // default
+        theme: 'classic', // default
+        tabComments: true,      // default
+        tabHeadings: true       // default
+      },
       plugins: [
         // function (hook) {
         //     var footer = [
@@ -102,6 +109,7 @@
   <script src="./js/search.min.js"></script>
   <script src="./js/docsify-themeable.min.js"></script>
   <script src="./js/docsify-pagination.min.js"></script>
+  <script src="./js/docsify-tabs.js"></script>
 </body>
 
 </html>
