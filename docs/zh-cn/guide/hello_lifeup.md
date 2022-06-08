@@ -67,12 +67,12 @@
 
 ---
 应用的功能模块有：
-- [任务](https://wiki.lifeupapp.fun/zh-cn/#/guide/hello_lifeup?id=_1-%e4%bb%bb%e5%8a%a1)
-- [属性](https://wiki.lifeupapp.fun/zh-cn/#/guide/hello_lifeup?id=_2-%e5%b1%9e%e6%80%a7)
-- [商品](https://wiki.lifeupapp.fun/zh-cn/#/guide/hello_lifeup?id=_3-%e5%95%86%e5%93%81)
-- [成就](https://wiki.lifeupapp.fun/zh-cn/#/guide/hello_lifeup?id=_4-%e6%88%90%e5%b0%b1)
-- [番茄](https://wiki.lifeupapp.fun/zh-cn/#/guide/hello_lifeup?id=_5-%e7%95%aa%e8%8c%84)
-- 感想 - 🚧
+- [任务](/guide/hello_lifeup?id=_1-%e4%bb%bb%e5%8a%a1)
+- [属性](/guide/hello_lifeup?id=_2-%e5%b1%9e%e6%80%a7)
+- [商品](/guide/hello_lifeup?id=_3-%e5%95%86%e5%93%81)
+- [成就](/guide/hello_lifeup?id=_4-%e6%88%90%e5%b0%b1)
+- [番茄](/guide/hello_lifeup?id=_5-%e7%95%aa%e8%8c%84)
+- [感想](/guide/hello_lifeup?id=_5-%e7%95%aa%e8%8c%84)
 - 世界 - 🚧
 
 人升的功能是模块化设计的，你可以仅使用自己想要的功能模块。
@@ -574,8 +574,6 @@
 
 #### # 联动使用
 
-> 已经在其他模块描述过的联动此处不再赘述
-
 - **任务：**
    - 可以在完成任务时，为任务添加感想，支持按任务筛选感想列表
    - 可以在历史等页面，为逾期、放弃的任务添加感想
@@ -613,7 +611,7 @@
 
 #### 如果你在使用途中遇到了疑惑的地方，亦或者是遇到了应用崩溃、bug，
 
-欢迎加入QQ群，或者通过邮件咨询我们（**`关于`页面能够一建加群**，邮箱地址kei.ayagi@gmail.com）。
+欢迎加入QQ群，或者通过邮件咨询我们（`关于`**页面能够一建加群**，邮箱地址 kei.ayagi@gmail.com）。
 
 为了让群友或者我们能直观了解你的咨询，也为了你的咨询能更快得到解答，
 
