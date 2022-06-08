@@ -16,7 +16,8 @@ If the app really helps you, please consider buy us a coffee :)
 If you come across:
 
 - Reminders do not take effect
-- The Pomodoro does not remind in the background; the commodity countdown is invalid in the background
+- The Pomodoro does not remind in the background; the commodity countdown is invalid in the
+  background
 - Widget can't finish counting items, can't enter item details
 - Widget refresh exception
 
@@ -25,6 +26,8 @@ If you come across:
 ## Toc
 
 ### Universal
+
+[Why is there no XX language? Or why is the translation incomplete and displayed in English?](/guide/faq?id=why-is-there-no-xx-language-or-why-is-the-translation-incomplete-and-displayed-in-english)
 
 [Can I hide the World module if I don't need it?](/guide/faq?id=can-i-hide-the-world-module-if-i-dont-need-it)
 
@@ -102,13 +105,24 @@ If you come across:
 
 ## Universal
 
+##### Why is there no XX language? Or why is the translation incomplete and displayed in English?
+
+Languages and translations for *LifeUp* are maintained by the community.
+
+You are more than welcome to contribute translated texts.
+
+We will add the latest translated text to the app with every update.
+
+https://crowdin.com/project/lifeup
+
 ##### Can I hide the World module if I don't need it?
 
 Sure!
 
 The entire bottom navigation bar of LifeUp supports customs.
 
-You can go to the `[Settings]` - `[Display]` - `[Module Config]` page to customize your bottom navigation bar.
+You can go to the `[Settings]` - `[Display]` - `[Module Config]` page to customize your bottom
+navigation bar.
 
 ##### How to initialize the overdue and given-up count in the "Me" page?
 
