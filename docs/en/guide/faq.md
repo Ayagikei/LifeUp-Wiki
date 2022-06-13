@@ -25,6 +25,12 @@ If you come across:
 
 ### Universal
 
+[I downloaded it through Google Play. If I am not satisfied, how can I get a refund?](/guide/faq?id=why-is-there-no-xx-language-or-why-is-the-translation-incomplete-and-displayed-in-english)
+
+[Is my data privacy and safety?](/guide/faq?id=is-my-data-privacy-and-safety)
+
+[Since the server does not store data, how can I back up the data?](/guide/faq?id=since-the-server-does-not-store-data-how-can-i-back-up-the-data)
+
 [Why is there no XX language? Or why is the translation incomplete and displayed in English?](/guide/faq?id=why-is-there-no-xx-language-or-why-is-the-translation-incomplete-and-displayed-in-english)
 
 [Can I hide the World module if I don't need it?](/guide/faq?id=can-i-hide-the-world-module-if-i-dont-need-it)
@@ -102,6 +108,32 @@ If you come across:
 [Contact us!](/guide/faq?id=contact-us!)
 
 ## Universal
+
+##### I downloaded it through Google Play. If I am not satisfied, how can I get a refund?
+
+Both we and Google Play know that an app is difficult to satisfy everyone.
+
+As long as you uninstall the app within a period of time (usually 24 hours), you can get the
+automatic refund of Google Play.
+
+If you exceed this time, please contact our mailbox kei.ayagi@gmail.com and provide your GPA order
+number, we will assist with the refund.
+
+##### Is my data privacy and safety?
+
+Yes, you can
+check [our privacy policy documents](https://wiki.lifeupapp.fun/en/#/introduction/privacy-terms) to
+get more information.
+
+TL;DR: Except for the world module (similar to the function of sharing design), other data will not
+pass through our server, it will only be stored in your device. The same is true of the pictures and
+other information you choose. **You can also choose offline mode.**
+
+##### Since the server does not store data, how can I back up the data?
+
+*LifeUp* supports export and import data functions.
+
+You can also set up the WebDAV server, Google Drive or Dropbox for automatic backup.
 
 ##### Why is there no XX language? Or why is the translation incomplete and displayed in English?
 

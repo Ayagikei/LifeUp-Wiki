@@ -36,15 +36,29 @@ But before your use, you may want to know the following information:
 
 - **Is my data privacy and safety?**
 
-  Yes, you can check [our privacy policy documents](https://wiki.lifeupapp.fun/en/#/introduction/privacy-terms) to get more information.
+  Yes, you can
+  check [our privacy policy documents](https://wiki.lifeupapp.fun/en/#/introduction/privacy-terms)
+  to get more information.
 
-  TL;DR: Except for the world module (similar to the function of sharing design), other data will not pass through our server, it will only be stored in your device. The same is true of the pictures and other information you choose. **You can also choose offline mode.**
+  TL;DR: Except for the world module (similar to the function of sharing design), other data will
+  not pass through our server, it will only be stored in your device. The same is true of the
+  pictures and other information you choose. **You can also choose offline mode.**
 
 - **Since the server does not store data, how can I back up the data?**
 
   LifeUp supports export and import data functions.
 
   You can also set up the WebDAV server, Google Drive or Dropbox for automatic backup.
+
+- **How can I view more FAQs about app usage?**
+
+  You can always find the link of **the FAQ page** in the app-`sidebar`-`Q&A`.
+
+  Or you could just remember our website:
+
+  https://wiki.lifeupapp.fun/en/#/guide/faq
+
+  > If you use a computer, you can get a better reading experience.
 
 
 
