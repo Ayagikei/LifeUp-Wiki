@@ -2,13 +2,11 @@
 
 > Some parts of this article use machine translation, and the text may not be accurate. Welcome to revise. 
 
-Due to the limited time and energy of the three independent developers which develop the app in their spare time, in order to quickly implement the entire incentive system, there are still many imperfect functions/details/interaction UI in the app, which can only be compensated by time.
+Due to the limited time and energy of the three independent developers which develop the app in out spare time, in order to quickly implement the entire incentive system, there are still many imperfect functions/details/interaction UI in the app, which can only be compensated by time.
 
-If you help us to promote the application (whether it is to friends or app market reviews, or articles, videos), perhaps we can obtain more development/design resources to make `LifeUp` more perfect.
+If you help us to recommend the application, perhaps we can obtain more development/design resources to make `LifeUp` more perfect!
 
 If the app really helps you, please consider buy us a coffee :)
-
-<iframe src="html/buymeacoffe.html" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="80px"> </iframe>
 
 
 ## Compatibility configuration
@@ -375,3 +373,10 @@ Please feel free to reach out at us by email at kei.ayagi@gmail.com.
 Or you can add a new issue in our Github page:
 
 https://github.com/Ayagikei/LifeUp/issues
+
+
+##### Would like to buy us a coffee?
+
+You can buy us a coffee in the app [About] page or in the following website:
+
+<iframe src="html/buymeacoffe.html" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="80px"> </iframe>
