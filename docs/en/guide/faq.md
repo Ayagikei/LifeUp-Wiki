@@ -420,8 +420,14 @@ Or you can add a new issue in our Github page:
 
 https://github.com/Ayagikei/LifeUp/issues
 
-
 ##### Would like to buy us a coffee?
+
+LifeUp has been in development and update for over 3 years and we will keep on it.
+
+If you think LifeUp has had a positive impact on your life and wish we could maintain it longer and
+bring more feature updates (even more platform versions and open apis).
+
+Please consider supporting us by buying coffee.
 
 You can buy us a coffee in the app [About] page or in the following website:
 

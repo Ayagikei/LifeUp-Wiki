@@ -661,21 +661,22 @@
 
 ---
 
-  
-
 ## 未找到答案？ :id=not_found
 
 你可以在应用内的`关于`页面加入 Q 群，或者找到我们的各种社群账号（知乎、Twitter、Reddit等等）。
+
+亦或者加入我们的QQ频道：
+
+![](http://cdn.lifeupapp.fun/image/qq_channel.jpg)
 
 ### 提问的智慧
 
 !> 为了让你更快得到解答，非常推荐先看看此处了解提问的艺术与智慧，这也是一门通用技能。
 
 **提问的智慧**原文：
+
 - 知乎：https://zhuanlan.zhihu.com/p/25258228
 - GitHub：https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/main/README-zh_CN.md
-
-
 
 提问典型反例：
 
