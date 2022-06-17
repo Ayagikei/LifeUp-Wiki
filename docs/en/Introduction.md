@@ -1,111 +1,132 @@
 # Introduction
 
+**LifeUp: Gamify To-Do & Habit**
+
 > LifeUp, to upgrade your life.
 
-*LifeUp* is a gamification To-Do List (Tasks List) application with many interesting gamified features.
+Custom your own gamify list with attribute, exp, coin, reward to stay productive.
 
+<b>Want a gamified and fun to-do & habit-tracking app to stay motivated, organized, and focused?</b>
 
+- Record and complete tasks to gain exp and coins, just like turn your life into an RPG and
+  productivity game.
+- Exp can improve your attributes and skill levels. And it will reflect your self-improvement.
+- Use coins to buy the item you want to reward or try to open your exclusive treasure chest. This
+  can be used for you to balance your work and rewards, and to improve your focus.
+- Set up milestone achievements to auto-track your task progress and goals.
+- More! Pomodoro, Feelings, custom loot boxes and there's even a crafting feature!
 
-## Get Started
-Now available in Google Play as a paid application, which you can get it with one-time cost.
-There is no In-App-Purchase or Ad in the app.
+This is the gamification of your life, and you can customize your own gamification list for optimal
+motivation, which may be helpful for ADHD.
 
-<a href='https://play.google.com/store/apps/details?id=net.sarasarasa.lifeup&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1' target="_blank"><img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" style="
-    height: 100px;
+## How to get it
+
+Now available in` Google Play` and `Amazon AppStore` as a paid application, which you can get it
+with **one-time cost.**
+**There is no IAP or ADs in the app.**
+
+<a href='https://play.google.com/store/apps/details?id=net.sarasarasa.lifeup&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1' target="_blank"><
+img alt="Get it on Google Play"
+src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+style="
+height: 100px;
 "></a>
 
-If you feel dissatisfied after the purchase, feel free to contact the developer at any time to request a refund.
+If you feel dissatisfied after the purchase, feel free to contact the developer at any time to
+request a refund.
 
+## Key Features
 
-## Features
+🎨 <b>Attribute or skills</b>
+You can create your own skills such as fishing, writing. Try adding tasks to your skills and
+leveling them up!
+Track your level with achievements to unlock exclusive achievements and rewards when you reach the
+goal. The growth of attributes and skills in the application is also equivalent to digitally
+reflecting your growth, prompting you to stay more motivated and powerful.
 
-- **No Ads, No In-App Purchase**
+<br />
 
-- **Beautiful Material Design UI**
+🎁 <b>Shop</b>
+Abstract your task reward into the app as a shop item, whether it is a realistic reward, a reward
+for rest and entertainment time, or a stat reward in the app, such as taking a 30 mins break,
+watching a movie, or getting a random coin reward.
 
-- **Full basic To-Do Functions**
+<br />
 
-Remark, Reminder, Start Time, Deadline , Repeat, Target Times, History and List.
+🏆 <b>Achievements</b>
+In addition to dozens of built-in achievements waiting for you to unlock, you can create your own
+achievements to track your progress: such as auto tracking the number of task completions, levels,
+and item usage times. Or create your realistic milestones!
 
-✨ **Gamification Functions**
+<br />
 
-6 Attributes (Including Strength, Intelligence , Charm, Endurance, Vitality and Creative), EXP, Level, Coin, Random Coin
+⏰ <b>Pomodoro</b>
+Use the Pomodoro to stay connected and stay motivated. As a Pomodoro timer is completed, you can
+receive a virtual tomato reward. Decide whether to eat or sell 🍅? Or exchange 🍅 for other item
+rewards?
 
-What's more, You can customize the Attributes Icon and Text as you like.
+<br />
 
-🎨 **Easy-to-Use**
+🎲 <b>Loot boxes</b>
+You can set the Loot boxes effect for the shop item to receive a random reward. Are you wondering if
+the reward for completing a task is a hamburger or a salad?
 
-EXP and Coin reward can be auto calculated by Urgency and Difficulty Degree that you set up.
+<br />
 
-🏆 **Achievements**
+⚗️ <b>Crafting</b>
+Create your custom crafting recipe. In addition to being able to make sticks out of wood, you can
+try using 🔑+🔒= treasure chests.
 
-Up to 57 built-in Achievements waiting for you to unlock.
-What's more, you can create your own achievements which can be setup to auto calculate the progress.
+<br />
 
-🎁 **Shop**
+🎉 <b>One-time payment, No IAPs releated to features</b>
 
-Put items you want with the price you decide on shelves. Earn the coin by finishing tasks. Purchase the items and then USE them in your Inventory.
+<br />
 
-⏰ **Pomodoro**
+🔒️ <b>Offline first, but supports multiple backup methods</b>
+We value your privacy. The data is basically only stored locally on your phone and will not be
+transmitted to our server. And there is an offline mode. You can use Google Drive/Dropbox/WebDAV to
+sync your data, or export data locally for backup.
 
-As a pomodoro timer is completed, you can receive a virtual tomato reward.
-Decide whether to eat or sell tomatoes?
+<br />
 
-🎲 **Custom item effects: loot boxes**
+📎 <b>Complete to-do basic functions</b>
+Repeats, reminders, notes, deadlines, history, checklists, attachments, and more. Write down your
+to-dos and LifeUp will help you keep track of them.
 
-You can customize the effect of the shop item.
-For example you can create your own Loot boxes to get reward randomly.
+What's more, you can gamify your routine to-do list in LifeUp with tons of custom reward options.
 
-⚽ **Various Ways to Gain EXP**
+<br />
 
-You can even gain STRENGTH EXP by your daily steps,
-or maybe get ENDURANCE EXP by eating your tomatoes gained from the Pomodoro timer.
+🤝 <b>World module</b>
+You can browse or join task teams created by others. Complete tasks together and post your updates!
+Or browse and import a variety of shop item rewards settings and random tasks.
 
-🤝 **Community**
+<br />
 
-Join the team you like, complete team task, submit your activity and so on.
+🔖 <b>Feelings</b>
+When completing tasks, simply record your thoughts and submit pictures. This can be used for your
+simple little notes.
 
-- **Feelings**
+<br />
 
-Record your complete feelings by text and pictures.
+🚧 <b>More features!</b>
 
-- **Widget**
-
-App Widget is available, tasks can be managed from the Home Screen.
-
-- **Theme Color**
-
-23 built-in color themes
-
-- **Dark Theme**
-
-- **Lots of Settings**
-
-Such as EXP punishment factor/coin punishment factor.
-Hiding any module that you don't need.
-
-- **Local/WebDAV Backup/Restore**
-
-Backup or restore your data to file system.
-
-- **Network is Unneeded**
-
-Most features of LifeUp can be used without network connections.
-
-- **Keep Updating New Functions**
-
+- App widgets
+- Dozens of theme colors
+- Night mode(dark theme)
+- Lots of statistic
+- Keep updating...
 
 ## Support & Help
 
-- Language: Please note that currently only **English, Turkish, Portuguese, Simplified Chinese and Tranditional Chinese** available. 
-As a Indie application, we can not afford the translation fee for more language. 
-However, everyone can contribute their translation.
+- Language: The language of the app is translated by community contributions, you can
+  check https://crowdin.com/project/lifeup
 
-- Price: As the application continues to be updated and improved, and new features are added, the price may be adjusted accordingly. 
+- Refund: Google Play may automatically request a refund if you uninstall a paid app within a few
+  hours of purchase. Of course, you can always contact us at the email address below for a refund or
+  assistance. <b>Please consider giving it a try! </b>
 
-- Issues: If you have any applications issues or intent to refund, you're welcome to contact us via email below.
+- App Privacy Terms & Policy: http://wiki.lifeupapp.fun/en/#/introduction/privacy-terms
 
-- App Privacy Terms & Policy: http://lifeup.hdonghong.top/privacy-terms.html
-
-- [Contact Email](mailto:kei.ayagi@gmail.com;im.hdonghong@gmail.com)
-
+- Contact Email: kei.ayagi@gmail.com
