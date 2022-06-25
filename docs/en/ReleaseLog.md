@@ -8,15 +8,118 @@
 
 (Part of the translation is provided by Google Translate and may not be accurate)
 
+**1.89.2 (2022/6/23)**
+
+**♻️Improvements**
+
+1. Remove unnecessary CARMRA permission
+2. Update translations
+
+**🐛Fixes**
+
+1. Fixed some crashes
+
+**1.89.0-1.89.1 (2022/6/09)**
+
+**✨Features**
+
+1. Support multi-unlocking conditional achievements
+2. achievement details support viewing condition details and progress
+3. Tasks tag
+4. Repeative tasks with no deadline
+5. Hide items that're sold out or disabled purchase
+6. When setting the experience value reduction effect for the item, it is optional to limit the use
+7. The inventory page supports multi-select, select-all and batch returns
+8. Default task list supports archive operation
+9. Resign some pages such as settings, Q&A, shop tool bar, and add lists page
+10. Redesigned some in-app icons (default tasks card icons, coins, experience points, achievement
+    icons)
+11. Image storage moved to external app private path to prevent accidental file deletion
+
+**♻️Improvements**
+
+1. Added [Compatibility Configuration] article link to the settings page
+2. Pomodoro countdown - reset operation adds confirmations dialog
+3. Added description for task freeze
+4. Added description for achievement sub-categories
+5. In offline mode, add a button to exit offline mode on the edit profile page
+6. Optimize the statistics of plenty(negative) tasks, support the display of the given-up number of
+   times of the day and support the tracking of achievements
+7. Optimize application startup speed
+8. Achievement icon support to view larger image
+9. Added likes (received) statistics for random tasks
+10. Unified optimization of search interaction
+11. When selecting an item, switch to an empty list to display an empty layout (instead of loading)
+12. View the large image page to adapt to the current theme color settings
+13. Optimize the animation effect when the height of the selected item and task pop-up window
+    changes
+14. In backup settings, "Delete local data" also supports deleting media files
+15. Unified the storage and deletion logic of temporary files for taking pictures
+16. Distinguish between the default item icon and the icon that fails to load
+17. Enable the independent plenty setting for tasks by default now
+18. Optimize the refresh, animation logic and loading speed of the feelings page
+19. Some details pop-up windows add a shortcut "select" button
+20. When the main switches of "sound effects" and "vibration" in the advance settings page are
+    turned off, corresponding instructions are also provided in the tomato settings.
+21. New achievements and sub-category sorting optimization
+22. Base library and dependency upgrade
+23. Optimize the calculation method and speed of achievement progress
+24. Improve the calculation method of "target (repetitions) times" to follow the statistical
+    improvement of historical records, which is consistent with the number of times in the details
+25. When entering the number of coins and the number of target repetitions, all current values will
+    be automatically selected
+26. Optimize the error prompt when WebDAV configuration is abnormal
+27. Optimize the error prompt when the Google Drive backup is abnormal
+28. Now supports selecting the task name on the details page
+
+**🐛Fixes**
+
+1. Fixed the problem that the set count affects the tasks reward invalid after the tasks executes
+   the repetition logic
+2. Fix the sorting and grouping problem of the shop page
+3. Fixed the abnormal problem of page up and down in random tasks in some cases
+4. Fixed the problem that the pomodoro stat on the status page was inaccurate after using the
+   positive timing in some cases
+5. Fixed the issue where the repeat logic of team tasks would lose the count tasks type setting
+6. Fixed an issue where the task being selected by Tomato would be highlighted when selecting tasks
+   related to achievement conditions
+7. Fix the problem that the feeling picture is not stored independently and displaye issues
+8. Fix the problem that the failure prompt may pop up frequently when the login fails
+9. Some special input boxes for new tasks, teams, and subtasks should not allow keyboard input,
+   which may cause the app to crash
+10. Optimized the way to count the number of completions of unlimited items in app widgets,
+    consistent with the in-app
+11. Fixed the issue that after the ATM adjusts the interest rate, the interest may be calculated
+    based on the accumulated time and the adjusted interest rate
+12. Fixed an issue where frozen tasks might still be displayed in the smart list
+13. Optimized the problem that the action button blocked by the selection bar can still be clicked
+    when certain objects (tasks, shop items) are selected
+14. Fixed an issue where changing the color of an item would not refresh the UI immediately 15.Fixed
+    an issue where suddenly setting a high interest rate after keeping the interest rate low (failed
+    to get 1 gold) may get huge interest
+15. Fixed the problem that the search box pops up after completing the task after opening the search
+    bar and using the product
+16. Fixed an issue where the number of in-app completions of the day might not match the widget
+    after changing the name of an infinite task
+17. Fixed weird animations when completing unlimited tasks
+18. Fixed an issue where copying a task would not copy the background of the task
+19. Fixed the problem that in some cases, the achievement conditions were completed, but the
+    achievement could not be unlocked
+20. Fixed date interval calculation exception issue (may potentially affect multiple logics)
+21. Fixed the problem that the feelings are not automatically filtered from the tasks detail page
+
 **1.88.4 (2022/4/21)**
 
 1. Fix the problem that warehouse search will cause crash
 2. Fix the display disorder of custom background and history page
 3. Fix the UI overlap problem when editing
-4. Fix the problem that the quantity may be displayed abnormally when the achievement is rewarded with goods
-5. Fix the problem that the completion times of achievement calculation items may not match the actual times in some special cases
+4. Fix the problem that the quantity may be displayed abnormally when the achievement is rewarded
+   with goods
+5. Fix the problem that the completion times of achievement calculation items may not match the
+   actual times in some special cases
 6. Fix the problem that the title may disappear when the history page is clicked quickly
-7. When creating or editing an item, after clicking on the property, the soft keyboard cannot be popped up by clicking the input box that is in focus again.
+7. When creating or editing an item, after clicking on the property, the soft keyboard cannot be
+   popped up by clicking the input box that is in focus again.
 8. Fixed the crash issue when setting monthly purchase limit in French language
 
 **1.88.3 (2022/4/09)**
