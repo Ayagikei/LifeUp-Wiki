@@ -8,6 +8,22 @@
 
 (Part of the translation is provided by Google Translate and may not be accurate)
 
+**1.89.3 (2022/7/05)**
+
+**♻️Improvements**
+
+1. Optimize the judgment of the sliding switch list
+
+**🐛Fixes**
+
+1. Fix the problem that the calculation may not be completed when there are a lot of achievement
+   conditions
+2. Fix the problem that the notification reminder of the indefinite task will display an abnormal
+   deadline
+3. Fixed the issue that editing the background of an item would affect the copied item after copying
+   an item
+4. Fix the problem that the skill of editing team tasks may not be inherited
+
 **1.89.2 (2022/6/23)**
 
 **♻️Improvements**
