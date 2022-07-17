@@ -1,7 +1,7 @@
 - Introduction
 
   - [Introduction](Introduction.md)
-  - [Download]((introduction/download.md)
+  - [Download](introduction/download.md)
   - [Screenshots](Screenshots.md)
   - [Release Log](ReleaseLog.md)
   - [Support us](Support_us.md)
