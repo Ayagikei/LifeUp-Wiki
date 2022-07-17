@@ -1,13 +1,10 @@
 - Introduction
 
-  - [Introduction to LifeUp](Introduction.md)
-
+  - [Introduction](Introduction.md)
+  - [Download]((introduction/download.md)
   - [Screenshots](Screenshots.md)
-
   - [Release Log](ReleaseLog.md)
-
   - [Support us](Support_us.md)
-
   - [Privacy Terms & Policy](introduction/privacy-terms.md)
 - Getting Started
 
