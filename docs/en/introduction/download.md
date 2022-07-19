@@ -7,7 +7,7 @@
 
 </p>
 
-LifeUp is currently released as a paid app on Google Play and the Amazon Appstore.
+LifeUp is currently released as a paid app on Google Play <del>and the Amazon Appstore</del>.
 **With one purchase, you get access to all features.**
 
 In Google Play, if you are not satisfied after paying, you can contact us for a refund.
