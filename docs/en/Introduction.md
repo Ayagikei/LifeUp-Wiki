@@ -21,19 +21,9 @@ motivation, which may be helpful for ADHD.
 
 ## How to get it
 
-Now available in` Google Play` and `Amazon AppStore` as a paid application, which you can get it
-with **one-time cost.**
-**There is no IAP or ADs in the app.**
+Check the [Download](introduction/download.md) page.
 
-<a href='https://play.google.com/store/apps/details?id=net.sarasarasa.lifeup&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1' target="_blank"><
-img alt="Get it on Google Play"
-src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
-style="
-height: 100px;
-"></a>
 
-If you feel dissatisfied after the purchase, feel free to contact the developer at any time to
-request a refund.
 
 ## Key Features
 

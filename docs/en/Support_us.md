@@ -23,7 +23,7 @@ And suggestions is always welcome.
 
 If the app really helps you, please consider buy us a coffee :)
 
-[BuyMeACoffee](../html/buymeacoffe.html ':include :type=iframe width=210px height=80px')
+[Buy Me A Coffee](../html/buymeacoffe.html ':include :type=iframe width=210px height=80px')
 
 
 ## Translator
