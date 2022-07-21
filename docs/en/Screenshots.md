@@ -4,23 +4,23 @@
 
 ![Tasks List](/_media/screenshots/tiny1.png ':size=35%')
 
-## Tasks List in Compact Mode
+## Reward
 
 ![Tasks List](/_media/screenshots/tiny2.png ':size=35%')
 
-## Attributes
+## Shop
 
 ![Tasks List](/_media/screenshots/tiny3.png ':size=35%')
 
-## Shop (self-reward feature)
+## Achievements
 
 ![Tasks List](/_media/screenshots/tiny4.png ':size=35%')
 
-## Community
+## Attributes
 
 ![Tasks List](/_media/screenshots/tiny5.png ':size=35%')
 
-## Achievements
+## World
 
 ![Tasks List](/_media/screenshots/tiny6.png ':size=35%')
 

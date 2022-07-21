@@ -38,7 +38,9 @@ But before your use, you may want to know the following information:
 
 - **Is my data privacy and safety?**
 
-  Yes, you can
+  Yes, We value your privacy!
+
+  You can
   check [our privacy policy documents](https://wiki.lifeupapp.fun/en/#/introduction/privacy-terms)
   to get more information.
 
@@ -83,7 +85,8 @@ But before your use, you may want to know the following information:
 
 ## Incentive system
 
-![](_media/hello_lifeup/Incentive system.png)
+![](_media/hello_lifeup/incentive_system.png)
+
 ---
 
 ## Features

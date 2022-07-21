@@ -6,31 +6,39 @@ We do not collect personal information unless provided by users.
 
 For example your name, email address etc., where you have provided it for feedback or subscription purposes. We do not share these information with another party.
 
-#### 1.1 Login and Third Party Authorization
+#### 1.1 User information (third-party authorization)
 
 ##### Google/Facebook Sign In
 
-Only after you confirm the authorization to log in, we will create an account with the nickname and profile picture you authorized to provide (and will not include information such as email accounts).
+**Only after you confirm the authorization to log in,** we will create an account with the nickname
+and profile picture you authorized to provide (and will not include information such as email
+accounts).
 
-#### Google Drive
+##### Google Drive
 
-Since Google Drive backups depend on email addresses, *LifeUp* will apply for email address permission when you authorize Google Drive. But this address will only be used locally, *LifeUp* will not pass it to the application server and storage.
+Since Google Drive backups depend on email addresses, *LifeUp* will apply for email address
+permission when you authorize Google Drive. **But this address will only be used locally, *LifeUp*
+will not pass it to the application server and storage.**
 
-And *LifeUp* only applies for app-specific storage, which means we don't have permission to access your private files.
+And *LifeUp* only applies for app-specific storage, which means we don't have permission to access
+your private files.
 
-#### DropBox
+##### DropBox
 
-After you authorize DropBox, the relevant information will only be kept on your device for backup. and is not passed to the application server.
+After you authorize DropBox, **the relevant information will only be kept on your device for backup.
+and is not passed to the application server.**
 
-And *LifeUp* only applies for app-specific storage, which means we don't have permission to access your private files.
+And *LifeUp* only applies **for app-specific storage, which means we don't have permission to access
+your private files.**
 
-#### WebDAV Server
+##### WebDAV Server
 
-Your WebDAV URL, account, and password information will only be stored locally and will not be sent to the application server. And the password is stored encrypted in the database.
+**Your WebDAV URL, account, and password information will only be stored locally and will not be
+sent to the application server.** And the password is stored encrypted in the database.
 
-#### Offline Mode
+##### Offline Mode
 
-***LifeUp* is also fully allowed in offline mode, just without access to the "world" module (community sharing).**
+***LifeUp* is also fully allowed in offline mode, just it can not access to the "world" module.**
 
 #### 1.2 Permissions
 
@@ -67,25 +75,31 @@ For example, all the local tasks you created, all the feelings recorded, the ach
 
 For example, the team you created in the "World" module, the activities you published after completing the team tasks, the shop items that are actively shared, and so on.
 
-#### 1.4 Crash Report
+#### 1.4 Performance data and crash reports
 
-The app uses Firebase to collect crash information and performance statistics.
+We use [Google Firebase](https://firebase.google.com/) and [Sentry](https://sentry.io/) to collect
+user performance data and crash reports to track and fix issues.
 
-Information collected by Firebase is sent to Google Firebase and will not contain any user-related information or user-created content.
+This performance data may include your device model, network status, instance ID, when the problem
+occurred, and related pages, **but this data will not be associated with your user data **(Does not
+include your nickname, user id, email address and any contact information, and will not collect the
+content you enter and create) and will only be used to analyze the problem and improve performance.
 
-This information will be used by us to fix crashes, improve performance, etc.
+And this data is only temporarily stored by Firebase and Sentry for a period of time, and we will
+not share it with third parties.
 
-#### 1.5 Account deletion/Data deletion
+#### 1.5 Data deletion
 
-You can delete server remote data in the app by yourself. 
+You can delete server remote data in the app by yourself in the Settings page.
 
-As for the local data, the corresponding switch is also provided, and you can also choose to uninstall the application directly to destroy the data.
+The local data can be deleted directly by uninstalling the application.
 
 
 ### 2. Agreement
 
-By using this App you agree to the terms of this privacy policy. 
+By using this App you agree to the terms of this privacy policy.
 
 You agree that you are responsible for your own data.
 
-We are not responsible in any way for any loss of data caused by or in connection with use of this App since this is an offline-first application. 
+We are not responsible in any way for any loss of data caused by or in connection with use of this
+app since this is an offline-first application. 

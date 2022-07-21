@@ -32,10 +32,9 @@ Help us the app will also be a great help, we would love to app support various 
 
 If the app does not support your native language, you can consider assisting us in translating.
 
-Or if you find any grammatical errors, please cosider correcting them.
+Or if you find any grammatical errors, please consider correcting them.
 
-
-[Github Repository of All Text](https://github.com/Ayagikei/LifeUp-Translation)
+[GitHub Repository of All Text](https://github.com/Ayagikei/LifeUp-Translation)
 
 [English text](https://github.com/Ayagikei/LifeUp-Translation/blob/master/values/strings.xml)
 
