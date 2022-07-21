@@ -2,9 +2,14 @@
 
 ### 1. Personal Information
 
-We do not collect personal information unless provided by users. 
+LifeUp is an offline-first app. We do not actively collect user data, for example your name, email
+address. You can optionally provide some data to authorize login to access the world module,
+authorize Google Drive or Dropbox to obtain cloud backup capabilities, etc.
 
-For example your name, email address etc., where you have provided it for feedback or subscription purposes. We do not share these information with another party.
+We use Google Firebase and Sentry to collect problem reports and performance data only for
+analytical purposes.
+
+The detailed data collection and processing methods for each function are shown below.
 
 #### 1.1 User information (third-party authorization)
 
@@ -40,6 +45,7 @@ sent to the application server.** And the password is stored encrypted in the da
 
 ***LifeUp* is also fully allowed in offline mode, just it can not access to the "world" module.**
 
+
 #### 1.2 Permissions
 
 #### Storage
@@ -64,16 +70,22 @@ The application also provides the function of writing events to the system calen
 
 **This function will require calendar read and write permissions, And this permission will require user authorization only when the user uses the corresponding function. And *LifeUp* will only read events written by the application itself.**
 
-
 #### 1.3 Data Storage
 
-**The application is an offline first application and does not have an build-in online synchronization function, so most of the data is stored locally on the user's mobile phone.**
+**The application is an offline first application and does not have an build-in online
+synchronization function, so most of the data is stored locally on the user's mobile phone.**
 
-For example, all the local tasks you created, all the feelings recorded, the achievements you designed, and the shop items.
+For example, all the local tasks you created, all the feelings recorded, the achievements you
+designed, and the shop items.
 
-**Only the content you actively share publicly in the "World" module will be stored on the server. And these contents all support deletion and destruction operations.**
+**Only the content you actively share publicly in the "World" module will be stored on the server.
+And these contents all support deletion and destruction operations.**
 
-For example, the team you created in the "World" module, the activities you published after completing the team tasks, the shop items that are actively shared, and so on.
+For example, the team you created in the "World" module, the activities you published after
+completing the team tasks, the shop items that are actively shared, and so on.
+
+At the same time, the vast majority of requests within the application will be transmitted in
+encrypted form.
 
 #### 1.4 Performance data and crash reports
 
@@ -81,7 +93,7 @@ We use [Google Firebase](https://firebase.google.com/) and [Sentry](https://sent
 user performance data and crash reports to track and fix issues.
 
 This performance data may include your device model, network status, instance ID, when the problem
-occurred, and related pages, **but this data will not be associated with your user data **(Does not
+occurred, and related pages, **but this data will not be associated with your user data** (Does not
 include your nickname, user id, email address and any contact information, and will not collect the
 content you enter and create) and will only be used to analyze the problem and improve performance.
 
@@ -97,7 +109,7 @@ The local data can be deleted directly by uninstalling the application.
 
 ### 2. Agreement
 
-By using this App you agree to the terms of this privacy policy.
+By using this application you agree to the terms of this privacy policy.
 
 You agree that you are responsible for your own data.
 

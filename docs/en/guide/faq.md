@@ -121,7 +121,9 @@ number, we will assist with the refund.
 
 ##### Is my data privacy and safety?
 
-Yes, you can
+Definitely, We value your privacy!
+
+You can
 check [our privacy policy documents](https://wiki.lifeupapp.fun/en/#/introduction/privacy-terms) to
 get more information.
 

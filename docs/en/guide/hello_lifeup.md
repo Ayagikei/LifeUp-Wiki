@@ -38,7 +38,7 @@ But before your use, you may want to know the following information:
 
 - **Is my data privacy and safety?**
 
-  Yes, We value your privacy!
+  Definitely, We value your privacy!
 
   You can
   check [our privacy policy documents](https://wiki.lifeupapp.fun/en/#/introduction/privacy-terms)
