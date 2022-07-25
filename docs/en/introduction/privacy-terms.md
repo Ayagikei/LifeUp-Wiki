@@ -9,6 +9,17 @@ authorize Google Drive or Dropbox to obtain cloud backup capabilities, etc.
 We use Google Firebase and Sentry to collect problem reports and performance data only for
 analytical purposes.
 
+Here are some data summaries:
+
+- **Nickname, Avatar, Gender**
+  Optional, used for the login function to access the "World" module, will be transferred to the server for storage, but can be changed and deleted
+- **Email**
+  Optional, for Google Drive sync, local storage, not transmitted to server
+- **WebDAV URL, Account and Password**
+  Optional, for WebDAV sync, local encrypted storage, not transmitted to server
+- **Crash information, performance data**
+  Transmitted to service providers (Google Firebase, Sentry) for problem and performance analysis, but never bound to user or device identifiers, nor contain user data
+
 The detailed data collection and processing methods for each function are shown below.
 
 #### 1.1 User information (third-party authorization)
@@ -44,6 +55,19 @@ sent to the application server.** And the password is stored encrypted in the da
 ##### Offline Mode
 
 ***LifeUp* is also fully allowed in offline mode, just it can not access to the "world" module.**
+
+In offline mode,**you do not need to submit any information to our application server.**
+**Your nickname, avatar and other information will be stored and available locally.**
+
+We may only request the application server for the latest announcements and updates, which do not involve infomation submissions.
+
+Your interactions with other SDKs like Dropbox, Google Drive, Facebook. These requests will respond normally under your active use.
+
+In offline use, we may still use Google Firebase, Sentry to collect crash and problem reports, but as explained below, **this information does not contain user data and is not tied to user information. For performance analysis and crash resolution only, and only temporarily stored.**
+
+We will also communicate with Google Play Services to verify your license based on Google Play's request.
+
+If you want to deny all of the above communication, you can directly disable LifeUp's network request permission. This does not affect the use of LifeUp itself, but may affect the functionality of SDKs such as Google Drive.
 
 
 #### 1.2 Permissions
