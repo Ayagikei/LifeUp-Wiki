@@ -26,5 +26,9 @@ directly for free and access all features.
 
 If you want a direct free trial, you can download the 7-day trial version here.
 
-During the trial period, you can try out all the features of LifeUp. After the trial is over, you
-can choose to export your data and transfer to the Google Play or Amazon Appstore version.
+During the trial period, you can try out all the features of LifeUp.
+
+After the trial is over, you can choose to
+
+1. export your data and transfer to the Google Play <del>or Amazon Appstore</del> version.
+2. Purchase a redemption code from us to continue using this version.
