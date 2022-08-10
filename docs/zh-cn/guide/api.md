@@ -1,6 +1,14 @@
-# 开放接口与调用
+<h1 align="center" padding="100">开放接口与调用</h1>
 
-?> <b>创造无限可能性！</b><br/>在 v1.90 版本中，`人升`既开放了自己接口，欢迎任意外部应用联动。<br/>亦提供了商品的“链接”效果，用户可以直接使用商品来调用外部应用或者《人升》的接口。<br/>这可以使你的`人升`获得无限的可能性，但也需要你有一定的学习理解和动手能力。
+<p align="center">创造无限可能性！</p>
+
+
+
+
+
+?> 在 v1.90 版本中，`人升`既开放了多种功能接口，欢迎任意外部应用联动。<br/>亦提供了商品的“链接”效果，用户可以直接使用商品来调用外部应用或者《人升》的接口。<br/>这可以使你的`人升`获得无限的可能性，但也需要你有一定的学习理解和动手能力。
+
+
 
 ## 场景示例
 
@@ -435,6 +443,99 @@ id 的获取方法为「实验」页面打开「开发者模式」，然后在�
 | ---- | ------ | ------------- | ---- | -------- | --------------------------------------------- |
 | id   | 条件id | 大于 0 的数字 | 2    | 是       | 获取方式请查看上文 「基础知识 - 人升数据 ID」 |
 
+<br/>
+
+### 特殊接口
+
+### 弹窗
+
+**方法名：**confirm_dialog
+
+**说明：**弹出一个选择弹窗，可以自定义标题、文本、积极按钮、消极按钮。点击按钮时也可以调用其他接口。
+
+**示例：**
+
+- [lifeup://api/confirm_dialog?title=你相信爱吗&positive_action=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3D相信&negative_action=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3D不相信](lifeup://api/confirm_dialog?title=你相信爱吗&positive_action=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3D相信&negative_action=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3D不相信)
+
+- 其他使用场景：
+
+  奖励二选一
+
+  分支选择
+
+| 参数            | 含义               | 取值            | 示例                                         | 是否必须 | 备注                                                         |
+| --------------- | ------------------ | --------------- | -------------------------------------------- | -------- | ------------------------------------------------------------ |
+| title           | 弹窗标题           | 任意文本        | 标题                                         | 是       |                                                              |
+| message         | 弹窗详细描述       | 任意文本        | 这是弹窗内容                                 | 否       |                                                              |
+| positive_text   | 积极按钮文案       | 任意文本        | 确定                                         | 否       |                                                              |
+| negative_text   | 消极按钮文案       | 任意文本        | 拒绝                                         | 否       |                                                              |
+| positive_action | 积极按钮的链接响应 | URL（其他接口） | lifeup:%2F%2Fapi%2Ftoast%3Ftext%3D你点了确定 | 否       | 实际上就是弹出消息接口经过转义的文本。转义规则可参考`基础知识-转义`。 |
+| negative_action | 消极按钮的链接响应 | URL（其他接口） | 同上                                         | 否       |                                                              |
+| cancel_action   | 取消弹窗的链接响应 | URL（其他接口） | 同上                                         | 否       |                                                              |
+
+<br/>
+
+
+#### 变量占位符
+
+「人升」提供了对参数的用户介入处理手段。
+
+| 占位符           | 含义                               | 示例                   |
+| ---------------- | ---------------------------------- | ---------------------- |
+| [$text\|标题]    | 文本占位符                         | [$text\|输入任务名称]  |
+| [$number\|标题]  | 数字占位符（不含小数点）           | [$number\|输入价格]    |
+| [$decimal\|标题] | 数字占位符（含小数点）             | [$number\|输入ATM利率] |
+| [$item]          | 选择商品，将被替换为商品id         | [$item]                |
+| [$task_category] | 选择任务清单，将被替换为任务清单id | [$task_category]       |
+
+**示例1：使用时，选择物品降价1金币**
+
+比如当你设置为某个商品降价的 api 后，**可能希望在调用的时候，再允许用户选择指定商品。**而非调用时就指定 id。
+
+以下 api 只能让 id 为 1 的商品降价 1 金币：
+
+```url
+lifeup://api/item?id=1&set_price=-1&set_price_type=relative
+```
+
+只需要将商品 id 修改为占位符`[$item]`，就可以实现调用的时候，用户能主动选择想要降价的商品：
+
+[lifeup://api/item?id=[$item|请选择你想要降价1金币的商品]&set_price=-1&set_price_type=relative](lifeup://api/item?id=[$item|请选择你想要降价1金币的商品]&set_price=-1&set_price_type=relative)
+
+
+
+**示例2：任务模板，只需要输入任务名称和选择清单，即可创建提前设置好的奖励模板**
+
+[lifeup://api/add_task?todo=[$text|输入任务名称]&notes=这是个任务的奖励模板&coin=10&coin_var=10&exp=2048&skills=1&skills=2&skills=3&category=[$task_category]](lifeup://api/add_task?todo=[$text|输入任务名称]&notes=这是个任务的奖励模板&coin=10&coin_var=10&exp=2048&skills=1&skills=2&skills=3&category=[$task_category])
+
+
+<br/>
+
+#### 结束回调
+
+所有接口你都可以加上`callback`参数，实现调用后回调该`URL`的处理。
+
+这也可以用于拼接多个接口，比如想要实现跳转后提示激励语：
+
+lifeup://api/goto?page=lab + lifeup://api/toast?text=callback
+
+可以使用`callback`参数，参考上文**基础知识-转义**，就可以写出这种的处理：
+
+[lifeup://api/goto?page=lab&callback=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3D测试callback](lifeup://api/goto?page=lab&callback=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3D测试callback)
+
+
+
+当然，你也完全可以为一个商品添加多个链接来实现该效果。
+
+该回调更多是用于：
+
+A应用 -> 人升 -> A应用
+
+或
+
+A应用 -> 人升 -> B应用
+
+<br/>
 
 ---
 

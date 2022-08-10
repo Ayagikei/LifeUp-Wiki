@@ -44,6 +44,14 @@ It is recommended to perform the following operations after encountering actual 
 
 ---
 
+### Specific steps for different mobile phone brands
+
+On the basis of Android, many mobile phone manufacturers have added a lot of additional configuration items to prevent applications from running in the background.
+
+**If you want to know how to configure a specific mobile phone manufacturer device, please check this site: https://dontkillmyapp.com/**
+
+---
+
 ### App Widgets not working
 
 1. First open LifeUp and let it run normally
