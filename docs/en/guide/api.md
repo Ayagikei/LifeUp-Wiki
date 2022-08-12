@@ -1,4 +1,4 @@
-<h1 align="center" padding="100">Open interface and call</h1>
+<h1 align="center" padding="100">Open interface</h1>
 
 <p align="center">Create endless possibilities! </p>
 
@@ -6,37 +6,37 @@
 
 
 
-?> In the v1.90 version, `LifeUp` has opened a variety of functional interfaces, and any external application linkage is welcome. <br/>It also provides the "link" effect of commodities, and users can directly use commodities to call external applications or the interface of "LifeUp". <br/>This can make your `LifeUp` get unlimited possibilities, but it also requires you to have a certain learning understanding and hands-on ability.
+?> In the v1.90 version, `LifeUp` has opened a variety of functional interfaces, and any external application integration is welcome. <br/>It also provides the "link" effect of commodities, and users can directly use commodities to call external applications or the interface of "LifeUp". <br/>This can make your `LifeUp` get unlimited possibilities, but it also requires you to have a certain learning understanding and hands-on ability.
 
 
 
 ## Scenario example
 
-| Caller | Scenario | Remarks |
+| Caller | Scenario | Notes |
 | ----------------------------------------- | ------- -------------------------------------------------- --- | -------- |
-|**LifeUp->external application**<br/>The "link" effect of the shop item| After using the shop item:<br/>1. Use a browser to visit a webpage<br/>2. Jump to WeChat and scan Scan, or specify a small program<br/>3. Automatically add accounting records ([such as "Qianji" supports accounting interface](http://docs.qianjiapp.com/plugin/auto_tasker.html))<br/ >4. ... (as long as the external application supports this method call) | can be called by any user |
-|**LifeUp->LifeUp**<br/>The "link" effect of the shop item| After using the shop item:<br/>1. Open a certain page of LifeUp<br/>2. Increase the ATM interest rate<br/ >3. Raise the price of a shop item<br/>4. Complete a task<br/>5. Pop up a custom text message<br/>6. Create a task reward template, just enter a name to automatically create a task<br/> br/>7. More in-app operations... | 👑For members only |
-|**External application/webpage->LifeUp** | External application linkage/with automation software/self-developed application:<br/>1. The automated tool judges that it is home, and automatically hits the "go home" card<br/> 2. Reach an untouched place, automatically unlock achievements<br/>3. Complete the goal, swipe the NFC card, automatically punch in the task<br/>4. Capture other focus notification messages, automatically add timing records to the promotion<br/> br/>5. Capture the notification of fitness software, and automatically issue "strength" experience points.<br/>6. When xx conditions are triggered, automatically issue gold coins and commodity rewards<br/>7. ... | 👑Members only use |
+|**LifeUp->external application**<br/>The "link" effect of the shop item| After using the shop item:<br/>1. Use a browser to visit a webpage<br/>2. Jump to WeChat and scan Scan, or specify a small program<br/>3. Automatically add accounting records ([such as "Qianji" supports accounting interface](http://docs.qianjiapp.com/plugin/auto_tasker.html))<br/ >4. ... (as long as the external application supports this method call) |  |
+|**LifeUp->LifeUp**<br/>The "link" effect of the shop item| After using the shop item:<br/>1. Open a certain page of LifeUp<br/>2. Increase the ATM interest rate<br/ >3. Raise the price of a shop item<br/>4. Complete a task<br/>5. Pop up a custom text message<br/>6. Create a task reward template, just enter a name to automatically create a task<br/> br/>7. More in-app operations... |  |
+|**External application/webpage->LifeUp** | External application linkage/with automation software/self-developed application:<br/>1. The automated tool judges that it is home, and automatically hits the "go home" card<br/> 2. Reach an untouched place, automatically unlock achievements<br/>3. Complete the goal, swipe the NFC card, automatically punch in the task<br/>4. Capture other focus notification messages, automatically add timing records to the promotion<br/> br/>5. Capture the notification of fitness software, and automatically issue "strength" experience points.<br/>6. When xx conditions are triggered, automatically issue gold coins and commodity rewards<br/>7. ... |  |
 
 ---
 
 ## Recommendations
 
-**If you are not familiar with basic knowledge of network or computer,** you can search and purchase related shop items directly in the window; you can also try to edit parameters according to examples or other people's shop items.
+**If you are not familiar with basic knowledge of programming or computer,** you can search and import related shop items directly in the [World] -  [Market]; you can also try to edit parameters according to examples or other people's shop items.
 
-**If you are familiar with the relevant basic knowledge,** you can try to read the following interface documentation and edit the desired effect yourself. And use it with automation software such as Tasker.
+**If you are familiar with the relevant basic knowledge,** you can try to read the following interface documentation and edit the desired effect yourself. And use it with automation software such as *[Tasker](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm)*.
 
-**If you have programming foundation,** you can try to develop web pages, Android applications and LifeUp linkage. This web page is a super simple example.
+**If you have programming foundation,** you can try to develop web pages, Android applications to make them integrated with LifeUp. This web page and customized versions of Wordle are some examples.
 
 ---
 
 ## Call external application
 
-If you want to call an external application in LifeUp, you only need to add a "link" effect to the shop item, and **enter a web page or application-specific link**, and then use the shop item to complete the call.
+If you want to call an external application in *LifeUp*, you only need to add a "Link" effect to the shop item, and **enter a web page or application-specific link**, and then use the shop item to complete the call.
 
 
 
-**The following are some examples (you can also go to "World"-"Showcase"-"Call" to view items with interface call effects):**
+**The following are some examples (you can also go to "World"-"Market"-"Link" to view public items with interface call effects):**
 
 - Browser to open Baidu: https://www.baidu.com
 - WeChat: [weixin://](weixin://)
@@ -51,11 +51,11 @@ If you want to call an external application in LifeUp, you only need to add a "l
 - Automatic accounting interface of Qianji: [Automatic Accounting Interface · Qianji User Guide (qianjiapp.com)](http://docs.qianjiapp.com/plugin/auto_tasker.html)
 - ...
 
-In theory, as long as the other apps opens the corresponding link, you can jump by using the shop item.
+In theory, as long as the external APP opens the corresponding link, you can jump by using the shop item.
 
 **You can search for the application link you need by searching `URL Schemes` on Google. **
 
-**These links have nothing to do with "LifeUp", "LifeUp" only provides the link function. **
+**These links have nothing to do with "LifeUp", "LifeUp" only provides the jump link function. **
 
 **Therefore we do not and do not maintain a list of links. But you can view the public shop items contain the link effect in [World]-[Market]-[Link] page.**
 
@@ -68,7 +68,7 @@ In theory, as long as the other apps opens the corresponding link, you can jump 
 If you:
 
 - Need to call the "LifeUp" interface in "LifeUp", you only need to add a "link" effect to the shop item, and **specific link** according the APIs documents, and then use the shop item to complete the call.
-- Calling through the web page, you only need to jump to the LifeUp APIslink by hyperlink.
+- Calling through the web page, you only need to jump to the LifeUp APIs by hyperlink.
 - To call through the APP developed by yourself, you only need to use the Intent to jump to the corresponding interface link.
 - Called by an automated tool (such as Tasker), and fill in the corresponding API link in Tasker's Brower URL.
 
