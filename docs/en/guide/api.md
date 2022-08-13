@@ -15,8 +15,8 @@
 | Caller | Scenario | Notes |
 | ----------------------------------------- | ------- -------------------------------------------------- --- | -------- |
 |**LifeUp->external application**<br/>The "link" effect of the shop item| After using the shop item:<br/>1. Use a browser to visit a webpage<br/>2. Jump to WeChat and scan Scan, or specify a small program<br/>3. Automatically add accounting records ([such as "Qianji" supports accounting interface](http://docs.qianjiapp.com/plugin/auto_tasker.html))<br/>4. ... (as long as the external application supports this method call) |  |
-|**LifeUp->LifeUp**<br/>The "link" effect of the shop item| After using the shop item:<br/>1. Open a certain page of LifeUp<br/>2. Increase the ATM interest rate<br/ >3. Raise the price of a shop item<br/>4. Complete a task<br/>5. Pop up a custom text message<br/>6. Create a task reward template, just enter a name to automatically create a task<br/>7. More in-app operations... |  |
-|**External application/webpage->LifeUp** | External application linkage/with automation software/self-developed application:<br/>1. The automated tool judges that it is home, and automatically hits the "go home" card<br/> 2. Reach an untouched place, automatically unlock achievements<br/>3. Complete the goal, swipe the NFC card, automatically punch in the task<br/>4. Capture other focus notification messages, automatically add timing records to the promotion<br/> br/>5. Capture the notification of fitness software, and automatically issue "strength" experience points.<br/>6. When xx conditions are triggered, automatically issue gold coins and commodity rewards<br/>7. ... |  |
+|**LifeUp->LifeUp**<br/>The "link" effect of the shop item| **After using the shop item:**<br/>1. Open a certain page<br/>2. Increase the ATM interest rate<br/>3. The pop-up window allows the user to select the product and reduce the price of the product (price reduction coupon)<br/>4. Trigger a task to complete<br/>5. Pop up a custom motivational message<br/>6. Create a task reward template, just enter the name to automatically create a task<br/>7. Pop up The window asks the user for branch selection, creating a small contextual interaction<br/>8. More in-app operations... |  |
+|**External application/webpage->LifeUp** | **Configure automation tools:**<br/>1. Determine the time when the phone is turned on for the first time every day, complete the task of getting up early, or directly trigger the "getting up late" penalty<br/>2. After every 25 words, swipe A specific NFC card, automatic complete task<br/>3. The GPS determines that a new place is reached, and unlocks the "new place" achievement<br/>4. When connecting to the working WIFI every day, trigger the unlocking condition progress to increase. After accumulating 20 days, unlock the achievement of "Worker"<br/>5. Reward yourself with "arrive home" gold coins when connecting to your home WIFI for the first time every day<br/>6. Capture notifications from other Tomato or Focus software, and automatically record the timing Go to LifeUp<br/>7. Capture the completion or end notification of sports and learning software, and automatically issue "strength" and "knowledge" experience points<br/>8. ...<br/>**external Application linkage/self-developed application: **<br/>1. If you are not satisfied with the Pomodoro of "LifeUp": you can develop your own timing software, which can be a web application or Android application, and link with "LifeUp" through the interface to Add timing records or add rewards<br/>2. Modify some intelligence mini-games (such as a Wordle example below), when the game is successfully completed, trigger "LifeUp" to send rewards<br/>3. ... |  |
 
 ---
 
@@ -58,7 +58,7 @@ In theory, as long as the external APP opens the corresponding link, you can jum
 
 If you:
 
-- Need to call the "LifeUp" interface in "LifeUp", you only need to add a "link" effect to the shop item, and** specific link** according the APIs documents, and then use the shop item to complete the call.
+- Need to call the "LifeUp" interface in "LifeUp", you only need to add a "link" effect to the shop item, and **specific link** according the APIs documents, and then use the shop item to complete the call.
 - Calling through the web page, you only need to jump to the LifeUp APIs by hyperlink.
 - To call through the APP developed by yourself, you only need to use the Intent to jump to the corresponding interface link.
 - Called by an automated tool (such as Tasker), and fill in the corresponding API link in Tasker's Brower URL.
@@ -563,3 +563,72 @@ X application -> LifeUp -> Y application
 We very much welcome any form of integration from other developers.
 
 > More details will be provider soon...
+
+### Need more APIs?
+
+The API functionality is currently only in one version iteration.
+
+In the future, we will continue to add more APIs to meet more usage scenarios.
+
+If you need API scenarios, you can leave Issues on [Github](https://github.com/Ayagikei/LifeUp/issues/new/choose).
+
+<br/>
+
+
+### How to call
+
+#### Android
+
+```kotlin
+    /**
+    * Define a method to handle the uri
+    */
+    private fun call(context: Context, uriString: String){
+        try {
+            val intent = Intent(Intent.ACTION_VIEW).apply {
+                data = Uri.parse(uriString)
+            }
+            context.startActivity(intent)
+        }catch (e: Exception) {
+            e.printStackTrace()
+        }
+    }
+
+fun xxx() {
+        ...
+        // Then call it where appropriate
+        call(context, "lifeup://api/toast?text=You+learned+to+call!&type=1&isLong=true")
+        ...
+    }
+````
+
+<br/>
+
+#### Web page
+
+If the webpage is called, whether it can be triggered depends on the browser. Regular browsers such as Quark, Chrome, Edge are fine. But some other built-in browsers in the system may remind the user "whether to open Rensheng" every time it pops up.
+
+If you are developing your own embedded WebView application, you need to ensure that the WebView can handle the lifeup scheme.
+
+If you want to ensure a consistent experience, you can use the product link effect in "Rensheng" and check "Use built-in browser" to open it. But due to security settings, this way only supports HTTPS links (not HTTP)
+
+**HTML**
+
+Jump directly to the hyperlink
+
+````htm
+<a href="lifeup://api/toast?text=You+learned+to+call!&amp;type=1&amp;isLong=true" target="_blank" rel="noopener">Click here to call</a>
+````
+
+**Javascript**
+
+In fact, it is also called a hyperlink
+
+````javascript
+location.href='lifeup://api/reward?type=coin&content=consolation+prize&number=1'
+````
+
+<br/>
+
+### Application/Web/Automation Developer
+Let us know if you've developed anything related to LifeUp!
