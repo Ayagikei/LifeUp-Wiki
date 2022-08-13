@@ -6,7 +6,7 @@
 
 
 
-?> In the v1.90 version, `LifeUp` has opened a variety of functional interfaces, and any external application integration is welcome. <br/>It also provides the "URL" effect for shop items, and users can directly use commodities to call external applications or the interface of "LifeUp". <br/>This can make your `LifeUp` get unlimited possibilities, but it also requires you to have a certain learning understanding and hands-on ability.
+?> In the v1.90 version, `LifeUp` has opened a variety of functional interfaces, and any external application integration is welcome. <br/>It also provides the “URL” effect for shop items, and users can directly use commodities to call external applications or the interface of `LifeUp`. <br/>These features can give your `LifeUp` unlimited possibilities, but it also requires a little learning understanding and hands-on ability.
 
 
 
@@ -14,25 +14,25 @@
 
 | Caller | Scenario | Notes |
 | ----------------------------------------- | ------- -------------------------------------------------- --- | -------- |
-|**LifeUp->external application**<br/>The "link" effect of the shop item| After using the shop item:<br/>1. Use a browser to visit a webpage<br/>2. Jump to WeChat and scan Scan, or specify a small program<br/>3. Automatically add accounting records ([such as "Qianji" supports accounting interface](http://docs.qianjiapp.com/plugin/auto_tasker.html))<br/>4. ... (as long as the external application supports this method call) |  |
-|**LifeUp->LifeUp**<br/>The "link" effect of the shop item| **After using the shop item:**<br/>1. Open a certain page<br/>2. Increase the ATM interest rate<br/>3. The pop-up window allows the user to select the product and reduce the price of the product (price reduction coupon)<br/>4. Trigger a task to complete<br/>5. Pop up a custom motivational message<br/>6. Create a task reward template, just enter the name to automatically create a task<br/>7. Pop up The window asks the user for branch selection, creating a small contextual interaction<br/>8. More in-app operations... |  |
-|**External application/webpage->LifeUp** | **Configure automation tools:**<br/>1. Determine the time when the phone is turned on for the first time every day, complete the task of getting up early, or directly trigger the "getting up late" penalty<br/>2. After every 25 words, swipe A specific NFC card, automatic complete task<br/>3. The GPS determines that a new place is reached, and unlocks the "new place" achievement<br/>4. When connecting to the working WIFI every day, trigger the unlocking condition progress to increase. After accumulating 20 days, unlock the achievement of "Worker"<br/>5. Reward yourself with "arrive home" gold coins when connecting to your home WIFI for the first time every day<br/>6. Capture notifications from other Tomato or Focus software, and automatically record the timing Go to LifeUp<br/>7. Capture the completion or end notification of sports and learning software, and automatically issue "strength" and "knowledge" experience points<br/>8. ...<br/>**external Application linkage/self-developed application: **<br/>1. If you are not satisfied with the Pomodoro of "LifeUp": you can develop your own timing software, which can be a web application or Android application, and link with "LifeUp" through the interface to Add timing records or add rewards<br/>2. Modify some intelligence mini-games (such as a Wordle example below), when the game is successfully completed, trigger "LifeUp" to send rewards<br/>3. ... |  |
+|**LifeUp->Other Applications**<br/>Implemented through the "URL" effect of the shop item| **After using the shop item:**<br/>1. Use a browser to visit a webpage<br/>2. Jump to WeChat and scan Scan, or specify a small program<br/>3. Automatically add accounting records ([such as "Qianji" supports accounting interface](http://docs.qianjiapp.com/plugin/auto_tasker.html))<br/>4. ... (as long as the external application supports this method call) |  |
+|**LifeUp->LifeUp**<br/>Implemented through the "URL" effect of the shop item| **After using the shop item:**<br/>1. Open a specific page<br/>2. Increase the ATM interest rate<br/>3. The pop-up window allows the user to select the product and reduce the price of the product (price reduction coupon)<br/>4. Trigger a task to complete<br/>5. Pop up a custom motivational message<br/>6. Create a task reward template: just enter the name to create a task automatically<br/>7. Pop up The window asks the user for branch selection, creating a small contextual interaction<br/>8. More in-app operations... |  |
+|**External applications/webpages->LifeUp** | **Configure automation tools:**<br/>1. 1. Determine when the phone is turned on for the first time every day, complete the task of getting up early, or directly trigger the "getting up late" penalty<br/>2. After every 25 words, swipe a specific NFC card and automatically complete the task<br/>3. The GPS determines that a new place is reached, and unlocks the "new place" achievement<br/>4. When connecting to the working WIFI every day, trigger the unlocking condition progress to increase. After accumulating 20 days, unlock the achievement of "Worker"<br/>5. Reward yourself with "arrive home" gold coins when connecting to your home WIFI for the first time every day<br/>6. Capture notifications from other Tomato or Focus applications, and automatically record the timing  to `LifeUp`<br/>7. Capture the completion or end notification of sports and learning software, and automatically issue "strength" and "knowledge" experience points<br/>8. ...<br/>**External Application linkage/self-developed application:**<br/>1. If you are not satisfied with the Pomodoro of `LifeUp`: you can develop your own timing software, which can be a web application or Android application, and link with "LifeUp" through the interface to Add timing records or add rewards<br/>2. Modify some intelligence mini-games (such as a Wordle example below). When the game is successfully completed, trigger `LifeUp` to send rewards<br/>3. ... |  |
 
 ---
 
 ## Recommendations
 
-**If you are not familiar with basic knowledge of programming or computer,** you can search and import related shop items directly in the [World] -  [Market] - [Link] tag; you can also try to edit parameters according to examples or other people's shop items.
+**If you are not familiar with programming,** you can search and import special shop items directly in the [World] - [Market] - [Link] tag. You can also try to edit parameters to meet your need.
 
-**If you are familiar with the relevant basic knowledge,** you can try to read the following interface documentation and edit the desired effect yourself. And use it with automation software such as *[Tasker](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm)*.
+**If you are familiar with computer knowledge,** you can try to read the following interface documentation and edit the desired effect yourself. And use it with automation software such as [*Tasker*](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm).
 
-**If you have programming foundation,** you can try to develop web pages, Android applications to make them integrated with LifeUp. This web page and customized versions of Wordle are some examples.
+**If you have a programming foundation,** you can try to develop web pages or Android applications to make them integrated with LifeUp. This web page and customized versions of Wordle are some examples.
 
 ---
 
-## Call external application
+## Call other application
 
-If you want to call an external application in *LifeUp*, you only need to add a "Link" effect to the shop item, and** enter a web page or application-specific link**, and then use the shop item to complete the call.
+If you want to call an external application in *LifeUp*, you only need to add a "Link" effect to the shop item, **enter a web page or application-specific link**, and then use the shop item to trigger the call.
 
 
 
@@ -42,13 +42,15 @@ If you want to call an external application in *LifeUp*, you only need to add a 
 - Facebook: [fb://](fb://)
 - ...
 
-In theory, as long as the external APP opens the corresponding link, you can jump by using the shop item.
+
+
+Theoretically, as long as the external APP provides the URL, you can jump by using the shop item.
 
 **You can search for the application link you need by searching `URL Schemes` on Google.**
 
-**These links have nothing to do with "LifeUp", "LifeUp" only provides the jump link function.**
+**These links have nothing to do with `LifeUp`, `LifeUp` only provides the jump URL function.**
 
-**Therefore we do not and do not maintain a list of links. But you can view the public shop items contain the link effect in [World]-[Market]-[Link] page.**
+**Therefore we do not and do not maintain a list of URLs. But you can view the public shop items containing the link effect on the [World]-[Market]-[Link] page.**
 
 
 
@@ -58,16 +60,16 @@ In theory, as long as the external APP opens the corresponding link, you can jum
 
 If you:
 
-- Need to call the "LifeUp" interface in "LifeUp", you only need to add a "link" effect to the shop item, and **specific link** according the APIs documents, and then use the shop item to complete the call.
+- Need to call the `LifeUp` interface in `LifeUp`. You only need to add a "link" effect to the shop item, input **a specific URL** according to the APIs documents, and then use the shop item to complete the call.
 - Calling through the web page, you only need to jump to the LifeUp APIs by hyperlink.
 - To call through the APP developed by yourself, you only need to use the Intent to jump to the corresponding interface link.
-- Called by an automated tool (such as Tasker), and fill in the corresponding API link in Tasker's Brower URL.
+- Called by an automated tool (such as Tasker), fill in the corresponding API link in Tasker's Brower URL.
 
 
 
 **Some examples:**
 
-When you click the link below, "LifeUp" will pop up a prompt "You have learned to call APIs!".
+When you click the link below, "LifeUp" will a prompt "You have learned to call APIs!".
 
 [lifeup://api/toast?text=You+have+learned+to+call+APIs!&type=1&isLong=true](lifeup://api/toast?text=You+have+learned+to+call+APIs!&type=1&isLong=true)
 
@@ -107,9 +109,9 @@ Please see below for specific calling rules.
 | Type | Description |
 | -------- | ---------------------------------------- -------------------- |
 | Example | [lifeup://api/toast?text=You learned to call! &type=1&isLong=true](lifeup://api/toast?text=You learned to call!&type=1&isLong=true) |
-| interface format | fixed prefix/method name?parameter1=value1&parameter2=value2 |
-| fixed prefix | lifeup://api/ |
-| method name | toast |
+| Interface format | fixed prefix/method name?parameter1=value1&parameter2=value2 |
+| Fixed prefix | lifeup://api/ |
+| Method name | toast |
 | Parameters | ?text=You learned to call! &type=1&isLong=true |
 
 <br/>
@@ -129,9 +131,8 @@ If the value of your parameter contains special symbols such as +, space, =, %, 
 | & | Separator between parameters specified in URL | %26 |
 | = | The value of the specified parameter in the URL | %3D |
 
-For example, the text content in the above example, if the text to be finally prompted is: `You have learned to call APIs!`
-
-Then you need to replace the spaces to `+`, the final effect is:
+Take the interface of the above pop-up message as an example. If you want the final prompted text stands: `You have learned to call APIs!`
+Then you need to replace the spaces to +, the final effect is:
 
 [lifeup://api/toast?text=You+have+learned+to+call+APIs!&type=1&isLong=true](lifeup://api/toast?text=You+have+learned+to+call+APIs!&type=1&isLong=true)
 
@@ -139,11 +140,11 @@ Then you need to replace the spaces to `+`, the final effect is:
 
 ### Basics - LifeUp Data ID
 
-Almost all data storage in LifeUp basically has a unique id.
+Almost all data storage in LifeUp has a unique id.
 
-Some of the following interfaces support modifying** specified** shop items and completing** specified** tasks.
+Some of the following interfaces support modifying **specified** shop items and completing **specified** tasks.
 
-In order for "LifeUp" to find the corresponding data, you need to provide it with an id.
+For `LifeUp` to find the corresponding data, you need to provide it with an id.
 
 **You can enable "Settings" - "Labs" - "Developer Mode" to view the original id of the data on each detail page in the app.** 
 
@@ -167,7 +168,7 @@ After enabling "Developer Mode", view it on the "Custom Properties" page.
 
 #### Shop item id
 
-After enabling "Developer Mode", and then click on the shop item to view the details to view.
+After enabling "Developer Mode", click on the shop item to view the details.
 
 #### Achievement condition id
 
@@ -183,7 +184,7 @@ After customizing the unlock condition for the achievement "requires an external
 
 **Example:** [[lifeup://api/toast?text=Live+well,+eat+well!&type=1&isLong=true](lifeup://api/toast?text=Live+well,+eat+well!&type=1&isLong=true)]
 
-**Explanation:** The prompt "Live well, eat well!" pops up in a bonus style, and displays it for a longer time.
+**Explanation:** The prompt "Live well, eat well!" pops up in a bonus style and displays it for a longer time.
 
 > Click on the link of the example to test the effect
 
@@ -199,7 +200,7 @@ After customizing the unlock condition for the achievement "requires an external
 
 **Method name:** reward
 
-**Description:** Provide the reward directly, and the reason for the reward can be customized
+**Description:** Provide the reward directly. The reason for the reward can be customized.
 
 **Example:**
 
@@ -211,7 +212,7 @@ After customizing the unlock condition for the achievement "requires an external
 
   [lifeup://api/reward?type=exp&content=Learn+API+Calls&number=300&skills=2&skills=6](lifeup://api/reward?type=exp&content=Learn+API+Calls&number=300&skills=2&skills=6)
 
-- Obtained 1 fuzzy matching "treasure" item, and the reason for obtaining it is "Learn API Calls". And the reason will be displayed on the inventory history page:
+- Obtained 1 fuzzy matching "treasure" item, and the reason for getting it is "Learn API Calls". And the reason will be displayed on the inventory history page:
 
   [lifeup://api/reward?type=item&content=Learn+API+Calls&number=1&item_name=treasure](lifeup://api/reward?type=item&content=Learn+API+Calls&number=1&item_name=treasure)
 
@@ -231,7 +232,7 @@ After customizing the unlock condition for the achievement "requires an external
 
 **Method name:** penalty
 
-**Description:** Provide penalty directly, and the reason for penalty can be customized
+**Description:** Provide a penalty directly. The reason for the penalty can be customized.
 
 **Example:** *Basically the same as the reward interface
 
@@ -252,7 +253,7 @@ After customizing the unlock condition for the achievement "requires an external
 | type      | penalty type                  | Currently only supported: <br/>coin<br/>exp<br/>item | coin     | yes      | coin - coins<br/>exp - experience points<br/>item - shop items |
 | content   | reason for penalty            | any text                                             | Sleep In | Yes      |                                                              |
 | skills    | skills (attributes)           | array of numbers greater than 0                      | 1        | No       | Available only when type is exp<br/>Supported arrays (eg &skills=1&skills=2&skills=3)<br/>For how to obtain, see above The article "Basic Knowledge - LifeUp Data ID" |
-| number    | number of rewards             | a number greater than 0                              | 1        | Yes      | If it is a gold coin, the maximum value is 999999<br/>If it is an experience value, the maximum value is 99999<br/>If it is a item, the maximum value is 999 |
+| number    | number of rewards             | a number greater than 0                              | 1        | Yes      | If it is a coin, the maximum value is 999999<br/>If it is an experience value, the maximum value is 99999<br/>If it is a item, the maximum value is 999 |
 | item_id   | item id                       | number greater than 0                                | 1        | no*      | only available when type is item                             |
 | item_name | item name                     | any text                                             | treasure | no*      | only available when type is item, fuzzy matching with item names |
 | silent    | whether to disable UI prompts | true or false                                        | false    | no       | default is false                                             |
@@ -271,7 +272,7 @@ After customizing the unlock condition for the achievement "requires an external
 
 [lifeup://api/add_task?todo=This+is+an+automatically+added+task&notes=notes&coin=10&coin_var=1&exp=2048&skills=1&skills=2&skills=3&category=0&item_name=treasure](lifeup://api/add_task?todo=This+is+an+automatically+added+task&notes=notes&coin=10&coin_var=1&exp=2048&skills=1&skills=2&skills=3&category=0&item_name=treasure)
 
-**Explanation:** Add a content to the default list (id is 0) with the content "This is an automatically added task", the notes is "notes", the coin reward is random from 10 to 11, the experience value reward is 2048, the selected The skill ids are 1, 2, and 3 (generally corresponding to the first 3 built-in attributes), and the shop item reward is a fuzzy search for a "gold coin" shop item.
+**Explanation:** Add a task to the default list (id is 0) with the content "This is an automatically added task", the notes are "notes", the coin reward is random from 10 to 11, the experience value reward is 2048, the selected The skill ids are 1, 2, and 3 (generally corresponding to the first 3 built-in attributes). The shop item reward is a fuzzy search for a "treasure" shop item.
 
 | Parameter | Meaning | Type | Example | Required | Notes |
 | ----------- | -------------- | -------------------- | - --- | -------- | ------------------------------------- ----------------------- |
@@ -295,7 +296,7 @@ After customizing the unlock condition for the achievement "requires an external
 
 **Method name:** complete
 
-**Description:**Trigger task completion, only unfinished tasks will be searched
+**Description:** Trigger task completion. Only unfinished tasks will be searched.
 
 **Example:**
 
@@ -309,7 +310,7 @@ Each task has an id.
 
 For repeating tasks, the id will be refreshed every time, but the "task group id" will remain the same.
 
-The method of obtaining the id is to open the "Developer Mode" on the "Experiment" page, and then view it on the "Task Details" page.
+The method of obtaining the id is to open the "Developer Mode" on the "Labs" page and then view it on the "Task Details" page.
 
 | Parameter | Meaning | Type | Example | Required | Remarks |
 | ---- | -------------- | ------------- | ---- | -------- | - --------------------------------------------- |
@@ -347,7 +348,7 @@ The method of obtaining the id is to open the "Developer Mode" on the "Experimen
 
 **Method name:** goto
 
-**Description:** Jump to a page in "LifeUp"
+**Description:** Jump to a page in `LifeUp`
 
 **Example:** [lifeup://api/goto?page=lab](lifeup://api/goto?page=lab)
 
@@ -355,7 +356,7 @@ The method of obtaining the id is to open the "Developer Mode" on the "Experimen
 
 | Parameter | Meaning | Value | Example | Required | Remarks |
 | ---- | ---- | --------------------------------------- --------------------- | ---- | -------- | ---- |
-| page | page| Fix one of the following values:<br/>main<br/>setting<br/>about<br/>pomodoro<br/>feelings<br/>achievement<br/>history<br/>add_task<br/>add_achievement<br/>add_achievement_cate<br/>exp<br/>coin<br/>backup<br/>add_item<br/>lab<br/>custom_attributes<br/>pomodoro_record<br/> dlc<br/>pomodoro_record<br/>synthesis<br/>pic_manage | lab | yes | |
+| page | page| One of the following values:<br/>main<br/>setting<br/>about<br/>pomodoro<br/>feelings<br/>achievement<br/>history<br/>add_task<br/>add_achievement<br/>add_achievement_cate<br/>exp<br/>coin<br/>backup<br/>add_item<br/>lab<br/>custom_attributes<br/>pomodoro_record<br/>synthesis<br/>pic_manage | lab | yes | |
 
 <br/>
 
@@ -365,11 +366,11 @@ The method of obtaining the id is to open the "Developer Mode" on the "Experimen
 
 **Method name:** add_item
 
-**Description:** To create a shop item, the icon only supports network URL, and the use effect is not supported yet.
+**Description:** To create a shop item. The icon only supports network URLs, and the use effect is not supported yet.
 
 **Example:** [lifeup://api/add_item?name=Take+a+10-minute+break&desc=Go+and+take+a+short+break!&price=10&action_text=rest](lifeup://api/add_item?name=Take+a+10-minute+break&desc=Go+and+take+a+short+break!&price=10&action_text=rest)
 
-**Explanation:** Create a shop item with the name of "Take a 10-minute break", the description as "Go and take a short break! ", and the action text copy as "Rest" with a price of 10 gold coins.
+**Explanation:** Create a shop item with the name "Take a 10-minute break", the description as "Go and take a short break! ", and the action text copy as "Rest" with a price of 10 gold coins.
 
 | Parameter | Meaning | Type | Example | Required | Remarks |
 | ---------------- | ------------ | ---------------- | -- ---------- | -------- | -------------------- |
@@ -409,7 +410,7 @@ The method of obtaining the id is to open the "Developer Mode" on the "Experimen
 
 **Notice:**
 
-1. In order to search for a shop item, either id or name must be provided.
+1. In order for `LifeUp` to search for a shop item, either an `id` or `name` must be provided.
 
 <br/>
 
@@ -450,7 +451,7 @@ The method of obtaining the id is to open the "Developer Mode" on the "Experimen
 
 **Method name:** unlock_condition
 
-**Description:** Unlock achievement condition: requires external API call to unlock
+**Description:** Unlock achievement condition: requires an external API call to unlock
 
 **Example:**
 
@@ -468,7 +469,7 @@ The method of obtaining the id is to open the "Developer Mode" on the "Experimen
 
 **Method name:** confirm_dialog
 
-**Description:** A selection pop-up window pops up, you can customize the title, text, positive button, and negative button. Other interfaces can also be called when the button is clicked.
+**Description:** A pop-up selection window pops up. You can customize the title, text, positive button, and negative button. Other interfaces can also be called when the button is clicked.
 
 **Example:**
 
@@ -495,7 +496,7 @@ branch selection
 
 #### Variable Placeholder
 
-"LifeUp" provides user intervention processing methods for parameters.
+`LifeUp` provides user intervention processing methods for parameters.
 
 | placeholder | meaning | example |
 | ---------------- | -------------------------------- -- | ---------------------- |
@@ -507,15 +508,15 @@ branch selection
 
 **Example 1: When using, select an item to reduce the price by 1 coin**
 
-For example, after you set the API for price reduction of a certain shop item, you may want to allow the user to select the specified shop item when calling instead of preset the id.
+For instance, after setting the API for price reduction of a specific shop item, you may want to allow the user to select the specified item when calling instead of preset the id.
 
-The following api can only reduce the price of the shop item with id 1 by 1 gold:
+The following API can only reduce the price of the shop item with id 1 by 1 coin:
 
 ````url
 lifeup://api/item?id=1&set_price=-1&set_price_type=relative
 ````
 
-You only need to modify the item id to a placeholder `[$item]`, and when the call is made, the user can actively select the item that he/she wants to reduce the price:
+You only need to modify the item id to a placeholder [$item], and when the call is made, the user can actively select the item that they want to reduce the price:
 
 [lifeup://api/item?id=[$item|Please+select+the+item+you+want+to+reduce+the+price+by+1+coin]&set_price=-1&set_price_type=relative](lifeup://api/item?id=[$item|Please+select+the+item+you+want+to+reduce+the+price+by+1+coin]&set_price=-1&set_price_type=relative)
 
@@ -530,19 +531,19 @@ You only need to modify the item id to a placeholder `[$item]`, and when the cal
 
 #### End Callback
 
-You can add the `callback` parameter to all interfaces to implement the processing of calling back the `URL` after the call.
+You can add the callback parameter to all interfaces to implement the processing of calling back the URL after the call.
 
 This can also be used to splice multiple interfaces, for example, if you want to implement a prompt after the jump:
 
 lifeup://api/goto?page=lab + lifeup://api/toast?text=callback
 
-You can use the `callback` parameter, refer to the above **Basics - Escaping**, you can write this kind of processing:
+You can use the callback parameter. Please also refer to the above **Basics - Escaping**. You can write this kind of processing:
 
 [lifeup://api/goto?page=lab&callback=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3Dtest+callback](lifeup://api/goto?page=lab&callback=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3Dtest+callback)
 
 
 
-Of course, you can also add multiple links to a shop item to achieve this effect.
+Of course, you can add multiple links to a shop item to achieve this effect.
 
 
 
@@ -562,7 +563,7 @@ X application -> LifeUp -> Y application
 
 We very much welcome any form of integration from other developers.
 
-> More details will be provider soon...
+> More details will be provided soon...
 
 ### Need more APIs?
 
@@ -606,11 +607,11 @@ fun xxx() {
 
 #### Web page
 
-If the webpage is called, whether it can be triggered depends on the browser. Regular browsers such as Quark, Chrome, Edge are fine. But some other built-in browsers in the system may remind the user "whether to open Rensheng" every time it pops up.
+If the webpage is called, whether it can be triggered depends on the browser. Regular browsers such as Quark, Chrome, and Edge are fine. But some other built-in browsers in the system may remind the user "whether to open Rensheng" every time it pops up.
 
-If you are developing your own embedded WebView application, you need to ensure that the WebView can handle the lifeup scheme.
+If you are developing your own embedded WebView application, you must ensure that the WebView can handle the lifeup scheme.
 
-If you want to ensure a consistent experience, you can use the product link effect in "Rensheng" and check "Use built-in browser" to open it. But due to security settings, this way only supports HTTPS links (not HTTP)
+To ensure a consistent experience, you can use the product link effect in `LifeUp` and check "Use built-in browser" to open it. But due to security settings, this way only supports HTTPS links (not HTTP)
 
 **HTML**
 
