@@ -12,6 +12,8 @@
   - [FAQ](guide/faq.md)
   - [Background Running](guide/background_running.md)
 
+- Features
+  - [APIs](guide/api.md)
+  
 - What's new
-
   - [v1.89.x: Multiple Unlock Condition](feature/189.md)

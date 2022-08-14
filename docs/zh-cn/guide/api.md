@@ -16,7 +16,19 @@
 | ----------------------------------------- | ------------------------------------------------------------ | -------- |
 |**人升 ->外部应用**<br/>商品的“链接”效果 | **使用商品后：**<br/>1. 使用浏览器访问某个网页<br/>2. 跳转微信扫一扫，或指定小程序<br/>3. 自动添加记账记录（[如《钱迹》支持记账接口](http://docs.qianjiapp.com/plugin/auto_tasker.html)）<br/>4. ... （只要外部应用支持该方法调用） | 任意用户都可调用 |
 |**人升 ->人升**<br/>商品的“链接”效果     | **使用商品后：**<br/>1. 打开人升某个页面<br/>2. 提升 ATM 利率<br/>3. 弹窗让用户选择商品，降低商品价格（降价券）<br/>4. 触发某个任务完成<br/>5. 弹出自定义的激励语消息<br/>6. 创造任务奖励模板，只需要输入名称即可自动创建任务<br/>7. 弹窗询问用户的分支选择，创造情景化的小互动<br/>8. 更多应用内的操作... | 👑仅限会员使用 |
-|**外部应用/网页 ->人升**                 | **配置自动化工具：**<br/>1. 判断每天第一次打开手机的时间，完成早起任务，或者直接触发“晚起”惩罚<br/>2. 每背完 25 个单词，刷一次特定的 NFC 卡片，自动打卡任务<br/>3. GPS 判断到达某个新地方，解锁“新地点”成就<br/>4. 每天连接打工 WIFI 时，触发解锁条件进度增长。累计 20 天的时候，解锁「打工人」成就<br/>5. 每天首次连接家里 WIFI 时，奖励自己“到家”金币<br/>6. 捕获其他番茄或专注软件的通知，自动将计时记录到人升中<br/>7. 捕获运动类、背单词类软件的完成或结束通知，自动发放「力量」、「学识」经验值<br/>8. ...<br>**外部应用联动/自己开发应用：**<br/>1. 若不满意「人升」的番茄钟：可以自己开发计时软件，可以是网页应用或安卓应用，通过接口与「人升」联动，以添加计时记录或添加奖励<br/>2. 改动一些智力小游戏（如下文中有个 Wordle 例子），成功完成游戏时，触发「人升」发送奖励<br/>3. 开发应用与「人升」联动实现应用锁功能 | 👑仅限会员使用 |
+|**外部应用/网页 ->人升**                 | **配置自动化工具：**<br/>1. 判断每天第一次打开手机的时间，完成早起任务，或者直接触发“晚起”惩罚<br/>2. 每背完 25 个单词，刷一次特定的 NFC 卡片，自动打卡任务<br/>3. GPS 判断到达某个新地方，解锁“新地点”成就<br/>4. 每天连接打工 WIFI 时，触发解锁条件进度增长。累计 20 天的时候，解锁「打工人」成就<br/>5. 每天首次连接家里 WIFI 时，奖励自己“到家”金币<br/>6. 捕获其他番茄或专注软件的通知，自动将计时记录到人升中<br/>7. 捕获运动类、背单词类软件的完成或结束通知，自动发放「力量」、「学识」经验值<br/>8. 在自己设定的时间段内，每开一次手机，触发一次惩罚<br/>9. ...<br>**外部应用联动/自己开发应用：**<br/>1. 若不满意「人升」的番茄钟：可以自己开发计时软件，可以是网页应用或安卓应用，通过接口与「人升」联动，以添加计时记录或添加奖励<br/>2. 改动一些智力小游戏（如下文中有个 Wordle 例子），成功完成游戏时，触发「人升」发送奖励<br/>3. 开发应用与「人升」联动实现应用锁功能 | 👑仅限会员使用 |
+
+<br/>换种说法，上述所有场景其实都是「事件」触发了「操作」。
+
+而`人升`本次更新是提供了「使用商品」这个事件触发点，然后是提供了各式各样的「操作」（奖励、完成任务等等）。
+
+如果你需要
+
+- 点击网页按钮
+- 刷 NFC 卡片
+- 每天起床第一次解锁屏幕
+
+这种事件，就需要外部应用的介入。
 
 ---
 
@@ -24,9 +36,9 @@
 
 **如果你不熟悉网络或计算机基础知识，**你可以直接在橱窗搜索、进货相关的商品；也可以尝试根据示例或者其他人的商品，编辑参数。
 
-**如果你熟悉相关基础知识，**可以尝试阅读下述的接口文档，自己编辑出所需的效果。并且搭配自动化软件（如 Tasker）使用。
+**如果你熟悉相关基础知识，**可以尝试阅读下述的接口文档，自己编辑出所需的效果。并且搭配自动化软件（如 Tasker）使用，即便不会编辑 Tasker 的配置，只要你能成功安装 Tasker，也能在橱窗或者其他社区导入其他人分享的自动化配置。
 
-**如果你有编程基础，**可以尝试开发网页、安卓应用与人升联动。这个网页就是个超简单的例子。
+**如果你有编程基础，**可以尝试开发网页、安卓应用与人升联动。这个网页就是个超简单的例子。或者编写自动化工具的配置，分享给大家！
 
 ---
 
@@ -100,6 +112,24 @@ Wordle 是猜单词的小游戏：猜长度为 5 的单词。橙黄色代表答�
 2. 当你最终也没猜中单词，会有安慰奖 1 点金币。
 
 ![](_media/api/wordle.png ':size=30%')
+
+<br/>
+
+**与 Tasker 联动的例子：**
+
+> Tasker 调用的方式是，选择`操作类别`-`程序`-`快捷方式`。在快捷方式一栏输入 lifeup:// 开头的链接即可。
+
+每天 5 点后第一次解锁屏幕，能触发完成一个名称包含“起床”的任务。
+
+**注意：你需要先自己创建这个名字包含“起床”的每日任务。**
+
+如果你已经安装了 Tasker，[点击这里可以导入已经配置好的任务。](taskerproject://H4sIAAAAAAAAAKVWTW/TQBA9p78iskRPxV7biZNQxyiFHCpFCLVVLxzQKt6kWxzHsrdBvRWEVFS1KkgIIW6IigKqWi6IEvFv2qThxF9g1rv5atyKlEs8nje7fjtv3ir2Co6ekPA+ZjgdhUVFSbstWlR0Jc1aRcVSkaojxZlJ2Q/DZo16JC4KIDYNJd0iRcXgaMquupgRR7cslLFMlMnqRt7WRJLDZBQ2MlnTMG2NDOCah+uRAytEwFPUdUzD1uDB3xrURY4OBXHAM36DON2T/c7Bl4ujo/PTre7Rh97hx99vnv35tds7/NTZf9053u2+fHW2tdv7/qPT3jnb2rM1voqvLreIz+KzVJs+Gj0JHKXpAlWEEByAh7xeixfE4TID1v2letJSKztcmbLvNX2XMtr0KzQSn6Q1UT6Cif0kEVPCKdtbi5xbPnnq4k1b4y8y3wwcHZoDD5kIAbO1sF9ha4OdBQltjIU4UnwQLq0mtU2U2ZxG5qoXOCzcIJDzgknhdTNv5tE/CG9eEr6QKHz24vnP3vHB+Wm7++6k+/bbxfsXMAgADHVeoQ0ylFn0orbmgEDwK94aDjCC3/iNxRiTGIsx1hD94nsltGudVFm/Xevoym4ZOSOHCmPd8jFseN5ud/a2e9tfOzufxcQCeyzpB9SNwAZzvCFxzJOMB3p+jneFiWTMiRPhMXd0TIhBoOfHqQCJjJWxcnrBmsKfIAY3n9QkCCn3B1CCgCdK1cEM4yqTPciNeiKbKYx6YpmFojqsD2d+MOiAirJF6VEo40bDXlFBijaBGddg5jhma4JrAm09gbaZQ6O0I+LUsBfBeEcys7Dhu9It8Vmk/VahKk7Ctwdm9glTXerXPRpV11Tsu2GTuiqL7191qVwpr5YerDxeLS0tlhYq5WVn1mPz0ApYUQpDvCmuZ222zuZhQqbc62YUbrPNgDiPKuu4hVUP+3VV8JmegNhJ3k28O/JaEv2bGAp9MBQerZGN4I6m4YCCEo3AI4zc5QYpimt9MC4j0oJXgcikFwpJXkAoa6IrvYAsM1/IXfZC4f+8kLuBFxK7oyebZQpDjGGZa7CsxMwEzJKYPmGyvhLiKf5nODN/AQAzsyt1CAAA)
+
+
+
+![](_media/api/tasker_01.png ':size=30%')
+
+![](_media/api/tasker_02.png ':size=30%')
 
 <br/>
 

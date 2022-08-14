@@ -16,7 +16,19 @@
 | ----------------------------------------- | ------- -------------------------------------------------- --- | -------- |
 |**LifeUp->Other Applications**<br/>Implemented through the "URL" effect of the shop item| **After using the shop item:**<br/>1. Use a browser to visit a webpage<br/>2. Jump to WeChat and scan Scan, or specify a small program<br/>3. Automatically add accounting records ([such as "Qianji" supports accounting interface](http://docs.qianjiapp.com/plugin/auto_tasker.html))<br/>4. ... (as long as the external application supports this method call) |  |
 |**LifeUp->LifeUp**<br/>Implemented through the "URL" effect of the shop item| **After using the shop item:**<br/>1. Open a specific page<br/>2. Increase the ATM interest rate<br/>3. The pop-up window allows the user to select the product and reduce the price of the product (price reduction coupon)<br/>4. Trigger a task to complete<br/>5. Pop up a custom motivational message<br/>6. Create a task reward template: just enter the name to create a task automatically<br/>7. Pop up The window asks the user for branch selection, creating a small contextual interaction<br/>8. More in-app operations... |  |
-|**External applications/webpages->LifeUp** | **Configure automation tools:**<br/>1. 1. Determine when the phone is turned on for the first time every day, complete the task of getting up early, or directly trigger the "getting up late" penalty<br/>2. After every 25 words, swipe a specific NFC card and automatically complete the task<br/>3. The GPS determines that a new place is reached, and unlocks the "new place" achievement<br/>4. When connecting to the working WIFI every day, trigger the unlocking condition progress to increase. After accumulating 20 days, unlock the achievement of "Worker"<br/>5. Reward yourself with "arrive home" gold coins when connecting to your home WIFI for the first time every day<br/>6. Capture notifications from other Tomato or Focus applications, and automatically record the timing  to `LifeUp`<br/>7. Capture the completion or end notification of sports and learning software, and automatically issue "strength" and "knowledge" experience points<br/>8. ...<br/>**External Application linkage/self-developed application:**<br/>1. If you are not satisfied with the Pomodoro of `LifeUp`: you can develop your own timing software, which can be a web application or Android application, and link with "LifeUp" through the interface to Add timing records or add rewards<br/>2. Modify some intelligence mini-games (such as a Wordle example below). When the game is successfully completed, trigger `LifeUp` to send rewards<br/>3. ... |  |
+|**External applications/webpages->LifeUp** | **Configure automation tools:**<br/>1. 1. Determine when the phone is turned on for the first time every day, complete the task of getting up early, or directly trigger the "getting up late" penalty<br/>2. After every 25 words, swipe a specific NFC card and automatically complete the task<br/>3. The GPS determines that a new place is reached, and unlocks the "new place" achievement<br/>4. When connecting to the working WIFI every day, trigger the unlocking condition progress to increase. After accumulating 20 days, unlock the achievement of "Worker"<br/>5. Reward yourself with "arrive home" gold coins when connecting to your home WIFI for the first time every day<br/>6. Capture notifications from other Tomato or Focus applications, and automatically record the timing  to `LifeUp`<br/>7. Capture the completion or end notification of sports and learning software, and automatically issue "strength" and "knowledge" experience points<br/>8. Within the time period set by yourself, every time you open your phone, you will trigger a penalty<br/>9. ...<br/>**External Application linkage/self-developed application:**<br/>1. If you are not satisfied with the Pomodoro of `LifeUp`: you can develop your own timing software, which can be a web application or Android application, and link with "LifeUp" through the interface to Add timing records or add rewards<br/>2. Modify some intelligence mini-games (such as a Wordle example below). When the game is successfully completed, trigger `LifeUp` to send rewards<br/>3. ... |  |
+
+<br/>In other words, all the above scenarios are actually "events" that trigger "actions".
+
+This update of `LifeUp` provides the event trigger point of "use of items", and then provides various "actions" (rewards, completion of tasks, etc.).
+
+if you need
+
+- Click the web button
+- Swipe the NFC card
+- Wake up every day to unlock the screen for the first time
+
+This kind of event requires the intervention of external applications.
 
 ---
 
@@ -24,9 +36,9 @@
 
 **If you are not familiar with programming,** you can search and import special shop items directly in the [World] - [Market] - [Link] tag. You can also try to edit parameters to meet your need.
 
-**If you are familiar with computer knowledge,** you can try to read the following interface documentation and edit the desired effect yourself. And use it with automation software such as [*Tasker*](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm).
+**If you are familiar with computer knowledge,** you can try to read the following interface documentation and edit the desired effect yourself. And use it with automation software such as [*Tasker*](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm). Even if you don't edit Tasker's configuration, as long as you can successfully install Tasker, you can import automated configurations shared by others in Market or other communities.
 
-**If you have a programming foundation,** you can try to develop web pages or Android applications to make them integrated with LifeUp. This web page and customized versions of Wordle are some examples.
+**If you have a programming foundation,** you can try to develop web pages or Android applications to make them integrated with LifeUp. This web page and customized versions of Wordle are some examples. You are also welcome to make and share automation tool configurations.
 
 ---
 
@@ -71,11 +83,11 @@ If you:
 
 When you click the link below, "LifeUp" will a prompt "You have learned to call APIs!".
 
-[lifeup://api/toast?text=You+have+learned+to+call+APIs!&type=1&isLong=true](lifeup://api/toast?text=You+have+learned+to+call+APIs!&type=1&isLong=true)
+<a href="lifeup://api/toast?text=You have learned to call APIs!&type=1&isLong=true">lifeup://api/toast?text=You have learned to call APIs!&type=1&isLong=true</a>
 
 When you click the link below, you will get a coin in "LifeUp", and the reason for it is "Learn API Calls".
 
-[lifeup://api/reward?type=coin&content=Learn+API+Calls&number=1](lifeup://api/reward?type=coin&content=Learn+API+Calls&number=1)
+<a href="lifeup://api/reward?type=coin&content=Learn API Calls&number=1">lifeup://api/reward?type=coin&content=Learn API Calls&number=1</a>
 
 If you copy the link to the item's "link" effect, using the item can also trigger the same effect.
 
@@ -96,6 +108,24 @@ Wordle is a little word guessing game: guess words of length 5. Orange represent
 
 <br/>
 
+**Example of linkage with Tasker:**
+
+> Tasker is invoked by selecting `Action Category`-`Program`-`Shortcut`. Enter the link starting with lifeup:// in the shortcut column.
+
+Unlocking the screen for the first time after 5 o'clock every day can trigger the completion of the task you specify (such as getting up).
+
+**Note: A Task Group Id is required to import this configuration. You can turn on [Developer Mode] in [Settings]-[Labs], and then check the gid on the task details page. **
+
+If you have Tasker installed, [click here to import the configured tasks. ](taskerproject://H4sIAAAAAAAAAKVWTW/bOBA9p7+CENCeshZlfcWtzMJts0ABY1EkaS49FKxE20xlSZDG3s2/3xmSku1ELer25OF7Q/LNB0fO7mT3XbUfJEjWtXPPY8Vez73AY7Cfe8mETwLuiRcX2ae2XulSGacG7ejKY3s196bEXmR5IUGJIEl4NONxMAvDMPMtaOiyEdDuFGJoEaKON4RRMA2vMl8NG1alXHcCIWsQpAsRIYA/tNrqgosozXxjEFJtlVgAi9mN6hSwu41iH+Rj5hNO/J3eWvl5XZmY6JqNiPGOjVttBcfV1q7AcOA4MBwYLvPpLMqK79IymqHZORk6yUcc8YDPfiEfsyf5SJ7k42/ddsA+V2Wdf1fFJXtfb5tSgWJU9kNqrveqgkNujmSj7rpAXZxj9MY08ZsNxrwFlNhvDca2JvFh50X2vq4KDbqulrqzV+qVdT/i7HlOSOjoi6zcdOJlpf4tqKy0cHjdiGCa+XXTAy1ymd/2Hpk/nGxF+CcqbEgmkJGaPqgc+po+8B+VNJmm05TPro5LWklM71Kv1OeGyR3ULHfZx8RLl/lGFx229SVV0tgEggGTS2pvsKBRRVLIpuIZSYBGlJyKQRlREiVpMEvO6C9qpmRopqbVVHKUhAYBi3woi8zBZSE9LnNMERzKfAut9W7XhzIOtUPWun10bYdu1DuynHvc859x059w4SmX+VbriOxgRHaY8mPZnRIrWXZYoc4h73ZV4R61icV11D16GRDvHvqzUjApdLUudZdvJrIq2loXEzATdnJzvby+X/xz9/V+cfNx8W55fStelfAGU4E7Fm0rH+0A9l+t4Q12yJln/Z6Ev+CxUeLL8kHu5aSU1Xpi9ZwvwJ7knhtlx700m79nTREMTVHiA9k1r31fNtrvX8jbtS7mL+myr2gNDXNSXPdM72Wr5bd+7u77yZ6XSrb1Dvp6DmvDqv+augWsHY6Jg20ovd3ugA7sdx4Awzf7XLtvmTEdWAhaF8OyEp/wxk4xXTU7YIBfIwqHrVFEwygm4+Tc8d0FVwTp4QQNAgwCPVKJo4zQ0uHO0fl1cBy2W5ncPUmYmSo0Sp6PlHRspHAeh/zHIyXk6TR+OlLSPxsp6W+MlNEmC8Znzhlz5YSLfsLFjgtHuMRxwbNZ1VfC/to/ZOLF/9uCy6GeCQAA)
+
+
+
+![](_media/api/tasker_01.png ':size=30%')
+
+![](_media/api/tasker_02.png ':size=30%')
+
+<br/>
+
 **Through this function, you can infinitely expand the possibility of LifeUp, whether you know about programming or not!**
 
 Please see below for specific calling rules.
@@ -108,7 +138,7 @@ Please see below for specific calling rules.
 
 | Type | Description |
 | -------- | ---------------------------------------- -------------------- |
-| Example | [lifeup://api/toast?text=You learned to call! &type=1&isLong=true](lifeup://api/toast?text=You learned to call!&type=1&isLong=true) |
+| Example | <a href="lifeup://api/toast?text=You learned to call! &type=1&isLong=true">lifeup://api/toast?text=You learned to call! &type=1&isLong=true</a> |
 | Interface format | fixed prefix/method name?parameter1=value1&parameter2=value2 |
 | Fixed prefix | lifeup://api/ |
 | Method name | toast |
@@ -134,7 +164,7 @@ If the value of your parameter contains special symbols such as +, space, =, %, 
 Take the interface of the above pop-up message as an example. If you want the final prompted text stands: `You have learned to call APIs!`
 Then you need to replace the spaces to +, the final effect is:
 
-[lifeup://api/toast?text=You+have+learned+to+call+APIs!&type=1&isLong=true](lifeup://api/toast?text=You+have+learned+to+call+APIs!&type=1&isLong=true)
+<a href="lifeup://api/toast?text=You learned to call! &type=1&isLong=true">lifeup://api/toast?text=You learned to call! &type=1&isLong=true</a>
 
 <br/>
 
@@ -182,7 +212,7 @@ After customizing the unlock condition for the achievement "requires an external
 
 **Description:** Various styles of messages pop up
 
-**Example:** [[lifeup://api/toast?text=Live+well,+eat+well!&type=1&isLong=true](lifeup://api/toast?text=Live+well,+eat+well!&type=1&isLong=true)]
+**Example:** <a href="lifeup://api/toast?text=Live well, eat well!&type=1&isLong=true">lifeup://api/toast?text=Live well, eat well!&type=1&isLong=true</a>
 
 **Explanation:** The prompt "Live well, eat well!" pops up in a bonus style and displays it for a longer time.
 
@@ -191,7 +221,7 @@ After customizing the unlock condition for the achievement "requires an external
 | Parameter | Meaning | Type | Example | Required | Notes |
 | ------ | ---------------- | --------------- | --------- ----- | -------- | ----------------------------------- ------------------------- |
 | text | Text message to prompt | Any text | You learned to call! | yes | |
-| type | Text style type | Number from 0 to 6 | 1 | no | 0 - Normal style<br/>1 - Bonus style<br/>2 - Tomato style<br/>3 - Success style<br/ >4 - Prompt style<br/>5 - Warning style<br/>6 - Error style |
+| type | Text style type | Number from 0 to 6 | 1 | no | 0 - Normal style<br/>1 - Bonus style<br/>2 - Tomato style<br/>3 - Success style<br/>4 - Prompt style<br/>5 - Warning style<br/>6 - Error style |
 | isLong | Display duration | true or false | true | no | true - long<br/>false - short |
 
 <br/>
@@ -206,15 +236,15 @@ After customizing the unlock condition for the achievement "requires an external
 
 - Get 1 coin, and the reason for getting it is "Learn API Calls". And the reason will be displayed on the gold coin details page:
 
-  [lifeup://api/reward?type=coin&content=Learn+API+Calls&number=1](lifeup://api/reward?type=coin&content=Learn+API+Calls&number=1)
+  <a href="lifeup://api/reward?type=coin&content=Learn API Calls&number=1">lifeup://api/reward?type=coin&content=Learn API Calls&number=1</a>
 
 - Get 300 experience points for "Learning, Creativity" , and the reason for obtaining them is "Learn API Calls". And the reason will be displayed on the EXP details page:
 
-  [lifeup://api/reward?type=exp&content=Learn+API+Calls&number=300&skills=2&skills=6](lifeup://api/reward?type=exp&content=Learn+API+Calls&number=300&skills=2&skills=6)
+  <a href="lifeup://api/reward?type=exp&content=Learn API Calls&number=300&skills=2&skills=6">lifeup://api/reward?type=exp&content=Learn API Calls&number=300&skills=2&skills=6</a>
 
 - Obtained 1 fuzzy matching "treasure" item, and the reason for getting it is "Learn API Calls". And the reason will be displayed on the inventory history page:
 
-  [lifeup://api/reward?type=item&content=Learn+API+Calls&number=1&item_name=treasure](lifeup://api/reward?type=item&content=Learn+API+Calls&number=1&item_name=treasure)
+  <a href="lifeup://api/reward?type=item&content=Learn API Calls&number=1&item_name=treasure">lifeup://api/reward?type=item&content=Learn API Calls&number=1&item_name=treasure</a>
 
 | Parameter | Meaning | Type | Example | Required | Notes |
 | --------- | ---------------- | ---------------------- ------- | ----------- | -------- | --------------------- --------------------------------------- |
@@ -238,15 +268,15 @@ After customizing the unlock condition for the achievement "requires an external
 
 - Penalize 1 coin, the reason for obtaining it is "sleep in". And the reason will be displayed on the coin details page:
 
-[lifeup://api/penalty?type=coin&content=sleep+in&number=1](lifeup://api/penalty?type=coin&content=sleep+in&number=1)
+  <a href="lifeup://api/penalty?type=coin&content=sleep in&number=1">lifeup://api/penalty?type=coin&content=sleep in&number=1</a>
 
 - Penalize 300 "Strength" experience points for "sleep in". And the reason will be displayed on the EXP details page:
 
-[lifeup://api/penalty?type=exp&content=sleep+in&number=300&skills=1](lifeup://api/penalty?type=exp&content=sleep+in&number=300&skills=1)
+  <a href="lifeup://api/penalty?type=exp&content=sleep in&number=300&skills=1">lifeup://api/penalty?type=exp&content=sleep in&number=300&skills=1</a>
 
 - Penalize 1 fuzzy matching "trasure" item for "sleep in". And the reason will be displayed on the inventory history page:
 
-[lifeup://api/penalty?type=item&content=sleep+in&number=1&item_name=trasure](lifeup://api/penalty?type=item&content=sleep+in&number=1&item_name=trasure)
+  <a href="lifeup://api/penalty?type=item&content=sleep in&number=1&item_name=trasure">lifeup://api/penalty?type=item&content=sleep in&number=1&item_name=trasure</a>
 
 | Parameter | Meaning                       | Type                                                 | Example  | Required | Notes                                                        |
 | --------- | ----------------------------- | ---------------------------------------------------- | -------- | -------- | ------------------------------------------------------------ |
@@ -270,7 +300,7 @@ After customizing the unlock condition for the achievement "requires an external
 
 **Example:**
 
-[lifeup://api/add_task?todo=This+is+an+automatically+added+task&notes=notes&coin=10&coin_var=1&exp=2048&skills=1&skills=2&skills=3&category=0&item_name=treasure](lifeup://api/add_task?todo=This+is+an+automatically+added+task&notes=notes&coin=10&coin_var=1&exp=2048&skills=1&skills=2&skills=3&category=0&item_name=treasure)
+<a href="lifeup://api/add_task?todo=This is an automatically added task&notes=notes&coin=10&coin_var=1&exp=2048&skills=1&skills=2&skills=3&category=0&item_name=treasure">lifeup://api/add_task?todo=This is an automatically added task&notes=notes&coin=10&coin_var=1&exp=2048&skills=1&skills=2&skills=3&category=0&item_name=treasure</a>
 
 **Explanation:** Add a task to the default list (id is 0) with the content "This is an automatically added task", the notes are "notes", the coin reward is random from 10 to 11, the experience value reward is 2048, the selected The skill ids are 1, 2, and 3 (generally corresponding to the first 3 built-in attributes). The shop item reward is a fuzzy search for a "treasure" shop item.
 
@@ -302,7 +332,7 @@ After customizing the unlock condition for the achievement "requires an external
 
 - Complete the task with id 1: [lifeup://api/complete?id=1](lifeup://api/complete?id=1)
 - Complete the task with "task group id" of 1: [lifeup://api/complete?gid=1](lifeup://api/complete?gid=1)
-- Search for tasks by name and complete them: [lifeup://api/complete?name=Start using&ui=true](lifeup://api/complete?name=Start using&ui=true)
+- Search for tasks by name and complete them: <a href="lifeup://api/complete?name=Start using&ui=true">lifeup://api/complete?name=Start using&ui=true</a>
 
 **Explanation:**
 
@@ -368,7 +398,7 @@ The method of obtaining the id is to open the "Developer Mode" on the "Labs" pag
 
 **Description:** To create a shop item. The icon only supports network URLs, and the use effect is not supported yet.
 
-**Example:** [lifeup://api/add_item?name=Take+a+10-minute+break&desc=Go+and+take+a+short+break!&price=10&action_text=rest](lifeup://api/add_item?name=Take+a+10-minute+break&desc=Go+and+take+a+short+break!&price=10&action_text=rest)
+**Example:** <a href="lifeup://api/add_item?name=Take a 10-minute break&desc=Go and take a short break!&price=10&action_text=rest">lifeup://api/add_item?name=Take a 10-minute break&desc=Go and take a short break!&price=10&action_text=rest</a>
 
 **Explanation:** Create a shop item with the name "Take a 10-minute break", the description as "Go and take a short break! ", and the action text copy as "Rest" with a price of 10 gold coins.
 
@@ -473,13 +503,11 @@ The method of obtaining the id is to open the "Developer Mode" on the "Labs" pag
 
 **Example:**
 
-- [lifeup://api/confirm_dialog?title=Do+you+believe+in+love&positive_action=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3Dbelieve&negative_action=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3Ddo+not+believe](lifeup://api/confirm_dialog?title=Do+you+believe+in+love&positive_action=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3Dbelieve&negative_action=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3Ddo+not+believe)
-
+- [<a href="lifeup://api/confirm_dialog?title=Do you believe in love&positive_action=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3Dbelieve&negative_action=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3Ddo not believe">lifeup://api/confirm_dialog?title=Do you believe in love&positive_action=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3Dbelieve&negative_action=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3Ddo not believe</a>](lifeup://api/confirm_dialog?title=Do you believe in love&positive_action=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3Dbelieve&negative_action=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3Ddo not believe)
 - Other usage scenarios:
+  - Choice of rewards
+  - Event branch selection
 
-Choice of rewards
-
-branch selection
 
 | Parameter | Meaning | Type | Example | Required | Remarks |
 | --------------- | ------------------ | -------------- - | -------------------------------------------- | --- ----- | -------------------------------------------- ---------------- |
@@ -518,13 +546,11 @@ lifeup://api/item?id=1&set_price=-1&set_price_type=relative
 
 You only need to modify the item id to a placeholder [$item], and when the call is made, the user can actively select the item that they want to reduce the price:
 
-[lifeup://api/item?id=[$item|Please+select+the+item+you+want+to+reduce+the+price+by+1+coin]&set_price=-1&set_price_type=relative](lifeup://api/item?id=[$item|Please+select+the+item+you+want+to+reduce+the+price+by+1+coin]&set_price=-1&set_price_type=relative)
-
-
+<a href="lifeup://api/item?id=[$item]&set_price=-1&set_price_type=relative">lifeup://api/item?id=[$item]&set_price=-1&set_price_type=relative</a>
 
 **Example 2: Task template, just enter the task name and selection list to create a pre-set reward template**
 
-[lifeup://api/add_task?todo=[$text|Enter+a+task+name]&notes=This+is+a+reward+template+for+a+task&coin=10&coin_var=10&exp=2048&skills=1&skills=2&skills=3&category=[$task_category]](lifeup://api/add_task?todo=[$text|Enter+a+task+name]&notes=This+is+a+reward+template+for+a+task&coin=10&coin_var=10&exp=2048&skills=1&skills=2&skills=3&category=[$task_category]])
+<a href="lifeup://api/add_task?todo=[$text|Enter a task name]&notes=This is a reward template for a task&coin=10&coin_var=10&exp=2048&skills=1&skills=2&skills=3&category=[$task_category]]">lifeup://api/add_task?todo=[$text|Enter a task name]&notes=This is a reward template for a task&coin=10&coin_var=10&exp=2048&skills=1&skills=2&skills=3&category=[$task_category]]</a>
 
 
 <br/>
@@ -539,7 +565,7 @@ lifeup://api/goto?page=lab + lifeup://api/toast?text=callback
 
 You can use the callback parameter. Please also refer to the above **Basics - Escaping**. You can write this kind of processing:
 
-[lifeup://api/goto?page=lab&callback=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3Dtest+callback](lifeup://api/goto?page=lab&callback=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3Dtest+callback)
+<a href="lifeup://api/goto?page=lab&callback=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3Dtest callback">lifeup://api/goto?page=lab&callback=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3Dtest callback</a>
 
 
 
@@ -618,7 +644,7 @@ To ensure a consistent experience, you can use the product link effect in `LifeU
 Jump directly to the hyperlink
 
 ````htm
-<a href="lifeup://api/toast?text=You+learned+to+call!&amp;type=1&amp;isLong=true" target="_blank" rel="noopener">Click here to call</a>
+<a href="lifeup://api/toast?text=You learned to call!&type=1&isLong=true" target="_blank" rel="noopener">Click here to call</a>
 ````
 
 **Javascript**

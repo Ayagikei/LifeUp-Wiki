@@ -15330,7 +15330,6 @@ function handleMouseClick(e) {
 		deleteKey();
 		return;
 	}
-
 	console.log("e.target" + " " + e.target)
 }
 
@@ -15464,7 +15463,7 @@ function shakeTiles(tiles) {
 function checkWinLose(guess, tiles) {
 	if (guess === targetWord) {
 		showAlert("You Win", 5000);
-		location.href='lifeup://api/reward?type=coin&content=赢得了一场Wordle！&number=10'
+		location.href='lifeup://api/reward?type=coin&content=You win a Wordle!&number=10'
 		danceTiles(tiles);
 		stopInteraction();
 		return;
@@ -15474,7 +15473,7 @@ function checkWinLose(guess, tiles) {
 	const remainingTiles = guessGrid.querySelectorAll(":not([data-letter])");
 	if (remainingTiles.length === 0) {
 		showAlert(targetWord.toUpperCase(), null);
-		location.href='lifeup://api/reward?type=coin&content=Wordle没猜对，安慰奖&number=1'
+		location.href='lifeup://api/reward?type=coin&content=lost Wordle consolation prize&number=1'
 		stopInteraction();
 	}
 }
