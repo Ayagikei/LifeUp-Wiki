@@ -12,7 +12,7 @@
 
 **LifeUp is a unique gamify To-Do and habit forming android application.**
 
-It is different from some gamify app that is incorporated into the built -in game.
+It is different from some gamify app that is incorporated into the built-in game.
 
 It focuses on using game elements to motivate you to act in real life.
 
@@ -20,6 +20,7 @@ You can customize your attributes, rewards, achievements, synthesis, and even tr
 
 But this also means that the early settings and learning need for a period of time.
 
+One thing to note is that LifeUp is positioned as a to-do list, habit-forming app, not a calendar app.
 
 
 ### FAQ before use
@@ -70,6 +71,18 @@ But before your use, you may want to know the following information:
 
   You can also try using offline mode directly, which will also give you access to most of LifeUp's
   features!
+
+- **How to configure task notifications and background running?**
+
+  LifeUp supports notification and calendar event reminders.
+
+  Due to Android's battery limitations, **and additional aggressive battery optimization measures by some phone manufacturers**, the default notification reminder require additional user configuration to take effect.
+
+  You can also try switching to Calendar Event Reminders, which only requires granting Calendar permissions.
+
+  > *But some other features (like Pomodoro) may also need to be configured to run in the background.
+
+  For more information, please check this document: https://wiki.lifeupapp.fun/en/index.html#/guide/background_running
 
 - **How can I view more FAQs about app usage?**
 
