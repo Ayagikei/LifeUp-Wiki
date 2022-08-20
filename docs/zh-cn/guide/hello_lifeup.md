@@ -2,7 +2,7 @@
 
 
 
-> 本文暂时仅以简体中文施工编写中，如果你需要繁体中文，可以先使用浏览器进行转换。
+> [現已推出繁體中文文檔，若有需要，請點擊這裡跳轉。](https://wiki.lifeupapp.fun/zh-hant/#/guide/hello_lifeup)
 
 >  提示：如果你是通过 Google Play 购买的 LifeUp。由于我们和 Google 都深知一款应用难以满足所有人，只要你在购买后一段时间内卸载 LifeUp 即可获得退款。如果你已经超过了退款期限，仍可联系我们的邮箱获得帮助 kei.ayagi@gmail.com 。
 

@@ -8,6 +8,84 @@
 
 (Part of the translation is provided by Google Translate and may not be accurate)
 
+**1.90.0 (rc01, rc02) (2022/08/15)**
+
+**✨Features**
+
+1. Optimization of task reward settings:
+   - Reward settings UI adjustment
+   - Sub-task support setting experience and item rewards
+   - Change the original "only text" reward to an independent "words" reward
+   - Support setting default experience value
+
+2. Items support setting attribute level purchase restrictions.
+
+3. The item supports the "URL" effect.
+   Not only can you jump to web pages, but you can also call other applications or the API of LifeUp. Realize the effect of increasing the price after using the item.
+
+4. **Open APIs.**
+   Now you can match automation software or carry out secondary development.
+
+   [For more details, please check the API documents.](https://wiki.lifeupapp.fun/en/#/guide/api)
+
+5. The shop supports viewing the unrefined counting effect
+
+6. Notification optimization:
+
+   - Add attribute level changed notification
+   - Add unlocked achievement notification
+   - Notification group optimization
+
+7. Support adding timing records manually.
+
+8. Now support setting the Pomodoro page to the navigation bar
+
+9. Support to hide [System Achievement] list
+
+10. The target API version is adapted to Android 12L
+
+11. Optimization of immersion effects
+
+12. App Widgets supports displaying the pop-up window of completing the task
+
+13. Now you can complete the task on the matter details page
+
+14. In the overdue pop-up window, you can set the number of count tasks
+
+15. You can now edit the name of the team task
+
+16. Optimize the network request timing of the world module, reduce traffic consumption and reduce server pressure
+
+**♻️Improvements**
+
+1. Night mode now supports all theme colors, and makes a separate night color customization for each theme color, which is adapted to Material 3
+1. Add the "battery optimization" link in the Compatibility configuration dialog
+1. Add the "Keep screen on" switch in the Pomodoro Settings
+1. Provide the two options: "End" and "Add up" for the countdown of the item in the paused state
+1. When the number of editing targets is greater than the current number, an error prompt is provided
+1. Negative matters should not be displayed in penalty factor settings
+1. Optimize the refresh effect on the History page
+1. Optimize the logic of automatically triggering the main task after completing the sub-task, and change it to directly on the details page processing
+1. 
+
+**🐛Fixes**
+
+1. Fixed the issue that the + button will show on the Moments page sometime
+2. Fixed the issue that negative tasks will not pop up feelings dialog
+3. Fixed the issue of the goal of negative tasks without taking effect.
+4. Try to repair the effect of setting "freezing to ..." for team tasks
+5. Fixed the issue that the picture of the feeling page may be displayed wrongly
+
+**1.89.5 (2022/8/5)**
+
+1. Optimize network connection problem
+2. Update translation
+
+**1.89.4 (2022/7/13)**
+
+1. Fix information about Xiaohong Dot Questions
+2. Repeat the task repeatedly generating problems (this time it should really be repaired .jpg)
+
 **1.89.3 (2022/7/05)**
 
 **♻️Improvements**

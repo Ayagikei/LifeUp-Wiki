@@ -14,7 +14,7 @@
 
 | Caller | Scenario | Notes |
 | ----------------------------------------- | ------- -------------------------------------------------- --- | -------- |
-|**LifeUp->Other Applications**<br/>Implemented through the "URL" effect of the shop item| **After using the shop item:**<br/>1. Use a browser to visit a webpage<br/>2. Jump to WeChat and scan Scan, or specify a small program<br/>3. Automatically add accounting records ([such as "Qianji" supports accounting interface](http://docs.qianjiapp.com/plugin/auto_tasker.html))<br/>4. ... (as long as the external application supports this method call) |  |
+|**LifeUp->Other Applications**<br/>Implemented through the "URL" effect of the shop item| **After using the shop item:**<br/>1. Use a browser to visit a webpage<br/>2. Jump to WeChat and scan Scan, or specify a small program<br/>3. Automatically add accounting records ([such as "Qianji" supports accounting interface](http://docs.qianjiapp.com/plugin/auto_tasker.html))<br/>4. Store the automation tool Tasker configuration (even share it in the Market), and automatically import the configuration into Tasker after use<br/>4. ... (as long as the external application supports this method call) | [Tasker](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm&hl=en_US&gl=US) is an automation tool and it supports exporting configuration as Uri |
 |**LifeUp->LifeUp**<br/>Implemented through the "URL" effect of the shop item| **After using the shop item:**<br/>1. Open a specific page<br/>2. Increase the ATM interest rate<br/>3. The pop-up window allows the user to select the product and reduce the price of the product (price reduction coupon)<br/>4. Trigger a task to complete<br/>5. Pop up a custom motivational message<br/>6. Create a task reward template: just enter the name to create a task automatically<br/>7. Pop up The window asks the user for branch selection, creating a small contextual interaction<br/>8. More in-app operations... |  |
 |**External applications/webpages->LifeUp** | **Configure automation tools:**<br/>1. 1. Determine when the phone is turned on for the first time every day, complete the task of getting up early, or directly trigger the "getting up late" penalty<br/>2. After every 25 words, swipe a specific NFC card and automatically complete the task<br/>3. The GPS determines that a new place is reached, and unlocks the "new place" achievement<br/>4. When connecting to the working WIFI every day, trigger the unlocking condition progress to increase. After accumulating 20 days, unlock the achievement of "Worker"<br/>5. Reward yourself with "arrive home" gold coins when connecting to your home WIFI for the first time every day<br/>6. Capture notifications from other Tomato or Focus applications, and automatically record the timing  to `LifeUp`<br/>7. Capture the completion or end notification of sports and learning software, and automatically issue "strength" and "knowledge" experience points<br/>8. Within the time period set by yourself, every time you open your phone, you will trigger a penalty<br/>9. ...<br/>**External Application linkage/self-developed application:**<br/>1. If you are not satisfied with the Pomodoro of `LifeUp`: you can develop your own timing software, which can be a web application or Android application, and link with "LifeUp" through the interface to Add timing records or add rewards<br/>2. Modify some intelligence mini-games (such as a Wordle example below). When the game is successfully completed, trigger `LifeUp` to send rewards<br/>3. ... |  |
 
@@ -123,6 +123,20 @@ If you have Tasker installed, [click here to import the configured tasks. ](task
 ![](_media/api/tasker_01.png ':size=30%')
 
 ![](_media/api/tasker_02.png ':size=30%')
+
+<br/>
+
+**How to use MacroDroid to call LifeUp APIs:**
+
+> [MacroDroid](https://play.google.com/store/apps/details?id=com.arlosoft.macrodroid&hl=en_US&gl=US) is also an automation tool, it is free to download and the UI is easier to use.
+
+1. Add macros, then set the conditions you need (or set them later)
+2. Add `Actions`
+3. Select `Applications`
+4. Select `Open Website`
+5. Enter a URL starting with `lifeup://` in the `Enter URL` field
+6. **[Uncheck]** all the options below, such as `URL encode parameters`...
+7. Save it, you can click the action, and then select the `Test action` to verify
 
 <br/>
 
@@ -443,6 +457,32 @@ The method of obtaining the id is to open the "Developer Mode" on the "Labs" pag
 1. In order for `LifeUp` to search for a shop item, either an `id` or `name` must be provided.
 
 <br/>
+
+#### Adjust the Loot Box effect
+
+**Method name:** loot_box
+
+**Description:** Modify the loot box effect of the specified box item, support adjustment of probability, number of rewards and increase content. (Delete is not supported for now)
+
+**Example:** <a href="lifeup://api/loot_box?name=Coin loot box&sub_name=A big bag of coins&set_type=relative&probability=1&fixed=false">lifeup://api/loot_box?name=Coin loot box&sub_name=A big bag of coins&set_type=relative&probability=1&fixed=false</a>
+
+**Explanation:** Increase the proportion of the [large] bag of gold coins in the gold coin box by 1 point.
+
+| Parameter   | Meaning                               | Value                                                   | Example        | Required | Remarks                                                      |
+| ----------- | ------------------------------------- | ------------------------------------------------------- | -------------- | -------- | ------------------------------------------------------------ |
+| id          | item id                               | A number greater than 0                                 | 1              | No*      | Please refer to the above "Basic Knowledge - Person-liter Data ID" for how to obtain |
+| name        | item name                             | Arbitrary text                                          | Treasure chest | No*      | When used for unknown id, fuzzy search product, not name modification |
+| sub_id      | content item id                       | A number greater than 0                                 | treasure chest | No*      | id of chest contents                                         |
+| sub_name    | content item name                     | Any text                                                | Get a gift     | No*      | For fuzzy search items when the id of the contents of the box is unknown |
+| set_type    | adjustment method (absolute/relative) | One of the following values: <br/>absolute<br/>relative | relative       | No       | absolute - absolute value, that is, directly set the target to value<br/>relative - relative values, adding or subtracting from the original value |
+| amount      | number of content item                | Number                                                  | 1              | No       | number of rewards for a single item                          |
+| probability | probability of the content item       | Number                                                  | relative       | No       |                                                              |
+| fixed       | whether it is a fixed reward          | A number greater than or equal to 0                     | 1              | No       |                                                              |
+
+**Notice:**
+
+1. In order to search for a product, either id or name must be provided.
+1. In order to search for content, either sub_id or sub_name must be provided.
 
 ### Add Pomodoro Record
 
