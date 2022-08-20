@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <title>LifeUp - the Best Gamefication App</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Description">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css"> -->
+  <link rel="stylesheet" href="./css/lifeup_simple.css">
+  <link rel="stylesheet" href="./css/toc_1.3.1.css">
+  <!-- <link rel="stylesheet" href="./css/lifeup_vue.css"> -->
+  <link rel="stylesheet" href="./css/lifeup_vue_override.css">
+  <link rel="icon" href="_media/icon_small.webp">
+  <script src="./js/edit_button_header.js"></script>
+</head>
+
+<body>
+  <div id="app"></div>
+  <script>
+    window.$docsify = {
+      name: '人升',
+      repo: '',
+      loadNavbar: true,
+      subMaxLevel: 2,
+      coverpage: false,
+      loadSidebar: true,
+      homepage: 'README.md',
+      auto2top: true,
+      logo: '_media/icon_small.webp',
+      themeColor: '#44a8f0',
+      toc: {
+        tocMaxLevel: 5,
+        target: 'h2, h3, h4, h5, h6'
+      },
+      search: {
+        maxAge: 86400000, // 过期时间，单位毫秒，默认一天
+        paths: 'auto',
+        depth: 6,
+        placeholder: '输入进行搜索...'
+      },
+      pagination: {
+        crossChapter: true,
+        crossChapterText: true,
+      },
+      formatUpdated: '{MM}/{DD} {HH}:{mm}',
+      alias: {
+        // 修复繁体版本的跳转问题
+        '/%2F=': '/guide/hello_lifeup'
+      },
+      tabs: {
+        persist: true,      // default
+        sync: true,      // default
+        theme: 'classic', // default
+        tabComments: true,      // default
+        tabHeadings: true       // default
+      },
+      plugins: [
+        // function (hook) {
+        //     var footer = [
+        //       '<hr/>',
+        //       '<footer>',
+        //       '<span><a href="http://www.beian.miit.gov.cn" target="_blank">粤ICP备2021011894号-1</a></span>',
+        //       '</footer>'
+        //     ].join('');
+
+        //     hook.afterEach(function (html) {
+        //       return html + footer;
+        //     });
+        //   },
+        EditOnGithubPlugin.create(
+          'https://github.com/Ayagikei/LifeUp-Wiki/tree/master/docs/',
+          "https://github.com/Ayagikei/LifeUp-Wiki/tree/master/docs/zh-cn/",
+          function (file) {
+            return '编辑'
+          }
+        )
+      ]
+    }
+  </script>
+  <!-- Docsify v4 -->
+  <script src="./js/docsify.js"></script>
+  <script src="./js/docsify-plugin-toc.js"></script>
+  <script>
+    // if (typeof navigator.serviceWorker !== 'undefined') {
+    //   navigator.serviceWorker.register('sw.js')
+    // }
+    // var ua = navigator.userAgent;
+    //  url = window.location.host;
+    //  ipad = ua.match(/(iPad).*OS\s([\d_]+)/),
+    //   isIphone = !ipad && ua.match(/(iPhone\sOS)\s([\d_]+)/),
+    //   isAndroid = ua.match(/(Android)\s+([\d.]+)/),
+    //   isMobile = isIphone || isAndroid;
+
+    // if (isMobile) {
+    //   setTimeout(function () {
+    //     var elements = document.getElementsByClassName("sidebar-toggle")
+    //   var menu = elements[0]
+    //   console.log("is null = " + menu)
+    //   // menu.setAttribute('class', 'sidebar-toggle-mobile')
+
+    //    }, 1000);
+    //   console.log("?????")
+    // }
+
+  </script>
+  <script src="./js/zoom-image.min.js"></script>
+  <script src="./js/search.min.js"></script>
+  <script src="./js/docsify-themeable.min.js"></script>
+  <script src="./js/docsify-pagination.min.js"></script>
+  <script src="./js/docsify-tabs.js"></script>
+</body>
+
+</html>
