@@ -1,0 +1,27 @@
+name: OpenCC Docs
+on:
+  push:
+    master
+  workflow_dispatch:
+
+
+jobs:
+  detekt:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "checkout"
+        uses: actions/checkout@v2
+
+      - name: "run kts"
+        run: kotlinc -script opencc.main.kts
+
+      - name: "add & commit"
+        uses: EndBug/add-and-commit@v7.4.0
+        with:
+          add: docs/
+          author_name: GitHub
+          author_email: noreply@github.com
+          #        branch: master
+          message: "chore: update zh-hant"
+          github_token: ${{ github.token }}
