@@ -1,7 +1,8 @@
 name: OpenCC Docs
 on:
   push:
-    master
+    branches:
+      - master # or the name of your main branch
   workflow_dispatch:
 
 
