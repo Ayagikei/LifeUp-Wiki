@@ -13,6 +13,8 @@ fun start() {
     val destDir = File("\\docs\\zh-hant")
     if (originDir.exists()) {
         println("originDir exist ${originDir.absolutePath}")
+    }else{
+        println("warning: originDir not exist ${originDir.absolutePath}")
     }
     originDir.walkTopDown().forEach {
         println("waking on ${it.absolutePath}")
@@ -48,4 +50,5 @@ fun convert(input: File, outputFile: File) {
     outputFile.writeText(output)
 }
 
+println("start running...")
 start()
