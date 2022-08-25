@@ -447,10 +447,10 @@ The method of obtaining the id is to open the "Developer Mode" on the "Labs" pag
 | set_icon | modify icon | any text | | no | Icon should be a web address URL |
 | set_price | adjust price value | number | 1 | no | |
 | set_price_type | price adjustment method (absolute/relative) | One of the following values: <br/>absolute<br/>relative | relative | no | absolute - absolute value, that is, directly set the target to value<br/>relative - relative values, adding or subtracting from the original value |
-| own_number | modify own number | number | 1 | no | |
-| own_number_type | price adjustment method (absolute/relative) | One of the following values:<br/>absolute<br/>relative | relative | no | absolute - absolute value, that is, directly set the target to value<br/>relative - relative values, adding or subtracting from the original value |
-| stock_number | stock number | number greater than or equal to 0 | 1 | no | |
-| stock_number_type | price adjustment method (absolute/relative) | One of the following values: <br/>absolute<br/>relative | relative | no | absolute - absolute value, that is, directly set the target to value<br/>relative - relative values, adding or subtracting from the original value |
+| own_number | modify own number | number [-, +] | 1 | no | |
+| own_number_type | own number adjustment method (absolute/relative) | One of the following values:<br/>absolute<br/>relative | relative | no | absolute - absolute value, that is, directly set the target to value<br/>relative - relative values, adding or subtracting from the original value |
+| stock_number | stock number | number [-, +] | 1 | no | |
+| stock_number_type | stock number adjustment method (absolute/relative) | One of the following values: <br/>absolute<br/>relative | relative | no | absolute - absolute value, that is, directly set the target to value<br/>relative - relative values, adding or subtracting from the original value |
 
 **Notice:**
 
