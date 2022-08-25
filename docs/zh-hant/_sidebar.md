@@ -23,6 +23,9 @@
   - [體系建設參考手冊](guide/user/system_01.md)
   - [體系相關影片](guide/user/system_02.md)
 - 更新介紹
+  - [1.90.0 - 開放介面](features/190.md)
+  - [1.89.0 - 多條件成就（其二）](features/189_2.md)
+  - [1.89.0 - 多條件成就（其一）](features/189_1.md)
   - [1.87.0 - 列表最佳化](features/187.md)
   - [1.86.0 - 成就子分類](features/186.md)
   - [1.80.0 - 開箱](features/180.md)
