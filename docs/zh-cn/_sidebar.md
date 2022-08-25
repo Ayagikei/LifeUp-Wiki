@@ -23,6 +23,9 @@
   - [体系建设参考手册](guide/user/system_01.md)
   - [体系相关视频](guide/user/system_02.md)
 - 更新介绍
+  - [1.90.0 - 开放接口](features/190.md)
+  - [1.89.0 - 多条件成就（其二）](features/189_2.md)
+  - [1.89.0 - 多条件成就（其一）](features/189_1.md)
   - [1.87.0 - 列表优化](features/187.md)
   - [1.86.0 - 成就子分类](features/186.md)
   - [1.80.0 - 开箱](features/180.md)
