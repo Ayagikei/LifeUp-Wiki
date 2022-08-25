@@ -9,8 +9,8 @@ import com.github.houbb.opencc4j.util.ZhTwConverterUtil
 import java.io.File
 
 fun start() {
-    val originDir = File("\\docs\\zh-cn")
-    val destDir = File("\\docs\\zh-hant")
+    val originDir = File("${File.pathSeparator}docs${File.pathSeparator}zh-cn")
+    val destDir = File("${File.pathSeparator}docs${File.pathSeparator}zh-hant")
     if (originDir.exists()) {
         println("originDir exist ${originDir.absolutePath}")
     }else{
