@@ -7,7 +7,7 @@ on:
 
 
 jobs:
-  detekt:
+  opencc_convert:
     runs-on: ubuntu-latest
 
     steps:
