@@ -21,7 +21,7 @@
 
 部分设备很容易出现在息屏，或者切换其他应用后，番茄钟或者倒计时功能不再运行的异常。打开应用后才能够接收到结束的提醒。
 
-如果你遇到了这些问题，请参考[后台运行](https://wiki.lifeupapp.fun/zh-cn/#/guide/background_running)文章进行相应的配置。
+如果你遇到了这些问题，请参考[后台运行](guide/background_running)文章进行相应的配置。
 
 ## 某些设备的问题
 
@@ -29,7 +29,7 @@
 
 - **小部件刷新异常**
 
-需要配置[后台运行权限](https://wiki.lifeupapp.fun/zh-cn/#/guide/background_running)，才能保证番茄钟和倒计时在后台/息屏后正常运行。
+需要配置[后台运行权限](guide/background_running)，才能保证番茄钟和倒计时在后台/息屏后正常运行。
 
 - **在商店执行某些操作后，自动弹出输入法**
 

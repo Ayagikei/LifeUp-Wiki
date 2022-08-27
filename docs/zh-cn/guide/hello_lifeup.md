@@ -325,7 +325,7 @@
 #### # 详细介绍
 > 老文档，待翻新
 
- [属性详细介绍](https://wiki.lifeupapp.fun/zh-cn/#/guide/attributes)
+ [属性详细介绍](guide/attributes)
 
 <br/>
 
@@ -410,7 +410,7 @@
 </p>
 
 
- [1.80.0 - 开箱 (lifeupapp.fun)](https://wiki.lifeupapp.fun/zh-cn/#/features/180)
+ [1.80.0 - 开箱 (lifeupapp.fun)](features/180)
 
 随机是一种很有效的激励方式！
 
@@ -478,7 +478,7 @@
 #### # 详细介绍
 老文档，待翻新
 
- [商品 (lifeupapp.fun)](https://wiki.lifeupapp.fun/zh-cn/#/guide/shop_item)
+ [商品 (lifeupapp.fun)](guide/shop_item)
 
 <br/>
 
@@ -837,13 +837,13 @@
 
 ## 体系参考
 
-#### 1. [人升体系建设参考手册](https://wiki.lifeupapp.fun/zh-cn/#/guide/user/system_01?id=人升体系建设参考手册)
+#### 1. [人升体系建设参考手册](guide/user/system_01?id=人升体系建设参考手册)
 
 > **适合初期参考使用**
 
 由“振武节度使”编写的体系使用文章。通过比较基础的设置方式创造了很多有意思的玩法，如“葫芦娃救爷爷”、“每日投资”、“每日彩票”、“我要一个数码宝贝”。
 
-#### 2. [体系相关视频](https://wiki.lifeupapp.fun/zh-cn/#/guide/user/system_02)
+#### 2. [体系相关视频](guide/user/system_02)
 
 > **这里包含着用户贡献的诸多体系视频，也适合前期入门了解人升的功能。**
 
