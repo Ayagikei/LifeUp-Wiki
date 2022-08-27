@@ -21,7 +21,7 @@
 
 部分裝置很容易出現在息屏，或者切換其他應用後，番茄鍾或者倒計時功能不再執行的異常。開啟應用後才能夠接收到結束的提醒。
 
-如果你遇到了這些問題，請參考[後臺執行](https://wiki.lifeupapp.fun/zh-cn/#/guide/background_running)文章進行相應的配置。
+如果你遇到了這些問題，請參考[後臺執行](guide/background_running)文章進行相應的配置。
 
 ## 某些裝置的問題
 
@@ -29,7 +29,7 @@
 
 - **小部件重新整理異常**
 
-需要配置[後臺執行許可權](https://wiki.lifeupapp.fun/zh-cn/#/guide/background_running)，才能保證番茄鍾和倒計時在後臺/息屏後正常執行。
+需要配置[後臺執行許可權](guide/background_running)，才能保證番茄鍾和倒計時在後臺/息屏後正常執行。
 
 - **在商店執行某些操作後，自動彈出輸入法**
 

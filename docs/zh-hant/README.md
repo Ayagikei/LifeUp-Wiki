@@ -179,7 +179,7 @@
 
 - **應用協議與隱私權政策**
 
-[隱私協議 (lifeupapp.fun)](https://wiki.lifeupapp.fun/zh-cn/#/introduction/privacy-trems)
+[隱私協議 (lifeupapp.fun)](introduction/privacy-trems)
 
 - **聯絡郵箱**
 
