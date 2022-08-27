@@ -179,7 +179,7 @@
 
 - **應用協議與隱私權政策**
 
-[隱私協議 (lifeupapp.fun)](https://wiki.lifeupapp.fun/zh-hant/#/introduction/privacy-trems)
+[隱私協議 (lifeupapp.fun)](https://wiki.lifeupapp.fun/zh-cn/#/introduction/privacy-trems)
 
 - **聯絡郵箱**
 
@@ -208,6 +208,6 @@
 
 ---
 
-## [獨立應用性質](https://wiki.lifeupapp.fun/zh-hant/#/guide/faq?id=%e7%8b%ac%e7%ab%8b%e5%ba%94%e7%94%a8%e6%80%a7%e8%b4%a8)
+## [獨立應用性質](https://wiki.lifeupapp.fun/zh-cn/#/guide/faq?id=%e7%8b%ac%e7%ab%8b%e5%ba%94%e7%94%a8%e6%80%a7%e8%b4%a8)
 
 《人升》與你生活中使用到的絕大部分應用都不一樣。

@@ -325,7 +325,7 @@
 #### # 詳細介紹
 > 老文件，待翻新
 
- [屬性詳細介紹](https://wiki.lifeupapp.fun/zh-hant/#/guide/attributes)
+ [屬性詳細介紹](https://wiki.lifeupapp.fun/zh-cn/#/guide/attributes)
 
 <br/>
 
@@ -410,7 +410,7 @@
 </p>
 
 
- [1.80.0 - 開箱 (lifeupapp.fun)](https://wiki.lifeupapp.fun/zh-hant/#/features/180)
+ [1.80.0 - 開箱 (lifeupapp.fun)](https://wiki.lifeupapp.fun/zh-cn/#/features/180)
 
 隨機是一種很有效的激勵方式！
 
@@ -478,7 +478,7 @@
 #### # 詳細介紹
 老文件，待翻新
 
- [商品 (lifeupapp.fun)](https://wiki.lifeupapp.fun/zh-hant/#/guide/shop_item)
+ [商品 (lifeupapp.fun)](https://wiki.lifeupapp.fun/zh-cn/#/guide/shop_item)
 
 <br/>
 
@@ -837,13 +837,13 @@
 
 ## 體系參考
 
-#### 1. [人升體系建設參考手冊](https://wiki.lifeupapp.fun/zh-hant/#/guide/user/system_01?id=人升體系建設參考手冊)
+#### 1. [人升體系建設參考手冊](https://wiki.lifeupapp.fun/zh-cn/#/guide/user/system_01?id=人升體系建設參考手冊)
 
 > **適合初期參考使用**
 
 由“振武節度使”編寫的體系使用文章。透過比較基礎的設定方式創造了很多有意思的玩法，如“葫蘆娃救爺爺”、“每日投資”、“每日彩票”、“我要一個數碼寶貝”。
 
-#### 2. [體系相關影片](https://wiki.lifeupapp.fun/zh-hant/#/guide/user/system_02)
+#### 2. [體系相關影片](https://wiki.lifeupapp.fun/zh-cn/#/guide/user/system_02)
 
 > **這裏包含著使用者貢獻的諸多體系影片，也適合前期入門瞭解人升的功能。**
 

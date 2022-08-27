@@ -36,7 +36,7 @@
 
 其中還持續穿插著諸多的功能小特性、最佳化、問題修復，程式碼重構和 UI 最佳化等工作。
 
-感興趣的同學也可以檢視我們詳細的[更新日誌](https://wiki.lifeupapp.fun/zh-hant/#/introduction/release_log)。
+感興趣的同學也可以檢視我們詳細的[更新日誌](https://wiki.lifeupapp.fun/zh-cn/#/introduction/release_log)。
 
 
 

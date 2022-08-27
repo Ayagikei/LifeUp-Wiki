@@ -112,7 +112,7 @@
 
 **一個外部應用聯動的例子：**
 
-[Wordle Clone (lifeupapp.fun)](https://wiki.lifeupapp.fun/zh-hant/example/wordle/index.html)
+[Wordle Clone (lifeupapp.fun)](https://wiki.lifeupapp.fun/zh-cn/example/wordle/index.html)
 
 Wordle 是猜單詞的小遊戲：猜長度為 5 的單詞。橙黃色代表答案的單詞中包含該字母。綠色代表包含且位置正確。
 
