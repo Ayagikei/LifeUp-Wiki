@@ -1,16 +1,25 @@
 <script type="text/javascript">
-    var type = navigator.appName;
-    if (type == "Netscape") {
-      var lang = navigator.language;//获取浏览器配置语言，支持非IE浏览器
-    } else {
-      var lang = navigator.userLanguage;//获取浏览器配置语言，支持IE5+ == navigator.systemLanguage
-    };
-    var lang = lang.substr(0, 2);//获取浏览器配置语言前两位
-    if (lang == "zh") {
-      location.href="zh-cn/index.html#/";
-    } else if (lang == "en") {
-      location.href="en/index.html#/";
-    } else {//其他语言编码时打开以下链接
-      location.href="en/index.html#/";
-    };
+  var type = navigator.appName;
+  if (type == "Netscape") {
+    var lang = navigator.language;//获取浏览器配置语言，支持非IE浏览器
+  } else {
+    var lang = navigator.userLanguage;//获取浏览器配置语言，支持IE5+ == navigator.systemLanguage
+  };
+
+  switch (lang.toLowerCase()) {
+    case "zh":
+      location.href = "zh-cn/index.html#/";
+    case "zh-tw":
+      location.href = "zh-hant/index.html#/";
+      break;
+    case "zh-hk":
+      location.href = "zh-hant/index.html#/";
+      break;
+    case "zh-cn":
+      location.href = "zh-cn/index.html#/";
+      break;
+    default:
+      location.href = "en/index.html#/";
+      break;
+  }
 </script>

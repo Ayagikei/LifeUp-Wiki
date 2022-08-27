@@ -16,7 +16,9 @@
 
 <p align="center">Custom your own gamify list with attribute, exp, coin, reward to stay productive!</p>
 
-
+<p align="center">
+ <img src="guide/_media/hello_world/banner.png" style="height:250px" />
+</p>
 
 ---
 
@@ -58,7 +60,7 @@
 
 如果你想要的是一款服务器存储应用，你可以参考下述的商业化应用。**如果你正是想要一款离线存储应用，那么`人升`刚好适合你！**
 
-晚些时候，你可以查阅这里 [了解如何设置备份](https://wiki.lifeupapp.fun/zh-cn/#/guide/backup) ，先继续往下看吧~
+晚些时候，你可以查阅这里 [了解如何设置备份](guide/backup) ，先继续往下看吧~
 稍后我们会介绍应用的各种有趣特性。
 
 #### # 自驱激励
@@ -98,7 +100,7 @@
 
 #### # 兼容性配置
 
-[兼容性配置](https://wiki.lifeupapp.fun/zh-cn/#/guide/compatibility)
+[兼容性配置](guide/compatibility)
 
 **如果你不进行配置，可能会影响你使用【提醒】、【番茄钟】、【桌面小部件】等能力**
 
@@ -118,20 +120,40 @@
 
 使用应用途中如果有问题，可以先翻阅常见问题：
 
- [常见问题](https://wiki.lifeupapp.fun/zh-cn/#/guide/faq)
+ [常见问题](guide/faq)
 
 ---
 应用的功能模块有：
-- [任务](/guide/hello_lifeup?id=_1-%e4%bb%bb%e5%8a%a1)
-- [属性](/guide/hello_lifeup?id=_2-%e5%b1%9e%e6%80%a7)
-- [商品](/guide/hello_lifeup?id=_3-%e5%95%86%e5%93%81)
-- [成就](/guide/hello_lifeup?id=_4-%e6%88%90%e5%b0%b1)
-- [番茄](/guide/hello_lifeup?id=_5-%e7%95%aa%e8%8c%84)
-- [感想](/guide/hello_lifeup?id=_5-%e7%95%aa%e8%8c%84)
-- 世界 - 🚧
+- [任务](/guide/hello_lifeup?id=task)
+- [属性](/guide/hello_lifeup?id=skills)
+- [商品](/guide/hello_lifeup?id=shop)
+- [成就](/guide/hello_lifeup?id=achievements)
+- [番茄](/guide/hello_lifeup?id=pomodoro)
+- [感想](/guide/hello_lifeup?id=feelings)
+- [世界](/guide/hello_lifeup?id=world)
+- [接口（API）](/guide/hello_lifeup?id=api)
 
 人升的功能是模块化设计的，你可以仅使用自己想要的功能模块。
+
 但他们也支持多变地组合起来，发挥出 1+1>2 的效果，实现非常强大的组合效果。
+
+`LifeUp`会提供**多样的单一职能功能（比如开箱就是一个单纯的随机功能）**，组合起来可以实现多种可能性：
+
+> 比如
+>
+> 使用商品+合成，你就能实现自己的多种货币商店。
+>
+> 使用计时+任务+成就，你就能跟踪 1w 小时记录。
+>
+> 使用 API + 外部自动化工具，你能实现自动打卡「起床」任务。
+>
+> 使用**开箱+合成**组合使用，你就能模拟简单的钓鱼系统、打怪探索体系：
+>
+> 渔具+消耗鱼料=钓鱼成果宝箱...
+>
+> 怪物+消耗体力值=一定概率击败怪物的宝箱...
+
+
 
 下文可以先简单阅读**快速开始**部分。
 
@@ -145,10 +167,13 @@
 
 ---
 
-### 1. 任务
-> 任务是一切的起点。向自己颁布任务，设置奖励，并努力去挑战自我吧！
+<h3 align="center" padding="100" id="task">一、任务</h2>
 
-![](_media/hello_world/tasks.png ': size=30%')
+<p align="center">任务是一切的基石。向自己颁布任务，设置奖励，并努力去挑战自我吧！</p>
+
+<p align="center">
+ <img src="guide/_media/hello_world/tasks.png" style="height:600px" />
+</p>
 
 我们对任务的定义是：你现实中能够实际去完成的事情。
 
@@ -169,7 +194,7 @@
 
 3.  **了解如何创建各种任务**：
 
- [事项创建范例](https://wiki.lifeupapp.fun/zh-cn/#/guide/tasks_sample)
+ [事项创建范例](guide/tasks_sample)
 
 <br/>
 
@@ -239,7 +264,7 @@
 #### # 详细介绍
 > 老文档，待翻新
 
- [事项详细介绍](https://wiki.lifeupapp.fun/zh-cn/#/guide/tasks)
+ [事项详细介绍](guide/tasks)
 
 <br/>
 
@@ -259,10 +284,14 @@
 
 ---
 
-### 2. 属性
-> 属性用作抽象量化你的能力成长。
+<h3 align="center" padding="100" id="skills">二、属性</h2>
 
-![](_media/hello_world/attributes.png ': size=30%')
+<p align="center">抽象量化你的能力与成长</p>
+
+<p align="center">
+ <img src="guide/_media/hello_world/tasks.png" style="height:600px" />
+</p>
+
 
 #### # 快速开始
 属性是一个比较抽象的自驱动激励体系。
@@ -311,10 +340,13 @@
 
 ---
 
-### 3. 商品
-> 《人升》中的商品含义是“使用游戏化的形式体现的自我奖励机制”。
+<h3 align="center" padding="100" id="shop">三、商品</h2>
 
-![](_media/hello_world/shop.png ': size=30%')
+<p align="center">极高自定义性的游戏化体现自我奖惩机制！</p>
+
+<p align="center">
+ <img src="guide/_media/hello_world/shop.png" style="height:600px" />
+</p>
 
 使用金币衡量任务的完成程度，随后购买自己心仪的奖励，正向激励自己继续努力。
 
@@ -373,7 +405,10 @@
 
 ##### 0. 设置开箱盲盒：
 
-![](_media/hello_world/loot_box.png ': size=30%')
+<p align="center">
+ <img src="guide/_media/hello_world/loot_box.png" style="height:600px" />
+</p>
+
 
  [1.80.0 - 开箱 (lifeupapp.fun)](https://wiki.lifeupapp.fun/zh-cn/#/features/180)
 
@@ -441,14 +476,15 @@
 <br/>
 
 #### # 详细介绍
-> 老文档，待翻新
+老文档，待翻新
 
  [商品 (lifeupapp.fun)](https://wiki.lifeupapp.fun/zh-cn/#/guide/shop_item)
 
 <br/>
 
 #### # 联动使用
-> 已经在其他模块描述过的联动此处不再赘述
+已经在其他模块描述过的联动此处不再赘述
+
 - **成就：**
    购买、使用商品达到一定次数解锁成就；
    合成特殊商品获得成就；
@@ -460,10 +496,15 @@
 
 ---
 
-### 4. 成就
-> 中大型目标、里程碑、自动化进度跟踪
+<h3 align="center" padding="100" id="achievements">四、成就</h2>
 
-![](_media/hello_world/achievements.png ': size=30%')
+<p align="center">中大型目标、里程碑、自动化进度跟踪</p>
+
+
+<p align="center">
+ <img src="guide/_media/hello_world/achievements.png" style="height:600px" />
+</p>
+
 
 #### # 快速开始
 **1. 普通成就**：
@@ -512,8 +553,13 @@
 
 ---
 
-### 5. 番茄
-> 可以食用和售卖的番茄钟
+<h3 align="center" padding="100" id="pomodoro">五、番茄</h2>
+
+<p align="center">你未曾体验过的游戏化番茄钟（可以食用、售卖你的番茄奖励），以及一套完善的计时体系</p>
+
+<p align="center">
+ <img src="guide/_media/hello_world/pomodoro.png" style="height:600px" />
+</p>
 
 #### # 快速开始
 番茄钟基于番茄计时法，简言之就是劳逸结合地进行工作（工作 25 分钟和休息 5 分钟相间隔）。
@@ -560,13 +606,26 @@
 
 如果是重复任务的话，支持分开查看本次的专注记录和累计的专注记录。
 
-借由这个特性，你可以实现简单的 1w 小时统计等需求。
+借由这个特性，你可以实现**简单的 1w 小时统计**等需求。
+
+<br/>
+
+##### 手动添加计时
+
+> 会员/Pro版本功能
+
+你可以在番茄计时记录，添加任意时间段的计时记录。
+
+并且可以设置计时所关联的任务。
+
 
 <br/>
 
 ##### 番茄用处
 
-![](_media/hello_world/tomato.png ': size=30%')
+<p align="center">
+ <img src="guide/_media/hello_world/tomato.png" style="height:600px" />
+</p>
 
 - 食用：获取经验值（默认耐力）
 - 出售：获取金币
@@ -574,24 +633,35 @@
 
 #### # 详细介绍
 
-##### 0. 设置开箱盲盒：
+##### > 暂无
 
 <br/>
 
 #### # 联动使用
-> 已经在其他模块描述过的联动此处不再赘述
+已经在其他模块描述过的联动此处不再赘述
+
 - **任务：**
    开始计时时可以指定正在专注的任务，为任务统计专注时长。
+   
 - **商店：**
    食用或者交换番茄来获得金币获得商品奖励
+   
 - **成就：**
   成就支持跟踪某一类任务的专注时长、累计获得番茄数等信息
+  
+- **API：**
+
+  使用自动化工具 + API 拦截其他计时软件的通知，添加计时记录
 
 ---
 
-### 6. 感想
+<h3 align="center" padding="100" id="feelings">六、感想</h2>
 
-> 简易的文本、图片完成感想记录功能
+<p align="center">简易的文本、图片完成感想记录功能</p>
+
+<p align="center">
+ <img src="guide/_media/hello_world/feelings.png" style="height:600px" />
+</p>
 
 #### # 快速开始
 
@@ -629,12 +699,135 @@
 
 #### # 联动使用
 
+- API 功能几乎能与任何模块联动试用，详情请查看接口文档。
+- 外部应用、网页：除此之外，API 功能还能与外部应用、网页联动，欢迎参与二次开发。
+- 自动化工具：可以搭配 Tasker、Macrodroid 自动化工具实现自动化功能。
+
+
+
+<br/>
+
+<h3 align="center" padding="100" id="feelings">七、世界</h2>
+
+<p align="center">社区已经足够多了，这里没有社交元素，只有分享创造和美好的小世界</p>
+
+<p align="center">
+ <img src="guide/_media/hello_world/world.png" style="height:600px" />
+</p>
+
+#### # 快速开始
+
+##### 团队
+
+与团队成员一起完成某些习惯养成吧~
+
+比如一起挑战“早睡早起”。
+
+这里并不含社交元素，所以并不需要担心任何的打扰。
+
+<br/>
+
+##### 时刻
+
+在这里，你可以浏览其他用户**完成团队任务后**，发表的完成感想。
+
+你也可以关注一些积极的用户，观察他们的进步并借此激励自己。
+
+<br/>
+
+##### 橱窗
+
+不知道创建什么商品奖励？或者不知道如何使用 API 功能创建高阶奖励？又或者不了解如何找到合适的商品图标？
+
+你可以在橱窗随时进货其他用户创建好的商品，并在本地修改定制成自己所需的商品奖励。
+
+<br />
+
+##### 随机任务
+
+迷茫时不知道想做什么任务？
+
+欢迎随时来到这个模块接收随机任务邀请。
+
+随手完成一件有意义的小事吧~
+
+比如收拾一下物品、跟亲人聊聊天、拍拍照片记录美好生活。
+
+<br/>
+
+#### # 详细介绍
+
+-
+
+#### # 联动使用
+
 - **任务：**
-   - 可以在完成任务时，为任务添加感想，支持按任务筛选感想列表
-   - 可以在历史等页面，为逾期、放弃的任务添加感想
+  - 加入或创建团队，获得团队任务
+  - 领取随机任务
+- **感想：**
+  完成团队任务，可以将感想公开发表到时刻模块
+- **商店：**
+  - 进货其他用户创建的商品
+  - 添加其他用户创建的商品图标
+
+
+
+<br/>
+
+---
+
+<h3 align="center" padding="100" id="api">八、开放接口（API）</h2>
+
+<p align="center">双向开放（外部应用<-->人升），自动化你的人升，创造无限的联动可能性~</p>
+
+<p align="center">
+ <img src="guide/_media/hello_world/api_sample.png" style="height:600px" />
+</p>
+
+<p align="center">
+ <img src="guide/_media/hello_world/api_auto.png" style="height:600px" />
+</p>
+
+
+
+#### # 快速开始
+
+**开放接口**属于`LifeUp`中的进阶功能。
+
+通过它，你可以实现
+
+- 使用商品联动外部应用（打开外部应用、触发外部应用的动作）。
+- 使用商品影响`LifeUp`中的数值，如ATM利率、某个箱子中商品的概率。
+- 外部应用联动，为你的`LifeUp`提供奖励。比如示例中有个 Wordle 猜单词网页游戏，猜中后，你将获得 10 个金币。
+- 外部自动化工具联动，判断地点、起床、刷 NFC 卡片，实现自动完成任务、惩罚、录入其他应用的专注时间等等...
+
+<br/>
+
+##### 橱窗导入
+
+听上去可能很复杂，但如果你不需要定制化的功能：
+
+可以在**世界**-**橱窗**-**（链接、API、自动化）**标签直接导入商品，直接使用。
+
+<br/>
+
+##### 示例介绍
+
+[你可以点击这里查看我们的更多示例介绍](/features/190)
+
+<br />
+
+#### # 详细介绍
+
+[你可以点击这里查看开放接口的详细介绍和写法](/guide/api)
+
+#### # 联动使用
+
+- **任务：**
+  - 可以在完成任务时，为任务添加感想，支持按任务筛选感想列表
+  - 可以在历史等页面，为逾期、放弃的任务添加感想
 - **成就：**
-   可以为成就添加感想
-   
+  可以为成就添加感想
 
 
 
@@ -664,9 +857,15 @@
 
 ## 反馈与贡献
 
+!> 只要我们还没破产，`LifeUp`将长期处于**积极开发**的阶段。积极开发意味着我们将持续带来功能迭代，而不只是问题修复。但这也会不可避免的引起新的 bugs 等程序异常问题。欢迎参与捉虫行动~
+
 #### 如果你在使用途中遇到了疑惑的地方，亦或者是遇到了应用崩溃、bug，
 
-欢迎加入QQ群，或者通过邮件咨询我们（`关于`**页面能够一建加群**，邮箱地址 kei.ayagi@gmail.com）。
+欢迎加入QQ 群、QQ 频道，或者通过邮件咨询我们（`关于`**页面能够一建加群**，邮箱地址 kei.ayagi@gmail.com）。
+
+你也能够在应用中的「关于」页面查看到我们的更多社群链接。
+
+
 
 为了让群友或者我们能直观了解你的咨询，也为了你的咨询能更快得到解答，
 
@@ -676,10 +875,34 @@
 
 #### 如果你喜欢我们的工作，想支持我们，欢迎：
 
-- 捐赠成为会员，获得更多的会员权益，也能够提前体验内测版本。
+- **向你的朋友、社群推荐我们的应用吧**，只需要在安卓应用商店搜索“人升”即可~
+
+  只要人升多一位用户，我们就减少了一分破产的概率。
+
+- 捐赠成为会员（或购买 Pro 版本），获得更多的会员权益，也能够提前体验内测版本。
+
 - 协助我们进行周边建设：如文档、视频、宣传，我们也会署名对应的贡献者，以及协助放置到应用内/该文档库。
+
 - 如果你希望应用能够长期开发：欢迎在`爱发电`等平台支持我们！
 
+<br/>
+
+
+#### 如果你想参与我们的商务合作，可以先了解一下以下点：
+
+- 我们想将`LifeUp`打造为一款精致、优雅的应用。
+
+  因此我们将保持采用买断制付费模式，**不会（针对Pro版本、会员）额外引入商业广告。**
+
+- 目前`LifeUp`有一定受众但体量仍非常小。
+
+  我们不考虑开源应用，开发合作可能也更倾向于 Flutter 全新版本，而非 Android 版本体。
+
+- 我们非常欢迎与其他优秀的独立应用互相推荐、交换友链。
+
+- 我们非常欢迎为一些基于`LifeUp`周边建设的推广工作，比如基于API设计的联动应用和网页。
+
+- 如果你有这方面的需求，请联系我们的邮箱 kei.ayagi@gmail.com
 
 <br />
 
