@@ -16,7 +16,9 @@
 
 <p align="center">Custom your own gamify list with attribute, exp, coin, reward to stay productive!</p>
 
-
+<p align="center">
+ <img src="guide/_media/hello_world/banner.png" style="height:250px" />
+</p>
 
 ---
 
@@ -58,7 +60,7 @@
 
 如果你想要的是一款伺服器儲存應用，你可以參考下述的商業化應用。**如果你正是想要一款離線儲存應用，那麼`人升`剛好適合你！**
 
-晚些時候，你可以查閱這裏 [瞭解如何設定備份](https://wiki.lifeupapp.fun/zh-hant/#/guide/backup) ，先繼續往下看吧~
+晚些時候，你可以查閱這裏 [瞭解如何設定備份](guide/backup) ，先繼續往下看吧~
 稍後我們會介紹應用的各種有趣特性。
 
 #### # 自驅激勵
@@ -98,7 +100,7 @@
 
 #### # 相容性配置
 
-[相容性配置](https://wiki.lifeupapp.fun/zh-hant/#/guide/compatibility)
+[相容性配置](guide/compatibility)
 
 **如果你不進行配置，可能會影響你使用【提醒】、【番茄鍾】、【桌面小部件】等能力**
 
@@ -118,20 +120,40 @@
 
 使用應用途中如果有問題，可以先翻閱常見問題：
 
- [常見問題](https://wiki.lifeupapp.fun/zh-hant/#/guide/faq)
+ [常見問題](guide/faq)
 
 ---
 應用的功能模組有：
-- [任務](/guide/hello_lifeup?id=_1-%e4%bb%bb%e5%8a%a1)
-- [屬性](/guide/hello_lifeup?id=_2-%e5%b1%9e%e6%80%a7)
-- [商品](/guide/hello_lifeup?id=_3-%e5%95%86%e5%93%81)
-- [成就](/guide/hello_lifeup?id=_4-%e6%88%90%e5%b0%b1)
-- [番茄](/guide/hello_lifeup?id=_5-%e7%95%aa%e8%8c%84)
-- [感想](/guide/hello_lifeup?id=_5-%e7%95%aa%e8%8c%84)
-- 世界 - 🚧
+- [任務](/guide/hello_lifeup?id=task)
+- [屬性](/guide/hello_lifeup?id=skills)
+- [商品](/guide/hello_lifeup?id=shop)
+- [成就](/guide/hello_lifeup?id=achievements)
+- [番茄](/guide/hello_lifeup?id=pomodoro)
+- [感想](/guide/hello_lifeup?id=feelings)
+- [世界](/guide/hello_lifeup?id=world)
+- [介面（API）](/guide/hello_lifeup?id=api)
 
 人升的功能是模組化設計的，你可以僅使用自己想要的功能模組。
+
 但他們也支援多變地組合起來，發揮出 1+1>2 的效果，實現非常強大的組合效果。
+
+`LifeUp`會提供**多樣的單一職能功能（比如開箱就是一個單純的隨機功能）**，組合起來可以實現多種可能性：
+
+> 比如
+>
+> 使用商品+合成，你就能實現自己的多種貨幣商店。
+>
+> 使用計時+任務+成就，你就能跟蹤 1w 小時記錄。
+>
+> 使用 API + 外部自動化工具，你能實現自動打卡「起床」任務。
+>
+> 使用**開箱+合成**組合使用，你就能模擬簡單的釣魚系統、打怪探索體系：
+>
+> 漁具+消耗魚料=釣魚成果寶箱...
+>
+> 怪物+消耗體力值=一定機率擊敗怪物的寶箱...
+
+
 
 下文可以先簡單閱讀**快速開始**部分。
 
@@ -145,10 +167,13 @@
 
 ---
 
-### 1. 任務
-> 任務是一切的起點。向自己頒佈任務，設定獎勵，並努力去挑戰自我吧！
+<h3 align="center" padding="100" id="task">一、任務</h2>
 
-![](_media/hello_world/tasks.png ': size=30%')
+<p align="center">任務是一切的基石。向自己頒佈任務，設定獎勵，並努力去挑戰自我吧！</p>
+
+<p align="center">
+ <img src="guide/_media/hello_world/tasks.png" style="height:600px" />
+</p>
 
 我們對任務的定義是：你現實中能夠實際去完成的事情。
 
@@ -169,7 +194,7 @@
 
 3.  **瞭解如何建立各種任務**：
 
- [事項建立範例](https://wiki.lifeupapp.fun/zh-hant/#/guide/tasks_sample)
+ [事項建立範例](guide/tasks_sample)
 
 <br/>
 
@@ -239,7 +264,7 @@
 #### # 詳細介紹
 > 老文件，待翻新
 
- [事項詳細介紹](https://wiki.lifeupapp.fun/zh-hant/#/guide/tasks)
+ [事項詳細介紹](guide/tasks)
 
 <br/>
 
@@ -259,10 +284,14 @@
 
 ---
 
-### 2. 屬性
-> 屬性用作抽象量化你的能力成長。
+<h3 align="center" padding="100" id="skills">二、屬性</h2>
 
-![](_media/hello_world/attributes.png ': size=30%')
+<p align="center">抽象量化你的能力與成長</p>
+
+<p align="center">
+ <img src="guide/_media/hello_world/tasks.png" style="height:600px" />
+</p>
+
 
 #### # 快速開始
 屬性是一個比較抽象的自驅動激勵體系。
@@ -311,10 +340,13 @@
 
 ---
 
-### 3. 商品
-> 《人升》中的商品含義是“使用遊戲化的形式體現的自我獎勵機制”。
+<h3 align="center" padding="100" id="shop">三、商品</h2>
 
-![](_media/hello_world/shop.png ': size=30%')
+<p align="center">極高自定義性的遊戲化體現自我獎懲機制！</p>
+
+<p align="center">
+ <img src="guide/_media/hello_world/shop.png" style="height:600px" />
+</p>
 
 使用金幣衡量任務的完成程度，隨後購買自己心儀的獎勵，正向激勵自己繼續努力。
 
@@ -373,7 +405,10 @@
 
 ##### 0. 設定開箱盲盒：
 
-![](_media/hello_world/loot_box.png ': size=30%')
+<p align="center">
+ <img src="guide/_media/hello_world/loot_box.png" style="height:600px" />
+</p>
+
 
  [1.80.0 - 開箱 (lifeupapp.fun)](https://wiki.lifeupapp.fun/zh-hant/#/features/180)
 
@@ -441,14 +476,15 @@
 <br/>
 
 #### # 詳細介紹
-> 老文件，待翻新
+老文件，待翻新
 
  [商品 (lifeupapp.fun)](https://wiki.lifeupapp.fun/zh-hant/#/guide/shop_item)
 
 <br/>
 
 #### # 聯動使用
-> 已經在其他模組描述過的聯動此處不再贅述
+已經在其他模組描述過的聯動此處不再贅述
+
 - **成就：**
    購買、使用商品達到一定次數解鎖成就；
    合成特殊商品獲得成就；
@@ -460,10 +496,15 @@
 
 ---
 
-### 4. 成就
-> 中大型目標、里程碑、自動化進度跟蹤
+<h3 align="center" padding="100" id="achievements">四、成就</h2>
 
-![](_media/hello_world/achievements.png ': size=30%')
+<p align="center">中大型目標、里程碑、自動化進度跟蹤</p>
+
+
+<p align="center">
+ <img src="guide/_media/hello_world/achievements.png" style="height:600px" />
+</p>
+
 
 #### # 快速開始
 **1. 普通成就**：
@@ -512,8 +553,13 @@
 
 ---
 
-### 5. 番茄
-> 可以食用和售賣的番茄鍾
+<h3 align="center" padding="100" id="pomodoro">五、番茄</h2>
+
+<p align="center">你未曾體驗過的遊戲化番茄鍾（可以食用、售賣你的番茄獎勵），以及一套完善的計時體系</p>
+
+<p align="center">
+ <img src="guide/_media/hello_world/pomodoro.png" style="height:600px" />
+</p>
 
 #### # 快速開始
 番茄鍾基於番茄計時法，簡言之就是勞逸結合地進行工作（工作 25 分鐘和休息 5 分鐘相間隔）。
@@ -560,13 +606,26 @@
 
 如果是重複任務的話，支援分開檢視本次的專注記錄和累計的專注記錄。
 
-藉由這個特性，你可以實現簡單的 1w 小時統計等需求。
+藉由這個特性，你可以實現**簡單的 1w 小時統計**等需求。
+
+<br/>
+
+##### 手動新增計時
+
+> 會員/Pro版本功能
+
+你可以在番茄計時記錄，新增任意時間段的計時記錄。
+
+並且可以設定計時所關聯的任務。
+
 
 <br/>
 
 ##### 番茄用處
 
-![](_media/hello_world/tomato.png ': size=30%')
+<p align="center">
+ <img src="guide/_media/hello_world/tomato.png" style="height:600px" />
+</p>
 
 - 食用：獲取經驗值（預設耐力）
 - 出售：獲取金幣
@@ -574,24 +633,35 @@
 
 #### # 詳細介紹
 
-##### 0. 設定開箱盲盒：
+##### > 暫無
 
 <br/>
 
 #### # 聯動使用
-> 已經在其他模組描述過的聯動此處不再贅述
+已經在其他模組描述過的聯動此處不再贅述
+
 - **任務：**
    開始計時時可以指定正在專注的任務，為任務統計專注時長。
+   
 - **商店：**
    食用或者交換番茄來獲得金幣獲得商品獎勵
+   
 - **成就：**
   成就支援跟蹤某一類任務的專注時長、累計獲得番茄數等資訊
+  
+- **API：**
+
+  使用自動化工具 + API 攔截其他計時軟體的通知，新增計時記錄
 
 ---
 
-### 6. 感想
+<h3 align="center" padding="100" id="feelings">六、感想</h2>
 
-> 簡易的文字、圖片完成感想記錄功能
+<p align="center">簡易的文字、圖片完成感想記錄功能</p>
+
+<p align="center">
+ <img src="guide/_media/hello_world/feelings.png" style="height:600px" />
+</p>
 
 #### # 快速開始
 
@@ -629,12 +699,135 @@
 
 #### # 聯動使用
 
+- API 功能幾乎能與任何模組聯動試用，詳情請檢視介面文件。
+- 外部應用、網頁：除此之外，API 功能還能與外部應用、網頁聯動，歡迎參與二次開發。
+- 自動化工具：可以搭配 Tasker、Macrodroid 自動化工具實現自動化功能。
+
+
+
+<br/>
+
+<h3 align="center" padding="100" id="feelings">七、世界</h2>
+
+<p align="center">社羣已經足夠多了，這裏沒有社交元素，只有分享創造和美好的小世界</p>
+
+<p align="center">
+ <img src="guide/_media/hello_world/world.png" style="height:600px" />
+</p>
+
+#### # 快速開始
+
+##### 團隊
+
+與團隊成員一起完成某些習慣養成吧~
+
+比如一起挑戰“早睡早起”。
+
+這裏並不含社交元素，所以並不需要擔心任何的打擾。
+
+<br/>
+
+##### 時刻
+
+在這裏，你可以瀏覽其他使用者**完成團隊任務後**，發表的完成感想。
+
+你也可以關注一些積極的使用者，觀察他們的進步並藉此激勵自己。
+
+<br/>
+
+##### 櫥窗
+
+不知道建立什麼商品獎勵？或者不知道如何使用 API 功能建立高階獎勵？又或者不瞭解如何找到合適的商品圖示？
+
+你可以在櫥窗隨時進貨其他使用者建立好的商品，並在本地修改定製成自己所需的商品獎勵。
+
+<br />
+
+##### 隨機任務
+
+迷茫時不知道想做什麼任務？
+
+歡迎隨時來到這個模組接收隨機任務邀請。
+
+隨手完成一件有意義的小事吧~
+
+比如收拾一下物品、跟親人聊聊天、拍拍照片記錄美好生活。
+
+<br/>
+
+#### # 詳細介紹
+
+-
+
+#### # 聯動使用
+
 - **任務：**
-   - 可以在完成任務時，為任務新增感想，支援按任務篩選感想列表
-   - 可以在歷史等頁面，為逾期、放棄的任務新增感想
+  - 加入或建立團隊，獲得團隊任務
+  - 領取隨機任務
+- **感想：**
+  完成團隊任務，可以將感想公開發表到時刻模組
+- **商店：**
+  - 進貨其他使用者建立的商品
+  - 新增其他使用者建立的商品圖示
+
+
+
+<br/>
+
+---
+
+<h3 align="center" padding="100" id="api">八、開放介面（API）</h2>
+
+<p align="center">雙向開放（外部應用<-->人升），自動化你的人升，創造無限的聯動可能性~</p>
+
+<p align="center">
+ <img src="guide/_media/hello_world/api_sample.png" style="height:600px" />
+</p>
+
+<p align="center">
+ <img src="guide/_media/hello_world/api_auto.png" style="height:600px" />
+</p>
+
+
+
+#### # 快速開始
+
+**開放介面**屬於`LifeUp`中的進階功能。
+
+透過它，你可以實現
+
+- 使用商品聯動外部應用（開啟外部應用、觸發外部應用的動作）。
+- 使用商品影響`LifeUp`中的數值，如ATM利率、某個箱子中商品的機率。
+- 外部應用聯動，為你的`LifeUp`提供獎勵。比如示例中有個 Wordle 猜單詞網頁遊戲，猜中後，你將獲得 10 個金幣。
+- 外部自動化工具聯動，判斷地點、起床、刷 NFC 卡片，實現自動完成任務、懲罰、錄入其他應用的專注時間等等...
+
+<br/>
+
+##### 櫥窗匯入
+
+聽上去可能很複雜，但如果你不需要定製化的功能：
+
+可以在**世界**-**櫥窗**-**（連結、API、自動化）**標籤直接匯入商品，直接使用。
+
+<br/>
+
+##### 示例介紹
+
+[你可以點選這裏檢視我們的更多示例介紹](/features/190)
+
+<br />
+
+#### # 詳細介紹
+
+[你可以點選這裏檢視開放介面的詳細介紹和寫法](/guide/api)
+
+#### # 聯動使用
+
+- **任務：**
+  - 可以在完成任務時，為任務新增感想，支援按任務篩選感想列表
+  - 可以在歷史等頁面，為逾期、放棄的任務新增感想
 - **成就：**
-   可以為成就新增感想
-   
+  可以為成就新增感想
 
 
 
@@ -664,9 +857,15 @@
 
 ## 反饋與貢獻
 
+!> 只要我們還沒破產，`LifeUp`將長期處於**積極開發**的階段。積極開發意味著我們將持續帶來功能迭代，而不只是問題修復。但這也會不可避免的引起新的 bugs 等程式異常問題。歡迎參與捉蟲行動~
+
 #### 如果你在使用途中遇到了疑惑的地方，亦或者是遇到了應用崩潰、bug，
 
-歡迎加入QQ群，或者透過郵件諮詢我們（`關於`**頁面能夠一建加群**，郵箱地址 kei.ayagi@gmail.com）。
+歡迎加入QQ 群、QQ 頻道，或者透過郵件諮詢我們（`關於`**頁面能夠一建加群**，郵箱地址 kei.ayagi@gmail.com）。
+
+你也能夠在應用中的「關於」頁面檢視到我們的更多社群連結。
+
+
 
 爲了讓群友或者我們能直觀瞭解你的諮詢，也爲了你的諮詢能更快得到解答，
 
@@ -676,10 +875,34 @@
 
 #### 如果你喜歡我們的工作，想支援我們，歡迎：
 
-- 捐贈成為會員，獲得更多的會員權益，也能夠提前體驗內測版本。
+- **向你的朋友、社群推薦我們的應用吧**，只需要在安卓應用商店搜尋“人升”即可~
+
+  只要人升多一位使用者，我們就減少了一分破產的機率。
+
+- 捐贈成為會員（或購買 Pro 版本），獲得更多的會員權益，也能夠提前體驗內測版本。
+
 - 協助我們進行周邊建設：如文件、影片、宣傳，我們也會署名對應的貢獻者，以及協助放置到應用內/該文件庫。
+
 - 如果你希望應用能夠長期開發：歡迎在`愛發電`等平臺支援我們！
 
+<br/>
+
+
+#### 如果你想參與我們的商務合作，可以先了解一下以下點：
+
+- 我們想將`LifeUp`打造為一款精緻、優雅的應用。
+
+  因此我們將保持採用買斷制付費模式，**不會（針對Pro版本、會員）額外引入商業廣告。**
+
+- 目前`LifeUp`有一定受眾但體量仍非常小。
+
+  我們不考慮開源應用，開發合作可能也更傾向於 Flutter 全新版本，而非 Android 版本體。
+
+- 我們非常歡迎與其他優秀的獨立應用互相推薦、交換友鏈。
+
+- 我們非常歡迎為一些基於`LifeUp`周邊建設的推廣工作，比如基於API設計的聯動應用和網頁。
+
+- 如果你有這方面的需求，請聯絡我們的郵箱 kei.ayagi@gmail.com
 
 <br />
 
