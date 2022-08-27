@@ -22,26 +22,28 @@ fun start() {
         if (destFile.exists() && destFile.lastModified() == it.lastModified() && destFile.length() == it.length()) {
             return@forEach
         }
-        if (it.extension == "md") {
-            convert(it, destFile)
-            destFile.setLastModified(it.lastModified())
-        } else {
-            if (it.isDirectory && destFile.exists()) {
+        when{
+            it.isDirectory && destFile.exists() -> {
                 return@forEach
             }
-            it.copyTo(
-                File(it.absolutePath.replace(originDir.absolutePath, destDir.absolutePath)),
-                overwrite = true
-            )
-            destFile.setLastModified(it.lastModified())
+            it.extension == "md" -> {
+                convert(it, destFile)
+            }
+            else -> {
+                it.copyTo(
+                    File(it.absolutePath.replace(originDir.absolutePath, destDir.absolutePath)),
+                    overwrite = true
+                )
+            }
         }
+        destFile.setLastModified(it.lastModified())
     }
 }
 
 
 fun convert(input: File, outputFile: File) {
     val text = input.readText()
-    val output = ZhTwConverterUtil.toTraditional(text).replace("zh-cn", "zh-hant")
+    val output = ZhTwConverterUtil.toTraditional(text)
     if (outputFile.parentFile?.exists()?.not() == true) {
         outputFile.parentFile?.mkdirs()
     }
