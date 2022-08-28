@@ -358,9 +358,9 @@ The method of obtaining the id is to open the "Developer Mode" on the "Labs" pag
 
 | Parameter | Meaning | Type | Example | Required | Remarks |
 | ---- | -------------- | ------------- | ---- | -------- | - --------------------------------------------- |
-| id | task id | number greater than 0 | coin | no* | task id; if it is a repeating task, the id will be updated every time it repeats. |
-| gid | task group id | number greater than 0 | remarks | no* | task group id; |
-| name | name | any text | 10 | no* | fuzzy search, only one of the tasks found |
+| id | task id | number greater than 0 | 1 | no* | task id; if it is a repeating task, the id will be updated every time it repeats. |
+| gid | task group id | number greater than 0 | 1 | no* | task group id; |
+| name | name | any text | get up | no* | fuzzy search, only one of the tasks found |
 | ui | Whether to display the popup UI | true or false | true | no | the default is false, only a message is displayed in the background |
 
 **Notice:**
