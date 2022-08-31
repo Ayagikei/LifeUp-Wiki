@@ -1,12 +1,72 @@
-# Release Log
+# Release Notes
 
 ## Timeline
 
 ![timeline](_media/release_log/timeline.png)
 
-## Log
+## Notes
 
 (Part of the translation is provided by Google Translate and may not be accurate)
+
+**1.90.2 (2022/08/31)**
+
+**✨Features**
+
+1. Add broadcast events.
+   Now you can use Tasker/MacroDroid to receive events such as using items, completing tasks, etc., and triggering Tasker's actions.
+
+   For example: If the item is used, it will trigger the replacement of random wallpapers.
+   In theory, if you want, you can implement functions such as application locks and game interaction scenarios.
+
+2. New API:
+
+- Give up tasks
+- Freeze tasks
+- Unfreeze tasks
+- Empty interface
+- Query
+
+3. Added return value for add new item and task API
+4. When importing items from the market, now you can select the target list
+5. Adapt to the secondary color of Material 3
+6. Update language translation, add Korean language support
+
+
+
+**♻️Improvements**
+
+1. When unboxes in batches, also display the probability of a single product
+2. Optimize some UI display effects in night mode
+3. Optimize the interactive logic of the date-time selection pop-up window. When selecting the current day, it will automatically switch to the time selection page.
+4. When the API calls item selection and list selection, the pop-up window no longer supports direct closing (to prevent API calls from being lost)
+5. Optimize the default height of some pop-up windows at the bottom of the tablet horizontal screen
+6. Optimize the automatic closing timing of the pop-up window
+
+
+
+**🐛 Fixes**
+
+1. Fix the problem that the API search task may fail in some cases
+2. Fixed occasional crash on the task list page
+3. Fixed the problem that the "Undo" operation button appears when long-pressing the normal achievements that are not unlocked.
+4. Fixed an issue where the achievement details pop-up window might be displayed incompletely
+5. Fix the problem that when uploading the window, it may fail due to the abnormally large picture
+6. Fix the problem that own_number and stock_number of item API do not support negative numbers
+7. Fix the problem that the number of days of persistence on the "Me" page is sometimes abnormally displayed as 1
+8. Fix the problem that sometimes -x days ago is displayed
+9. Fixed the issue that subsequent APIs may be canceled abnormally when calling APIs in batches
+10. Fix the problem that the content filled in by the new team may be lost when the page is destroyed
+
+
+
+**1.90.1 (2022/08/22)**
+
+**🐛 Fixes**
+
+1. Fix API call concurrency issue
+2. Fix the problem that when a large number of products (thousands) are selected, multiple selections of products may cause a freeze
+3. Fix the abnormal problem when the widget completes the team task
+4. Fixed the issue that editing subtask experience would not be backfilled
 
 **1.90.0 (rc01, rc02) (2022/08/15)**
 
