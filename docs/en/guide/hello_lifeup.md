@@ -104,7 +104,7 @@ But before your use, you may want to know the following information:
 
 ## Features
 
-> 🚧We're still working on this documents...
+> 🚧We're still working on these documents...
 
 There are a lot of examples and guidelines in the app right now.
 
@@ -124,3 +124,5 @@ It's like playing a game and gradually improving your skills! :D
 
 If you have any further feedback or questions, or need help with the refund, **please feel free to
 reach out to us by email at kei.ayagi@gmail.com.**
+
+In most cases, we will get back to you within 24 hours :D.

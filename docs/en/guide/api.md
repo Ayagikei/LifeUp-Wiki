@@ -851,9 +851,9 @@ Using `No Action`+`Broadcast return value` can achieve this effect in a more con
 
 ### Task completed
 
-**Name: **app.lifeup.task.complete
+**Name:** app.lifeup.task.complete
 
-**return value:**
+**Return value:**
 
 | Parameters | Meaning       | Examples        |
 | ---------- | ------------- | --------------- |
@@ -863,9 +863,9 @@ Using `No Action`+`Broadcast return value` can achieve this effect in a more con
 
 ### Achivement unlocked
 
-**Name: **app.lifeup.achievement.unlock
+**Name:** app.lifeup.achievement.unlock
 
-**return value:**
+**Return value:**
 
 | Parameters     | Meaning          | Examples                 |
 | -------------- | ---------------- | ------------------------ |
@@ -874,9 +874,9 @@ Using `No Action`+`Broadcast return value` can achieve this effect in a more con
 
 ### Items purchased
 
-**Name: **app.lifeup.item.purchase
+**Name:** app.lifeup.item.purchase
 
-**return value:**
+**Return value:**
 
 | Parameters | Meaning           | Examples          |
 | ---------- | ----------------- | ----------------- |
@@ -886,9 +886,9 @@ Using `No Action`+`Broadcast return value` can achieve this effect in a more con
 
 ### Item used
 
-**Name: **app.lifeup.item.use
+**Name:** app.lifeup.item.use
 
-**return value:**
+**Return value:**
 
 | Parameters | Meaning      | Examples          |
 | ---------- | ------------ | ----------------- |
@@ -898,9 +898,9 @@ Using `No Action`+`Broadcast return value` can achieve this effect in a more con
 
 ### Level up
 
-**Name: **app.lifeup.level.up
+**Name:** app.lifeup.level.up
 
-**return value:**
+**Return value:**
 
 | Parameters | Meaning       | Examples |
 | ---------- | ------------- | -------- |
@@ -910,9 +910,9 @@ Using `No Action`+`Broadcast return value` can achieve this effect in a more con
 
 ### Level down
 
-**Name:**app.lifeup.level.down
+**Name:** app.lifeup.level.down
 
-**return value:**
+**Return value:**
 
 | Parameters | Meaning       | Examples |
 | ---------- | ------------- | -------- |
@@ -934,7 +934,7 @@ The API functionality is currently only in one version iteration.
 
 In the future, we will continue to add more APIs to meet more usage scenarios.
 
-If you need API scenarios, you can leave Issues on [Github](https://github.com/Ayagikei/LifeUp/issues/new/choose).
+If you need more APIs, you can leave Issues on [Github](https://github.com/Ayagikei/LifeUp/issues/new/choose).
 
 <br/>
 
