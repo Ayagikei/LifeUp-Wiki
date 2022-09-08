@@ -53,6 +53,8 @@ If you come across:
 
 [How to make tasks not overdue at 0 o'clock?](/guide/faq?id=how-to-make-tasks-not-overdue-at-0-oclock)
 
+[Why does the target number of times start from 1/N?](/guide/faq?id=why-does-the-target-number-of-times-start-from-1n)
+
 [How to set multiple reminders for a task?](/guide/faq?id=how-to-set-multiple-reminders-for-a-task)
 
 [Can subtasks be displayed in the tasks list?](/guide/faq?id=can-subtasks-be-displayed-in-the-tasks-list)
@@ -234,9 +236,25 @@ Overdue logic is controlled by deadline time.
 
 After setting the deadline date, click the `time` button to set the specific time.
 
-1. **For example, if you don't want the item to be overdue at 0:00, you only need to adjust the deadline for the item to after 0:00, such as 2:00 in the "next day". **
+1. **For example, if you don't want the item to be overdue at 0:00, you only need to adjust the deadline for the item to after 0:00, such as 2:00 in the "next day".**
 
 2. You can also choose to **adjust the global defaults** on the `Settings`-`Item`-`New item default settings` page (this does not affect the already created items).
+
+##### Why does the target number of times start from 1/N?
+
+Unlike the progress of counting tasks, the (1/N) **here does not represent the total progress.**
+
+Instead, **it is the number of times the current card belongs to, and whether this time is complete is represented by ⚪ or ✅ in front of the card.**
+
+<br/>
+
+For example, ⚪1/10 means:
+This task will be repeated 10 times in total (a total of 10 cards will be generated), and it is currently at the 1st time and has not been completed.
+
+And ✅1/10 means:
+The current card belongs to the 1st time and is completed.
+
+If the total progress is used, because the completed cards can be displayed, there will be scenes such as (⚪1/10 and ✅1/10 coexist), and the cards will disappear when the goal is reached (✅9/10), better Not common sense.
 
 ##### How to set multiple reminders for a task?
 

@@ -670,14 +670,18 @@ section.cover blockquote>p>a:hover {
 }
 
 .markdown-section blockquote {
-	border-left: 4px solid var(--theme-color,#42b983);
-	color: #858585;
-	margin: 2em 0;
-	padding-left: 20px
+	border-left: 4px solid #dfe2e5;
+	color: #777777;
+	background: none;
+	margin: 1em 0;
+
+	font-style: normal;
+	padding: 0.5em;
+	padding-left: 20px;
 }
 
 .markdown-section blockquote p {
-	font-weight: 600;
+	/* font-weight: 600; */
 	margin-left: 0
 }
 
