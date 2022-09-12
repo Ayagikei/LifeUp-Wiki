@@ -17,7 +17,7 @@
 <p align="center">Custom your own gamify list with attribute, exp, coin, reward to stay productive!</p>
 
 <p align="center">
- <img src="guide/_media/hello_world/banner.png" style="height:250px" />
+ <img src="guide/_media/hello_world/banner.png" />
 </p>
 
 ---
@@ -172,8 +172,9 @@
 <p align="center">任务是一切的基石。向自己颁布任务，设置奖励，并努力去挑战自我吧！</p>
 
 <p align="center">
- <img src="guide/_media/hello_world/tasks.png" style="height:600px" />
+ <img src="guide/_media/hello_world/tasks.png" />
 </p>
+
 
 我们对任务的定义是：你现实中能够实际去完成的事情。
 
@@ -306,7 +307,7 @@
 <p align="center">抽象量化你的能力与成长</p>
 
 <p align="center">
- <img src="guide/_media/hello_world/tasks.png" style="height:600px" />
+ <img src="guide/_media/hello_world/tasks.png"  />
 </p>
 
 
@@ -362,7 +363,7 @@
 <p align="center">极高自定义性的游戏化体现自我奖惩机制！</p>
 
 <p align="center">
- <img src="guide/_media/hello_world/shop.png" style="height:600px" />
+ <img src="guide/_media/hello_world/shop.png"  />
 </p>
 
 使用金币衡量任务的完成程度，随后购买自己心仪的奖励，正向激励自己继续努力。
@@ -423,7 +424,7 @@
 ##### 0. 设置开箱盲盒：
 
 <p align="center">
- <img src="guide/_media/hello_world/loot_box.png" style="height:600px" />
+ <img src="guide/_media/hello_world/loot_box.png"  />
 </p>
 
 
@@ -519,7 +520,7 @@
 
 
 <p align="center">
- <img src="guide/_media/hello_world/achievements.png" style="height:600px" />
+ <img src="guide/_media/hello_world/achievements.png"  />
 </p>
 
 
@@ -575,7 +576,7 @@
 <p align="center">你未曾体验过的游戏化番茄钟（可以食用、售卖你的番茄奖励），以及一套完善的计时体系</p>
 
 <p align="center">
- <img src="guide/_media/hello_world/pomodoro.png" style="height:600px" />
+ <img src="guide/_media/hello_world/pomodoro.png"  />
 </p>
 
 #### # 快速开始
@@ -641,7 +642,7 @@
 ##### 番茄用处
 
 <p align="center">
- <img src="guide/_media/hello_world/tomato.png" style="height:600px" />
+ <img src="guide/_media/hello_world/tomato.png"  />
 </p>
 
 - 食用：获取经验值（默认耐力）
@@ -677,7 +678,7 @@
 <p align="center">简易的文本、图片完成感想记录功能</p>
 
 <p align="center">
- <img src="guide/_media/hello_world/feelings.png" style="height:600px" />
+ <img src="guide/_media/hello_world/feelings.png"  />
 </p>
 
 #### # 快速开始
@@ -729,7 +730,7 @@
 <p align="center">社区已经足够多了，这里没有社交元素，只有分享创造和美好的小世界</p>
 
 <p align="center">
- <img src="guide/_media/hello_world/world.png" style="height:600px" />
+ <img src="guide/_media/hello_world/world.png"  />
 </p>
 
 #### # 快速开始
@@ -804,11 +805,11 @@
 <p align="center">双向开放（外部应用<-->人升），自动化你的人升，创造无限的联动可能性~</p>
 
 <p align="center">
- <img src="guide/_media/hello_world/api_sample.png" style="height:600px" />
+ <img src="guide/_media/hello_world/api_sample.png"  />
 </p>
 
 <p align="center">
- <img src="guide/_media/hello_world/api_auto.png" style="height:600px" />
+ <img src="guide/_media/hello_world/api_auto.png"  />
 </p>
 
 
