@@ -861,6 +861,32 @@ Using `No Action`+`Broadcast return value` can achieve this effect in a more con
 | task_gid   | task group id | 1               |
 | name       | task name     | Getting started |
 
+### Task given up
+
+**Name:** app.lifeup.task.giveup
+
+**Return value:**
+
+| Parameters | Meaning       | Examples        |
+| ---------- | ------------- | --------------- |
+| task_id    | task id       | 1               |
+| task_gid   | task group id | 1               |
+| name       | task name     | Getting started |
+
+### Task overdue
+
+**Name:** app.lifeup.task.overdue
+
+**Return value:**
+
+
+| Parameters | Meaning                 | Examples                        |
+| ---------- | ----------------------- | ------------------------------- |
+| task_ids   | task id **array**       | [1, 2, 3]                       |
+| task_gids  | task group id **array** | [1, 2, 3]                       |
+| names      | task name **array**     | [Getting started, Drink Waters] |
+
+
 ### Achivement unlocked
 
 **Name:** app.lifeup.achievement.unlock

@@ -8,6 +8,24 @@
 
 (Part of the translation is provided by Google Translate and may not be accurate)
 
+**1.90.3 (2022/09/14)**
+
+1. Fixed the focus issue when sorting subtasks
+2. Improve attributes color in frozen/unstarted tasks
+3. Add given-up tasks event broadcast
+4. Fixed the probability text color
+5. Improve the starter tasks(preset tasks)
+6. Fixed the issue that the import items dialog may select the "All" list by default
+7. Fixed the shop item group issues
+8. A warning is now given when setting an unusual time (time does not match repeat frequency).
+9. Improve the task calculation rules in the calendar, which should now accurately predict the deadlines of future tasks.
+10. Fixed an issue where the completion of the calendar could be calculated for frozen tasks.
+11. Improved default start time settings when editing tasks.
+12. Improve license detection mechanism.
+13. Optimize the processing of the countdown of items. Repeated execution is prohibited to reduce the time accumulation problem that does not meet expectations.
+14. Fixed edge-to-edge issue when using virtual keys on some pages.
+15. Fixed an issue where you couldn't select a thought image when the desktop widget completed a task.
+
 **1.90.2 (2022/08/31)**
 
 **✨Features**
