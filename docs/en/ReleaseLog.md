@@ -8,6 +8,31 @@
 
 (Part of the translation is provided by Google Translate and may not be accurate)
 
+**1.90.5 (2022/09/22)**
+
+**♻️Optimization**
+
+1. Adapt to some devices with abnormal webp conversion (the cropped image may be larger than the original image on these devices). After selecting a picture, determine the size of the picture and perform secondary compression.
+2. Improve the description of target repetitions in the details page
+3. Support the use of the same product to accumulate the time during the countdown
+4. Add more novice guide tasks
+5. Update translations
+
+
+**🐛 FIXED**
+
+1. Fix the abnormal UI problem of the composite page
+2. Fixed several known crash issues
+3. Improve the problem that the countdown of goods may be abnormally interrupted and accumulated time under long-term countdown
+4. Fix the UI exception of the input feeling pop-up window when the widget completes the task
+
+
+
+**1.90.4 (2022/09/15)**
+
+1. Fix the abnormal problem when the widget completes the task (may cause a transparent page to appear, and the operation cannot be continued)
+2. Disable the widget's ability to select images from impressions
+
 **1.90.3 (2022/09/14)**
 
 1. Fixed the focus issue when sorting subtasks
