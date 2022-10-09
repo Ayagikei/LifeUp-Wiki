@@ -26,7 +26,7 @@ Crash bug fixes >> Experience bug fixes affecting new users >> Feature updates >
 
 Use a three-digit version number, such as `1.80.3`.
 
-**The first ** (such as **1**.80.3) is the version number used for the major revision of the application, and 1 is the initial official version. There will be a lot of code refactoring/UI redesign changes if it improves.
+**The first** (such as **1**.80.3) is the version number used for the major revision of the application, and 1 is the initial official version. There will be a lot of code refactoring/UI redesign changes if it improves.
 
 
 
@@ -59,7 +59,10 @@ Like:
 The development of `LifeUp` in the past few years has always focused on developing new functional modules or adding new features to existing modules.
 Today, we believe that the functional modules of `LifeUp` are more than self-consistent in width but insufficient in depth.
 Therefore, the following development goals aim at functional depth, continuously improve existing available modules, and increase practicality (calendar integration, widgets, statistics);
-We will also continuously improve API functionality, allowing it to meet expansion needs. In addition, we try to improve our data system and explore using Flutter to develop cross-end versions.
+
+We will also continuously improve API functionality, allowing it to meet expansion needs. For example, support the community to develop its own task list and shop items list UI.
+
+In addition, we will try to improve our data system and explore using Flutter to develop cross-platform versions.
 
 | Module | Subfunction | Estimated Version | Requirement Reason | Priority | Result |
 | -------- | ---------------------------------------- -------------------- | ---------- | ------------------ -------------------------------------------- | ------ | ---- |

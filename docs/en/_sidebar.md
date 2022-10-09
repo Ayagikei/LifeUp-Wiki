@@ -4,7 +4,7 @@
   - [Download](introduction/download.md)
   - [Screenshots](Screenshots.md)
   - [Release Log](ReleaseLog.md)
-  - [Development Roadmap](introduction/roadmap.md)
+  - [Roadmap](introduction/roadmap.md)
   - [Support us](Support_us.md)
   - [Privacy Terms & Policy](introduction/privacy-terms.md)
 - Getting Started
