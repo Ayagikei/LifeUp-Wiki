@@ -622,9 +622,9 @@ id 的获取方法为「实验」页面打开「开发者模式」，然后在�
 | name        | 商品名称              | 任意文本                                 | 金币箱       | 否*      | 用于未知 id 时，模糊搜索商品，并非修改名称                   |
 | sub_id      | 箱子内容物的 id       | 大于0的数字                              | 1            | 否*      | 箱子内容物的 id                                              |
 | sub_name    | 箱子内容物的名称      | 任意文本                                 | 【大】袋金币 | 否*      | 用于箱子内容物未知 id 时，模糊搜索商品                       |
-| set_type    | 调整方式（绝对/相对） | 以下数值其一：<br/>absolute<br/>relative | relative     | 否       | absolute - 绝对取值，即直接将目标设置为 value<br/>relative - 相对取值，比如在原数值的基础上增加或减少 |
+| set_type    | 调整方式（绝对/相对） | 以下数值其一：<br/>absolute<br/>relative | relative     | 否       | absolute - 绝对取值，即直接将目标设置为 value<br/>relative - 相对取值，比如在原数值的基础上增加或减少<br/>**同时作用于[amount]、[probability]两个字段** |
 | amount      | 奖励数                | 数字                                     | 1            | 否       | 某个单一物品的奖励个数                                       |
-| probability | 奖励比重              | 数字                                     | relative     | 否       | absolute - 绝对取值，即直接将目标设置为 value<br/>relative - 相对取值，比如在原数值的基础上增加或减少 |
+| probability | 奖励比重              | 数字                                     | 1            | 否       |                                                              |
 | fixed       | 是否是固定奖励        | 大于或等于 0 的数字                      | 1            | 否       |                                                              |
 
 **注意：**
