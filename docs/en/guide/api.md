@@ -647,11 +647,28 @@ Only supported since version 1.90.2
 
 | Parameter | Meaning | Type | Example | Required | Notes |
 | ---- | ------ | ------------- | ---- | -------- | --------- ------------------------------------ |
-| id | condition id | number greater than 0 | 2 | Yes ||
+| id | condition id | number greater than 0 | 2 | yes ||
 
 <br/>
 
-#### Query
+### Set the number of steps
+
+**Method name:** step
+
+**Description:** Set the number of steps on the specified date, for example, it can be used to enter the number of steps with a wristband + automation tool. And can be used to modify historical records.
+
+**Example:**
+
+- Adjust the number of steps for 2022-10-21 in GMT+8 time zone to 9999 steps: [lifeup://api/step?count=9999&time=1666282995643](lifeup://api/step?count=9999&time=1666282995643)
+
+| Parameter | Meaning | Type | Example | Required | Notes |
+| ----- | -------------------- | ------------------- | -- ----------- | -------- | ---- |
+| count | number of steps | number greater than or equal to 0 | 9999 | yes | |
+| time | arbitrary timestamp of the date | timestamp (ms) | 1666282995643 | yes | |
+
+<br/>
+
+#### Simple Query
 
 !> The functions here are used with automated tools/secondary development.
 
@@ -670,9 +687,42 @@ Only supported since version 1.90.2
 
 Only supported since version 1.90.2
 
-| Parameter | Meaning | Value | Example | Required | Remarks |
+| Parameter | Meaning | Type | Example | Required | Notes |
 | ----- | -------------- | ---- | ---- | -------- | ---- |
-| value | Numeric value returned by the query | number | 1000 | Yes | |
+| value | Numeric value returned by the query | number | 1000 | yes | |
+
+<br/>
+
+#### Query Attributes
+
+!> The functions here are used with automated tools/secondary development.
+
+**Method name:** query_skill
+
+**Description:** Query the name, level, total experience value of the specified attribute, the experience value required to reach the next level, and the experience value of the current level.
+
+It is possible to use this api to custom your attributes widgets.
+
+**Example:**
+
+- Query strength attribute: [lifeup://api/query_skill?id=1](lifeup://api/query_skill?id=1)lifeup://api/query?key=coin)
+
+
+| Parameter | Meaning              | Type                    | Example | Required | Notes                                                        |
+| --------- | -------------------- | ----------------------- | ------- | -------- | ------------------------------------------------------------ |
+| id        | attribute (skill) id | a number greater than 0 | 1       | yes      | For the acquisition method, please refer to the above "Basic Knowledge - Person Level Data ID" |
+
+**Return Value:**
+
+Only supported since version 1.90.6
+
+| Parameter | Meaning                             | Type | Example | Required | Notes |
+| --------- | ----------------------------------- | ------ | ------- | -------- | ------- |
+| name | attribute name | string | strength | yes | |
+| level | level | number | 10 | yes | |
+| total_exp | total experience points | number | 10000 | yes | |
+| until_next_level_exp | EXP required to reach the next level | number | 99 | yes | |
+| current_level_exp | Earned EXP above current level | Number | 1000 | Yes | |
 
 <br/>
 
@@ -786,7 +836,7 @@ By adding this parameter, the original return value of the API can also be sent 
 
 The value of broadcast is equivalent to the value of the operation column of "Intentions Received" in Tasker. You can fill in any text, as long as the two correspond.
 
-**For example, using the API for querying gold coins:**
+**For example, using the API for querying gold coins with Tasker ([If you're using MacroDroid, please check this link.](https://github.com/Ayagikei/LifeUp/issues/43)):**
 
 [lifeup://api/query?key=coin](lifeup://api/query?key=coin)
 
