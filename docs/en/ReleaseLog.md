@@ -8,6 +8,44 @@
 
 (Part of the translation is provided by Google Translate and may not be accurate)
 
+**1.90.6 (2022/10/21)**
+
+**✨Features**
+
+1. Add API for setting the number of steps on a specified date
+2. Added API for querying the status of specified attributes (experience value, level)
+3. Support direct import of backup data from file manage
+4. APIs related to reward items are no longer limited 99
+
+
+
+**♻️Optimization**
+
+1. Optimize the transition animation effect when entering the event details page
+2. Optimize the edit items page, increase the UI effect of enabling penalty, and improve its guide
+3. Change the operation icons on the timing page
+4. In the purchase pop-up window, add warnings and instructions for items with negative own numbers
+5. Optimize the immersive status bar effect of the home page
+6. Added compatibility configuration reminder to Pomodoro page
+7. Improve the speed of exporting backup and restoring backup files
+8. Instructions for the stock number setting
+9. Temporarily remove the setting of [When the product inventory is 0, the corresponding task reward will be automatically removed].
+10. Optimize the license check mechanism with free trial version.
+11. When a task that is "Pin" is selected, the action is now displayed as "Unpin"
+12. When switching to positive timing, the *experimental* warning no longer pops up every time
+
+
+
+**🐛 Fixed**
+
+1. Fixed the abnormal system boundary of some pages or with tablets
+2. Fixed an issue where incorrect data would be displayed when entering the inventory for the first time in some cases
+3. Fixed an issue that data cannot be recovered at all due to internal damage (such as image damage) when restoring damaged backup files
+4. Fixed an issue that the "Buy" button will be displayed unexpectedly after long-pressing the sold-out item
+5. Fixed an issue that the attribute introduction of the new team page is the old version
+
+
+
 **1.90.5 (2022/09/22)**
 
 **♻️Optimization**
@@ -18,8 +56,7 @@
 4. Add more novice guide tasks
 5. Update translations
 
-
-**🐛 FIXED**
+**🐛 Fixed**
 
 1. Fix the abnormal UI problem of the composite page
 2. Fixed several known crash issues
