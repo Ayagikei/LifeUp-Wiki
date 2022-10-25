@@ -620,7 +620,7 @@ Only supported since version 1.90.2
 | start_time | timing start time | timestamp | 1659322800000 | no* | If you know nothing about Timestamp, google it! |
 | duration | focus duration | number (in milliseconds) <br/>must be greater than 30000 | 1500000 | no* | |
 | end_time | timing end time | timestamp | 1659326400000 | no* | |
-| reward_tomatoes | whether to reward tomatoes | true or false | true | no | default is true |
+| reward_tomatoes | whether to reward tomatoes | true or false | true | no | default is false |
 | task_id | task id | a number greater than 0 | coin | no ||
 | task_gid | task group id | a number greater than 0 | remarks | no ||
 | task_name | name | any text | 10 | no | fuzzy search, only one of the tasks found |
