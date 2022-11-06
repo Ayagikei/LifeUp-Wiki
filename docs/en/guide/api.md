@@ -362,6 +362,7 @@ For details, see the broadcast broadcast parameters below.
 | item_id | id of the rewarded item | a number greater than 0 | 1 |||
 | item_name | the name of the reward item | any text | treasure | No |fuzzy search item name|
 | item_amount | amount of reward | [1, 99] | 1 | no | default is 1 |
+| deadline    | deadline time   |timestamp (milliseconds)       | 0    | no      ||
 
 **Return Value:**
 
@@ -479,6 +480,30 @@ The method of obtaining the id is to open the "Developer Mode" on the "Labs" pag
 
 <br/>
 
+#### Delete a task
+
+**Method name:** delete_task
+
+**Description:** Delete  a task.
+
+**Example:**
+
+- Search for tasks by name and delete it: [lifeup://api/delete_task?name=get up early](lifeup://api/delete_task?name=get up early)
+
+**Explanation:**
+
+| Parameter | Meaning       | Type                  | Example | Required | Notes                                                        |
+| --------- | ------------- | --------------------- | ------- | -------- | ------------------------------------------------------------ |
+| id        | task id       | number greater than 0 | 1       | no*      | task id; if it is a repeating task, the id will be updated every time it repeats. |
+| gid       | task group id | number greater than 0 | 1       | no*      | task group id;                                               |
+| name      | name          | any text              | get up  | no*      | fuzzy search, only one of the tasks found                    |
+
+**Notice:**
+
+1. In order to be able to match the task, one of id, gid, and name must be provided.
+
+<br/>
+
 ### Shop Settings
 
 **Method name:** shop_settings
@@ -535,6 +560,7 @@ The method of obtaining the id is to open the "Developer Mode" on the "Labs" pag
 | action_text | action button text | any text | rest | no | |
 | disable_purchase | whether to disable purchases | true or false | 1 | no | default false |
 | stock_number | number of stocks | [-1, 99999] | 1 | no | |
+| category         | shop item list id   | a number greater than or equal to 0 | 0            | no      | 0 or not passed represents the default list, and cannot select a smart list<br/>For the acquisition method, please refer to the above "Basic Knowledge - Person Level Data ID" |
 
 **Return Value:**
 

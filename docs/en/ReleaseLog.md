@@ -8,6 +8,49 @@
 
 (Part of the translation is provided by Google Translate and may not be accurate)
 
+**1.90.7 (2022/11/07)**
+
+**✨Features**
+
+1. Added: Vietnamese translation and translator's signature (Google version)
+2. Added: "Skip cropping" image selection method, which is suitable for selecting gif animations (member function)
+3. Added: delete task API
+4. Added: Support setting to abandon the task sound effect
+5. Added: Simple synthesis MAX quantity operation
+6. Support re-locking unlocked achievements
+7. "Add Product API" supports specifying list id
+
+
+
+**♻️Optimization**
+
+1. Improve the description of deleting history
+2. The experience limit is changed from (3/4 places) to (4/5 places)
+3. Added penalty coefficient display on details page
+4. Globally improve the interaction design of the date-time selection box
+5. The achievement details pop-up window will now differentiate the icon color according to whether the conditions are completed or not.
+6. Change tomato shortcut icon
+7. When creating an item from a smart list, if the selectable list is 0 or 1, automatically select it
+8. The developer mode displays the item list ID
+9. Limit the input length of some common fields to avoid crashes
+
+
+
+**🐛 Fixed**
+
+1. Fixed the problem that the reward calculation for changing the item history record was abnormal in some scenarios
+2. Fix the problem that the "Show Archived" switch does not match the display in some scenarios
+3. Improve the data loading logic of the widget (may fix some abnormal problems)
+4. Repair the automatic calculation logic of manually adding timing records, now you only need to fill in any item
+5. Fix the abnormal refresh problem of the tomato timing record page
+6. Fixed the problem that sub-tasks could not clear commodity rewards
+7. Fixed the problem that after selecting all items, re-selecting some items does not take effect
+8. Optimize the memory required for preview images
+9. Widget refresh is now triggered after adjusting the list order
+10. Optimized the problem that some backup methods will get stuck on the interface
+
+
+
 **1.90.6 (2022/10/21)**
 
 **✨Features**
