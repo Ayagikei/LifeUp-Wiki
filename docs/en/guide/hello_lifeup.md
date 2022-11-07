@@ -195,7 +195,7 @@ It is not responsible for taking on some automated operations. But you can use t
 
 For daily tasks, it is usually sufficient to keep the default ``23:59:59`` for the current day.
 
-Of course, **you can also adjust that time if you are used to completing in the early hours of the next morning (e.g., until `2 am the next day`). **
+Of course, **you can also adjust that time if you are used to completing in the early hours of the next morning (e.g., until `2 am the next day`).**
 
 <br/>
 
