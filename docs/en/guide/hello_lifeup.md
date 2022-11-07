@@ -159,7 +159,7 @@ It's like playing a game and gradually improving your skills! :D
 
 <h3 align="center" padding="100" id="task">I. Tasks</h2>
 
-<p align="center">Tasks are the cornerstone of everything. Set yourself tasks, set rewards, and try to challenge yourself! </p
+<p align="center">Tasks are the cornerstone of everything. Set yourself tasks, set rewards, and try to challenge yourself! </p>
 
 <p align="center">
  <img src="guide/_media/hello_world/tasks.png" style="height:600px" />
@@ -273,7 +273,7 @@ Matters can be linked to almost any other function.
 
 <h3 align="center" padding="100" id="skills">II. Attributes</h2>
 
-<p align="center">Quantify your capabilities and growth in the abstract</p
+<p align="center">Quantify your capabilities and growth in the abstract</p>
 
 <p align="center">
  <img src="guide/_media/hello_world/tasks.png" style="height:600px" />
