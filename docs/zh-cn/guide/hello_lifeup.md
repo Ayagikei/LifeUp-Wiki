@@ -313,8 +313,9 @@
 <p align="center">抽象量化你的能力与成长</p>
 
 <p align="center">
- <img src="guide/_media/hello_world/tasks.png"  />
+ <img src="guide/_media/hello_world/attributes.png"  />
 </p>
+
 
 
 #### # 快速开始
@@ -731,9 +732,12 @@
 
 #### # 联动使用
 
-- API 功能几乎能与任何模块联动试用，详情请查看接口文档。
-- 外部应用、网页：除此之外，API 功能还能与外部应用、网页联动，欢迎参与二次开发。
-- 自动化工具：可以搭配 Tasker、Macrodroid 自动化工具实现自动化功能。
+- **任务：**
+    - 可以在完成任务时，为任务添加感想，支持按任务筛选感想列表
+    - 可以在历史等页面，为逾期、放弃的任务添加感想
+- **成就：**
+  可以为成就添加感想
+
 
 
 
@@ -741,7 +745,7 @@
 
 <h3 align="center" padding="100" id="feelings">七、世界</h2>
 
-<p align="center">社区已经足够多了，这里没有社交元素，只有分享创造和美好的小世界</p>
+<p align="center">社区相关的 app 已经足够多了。这里没有社交元素，只有一个让你分享动态和创造的小世界！</p>
 
 <p align="center">
  <img src="guide/_media/hello_world/world.png"  />
