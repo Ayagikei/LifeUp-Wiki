@@ -2,7 +2,11 @@
 
 > 人升，讓你的人生升級
 
-![Icon](_media/icon.png ':size=6%')
+<p align="center">
+ <img src="_media/icon.png" style="width:128px"  />
+</p>
+
+
 
 《人升》是一款融合了遊戲化激勵元素的待辦事項、習慣養成應用，**可以當作是簡約版的地球OL~**
 
