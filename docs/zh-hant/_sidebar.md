@@ -4,10 +4,11 @@
   - [截圖展示](introduction/screenshots.md)
   - [更新日誌](introduction/release_log.md)
   - [開發計劃](introduction/development_plan.md)
+  - [開發工效](introduction/ergonomics.md)
   - [隱私協議](introduction/privacy-trems.md)
   - [建設人升](introduction/support_us.md)
   - [捐贈明細](introduction/donation.md)
-- 使用者指引
+- 指引
 
   - [快速開始](guide/hello_lifeup.md)
   - [常見問題](guide/faq.md)
@@ -22,7 +23,7 @@
 
   - [體系建設參考手冊](guide/user/system_01.md)
   - [體系相關影片](guide/user/system_02.md)
-- 更新介紹
+- 更新
   - [1.90.0 - 開放介面](features/190.md)
   - [1.89.0 - 多條件成就（其二）](features/189_2.md)
   - [1.89.0 - 多條件成就（其一）](features/189_1.md)
