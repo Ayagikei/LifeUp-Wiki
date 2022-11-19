@@ -4,10 +4,11 @@
   - [截图展示](introduction/screenshots.md)
   - [更新日志](introduction/release_log.md)
   - [开发计划](introduction/development_plan.md)
+  - [开发工效](introduction/ergonomics.md)
   - [隐私协议](introduction/privacy-trems.md)
   - [建设人升](introduction/support_us.md)
   - [捐赠明细](introduction/donation.md)
-- 用户指引
+- 指引
 
   - [快速开始](guide/hello_lifeup.md)
   - [常见问题](guide/faq.md)
@@ -22,7 +23,7 @@
 
   - [体系建设参考手册](guide/user/system_01.md)
   - [体系相关视频](guide/user/system_02.md)
-- 更新介绍
+- 更新
   - [1.90.0 - 开放接口](features/190.md)
   - [1.89.0 - 多条件成就（其二）](features/189_2.md)
   - [1.89.0 - 多条件成就（其一）](features/189_1.md)
