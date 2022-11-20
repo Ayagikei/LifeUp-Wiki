@@ -13,41 +13,11 @@
 ## Scenario example
 
 | Caller | Scenario | Notes |
-| ----------------------------------------- | -------
--------------------------------------------------- --- | -------- |
-|**LifeUp->Other Applications**<br/>Implemented through the "URL" effect of the shop item| **After
-using the shop item:**<br/>1. Use a browser to visit a webpage<br/>2. Jump to WeChat and scan Scan,
-or specify a small program<br/>3. Automatically add accounting
-records ([such as "Qianji" supports accounting interface](http://docs.qianjiapp.com/plugin/auto_tasker.html))<br/>
-4. Store the automation tool Tasker configuration (even share it in the Market), and automatically
-import the configuration into Tasker after use<br/>5. Trigger Tasker to change wallpaper<br/>6.
-... (as long as the external application supports this method call)
-| [Tasker](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm&hl=en_US&gl=US)
-is an automation tool and it supports exporting configuration as Uri |
-|**LifeUp->LifeUp**<br/>Implemented through the "URL" effect of the shop item| **After using the
-shop item:**<br/>1. Open a specific page<br/>2. Increase the ATM interest rate<br/>3. The pop-up
-window allows the user to select the product and reduce the price of the product (price reduction
-coupon)<br/>4. Trigger a task to complete<br/>5. Pop up a custom motivational message<br/>6. Create
-a task reward template: just enter the name to create a task automatically<br/>7. Pop up The window
-asks the user for branch selection, creating a small contextual interaction<br/>8. More in-app
-operations... | |
-|**External applications/webpages->LifeUp** | **Configure automation tools:**<br/>1. Determine when
-the phone is turned on for the first time every day, complete the task of getting up early, or
-directly trigger the "getting up late" penalty<br/>2. After every 25 words, swipe a specific NFC
-card and automatically complete the task<br/>3. The GPS determines that a new place is reached, and
-unlocks the "new place" achievement<br/>4. When connecting to the working WIFI every day, trigger
-the unlocking condition progress to increase. After accumulating 20 days, unlock the achievement
-of "Worker"<br/>5. Reward yourself with "arrive home" gold coins when connecting to your home WIFI
-for the first time every day<br/>6. Capture notifications from other Tomato or Focus applications,
-and automatically record the timing to `LifeUp`<br/>7. Capture the completion or end notification of
-sports and learning software, and automatically issue "strength" and "knowledge" experience
-points<br/>8. Within the time period set by yourself, every time you open your phone, you will
-trigger a penalty<br/>9. ...<br/>**External Application linkage/self-developed application:**<br/>1.
-If you are not satisfied with the Pomodoro of `LifeUp`: you can develop your own timing software,
-which can be a web application or Android application, and link with "LifeUp" through the interface
-to Add timing records or add rewards<br/>2. Modify some intelligence mini-games (such as a Wordle
-example below). When the game is successfully completed, trigger `LifeUp` to send rewards<br/>3. ...
-| |
+| ----------------------------------------- | ------- -------------------------------------------------- --- | -------- |
+|**LifeUp->Other Applications**<br/>Implemented through the "URL" effect of the shop item| **After using the shop item:**<br/>1. Use a browser to visit a webpage<br/>2. Jump to WeChat and scan Scan, or specify a small program<br/>3. Automatically add accounting records ([such as "Qianji" supports accounting interface](http://docs.qianjiapp.com/plugin/auto_tasker.html))<br/>4. Store the automation tool Tasker configuration (even share it in the Market), and automatically import the configuration into Tasker after use<br/>5. Trigger Tasker to change wallpaper<br/>6. ... (as long as the external application supports this method call) | [Tasker](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm&hl=en_US&gl=US) is an automation tool and it supports exporting configuration as Uri |
+|**LifeUp->LifeUp**<br/>Implemented through the "URL" effect of the shop item| **After using the shop item:**<br/>1. Open a specific page<br/>2. Increase the ATM interest rate<br/>3. The pop-up window allows the user to select the product and reduce the price of the product (price reduction coupon)<br/>4. Trigger a task to complete<br/>5. Pop up a custom motivational message<br/>6. Create a task reward template: just enter the name to create a task automatically<br/>7. Pop up The window asks the user for branch selection, creating a small contextual interaction<br/>8. More in-app operations... |  |
+|**External applications/webpages->LifeUp** | **Configure automation tools:**<br/>1. Determine when the phone is turned on for the first time every day, complete the task of getting up early, or directly trigger the "getting up late" penalty<br/>2. After every 25 words, swipe a specific NFC card and automatically complete the task<br/>3. The GPS determines that a new place is reached, and unlocks the "new place" achievement<br/>4. When connecting to the working WIFI every day, trigger the unlocking condition progress to increase. After accumulating 20 days, unlock the achievement of "Worker"<br/>5. Reward yourself with "arrive home" gold coins when connecting to your home WIFI for the first time every day<br/>6. Capture notifications from other Tomato or Focus applications, and automatically record the timing  to `LifeUp`<br/>7. Capture the completion or end notification of sports and learning software, and automatically issue "strength" and "knowledge" experience points<br/>8. Within the time period set by yourself, every time you open your phone, you will trigger a penalty<br/>9. ...<br/>**External Application linkage/self-developed application:**<br/>1. If you are not satisfied with the Pomodoro of `LifeUp`: you can develop your own timing software, which can be a web application or Android application, and link with "LifeUp" through the interface to Add timing records or add rewards<br/>2. Modify some intelligence mini-games (such as a Wordle example below). When the game is successfully completed, trigger `LifeUp` to send rewards<br/>3. ... |  |
+
 
 <br/>In other words, all the above scenarios are actually "events" that trigger "actions".
 
@@ -63,7 +33,7 @@ This kind of event requires the intervention of external applications. For examp
 
 
 
-**The LifeUp 1.90.2 update will add a series of "events", but these events can to be received by automated tools or external applications. **
+**The LifeUp 1.90.2 update will add a series of "events", but these events can to be received by automated tools or external applications.**
 
 Can be used to achieve:
 
@@ -71,7 +41,7 @@ After using the item, trigger automated tools such as Tasker to switch the launc
 
 After completing the task, trigger an automated tool such as Tasker to open an app.
 
-**In the 1.90.2 version, it is possible to realize the "LifeUp event" triggering "Tasker's operation". **
+**In the 1.90.2 version, it is possible to realize the "LifeUp event" triggering "Tasker's operation".**
 
 Tasker has extremely high permissions, which can be used to change wallpapers, uninstall apps, increase volume, choose to open specified apps, and more. You can even write UI interaction logic without programming foundation.
 
