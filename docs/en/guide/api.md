@@ -176,7 +176,7 @@ Please see below for specific calling rules.
 
 <br/>
 
-### Basics - Escaping
+### Basics - Escaping (URL Encode)
 
 If the value of your parameter contains special symbols such as +, space, =, %, &, #, etc., it needs to be escaped:
 
@@ -195,6 +195,11 @@ Take the interface of the above pop-up message as an example. If you want the fi
 Then you need to replace the spaces to +, the final effect is:
 
 <a href="lifeup://api/toast?text=You learned to call! &type=1&isLong=true">lifeup://api/toast?text=You learned to call! &type=1&isLong=true</a>
+<br/>
+
+**This is a simple coding tool implemented in Javscript:**
+
+<iframe src="guide/html/url_encoded.html" frameborder="0" scrolling="no" width="90%"> </iframe>
 
 <br/>
 

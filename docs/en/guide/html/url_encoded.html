@@ -1,0 +1,16 @@
+<html>
+<script>
+function urlencode()
+{
+var txt=document.getElementById("txt").value;
+//var encodetxt=encodeURI(txt);
+var encodetxt=encodeURIComponent(txt);
+document.getElementById("encodingresult").innerHTML=encodetxt;
+}
+</script>
+<form name="changeform" target="_blank" method="post">
+<input type="text" name="txt" id="txt" value="here is some special text?%#&" size="30">
+<input name="submit" type="button" value="Encode it!" onclick="urlencode()">
+<div id="encodingresult"></div>
+</form>
+</html>
