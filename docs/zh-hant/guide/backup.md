@@ -1,6 +1,8 @@
 # 備份
 
-[在微信公眾號檢視本文（含堅果雲備份的設定影片教程）](https://mp.weixin.qq.com/s?__biz=MzI0OTQ4OTAxMQ==&mid=2247483867&idx=1&sn=d24068b74810d5b91b37c1abda436eca&chksm=e991f2c7dee67bd1ed49e74b3131bf7812c22f2a58a82cdac3c30182665296262a3c86a77b1d&mpshare=1&scene=23&srcid=1205mlIjJmwwyVugMJ7P25jM&sharer_sharetime=1639901809270&sharer_shareid=aefb2cf8bbd4980bf3f827f86feb6b04#rd) 
+- 【在B站檢視：《人升》2分鐘配置堅果雲實現雲備份】 https://www.bilibili.com/video/BV1Yg411i7uM/?share_source=copy_web&vd_source=141b0b80de90aedb6b7f25458fa6b5d1
+
+- [在微信公眾號檢視本文（含堅果雲備份的設定影片教程）](https://mp.weixin.qq.com/s?__biz=MzI0OTQ4OTAxMQ==&mid=2247483867&idx=1&sn=d24068b74810d5b91b37c1abda436eca&chksm=e991f2c7dee67bd1ed49e74b3131bf7812c22f2a58a82cdac3c30182665296262a3c86a77b1d&mpshare=1&scene=23&srcid=1205mlIjJmwwyVugMJ7P25jM&sharer_sharetime=1639901809270&sharer_shareid=aefb2cf8bbd4980bf3f827f86feb6b04#rd) 
 
 ## 一、簡介
 
