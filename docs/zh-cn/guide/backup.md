@@ -1,6 +1,8 @@
-# 备份
+# 备份与恢复
 
 - 【在B站查看：《人升》2分钟配置坚果云实现云备份】 https://www.bilibili.com/video/BV1Yg411i7uM/?share_source=copy_web&vd_source=141b0b80de90aedb6b7f25458fa6b5d1
+
+- 【在B站查看：《人升》一键导入存档数据（恢复）】 https://www.bilibili.com/video/BV1xP411u7dV/?share_source=copy_web&vd_source=141b0b80de90aedb6b7f25458fa6b5d1
 
 - [在微信公众号查看本文（含坚果云备份的设置视频教程）](https://mp.weixin.qq.com/s?__biz=MzI0OTQ4OTAxMQ==&mid=2247483867&idx=1&sn=d24068b74810d5b91b37c1abda436eca&chksm=e991f2c7dee67bd1ed49e74b3131bf7812c22f2a58a82cdac3c30182665296262a3c86a77b1d&mpshare=1&scene=23&srcid=1205mlIjJmwwyVugMJ7P25jM&sharer_sharetime=1639901809270&sharer_shareid=aefb2cf8bbd4980bf3f827f86feb6b04#rd) 
 
@@ -54,7 +56,6 @@
 **因此，《人升》提供了多种备份渠道：**
 
 - WebDAV 备份
-
 - 直接导出文件进行备份（默认路径和自定义路径）
 - Dropbox 备份
 - Google Drive 备份
@@ -124,11 +125,14 @@
 
 ### 2.1 使用方法
 
-#### 2.1.0 视频教程
+#### 2.1.0 视频教程（2分钟完成坚果云配置）
 
-【在B站查看：《人升》2分钟配置坚果云实现云备份】
+> 首先，需要下载并注册《坚果云》app。或者你也可参考下述的网页版操作指引。<br/>
+> 《坚果云》app 仅用于注册和获取配置信息，配置后可以保留用作个人网盘或者卸载，不影响云同步功能。
 
- https://www.bilibili.com/video/BV1Yg411i7uM/?share_source=copy_web&vd_source=141b0b80de90aedb6b7f25458fa6b5d1
+<iframe src="//player.bilibili.com/player.html?aid=517994865&bvid=BV1Yg411i7uM&cid=899709786&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="80%" height="600"> </iframe>
+
+https://www.bilibili.com/video/BV1Yg411i7uM/
 
 欢迎关注 B 站账号~后续计划更新更多《人升》相关视频。
 
@@ -189,7 +193,7 @@
 
 <br/>
 
-## 三、恢复
+## 三、恢复（导入数据）
 
 ![](_media/backup/10.png ': size=30%')
 
@@ -208,13 +212,27 @@
 - ` 文件存储根目录/Download（下载）`
 - ` 文件存储根目录/Download（下载）` 下任意子路径
 
-#### Android 10 及更低版本
+<br/>
+从 QQ/文件管理器 恢复数据的视频教程：
+
+<!-- tabs:start -->
+
+#### **一键从 QQ 或者文件系统导入数据（推荐）**
+
+需要《人升》v1.90.6 版本以上。
+
+<iframe src="//player.bilibili.com/player.html?aid=305504686&bvid=BV1xP411u7dV&cid=904969278&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="80%" height="600"> </iframe>
+
+
+#### **Android 10 及更低版本**
 
 <iframe src="//player.bilibili.com/player.html?aid=380415695&bvid=BV1PZ4y1S7ah&cid=479527125&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="80%" height="600"> </iframe>
 
-#### Android 11 及以上
+#### **Android 11 及以上**
 
 <iframe src="//player.bilibili.com/player.html?aid=250882869&bvid=BV1gv411g7ys&cid=419591550&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="80%" height="600"> </iframe>
+
+<!-- tabs:end -->
 
 ### WebDAV/Dropbox/Google Drive
 
