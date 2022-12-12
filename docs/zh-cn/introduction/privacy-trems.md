@@ -88,19 +88,7 @@
 
 <br />
 
-5 华为AppGallery Connect
-
-使用目的：用于收集线上用户APP运行状态，用于记录APP网络连通状态，崩溃收集
-
-收集个人信息类型：**设备信息；网络连通状态信息；**崩溃堆栈信息
-
-官网链接：https://developer.huawei.com/consumer/cn/
-
-隐私政策链接：https://consumer.huawei.com/cn/privacy/privacy-policy/
-
-<br />
-
-6 Sentry SDK
+5 Sentry SDK
 
 使用目的：用于收集线上用户APP运行状态，用于记录APP网络连通状态，崩溃收集
 
@@ -110,17 +98,27 @@
 
 隐私政策链接：https://sentry.io/privacy/
 
-<br />
-
-7 友盟+SDK
+6 友盟+SDK
 
 使用目的：用于收集线上用户APP运行状态，用于记录APP网络连通状态，崩溃收集
 
 收集个人信息类型：**设备信息；网络连通状态信息；**崩溃堆栈信息
 
-官网链接：https://www.umeng.com
+官网链接：https://www.umeng.com/
 
-隐私政策链接：https://www.umeng.com/page/policy
+隐私政策链接：https://sentry.io/privacy/
+
+7 阿里公共DNS
+
+使用目的：使用阿里云公共 DNS 提升用户的网络体验
+
+收集个人信息类型：**设备信息 (bssid、MAC、ssid) 地址、；网络连通状态信息(WIFI信息）**
+
+官网链接：https://www.alidns.com/
+
+隐私政策链接：https://terms.aliyun.com/legal-agreement/terms/suit_bu1_ali_cloud/suit_bu1_ali_cloud202108111133_15842.html
+
+
 
 ## 3. 安全
 

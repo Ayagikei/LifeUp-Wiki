@@ -1,6 +1,9 @@
-# Welcome to the world of LifeUp!
 
-![](_media/hello_lifeup/01.png)
+<h1 align="center" padding="100">Welcome to the world of LifeUp!</h1>
+
+<p align="center">
+ <img src="guide/_media/hello_world/banner.png" />
+</p>
 
 [中文](https://wiki.lifeupapp.fun/zh-cn/#/guide/hello_lifeup)
 
@@ -196,6 +199,10 @@ It is not responsible for taking on some automated operations. But you can use t
 For daily tasks, it is usually sufficient to keep the default ``23:59:59`` for the current day.
 
 Of course, **you can also adjust that time if you are used to completing in the early hours of the next morning (e.g., until `2 am the next day`).**
+
+<br/>
+
+!> **"No deadline"** means that the task will not automatically expire and repeat. In most scenarios, you only need to keep the default deadline and do not need to set it to "No deadline".
 
 <br/>
 
