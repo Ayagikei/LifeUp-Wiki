@@ -88,19 +88,7 @@
 
 <br />
 
-5 華為AppGallery Connect
-
-使用目的：用於收集線上使用者APP執行狀態，用於記錄APP網路連通狀態，崩潰收集
-
-收集個人資訊型別：**裝置資訊；網路連通狀態資訊；**崩潰堆疊資訊
-
-官網連結：https://developer.huawei.com/consumer/cn/
-
-隱私政策連結：https://consumer.huawei.com/cn/privacy/privacy-policy/
-
-<br />
-
-6 Sentry SDK
+5 Sentry SDK
 
 使用目的：用於收集線上使用者APP執行狀態，用於記錄APP網路連通狀態，崩潰收集
 
@@ -110,17 +98,27 @@
 
 隱私政策連結：https://sentry.io/privacy/
 
-<br />
-
-7 友盟+SDK
+6 友盟+SDK
 
 使用目的：用於收集線上使用者APP執行狀態，用於記錄APP網路連通狀態，崩潰收集
 
 收集個人資訊型別：**裝置資訊；網路連通狀態資訊；**崩潰堆疊資訊
 
-官網連結：https://www.umeng.com
+官網連結：https://www.umeng.com/
 
-隱私政策連結：https://www.umeng.com/page/policy
+隱私政策連結：https://sentry.io/privacy/
+
+7 阿里公共DNS
+
+使用目的：使用阿里雲公共 DNS 提升使用者的網路體驗
+
+收集個人資訊型別：**裝置資訊 (bssid、MAC、ssid) 地址、；網路連通狀態資訊(WIFI資訊）**
+
+官網連結：https://www.alidns.com/
+
+隱私政策連結：https://terms.aliyun.com/legal-agreement/terms/suit_bu1_ali_cloud/suit_bu1_ali_cloud202108111133_15842.html
+
+
 
 ## 3. 安全
 
