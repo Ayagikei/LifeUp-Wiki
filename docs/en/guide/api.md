@@ -627,7 +627,7 @@ Only supported since version 1.90.2
 | set_type    | adjustment method (absolute/relative) | one of the following values: <br/>absolute<br/>relative | relative       | No       | absolute - absolute value, that is, directly set the target to value<br/>relative - relative values, adding or subtracting from the original value |
 | amount      | number of content item                | number                                                  | 1              | No       | number of rewards for a single item                          |
 | probability | probability of the content item       | number                                                  | relative       | No       |                                                              |
-| fixed       | whether it is a fixed reward          | a number greater than or equal to 0                     | 1              | No       |                                                              |
+| fixed       | whether it is a fixed reward          | boolean                                                 | true/false     | No       |                                                              |
 
 **Notice:**
 
