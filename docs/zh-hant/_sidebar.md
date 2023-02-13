@@ -19,6 +19,7 @@
   - [相容性配置](guide/compatibility.md)
   - [後臺執行](guide/background_running.md)
   - [開放介面](guide/api.md)
+    - [🖥 桌面端](guide/api_desktop.md)
 - 使用者分享
 
   - [體系建設參考手冊](guide/user/system_01.md)
