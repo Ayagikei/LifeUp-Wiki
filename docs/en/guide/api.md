@@ -366,9 +366,10 @@ For details, see the broadcast broadcast parameters below.
 | importance | importance level | number [1, 4] | 1 | no | default is 1 |
 | difficulty | difficulty level | number [1, 4] | 2 | no | default is 1 |
 | item_id | id of the rewarded item | a number greater than 0 | 1 |||
-| item_name | the name of the reward item | any text | treasure | No |fuzzy search item name|
+| item_name | the name of the reward item | any text | treasure | no |fuzzy search item name|
 | item_amount | amount of reward | [1, 99] | 1 | no | default is 1 |
 | deadline    | deadline time   |timestamp (milliseconds)       | 0    | no      ||
+| color | the color of the task tag |color text | \#66CCFF | no |available in v1.91+<br/>Note that the # character needs to be escaped when used. <br/>For example, when the color value of the example is actually used, it should be `color=%2366CCFF`|
 
 **Return Value:**
 
@@ -376,8 +377,8 @@ Only supported since version 1.90.2
 
 | Parameter | Meaning | Value | Example | Required | Notes |
 | -------- | -------------- | ---- | ---- | -------- | ---- |
-| task_id | new task id | number | 1000 | yes | |
-| task_gid | newly added task group id | number | 1000 | yes | |
+| task_id | new task id | number | 1000 | yes | - |
+| task_gid | newly added task group id | number | 1000 | yes | - |
 
 <br/>
 
@@ -523,8 +524,8 @@ The method of obtaining the id is to open the "Developer Mode" on the "Labs" pag
 
 | Parameter | Meaning | Type | Example | Required | Notes |
 | -------- | ------------ | ------------------------ ------------- | ------------ | -------- | -------------- -------------------------------------------------------- |
-| key | type | Currently only following values  supported: <br/>atm_interest<br/>credit_interest<br/>line_of_credit<br/>discount_rate_for_returning | atm_interest | yes | atm_interest - ATM daily rate<br/>credit_interest - loan daily rate<br/>line_of_credit - loanable amount<br/>discount_rate_for_returning - return discount Scale |
-| value | numeric value | decimal number | 0.01 | yes | different keys correspond to different value ranges |
+| key | type | Currently only following values  supported: <br/>atm_interest<br/>credit_interest<br/>line_of_credit<br/>discount_rate_for_returning<br/>atm_balance | atm_interest | yes | atm_interest - ATM daily rate<br/>credit_interest - loan daily rate<br/>line_of_credit - loanable amount<br/>discount_rate_for_returning - return discount Scale<br/>atm_balance - Set ATM balance |
+| value | numeric value | decimal number or integer | 0.01 | yes | different keys correspond to different value ranges<br/>For example, ATM balances do not support decimal points |
 | set_type | How to set the value | One of the following values:<br/>absolute<br/>relative | absolute | yes |absolute - absolute value, that is, directly set the target to value<br/>relative - relative values, adding or subtracting from the original value|
 
 <br/>
@@ -601,6 +602,7 @@ Only supported since version 1.90.2
 | own_number_type | own number adjustment method (absolute/relative) | One of the following values:<br/>absolute<br/>relative | relative | no | absolute - absolute value, that is, directly set the target to value<br/>relative - relative values, adding or subtracting from the original value |
 | stock_number | stock number | number [-, +] | 1 | no | |
 | stock_number_type | stock number adjustment method (absolute/relative) | One of the following values: <br/>absolute<br/>relative | relative | no | absolute - absolute value, that is, directly set the target to value<br/>relative - relative values, adding or subtracting from the original value |
+| disable_purchase | Is it disabled to purchase the item | `true` or `false` | true | no | available in v1.91 |
 
 **Notice:**
 
@@ -620,19 +622,73 @@ Only supported since version 1.90.2
 
 | Parameter   | Meaning                               | Type                                                    | Example        | Required | Notes                                                        |
 | ----------- | ------------------------------------- | ------------------------------------------------------- | -------------- | -------- | ------------------------------------------------------------ |
-| id          | item id                               | a number greater than 0                                 | 1              | No*      | Please refer to the above "Basic Knowledge - Person-liter Data ID" for how to obtain |
-| name        | item name                             | any text                                                | Treasure chest | No*      | When used for unknown id, fuzzy search product, not name modification |
-| sub_id      | content item id                       | a number greater than 0                                 | treasure chest | No*      | id of chest contents                                         |
-| sub_name    | content item name                     | any text                                                | Get a gift     | No*      | For fuzzy search items when the id of the contents of the box is unknown |
-| set_type    | adjustment method (absolute/relative) | one of the following values: <br/>absolute<br/>relative | relative       | No       | absolute - absolute value, that is, directly set the target to value<br/>relative - relative values, adding or subtracting from the original value |
-| amount      | number of content item                | number                                                  | 1              | No       | number of rewards for a single item                          |
-| probability | probability of the content item       | number                                                  | relative       | No       |                                                              |
-| fixed       | whether it is a fixed reward          | boolean                                                 | true/false     | No       |                                                              |
+| id          | item id                               | a number greater than 0                                 | 1              | no*      | Please refer to the above "Basic Knowledge - Person-liter Data ID" for how to obtain |
+| name        | item name                             | any text                                                | Treasure chest | no*      | When used for unknown id, fuzzy search product, not name modification |
+| sub_id      | content item id                       | a number greater than 0                                 | treasure chest | no*      | id of chest contents                                         |
+| sub_name    | content item name                     | any text                                                | Get a gift     | no*      | For fuzzy search items when the id of the contents of the box is unknown |
+| set_type    | adjustment method (absolute/relative) | one of the following values: <br/>absolute<br/>relative | relative       | no       | absolute - absolute value, that is, directly set the target to value<br/>relative - relative values, adding or subtracting from the original value |
+| amount      | number of content item                | number                                                  | 1              | no       | number of rewards for a single item                          |
+| probability | probability of the content item       | number                                                  | relative       | no       | -                                                            |
+| fixed       | whether it is a fixed reward          | boolean                                                 | true/false     | no       | -                                                            |
 
 **Notice:**
 
 1. In order to search for a product, either id or name must be provided.
 1. In order to search for content, either sub_id or sub_name must be provided.
+
+<br/>
+
+### ATM
+
+**⚠ Only available in v1.91+**
+
+> The deposit and withdrawal operations here will be verified.
+>
+> If you need to adjust the ATM balance value directly, you can check the "Shop Settings" interface above.
+
+#### Deposit
+
+**Method name: **deposit
+
+**Description:** The deposit will be checked for legality (whether the coin balance is sufficient).
+
+**Example:**[lifeup://api/deposit?amount=500](lifeup://api/deposit?amount=500)
+
+**Explanation:** Deposit 500 coins.
+
+| Parameter | Meaning        | Type                    | Example | Required | Notes |
+| --------- | -------------- | ----------------------- | ------- | -------- | ----- |
+| amount    | deposit amount | a number greater than 0 | 100     | yes      | -     |
+
+**Return: **
+
+| Parameter | Meaning                              | Type              | Example | Required | Notes |
+| --------- | ------------------------------------ | ----------------- | ------- | -------- | ----- |
+| result    | Whether the operation was successful | `true` or `false` | true    | yes      | -     |
+
+<br/>
+
+#### Withdraw
+
+**Method name: **withdraw
+
+**Description:** Withdrawals will be checked for legality (whether the ATM balance is sufficient).
+
+**Example:** [lifeup://api/withdraw?amount=500](lifeup://api/withdraw?amount=500)
+
+**Explanation:** Withdraw 500 coins.
+
+| Parameter | Meaning           | Type                    | Example | Required | Notes |
+| --------- | ----------------- | ----------------------- | ------- | -------- | ----- |
+| amount    | withdrawal amount | a number greater than 0 | 100     | yes      | -     |
+
+**Return: **
+
+| Parameter | Meaning                              | Type              | Example | Required | Notes |
+| --------- | ------------------------------------ | ----------------- | ------- | -------- | ----- |
+| result    | Whether the operation was successful | `true` or `false` | true    | yes      | -     |
+
+<br/>
 
 ### Add Pomodoro Record
 
@@ -695,14 +751,14 @@ Only supported since version 1.90.2
 
 | Parameter | Meaning | Type | Example | Required | Notes |
 | ----- | -------------------- | ------------------- | -- ----------- | -------- | ---- |
-| count | number of steps | number greater than or equal to 0 | 9999 | yes | |
+| count | number of steps | a number greater than or equal to 0 | 9999 | yes | |
 | time | arbitrary timestamp of the date | timestamp (ms) | 1666282995643 | yes | |
 
 <br/>
 
 #### Simple Query
 
-!> The functions here are used with automated tools/secondary development.
+!> The functions here are used with automated tools/secondary development. If you need to query a complete list of data, you can refer to our [`LifeUp SDK`, `LifeUp Cloud`](https://github.com/Ayagikei/LifeUp-SDK) and [`LifeUp Desktop`.](https://github.com/Ayagikei/LifeUp-Desktop)
 
 **Method name:** query
 
@@ -711,17 +767,37 @@ Only supported since version 1.90.2
 **Example:** - Query the current number of coins: [lifeup://api/query?key=coin](lifeup://api/query?key=coin)
 
 
-| Parameter | Meaning       | Type                                               | Example | Required | Notes                                                        |
-| --------- | ------------- | -------------------------------------------------- | ------- | -------- | ------------------------------------------------------------ |
-| key       | type of query | Only one of the following values:<br/>coin<br/>atm | coin    | yes      | coin - current amount of coins<br/>atm - current ATM deposit |
+| Parameter | Meaning            | Type                                                        | Example | Required                                    | Notes                                                        |
+| --------- | ------------------ | ----------------------------------------------------------- | ------- | ------------------------------------------- | ------------------------------------------------------------ |
+| key       | type of query      | Only one of the following values:<br/>coin<br/>atm<br/>item | coin    | yes                                         | coin - current amount of coins<br/>atm - current ATM balance<br/>item - Item information for the specified `item_id` |
+| item_id   | the id of the item | a number greater than 0                                     | 1       | When the key is `item`, it must be provided | -                                                            |
 
 **Return Value:**
 
 Only supported since version 1.90.2
 
+When querying coin/atm:
+
 | Parameter | Meaning | Type | Example | Required | Notes |
 | ----- | -------------- | ---- | ---- | -------- | ---- |
 | value | Numeric value returned by the query | number | 1000 | yes | |
+
+When querying an item: 
+
+| Parameter        | Meaning                         | Type     | 示例      | Required | Notes                                                 |
+| ---------------- | ------------------------------- | -------- | --------- | -------- | ----------------------------------------------------- |
+| item_id          | the id of the item              | number   | 1         | yes      | -                                                     |
+| name             | the name of the item            | any text | Coffee    | yes      | -                                                     |
+| desc             | description                     | any text |           | no       | -                                                     |
+| icon             | icon URL                        | any text | icon.webp | no       | If it is a local file, only the file name is returned |
+| category_id      | category data id                | number   | 1         | yes      | -                                                     |
+| stock_number     | shop stock quantity             | number   | -1        | yes      | `-1` represents infinite shop inventory               |
+| own_number       | the own number in the Inventory | number   | 10        | yes      | -                                                     |
+| price            | the price                       | number   | 100       | yes      | -                                                     |
+| order            | sort by                         | number   | 100       | yes      | Weight value when custom sorting                      |
+| disable_purchase | Whether to disable purchase     |          | true      | yes      | -                                                     |
+
+
 
 <br/>
 
@@ -1104,3 +1180,10 @@ location.href='lifeup://api/reward?type=coin&content=consolation+prize&number=1'
 
 ### Application/Web/Automation Developer
 Let us know if you've developed anything related to LifeUp!
+
+<br/>
+
+### Any programming language/platform that supports the HTTP protocol
+
+For details, please refer to https://github.com/Ayagikei/LifeUp-SDK and [LifeUp Cloud - HTTP APIs - Google Play](https://play.google.com/store/apps/details?id=net.lifeupapp.lifeup.http).
+
