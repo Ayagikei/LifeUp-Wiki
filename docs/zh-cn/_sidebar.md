@@ -19,6 +19,7 @@
   - [兼容性配置](guide/compatibility.md)
   - [后台运行](guide/background_running.md)
   - [开放接口](guide/api.md)
+    - [☁️ 云人升](guide/api_cloud.md)
     - [🖥 桌面端](guide/api_desktop.md)
 - 用户分享
 
