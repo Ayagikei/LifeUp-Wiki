@@ -17,4 +17,5 @@
   - [APIs](guide/api.md)
   
 - What's new
+  - [v1.91.0: New Widgets, Custom Level, 🖥 ](feature/191.md)
   - [v1.89.x: Multiple Unlock Condition](feature/189.md)
