@@ -43,7 +43,7 @@ To use the desktop client, you will need to follow a few steps:
 - Your phone and computer are on the same LAN (such as connected to the same WIFI).
 - ⚠If your network configuration is very complicated, please try to ping your phone's IP address on your computer before attempting to use it.
 
-#### Mobile terminal
+#### On your phone
 
 1. Update your "LifeUp" to the latest version.
 
@@ -61,7 +61,7 @@ To use the desktop client, you will need to follow a few steps:
 - **If your phone is a MIUI system (Xiaomi, Redmi), please make sure that you have allowed "Display interface in the background" permission for "LifeUp" and "LifeUp Cloud".**
 - Make sure "LifeUp" and "LifeUp Cloud" are both running.
 
-#### Desktop terminal
+#### On Desktop
 
 1. Download and install the desktop application via the download link in the previous section.
 2. Fill in the service IP address displayed in "LifeUp Cloud" in the desktop version settings page.
