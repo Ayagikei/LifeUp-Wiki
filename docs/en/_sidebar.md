@@ -15,8 +15,9 @@
 
 - Features
   - [APIs](guide/api.md)
-    - [LifeUp Cloud☁️](guide/api_cloud.md)
-    - [LifeUp Desktop🖥](guide/api_desktop.md)
+    - [📄API Lists](guide/api.md)
+    - [☁️LifeUp Cloud](guide/api_cloud.md)
+    - [🖥LifeUp Desktop](guide/api_desktop.md)
   
 - What's new
   - [v1.91.0: New Widgets, Custom Level, 🖥 ](feature/191.md)
