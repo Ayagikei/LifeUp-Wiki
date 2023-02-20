@@ -14,7 +14,7 @@
   - [Background Running](guide/background_running.md)
 
 - Features
-  - [APIs](guide/api.md)
+  - APIs
     - [📄API Lists](guide/api.md)
     - [☁️LifeUp Cloud](guide/api_cloud.md)
     - [🖥LifeUp Desktop](guide/api_desktop.md)

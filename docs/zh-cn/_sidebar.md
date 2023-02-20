@@ -18,7 +18,7 @@
   - [备份](guide/backup.md)
   - [兼容性配置](guide/compatibility.md)
   - [后台运行](guide/background_running.md)
-  - [开放接口]()
+  - 开放接口
     - [📄接口定义](guide/api.md)
     - [☁️ 云人升](guide/api_cloud.md)
     - [🖥 桌面端](guide/api_desktop.md)
