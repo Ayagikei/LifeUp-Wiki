@@ -942,9 +942,11 @@ id 的獲取方法為「實驗」頁面開啟「開發者模式」，然後在�
 | message         | 彈窗詳細描述       | 任意文字        | 這是彈窗內容                                 | 否       | -                                                            |
 | positive_text   | 積極按鈕文案       | 任意文字        | 確定                                         | 否       | -                                                            |
 | negative_text   | 消極按鈕文案       | 任意文字        | 拒絕                                         | 否       | -                                                            |
+| neutral_text    | 中性按鈕文案       | 任意文字        | 說明                                         | 否       | -                                                            |
 | positive_action | 積極按鈕的連結響應 | URL（其他介面） | lifeup:%2F%2Fapi%2Ftoast%3Ftext%3D你點了確定 | 否       | 實際上就是彈出訊息介面經過轉義的文字。轉義規則可參考`基礎知識-轉義`。 |
-| negative_action | 消極按鈕的連結響應 | URL（其他介面） | 同上                                         | 否       | -                                                            |
-| cancel_action   | 取消彈窗的連結響應 | URL（其他介面） | 同上                                         | 否       | -                                                            |
+| negative_action | 消極按鈕的連結響應 | URL（其他介面） | 同上                                         | 否       | 同上                                                         |
+| neutral_action  | 中性按鈕的連結響應 | URL（其他介面） | 同上                                         | 否       | 同上                                                         |
+| cancel_action   | 取消彈窗的連結響應 | URL（其他介面） | 同上                                         | 否       | 「取消」指的是                                               |
 
 <br/>
 
