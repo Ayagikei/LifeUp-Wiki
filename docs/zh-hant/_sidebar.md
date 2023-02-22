@@ -18,7 +18,7 @@
   - [備份](guide/backup.md)
   - [相容性配置](guide/compatibility.md)
   - [後臺執行](guide/background_running.md)
-  - [開放介面]()
+  - 開放介面
     - [📄介面定義](guide/api.md)
     - [☁️ 雲人升](guide/api_cloud.md)
     - [🖥 桌面端](guide/api_desktop.md)
