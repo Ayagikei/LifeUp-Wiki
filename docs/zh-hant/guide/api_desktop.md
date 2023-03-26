@@ -36,9 +36,9 @@
 - Linux（未經測試，後續釋出）
 - MacOS（未經測試，後續釋出）
 
-⚠你需要搭配《雲人升》v1.1.2 版本或以上進行使用。當前《雲人升》不支援檢測更新，你可以在[這裏下載並覆蓋安裝](http://lifeupcdnpic.cdn.dfyun.com.cn/download/release/cloud/lifeup_cloud_1.1.2.apk)。
+!> 1. 你需要搭配《雲人升》v1.1.2 版本或以上進行使用。如果你使用的是中國大陸的版本，可以在軟體-`設定`-`實驗`頁面找到《雲人升》一欄並更新。如果你使用的是來自 Google Play 的版本，可以在直接在 [Google Play 頁面](https://play.google.com/store/apps/details?id=net.lifeupapp.lifeup.http)下載或者 [GitHub release 頁面](https://github.com/Ayagikei/LifeUp-SDK/releases/tag/1.1.0)下載。
 
-⚠你的瀏覽器的安全策略可能會阻止下載。
+!> 2. 你的瀏覽器的安全策略可能會阻止下載。你可能需要手動允許瀏覽器下載可執行檔案，或者右鍵複製連結到其他下載器中下載。
 
 <br/>
 

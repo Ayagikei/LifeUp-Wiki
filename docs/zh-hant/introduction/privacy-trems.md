@@ -1,6 +1,6 @@
 # 《人升》隱私宣告和條款
 
-?> 隱私政策更新生效日期：2022年7月8日
+?> 隱私政策更新生效日期：2023年03月26日
 
 我們作為人升的運營者，深知個人資訊對你的重要性，我們將按照法律法規的規定，保護你的個人資訊及隱私安全。我們制定本隱私政策並特別提示：希望你在使用人升及相關服務前仔細閱讀並理解本隱私政策，以便作出適當的選擇。
 
@@ -22,6 +22,7 @@
 2. 前臺服務許可權是爲了實現桌面小部件的相關功能。
 3. 啟動許可權用於重新整理桌面小部件資料和重置提醒
 4. 活動許可權用於協助應用內統計步數
+5. 應用會在手機重啟時自啟動，以重新設定提醒和重新整理小部件內容
 
 
 ## 2. 第三方SDK接入
@@ -40,85 +41,127 @@
 
 <br />
 
-1 騰訊QQ互聯
+1. 騰訊QQ互聯;騰訊開放平臺;微信Open;微信開放平臺 SDK
 
-使用目的：為使用者提供QQ三方登入功能
+​    使用目的：為使用者提供QQ三方登入功能
 
-收集個人資訊型別：**裝置資訊、使用者個人資訊**
+​    收集個人資訊型別：**裝置資訊、使用者個人資訊**
 
-官網連結：https://connect.qq.com/
+​    官網連結：https://connect.qq.com/
 
-隱私政策連結：https://wiki.connect.qq.com/QQ互聯SDK隱私保護宣告
-
-<br />
-
-2 新浪微博
-
-使用目的：為使用者提供微博三方登入功能
-
-收集個人資訊型別：**裝置資訊、使用者個人資訊**
-
-官網連結：https://open.weibo.com
-
-隱私政策連結：https://weibo.com/signup/v5/privacy?spm=a1zaa.8161610.0.0.4f8776217Wu8R1
+​    隱私政策連結：https://wiki.connect.qq.com/QQ互聯SDK隱私保護宣告
 
 <br />
 
-3 Facebook
+2. 新浪微博
 
-使用目的：為使用者提供facebook三方登入功能
+​    使用目的：為使用者提供微博三方登入功能
 
-收集個人資訊型別：**裝置資訊、使用者個人資訊**
+​    收集個人資訊型別：**裝置資訊、使用者個人資訊**
 
-官網連結：https://developers.facebook.com/
+​    官網連結：https://open.weibo.com
 
-隱私政策連結：https://www.facebook.com/privacy/explanation
-
-<br />
-
-4 谷歌SDK
-
-使用目的：為使用者提供谷歌三方登入功能
-
-收集個人資訊型別：**裝置資訊；網路連通狀態資訊、使用者個人資訊**
-
-官網連結：https://developers.google.com/identity/sign-in/android/
-
-隱私政策連結：https://policies.google.com/privacy
+​    隱私政策連結：https://weibo.com/signup/v5/privacy?spm=a1zaa.8161610.0.0.4f8776217Wu8R1
 
 <br />
 
-5 Sentry SDK
+3. Facebook
 
-使用目的：用於收集線上使用者APP執行狀態，用於記錄APP網路連通狀態，崩潰收集
+​    使用目的：為使用者提供facebook三方登入功能
 
-收集個人資訊型別：**裝置資訊；網路連通狀態資訊；**崩潰堆疊資訊
+​    收集個人資訊型別：**裝置資訊、使用者個人資訊**
 
-官網連結：https://sentry.io/
+​    官網連結：https://developers.facebook.com/
 
-隱私政策連結：https://sentry.io/privacy/
+​    隱私政策連結：https://www.facebook.com/privacy/explanation
 
-6 友盟+SDK
+<br />
 
-使用目的：用於收集線上使用者APP執行狀態，用於記錄APP網路連通狀態，崩潰收集
+4. 谷歌SDK
 
-收集個人資訊型別：**裝置資訊；網路連通狀態資訊；**崩潰堆疊資訊
+​    使用目的：為使用者提供谷歌三方登入功能
 
-官網連結：https://www.umeng.com/
+​    收集個人資訊型別：**裝置資訊；網路連通狀態資訊、使用者個人資訊**
 
-隱私政策連結：https://sentry.io/privacy/
+​    官網連結：https://developers.google.com/identity/sign-in/android/
 
-7 阿里公共DNS
+​    隱私政策連結：https://policies.google.com/privacy
 
-使用目的：使用阿里雲公共 DNS 提升使用者的網路體驗
+<br />
 
-收集個人資訊型別：**裝置資訊 (bssid、MAC、ssid) 地址、；網路連通狀態資訊(WIFI資訊）**
+5. Sentry SDK
 
-官網連結：https://www.alidns.com/
+​    使用目的：用於收集線上使用者APP執行狀態，用於記錄APP網路連通狀態，崩潰收集
 
-隱私政策連結：https://terms.aliyun.com/legal-agreement/terms/suit_bu1_ali_cloud/suit_bu1_ali_cloud202108111133_15842.html
+​    收集個人資訊型別：**裝置資訊；網路連通狀態資訊；**崩潰堆疊資訊
 
+​    官網連結：https://sentry.io/
 
+​    隱私政策連結：https://sentry.io/privacy/
+
+<br />
+
+6. 友盟+SDK
+
+​    使用目的：用於收集線上使用者APP執行狀態，用於記錄APP網路連通狀態，崩潰收集
+
+​    收集個人資訊型別：**裝置資訊；網路連通狀態資訊；**崩潰堆疊資訊
+
+​    官網連結：https://www.umeng.com/
+
+​    隱私政策連結：https://sentry.io/privacy/
+
+<br />
+
+7. 阿里公共DNS
+
+​    使用目的：使用阿里雲公共 DNS 提升使用者的網路體驗
+
+​    收集個人資訊型別：**裝置資訊 (bssid、MAC、ssid) 地址、；網路連通狀態資訊(WIFI資訊）**
+
+​    官網連結：https://www.alidns.com/
+
+​    隱私政策連結：https://terms.aliyun.com/legal-agreement/terms/suit_bu1_ali_cloud/suit_bu1_ali_cloud202108111133_15842.html
+
+<br />
+
+8. 七牛 SDK
+
+​    使用目的：用於實現使用者上傳圖片檔案
+
+​    收集個人資訊型別：**使用者自主選擇要上傳的圖片檔案**
+
+​    官網連結：https://www.qiniu.com/
+
+​    隱私政策連結：https://developer.qiniu.com/pili/8027/sdk-privacy-policy
+
+<br />
+
+9. App 支付寶客戶端 SDK
+
+  第三方名稱：支付寶（中國）網絡技術有限公司
+
+  使用目的：支援使用者使用支付寶支付
+
+  收集個人資訊型別：設**備標識資訊（包括 IMEI（針對 Android Q 以下版本）/OAID（針對 Android Q 及以上版本））、網路狀態資訊(IP、當前網路型別和名稱)**
+
+  官網連結：https://open.alipay.com/platform/home.htm
+
+  隱私政策連結：https://opendocs.alipay.com/open/54/01g6qm
+
+<br />
+
+10. 微信 Open SDK
+
+  第三方名稱：深圳市騰訊計算機系統有限公司
+
+  使用目的：支援使用者使用微信支付
+
+  收集個人資訊型別：**裝置標識資訊（包括 IMEI（針對 Android Q 以下版本）/OAID（針對 Android Q 及以上版本））、網路狀態資訊(IP、當前網路型別和名稱)**
+
+  官網連結：[https://open.weixin.qq.com](https://open.weixin.qq.com/)
+
+  隱私政策連結：[https://weixin.qq.com/cgi-bin/readtemplate?lang=zh_CN&t=weixin_agreement&s=privacy](https://weixin.qq.com/cgi-bin/readtemplate?lang=zh_CN&t=weixin_agreement&s=privacy)
 
 ## 3. 安全
 
