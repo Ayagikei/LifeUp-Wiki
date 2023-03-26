@@ -542,7 +542,15 @@ The method of obtaining the id is to open the "Developer Mode" on the "Labs" pag
 
 | Parameter | Meaning | Value | Example | Required | Notes |
 | ---- | ---- | --------------------------------------- --------------------- | ---- | -------- | ---- |
-| page | page| One of the following values:<br/>main<br/>setting<br/>about<br/>pomodoro<br/>feelings<br/>achievement<br/>history<br/>add_task<br/>add_achievement<br/>add_achievement_cate<br/>exp<br/>coin<br/>backup<br/>add_item<br/>lab<br/>custom_attributes<br/>pomodoro_record<br/>synthesis<br/>pic_manage | lab | yes | |
+| page | page| One of the following values:<br/>main<br/>setting<br/>about<br/>pomodoro<br/>feelings<br/>achievement<br/>history<br/>add_task<br/>add_achievement<br/>add_achievement_cate<br/>exp<br/>coin<br/>backup<br/>add_item<br/>lab<br/>custom_attributes<br/>pomodoro_record<br/>synthesis<br/>pic_manage<br/>purchase_dialog | lab | yes | |
+
+When the `page` parameter is set to `purchase_dialog`, you can specify the item ID:
+
+For example: `lifeup://api/goto?page=purchase_dialog&id=1`
+
+| Parameter | Meaning | Value            | Example | Required | Notes   |
+| --------- | ------- | ---------------- | ------- | -------- | ------- |
+| id        | Item ID | Positive integer | 1       | Yes      | Item ID |
 
 <br/>
 

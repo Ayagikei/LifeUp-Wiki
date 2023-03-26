@@ -8,6 +8,102 @@
 
 (Part of the translation is provided by Google Translate and may not be accurate)
 
+**1.91.1 (2023/03/27)**
+
+**✨Features**
+
+1. Added "Notification Management" option to the Settings.
+2. The New Task API now supports setting backgrounds.
+3. Added API broadcast events related to product countdowns ([New API · Issue #64 · Ayagikei/LifeUp (github.com)](https://github.com/Ayagikei/LifeUp/issues/64)).
+
+**♻️Optimizations**
+
+1. The feedback pop-up will no longer close automatically when clicked outside.
+2. Widgets will no longer force completion of tasks that have not been started.
+3. The task completion API will no longer force completion of tasks that have not been started when the "ui" parameter is set to true.
+4. When the setting for individual task penalty coefficients is turned off, the previously set task penalty coefficients will be ignored and the global value will be used instead.
+5. Automatically removes whitespace from URLs entered by users.
+6. When the "Hide Unpurchasable Items" option is enabled and an unpurchasable item is created, a prompt will be displayed.
+7. When the user enables custom levels but does not define any levels, it will now reset to the built-in level table.
+8. Improved widget preview images.
+9. Step inputs are now restricted to numbers. (https://github.com/Ayagikei/LifeUp/issues/75)
+10. When using the built-in browser for product links, the "https" prefix is no longer required.
+11. Added "Compatibility Configuration" instructions for the product countdown feature.
+
+**🐛Bug Fixes**
+
+1. Fixed unexpected click handling behavior when selecting products in the store and warehouse.
+2. Fixed the issue where non-repeating tasks could not be set with a deadline when adding them via API.
+3. Fixed the issue where custom attribute images may not update on certain devices.
+4. Fixed the issue where custom sound effects may cause the app to crash. A new method has been implemented, which should make background sound effects more stable and use less memory, but the playback speed may be slower.
+5. Fixed the issue where on Android 12 and above devices without the "Ignore Battery Optimization" configuration, enabling the automatic pomodoro timer or break time may cause a crash in the background.
+6. Fixed the issue where product countdown sound effects were affected by the pomodoro sound effects setting.
+7. Fixed the issue where floating-point calculation errors occurred when setting ATM daily interest rates in the API.
+8. Fixed the issue where some images could not be loaded on Android 6.
+9. Fixed the issue where, when restoring backed-up app data from a higher version to a lower version, error prompts were not displayed correctly.
+10. Fixed the issue where some devices experienced layout overlap on the pomodoro page.
+
+**1.91.0 (2023/02/13-2023/02/26)**
+
+**✨Features**
+
+1. Support custom level gradients.
+2. Add initial batch of widgets:
+   - Coins (small, large, target)
+   - Attributes (small, large)
+3. Support querying most of the data details in LifeUp through Content Provider API, including:
+   - Offer a new version of "LifeUp Cloud".
+   - Provide a rudimentary first version of the desktop version (Windows, Linux, MacOS) for local network use.
+4. Support multiple selection deletion for tomato timer records.
+5. Support setting automatic start of rest and work for the tomato clock.
+6. API improvements and added fields, including:
+   - ATM deposits and withdrawals.
+   - Setting whether to prohibit purchasing for goods.
+   - Setting label colors for tasks.
+   - Directly set ATM balance.
+   - Simple query for specified product details.
+   - Add a third button and operation option to the popup interface.
+
+**♻️Optimizations**
+
+1. Improve query, processing speed, and performance when dealing with large amounts of data.
+2. Fix the incorrect margins for adaptive icons.
+3. Optimize the display effect of the tomato timer records.
+4. Improve the interaction when restoring backup.
+5. Add UI display for obtaining membership license through Google Play.
+6. Provide a prompt to disable the one-click import feature if the selected backup file is not from LifeUp when importing directly from the file system.
+7. Close the input method automatically when searching for goods in the product selection popup.
+8. API behavior changes, including:
+   - Confirm_dialog popup API. If certain button text or operation is not provided, the button will not be displayed. This provides greater flexibility in popup control, for example, you can set up a text-only popup without buttons for displaying text and motivational language.
+   - Penalty API. In previous versions, it could only deduct up to 100 items, now the limit has been extended to 9 digits.
+
+**🐛Bug Fixes**
+
+1. Fix the issue where the tomato timer page would display "loading" at the end under certain circumstances.
+2. Fix crashes caused by certain third-party libraries.
+3. Fix the issue where the app would crash when placing the tomato clock in the bottom navigation bar due to a prompt popup.
+4. Fix the abnormal display of attribute values when browsing other users' profiles.
+5. Fix the issue where the API events and notifications for attribute level reductions were not sent correctly.
+6. Fix some interaction issues with long press-editing pages.
+7. Fix some abnormal margins on the image management and synthesis pages.
+8. Fix some popup windows that were not scrollable, resulting in abnormal usage in landscape mode.
+
+**✨Special Release: LifeUp Cloud v1.1.1 (2023/02/13)**
+
+1. Support reading and authorizing operations for Content Provider information.
+2. During service startup, apply for a wake lock to allow response even when the screen is locked.
+3. Add a series of interfaces for Content Providers.
+
+**✨Special Release: LifeUp Desktop v1.0.1 (2023/02/13)**
+
+Initial release, designed to be used in conjunction with "LifeUp Cloud" and the mobile app.
+
+Support the following operations:
+
+- Query tasks, lists, goods, achievements, feelings lists.
+- Purchase goods, complete tasks.
+- Support using the desktop image browser to view enlarged images of feelings.
+
 **1.90.7 (2022/11/07)**
 
 **✨Features**

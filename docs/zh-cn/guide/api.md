@@ -618,9 +618,17 @@ id 的获取方法为「实验」页面打开「开发者模式」，然后在�
 
 **解释：**跳转到实验页面
 
-| 参数 | 含义 | 取值                                                         | 示例 | 是否必须 | 备注 |
-| ---- | ---- | ------------------------------------------------------------ | ---- | -------- | ---- |
-| page | 页面 | 固定以下数值其一：<br/>main<br/>setting<br/>about<br/>pomodoro<br/>feelings<br/>achievement<br/>history<br/>add_task<br/>add_achievement<br/>add_achievement_cate<br/>exp<br/>coin<br/>backup<br/>add_item<br/>lab<br/>custom_attributes<br/>pomodoro_record<br/>dlc<br/>pomodoro_record<br/>synthesis<br/>pic_manage | lab  | 是       | -    |
+| 参数 | 含义 | 取值                                                         | 示例 | 是否必须 | 备注                                                   |
+| ---- | ---- | ------------------------------------------------------------ | ---- | -------- | ------------------------------------------------------ |
+| page | 页面 | 固定以下数值其一：<br/>main<br/>setting<br/>about<br/>pomodoro<br/>feelings<br/>achievement<br/>history<br/>add_task<br/>add_achievement<br/>add_achievement_cate<br/>exp<br/>coin<br/>backup<br/>add_item<br/>lab<br/>custom_attributes<br/>pomodoro_record<br/>dlc<br/>pomodoro_record<br/>synthesis<br/>pic_manage<br/>purchase_dialog | lab  | 是       | `purchase_dialog`指购买弹窗<br/>其他的都是具体的大页面 |
+
+当 `page` 参数为 `purchase_dialog`时，你可以指定商品id：
+
+示例如：`lifeup://api/goto?page=purchase_dialog&id=1`
+
+| 参数 | 含义   | 取值          | 示例 | 是否必须 | 备注   |
+| ---- | ------ | ------------- | ---- | -------- | ------ |
+| id   | 商品id | 大于 0 的数字 | 1    | 是       | 商品id |
 
 <br/>
 
