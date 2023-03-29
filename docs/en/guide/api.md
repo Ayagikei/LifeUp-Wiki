@@ -341,7 +341,7 @@ For details, see the broadcast broadcast parameters below.
 
 ### Task
 
-#### Add Task
+#### Add a Task
 
 **Method name:** add_task
 
@@ -370,6 +370,7 @@ For details, see the broadcast broadcast parameters below.
 | item_amount | amount of reward | [1, 99] | 1 | no | default is 1 |
 | deadline    | deadline time   |timestamp (milliseconds)       | 0    | no      ||
 | color | the color of the task tag |color text | \#66CCFF | no |available in v1.91+<br/>Note that the # character needs to be escaped when used. <br/>For example, when the color value of the example is actually used, it should be `color=%2366CCFF`|
+| background_url | background picture URL |URL text | http://www.aaabbbccc.com/1.jpg | no ||
 
 **Return Value:**
 
@@ -1114,7 +1115,27 @@ Using `No Action`+`Broadcast return value` can achieve this effect in a more con
 | name       | name          | strength |
 | level      | current level | 2        |
 
----
+### Shop item countdown
+
+**Name:** 
+
+- Start: app.lifeup.item.countdown.start
+- Stop: app.lifeup.item.countdown.stop
+- Complte: app.lifeup.item.countdown.complete
+
+**Return value:**
+
+| Parameters | Meaning                       | Examples                  |
+| ---------- | ----------------------------- | ------------------------- |
+| item_id    | item id                       | 1                         |
+| name       | item name                     | play games for 30 minutes |
+| time_left  | time remaining (milliseconds) | 30000                     |
+
+
+
+
+
+
 
 ## Integration
 
