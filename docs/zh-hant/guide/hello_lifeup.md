@@ -142,14 +142,14 @@
 
 ---
 應用的功能模組有：
-- [任務](/guide/hello_人升?id=task)
-- [屬性](/guide/hello_人升?id=skills)
-- [商品](/guide/hello_人升?id=shop)
-- [成就](/guide/hello_人升?id=achievements)
-- [番茄](/guide/hello_人升?id=pomodoro)
-- [感想](/guide/hello_人升?id=feelings)
-- [世界](/guide/hello_人升?id=world)
-- [介面（API）](/guide/hello_人升?id=api)
+- [任務](/guide/hello_lifeup?id=task)
+- [屬性](/guide/hello_lifeup?id=skills)
+- [商品](/guide/hello_lifeup?id=shop)
+- [成就](/guide/hello_lifeup?id=achievements)
+- [番茄](/guide/hello_lifeup?id=pomodoro)
+- [感想](/guide/hello_lifeup?id=feelings)
+- [世界](/guide/hello_lifeup?id=world)
+- [介面（API）](/guide/hello_lifeup?id=api)
 
 人升的功能是模組化設計的，你可以僅使用自己想要的功能模組。
 
