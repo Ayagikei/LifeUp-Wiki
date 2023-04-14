@@ -142,14 +142,14 @@
 
 ---
 应用的功能模块有：
-- [任务](/guide/hello_人升?id=task)
-- [属性](/guide/hello_人升?id=skills)
-- [商品](/guide/hello_人升?id=shop)
-- [成就](/guide/hello_人升?id=achievements)
-- [番茄](/guide/hello_人升?id=pomodoro)
-- [感想](/guide/hello_人升?id=feelings)
-- [世界](/guide/hello_人升?id=world)
-- [接口（API）](/guide/hello_人升?id=api)
+- [任务](/guide/hello_lifeup?id=task)
+- [属性](/guide/hello_lifeup?id=skills)
+- [商品](/guide/hello_lifeup?id=shop)
+- [成就](/guide/hello_lifeup?id=achievements)
+- [番茄](/guide/hello_lifeup?id=pomodoro)
+- [感想](/guide/hello_lifeup?id=feelings)
+- [世界](/guide/hello_lifeup?id=world)
+- [接口（API）](/guide/hello_lifeup?id=api)
 
 人升的功能是模块化设计的，你可以仅使用自己想要的功能模块。
 

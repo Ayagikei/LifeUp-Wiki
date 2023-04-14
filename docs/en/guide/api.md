@@ -778,8 +778,8 @@ Only supported since version 1.90.2
 
 | Parameter | Meaning            | Type                                                        | Example | Required                                    | Notes                                                        |
 | --------- | ------------------ | ----------------------------------------------------------- | ------- | ------------------------------------------- | ------------------------------------------------------------ |
-| key       | type of query      | Only one of the following values:<br/>coin<br/>atm<br/>item | coin    | yes                                         | coin - current amount of coins<br/>atm - current ATM balance<br/>item - Item information for the specified `item_id` |
-| item_id   | the id of the item | a number greater than 0                                     | 1       | When the key is `item`, it must be provided | -                                                            |
+| key       | type of query      | Only one of the following values:<br/>coin<br/>atm<br/>item | coin    | yes                                         | coin - current amount of coins<br/>atm - current ATM balance<br/>item - Item information for the specified `itemId` |
+| itemId    | the id of the item | a number greater than 0                                     | 1       | When the key is `item`, it must be provided | -                                                            |
 
 **Return Value:**
 
