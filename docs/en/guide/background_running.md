@@ -24,31 +24,76 @@
 
 ## How
 
-**Warning:** 
+!> These methods may increase the battery draining.
 
-These methods may increase the battery draining.
+**According to our actual test using the OnePlus 8T device, the power consumption of running in the background for 24 hours is only 30 milliamps per hour.**
 
-It depends on the OS and use environment. 
+This will not significantly affect your power consumption.
 
-It is recommended to perform the following operations after encountering actual problems.
+But this data may be affected by application logic updates, usage habits and device changes.
+
+LifeUp only performs limited passive operations in the background: such as sending reminders, updating widgets, running Pomodoro, etc.
+
+
 
 
 ---
 
 ### Common ways to keep the app running in the background
 
-1. Check your BATTERT options in the system SETTINGS app and disable the battery optimization for LifeUp.
-2. Lock LifeUp in your multitasking pane.
-3. (Optional but may help) Enable the `Quick Add notification` in the Task Setting screen.
-4. When using functions such as Pomodoro and Reminder, make sure that you have turned on the LifeUp notifications, and have not turned on Do Not Disturb and special power saving modes.
+### General Settings
 
----
+> The following steps are not required to be performed in full, but each step may improve the priority of running LifeUp in the background. Ensure that the function can run normally.
 
-### Specific steps for different mobile phone brands
+**Android System**
 
-On the basis of Android, many mobile phone manufacturers have added a lot of additional configuration items to prevent applications from running in the background.
+1. Enter LifeUp, click on the sidebar - “Settings” - “Compatibility Issues”, click on “Jump to Battery Optimization Settings”, find LifeUp on this page and set it to “Do not optimize”.
 
-**If you want to know how to configure a specific mobile phone manufacturer device, please check this site: https://dontkillmyapp.com/**
+   a. Some phones may not be able to find LifeUp after jumping, you can ignore this configuration.
+
+2. If you want to receive notifications, please make sure that you have granted *LifeUp* notifications permissions.
+
+3. In the matter setting interface of LifeUp, turn on `Quick Add notification` (optional)
+
+<br/>
+
+**Manufacturer Customization (Phone Manager)**
+
+Many mobile phone manufacturers have added a lot of additional configuration items to prevent applications from running in the background. If you are not using a Pixel or AOSP device, you need some extra configuration.
+
+1. In the system’s multitasking management interface, lock the application
+
+2. In the system, find the application’s background management settings (or power optimization settings, or phone manager), and set LifeUp to “Allow background running (no background restrictions)” and “Allow self-starting”
+
+   a. For details, please check https://dontkillmyapp.com/
+
+3. When using LifeUp related functions, **avoid turning on functions such as super power saving, do not disturb, etc.**; or add LifeUp to the whitelist.
+
+<br/>
+
+**Still not working after setting?**
+
+According to our actual tests and user feedback for each manufacturer:
+
+**After correctly configuring the above options, LifeUp can use all functions normally on all mainstream devices.**
+
+But as the phone system is constantly updated, the relevant configuration items may change from time to time.
+
+1. **Please re-check and fill in the gaps according to the above steps**
+
+   a. The restrictions of phone manager type are not traditional application permissions, and the configuration items may be scattered in different system settings pages
+
+   b. Try to operate some of the optional steps, such as turning on the persistent notification of LifeUp, and see if it will help
+
+   c. Manually search for options that may affect battery optimization on your phone.
+
+   d. If you only care about reminders, you can try switching to the “Calendar Reminder” mode
+
+2. Consult other users who use the same manufacturer’s device in the community, and clearly describe your current system version
+
+3. Please consult or give feedback to the system engineer of your phone, and ask how to make an application not be killed in the background / keep alive in the background.
+
+
 
 ---
 
