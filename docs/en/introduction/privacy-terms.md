@@ -1,5 +1,7 @@
 # *LifeUp* App Privacy Terms & Policy
 
+?> The following description of the application server does not apply to the Lite version. The Lite version does not have any interaction with the application server.
+
 ### 1. Personal Information
 
 LifeUp is an offline-first app. We do not actively collect user data, for example your name, email
