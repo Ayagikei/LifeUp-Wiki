@@ -2,6 +2,8 @@
 
 ?> The following description of the application server does not apply to the Lite version. The Lite version does not have any interaction with the application server.
 
+LifeUp is an app that helps you improve your lifes. We respect your privacy and we are committed to protecting your personal information. This privacy policy explains how we collect, use, share and delete your personal information when you use our app.
+
 ### 1. Personal Information
 
 LifeUp is an offline-first app. We do not actively collect user data, for example your name, email
@@ -115,22 +117,24 @@ encrypted form.
 
 #### 1.4 Performance data and crash reports
 
-We use [Google Firebase](https://firebase.google.com/) and [Sentry](https://sentry.io/) to collect
-user performance data and crash reports to track and fix issues.
+We use [Google Firebase](https://firebase.google.com/) and [Sentry](https://sentry.io/) to collect user performance data and crash reports to track and fix issues.
 
-This performance data may include your device model, network status, instance ID, when the problem
-occurred, and related pages, **but this data will not be associated with your user data** (Does not
-include your nickname, user id, email address and any contact information, and will not collect the
-content you enter and create) and will only be used to analyze the problem and improve performance.
+This performance data may include your device model, network status, instance ID, when the problem occurred, and related pages, **but this data will not be associated with your user data** (Does not include your nickname, user id, email address and any contact information, and will not collect the content you enter and create) and will only be used to analyze the problem and improve performance.
 
-And this data is only temporarily stored by Firebase and Sentry for a period of time, and we will
-not share it with third parties.
+And this data is only temporarily stored by Firebase and Sentry for a period of time, **and we will**
+**not share/sell/rent it with third parties.**
 
 #### 1.5 Data deletion
 
-You can delete server remote data in the app by yourself in the Settings page.
+You can delete your account and personal information at any time by following these steps:
 
-The local data can be deleted directly by uninstalling the application.
+- Go to Settings - Data Backup/Restore/Clear page in the app
+- Scroll down to the bottom and tap on Delete Account button
+- Confirm your action
+
+Alternatively, you can also contact us at our email address (kei.ayagi@gmail.com) and request us to delete your personal information. We will respond to your request within 30 days.
+
+Please note that deleting your account and personal information will result in the loss of all your cloud data and progress in the app. You will not be able to access or restore your account or data after deletion. We may also retain some of your personal information for legal or operational purposes, such as complying with tax laws or resolving disputes.
 
 
 ### 2. Agreement
