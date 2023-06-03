@@ -54,7 +54,7 @@
 
 ```awk
 // 【推薦】content provider 機制，相容性更好
-http://{host:port}/api/contentprovder
+http://{host:port}/api/contentprovider
 
 // start activity 機制，部分裝置可能會限制後臺顯示介面許可權，導致無法執行
 http://{host:port}/api
@@ -72,10 +72,10 @@ http://{host:port}/api
 
 ```url
 // 單一呼叫（content 
-http://{host:port}/api/contentprovder?url=YOUR_ENCODED_API_URL
+http://{host:port}/api/contentprovider?url=YOUR_ENCODED_API_URL
 
 // 批次呼叫
-http://{host:port}/api/contentprovder?url=YOUR_ENCODED_API_URL_1&url=YOUR_ENCODED_API_URL_2
+http://{host:port}/api/contentprovider?url=YOUR_ENCODED_API_URL_1&url=YOUR_ENCODED_API_URL_2
 
 // 單一呼叫（start activity形式）
 http://{host:port}/api?url=YOUR_ENCODED_API_URL
@@ -93,10 +93,10 @@ http://{host:port}/api?url=YOUR_ENCODED_API_URL
 
 ```awk
 // 【推薦】content provider 機制，相容性更好
-http://{host:port}/api
+http://{host:port}/api/contentprovider
 
 // start activity 機制，部分裝置可能會限制後臺顯示介面許可權，導致無法執行
-http://{host:port}/api/contentprovder
+http://{host:port}/api
 ```
 
 **請求方式：POST**
