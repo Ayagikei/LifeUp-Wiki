@@ -38,7 +38,7 @@ Request URL:
 http://{host:port}/api
 
 // Start activity mechanism, some devices may restrict the permission to display background UI, leading to failure to execute.
-http://{host:port}/api/contentprovder
+http://{host:port}/api/contentprovider
 ```
 
 **Request method: GET**
@@ -53,10 +53,10 @@ http://{host:port}/api/contentprovder
 
 ```
 // Single call (content provider mechanism)
-http://{host:port}/api/contentprovder?url=YOUR_ENCODED_API_URL
+http://{host:port}/api/contentprovider?url=YOUR_ENCODED_API_URL
 
 // Batch call
-http://{host:port}/api/contentprovder?url=YOUR_ENCODED_API_URL_1&url=YOUR_ENCODED_API_URL_2
+http://{host:port}/api/contentprovider?url=YOUR_ENCODED_API_URL_1&url=YOUR_ENCODED_API_URL_2
 
 // Single call (start activity mechanism)
 http://{host:port}/ap
@@ -77,7 +77,7 @@ Request URL:
 http://{host:port}/api
 
 // start activity mechanism, may be limited by some devices in displaying background interfaces, causing execution failure.
-http://{host:port}/api/contentprovder
+http://{host:port}/api/contentprovider
 ```
 
 **Request Method: POST**

@@ -54,7 +54,7 @@
 
 ```awk
 // 【推荐】content provider 机制，兼容性更好
-http://{host:port}/api/contentprovder
+http://{host:port}/api/contentprovider
 
 // start activity 机制，部分设备可能会限制后台显示界面权限，导致无法执行
 http://{host:port}/api
@@ -72,10 +72,10 @@ http://{host:port}/api
 
 ```url
 // 单一调用（content 
-http://{host:port}/api/contentprovder?url=YOUR_ENCODED_API_URL
+http://{host:port}/api/contentprovider?url=YOUR_ENCODED_API_URL
 
 // 批量调用
-http://{host:port}/api/contentprovder?url=YOUR_ENCODED_API_URL_1&url=YOUR_ENCODED_API_URL_2
+http://{host:port}/api/contentprovider?url=YOUR_ENCODED_API_URL_1&url=YOUR_ENCODED_API_URL_2
 
 // 单一调用（start activity形式）
 http://{host:port}/api?url=YOUR_ENCODED_API_URL
@@ -93,10 +93,10 @@ http://{host:port}/api?url=YOUR_ENCODED_API_URL
 
 ```awk
 // 【推荐】content provider 机制，兼容性更好
-http://{host:port}/api
+http://{host:port}/api/contentprovider
 
 // start activity 机制，部分设备可能会限制后台显示界面权限，导致无法执行
-http://{host:port}/api/contentprovder
+http://{host:port}/api
 ```
 
 **请求方式：POST**

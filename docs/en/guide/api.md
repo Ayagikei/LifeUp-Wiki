@@ -545,6 +545,8 @@ The method of obtaining the id is to open the "Developer Mode" on the "Labs" pag
 | ---- | ---- | --------------------------------------- --------------------- | ---- | -------- | ---- |
 | page | page| One of the following values:<br/>main<br/>setting<br/>about<br/>pomodoro<br/>feelings<br/>achievement<br/>history<br/>add_task<br/>add_achievement<br/>add_achievement_cate<br/>exp<br/>coin<br/>backup<br/>add_item<br/>lab<br/>custom_attributes<br/>pomodoro_record<br/>synthesis<br/>pic_manage<br/>purchase_dialog | lab | yes | |
 
+#### 1. Jump to the item purchase pop-up window
+
 When the `page` parameter is set to `purchase_dialog`, you can specify the item ID:
 
 For example: `lifeup://api/goto?page=purchase_dialog&id=1`
@@ -552,6 +554,38 @@ For example: `lifeup://api/goto?page=purchase_dialog&id=1`
 | Parameter | Meaning | Value            | Example | Required | Notes   |
 | --------- | ------- | ---------------- | ------- | -------- | ------- |
 | id        | Item ID | Positive integer | 1       | Yes      | Item ID |
+
+<br/>
+
+#### 2. Jump to the subpage of the home page
+
+When the `page` parameter is `main`, you can additionally specify the subpage to jump to:
+
+For example, jump to the store page: `lifeup://api/goto?page=main&sub_page=shop`
+
+| Parameter   | Meaning       | Value                                                        | Example | Required | Notes                                                        |
+| ----------- | ------------- | ------------------------------------------------------------ | ------- | -------- | ------------------------------------------------------------ |
+| sub_page    | sub page name | Fixed one of the following values:<br/>todo<br/>shop<br/>inventory<br/>achievement<br/>status<br/>me<br/>statistic<br/> />pomodoro<br/>feelings<br/>world | shop    | no       |                                                              |
+| category_id | list id       | number                                                       | 0       | no       | If `sub_page` is a list page, you can specify the list id to jump to. <br/>Such as shop item list, inventory list, task list. |
+
+<br/>
+
+#### 3. Jump to task details
+
+When the `page` parameter is `task_detail`, you can additionally specify the task id to jump to:
+
+For example, jump to the details page of the specified task id 53: `lifeup://api/goto?page=task_detail&task_id=53`
+
+| Parameter | Meaning       | Value         | Example      | Required | Notes                                                        |
+| --------- | ------------- | ------------- | ------------ | -------- | ------------------------------------------------------------ |
+| task_id   | task id       | task id       | 53           | No*      | task id; if it is a repeating task, the id will be updated every time it is repeated. |
+| task_gid  | task group id | task group id | 3            | No*      | task group id                                                |
+| task_name | task name     | string        | get up early | No*      | task name, fuzzy match one.                                  |
+
+**Notice:**
+
+1. Only one of the three parameters needs to be provided.
+    - If multiple are provided at the same time, there will be an internal priority order. But this is undefined behavior, APP will not guarantee the order.
 
 <br/>
 

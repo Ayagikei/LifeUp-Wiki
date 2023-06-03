@@ -8,6 +8,52 @@
 
 (Part of the translation is provided by Google Translate and may not be accurate)
 
+**1.91.3 (2023/06/03)**
+
+**✨Features**
+
+1. Shop item list widget (big and small version)
+2. Today's change widget for experience points
+3. Added an API for jumping to task details
+4. Feelings: now supports sorting in positive order of time, and adds year display
+
+**♻️Optimization**
+
+1. It is now supported to set prices for "unpurchasable" items and use them in scenarios such as returns
+2. When the "independent setting task penalty" is turned off in the settings, the penalty button will no longer be displayed
+3. Optimize the display UI of subtasks in team details
+4. Optimize the display UI of impressions
+
+**🐛Bug Fixes**
+
+1. Fix the problem that if you clear the motivational words when editing a task, you cannot click "Confirm" to close the pop-up window
+2. Fix the problem that the frozen task cannot be searched by using the API
+3. Fix the problem that the store and warehouse cannot hide the default list
+
+**1.91.2 (2023/05/09)**
+
+**✨Features**
+
+1. Shop and inventory lists support setting hide separately
+2. `Goto` API now supports jumping to subpages of the main page (such as tasks, status, shop, inventory) 
+3. The coin statistics in the statistics now support the exclusion of purchase consumption
+
+**♻️Optimizations**
+
+1. When creating a new achievement or editing a locked achievement, the "Reset" button will no longer be displayed
+2. The coin widget now supports clicking to jump to the shop
+3. When the sound effect fails to play, a clear error message will be displayed
+
+**🐛Bug Fixes**
+
+1. When adding Tomato records, if the end time is set directly, the expected duration may not meet the problem
+2. After repairing the task filter label, the input method problem will pop up
+3. Fixed the problem that the ATM interest does not support setting the absolute value through the API
+4. Fix the abnormal data loading problem of the history page
+5. Fix the problem that when the widget completes the counting task, clicking "Cancel" will get stuck on the transparent page
+6. Fix the problem that the statistics page cannot be automatically refreshed when it is in the bottom navigation bar mode
+7. Fix the problem that the team task collection is abnormal when it is in the GMT +-x.5 time zone
+
 **1.91.1 (2023/03/27)**
 
 **✨Features**
