@@ -8,6 +8,18 @@
 
 (Part of the translation is provided by Google Translate and may not be accurate)
 
+**1.91.3-rc04 (2023/06/07)**
+
+**♻️Optimization**
+
+1. The API for jumping to task details now supports task_gid and task_name parameters
+2. The Content Provider supports the URL of the remote icon of the product
+   - In order to fix the problem that some product icons cannot be displayed correctly on the desktop in the future
+
+**🐛Bug Fixes**
+
+1. Fix the problem that the shop list widget does not display the current coins correctly
+
 **1.91.3 (2023/06/03)**
 
 **✨Features**
