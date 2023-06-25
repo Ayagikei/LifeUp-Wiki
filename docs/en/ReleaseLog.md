@@ -1597,6 +1597,7 @@ Optimization
 3. Support exporting impressions as markdown format (Fixed [#5](https://github.com/Ayagikei/LifeUp-Desktop/issues/5))
 4. Add Traditional Chinese language text
 5. Add MacOS release version
+6. Support for checking updates
 
 **🔧Optimization and bug fixes**
 
@@ -1604,6 +1605,7 @@ Optimization
 2. Fix the problem that some icons cannot be displayed correctly (requires LifeUp v1.91.3 version)
 3. Fix the title mismatch problem (Fixed [#8](https://github.com/Ayagikei/LifeUp-Desktop/issues/8))
 4. Add shortcuts option for Windows installer (Fixed [#13](https://github.com/Ayagikei/LifeUp-Desktop/issues/13))
+5. Improve the way of getting window size, adapt to resolutions lower than 1080p
 
 **v1.0.2 (2023/02/20)**
 
