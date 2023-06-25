@@ -2821,13 +2821,15 @@
 3. 支援將感想匯出為 markdown 格式（Fixed [#5](https://github.com/Ayagikei/LifeUp-Desktop/issues/5)）
 4. 增加繁體中文語言文字
 5. 增加 MacOS 釋出版本
+6. 支援在桌面端檢測更新
 
 **🔧最佳化和問題修復**
 
 1. 修復無法正確顯示成就子分類的問題
-2. 修復部分圖示無法正確顯示的問題（需要v1.91.3版本的LifeUp）
+2. 修復部分圖示無法正確顯示的問題（需要v1.91.3版本的《人升》）
 3. 修復標題不匹配的問題（Fixed [#8](https://github.com/Ayagikei/LifeUp-Desktop/issues/8)）
 4. 為 Windows 的安裝包增加 shortcuts 選項（Fixed [#13](https://github.com/Ayagikei/LifeUp-Desktop/issues/13)）
+5. 改進視窗尺寸的取值方式，適配小於 1080p 的解析度
 
 **v1.0.2 (2023/02/20)**
 
