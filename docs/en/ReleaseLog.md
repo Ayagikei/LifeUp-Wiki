@@ -6,7 +6,18 @@
 
 ## Notes
 
+| Platform       | Version         | Update Date     |
+| :------------- | :-------------- | :-------------- |
+| LifeUp-Android | v1.91.3-rc04    | 2023/06/07      |
+| LifeUp-iOS     | In development… | In development… |
+| LifeUp-Desktop | v1.1.0          | 2023/06/25      |
+| Cloud LifeUp   | v1.3.0          | 2023/06/25      |
+
 (Part of the translation is provided by Google Translate and may not be accurate)
+
+<!-- tabs:start -->
+
+### **LifeUp-Android**
 
 **1.91.3-rc04 (2023/06/07)**
 
@@ -1574,3 +1585,61 @@ Optimization
 - Fixes crash that may occurs when delete sub-tasks
 - Fixes crash that occurs when input incorrect WebDAV URL
 - Fixes incorrect theme color showing , which may occurs after restore a backup
+
+### **LifeUp-Desktop**
+
+**v1.1.0 (2023/06/25)**
+
+**🚀Features**
+
+1. Support automatic check of “LifeUp Cloud ” IP address and connection (requires LifeUp Cloud v1.3.0)
+2. Support adding tasks, but the options currently supported are limited (Fixed [#6](https://github.com/Ayagikei/LifeUp-Desktop/issues/6))
+3. Support exporting impressions as markdown format (Fixed [#5](https://github.com/Ayagikei/LifeUp-Desktop/issues/5))
+4. Add Traditional Chinese language text
+5. Add MacOS release version
+
+**🔧Optimization and bug fixes**
+
+1. Fix the problem that the achievement subcategories cannot be displayed correctly
+2. Fix the problem that some icons cannot be displayed correctly (requires LifeUp v1.91.3 version)
+3. Fix the title mismatch problem (Fixed [#8](https://github.com/Ayagikei/LifeUp-Desktop/issues/8))
+4. Add shortcuts option for Windows installer (Fixed [#13](https://github.com/Ayagikei/LifeUp-Desktop/issues/13))
+
+**v1.0.2 (2023/02/20)**
+
+1. Add more detailed error report pop-up [#2](https://github.com/Ayagikei/LifeUp-Desktop/issues/2)
+2. Improve packaging configuration
+
+**v1.0.1 (2023/02/12)**
+
+1. First release
+
+### **LifeUp Cloud**
+
+**v1.3.0 (2023/06/25)**
+
+**🚀Features**
+
+1. Support registering mDNS service to enable desktop to automatically discover its IP (requires desktop v1.1.0)
+2. Added result values for APIs invoked via ContentProvider.
+
+**🔧Improvements**
+
+1. Increased the click range of the scan QR code button
+2. Fixed ActivityNotFound crash
+
+**v1.2.0 (2023/03/10)**
+
+1. Support scanning QR code to invoke API
+2. Improve the display of IP list
+
+**v1.1.2 (2023/02/12)**
+
+1. Support querying complete data through Content Provider, which is used to support desktop functions
+2. Standardize HTTP response content
+
+**v1.0.3-preview (2022/11/22)**
+
+1. First release (plus some first release bug fixes)
+
+<!-- tabs:end -->
