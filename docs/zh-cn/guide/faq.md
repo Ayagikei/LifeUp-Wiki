@@ -840,7 +840,12 @@
 
 你可以在应用内的`关于`页面加入 QQ 群，或者找到我们的各种社群账号（知乎、Twitter、Reddit等等）。
 
-也可以在应用的侧边栏-资讯一栏加入我们的 QQ 频道。
+也可以在应用的侧边栏-资讯一栏加入我们的 QQ 频道。或者直接点击下面的入口：
+
+- [点击这里加入群聊【人升讨论基地（官方4群）】](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=SbgGFOwvu0IRF5_ZiDLkABhqy59kuPOa&authKey=pWGr4ARfRLF1QA6XbM6YCAb%2FH1TBCnfrmvE6CwuDrsAA13EGHilAvaU5T36WOPYG&noverify=0&group_code=878584275)
+
+- [点击这里加入 QQ 频道【人升 Life Up】](https://pd.qq.com/s/9kl0bt9ia)
+
 
 ### 提问的智慧
 
