@@ -15,20 +15,27 @@ We have developed a simple LAN desktop version of "LifeUp" using the API capabil
   - Query attribute list, level
   - Query commodity list, purchase commodity
   - Query sentiment list and browse large pictures through a computer image browser
+  - Export feelings to markdown files
+  - Add tasks (not fully covering the options in the app)
+  - …
   - ...
 
 <br/>
 
 ## Download
 
-- **[Windows Version](http://lifeupcdnpic.cdn.dfyun.com.cn/download/release/desktop/LifeUp_Desktop-1.0.1.msi)**
-  - [GitHub Release](https://github.com/Ayagikei/LifeUp-Desktop/releases/tag/1.0.1)
+- **[Windows Version](https://github.com/Ayagikei/LifeUp-Desktop/releases/download/1.1.0/LifeUp.Desktop-1.1.0-windows.zip)**
+  - [GitHub Release](https://github.com/Ayagikei/LifeUp-Desktop/releases/tag/1.1.0)
 - Linux (untested, to be released later)
-- MacOS (untested, to be released later)
+- **MacOS**
+  - [Release LifeUp Desktop v1.1.0 · Ayagikei/LifeUp-Desktop (github.com)](https://github.com/Ayagikei/LifeUp-Desktop/releases/tag/1.1.0-macos)
+  - The MacOS version is currently unsigned and requires permission to operate when installing: [Open a Mac app from an unidentified developer - Apple Support](https://support.apple.com/en-hk/guide/mac-help/mh40616/mac)
+  - The MacOS version has not been tested in detail, and some functions such as `auto-connect` may not work.
 
-⚠You need to use "LifeUp Cloud" version 1.1.2 or above. The current "LifeUp Cloud" does not support checking for updates. You can download and overwrite the installation here.
 
-⚠Your browser's security policy may block the download.
+!> You need to use "LifeUp Cloud" version 1.3.0 or above. The current "LifeUp Cloud" does not support checking for updates. You can download and overwrite the installation in Google Play or [Releases · Ayagikei/LifeUp-SDK (github.com)](https://github.com/Ayagikei/LifeUp-SDK/releases).
+
+!> Your browser's security policy may block the download. You need to allow the download to proceed.
 
 <br/>
 
@@ -41,7 +48,9 @@ To use the desktop client, you will need to follow a few steps:
 #### Precautions
 
 - Your phone and computer are on the same LAN (such as connected to the same WIFI).
-- ⚠If your network configuration is very complicated, please try to ping your phone's IP address on your computer before attempting to use it.
+- <del>⚠If your network configuration is very complicated, please try to ping your phone's IP address on your computer before attempting to use it.</del>
+  - The new version of the desktop supports automatic detection of the phone’s IP, which can skip this step.
+
 
 #### On your phone
 
@@ -65,6 +74,7 @@ To use the desktop client, you will need to follow a few steps:
 
 1. Download and install the desktop application via the download link in the previous section.
 2. Fill in the service IP address displayed in "LifeUp Cloud" in the desktop version settings page.
+   - After the v1.1.0 version of the desktop, you can try clicking the “Auto Connect” button.
 3. Congratulations, if everything goes well, you should be able to view your LifeUp data on the desktop version.
    - **If it fails, you may need the additional steps mentioned above.**
 

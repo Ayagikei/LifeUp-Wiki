@@ -13,13 +13,16 @@
 
 ## 特性
 
-- **當前版本僅作為 API 介面的技術演示和預覽，主要提供一部分基礎的資訊瀏覽功能，並未覆蓋所有應用內功能。**
+!> 當前版本僅作為 API 介面的技術演示和預覽，主要提供一部分基礎的資訊瀏覽功能，並未覆蓋所有應用內功能。
+
 - 完全開源，你可以隨意更改它的 UI 並實現自己想要的功能
 - 基礎功能：
   - 查詢任務列表、完成任務
   - 查詢屬性列表、等級
   - 查詢商品列表、購買商品
   - 查詢感想列表，並能夠透過電腦圖片瀏覽器檢視大圖
+  - 匯出感想
+  - 新增任務（未完全覆蓋應用內的選項）
   - ...
 
 
@@ -32,11 +35,15 @@
 
 ## 下載
 
-- **[Windows 版本](http://lifeupcdnpic.cdn.dfyun.com.cn/download/release/desktop/LifeUp_Desktop-1.0.1.msi)**
+- **[Windows 版本](https://lifeuppic.cdn.dfyun.com.cn/release/desktop/LifeUp%20Desktop-1.1.0.zip)**
 - Linux（未經測試，後續釋出）
-- MacOS（未經測試，後續釋出）
+- **MacOS**
+  - 請前往 Github Release 下載：[Release LifeUp Desktop v1.1.0 · Ayagikei/LifeUp-Desktop (github.com)](https://github.com/Ayagikei/LifeUp-Desktop/releases/tag/1.1.0-macos)
+  - MacOS 版本目前未簽名，安裝時需要允許操作：[開啟來自身份不明開發者的 Mac App - 官方 Apple 支援 (中國)](https://support.apple.com/zh-cn/guide/mac-help/mh40616/mac)
+  - MacOS 版本未經過詳細測試，目前發現`自動連線`等部分功能可能沒法使用。
 
-!> 1. 你需要搭配《雲人升》v1.1.2 版本或以上進行使用。如果你使用的是中國大陸的版本，可以在軟體-`設定`-`實驗`頁面找到《雲人升》一欄並更新。如果你使用的是來自 Google Play 的版本，可以在直接在 [Google Play 頁面](https://play.google.com/store/apps/details?id=net.lifeupapp.lifeup.http)下載或者 [GitHub release 頁面](https://github.com/Ayagikei/LifeUp-SDK/releases/tag/1.1.0)下載。
+
+!> 1. 你需要搭配《雲人升》v1.3.0 版本或以上進行使用。如果你使用的是中國大陸的版本，可以在軟體-`設定`-`實驗`頁面找到《雲人升》一欄並更新。如果你使用的是來自 Google Play 的版本，可以在直接在 [Google Play 頁面](https://play.google.com/store/apps/details?id=net.lifeupapp.lifeup.http)下載或者 [GitHub release 頁面](https://github.com/Ayagikei/LifeUp-SDK/releases/tag/1.1.0)下載。
 
 !> 2. 你的瀏覽器的安全策略可能會阻止下載。你可能需要手動允許瀏覽器下載可執行檔案，或者右鍵複製連結到其他下載器中下載。
 
@@ -58,8 +65,10 @@
 
 #### 前置措施
 
-- 你的手機和電腦處於同一區域網（比如連至同一WIFI）。
-- ⚠如果你的組網情況很複雜，請先嚐試能否在電腦上 ping 通手機的 IP 地址再做嘗試。
+- 你的手機和電腦處於同一區域網（比如連線同一WIFI）。
+- <del>⚠如果你的組網情況很複雜，請先嚐試能否在電腦上 ping 通手機的 IP 地址再做嘗試。</del>
+  - 新版本桌面端支援自動檢測手機 IP，可以跳過這一步。
+
 
 <br/>
 
@@ -90,6 +99,7 @@
 
 1. 透過上文中的下載連結，下載並安裝電腦端應用。
 2. 在桌面版的設定頁面填上你的《雲人升》中的顯示的服務 IP 地址。
+   - **v1.1.0 版本後的桌面端，你可以嘗試點選“自動連線”按鈕。**
 3. 大功告成~如果正常的話，你應該能夠在桌面版檢視到你的人升資料。
    - **如果失敗的話，你可能要上述的額外步驟。**
 
@@ -112,22 +122,22 @@
 
 ## 常見問題
 
-**桌面端能否新增任務？**
+**🔶桌面端能否新增任務？**
 
 暫時不能，目前的預覽版本主要提供的是資料查詢能力，該功能會在後續版本開發。
 
 但當前階段，你也能夠透過《雲人升》呼叫 API 來新增任務。
 
-**《雲人升》點選“讀取「人升」資料許可權”後無反應，或者顯示 API 不存在？**
+**🔶《雲人升》點選“讀取「人升」資料許可權”後無反應，或者顯示 API 不存在？**
 
 1. 如果是無反應，那麼應該你之前已經授權過，當作成功即可。
 2. 如果顯示 API 不存在，請加入會員內測，然後更新《人升》最新版本。
 
-**手機鎖屏一段時間後，桌面端沒法讀取資料和使用？**
+**🔶手機鎖屏一段時間後，桌面端沒法讀取資料和使用？**
 
 請為《人升》-《雲人升》進行相容性配置。
 
-**《人升》、《雲人升》處於後臺時，部分介面沒法正常呼叫？**
+**🔶《人升》、《雲人升》處於後臺時，部分介面沒法正常呼叫？**
 
 > 這一點理論上不影響桌面端使用，但可能會影響自定義呼叫 API。
 
@@ -135,6 +145,26 @@
 
 如果你是 MIUI 系統（小米、紅米），你還需要額外為這兩個應用，在系統設定中，配置`後臺顯示介面`許可權。
 
+**🔶Windows 安裝失敗？顯示 Failed  to launch JVM**
+
+同：https://github.com/Ayagikei/LifeUp-Desktop/issues/2
+
+這可能是由於系統 JVM 環境有異常。
+
+
+
+參考網上的做法是將 `~/.accessibility.properties` 檔案的以下兩行註釋即可：
+
+```
+# assistive_technologies=com.sun.java.accessibility.AccessBridge
+# screen_magnifier_present=true
+```
+
+
+
+修改後，程式可以正常執行。
+
+> ~ 指的是使用者資料夾路徑
 
 ---
 
