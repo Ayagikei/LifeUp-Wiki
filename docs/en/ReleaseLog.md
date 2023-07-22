@@ -8,7 +8,7 @@
 
 | Platform       | Version         | Update Date     |
 | :------------- | :-------------- | :-------------- |
-| LifeUp-Android | v1.91.3-rc04    | 2023/06/07      |
+| LifeUp-Android | v1.92.0-rc02    | 2023/07/16      |
 | LifeUp-iOS     | In development… | In development… |
 | LifeUp-Desktop | v1.1.0          | 2023/06/25      |
 | Cloud LifeUp   | v1.3.0          | 2023/06/25      |
@@ -18,6 +18,34 @@
 <!-- tabs:start -->
 
 ### **LifeUp-Android**
+
+**1.92.0-rc02 (2023/07/16)**
+
+**🐛Fix**
+
+1. Fix the issue that the shop widget may not work when jumping to other apps (executing API)
+2. Fix the occasional abnormality when switching lists in the shop widget
+3. Fix the issue that the shop widget does not hide sold out or non-purchasable items according to the app settings
+4. Fix the issue that the shop widget may not respond when clicking on a certain item
+5. Fix some rare crash issues
+
+**1.92.0-rc01 (2023/07/11)**
+
+**✨Features**
+
+1. Statistics 2.0
+2. Share card
+
+**♻️Optimization**
+
+1. Now you can set prices for “non-purchasable” items and use them for scenarios such as returns
+2. When you turn off “Set task penalty separately” in the settings, the penalty button will no longer be displayed
+3. Optimize the UI of subtasks in team details
+4. Optimize the UI of impressions
+
+**🐛Fix**
+
+1. Fix the issue that when the attribute clipping style is changed to “rounded rectangle”, the edit icon may show the old icon for a long time
 
 **1.91.3-rc04 (2023/06/07)**
 
