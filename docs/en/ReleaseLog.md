@@ -6,18 +6,60 @@
 
 ## Notes
 
-| Platform       | Version         | Update Date     |
-| :------------- | :-------------- | :-------------- |
-| LifeUp-Android | v1.92.0-rc02    | 2023/07/16      |
-| LifeUp-iOS     | In development… | In development… |
-| LifeUp-Desktop | v1.1.0          | 2023/06/25      |
-| Cloud LifeUp   | v1.3.0          | 2023/06/25      |
+| Platform          | Version         | Update Date     |
+| :---------------- | :-------------- | :-------------- |
+| LifeUp-Android    | v1.92.1         | 2023/08/18      |
+| LifeUp-iOS        | In development… | In development… |
+| LifeUp-Desktop    | v1.1.0          | 2023/06/25      |
+| LifeUp Cloud(SDK) | v1.3.0          | 2023/06/25      |
 
 (Part of the translation is provided by Google Translate and may not be accurate)
 
 <!-- tabs:start -->
 
 ### **LifeUp-Android**
+
+**1.92.1-rc02 - 1.92.1 (2023/08/18)**
+
+**♻️ Optimization**
+
+1. The duration on the status page and statistics page can now be displayed in the format of "XX days XX hours XX minutes."
+
+**🐛 Bug Fixes**
+
+1. Fixed the issue where the interaction for closing notification permission popup was not as expected on Android 12 and later versions.
+2. Fixed the problem where the attribute pie chart might display as a transparent color, causing it not to appear.
+
+**1.92.1-rc01 (2023/08/13)**
+
+> Membership closed beta release date
+
+**✨ Features**
+
+1. The new version of statistics integrates the statistical cards from the old version, now merged into a single page and adapted to a bottom navigation bar mode.
+
+2. Upgraded the in-app update mechanism and reminder function.
+
+   Now supports three update channels: Stable Release, Stable Version of Membership Closed Beta, and Experimental Version of Membership Closed Beta, to focus on subsequent updates for closed beta members.
+
+3. TargetSdkVersion is now adapted for Android 13 and dynamic notification permission requests.
+
+4. Redesigned the profile editing page.
+
+5. GP version optimized the login/offline mode selection process and instructions.
+
+**♻️ Optimization**
+
+1. Maintenance and updates to relevant technical dependencies.
+2. Improved WSA adaptation and login instructions.
+3. When backup fails, it will now provide a popup explaining the reason for failure, avoiding the issue of incomplete display of toast messages.
+
+**🐛 Bug Fixes**
+
+1. Fixed potential calculation overflow crash issue in the coin history record page.
+2. Fixed the possibility of menu issues in the team details page that didn't align with expected permissions.
+3. Attempted to fix the time deviation issue in the countdown timer.
+4. Fixed the interruption of the task completion process and the disappearance of the reflection writing popup caused by screen rotation.
 
 **1.92.0-rc02 (2023/07/16)**
 
