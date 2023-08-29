@@ -35,7 +35,7 @@
 
 ## 下载
 
-- **[Windows 版本](https://lifeuppic.cdn.dfyun.com.cn/release/desktop/LifeUp%20Desktop-1.1.0.zip)**
+- **[Windows 版本](http://lifeupcdnpic.cdn.dfyun.com.cn/download/release/desktop/LifeUp%20Desktop-1.1.1-windows.zip)**
 - Linux（未经测试，后续发布）
 - **MacOS**
   - 请前往 Github Release 下载：[Release LifeUp Desktop v1.1.0 · Ayagikei/LifeUp-Desktop (github.com)](https://github.com/Ayagikei/LifeUp-Desktop/releases/tag/1.1.0-macos)
@@ -43,7 +43,7 @@
   - MacOS 版本未经过详细测试，目前发现`自动连接`等部分功能可能没法使用。
 
 
-!> 1. 你需要搭配《云人升》v1.3.0 版本或以上进行使用。如果你使用的是中国大陆的版本，可以在软件-`设置`-`实验`页面找到《云人升》一栏并更新。如果你使用的是来自 Google Play 的版本，可以在直接在 [Google Play 页面](https://play.google.com/store/apps/details?id=net.lifeupapp.lifeup.http)下载或者 [GitHub release 页面](https://github.com/Ayagikei/LifeUp-SDK/releases/tag/1.1.0)下载。
+!> 1. 你需要搭配《云人升》v1.3.0 版本或以上进行使用。如果你使用的是中国内应用市场分发的版本/GitHub Release版本，可以在软件-`设置`-`实验`页面找到《云人升》一栏并更新。如果你使用的是来自 Google Play 的版本，可以在直接在 [Google Play 页面](https://play.google.com/store/apps/details?id=net.lifeupapp.lifeup.http)下载或者 [GitHub release 页面](https://github.com/Ayagikei/LifeUp-SDK/releases/tag/1.1.0)下载。
 
 !> 2. 你的浏览器的安全策略可能会阻止下载。你可能需要手动允许浏览器下载可执行文件，或者右键复制链接到其他下载器中下载。
 

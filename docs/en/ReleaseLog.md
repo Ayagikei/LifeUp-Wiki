@@ -8,9 +8,9 @@
 
 | Platform          | Version         | Update Date     |
 | :---------------- | :-------------- | :-------------- |
-| LifeUp-Android    | v1.92.1         | 2023/08/18      |
+| LifeUp-Android    | v1.92.1         | 2023/08/29      |
 | LifeUp-iOS        | In development… | In development… |
-| LifeUp-Desktop    | v1.1.0          | 2023/06/25      |
+| LifeUp-Desktop    | v1.1.1          | 2023/08/29      |
 | LifeUp Cloud(SDK) | v1.3.0          | 2023/06/25      |
 
 (Part of the translation is provided by Google Translate and may not be accurate)
@@ -18,6 +18,23 @@
 <!-- tabs:start -->
 
 ### **LifeUp-Android**
+
+**1.92.2 (2023/08/29)**
+
+**✨Features**
+
+1. Step statistics chart (https://github.com/Ayagikei/LifeUp/issues/85)
+
+
+**♻️Optimization**
+1. The new team page now adds a reminder of the current word count and upper limit word count
+
+**🐛Fix**
+
+1. Fix the problem that "Rensheng" may repeatedly create calendar reminder accounts under certain special conditions
+2. Fix the problem that the menu button of the editing team is not displayed correctly
+3. Fix the problem that the Pomodoro may not trigger the vibration reminder in the automatic start timing mode
+4. Fix the problem that the Pomodoro notification may incorrectly display the focused items when no focused items are selected
 
 **1.92.1-rc02 - 1.92.1 (2023/08/18)**
 
@@ -1657,6 +1674,13 @@ Optimization
 - Fixes incorrect theme color showing , which may occurs after restore a backup
 
 ### **LifeUp-Desktop**
+
+**v1.1.1 (2023/08/29)**
+
+**🔧Optimization and bug fixes**
+
+1. Fixed unexpected behavior when gold coins are input
+2. Fixed the problem that checking for updates may cause the app to crash
 
 **v1.1.0 (2023/06/25)**
 

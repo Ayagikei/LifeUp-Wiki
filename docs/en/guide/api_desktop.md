@@ -24,8 +24,8 @@ We have developed a simple LAN desktop version of "LifeUp" using the API capabil
 
 ## Download
 
-- **[Windows Version](https://github.com/Ayagikei/LifeUp-Desktop/releases/download/1.1.0/LifeUp.Desktop-1.1.0-windows.zip)**
-  - [GitHub Release](https://github.com/Ayagikei/LifeUp-Desktop/releases/tag/1.1.0)
+- **[Windows Version](https://github.com/Ayagikei/LifeUp-Desktop/releases/download/1.1.1/LifeUp.Desktop-1.1.1-windows.zip)**
+  - [GitHub Release](https://github.com/Ayagikei/LifeUp-Desktop/releases/latest)
 - Linux (untested, to be released later)
 - **MacOS**
   - [Release LifeUp Desktop v1.1.0 · Ayagikei/LifeUp-Desktop (github.com)](https://github.com/Ayagikei/LifeUp-Desktop/releases/tag/1.1.0-macos)
