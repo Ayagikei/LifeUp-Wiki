@@ -36,6 +36,32 @@
 
 ---
 
+## 如何獲取
+
+### 直接下載
+
+http://lifeupapp.fun/zh/index.html#download
+
+
+
+### 中國大陸地區應用商店
+
+如果你處於中國大陸地區，可以在手機自帶的應用商店搜尋《人升》並下載。
+
+⚠ 但請注意，應用商店下載的版本可能並不是最佳版本，安裝後可以先在應用內檢測更新，更新到最新版本再使用。
+
+
+
+### Google Play
+
+如果你處於海外或者港澳臺地區，可以透過 Google Play 搜尋《人升》或“LifeUp”付費下載 Pro 版本。
+
+或者直接訪問：https://play.google.com/store/apps/details?id=net.sarasarasa.lifeup
+
+
+
+
+---
 
 
 ## 上架市場
