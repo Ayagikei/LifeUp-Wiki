@@ -1046,9 +1046,9 @@ id 的获取方法为「实验」页面打开「开发者模式」，然后在�
 
 **示例：**
 
-- 同等概率随机显示`剪刀`、`石头`、`布`：[lifeup://api/random?api=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3D石头&api=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3D剪刀&api=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3D布](lifeup://api/random?api=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3D石头&api=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3D剪刀&api=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3D布)
+- 同等概率随机显示`石头`、`剪刀`、`布`：[lifeup://api/random?api=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3D石头&api=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3D剪刀&api=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3D布](lifeup://api/random?api=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3D石头&api=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3D剪刀&api=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3D布)
 
-- 90%概率显示`剪刀`、5%概率`石头`、5%概率`布`，：[lifeup://api/random?api=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3D石头&api=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3D剪刀&api=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3D布&weight=90&weight=5&weight=5](lifeup://api/random?api=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3D石头&api=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3D剪刀&api=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3D布&weight=90&weight=5&weight=5)
+- 90%概率显示`石头`、5%概率`剪刀`、5%概率`布`，：[lifeup://api/random?api=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3D石头&api=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3D剪刀&api=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3D布&weight=90&weight=5&weight=5](lifeup://api/random?api=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3D石头&api=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3D剪刀&api=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3D布&weight=90&weight=5&weight=5)
 
 | 参数   | 含义       | 取值        | 示例                                   | 是否必须 | 备注                                                         |
 | ------ | ---------- | ----------- | -------------------------------------- | -------- | ------------------------------------------------------------ |
