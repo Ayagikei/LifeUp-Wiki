@@ -347,11 +347,19 @@ For details, see the broadcast broadcast parameters below.
 
 **Description:** Create tasks automatically
 
-**Example:**
+**Example 1:**
 
 <a href="lifeup://api/add_task?todo=This is an automatically added task&notes=notes&coin=10&coin_var=1&exp=2048&skills=1&skills=2&skills=3&category=0&item_name=treasure">lifeup://api/add_task?todo=This is an automatically added task&notes=notes&coin=10&coin_var=1&exp=2048&skills=1&skills=2&skills=3&category=0&item_name=treasure</a>
 
-**Explanation:** Add a task to the default list (id is 0) with the content "This is an automatically added task", the notes are "notes", the coin reward is random from 10 to 11, the experience value reward is 2048, the selected The skill ids are 1, 2, and 3 (generally corresponding to the first 3 built-in attributes). The shop item reward is a fuzzy search for a "treasure" shop item.
+**Explanation 1:** Add a task to the default list (id is 0) with the content "This is an automatically added task", the notes are "notes", the coin reward is random from 10 to 11, the experience value reward is 2048, the selected The skill ids are 1, 2, and 3 (generally corresponding to the first 3 built-in attributes). The shop item reward is a fuzzy search for a "treasure" shop item.
+
+**Example 2:**
+
+[lifeup://api/add_task?todo=Task due tomorrow&deadline=[$time|today|86400000]](lifeup://api/add_task?todo=Task due tomorrow&deadline=[$time|today|86400000])
+
+**Explanation 2:** Dynamically add a task due tomorrow using a time placeholder.
+
+Note: This feature requires LifeUp version 1.93.0-beta01 (502) or higher.
 
 | Parameter | Meaning | Type | Example | Required | Notes |
 | ----------- | -------------- | -------------------- | - --- | -------- | ------------------------------------- ----------------------- |
@@ -368,7 +376,7 @@ For details, see the broadcast broadcast parameters below.
 | item_id | id of the rewarded item | a number greater than 0 | 1 |||
 | item_name | the name of the reward item | any text | treasure | no |fuzzy search item name|
 | item_amount | amount of reward | [1, 99] | 1 | no | default is 1 |
-| deadline    | deadline time   |timestamp (milliseconds)       | 0    | no      ||
+| deadline    | deadline time   |timestamp (milliseconds)       | 0    | no      |Consider using an external tool to calculate the timestamp and provide it.<br/>Alternatively, you can refer to the time placeholders in the [variable placeholders] in the following text.|
 | color | the color of the task tag |color text | \#66CCFF | no |available in v1.91+<br/>Note that the # character needs to be escaped when used. <br/>For example, when the color value of the example is actually used, it should be `color=%2366CCFF`|
 | background_url | background picture URL |URL text | http://www.aaabbbccc.com/1.jpg | no ||
 
@@ -528,7 +536,7 @@ The method of obtaining the id is to open the "Developer Mode" on the "Labs" pag
 | key | type | Currently only following values  supported: <br/>atm_interest<br/>credit_interest<br/>line_of_credit<br/>discount_rate_for_returning<br/>atm_balance | atm_interest | yes | atm_interest - ATM daily rate<br/>credit_interest - loan daily rate<br/>line_of_credit - loanable amount<br/>discount_rate_for_returning - return discount Scale<br/>atm_balance - Set ATM balance |
 | value | numeric value | decimal number or integer | 0.01 | yes | different keys correspond to different value ranges<br/>For example, ATM balances do not support decimal points |
 | set_type | How to set the value | One of the following values:<br/>absolute<br/>relative | absolute | yes |absolute - absolute value, that is, directly set the target to value<br/>relative - relative values, adding or subtracting from the original value|
-
+| silent | Whether to execute silently (without displaying UI) | Boolean | false | No | Supported from v1.93.0-beta01 (502) and later<br/>Default is false, which means it will display UI prompts |
 <br/>
 
 ### Jump
@@ -646,6 +654,9 @@ Only supported since version 1.90.2
 | stock_number | stock number | number [-, +] | 1 | no | |
 | stock_number_type | stock number adjustment method (absolute/relative) | One of the following values: <br/>absolute<br/>relative | relative | no | absolute - absolute value, that is, directly set the target to value<br/>relative - relative values, adding or subtracting from the original value |
 | disable_purchase | Is it disabled to purchase the item | `true` or `false` | true | no | available in v1.91 |
+| action_text | Action text | Any text | Unlock | No | Supported from v1.93.0-beta01 (502) and later |
+| disable_use | Disable use | Boolean | true | No | Supported from v1.93.0-beta01 (502) and later |
+| title_color_string | Title color | Color string | #66CCFF | No | Requires v1.91+<br/>Note that in practical use, the # character needs to be escaped.<br/>For example, the color value in the example should be used as color=%2366CCFF. |
 
 **Notice:**
 
@@ -681,6 +692,35 @@ Only supported since version 1.90.2
 
 <br/>
 
+#### Use items
+
+?> This API was introduced in version v1.93.0-beta01 (502).
+
+**Method name:** use_item
+
+**Description:** Create an item; the icon only supports web addresses and does not currently support custom usage effects.
+
+**Example:**
+
+- Open a coin box: [lifeup://api/use_item?name=coin_box&use_times=1](javascript:void(0))
+
+| Parameter | Meaning     | Type                    | Example  | Required | Notes                                                        |
+| --------- | ----------- | ----------------------- | -------- | -------- | ------------------------------------------------------------ |
+| id        | Item ID     | a number greater than 0 | 1        | No*      | For obtaining the item ID, please refer to the "Basic Knowledge - LifeUp Data ID" section |
+| name      | Item name   | Any text                | coin_box | No*      | Used for unknown IDs; performs a fuzzy search for items      |
+| use_times | Usage times | a number greater than 0 | 1        | No       | Default is 1 time<br/>For regular items or opening boxes, it corresponds to the quantity of the item<br/>For simple synthesis items, this value corresponds to the "synthesis quantity" rather than the number of consumed items |
+
+**Return:**
+
+!> This API may fail for some reasons, and specific failure reasons may be provided in the return values.
+
+| Parameter | Meaning            | Type     | Example          | Required | Notes                                                        |
+| --------- | ------------------ | -------- | ---------------- | -------- | ------------------------------------------------------------ |
+| result    | Result code        | a number | 0                | Yes      | 0 - Successful usage<br/>1 - Database exception<br/>2 - Insufficient experience points restriction<br/>3 - Item not found<br/>4 - Running countdown conflict<br/>5 - Insufficient inventory |
+| desc      | Result description | Text     | RunningCountDown | Yes      |                                                              |
+
+<br/>
+
 ### ATM
 
 **⚠ Only available in v1.91+**
@@ -688,6 +728,8 @@ Only supported since version 1.90.2
 > The deposit and withdrawal operations here will be verified.
 >
 > If you need to adjust the ATM balance value directly, you can check the "Shop Settings" interface above.
+
+
 
 #### Deposit
 
@@ -799,7 +841,30 @@ Only supported since version 1.90.2
 
 <br/>
 
-#### Simple Query
+### Edit Experience
+
+?> This API was introduced in version v1.93.0-beta01 (502).
+
+**Method name:** edit_exp
+
+**Description:** This API can batch set the current experience values for attributes. It can directly set a specific experience value or a particular level.
+
+**Example:**
+
+> This API affects data, and to prevent accidental usage, direct clickable links are not provided here.
+
+- Reset the experience values for the attributes [Strength] and [Knowledge] to 0: lifeup://api/edit_exp?skills=1&skills=2&exp=0
+- Directly adjust the experience value for [Charm] to level 50: lifeup://api/edit_exp?skills=3&level=50
+
+| Parameter | Meaning         | Type                      | Example | Required | Notes                                                             |
+| --------- | --------------- | ------------------------------- | ------- | -------- | --------------------------------------------------------------- |
+| skills    | Attribute (Skill) ID | Array of numbers greater than 0 | 1     | No       | Supports arrays (i.e., &skills=1&skills=2&skills=3)<br/>For obtaining the attribute ID, please refer to the "Basic Knowledge - LifeUp Data ID" section |
+| exp       | Set experience value | Number greater than or equal to 0 (int32) | 9999   | No, but either exp or level must be provided |                                                               |
+| level     | Set level       | Number greater than or equal to 0 (int32) | 50     | No, but either exp or level must be provided | Represents the starting experience value for a particular level<br/>and will be affected by custom level gradients. |
+
+<br/>
+
+### Simple Query
 
 !> The functions here are used with automated tools/secondary development. If you need to query a complete list of data, you can refer to our [`LifeUp SDK`, `LifeUp Cloud`](https://github.com/Ayagikei/LifeUp-SDK) and [`LifeUp Desktop`.](https://github.com/Ayagikei/LifeUp-Desktop)
 
@@ -844,7 +909,7 @@ When querying an item:
 
 <br/>
 
-#### Query Attributes
+### Query Attributes
 
 !> The functions here are used with automated tools/secondary development.
 
@@ -878,6 +943,27 @@ Only supported since version 1.90.6
 <br/>
 
 ### Special interface
+
+#### Random
+
+?> This API has not been released yet, please stay tuned. Planned for release in v1.93.0-beta02.
+
+**Method name:** random
+
+**Description:** A simple random interface that can trigger one of multiple APIs at random.
+
+**Example:**
+
+- Equally likely to randomly display `scissors`, `rock`, or `paper`: [lifeup://api/random?api=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3Drock&api=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3Dscissors&api=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3Dpaper](lifeup://api/random?api=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3Drock&api=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3Dscissors&api=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3Dpaper)
+
+- 90% probability to display `scissors`, 5% probability for `rock`, and 5% probability for `paper`: [lifeup://api/random?api=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3Drock&api=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3Dscissors&api=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3Dpaper&weight=90&weight=5&weight=5](lifeup://api/random?api=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3Drock&api=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3Dscissors&api=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3Dpaper&weight=90&weight=5&weight=5)
+
+| Parameter | Meaning    | Values                 | Example                                | Required | Notes                                                        |
+| --------- | ---------- | ---------------------- | -------------------------------------- | -------- | ------------------------------------------------------------ |
+| api       | Random API | Any text               | lifeup:%2F%2Fapi%2Ftoast%3Ftext%3Drock | Yes      | Supports calling in array form (i.e., multiple api parameters, as seen in the examples above) |
+| weight    | Weight     | Numbers greater than 0 | 1                                      | No       | Supports calling in array form.<br/><br/>If weight is not specified, all weights are equal (equal probability).<br/>If weights are specified, they are assigned sequentially: e.g., the first weight corresponds to the first api parameter.<br/><br/>**Please ensure that the number of weight parameters matches the number of api parameters, or it may not take effect.** |
+
+<br/>
 
 #### Confirm Dialog
 
@@ -931,6 +1017,7 @@ Only supported since version 1.90.6
 | [$decimal\|title] | Number placeholder (with decimal point) | [$number\|Enter ATM rate] |
 | [$item] | Select an item, it will be replaced with item id | [$item] |
 | [$task_category] | Select task list, which will be replaced with task list id | [$task_category] |
+| [$time\|Anchor Time\|Offset in Milliseconds(optional)] | Time Placeholder (Supported from v1.93.0-beta01 (502) + only) <br/><br/>Possible values for Anchor Time:<br/>`current`, `today`, `this_monday`, `last_monday`, `this_month`, `last_month`, `this_year`, `last_year` <br/><br/>Offset in milliseconds should be an integer, default is 0 milliseconds | Midnight today: [$time\|today]<br/>Midnight tomorrow: [$time\|today\|8600000] |
 
 **Example 1: When using, select an item to reduce the price by 1 coin**
 
@@ -1191,6 +1278,12 @@ If you need more APIs, you can leave Issues on [Github](https://github.com/Ayagi
 ### How to call
 
 #### Android
+
+##### Using the SDK
+
+Please refer to the `core` module at: https://github.com/Ayagikei/LifeUp-SDK.
+
+##### Without Using the SDK
 
 ```kotlin
     /**
