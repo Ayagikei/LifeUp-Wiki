@@ -1046,9 +1046,9 @@ id 的獲取方法為「實驗」頁面開啟「開發者模式」，然後在�
 
 **示例：**
 
-- 同等機率隨機顯示`剪刀`、`石頭`、`布`：[lifeup://api/random?api=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3D石頭&api=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3D剪刀&api=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3D布](lifeup://api/random?api=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3D石頭&api=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3D剪刀&api=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3D布)
+- 同等機率隨機顯示`石頭`、`剪刀`、`布`：[lifeup://api/random?api=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3D石頭&api=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3D剪刀&api=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3D布](lifeup://api/random?api=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3D石頭&api=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3D剪刀&api=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3D布)
 
-- 90%機率顯示`剪刀`、5%機率`石頭`、5%機率`布`，：[lifeup://api/random?api=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3D石頭&api=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3D剪刀&api=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3D布&weight=90&weight=5&weight=5](lifeup://api/random?api=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3D石頭&api=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3D剪刀&api=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3D布&weight=90&weight=5&weight=5)
+- 90%機率顯示`石頭`、5%機率`剪刀`、5%機率`布`，：[lifeup://api/random?api=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3D石頭&api=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3D剪刀&api=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3D布&weight=90&weight=5&weight=5](lifeup://api/random?api=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3D石頭&api=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3D剪刀&api=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3D布&weight=90&weight=5&weight=5)
 
 | 引數   | 含義       | 取值        | 示例                                   | 是否必須 | 備註                                                         |
 | ------ | ---------- | ----------- | -------------------------------------- | -------- | ------------------------------------------------------------ |
