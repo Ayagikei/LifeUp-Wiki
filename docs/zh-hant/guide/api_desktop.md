@@ -1,4 +1,4 @@
-<h1 align="center" padding="100">區域網（API） 桌面端 🖥 </h1>
+<h1 align="center" padding="100">區域網（API） 桌面端</h1>
 
 <p align="center">
  <img src="guide/_media/api/desktop.png" />
@@ -41,9 +41,10 @@
   - 請前往 Github Release 下載：[Release LifeUp Desktop v1.1.0 · Ayagikei/LifeUp-Desktop (github.com)](https://github.com/Ayagikei/LifeUp-Desktop/releases/tag/1.1.0-macos)
   - MacOS 版本目前未簽名，安裝時需要允許操作：[開啟來自身份不明開發者的 Mac App - 官方 Apple 支援 (中國)](https://support.apple.com/zh-cn/guide/mac-help/mh40616/mac)
   - MacOS 版本未經過詳細測試，目前發現`自動連線`等部分功能可能沒法使用。
+  - MacOS 的釋出版本目前僅支援 Apple 晶片（M系列晶片）。如需支援 Intel 晶片，可能需要自行編譯。
 
 
-!> 1. 你需要搭配《雲人升》v1.3.0 版本或以上進行使用。如果你使用的是中國內應用市場分發的版本/GitHub Release版本，可以在軟體-`設定`-`實驗`頁面找到《雲人升》一欄並更新。如果你使用的是來自 Google Play 的版本，可以在直接在 [Google Play 頁面](https://play.google.com/store/apps/details?id=net.lifeupapp.lifeup.http)下載或者 [GitHub release 頁面](https://github.com/Ayagikei/LifeUp-SDK/releases/tag/1.3.0)下載。
+!> 1. 你需要搭配《雲人升》v1.3.0 版本或以上進行使用。如果你使用的是中國內應用市場分發的版本/GitHub Release版本，可以在軟體-`設定`-`實驗`頁面找到《雲人升》一欄並更新。如果你使用的是來自 Google Play 的版本，可以在直接在 [Google Play 頁面](https://play.google.com/store/apps/details?id=net.lifeupapp.lifeup.http)下載或者 [GitHub release 頁面](https://github.com/Ayagikei/LifeUp-SDK/releases/latest)下載。
 
 !> 2. 你的瀏覽器的安全策略可能會阻止下載。你可能需要手動允許瀏覽器下載可執行檔案，或者右鍵複製連結到其他下載器中下載。
 

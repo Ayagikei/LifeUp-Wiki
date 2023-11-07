@@ -40,7 +40,7 @@
 
 ### 直接下載
 
-http://lifeupapp.fun/zh/index.html#download
+http://lifeupapp.fun/zh/index.html#cta
 
 
 
