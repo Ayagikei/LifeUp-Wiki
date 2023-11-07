@@ -43,7 +43,7 @@
   - MacOS 版本未經過詳細測試，目前發現`自動連線`等部分功能可能沒法使用。
 
 
-!> 1. 你需要搭配《雲人升》v1.3.0 版本或以上進行使用。如果你使用的是中國內應用市場分發的版本/GitHub Release版本，可以在軟體-`設定`-`實驗`頁面找到《雲人升》一欄並更新。如果你使用的是來自 Google Play 的版本，可以在直接在 [Google Play 頁面](https://play.google.com/store/apps/details?id=net.lifeupapp.lifeup.http)下載或者 [GitHub release 頁面](https://github.com/Ayagikei/LifeUp-SDK/releases/tag/1.1.0)下載。
+!> 1. 你需要搭配《雲人升》v1.3.0 版本或以上進行使用。如果你使用的是中國內應用市場分發的版本/GitHub Release版本，可以在軟體-`設定`-`實驗`頁面找到《雲人升》一欄並更新。如果你使用的是來自 Google Play 的版本，可以在直接在 [Google Play 頁面](https://play.google.com/store/apps/details?id=net.lifeupapp.lifeup.http)下載或者 [GitHub release 頁面](https://github.com/Ayagikei/LifeUp-SDK/releases/tag/1.3.0)下載。
 
 !> 2. 你的瀏覽器的安全策略可能會阻止下載。你可能需要手動允許瀏覽器下載可執行檔案，或者右鍵複製連結到其他下載器中下載。
 
