@@ -1,7 +1,7 @@
 - 概览
 
   - [应用介绍](README.md)
-  - [截图展示](introduction/screenshots.md)
+  - [获取应用](https://lifeupapp.fun/zh/index.html#cta)
   - [更新日志](introduction/release_log.md)
   - [开发计划](introduction/development_plan.md)
   - [开发工效](introduction/ergonomics.md)
@@ -18,8 +18,8 @@
   - [备份](guide/backup.md)
   - [兼容性配置](guide/compatibility.md)
   - [后台运行](guide/background_running.md)
-  - 开放接口
-    - [📄接口定义](guide/api.md)
+  - [开放接口](guide/api.md)
+    - [📄API列表](guide/api.md)
     - [☁️ 云人升](guide/api_cloud.md)
     - [🖥 桌面端](guide/api_desktop.md)
 - 用户分享
