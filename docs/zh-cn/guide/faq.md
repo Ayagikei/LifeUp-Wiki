@@ -241,7 +241,7 @@
 
 你可以在应用内侧边栏-`资讯`页面加入我们的QQ群、QQ频道，咨询、讨论问题。
 
-点击链接加入群聊【人升讨论基地（官方4】：http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=ESrmps1ou7ddyvz0hfPiGjevWO8C7t5Q&authKey=W6jDK%2FsIUDZrMiW%2B6Q%2F6SWQufecg2qwpuKVTEt9LimTgdaDnC7K%2BfwbYIlYqpyfm&noverify=0&group_code=878584275
+点击链接加入群聊【人升讨论基地】：https://h5.qun.qq.com/s/prMVofptTi
 
 点击链接加入QQ频道【人升 Life Up】：https://pd.qq.com/s/9kl0bt9ia
 
@@ -902,7 +902,7 @@ v1.92 版本已经增加了更为完善的统计功能。
 
 也可以在应用的侧边栏-资讯一栏加入我们的 QQ 频道。或者直接点击下面的入口：
 
-- [点击这里加入群聊【人升讨论基地（官方4群）】](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=SbgGFOwvu0IRF5_ZiDLkABhqy59kuPOa&authKey=pWGr4ARfRLF1QA6XbM6YCAb%2FH1TBCnfrmvE6CwuDrsAA13EGHilAvaU5T36WOPYG&noverify=0&group_code=878584275)
+- [点击这里加入群聊【人升讨论基地】](https://h5.qun.qq.com/s/prMVofptTi)
 
 - [点击这里加入 QQ 频道【人升 Life Up】](https://pd.qq.com/s/9kl0bt9ia)
 

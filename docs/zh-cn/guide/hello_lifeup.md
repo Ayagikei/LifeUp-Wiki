@@ -136,7 +136,7 @@
 
 **如果无法解决或需要反馈，可以加入我们的咨询群和频道（为了让你能更快地解决问题，请务必先阅读常见问题自查，并且请提供清晰的问题反馈~）：**
 
-- [点击这里加入群聊【人升讨论基地（官方4群）】](http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&k=SbgGFOwvu0IRF5_ZiDLkABhqy59kuPOa&authKey=pWGr4ARfRLF1QA6XbM6YCAb%2FH1TBCnfrmvE6CwuDrsAA13EGHilAvaU5T36WOPYG&noverify=0&group_code=878584275)
+- [点击这里加入群聊【人升讨论基地】](https://h5.qun.qq.com/s/prMVofptTi)
 
 - [点击这里加入 QQ 频道【人升 Life Up】](https://pd.qq.com/s/9kl0bt9ia)
 
@@ -971,7 +971,7 @@
 
 欢迎加入QQ 群、QQ 频道，或者通过邮件咨询我们（邮箱地址 kei.ayagi@gmail.com）。
 
-> 点击链接加入群聊【人升讨论基地（官方5群）】：https://jq.qq.com/?_wv=1027&k=bnJtgLm5
+> 点击链接加入群聊【人升讨论基地】：https://h5.qun.qq.com/s/prMVofptTi
 >
 > 点击链接加入QQ频道【人升 Life Up】：https://pd.qq.com/s/9kl0bt9ia
 
