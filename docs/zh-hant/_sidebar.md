@@ -1,7 +1,7 @@
+- [**📲下載應用**](https://lifeupapp.fun/zh/index.html#cta)
 - 概覽
 
   - [應用介紹](README.md)
-  - [獲取應用](https://lifeupapp.fun/zh/index.html#cta)
   - [更新日誌](introduction/release_log.md)
   - [開發計劃](introduction/development_plan.md)
   - [開發工效](introduction/ergonomics.md)
