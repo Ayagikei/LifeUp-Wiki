@@ -8,7 +8,7 @@
 
 | Platform          | Version         | Update Date     |
 | :---------------- | :-------------- | :-------------- |
-| LifeUp-Android    | v1.92.1         | 2023/08/29      |
+| LifeUp-Android    | v1.93.2         | 2023/11/18      |
 | LifeUp-iOS        | In development… | In development… |
 | LifeUp-Desktop    | v1.1.1          | 2023/08/29      |
 | LifeUp Cloud(SDK) | v1.3.0          | 2023/06/25      |
@@ -18,6 +18,94 @@
 <!-- tabs:start -->
 
 ### **LifeUp-Android**
+
+**1.93.1 -> 1.93.2 (2023/11/18)**
+
+**♻️Optimization**
+
+1. Optimized the logic for database upgrades to avoid delays in database upgrade processes
+2. Optimized the default value of the "Start Time" when editing tasks
+
+**🐛Fix**
+
+1. Fixed an issue where editing product APIs led to the loss of product usage effects
+2. Fixed the issue where overdue and abandoned tasks set to completed status did not restore rewards
+3. Fixed a problem with custom task sorting not meeting expectations
+4. Fixed display and sorting issues related to overdue single tasks
+5. Fixed an SQL exception issue when filtering the history page
+6. Fixed an issue in the simplified mode where clicking on the task title again had no response
+7. Fixed an issue where renaming task templates did not take effect
+
+**1.93.0 (2023/10/24)**
+
+**✨Features**
+
+**UI Theme**
+
+1. Fully adapt to Material Design 3.
+2. Support customization of Material Design 3 theme colors, including custom colors, colors from wallpaper, and colors from images.
+3. Improve some animation effects, such as pop-ups.
+4. Optimize edge-to-edge (immersive) adaptation effects.
+
+**Tasks**
+
+1. Support task templates.
+2. Statistics on the details page support switching based on time criteria and optimize default options.
+3. The history page supports searching for task names and adjusts the related UI and interactions.
+
+**Achievements**
+
+1. Support secret achievements.
+2. When adding achievements, support “Continue Adding Next Achievement.”
+
+**Attributes**
+
+1. Support hiding attributes.
+
+**Pomodoro Timer**
+
+1. Support editing time records.
+2. In the Pomodoro page, support task completion (long press on the selected task while in pause mode).
+
+**Feelings**
+
+1. Support adding Feelings directly on the Feelings page.
+
+**API**
+
+1. Add the “use_item” API.
+2. Add the “random” API.
+3. Add the “edit_exp” API.
+4. The “item” API now supports adjusting parameters such as “action_text,” “disable_use,” and “title_color_string.”
+5. The “shop_settings” API supports the “silent” parameter.
+6. Support the “time” placeholder. Now you can set tasks with dates like “due tomorrow” or “due next month” without the need for automation tools.
+
+**♻️Optimization**
+
+1. Added prefixes to some places displaying data IDs.
+2. Optimized the display of team activities.
+3. Attempted to address the issue where some Toast notifications were too long to fully display.
+4. Improved the logic for widget completion in teams, ensuring consistency with in-app behavior.
+5. Statistics page: After selecting a “Custom” time range, clicking “Custom” again now triggers a reselection of dates.
+6. Ensured compatibility with Harmony OS 4 for progress bar notifications to display action buttons.
+7. Enhanced the interaction logic of notification requests.
+8. Addressed the issue where the input method could obstruct input for “Repeat Count.”
+9. Now, when creating tasks, the user’s choice of non-specific start times (such as automatic or due today) is recorded. When editing, these options are restored, rather than specific times, to avoid discrepancies in edited times.
+10. When creating tasks, if unexpected warnings about duplicates occur, they will now also be displayed in the “Check for Duplicates” pop-up.
+11. Added Indonesian language support.
+12. Updated translations.
+
+**🐛Fix**
+
+1. Fixed the issue where, in certain cases, the world module could become stuck loading (spinning indefinitely).
+2. Fixed the issue where, in certain cases, the shop/warehouse could keep displaying loading (spinning indefinitely).
+3. Fixed issues that could occur when calling APIs with UI content via a content provider.
+4. Fixed issues with task sorting that did not meet expectations.
+5. Fixed the issue where data on the statistics page was incorrect after selecting a “Custom” time range.
+6. Fixed the issue where pop-ups for notification requests did not support scrolling.
+7. Fixed the issue where, in certain cases, the world module search displayed all content.
+8. Fixed the issue where the “Show Completed” option also displayed frozen tasks.
+9. Fixed issues with calculating average values on the statistics page.
 
 **1.92.2 (2023/08/29)**
 
@@ -31,7 +119,7 @@
 
 **🐛Fix**
 
-1. Fix the problem that "Rensheng" may repeatedly create calendar reminder accounts under certain special conditions
+1. Fix the problem that "LifeUp" may repeatedly create calendar reminder accounts under certain special conditions
 2. Fix the problem that the menu button of the editing team is not displayed correctly
 3. Fix the problem that the Pomodoro may not trigger the vibration reminder in the automatic start timing mode
 4. Fix the problem that the Pomodoro notification may incorrectly display the focused items when no focused items are selected
