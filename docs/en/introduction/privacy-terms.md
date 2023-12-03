@@ -124,17 +124,46 @@ This performance data may include your device model, network status, instance ID
 And this data is only temporarily stored by Firebase and Sentry for a period of time, **and we will**
 **not share/sell/rent it with third parties.**
 
-#### 1.5 Data deletion
+#### 1.5 Data Deletion Request for *LifeUp Lite*
 
-You can delete your account and personal information at any time by following these steps:
+##### 1. Data Storage and Deletion
 
-- Go to Settings - Data Backup/Restore/Clear page in the app
-- Scroll down to the bottom and tap on Delete Account button
-- Confirm your action
+LifeUp Lite, the free version of LifeUp, primarily stores data on the user's device. We value your privacy and autonomy. In LifeUp Lite, since user accounts are not created, all personal data is stored locally on your device. To delete this data, simply uninstall the LifeUp Lite application from your device. Upon uninstallation, all locally stored data will be permanently removed.
 
-Alternatively, you can also contact us at our email address (kei.ayagi@gmail.com) and request us to delete your personal information. We will respond to your request within 30 days.
+##### 2. Third-Party Services
 
-Please note that deleting your account and personal information will result in the loss of all your cloud data and progress in the app. You will not be able to access or restore your account or data after deletion. We may also retain some of your personal information for legal or operational purposes, such as complying with tax laws or resolving disputes.
+LifeUp Lite integrates with third-party services such as Firebase and Admob for functionality and advertising purposes. Please note that the data collected by these services does not include personal information linked to your identity and is used in compliance with their respective privacy policies. This data is automatically deleted after a certain period as per the policies of these services.
+
+##### 3. Assistance with Data Deletion
+
+If you require assistance or have any questions regarding the deletion of your data, please feel free to contact us at lifeup@ulives.io. Our team is committed to assisting you with any queries or concerns related to your data privacy and will guide you through the process if needed.
+
+##### 4. Compliance and Updates
+
+We continuously review and update our practices to ensure compliance with the latest regulations and industry standards. This section of the Privacy Policy will be updated as necessary to reflect any changes in our data management and deletion processes.
+
+
+#### 1.6 Data Deletion Request for *LifeUp Pro*
+
+##### 1. Account Deletion Within the App
+
+As a LifeUp Pro user, you have full control over your account and personal data. If you wish to delete your account and associated data while still using the app, you can do so by following these simple steps:
+
+1. Navigate to the 'Settings - Data Backup/Restore/Clear' page within the LifeUp Pro app.
+2. Scroll down to the bottom of the page and tap on the 'Delete Account' button.
+3. Confirm your action to permanently delete your account and all associated personal information.
+
+##### 2. Account Deletion Assistance
+
+If you are no longer using the LifeUp Pro app but wish to delete your account and personal data, please contact us at lifeup@ulives.io. Provide us with the necessary details related to your account, and our team will assist you with the deletion process. We are committed to ensuring your privacy and will handle your request with the utmost care and confidentiality.
+
+##### 3. Third-Party Services
+
+Similar to LifeUp Lite, LifeUp Pro integrates with third-party services such as Firebase and Admob for enhanced functionality and advertising. The data collected by these services is not personally identifiable and is managed in accordance with their privacy policies. This data is automatically scheduled for deletion after a certain period as per the third-party service policies.
+
+##### 4. Updates and Compliance
+
+We continuously monitor and update our practices to align with the latest privacy laws and industry standards. This section of the Privacy Policy will be amended as necessary to accurately reflect our data management and deletion processes for LifeUp Pro users.
 
 
 ### 2. Agreement
@@ -143,5 +172,4 @@ By using this application you agree to the terms of this privacy policy.
 
 You agree that you are responsible for your own data.
 
-We are not responsible in any way for any loss of data caused by or in connection with use of this
-app since this is an offline-first application. 
+We are not responsible in any way for any loss of data caused by or in connection with use of this app since this is an offline-first application. 
