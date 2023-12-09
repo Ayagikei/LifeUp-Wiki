@@ -228,7 +228,7 @@ http://lifeupapp.fun/zh/index.html#cta
 
 - **聯絡郵箱**
 
-[kei.ayagi@gmail.com;im.hdonghong@gmail.com](mailto:kei.ayagi@gmail.com;im.hdonghong@gmail.com)
+[lifeup@ulives.io](mailto:lifeup@ulives.io)
 
 
 
