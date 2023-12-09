@@ -19,6 +19,20 @@
 
 ### **LifeUp-Android**
 
+**1.93.3 (2023/12/02)**
+
+**♻️Optimization**
+
+1. Unified addition of a debug parameter to APIs for easier debugging
+
+**🐛Fix**
+
+1. Fixed the issue where selecting "Ignore reminder pop-up" was not effective
+2. Fixed the issue with editing feelings created directly on the Feelings page
+3. Fixed the issue where uploading team dynamic photos allowed selecting up to 9 images, whereas the actual limit should be 3
+4. Fixed the issue where the use_item API would not trigger countdown or URL effects when ui is set to false
+5. Fixed the issue where using items in the store widget might trigger the effect twice
+
 **1.93.1 -> 1.93.2 (2023/11/18)**
 
 **♻️Optimization**
