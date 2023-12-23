@@ -69,6 +69,8 @@ If you come across:
 
 [How to delete a shop item?](/guide/faq?id=how-to-delete-a-shop-item)
 
+[Why can't tasks have different experience values for multiple attributes?](/guide/faq?id=why-cant-tasks-have-different-experience-values-for-multiple-attributes)
+
 [How to clear experience and coins?](/guide/faq?id=how-to-clear-experience-and-coins)
 
 [What are the level caps and experience gradients for attributes?](/guide/faq?id=what-are-the-level-caps-and-experience-gradients-for-attributes)
@@ -289,6 +291,12 @@ When creating a new task or achievement, click the corresponding button to custo
 ##### How to delete a shop item?
 
 On the `Shop` page, long-press the item, then select the "trash can" button at the top.
+
+##### Why can't tasks have different experience values for multiple attributes?
+
+- In the early design of LifeUp, we prioritized simplifying user interaction and facilitating quick settings. Hence, tasks were created to have only a single uniform experience value reward. This approach is aimed at making it easier and faster for users to set up tasks. We suggest users select the most relevant attribute for their tasks. Additionally, the level differences between attributes can be reflected through the variation between tasks.
+- 🔧 If users in the current version need to set tasks with different experience values for multiple attributes, this can be indirectly accomplished using the "reward items - items usage effect rewards experience value" method. 🛠️ This is because items allows setting different experience values for various attributes.
+- We are planning to further improve this feature in the future.
 
 ##### How to clear experience and coins?
 
