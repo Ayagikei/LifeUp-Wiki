@@ -19,6 +19,27 @@
 
 ### **LifeUp-Android**
 
+**1.92.3 (2024/01/09)**
+
+**✨Features**
+
+1. Added the 【Feelings】 API.
+
+**♻️Optimization**
+
+1. The calculation of average value indicators on the statistics page now excludes future dates.
+2. After hiding the system achievements list, no more alerts for unlocking system achievements.
+3. Updated the `goto` API to no longer support pop-ups for purchasing "unbuyable" items.
+4. Optimized the editing of tasks to solve the issue where the input for target repetition count was obscured.
+
+**🐛Fix**
+
+1. Fixed the edge-to-edge UI effect on the custom attribute page.
+2. Fixed an issue where the penalty would not be revoked if a task was set to abandoned and then completed on the history/calendar page.
+3. Fixed the display style issue of the bottom popup and bottom system navigation bar in Material2 mode.
+4. Fixed the incorrect border color of the to-do item input box in night mode.
+5. Fixed a display issue that could occur after screen rotation when using the three-button navigation system mode.
+
 **1.93.3 (2023/12/02)**
 
 **♻️Optimization**

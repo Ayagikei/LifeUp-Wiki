@@ -864,6 +864,37 @@ Only supported since version 1.90.2
 
 <br/>
 
+### Add or edit Feelings
+
+?> This API is available as of version v1.93.4 (536).
+
+**Method name:** feeling
+
+**Description:** It is used to create or update records of feelings.
+
+**Example:**
+
+> Since this API involves data manipulation, direct clickable links are not provided here.
+
+- Create a new record of feeling: lifeup://feeling?content=Happy&time=1633036800
+- Update an existing record of feeling and mark it as a favorite: lifeup://feeling?id=1&is_favorite=true
+
+| Parameter   | Meaning           | Type                   | Example    | Required | Notes                                                        |
+| ----------- | ----------------- | ---------------------- | ---------- | -------- | ------------------------------------------------------------ |
+| id          | Feeling Record ID | Number greater than 0  | 1          | No       | If provided, the method tries to update a specific record    |
+| content     | Content           | Any text               | Happy      | No       | Used for creating a new record or updating the content of an existing one |
+| time        | Timestamp         | Unix timestamp         | 1633036800 | No       | The time of the record, defaults to current time             |
+| is_favorite | Favorite Flag     | true or false          | true       | No       | Marks the record as a favorite or not                        |
+| relate_type | Relation Type     | Number between 0 and 2 | 1          | No       | Specifies the type of relation associated with the record    |
+| relate_id   | Related ID        | Number greater than 0  | 2          | No       | Specifies the ID of the related item                         |
+
+**Note:**
+
+1. If the `id` parameter is provided, the method attempts to update the corresponding record of feeling. An exception is thrown if no matching record is found.
+2. If `id` is not provided, but `content` is, the method will create a new record of feeling.
+
+<br/>
+
 ### Simple Query
 
 !> The functions here are used with automated tools/secondary development. If you need to query a complete list of data, you can refer to our [`LifeUp SDK`, `LifeUp Cloud`](https://github.com/Ayagikei/LifeUp-SDK) and [`LifeUp Desktop`.](https://github.com/Ayagikei/LifeUp-Desktop)
