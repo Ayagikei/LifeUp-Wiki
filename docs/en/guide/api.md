@@ -1045,7 +1045,7 @@ Only supported since version 1.90.6
 | ---------------- | -------------------------------- -- | ---------------------- |
 | [$text\|title] | text placeholder | [$text\|Enter task name] |
 | [$number\|Title] | Number placeholder (without decimal point) | [$number\|Enter price] |
-| [$decimal\|title] | Number placeholder (with decimal point) | [$number\|Enter ATM rate] |
+| [$decimal\|title] | Number placeholder (with decimal point) | [$decimal\|Enter ATM rate] |
 | [$item] | Select an item, it will be replaced with item id | [$item] |
 | [$task_category] | Select task list, which will be replaced with task list id | [$task_category] |
 | [$time\|Anchor Time\|Offset in Milliseconds(optional)] | Time Placeholder (Supported from v1.93.0-beta01 (502) + only) <br/><br/>Possible values for Anchor Time:<br/>`current`, `today`, `this_monday`, `last_monday`, `this_month`, `last_month`, `this_year`, `last_year` <br/><br/>Offset in milliseconds should be an integer, default is 0 milliseconds | Midnight today: [$time\|today]<br/>Midnight tomorrow: [$time\|today\|8600000] |
