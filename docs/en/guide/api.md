@@ -68,6 +68,7 @@ If you want to call an external application in *LifeUp*, you only need to add a 
 
 - Browser to open Google: https://www.google.com
 - Facebook: [fb://](fb://)
+- Open an app using it's package name/app ID: [market://launch?id=net.sarasarasa.lifeup](market://launch?id=net.sarasarasa.lifeup)
 - ...
 
 
@@ -79,6 +80,13 @@ Theoretically, as long as the external APP provides the URL, you can jump by usi
 **These links have nothing to do with `LifeUp`, `LifeUp` only provides the jump URL function.**
 
 **Therefore we do not and do not maintain a list of URLs. But you can view the public shop items containing the link effect on the [World]-[Market]-[Link] page.**
+
+You can find an app's package name (aka ID):
+
+- in it's Play Store URL: https://play.google.com/store/apps/details?id=net.sarasarasa.lifeup
+- by using an app manager app
+- by using the App Info action in Tasker
+- by using the Launch App action in Macrodroid
 
 
 
@@ -370,7 +378,7 @@ Note: This feature requires LifeUp version 1.93.0-beta01 (502) or higher.
 | exp | experience reward | a number greater than 0 | 1 | no | maximum value is 99999 |
 | skills | attribute (skill) id | array of numbers greater than 0 | 1 | no | Support array (ie &skills=1&skills=2&skills=3)<br/>For the acquisition method, please refer to the above "Basic Knowledge - Person Level Data ID" |
 | category | list id | a number greater than or equal to 0 | 0 | no | 0 or not passed represents the default list, and cannot select a smart list<br/>For the acquisition method, please refer to the above "Basic Knowledge - Person Level Data ID" |
-| frequency | repetition frequency | number, see remarks for the range of values ​​| 0 | no | <br/> -1 - Unlimited<br/> -4 - Monthly<br/> -5 - Yearly |
+| frequency | repetition frequency | number, see remarks for the range of values ​​| 0 | no | <br/> -1 - Unlimited<br/> -3 - Ebbinghaus<br/> -4 - Monthly<br/> -5 - Yearly |
 | importance | importance level | number [1, 4] | 1 | no | default is 1 |
 | difficulty | difficulty level | number [1, 4] | 2 | no | default is 1 |
 | item_id | id of the rewarded item | a number greater than 0 | 1 |||
