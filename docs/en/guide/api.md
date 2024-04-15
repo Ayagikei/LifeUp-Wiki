@@ -952,7 +952,7 @@ It is possible to use this api to custom your attributes widgets.
 
 **Example:**
 
-- Query strength attribute: [lifeup://api/query_skill?id=1](lifeup://api/query_skill?id=1)lifeup://api/query?key=coin)
+- Query strength attribute: [lifeup://api/query_skill?id=1](lifeup://api/query_skill?id=1)
 
 
 | Parameter | Meaning              | Type                    | Example | Required | Notes |
