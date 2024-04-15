@@ -573,7 +573,7 @@ For example, jump to the store page: `lifeup://api/goto?page=main&sub_page=shop`
 
 | Parameter   | Meaning       | Value | Example | Required | Notes  |
 | ----------- | ------------- | ----- | ------- | -------- | ------ |
-| sub_page    | sub page name | Fixed one of the following values:<br/>todo<br/>shop<br/>inventory<br/>achievement<br/>status<br/>me<br/>statistic<br/> />pomodoro<br/>feelings<br/>world | shop    | no       |                                                              |
+| sub_page    | sub page name | Fixed one of the following values:<br/>todo<br/>shop<br/>inventory<br/>achievement<br/>status<br/>me<br/>statistic<br/>pomodoro<br/>feelings<br/>world | shop    | no       |      |
 | category_id | list id       | number | 0      | no       | If `sub_page` is a list page, you can specify the list id to jump to. <br/>Such as shop item list, inventory list, task list. |
 
 <br/>
