@@ -33,7 +33,7 @@ This kind of event requires the intervention of external applications. For examp
 
 
 
-**The LifeUp 1.90.2 update will add a series of "events", but these events can to be received by automated tools or external applications.**
+**The LifeUp 1.90.2 update will add a series of "events", but these events can be received by automated tools or external applications.**
 
 Can be used to achieve:
 
@@ -50,7 +50,7 @@ Tasker has extremely high permissions, which can be used to change wallpapers, u
 
 ## Recommendations
 
-**If you are not familiar with programming,** you can search and import special shop items directly in the [World] - [Market] - [Link]/[API]/[Automate] tag. You can also try to edit parameters to meet your need.
+**If you are not familiar with programming,** you can search and import special shop items directly in the [World] - [Market] - [Link]/[API]/[Automate] tag. You can also try to edit parameters to meet your needs.
 
 **If you are familiar with computer knowledge,** you can try to read the following interface documentation and edit the desired effect yourself. And use it with automation software such as [*Tasker*](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm). Even if you don't edit Tasker's configuration, as long as you can successfully install Tasker, you can import automated configurations shared by others in Market or other communities.
 
@@ -91,13 +91,13 @@ If you:
 - Need to call the `LifeUp` interface in `LifeUp`. You only need to add a "link" effect to the shop item, input **a specific URL** according to the APIs documents, and then use the shop item to complete the call.
 - Calling through the web page, you only need to jump to the LifeUp APIs by hyperlink.
 - To call through the APP developed by yourself, you only need to use the Intent to jump to the corresponding interface link.
-- Called by an automated tool (such as Tasker), fill in the corresponding API link in Tasker's Brower URL.
+- Called by an automated tool (such as Tasker), fill in the corresponding API link in Tasker's Browser URL.
 
 
 
 **Some examples:**
 
-When you click the link below, "LifeUp" will a prompt "You have learned to call APIs!".
+When you click the link below, "LifeUp" will prompt "You have learned to call APIs!".
 
 <a href="lifeup://api/toast?text=You have learned to call APIs!&type=1&isLong=true">lifeup://api/toast?text=You have learned to call APIs!&type=1&isLong=true</a>
 
@@ -197,7 +197,7 @@ Then you need to replace the spaces to +, the final effect is:
 <a href="lifeup://api/toast?text=You learned to call! &type=1&isLong=true">lifeup://api/toast?text=You learned to call! &type=1&isLong=true</a>
 <br/>
 
-**This is a simple coding tool implemented in Javscript:**
+**This is a simple coding tool implemented in Javascript:**
 
 <iframe src="guide/html/url_encoded.html" frameborder="0" scrolling="no" width="90%"> </iframe>
 
@@ -323,9 +323,9 @@ For details, see the broadcast broadcast parameters below.
 
   <a href="lifeup://api/penalty?type=exp&content=sleep in&number=300&skills=1">lifeup://api/penalty?type=exp&content=sleep in&number=300&skills=1</a>
 
-- Penalize 1 fuzzy matching "trasure" item for "sleep in". And the reason will be displayed on the inventory history page:
+- Penalize 1 fuzzy matching "treasure" item for "sleep in". And the reason will be displayed on the inventory history page:
 
-  <a href="lifeup://api/penalty?type=item&content=sleep in&number=1&item_name=trasure">lifeup://api/penalty?type=item&content=sleep in&number=1&item_name=trasure</a>
+  <a href="lifeup://api/penalty?type=item&content=sleep in&number=1&item_name=treasure">lifeup://api/penalty?type=item&content=sleep in&number=1&item_name=treasure</a>
 
 | Parameter | Meaning                       | Type                                                 | Example  | Required | Notes            |
 | --------- | ----------------------------- | ---------------------------------------------------- | -------- | -------- | ---------------- |
@@ -948,7 +948,7 @@ When querying an item:
 
 **Description:** Query the name, level, total experience value of the specified attribute, the experience value required to reach the next level, and the experience value of the current level.
 
-It is possible to use this api to custom your attributes widgets.
+It is possible to use this api to customize your attributes widgets.
 
 **Example:**
 
@@ -1208,7 +1208,7 @@ Using `No Action`+`Broadcast return value` can achieve this effect in a more con
 | names      | task name **array**     | [Getting started, Drink Waters] |
 
 
-### Achivement unlocked
+### Achievement unlocked
 
 **Name:** app.lifeup.achievement.unlock
 
