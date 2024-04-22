@@ -1273,7 +1273,7 @@ Using `No Action`+`Broadcast return value` can achieve this effect in a more con
 
 - Start: app.lifeup.item.countdown.start
 - Stop: app.lifeup.item.countdown.stop
-- Complte: app.lifeup.item.countdown.complete
+- Complete: app.lifeup.item.countdown.complete
 
 **Return value:**
 
