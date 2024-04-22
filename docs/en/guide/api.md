@@ -551,7 +551,7 @@ The method of obtaining the id is to open the "Developer Mode" on the "Labs" pag
 
 | Parameter | Meaning | Value | Example | Required | Notes |
 | --------- | ------- | ----- | ------- | -------- | ----- |
-| page | page | One of the following values:<br/>main<br/>setting<br/>about<br/>pomodoro<br/>feelings<br/>achievement<br/>history<br/>add_task<br/>add_achievement<br/>add_achievement_cate<br/>exp<br/>coin<br/>backup<br/>add_item<br/>lab<br/>custom_attributes<br/>pomodoro_record<br/>synthesis<br/>pic_manage<br/>purchase_dialog | lab | yes | |
+| page | page | One of the following values:<br/>main<br/>setting<br/>about<br/>pomodoro<br/>feelings<br/>achievement<br/>history<br/>add_task<br/>add_achievement<br/>add_achievement_cate<br/>exp<br/>coin<br/>backup<br/>add_item<br/>lab<br/>custom_attributes<br/>pomodoro_record<br/>synthesis<br/>pic_manage<br/>purchase_dialog<br/>task_detail | lab | yes | |
 
 #### 1. Jump to the item purchase pop-up window
 
