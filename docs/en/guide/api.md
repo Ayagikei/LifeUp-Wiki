@@ -68,7 +68,7 @@ If you want to call an external application in *LifeUp*, you only need to add a 
 
 - Browser to open Google: https://www.google.com
 - Facebook: [fb://](fb://)
-- Open an app using it's package name/app ID: [market://launch?id=net.sarasarasa.lifeup](market://launch?id=net.sarasarasa.lifeup)
+- Open an app using its package name/app ID: [market://launch?id=net.sarasarasa.lifeup](market://launch?id=net.sarasarasa.lifeup)
 - ...
 
 
@@ -83,7 +83,7 @@ Theoretically, as long as the external APP provides the URL, you can jump by usi
 
 You can find an app's package name (aka ID):
 
-- in it's Play Store URL: https://play.google.com/store/apps/details?id=net.sarasarasa.lifeup
+- in its Play Store URL: https://play.google.com/store/apps/details?id=net.sarasarasa.lifeup
 - by using an app manager app
 - by using the App Info action in Tasker
 - by using the Launch App action in Macrodroid
