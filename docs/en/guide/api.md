@@ -370,7 +370,7 @@ Note: This feature requires LifeUp version 1.93.0-beta01 (502) or higher.
 | exp            | experience reward               | a number greater than 0                     | 1                              | no       | maximum value is 99999 |
 | skills         | attribute (skill) id            | array of numbers greater than 0             | 1                              | no       | Support array (ie &skills=1&skills=2&skills=3)<br/>For the acquisition method, please refer to the above "Basic Knowledge - Person Level Data ID" |
 | category       | list id                         | a number greater than or equal to 0         | 0                              | no       | 0 or not passed represents the default list, and cannot select a smart list<br/>For the acquisition method, please refer to the above "Basic Knowledge - Person Level Data ID" |
-| frequency      | repetition frequency            | number, see remarks for the range of values ​​| 0                              | no       | <br/> -1 - Unlimited<br/> -4 - Monthly<br/> -5 - Yearly |
+| frequency      | repetition frequency            | number, see remarks for the range of values ​​| 0                              | no       | <br/> -1 - Unlimited<br/> -3 Ebbinghaus<br/> -4 - Monthly<br/> -5 - Yearly |
 | importance     | importance level                | number from 1 to 4                          | 1                              | no       | default is 1 |
 | difficulty     | difficulty level                | number from 1 to 4                          | 2                              | no       | default is 1 |
 | item_id        | id of the rewarded item         | a number greater than 0                     | 1                              | no       |       |
