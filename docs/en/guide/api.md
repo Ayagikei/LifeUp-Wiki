@@ -10,6 +10,16 @@
 
 
 
+**Updated on 2024/04/23**
+
+The API parameters and definitions in this document are based on version v1.94.0.
+
+It is recommended to upgrade your application to version v1.94.0 before using the API.
+
+If you have not received the update, please wait for it to be pushed through Google Play.
+
+
+
 ## Scenario example
 
 | Caller | Scenario | Notes |
@@ -387,10 +397,13 @@ Note: This feature requires LifeUp version 1.93.0-beta01 (502) or higher.
 | deadline       | deadline time                   | timestamp (milliseconds)                    | 0                              | no       | Consider using an external tool to calculate the timestamp and provide it.<br/>Alternatively, you can refer to the time placeholders in the [variable placeholders] in the following text.|
 | color          | the color of the task tag       | color text                                  | \#66CCFF                       | no       | available in v1.91+<br/>Note that the # character needs to be escaped when used. <br/>For example, when the color value of the example is actually used, it should be `color=%2366CCFF`|
 | background_url | background picture URL          | URL text                                    | http://www.aaabbbccc.com/1.jpg | no       |       |
+| frozen                | Whether frozen           | true or false                  | false   | No       | Default is false                                                   |
+| freeze_until          | Timestamp until frozen   | Timestamp (milliseconds)       | 0       | No       | Only effective when `frozen` is true; can be omitted for indefinite freezing |
+| coin_penalty_factor   | Coin penalty factor      | Any floating point number between [0, 100) | 0.5   | No       |                                                                    |
+| exp_penalty_factor    | Experience penalty factor| Any floating point number between [0, 100) | 0.5   | No       |                                                                    |
+| write_feelings        | Enable feelings          | true or false                  | false   | No       |                                                                    |
 
 **Return Value:**
-
-Only supported since version 1.90.2
 
 | Parameter | Meaning                   | Value  | Example | Required | Notes |
 | --------- | ------------------------- | ------ | ------- | -------- | ----- |
@@ -425,6 +438,10 @@ The method of obtaining the id is to open the "Developer Mode" on the "Labs" pag
 | gid       | task group id                   | number greater than 0 | 1       | no*      | task group id; |
 | name      | name                            | any text              | get up  | no*      | fuzzy search, only one of the tasks found |
 | ui        | Whether to display the popup UI | true or false         | true    | no       | the default is false, only a message is displayed in the background |
+| count                    | Count value                        | Number                                                 | 1         | No       | Only applicable to count tasks, please use in conjunction with the `count_set_type` parameter     |
+| count_set_type           | How to set the count value         | One of the following:<br/>absolute<br/>relative        | absolute  | No       | Default is relative<br/>absolute - Set the target to the value directly<br/>relative - Add or subtract based on the original value |
+| count_force_sum_up       | Force tally of count task rewards  | true or false                                          | true      | No       |                                                                                                    |
+| reward_factor            | Reward factor                      | Floating point number greater than 0                   | 1.1       | No       | Not applicable to count tasks<br/>Reward factor affects the amount of experience and coins (not the quantity of goods) |
 
 **Notice:**
 
@@ -545,7 +562,6 @@ The method of obtaining the id is to open the "Developer Mode" on the "Labs" pag
 | value     | numeric value        | decimal number or integer | 0.01 | yes | different keys correspond to different value ranges<br/>For example, ATM balances do not support decimal points |
 | set_type  | How to set the value | One of the following values:<br/>absolute<br/>relative | absolute | yes |absolute - absolute value, that is, directly set the target to value<br/>relative - relative values, adding or subtracting from the original value|
 | silent    | Whether to execute silently (without displaying UI) | Boolean | false | No | Supported from v1.93.0-beta01 (502) and later<br/>Default is false, which means it will display UI prompts |
-<br/>
 
 ### Jump
 
@@ -559,11 +575,11 @@ The method of obtaining the id is to open the "Developer Mode" on the "Labs" pag
 
 | Parameter | Meaning | Value | Example | Required | Notes |
 | --------- | ------- | ----- | ------- | -------- | ----- |
-| page | page | One of the following values:<br/>main<br/>setting<br/>about<br/>pomodoro<br/>feelings<br/>achievement<br/>history<br/>add_task<br/>add_achievement<br/>add_achievement_cate<br/>exp<br/>coin<br/>backup<br/>add_item<br/>lab<br/>custom_attributes<br/>pomodoro_record<br/>synthesis<br/>pic_manage<br/>purchase_dialog<br/>task_detail | lab | yes | |
+| page | page | One of the following values:<br/>main<br/>setting<br/>about<br/>pomodoro<br/>feelings<br/>achievement<br/>history<br/>add_task<br/>add_achievement<br/>add_achievement_cate<br/>exp<br/>coin<br/>backup<br/>add_item<br/>lab<br/>custom_attributes<br/>pomodoro_record<br/>synthesis<br/>pic_manage<br/>purchase_dialog<br/>task_detail<br/>use_item_dialog | lab | yes | `purchase_dialog` refers to the purchase popup<br/> `use_item_dialog` refers to the use item popup<br/>Other entries refer to specific major pages |
 
-#### 1. Jump to the item purchase pop-up window
+#### 1. Jump to the item purchase/use pop-up window
 
-When the `page` parameter is set to `purchase_dialog`, you can specify the item ID:
+When the `page` parameter is set to `purchase_dialog` or `use_item_dialog`, you can specify the item ID:
 
 For example: `lifeup://api/goto?page=purchase_dialog&id=1`
 
@@ -627,10 +643,11 @@ For example, jump to the details page of the specified task id 53: `lifeup://api
 | disable_purchase | whether to disable purchases | true or false                       | 1               | no       | default false |
 | stock_number     | number of stocks             | number from -1, 99999]              | 1               | no       |       |
 | category         | shop item list id            | a number greater than or equal to 0 | 0               | no       | 0 or not passed represents the default list, and cannot select a smart list<br/>For the acquisition method, please refer to the above "Basic Knowledge - Person Level Data ID" |
+| order       | Order in the category     | Any integer      | 1       | No       | Controls the display order of items in the list    |
+| own_number  | Number owned              | Any integer      | 100     | No       | A negative number indicates a negative ownership   |
+| unlist      | Whether to unlist the item| true or false    | false   | No       | Default is false, true means the item is not displayed in the shop |
 
 **Return Value:**
-
-Only supported since version 1.90.2
 
 | Parameter | Meaning     | Type   | Example | Required | Notes |
 | --------- | ----------- | ------ | ------- | -------- | ----- |
@@ -664,7 +681,11 @@ Only supported since version 1.90.2
 | disable_purchase   | Is it disabled to purchase the item | `true` or `false` | true | no | available in v1.91 |
 | action_text        | Action text        | Any text                | Unlock     | No       | Supported from v1.93.0-beta01 (502) and later |
 | disable_use        | Disable use        | Boolean                 | true       | No       | Supported from v1.93.0-beta01 (502) and later |
-| title_color_string | Title color        | Color string            | #66CCFF    | No       | Requires v1.91+<br/>Note that in practical use, the # character needs to be escaped.<br/>For example, the color value in the example should be used as color=%2366CCFF. |
+| title_color_string | Title color        | Color string            | #66CCFF    | No       | Requires v1.91+<br/>Note that in practical use, the # character needs to be escaped.<br/>For example, the color value in the example should be used as color=%2366CCFF.(v1.94.0+) To reset to default values, you can pass an empty value, like `title_color_string=`|
+| order        | Order in the category           | Any integer             | 1       | No       | Controls the display order of items in the list                                             |
+| own_number   | Number owned                    | Any integer             | 100     | No       | A negative number indicates a negative ownership                                            |
+| unlist       | Whether to unlist the item      | true or false           | false   | No       | Default is false, true means the item is not displayed in the store                        |
+| category_id  | Shop list ID            | Number greater than or equal to 0 | 0 | No       | 0 or not passing means default list, cannot choose smart list<br/>For retrieval method, see 'Basic Knowledge - LifeUp Data ID' |
 
 **Notice:**
 
@@ -783,7 +804,9 @@ Only supported since version 1.90.2
 
 <br/>
 
-### Add Pomodoro Record
+### Pomodoro Record
+
+#### Add Pomodoro Record
 
 **Method name:** add_pomodoro
 
@@ -813,6 +836,47 @@ Only supported since version 1.90.2
 3. end_time needs to be greater than start_time.
 4. duration is at least 30000 milliseconds (30 seconds).
 5. If both start_time, duration, end_time are provided, duration should be less than or equal to (end_time - start_time).
+
+<br/>
+
+#### Edit Pomodoro Record
+
+> Introduced in v1.94.0
+> **Method name:** edit_pomodoro
+
+**Description:** Edit an existing Pomodoro timing record or add a new record if a valid `edit_item_id` is provided.
+
+**Example:**
+
+- Edit a record with a specified ID, set duration to 45 minutes (2700000 ms), and reward tomatoes: [lifeup://api/edit_pomodoro?edit_item_id=123&duration=2700000&reward_tomatoes=true](lifeup://api/edit_pomodoro?edit_item_id=123&duration=2700000&reward_tomatoes=true)
+- Edit a record by start and end time: [lifeup://api/edit_pomodoro?start_time=1659322800000&end_time=1659326400000&edit_item_id=456](lifeup://api/edit_pomodoro?start_time=1659322800000&end_time=1659326400000&edit_item_id=456)
+
+**Parameters:**
+
+| Parameter       | Meaning                    | Type                  | Example       | Required | Notes                                            |
+| --------------- | -------------------------- | --------------------- | ------------- | -------- | ------------------------------------------------ |
+| task_id         | Task ID                    | Number greater than 0 | 101           | No       | Unique identifier for the task                   |
+| task_gid        | Task group ID              | Number greater than 0 | 5             | No       | If provided, it overrides task_id                |
+| task_name       | Task name                  | Any text              | Study         | No       | Must be provided if task_id or task_gid is not   |
+| start_time      | Timing start time          | Timestamp             | 1659322800000 | No*      | Can Google to understand what a timestamp is     |
+| end_time        | Timing end time            | Timestamp             | 1659326400000 | No*      | -                                                |
+| duration        | Focus duration             | Number (milliseconds) | 2700000       | No*      | Must be at least 30000 milliseconds (30 seconds) |
+| reward_tomatoes | Whether to reward tomatoes | true or false         | true          | No       | Default is false                                 |
+| edit_item_id    | ID of the item to edit     | Number greater than 0 | 123           | Yes      | Specifies the record ID to edit                  |
+| ui              | Display reward tomatoes UI | true or false         | true          | No       |                                                  |
+
+**Return values:**
+
+| Parameter | Meaning                          | Type   | Example | Required | Notes                    |
+| --------- | -------------------------------- | ------ | ------- | -------- | ------------------------ |
+| tomatoes  | Tomatoes gained from this action | Number | 2       | No       | Returned if `ui` is true |
+
+**Notes:**
+
+1. At least one of `start_time`, `duration`, `end_time` must be provided.
+2. `end_time` needs to be greater than `start_time`.
+3. `duration` should be less than or equal to (`end_time` - `start_time`).
+4. If `edit_item_id` is provided and the corresponding record is found, it will be edited; otherwise, a new record will be created based on other parameters.
 
 <br/>
 
@@ -914,10 +978,11 @@ Only supported since version 1.90.2
 **Example:** - Query the current number of coins: [lifeup://api/query?key=coin](lifeup://api/query?key=coin)
 
 
-| Parameter | Meaning            | Type                                                        | Example | Required                                    | Notes                                                        |
-| --------- | ------------------ | ----------------------------------------------------------- | ------- | ------------------------------------------- | ------------------------------------------------------------ |
-| key       | type of query      | Only one of the following values:<br/>coin<br/>atm<br/>item | coin    | yes                                         | coin - current amount of coins<br/>atm - current ATM balance<br/>item - Item information for the specified `itemId` |
-| itemId    | the id of the item | a number greater than 0                                     | 1       | When the key is `item`, it must be provided |                                                              |
+| Parameter  | Meaning              | Type                                                         | Example | Required                                    | Notes                                                        |
+| ---------- | -------------------- | ------------------------------------------------------------ | ------- | ------------------------------------------- | ------------------------------------------------------------ |
+| key        | type of query        | Only one of the following values:<br/>coin<br/>atm<br/>item<br/>item_id_list | coin    | yes                                         | coin - current amount of coins<br/>atm - current ATM balance<br/>item - Item information for the specified `itemId`<br/>item_id_list - List of item IDs specified by `categoryId` |
+| item_id    | the id of the item   | a number greater than 0                                      | 1       | When the key is `item`, it must be provided |                                                              |
+| categoryId | the Shop category id | Number greater than or equal to 0                            | 0       | no*                                         | Required only when the key is `item_id_list`, representing the ID of the list to be queried. |
 
 **Return Value:**
 
@@ -985,7 +1050,7 @@ Only supported since version 1.90.6
 
 #### Random
 
-?> This API has not been released yet, please stay tuned. Planned for release in v1.93.0-beta02.
+?> This API is released in v1.93.0.
 
 **Method name:** random
 
