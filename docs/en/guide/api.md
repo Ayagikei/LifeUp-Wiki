@@ -946,10 +946,8 @@ For example, jump to the details page of the specified task id 53: `lifeup://api
 
 **Example:**
 
-> Since this API involves data manipulation, direct clickable links are not provided here.
-
-- Create a new record of feeling: lifeup://feeling?content=Happy&time=1633036800
-- Update an existing record of feeling and mark it as a favorite: lifeup://feeling?id=1&is_favorite=true
+- Create a new record of feeling: [lifeup://api/feeling?content=Happy&time=1633036800](lifeup://api/feeling?content=Happy&time=1633036800)
+- Update an existing record of feeling and mark it as a favorite: [lifeup://api/feeling?id=1&is_favorite=true](lifeup://api/feeling?id=1&is_favorite=true)
 
 | Parameter   | Meaning           | Type                   | Example    | Required | Notes                                                        |
 | ----------- | ----------------- | ---------------------- | ---------- | -------- | ------------------------------------------------------------ |

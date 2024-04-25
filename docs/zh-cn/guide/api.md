@@ -1032,8 +1032,8 @@ id 的获取方法为「实验」页面打开「开发者模式」，然后在�
 
 **示例：**
 
-- 创建一个新的感想：lifeup://feeling?content=开心&time=1633036800
-- 更新特定 id 的感想，并标记为收藏状态：lifeup://feeling?id=1&is_favorite=true
+- 创建一个新的感想：[lifeup://api/feeling?content=开心&time=1633036800](lifeup://api/feeling?content=开心&time=1633036800)
+- 更新特定 id 的感想，并标记为收藏状态：[lifeup://api/feeling?id=1&is_favorite=true](lifeup://api/feeling?id=1&is_favorite=true)
 
 
 | 参数        | 含义       | 取值          | 示例       | 是否必须 | 备注                         |
