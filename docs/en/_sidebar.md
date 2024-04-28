@@ -20,6 +20,7 @@
     - [🖥LifeUp Desktop](guide/api_desktop.md)
   
 - What's new
+  - [v1.94.0: Multiple Item Rewards!](feature/194.md)
   - [v1.93.0: Task Templates and Material 3! ](feature/193.md)
   - [v1.92.0: New stats! ](feature/192.md)
   - [v1.91.0: New Widgets, Custom Level, 🖥 ](feature/191.md)

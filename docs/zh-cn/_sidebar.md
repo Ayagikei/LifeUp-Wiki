@@ -30,6 +30,10 @@
   - [体系建设参考手册](guide/user/system_01.md)
   - [体系相关视频](guide/user/system_02.md)
 - 更新
+  - [1.94.0 - 多选商品奖励](features/194.md)
+  - [1.93.0 - 任务模板和新主体](features/193.md)
+  - [1.92.0 - 统计2.0](features/192.md)
+  - [1.91.0 - 自定义等级、桌面端](features/191.md)
   - [1.90.0 - 开放接口](features/190.md)
   - [1.89.0 - 多条件成就（其二）](features/189_2.md)
   - [1.89.0 - 多条件成就（其一）](features/189_1.md)

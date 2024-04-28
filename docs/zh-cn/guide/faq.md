@@ -245,7 +245,7 @@
 
 你可以在应用内侧边栏-`资讯`页面加入我们的QQ群、QQ频道，咨询、讨论问题。
 
-点击链接加入群聊【人升讨论基地】：https://h5.qun.qq.com/s/e2uUf89YtO
+点击链接加入群聊【人升讨论基地】：https://qm.qq.com/cgi-bin/qm/qr?k=uQ7PiFQYzOpNhnqwxXJYn0f6AvizUje-&jump_from=webapi&authKey=9aHgQN6BqodB0dZoLAS+xpbAiEk4o+NU3tmUmNzUS5I8PnH5p/RxYssDaE7FW9HA
 
 > 加 Q 群请留意群人数和群公告的子群群号，群满请更换其他子群加入。也留意回复加群问题哦~
 
@@ -931,7 +931,7 @@ v1.92 版本已经增加了更为完善的统计功能。
 
 也可以在应用的侧边栏-资讯一栏加入我们的 QQ 频道。或者直接点击下面的入口：
 
-- [点击这里加入群聊【人升讨论基地】](https://h5.qun.qq.com/s/e2uUf89YtO)
+- [点击这里加入群聊【人升讨论基地】](https://qm.qq.com/cgi-bin/qm/qr?k=uQ7PiFQYzOpNhnqwxXJYn0f6AvizUje-&jump_from=webapi&authKey=9aHgQN6BqodB0dZoLAS+xpbAiEk4o+NU3tmUmNzUS5I8PnH5p/RxYssDaE7FW9HA)
 
   加 Q 群请留意群人数和群公告的子群群号，群满请更换其他子群加入。也留意回复加群问题~
 

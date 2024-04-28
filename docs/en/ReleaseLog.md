@@ -19,7 +19,93 @@
 
 ### **LifeUp-Android**
 
-**1.92.3 (2024/01/09)**
+**1.94.1 (2024/04/22)**
+
+**🐛 Bug Fixes**
+
+1. Fixed an issue where the count of Pomodoros was calculated as one less than actual when using stopwatch, adding time via API, or manually adding time records.
+2. Fixed a glitch where the selection bar might flicker and disappear after selecting items on the store/inventory pages and then scrolling.
+
+#### **🎉1.94.0 (2024/04/22)**
+
+**Key Updates**
+
+1. Supports multiple item rewards
+2. Inventory widgets
+
+**UI Themes**
+
+1. Custom (task, item text) colors now include more preset values
+2. Adapted to Android 14's monochrome adaptive icon feature
+3. Added many language adaptations (Google Play version)
+
+**Achievements**
+
+1. If there are achievements with unclaimed rewards, a small red dot will now be shown on the achievement list.
+
+**Tasks**
+
+1. Subtasks for penalty tasks will now execute the penalty logic properly
+2. Added "Smart Time Zone Management"; if you are involved in cross-time-zone work, LifeUp also supports automatic detection of time zone changes and supports global time adjustments
+3. The statistics basis on the details page now remembers the last selection, and we optimized some default values in certain scenarios
+4. Optimized the grace handling of continuous task completion days on the "My" page, now if you forget to complete a task one day, catching up can still continue the streak
+
+**Attributes**
+
+1. Supports deleting experience records
+2. Supports resetting the experience of an individual attribute
+
+**Widgets**
+
+1. Now, clicking the blank space in the store or inventory widgets directly enters the list the widget points to, instead of the last list
+2. Task widgets now display the progress of count tasks
+
+**API**
+
+> API-related documentation might still be unrevised at the time of publishing this article; we expect to update it within this week, please wait a bit~
+
+1. Added an API to edit Pomodoro records
+2. Completing tasks API now also properly handles penalty tasks
+3. Completing tasks API now also supports processing count tasks (adds `count` parameter)
+4. Completing tasks API now supports a reward coefficient parameter
+5. Adjusting items API now supports changing the item list id
+6. Creating, adjusting items API supports sorting criteria parameter
+7. Jump API now supports jumping to the use item popup
+8. Unified some parameter definitions, like `itemId` -> `item_id`
+9. Added broadcast notifications for starting, pausing, and ending a stopwatch
+10. Adjusting items API's `title_color_string` now supports passing an empty string to restore the default value
+11. Completing tasks broadcast now includes list id
+12. Opening boxes, crafting now also triggers the use item broadcast
+
+**♻️Optimizations**
+
+1. Adding or editing tasks now includes a warning if no attribute is selected and experience is entered
+2. Optimized upload retry records
+3. Optimized the title display and input restrictions on the custom level page
+4. Optimized the performance and timing issues of undoing tasks that have been repeated extensively
+5. Refactored the use item popup, calendar interface logic, etc.
+6. Optimized the related logic of task reminders, ensuring reminders from deleted or previous data are not issued again
+7. Optimized waiting copy in the backup interface
+8. Images selected in the custom attribute page are now also added to the history selection
+9. Editing Pomodoro records now attempts to correct (increase or decrease) the right number of Pomodoros
+
+**🐛Bug Fixes**
+
+1. Fixed a system achievement related to stats and backups not being triggered normally after restructuring
+2. Fixed potential conflicts between random API and toast API widgets with the default toast
+3. Fixed the task detail not refreshing in some scenarios when entering from a widget
+4. Fixed the potential for errors in multiple box openings in some special situations (preemptively using up item inventory)
+5. Fixed the issue of not displaying subtasks in the details page after editing a task without subtasks and adding new ones
+6. Fixed some special cases where editing coin rewards was not possible
+7. Fixed some cases where claiming team items might not work
+8. Fixed MD2 style anomalies in some bottom popups
+9. Fixed potential incorrect additional time values in Pomodoro timers
+10. Fixed the issue where the color bar in the experience change widget might not display
+11. Fixed some tasks not displaying properly in the calendar-in-progress
+12. Fixed some list loading issues on the history, Feelings pages
+13. Fixed an issue where calling the complete task API twice in quick succession did not allow for two consecutive completions
+
+**1.93.3 (2024/01/09)**
 
 **✨Features**
 
@@ -71,7 +157,7 @@
 6. Fixed an issue in the simplified mode where clicking on the task title again had no response
 7. Fixed an issue where renaming task templates did not take effect
 
-**1.93.0 (2023/10/24)**
+#### **🎉1.93.0 (2023/10/24)**
 
 **✨Features**
 
@@ -211,7 +297,7 @@
 4. Fix the issue that the shop widget may not respond when clicking on a certain item
 5. Fix some rare crash issues
 
-**1.92.0-rc01 (2023/07/11)**
+#### **🎉1.92.0-rc01 (2023/07/11)**
 
 **✨Features**
 
@@ -322,7 +408,7 @@
 9. Fixed the issue where, when restoring backed-up app data from a higher version to a lower version, error prompts were not displayed correctly.
 10. Fixed the issue where some devices experienced layout overlap on the pomodoro page.
 
-**1.91.0 (2023/02/13-2023/02/26)**
+#### **🎉1.91.0 (2023/02/13-2023/02/26)**
 
 **✨Features**
 
@@ -566,7 +652,7 @@ Support the following operations:
 3. Fix the abnormal problem when the widget completes the team task
 4. Fixed the issue that editing subtask experience would not be backfilled
 
-**1.90.0 (rc01, rc02) (2022/08/15)**
+#### **🎉1.90.0 (rc01, rc02) (2022/08/15)**
 
 **✨Features**
 

@@ -433,6 +433,8 @@ The usefulness of the synthesis system depends on your imagination (you can find
 
 ##### 2. Multi-item rewards.
 
+**After updating to version 1.94.0, you will be able to set multiple item rewards for tasks or achievements. The following are some alternatives from the previous versions that are still applicable.**
+
 Only one type of item reward can be set by default for a Tasks.
 
 But you can package multiple items into one treasure chest.
