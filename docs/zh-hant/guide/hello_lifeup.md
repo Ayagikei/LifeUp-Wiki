@@ -136,7 +136,7 @@
 
 **如果無法解決或需要反饋，可以加入我們的諮詢群和頻道（爲了讓你能更快地解決問題，請務必先閱讀常見問題自查，並且請提供清晰的問題反饋~）：**
 
-- [點選這裏加入群聊【人升討論基地】](https://h5.qun.qq.com/s/e2uUf89YtO)
+- [點選這裏加入群聊【人升討論基地】](https://qm.qq.com/cgi-bin/qm/qr?k=uQ7PiFQYzOpNhnqwxXJYn0f6AvizUje-&jump_from=webapi&authKey=9aHgQN6BqodB0dZoLAS+xpbAiEk4o+NU3tmUmNzUS5I8PnH5p/RxYssDaE7FW9HA)
   - 加 Q 群請留意群人數和群公告的子群群號，群滿請更換其他子群加入，或者加入頻道。也留意回覆加群問題~
 
 - [點選這裏加入 QQ 頻道【人升 Life Up】](https://pd.qq.com/s/9kl0bt9ia)
@@ -505,6 +505,8 @@
 <br/>
 
 ##### 2. 多物品獎勵
+
+更新至v1.94.0版本（會員內測/Google Play）之後，你將可以為任務或成就等設定多種商品獎勵。以下是舊版本的一些替代方案，目前也仍然適用。
 
 任務預設只能設定一種物品獎勵。
 
@@ -972,7 +974,7 @@
 
 歡迎加入QQ 群、QQ 頻道，或者透過郵件諮詢我們（郵箱地址 lifeup@ulives.io）。
 
-> 點選連結加入群聊【人升討論基地】：https://h5.qun.qq.com/s/e2uUf89YtO
+> 點選連結加入群聊【人升討論基地】：https://qm.qq.com/cgi-bin/qm/qr?k=uQ7PiFQYzOpNhnqwxXJYn0f6AvizUje-&jump_from=webapi&authKey=9aHgQN6BqodB0dZoLAS+xpbAiEk4o+NU3tmUmNzUS5I8PnH5p/RxYssDaE7FW9HA
 >
 > 加 Q 群請留意群人數和群公告的子群群號，群滿請更換其他子群加入。也留意回覆加群問題~
 >

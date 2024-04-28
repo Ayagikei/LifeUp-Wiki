@@ -30,6 +30,10 @@
   - [體系建設參考手冊](guide/user/system_01.md)
   - [體系相關影片](guide/user/system_02.md)
 - 更新
+  - [1.94.0 - 多選商品獎勵](features/194.md)
+  - [1.93.0 - 任務模板和新主體](features/193.md)
+  - [1.92.0 - 統計2.0](features/192.md)
+  - [1.91.0 - 自定義等級、桌面端](features/191.md)
   - [1.90.0 - 開放介面](features/190.md)
   - [1.89.0 - 多條件成就（其二）](features/189_2.md)
   - [1.89.0 - 多條件成就（其一）](features/189_1.md)
