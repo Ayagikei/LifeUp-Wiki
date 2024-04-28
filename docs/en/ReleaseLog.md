@@ -62,8 +62,6 @@
 
 **API**
 
-> API-related documentation might still be unrevised at the time of publishing this article; we expect to update it within this week, please wait a bit~
-
 1. Added an API to edit Pomodoro records
 2. Completing tasks API now also properly handles penalty tasks
 3. Completing tasks API now also supports processing count tasks (adds `count` parameter)
