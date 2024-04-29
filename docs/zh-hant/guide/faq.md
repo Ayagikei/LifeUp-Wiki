@@ -245,7 +245,7 @@
 
 你可以在應用內側邊欄-`資訊`頁面加入我們的QQ群、QQ頻道，諮詢、討論問題。
 
-點選連結加入群聊【人升討論基地】：https://qm.qq.com/cgi-bin/qm/qr?k=uQ7PiFQYzOpNhnqwxXJYn0f6AvizUje-&jump_from=webapi&authKey=9aHgQN6BqodB0dZoLAS+xpbAiEk4o+NU3tmUmNzUS5I8PnH5p/RxYssDaE7FW9HA
+點選連結加入群聊【人升討論基地】：https://qm.qq.com/q/aNMrCx2ESc
 
 > 加 Q 群請留意群人數和群公告的子群群號，群滿請更換其他子群加入。也留意回覆加群問題哦~
 
@@ -931,7 +931,7 @@ v1.92 版本已經增加了更為完善的統計功能。
 
 也可以在應用的側邊欄-資訊一欄加入我們的 QQ 頻道。或者直接點選下面的入口：
 
-- [點選這裏加入群聊【人升討論基地】](https://qm.qq.com/cgi-bin/qm/qr?k=uQ7PiFQYzOpNhnqwxXJYn0f6AvizUje-&jump_from=webapi&authKey=9aHgQN6BqodB0dZoLAS+xpbAiEk4o+NU3tmUmNzUS5I8PnH5p/RxYssDaE7FW9HA)
+- [點選這裏加入群聊【人升討論基地】](https://qm.qq.com/q/aNMrCx2ESc)
 
   加 Q 群請留意群人數和群公告的子群群號，群滿請更換其他子群加入。也留意回覆加群問題~
 
