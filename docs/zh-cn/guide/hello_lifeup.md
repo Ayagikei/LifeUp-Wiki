@@ -136,7 +136,7 @@
 
 **如果无法解决或需要反馈，可以加入我们的咨询群和频道（为了让你能更快地解决问题，请务必先阅读常见问题自查，并且请提供清晰的问题反馈~）：**
 
-- [点击这里加入群聊【人升讨论基地】](https://qm.qq.com/cgi-bin/qm/qr?k=uQ7PiFQYzOpNhnqwxXJYn0f6AvizUje-&jump_from=webapi&authKey=9aHgQN6BqodB0dZoLAS+xpbAiEk4o+NU3tmUmNzUS5I8PnH5p/RxYssDaE7FW9HA)
+- [点击这里加入群聊【人升讨论基地】](https://qm.qq.com/q/aNMrCx2ESc)
   - 加 Q 群请留意群人数和群公告的子群群号，群满请更换其他子群加入，或者加入频道。也留意回复加群问题~
 
 - [点击这里加入 QQ 频道【人升 Life Up】](https://pd.qq.com/s/9kl0bt9ia)
@@ -974,7 +974,7 @@
 
 欢迎加入QQ 群、QQ 频道，或者通过邮件咨询我们（邮箱地址 lifeup@ulives.io）。
 
-> 点击链接加入群聊【人升讨论基地】：https://qm.qq.com/cgi-bin/qm/qr?k=uQ7PiFQYzOpNhnqwxXJYn0f6AvizUje-&jump_from=webapi&authKey=9aHgQN6BqodB0dZoLAS+xpbAiEk4o+NU3tmUmNzUS5I8PnH5p/RxYssDaE7FW9HA
+> 点击链接加入群聊【人升讨论基地】：https://qm.qq.com/q/aNMrCx2ESc
 >
 > 加 Q 群请留意群人数和群公告的子群群号，群满请更换其他子群加入。也留意回复加群问题~
 >
