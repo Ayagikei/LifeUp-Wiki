@@ -8,7 +8,7 @@
 
 | Platform          | Version         | Update Date     |
 | :---------------- | :-------------- | :-------------- |
-| LifeUp-Android    | v1.93.2         | 2023/11/18      |
+| LifeUp-Android    | v1.95.0-rc01    | 2024/05/24      |
 | LifeUp-iOS        | In development… | In development… |
 | LifeUp-Desktop    | v1.1.1          | 2023/08/29      |
 | LifeUp Cloud(SDK) | v1.3.0          | 2023/06/25      |
@@ -19,6 +19,45 @@
 
 ### **LifeUp-Android**
 
+**🎉1.95.0-rc01 (2024/05/24)**
+
+**✨Features**
+
+**Major Updates**
+
+1. Support for in-app split-screen display on large-screen devices such as tablets and foldable screens
+
+**♻️Optimizations**
+
+1. Store and Warehouse widgets now support consistent in-app cropping effects for images
+2. On the statistics page, when only one day is selected, line charts are now supported
+
+**🐛 Bug Fixes**
+
+1. Fixed an issue where the task type displayed incorrectly when editing API tasks
+2. Fixed an issue with abnormal task completion, abandonment, and overdue statistics on the statistics page
+
+**1.94.3 (2024/05/10)**
+
+**♻️Optimizations**
+
+1. Widgets now attempt to update the theme to adapt when the system dark mode changes
+2. When the "World" module is hidden, the red dot notification for system achievements no longer counts data related to the "World" module
+
+**🐛 Bug Fixes**
+
+1. Fixed a low-probability crash issue when multi-selecting items
+2. Fixed a low-probability crash issue related to pop-up windows
+3. Fixed an issue where the warehouse widget might not refresh when calling the modify item API
+4. Fixed an issue where the warehouse widget could use "unusable" items
+
+**1.94.2 (2024/04/26)**
+
+**🐛 Bug Fixes**
+
+1. Fixed an issue with abnormal task current count calculations (which caused inaccurate progress for tasks with set target repeat counts)
+   - This fix rolls back a previous optimization related to the performance of undoing tasks, awaiting a more reasonable solution in the future
+
 **1.94.1 (2024/04/22)**
 
 **🐛 Bug Fixes**
@@ -26,7 +65,7 @@
 1. Fixed an issue where the count of Pomodoros was calculated as one less than actual when using stopwatch, adding time via API, or manually adding time records.
 2. Fixed a glitch where the selection bar might flicker and disappear after selecting items on the store/inventory pages and then scrolling.
 
-#### **🎉1.94.0 (2024/04/22)**
+**🎉1.94.0 (2024/04/22)**
 
 **Key Updates**
 
@@ -107,7 +146,7 @@
 
 **✨Features**
 
-1. Added the 【Feelings】 API.
+1. Added the [Feelings] API.
 
 **♻️Optimization**
 
@@ -116,7 +155,7 @@
 3. Updated the `goto` API to no longer support pop-ups for purchasing "unbuyable" items.
 4. Optimized the editing of tasks to solve the issue where the input for target repetition count was obscured.
 
-**🐛Fix**
+**🐛 Bug Fixes**
 
 1. Fixed the edge-to-edge UI effect on the custom attribute page.
 2. Fixed an issue where the penalty would not be revoked if a task was set to abandoned and then completed on the history/calendar page.
@@ -130,7 +169,7 @@
 
 1. Unified addition of a debug parameter to APIs for easier debugging
 
-**🐛Fix**
+**🐛 Bug Fixes**
 
 1. Fixed the issue where selecting "Ignore reminder pop-up" was not effective
 2. Fixed the issue with editing feelings created directly on the Feelings page
@@ -145,7 +184,7 @@
 1. Optimized the logic for database upgrades to avoid delays in database upgrade processes
 2. Optimized the default value of the "Start Time" when editing tasks
 
-**🐛Fix**
+**🐛 Bug Fixes**
 
 1. Fixed an issue where editing product APIs led to the loss of product usage effects
 2. Fixed the issue where overdue and abandoned tasks set to completed status did not restore rewards
@@ -155,7 +194,7 @@
 6. Fixed an issue in the simplified mode where clicking on the task title again had no response
 7. Fixed an issue where renaming task templates did not take effect
 
-#### **🎉1.93.0 (2023/10/24)**
+**🎉1.93.0 (2023/10/24)**
 
 **✨Features**
 
@@ -214,7 +253,7 @@
 11. Added Indonesian language support.
 12. Updated translations.
 
-**🐛Fix**
+**🐛 Bug Fixes**
 
 1. Fixed the issue where, in certain cases, the world module could become stuck loading (spinning indefinitely).
 2. Fixed the issue where, in certain cases, the shop/warehouse could keep displaying loading (spinning indefinitely).
@@ -236,7 +275,7 @@
 **♻️Optimization**
 1. The new team page now adds a reminder of the current word count and upper limit word count
 
-**🐛Fix**
+**🐛 Bug Fixes**
 
 1. Fix the problem that "LifeUp" may repeatedly create calendar reminder accounts under certain special conditions
 2. Fix the problem that the menu button of the editing team is not displayed correctly
@@ -295,7 +334,7 @@
 4. Fix the issue that the shop widget may not respond when clicking on a certain item
 5. Fix some rare crash issues
 
-#### **🎉1.92.0-rc01 (2023/07/11)**
+**🎉1.92.0-rc01 (2023/07/11)**
 
 **✨Features**
 
@@ -406,7 +445,7 @@
 9. Fixed the issue where, when restoring backed-up app data from a higher version to a lower version, error prompts were not displayed correctly.
 10. Fixed the issue where some devices experienced layout overlap on the pomodoro page.
 
-#### **🎉1.91.0 (2023/02/13-2023/02/26)**
+**🎉1.91.0 (2023/02/13-2023/02/26)**
 
 **✨Features**
 
@@ -650,7 +689,7 @@ Support the following operations:
 3. Fix the abnormal problem when the widget completes the team task
 4. Fixed the issue that editing subtask experience would not be backfilled
 
-#### **🎉1.90.0 (rc01, rc02) (2022/08/15)**
+**🎉1.90.0 (rc01, rc02) (2022/08/15)**
 
 **✨Features**
 
