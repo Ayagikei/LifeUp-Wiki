@@ -20,7 +20,7 @@ jobs:
           QINIU_ACCESS_KEY: ${{ secrets.QINIU_ACCESS_KEY }}
           QINIU_SECRET_KEY: ${{ secrets.QINIU_SECRET_KEY }}
           QINIU_BUCKET_NAME: ${{ secrets.QINIU_BUCKET_NAME }}
-        run: kotlinc -script .\publish_to_qiniu.main.kts
+        run: kotlinc -script publish_to_qiniu.main.kts
 
       - name: "add & commit"
         uses: EndBug/add-and-commit@v7.4.0
