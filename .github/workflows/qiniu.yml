@@ -9,13 +9,13 @@ on:
 jobs:
   upload:
     runs-on: ubuntu-latest
+    environment: depoly-qiniu
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
       - name: Run Kotlin Script
-        environment: depoly-qiniu
         env:
           QINIU_ACCESS_KEY: ${{ secrets.QINIU_ACCESS_KEY }}
           QINIU_SECRET_KEY: ${{ secrets.QINIU_SECRET_KEY }}
