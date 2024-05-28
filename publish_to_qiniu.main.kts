@@ -67,6 +67,9 @@ fun main() {
         if (allUploadedSuccessfully) {
             saveCurrentCommit(commitFilePath, currentCommit)
             println("Successfully updated commit info to $currentCommit")
+        }else{
+            println("Failed to upload all files, please check the error message above.")
+            exitProcess(1)
         }
     } else {
         println("No last commit found, please ensure $commitFilePath exists and contains a valid commit hash.")
