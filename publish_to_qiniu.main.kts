@@ -7,6 +7,7 @@
 @file:DependsOn("io.github.fishb1:apk-info:1.0.0")
 
 import com.qiniu.storage.Configuration
+import com.qiniu.storage.Region
 import com.qiniu.storage.UploadManager
 import com.qiniu.util.Auth
 import java.io.BufferedReader
@@ -35,7 +36,7 @@ fun main() {
         val bucketName = System.getenv("QINIU_BUCKET_NAME") ?: error("QINIU_BUCKET_NAME not set")
 
         val auth = Auth.create(accessKey, secretKey)
-        val config = Configuration()
+        val config = Configuration(Region.huanan())
         config.resumableUploadAPIVersion = Configuration.ResumableUploadAPIVersion.V2 // 指定分片上传版本
 
         val uploadManager = UploadManager(config)
