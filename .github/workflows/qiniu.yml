@@ -14,6 +14,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0  # 确保获取完整的 Git 历史记录
 
       - name: Run Kotlin Script
         env:
