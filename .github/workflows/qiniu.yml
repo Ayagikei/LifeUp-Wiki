@@ -1,0 +1,33 @@
+name: Upload Changes to Qiniu
+
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  upload:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run Kotlin Script
+        environment: depoly-qiniu
+        env:
+          QINIU_ACCESS_KEY: ${{ secrets.QINIU_ACCESS_KEY }}
+          QINIU_SECRET_KEY: ${{ secrets.QINIU_SECRET_KEY }}
+          QINIU_BUCKET_NAME: ${{ secrets.QINIU_BUCKET_NAME }}
+        run: kotlinc -script .\publish_to_qiniu.main.kts
+
+      - name: "add & commit"
+        uses: EndBug/add-and-commit@v7.4.0
+        with:
+          add: last_commit.txt
+          author_name: GitHub
+          author_email: noreply@github.com
+          #        branch: master
+          message: "chore: update last_commit.txt"
+          github_token: ${{ github.token }}
