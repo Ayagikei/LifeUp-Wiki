@@ -58,7 +58,7 @@ li input[type="checkbox"] {
 }
 
 .app-nav {
-  margin: 25px 60px 0 0;
+  margin-right: 60px;
   position: absolute;
   right: 0;
   text-align: right;
