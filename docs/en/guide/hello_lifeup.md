@@ -32,26 +32,31 @@ But before your use, you may want to know the following information:
 
 - **I downloaded it through Google Play. If I am not satisfied, how can I get a refund?**
 
-  Both we and Google Play know that an app is difficult to satisfy everyone.
+  We and Google Play understand that an app may not satisfy everyone.
 
-  As long as you uninstall the app within a period of time (usually 24 hours), you can get the
-  automatic refund of Google Play.
+  Before purchasing LifeUp, you can access a 7-day trial version available on our [GitHub](https://github.com/Ayagikei/LifeUp/releases).
 
-  If you exceed this time, please contact our mailbox kei.ayagi@gmail.com and provide your GPA order
-  number, we will assist with the refund.
+  If you are not satisfied with the app and uninstall it within a few dozen hours after purchase, Google Play will typically process an automatic refund within 24 hours.
+
+  If you exceed this automatic refund period (24 hours) but are within 7 days of purchase, you can still contact us at lifeup@ulives.io and provide your GPA order number. We will assist with a manual refund request. Please ensure to use the Gmail address associated with the purchase.
+
+  Refund requests will not be processed after 7 days from the purchase date.
+
+  Please note that leaving a review on Google Play will not assist with the refund process. Without key information, we cannot help with refunds through app reviews on Google Play.
+
+  
 
 - **Is my data privacy and safety?**
 
   Definitely, We value your privacy!
 
-  You can
-  check [our privacy policy documents](https://wiki.lifeupapp.fun/en/#/introduction/privacy-terms)
+  You can check [our privacy policy documents](https://wiki.lifeupapp.fun/en/#/introduction/privacy-terms)
   to get more information.
-
+  
   TL;DR: Except for the world module (similar to the function of sharing design), other data will
   not pass through our server, it will only be stored in your device. The same is true of the
   pictures and other information you choose. **You can also choose offline mode.**
-
+  
 - **Since the server does not store data, how can I back up the data?**
 
   LifeUp supports export and import data functions.
@@ -102,45 +107,6 @@ But before your use, you may want to know the following information:
 ## Incentive system
 
 ![](_media/hello_lifeup/incentive_system.png)
-
----
-
-## Features
-
-> 🚧We're still working on these documents...
-
-There are a lot of examples and guidelines in the app right now.
-
-For higher customization and more feature support, LifeUp will have a certain threshold for getting
-started.
-
-But don't panic, the vast majority of them are optional.
-
-**You can focus only on the options you need with minimal usage.** And gradually learn more options
-to unlock more usages.
-
-It's like playing a game and gradually improving your skills! :D
-
----
-
-## Contact Us
-
-If you have any further feedback or questions, or need help with the refund, **please feel free to
-reach out to us by email at kei.ayagi@gmail.com.**
-
-In most cases, we will get back to you within 24 hours :D.
-
-
-
-But it cannot be ruled out that there are special circumstances, we could not receive your email.
-
-Also consider giving us feedback on the Github issues page.
-
-https://github.com/Ayagikei/LifeUp/issues
-
-
-
----
 
 ## Features
 
@@ -802,3 +768,16 @@ You can import API items directly in **World**-**Markets**-**(Link, API, Automat
 - Automation tools: You can work with Tasker and Macrodroid automation tools to achieve automation functions.
 
 <br/>
+
+## Contact Us
+
+If you have any further feedback or questions, or need help with the refund, **please feel free to reach out to us by email at lifeup@ulives.io.**
+
+In most cases, we will get back to you within 48 hours.
+
+
+
+However, it cannot be ruled out that special circumstances (such as email spam filtering or our oversight) may cause us to miss some emails. If you do not receive a response, please consider resending your email.
+
+For a more reliable way to reach us and provide feedback, we recommend using the [GitHub issues page](https://github.com/Ayagikei/LifeUp/issues).
+

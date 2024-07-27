@@ -25,7 +25,7 @@ If you come across:
 
 ### Universal
 
-[I downloaded it through Google Play. If I am not satisfied, how can I get a refund?](/guide/faq?id=why-is-there-no-xx-language-or-why-is-the-translation-incomplete-and-displayed-in-english)
+[Refund policy](/guide/faq?id=refund-policy)
 
 [Is my data privacy and safety?](/guide/faq?id=is-my-data-privacy-and-safety)
 
@@ -113,15 +113,19 @@ If you come across:
 
 ## Universal
 
-##### I downloaded it through Google Play. If I am not satisfied, how can I get a refund?
+##### Refund policy
 
-Both we and Google Play know that an app is difficult to satisfy everyone.
+We and Google Play understand that an app may not satisfy everyone.
 
-As long as you uninstall the app within a period of time (usually 24 hours), you can get the
-automatic refund of Google Play.
+Before purchasing LifeUp, you can access a 7-day trial version available on our [GitHub](https://github.com/Ayagikei/LifeUp/releases).
 
-If you exceed this time, please contact our mailbox kei.ayagi@gmail.com and provide your GPA order
-number, we will assist with the refund.
+If you are not satisfied with the app and uninstall it within a few dozen hours after purchase, Google Play will typically process an automatic refund within 24 hours.
+
+If you exceed this automatic refund period (24 hours) but are within 7 days of purchase, you can still contact us at lifeup@ulives.io and provide your GPA order number. We will assist with a manual refund request. Please ensure to use the Gmail address associated with the purchase.
+
+Refund requests will not be processed after 7 days from the purchase date.
+
+Please note that leaving a review on Google Play will not assist with the refund process. Without key information, we cannot help with refunds through app reviews on Google Play.
 
 ##### Is my data privacy and safety?
 

@@ -976,11 +976,11 @@ For example, jump to the details page of the specified task id 53: `lifeup://api
 **Example:** - Query the current number of coins: [lifeup://api/query?key=coin](lifeup://api/query?key=coin)
 
 
-| Parameter  | Meaning              | Type                                                         | Example | Required                                    | Notes                                                        |
-| ---------- | -------------------- | ------------------------------------------------------------ | ------- | ------------------------------------------- | ------------------------------------------------------------ |
-| key        | type of query        | Only one of the following values:<br/>coin<br/>atm<br/>item<br/>item_id_list | coin    | yes                                         | coin - current amount of coins<br/>atm - current ATM balance<br/>item - Item information for the specified `itemId`<br/>item_id_list - List of item IDs specified by `categoryId` |
-| item_id    | the id of the item   | a number greater than 0                                      | 1       | When the key is `item`, it must be provided |                                                              |
-| categoryId | the Shop category id | Number greater than or equal to 0                            | 0       | no*                                         | Required only when the key is `item_id_list`, representing the ID of the list to be queried. |
+| Parameter   | Meaning              | Type                                                         | Example | Required                                    | Notes                                                        |
+| ----------- | -------------------- | ------------------------------------------------------------ | ------- | ------------------------------------------- | ------------------------------------------------------------ |
+| key         | type of query        | Only one of the following values:<br/>coin<br/>atm<br/>item<br/>item_id_list | coin    | yes                                         | coin - current amount of coins<br/>atm - current ATM balance<br/>item - Item information for the specified `itemId`<br/>item_id_list - List of item IDs specified by `categoryId` |
+| item_id     | the id of the item   | a number greater than 0                                      | 1       | When the key is `item`, it must be provided |                                                              |
+| category_id | the Shop category id | Number greater than or equal to 0                            | 0       | no*                                         | Required only when the key is `item_id_list`, representing the ID of the list to be queried. |
 
 **Return Value:**
 
@@ -1247,11 +1247,12 @@ Using `No Action`+`Broadcast return value` can achieve this effect in a more con
 
 **Return value:**
 
-| Parameters | Meaning       | Examples        |
-| ---------- | ------------- | --------------- |
-| task_id    | task id       | 1               |
-| task_gid   | task group id | 1               |
-| name       | task name     | Getting started |
+| Parameters  | Meaning          | Examples        |
+| ----------- | ---------------- | --------------- |
+| task_id     | task id          | 1               |
+| task_gid    | task group id    | 1               |
+| name        | task name        | Getting started |
+| category_id | task category id | 1               |
 
 ### Task given up
 
@@ -1259,11 +1260,12 @@ Using `No Action`+`Broadcast return value` can achieve this effect in a more con
 
 **Return value:**
 
-| Parameters | Meaning       | Examples        |
-| ---------- | ------------- | --------------- |
-| task_id    | task id       | 1               |
-| task_gid   | task group id | 1               |
-| name       | task name     | Getting started |
+| Parameters  | Meaning          | Examples        |
+| ----------- | ---------------- | --------------- |
+| task_id     | task id          | 1               |
+| task_gid    | task group id    | 1               |
+| name        | task name        | Getting started |
+| category_id | task category id | 1               |
 
 ### Task overdue
 
