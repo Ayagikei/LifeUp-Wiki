@@ -19,6 +19,92 @@
 
 ### **LifeUp-Android**
 
+**🎉1.97.0-rc01 (2024/09/11)**
+
+**✨Features**
+
+**Key Updates**
+
+- This update mainly focuses on performance optimizations and bug fixes.
+- Significantly optimized the overall app performance. Retrieving task lists and performing various operations are now smoother. Target Android API version is updated to Android 14.
+
+**Others**
+
+1. When there are not enough coins, the item purchase button will now appear disabled.
+2. Added the ability to search achievements by name in the achievement list 🔍.
+3. Added support for font size settings within the app.
+4. Optimized the random logic for World - Random Tasks, now reducing the frequency of the latest batch of tasks appearing, making it more randomized.
+5. Optimized notification grouping logic, now notifications such as attribute and achievement unlocks should group correctly.
+6. Statistics - Share now supports toggling the display of QR codes.
+
+**♻️Optimizations**
+
+1. Optimized network access logic.
+2. Added a background blur effect to popups.
+3. Optimized buttons in the shop, warehouse, and showcase pages, now using official Material button styles.
+4. The Content Provider API for querying task history records now returns the task's end time.
+5. The Content Provider API for querying task history records now supports filtering by task Group Id.
+6. Updated the versions of many dependencies.
+7. The Goto API now supports navigation to the "New Item Default Settings" page.
+8. When navigating to the "Create Achievement" page via the Goto API, the category_id parameter is now required.
+9. Added in-app guidance for task, counter task, and item link effects in the API.
+10. Optimized the logic and error messages for new users checking for updates.
+11. Added loading and error messages for account deletion operations.
+12. Optimized the clickable area for completing the main task on the task detail page.
+13. Improved the error message when importing backups, now more strictly preventing importing invalid backup files.
+
+**🐛Bug Fixes**
+
+1. Fixed an issue where, when creating a new task, if the error message for empty task content was triggered first, the error message would not automatically disappear even after text was entered.
+2. Fixed an issue where the filter button was not displayed on the Statistics page when using bottom navigation mode.
+3. Fixed layout issues on certain small screen devices with narrow aspect ratios.
+4. Fixed an issue where subtask rewards might be abnormally linked when copying tasks (this issue occurred since version 1.96.0).
+5. Fixed error messages caused by abnormal Dropbox connection during automatic Dropbox backup.
+6. Attempted to fix memory consumption and crash issues when previewing extremely large images.
+7. Fixed an issue where, after purchasing an item and marking it for use, the widget data would not refresh correctly if the use failed.
+8. Fixed an issue where editing an achievement would change the completion time of the achievement and could wrongly trigger achievement unlock notifications.
+9. Fixed an issue where, in split-screen mode on large screens, when displaying both the task list page and detail page, completing tasks, subtasks, or updating counters would not synchronize the two pages.
+10. Fixed an issue where long-pressing overdue single tasks on the task list page would not allow clearing the deadline display.
+
+
+**1.96.1(2024/07/11)**
+
+**🐛Bug Fixes**
+
+1. Fixed an issue where the displayed reward item count was incorrect when completing subtasks (actual rewards were not affected).
+
+
+**🎉1.96.0 - beta01(2024/06/19)**
+
+**✨Features**
+
+**Key Updates**
+
+1. When completing tasks or unlocking achievements, items can now be used directly to trigger item effects.
+2. The limit for the number of items used at once is now relaxed to 1000.
+3. Purchase of loot boxes or synthesis items now also supports direct use (open/synthesize).
+4. Team tasks will now support posting feelings to local feelings.
+5. Third-party URL Schemes in task notes are now supported for direct parsing and navigation.
+6. The History page now supports searching historical records by task notes.
+7. Added support for timing historical tasks.
+8. The Statistics page now supports filtering by major categories.
+9. Refactored the attribute experience reward and penalty popups: optimized the logic for item usage attribute selection limits, and split overdue attribute experience reduction popups.
+
+**♻️Optimizations**
+
+1. The UI effect for single selection when choosing items is now consistent with multi-selection.
+2. Optimized the loading speed of the task list.
+3. When adding or editing tasks, the due time is no longer required to be after the current time, providing flexibility for creating historical records.
+4. If showing data IDs is enabled, the feelings popup will now also display the corresponding ID.
+5. Optimized performance issues related to the overdue processing popup.
+6. Unified the button order for countdown timing and pause states.
+7. The interaction for deleting posts on the World Module - Personal Profile page is now more intuitive.
+8. Optimized loading effects for the feelings and achievements pages.
+
+**🐛Bug Fixes**
+
+-
+
 **🎉1.95.0-rc01 (2024/05/24)**
 
 **✨Features**
