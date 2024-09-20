@@ -91,7 +91,7 @@ http://{host:port}/api?url=YOUR_ENCODED_API_URL
 
 接口请求地址：
 
-```awk
+```
 // 【推荐】content provider 机制，兼容性更好
 http://{host:port}/api/contentprovider
 
@@ -142,7 +142,9 @@ http://{host:port}/tasks
 http://{host:port}/tasks/${id}
 
 // 历史记录（支持分页查询）
-http://{host:port}/history?offset=${offset}&limit=${limit}
+// filterGid 可选，可用于过滤某个重复任务的所有历史记录
+http://{host:port}/history?offset=${offset}&limit=${limit}&filterGid=${filterGid}
+
 
 // 任务清单
 http://{host:port}/tasks_categories

@@ -91,7 +91,7 @@ http://{host:port}/api?url=YOUR_ENCODED_API_URL
 
 介面請求地址：
 
-```awk
+```
 // 【推薦】content provider 機制，相容性更好
 http://{host:port}/api/contentprovider
 
@@ -142,7 +142,9 @@ http://{host:port}/tasks
 http://{host:port}/tasks/${id}
 
 // 歷史記錄（支援分頁查詢）
-http://{host:port}/history?offset=${offset}&limit=${limit}
+// filterGid 可選，可用於過濾某個重複任務的所有歷史記錄
+http://{host:port}/history?offset=${offset}&limit=${limit}&filterGid=${filterGid}
+
 
 // 任務清單
 http://{host:port}/tasks_categories

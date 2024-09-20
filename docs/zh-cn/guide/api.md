@@ -239,6 +239,24 @@ Wordle 是猜单词的小游戏：猜长度为 5 的单词。橙黄色代表答�
 
 ### 基础知识 - 示例
 
+人升的 API 是以 URL Scheme 的方式提供的。
+
+URL（Uniform Resource Locator，统一资源定位符）是用于定位互联网上资源的地址。它的结构通常包括以下部分：
+```
+scheme://host/path?query
+```
+
+- scheme: 指定协议，例如 http、https 或应用自定义的 Scheme（如 lifeup://）。
+- host: 资源所在的服务器地址（在自定义 URL Scheme 中可以省略）。
+- path: 资源在服务器上的路径。
+- query: 查询参数，通常用于传递数据。
+
+<br/>
+
+URL 并不算是编程语言，它只是一个描述资源的地址。跟网址其实是类似的，它也能实现跳转到 app 内的某一个页面。
+
+在人升的 API 中，一个 URL 基本可以代表一个应用内的操作。
+
 | 类型     | 说明                                                         |
 | -------- | ------------------------------------------------------------ |
 | 示例     | [lifeup://api/toast?text=你学会了调用！&type=1&isLong=true](lifeup://api/toast?text=你学会了调用！&type=1&isLong=true) |
@@ -247,11 +265,13 @@ Wordle 是猜单词的小游戏：猜长度为 5 的单词。橙黄色代表答�
 | 方法名   | toast                                                        |
 | 参数     | ?text=你学会了调用！&type=1&isLong=true                      |
 
+
 <br/>
 
-### 基础知识 - 转义（编码）
+### 基础知识 - URL 转义（编码）
 
-如果你的参数的数值里面有+、空格、=、%、&、#等特殊符号，需要转义（编码）处理：
+URL 中的某些字符，如空格或特殊符号，不能直接在 URL 中使用。为了确保 URL 可以正确传输和解析，需要对这些字符进行编码。URL 编码将这些字符转换为百分号 % 开头的编码值。
+
 
 | 特殊字符 | 代表含义                     | 替换内容 |
 | :------- | :--------------------------- | :------- |
@@ -264,7 +284,7 @@ Wordle 是猜单词的小游戏：猜长度为 5 的单词。橙黄色代表答�
 | &        | URL 中指定的参数间的分隔符   | %26      |
 | =        | URL 中指定参数的值           | %3D      |
 
-比如上述例子中的文本内容，如果要最终提示的文本是：`?text=你学会了调用！`（这个例子其实有点奇怪，后续换个合理点的）
+比如上述例子中的文本内容，如果要最终提示的文本是：`?text=你学会了调用！`
 
 则需要替换文本中的特殊符号`?`和`=`为，最终效果为：
 
@@ -272,11 +292,11 @@ Wordle 是猜单词的小游戏：猜长度为 5 的单词。橙黄色代表答�
 
 <br/>
 
-在某些特殊场景下，你可能需要将某个URL作为另外一个URL的参数，这时候也是需要转义（编码）的。
+因此，URL 编码的主要作用是确保在传递包含特殊字符或多语言字符的数据时，URL 仍然能够正确处理。
+
+注意：大多数现代开发工具和库都会自动处理 URL 编码和解码，因此开发者只需确保传递的数据格式正确。
 
 <br/>
-
-
 
 
 **这是一个用 JS 实现的简单编码工具：**
@@ -284,6 +304,85 @@ Wordle 是猜单词的小游戏：猜长度为 5 的单词。橙黄色代表答�
 这个工具会将中文、空格、各种符号编码。
 
 <iframe src="guide/html/url_encoded.html" frameborder="0" scrolling="no" width="90%"> </iframe>
+
+
+<br/>
+
+### 基础知识 - URL 嵌套
+
+有些 API 支持将 完整的 URL 作为查询参数传递，这被称为嵌套 URL。嵌套 URL 必须经过额外的**两次**URL 编码，以确保它们在整个 URL 中正确解析。具体来说，嵌套的 URL 中的特殊字符不仅需要进行常规编码，还需要对包含的 URL 本身进行额外的编码。
+
+在这个例子中，我们希望通过 lifeup://api/random 接口，随机调用显示“石头”、“剪刀”或“布”的 toast 接口。为了实现这一目标，
+
+1. **原始URL**
+
+其实这是由一层嵌套实现的 API。其中作为参数的三个原始 API 为三个 `toast` API 调用，它们分别用于显示“石头”、“剪刀”和“布”：
+
+- lifeup://api/toast?text=石头
+- lifeup://api/toast?text=剪刀
+- lifeup://api/toast?text=布
+
+2. **第一次 URL 编码**
+
+因为我们将这些 API 调用作为参数传递给 lifeup://api/random，所以需要对嵌套的 URL 进行第一次编码。主要是对特殊字符（如 :、/、? 和 =）进行编码。
+
+- lifeup://api/toast?text=石头 -> lifeup:%2F%2Fapi%2Ftoast%3Ftext%3D石头
+- lifeup://api/toast?text=剪刀 -> lifeup:%2F%2Fapi%2Ftoast%3Ftext%3D剪刀
+- lifeup://api/toast?text=布 -> lifeup:%2F%2Fapi%2Ftoast%3Ftext%3D布
+
+3. **组合嵌套 URL**
+
+接下来，将这三个编码后的 URL 作为 lifeup://api/random 的查询参数传递
+
+```
+lifeup://api/random?api=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3D石头&api=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3D剪刀&api=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3D布
+```
+
+<br/>
+
+### 基础知识 - 复杂场景下 URL 应如何编写？
+
+我们设计这套 API 的初衷是为了让社区开发者能够利用《人升》作为基础平台，进行二次开发和扩展更多的功能。例如，开发者可以获取《人升》的数据，来设计个性化的小部件、人物形象等扩展内容。
+
+随着开发的推进，我们发现《人升》的商品和效果可以很好地与 API 融合。为了降低使用门槛，让更多用户轻松体验 API 的功能并参与开发的乐趣，我们增加了一些简化的 API 机制。这些机制让用户即便对 URL 概念了解不深，也能轻松实现一些简单的 API 调用：
+
+- 商品调用 API（无需外部调用）
+- 应用内显示数据 ID（无需通过接口获取 ID）
+- 模糊搜索商品名称（ID 可选）
+- 输入、随机占位符，弹窗 API（无需外部开发或自动化工具即可实现简单交互）
+
+这些机制的目的是帮助用户「快速体验 API」，它们适用于简单的场景，而不适合复杂的条件控制或逻辑操作。如果我们在《人升》中加入过多的基础控制逻辑，它就会逐渐变成一个“自动化工具”或“编程软件”，这并非我们 API 的设计初衷。
+
+API 的核心价值在于开放接口，主要面向外部开发，而非仅限于内部使用。它的主要应用场景包括：
+
+- 无需编程门槛的快速体验：用户可以轻松调用商品的使用效果
+- 无需编程门槛的自动化应用：通过 Tasker、Macrodroid 等自动化工具集成
+- Android 开发：提供 SDK 支持
+- 跨设备开发（桌面端）：支持云人升平台
+
+<br/>
+
+虽然这些简化机制让更多用户体验到了 API 的便利，但也带来了某些误解。为了避免错误的理解和信息传播，我们在这里做一些澄清：
+
+> 1. URL 机制设计不合理，一会需要编码，一会又不需要编码。
+URL 和编码标准是由互联网标准规定的，并非《人升》的独特设计。具体细节请参考：[https://en.wikipedia.org/wiki/Percent-encoding](https://en.wikipedia.org/wiki/Percent-encoding)
+
+编码的需求非常明确：在 URL 中，每一个查询参数的“值”都需要进行编码。这是标准化的要求，不是偶然现象。
+
+> 2. URL 参数顺序影响执行逻辑。
+绝大多数情况下，URL 参数的顺序是无关紧要的，不会影响 API 的执行逻辑。解析是基于参数名称，而不是顺序。
+
+目前只有随机（`random`） API 的比重参数与顺序有关。
+
+> 3. URL 不能嵌套超过两层。
+实际上，URL 可以根据需要进行多层嵌套，嵌套层级没有限制。错误的嵌套通常是因为没有正确理解 URL 规范。
+
+> 4. URL 中的中文千万不要编码，否则会出错。
+根据规范，URL 中的中文字符是需要编码的。然而，由于 Android 的 API 容错机制，即使未编码的中文也能正确解析，但为了兼容性和标准化，建议始终进行编码。
+
+---
+
+**建议：** 对于复杂的 URL 场景，请使用程序或工具来协助生成正确的 URL，以避免不必要的错误。如果希望更好地利用 API，建议多了解一些 URL 规范，这样能够更准确地编写和调试 API。
 
 
 <br/>
@@ -649,7 +748,8 @@ id 的获取方法为「实验」页面打开「开发者模式」，然后在�
 
 | 参数 | 含义 | 取值                                                         | 示例 | 是否必须 | 备注                                                         |
 | ---- | ---- | ------------------------------------------------------------ | ---- | -------- | ------------------------------------------------------------ |
-| page | 页面 | 固定以下数值其一：<br/>main<br/>setting<br/>about<br/>pomodoro<br/>feelings<br/>achievement<br/>history<br/>add_task<br/>add_achievement<br/>add_achievement_cate<br/>exp<br/>coin<br/>backup<br/>add_item<br/>lab<br/>custom_attributes<br/>pomodoro_record<br/>dlc<br/>pomodoro_record<br/>synthesis<br/>pic_manage<br/>purchase_dialog<br/>task_detail | lab  | 是       | `purchase_dialog`指购买弹窗<br/>`use_item_dialog`指使用商品弹窗<br/>其他的都是具体的大页面 |
+| page | 页面 | 固定以下数值其一：<br/>main<br/>setting<br/>about<br/>pomodoro<br/>feelings<br/>achievement<br/>history<br/>add_task<br/>add_achievement<br/>add_achievement_cate<br/>exp<br/>coin<br/>backup<br/>add_item<br/>lab<br/>custom_attributes<br/>pomodoro_record<br/>dlc<br/>pomodoro_record<br/>synthesis<br/>pic_manage<br/>purchase_dialog<br/>task_detail<br/>new_default | lab  | 是       | `purchase_dialog`指购买弹窗<br/>`use_item_dialog`指使用商品弹窗<br/>其他的都是具体的大页面 |
+
 
 #### 1. 跳转商品购买/使用弹窗
 
@@ -692,6 +792,18 @@ id 的获取方法为「实验」页面打开「开发者模式」，然后在�
 
 1. 三个参数只需要提供其中之一。
    - 如果同时提供多个，会有内部的优先级顺序。但这属于未定义行为，APP 不会保证顺序。
+
+
+#### 4. 跳转新建成就页面
+
+当 `page` 参数为 `add_achievement`时，你还**需要**额外指定跳转的清单 id：
+
+示例如，跳转到指定清单 id 为 1 的新建成就页面：`lifeup://api/goto?page=add_achievement&category_id=1`
+
+| 参数      | 含义     | 取值     | 示例 | 是否必须 | 备注                                           |
+| --------- | -------- | -------- | ---- | -------- | ---------------------------------------------- |
+| category_id   | 成就清单id   | 成就清单id   | 1   | 是      |  |
+
 
 
 

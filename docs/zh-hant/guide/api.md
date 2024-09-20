@@ -237,6 +237,24 @@ Wordle 是猜單詞的小遊戲：猜長度為 5 的單詞。橙黃色代表答�
 
 ### 基礎知識 - 示例
 
+人升的 API 是以 URL Scheme 的方式提供的。
+
+URL（Uniform Resource Locator，統一資源定位符）是用於定位網際網路上資源的地址。它的結構通常包括以下部分：
+```
+scheme://host/path?query
+```
+
+- scheme: 指定協議，例如 http、https 或應用自定義的 Scheme（如 lifeup://）。
+- host: 資源所在的伺服器地址（在自定義 URL Scheme 中可以省略）。
+- path: 資源在伺服器上的路徑。
+- query: 查詢引數，通常用於傳遞資料。
+
+<br/>
+
+URL 並不算是程式語言，它只是一個描述資源的地址。跟網址其實是類似的，它也能實現跳轉到 app 內的某一個頁面。
+
+在人升的 API 中，一個 URL 基本可以代表一個應用內的操作。
+
 | 型別     | 說明                                                         |
 | -------- | ------------------------------------------------------------ |
 | 示例     | [lifeup://api/toast?text=你學會了呼叫！&type=1&isLong=true](lifeup://api/toast?text=你學會了呼叫！&type=1&isLong=true) |
@@ -245,11 +263,13 @@ Wordle 是猜單詞的小遊戲：猜長度為 5 的單詞。橙黃色代表答�
 | 方法名   | toast                                                        |
 | 引數     | ?text=你學會了呼叫！&type=1&isLong=true                      |
 
+
 <br/>
 
-### 基礎知識 - 轉義（編碼）
+### 基礎知識 - URL 轉義（編碼）
 
-如果你的引數的數值裡面有+、空格、=、%、&、#等特殊符號，需要轉義（編碼）處理：
+URL 中的某些字元，如空格或特殊符號，不能直接在 URL 中使用。爲了確保 URL 可以正確傳輸和解析，需要對這些字元進行編碼。URL 編碼將這些字元轉換為百分號 % 開頭的編碼值。
+
 
 | 特殊字元 | 代表含義                     | 替換內容 |
 | :------- | :--------------------------- | :------- |
@@ -262,7 +282,7 @@ Wordle 是猜單詞的小遊戲：猜長度為 5 的單詞。橙黃色代表答�
 | &        | URL 中指定的引數間的分隔符   | %26      |
 | =        | URL 中指定引數的值           | %3D      |
 
-比如上述例子中的文字內容，如果要最終提示的文字是：`?text=你學會了呼叫！`（這個例子其實有點奇怪，後續換個合理點的）
+比如上述例子中的文字內容，如果要最終提示的文字是：`?text=你學會了呼叫！`
 
 則需要替換文字中的特殊符號`?`和`=`為，最終效果為：
 
@@ -270,11 +290,11 @@ Wordle 是猜單詞的小遊戲：猜長度為 5 的單詞。橙黃色代表答�
 
 <br/>
 
-在某些特殊場景下，你可能需要將某個URL作為另外一個URL的引數，這時候也是需要轉義（編碼）的。
+因此，URL 編碼的主要作用是確保在傳遞包含特殊字元或多語言字元的資料時，URL 仍然能夠正確處理。
+
+注意：大多數現代開發工具和庫都會自動處理 URL 編碼和解碼，因此開發者只需確保傳遞的資料格式正確。
 
 <br/>
-
-
 
 
 **這是一個用 JS 實現的簡單編碼工具：**
@@ -282,6 +302,85 @@ Wordle 是猜單詞的小遊戲：猜長度為 5 的單詞。橙黃色代表答�
 這個工具會將中文、空格、各種符號編碼。
 
 <iframe src="guide/html/url_encoded.html" frameborder="0" scrolling="no" width="90%"> </iframe>
+
+
+<br/>
+
+### 基礎知識 - URL 巢狀
+
+有些 API 支援將 完整的 URL 作為查詢引數傳遞，這被稱為巢狀 URL。巢狀 URL 必須經過額外的**兩次**URL 編碼，以確保它們在整個 URL 中正確解析。具體來說，巢狀的 URL 中的特殊字元不僅需要進行常規編碼，還需要對包含的 URL 本身進行額外的編碼。
+
+在這個例子中，我們希望透過 lifeup://api/random 介面，隨機呼叫顯示“石頭”、“剪刀”或“布”的 toast 介面。爲了實現這一目標，
+
+1. **原始URL**
+
+其實這是由一層巢狀實現的 API。其中作為引數的三個原始 API 為三個 `toast` API 呼叫，它們分別用於顯示“石頭”、“剪刀”和“布”：
+
+- lifeup://api/toast?text=石頭
+- lifeup://api/toast?text=剪刀
+- lifeup://api/toast?text=布
+
+2. **第一次 URL 編碼**
+
+因為我們將這些 API 呼叫作為引數傳遞給 lifeup://api/random，所以需要對巢狀的 URL 進行第一次編碼。主要是對特殊字元（如 :、/、? 和 =）進行編碼。
+
+- lifeup://api/toast?text=石頭 -> lifeup:%2F%2Fapi%2Ftoast%3Ftext%3D石頭
+- lifeup://api/toast?text=剪刀 -> lifeup:%2F%2Fapi%2Ftoast%3Ftext%3D剪刀
+- lifeup://api/toast?text=布 -> lifeup:%2F%2Fapi%2Ftoast%3Ftext%3D布
+
+3. **組合巢狀 URL**
+
+接下來，將這三個編碼後的 URL 作為 lifeup://api/random 的查詢引數傳遞
+
+```
+lifeup://api/random?api=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3D石頭&api=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3D剪刀&api=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3D布
+```
+
+<br/>
+
+### 基礎知識 - 複雜場景下 URL 應如何編寫？
+
+我們設計這套 API 的初衷是爲了讓社羣開發者能夠利用《人升》作為基礎平臺，進行二次開發和擴充套件更多的功能。例如，開發者可以獲取《人升》的資料，來設計個性化的小部件、人物形象等擴充套件內容。
+
+隨著開發的推進，我們發現《人升》的商品和效果可以很好地與 API 融合。爲了降低使用門檻，讓更多使用者輕鬆體驗 API 的功能並參與開發的樂趣，我們增加了一些簡化的 API 機制。這些機制讓使用者即便對 URL 概念瞭解不深，也能輕鬆實現一些簡單的 API 呼叫：
+
+- 商品呼叫 API（無需外部呼叫）
+- 應用內顯示資料 ID（無需透過介面獲取 ID）
+- 模糊搜尋商品名稱（ID 可選）
+- 輸入、隨機佔位符，彈窗 API（無需外部開發或自動化工具即可實現簡單互動）
+
+這些機制的目的是幫助使用者「快速體驗 API」，它們適用於簡單的場景，而不適合複雜的條件控制或邏輯操作。如果我們在《人升》中加入過多的基礎控制邏輯，它就會逐漸變成一個“自動化工具”或“程式設計軟體”，這並非我們 API 的設計初衷。
+
+API 的核心價值在於開放介面，主要面向外部開發，而非僅限於內部使用。它的主要應用場景包括：
+
+- 無需程式設計門檻的快速體驗：使用者可以輕鬆呼叫商品的使用效果
+- 無需程式設計門檻的自動化應用：透過 Tasker、Macrodroid 等自動化工具整合
+- Android 開發：提供 SDK 支援
+- 跨裝置開發（桌面端）：支援雲人昇平臺
+
+<br/>
+
+雖然這些簡化機制讓更多使用者體驗到了 API 的便利，但也帶來了某些誤解。爲了避免錯誤的理解和資訊傳播，我們在這裏做一些澄清：
+
+> 1. URL 機制設計不合理，一會需要編碼，一會又不需要編碼。
+URL 和編碼標準是由網際網路標準規定的，並非《人升》的獨特設計。具體細節請參考：[https://en.wikipedia.org/wiki/Percent-encoding](https://en.wikipedia.org/wiki/Percent-encoding)
+
+編碼的需求非常明確：在 URL 中，每一個查詢引數的“值”都需要進行編碼。這是標準化的要求，不是偶然現象。
+
+> 2. URL 引數順序影響執行邏輯。
+絕大多數情況下，URL 引數的順序是無關緊要的，不會影響 API 的執行邏輯。解析是基於引數名稱，而不是順序。
+
+目前只有隨機（`random`） API 的比重引數與順序有關。
+
+> 3. URL 不能巢狀超過兩層。
+實際上，URL 可以根據需要進行多層巢狀，巢狀層級沒有限制。錯誤的巢狀通常是因為沒有正確理解 URL 規範。
+
+> 4. URL 中的中文千萬不要編碼，否則會出錯。
+根據規範，URL 中的中文字符是需要編碼的。然而，由於 Android 的 API 容錯機制，即使未編碼的中文也能正確解析，但爲了相容性和標準化，建議始終進行編碼。
+
+---
+
+**建議：** 對於複雜的 URL 場景，請使用程式或工具來協助生成正確的 URL，以避免不必要的錯誤。如果希望更好地利用 API，建議多瞭解一些 URL 規範，這樣能夠更準確地編寫和除錯 API。
 
 
 <br/>
@@ -647,7 +746,8 @@ id 的獲取方法為「實驗」頁面開啟「開發者模式」，然後在�
 
 | 引數 | 含義 | 取值                                                         | 示例 | 是否必須 | 備註                                                         |
 | ---- | ---- | ------------------------------------------------------------ | ---- | -------- | ------------------------------------------------------------ |
-| page | 頁面 | 固定以下數值其一：<br/>main<br/>setting<br/>about<br/>pomodoro<br/>feelings<br/>achievement<br/>history<br/>add_task<br/>add_achievement<br/>add_achievement_cate<br/>exp<br/>coin<br/>backup<br/>add_item<br/>lab<br/>custom_attributes<br/>pomodoro_record<br/>dlc<br/>pomodoro_record<br/>synthesis<br/>pic_manage<br/>purchase_dialog<br/>task_detail | lab  | 是       | `purchase_dialog`指購買彈窗<br/>`use_item_dialog`指使用商品彈窗<br/>其他的都是具體的大頁面 |
+| page | 頁面 | 固定以下數值其一：<br/>main<br/>setting<br/>about<br/>pomodoro<br/>feelings<br/>achievement<br/>history<br/>add_task<br/>add_achievement<br/>add_achievement_cate<br/>exp<br/>coin<br/>backup<br/>add_item<br/>lab<br/>custom_attributes<br/>pomodoro_record<br/>dlc<br/>pomodoro_record<br/>synthesis<br/>pic_manage<br/>purchase_dialog<br/>task_detail<br/>new_default | lab  | 是       | `purchase_dialog`指購買彈窗<br/>`use_item_dialog`指使用商品彈窗<br/>其他的都是具體的大頁面 |
+
 
 #### 1. 跳轉商品購買/使用彈窗
 
@@ -690,6 +790,18 @@ id 的獲取方法為「實驗」頁面開啟「開發者模式」，然後在�
 
 1. 三個引數只需要提供其中之一。
    - 如果同時提供多個，會有內部的優先順序順序。但這屬於未定義行為，APP 不會保證順序。
+
+
+#### 4. 跳轉新建成就頁面
+
+當 `page` 引數為 `add_achievement`時，你還**需要**額外指定跳轉的清單 id：
+
+示例如，跳轉到指定清單 id 為 1 的新建成就頁面：`lifeup://api/goto?page=add_achievement&category_id=1`
+
+| 引數      | 含義     | 取值     | 示例 | 是否必須 | 備註                                           |
+| --------- | -------- | -------- | ---- | -------- | ---------------------------------------------- |
+| category_id   | 成就清單id   | 成就清單id   | 1   | 是      |  |
+
 
 
 
