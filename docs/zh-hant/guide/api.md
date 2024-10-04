@@ -166,6 +166,8 @@ Tasker 擁有著極高的許可權，可以實現操作更換桌布、解除安�
 
 
 
+### 連結🔗
+
 **一些例子：**
 
 當你點選下面這個連結，「人升」會彈出提示“你學會了呼叫！”。
@@ -179,6 +181,8 @@ Tasker 擁有著極高的許可權，可以實現操作更換桌布、解除安�
 當你把連結複製到商品的“連結”效果中，使用商品也能夠觸發類似的效果。
 
 
+
+### 外部網頁🌐（Wordle）
 
 **一個外部應用聯動的例子：**
 
@@ -194,6 +198,8 @@ Wordle 是猜單詞的小遊戲：猜長度為 5 的單詞。橙黃色代表答�
 ![](_media/api/wordle.png ':size=30%')
 
 <br/>
+
+### 自動化工具-Tasker
 
 **與 Tasker 聯動的例子：**
 
@@ -214,6 +220,8 @@ Wordle 是猜單詞的小遊戲：猜長度為 5 的單詞。橙黃色代表答�
 ![](_media/api/tasker_02.png ':size=30%')
 
 <br/>
+
+### 自動化工具-MacroDroid
 
 **MacroDroid 的呼叫方式：**
 
@@ -301,13 +309,19 @@ URL 中的某些字元，如空格或特殊符號，不能直接在 URL 中使�
 
 <br/>
 
-
 **這是一個用 JS 實現的簡單編碼工具：**
 
 這個工具會將中文、空格、各種符號編碼。
 
 <iframe src="guide/html/url_encoded.html" frameborder="0" scrolling="no" width="90%"> </iframe>
 
+2024/10/04更新：
+
+由於編碼方面太容易出現問題， 市面上也很少面向普通使用者的URL Builder（構造工具），我們嘗試使用 AI 協助開發了一款 URL 構造器。
+
+在其中，你只需要按照 API 定義填入 API 名稱、引數名稱（鍵）和引數數值即可。
+
+[點選這裏跳轉到工具](https://wiki.lifeupapp.fun/zh-cn/guide/html/url-builder-parser.html)
 
 <br/>
 
