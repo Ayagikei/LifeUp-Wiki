@@ -12,7 +12,7 @@
 
 <h2 align="center" padding="100">你好，勇者！</h2>
 
-<p align="center">歡迎來到「人升（人升）」 的世界，這是一款你從未體驗過的，融合了金幣、經驗值、物品獎勵、成就跟蹤系統的待辦清單和習慣養成安卓應用！</p>
+<p align="center">歡迎來到「人升（LifeUp）」 的世界，這是一款你從未體驗過的，融合了金幣、經驗值、物品獎勵、成就跟蹤系統的待辦清單和習慣養成安卓應用！</p>
 
 <p align="center">Custom your own gamify list with attribute, exp, coin, reward to stay productive!</p>
 
