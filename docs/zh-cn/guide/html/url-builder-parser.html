@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LifeUp API URL 构建器和解析器</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.5.0/dist/full.css" rel="stylesheet" type="text/css" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'custom-primary': '#70A0AF',
+                        'custom-secondary': '#B5C9C3',
+                        'custom-accent': '#F1BF98',
+                        'custom-test': '#9E7BB5',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #F5F5F5;
+            color: #5C5C5C;
+        }
+        .btn {
+            text-transform: none;
+            font-weight: normal;
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .auto-expand {
+            min-height: 2.5rem;
+            height: 2.5rem;
+            overflow-y: hidden;
+            resize: none;
+            transition: height 0.3s ease;
+        }
+    </style>
+</head>
+<body class="min-h-screen p-4">
+    <div class="container mx-auto">
+        <div class="card bg-base-100 shadow-xl">
+            <div class="card-body">
+                <h1 class="card-title text-3xl mb-6 justify-center">LifeUp API URL 构建器和解析器</h1>
+                
+                <div class="mb-8">
+                    <h2 class="text-2xl font-semibold mb-4">URL 构建器</h2>
+                    <div class="form-control mb-4">
+                        <label class="label">
+                            <span class="label-text">API 名称：</span>
+                        </label>
+                        <input type="text" id="apiName" class="input input-bordered w-full" placeholder="例如：random">
+                    </div>
+                    <div id="params" class="space-y-2 mb-4">
+                        <!-- 参数输入字段将在这里动态添加 -->
+                    </div>
+                    <button onclick="addParam()" class="btn bg-custom-primary text-white hover:bg-custom-primary hover:brightness-110">添加参数</button>
+                    <div class="form-control mt-4">
+                        <label class="label">
+                            <span class="label-text">构建的 URL：</span>
+                        </label>
+                        <textarea id="builtUrl" class="textarea textarea-bordered w-full auto-expand" readonly></textarea>
+                    </div>
+                    <div class="flex space-x-2 mt-2">
+                        <button onclick="copyUrl()" class="btn bg-custom-secondary text-gray-700 hover:bg-custom-secondary hover:brightness-110 flex-1">复制 URL</button>
+                        <button onclick="testCall()" class="btn bg-custom-test text-white hover:bg-custom-test hover:brightness-110 flex-1">测试调用</button>
+                    </div>
+                </div>
+
+                <div class="divider"></div>
+
+                <div>
+                    <h2 class="text-2xl font-semibold mb-4">URL 解析器</h2>
+                    <div class="form-control mb-4">
+                        <label class="label">
+                            <span class="label-text">输入 URL 进行解析：</span>
+                        </label>
+                        <textarea id="urlToParse" class="textarea textarea-bordered w-full auto-expand" placeholder="粘贴 LifeUp API URL 在这里"></textarea>
+                    </div>
+                    <button onclick="parseUrl()" class="btn bg-custom-accent text-gray-700 hover:bg-custom-accent hover:brightness-110">解析 URL</button>
+                    <div id="parseResult" class="mt-4 p-4 bg-base-200 rounded-box"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let paramCount = 0;
+
+        function addParam() {
+            paramCount++;
+            const paramDiv = document.createElement('div');
+            paramDiv.className = 'flex space-x-2';
+            paramDiv.innerHTML = `
+                <input type="text" class="key input input-bordered flex-1" placeholder="key">
+                <input type="text" class="value input input-bordered flex-1" placeholder="value">
+            `;
+            document.getElementById('params').appendChild(paramDiv);
+            updateUrl();
+        }
+
+        function updateUrl() {
+            const apiName = document.getElementById('apiName').value;
+            const params = document.querySelectorAll('#params > div');
+            let url = `lifeup://api/${apiName}`;
+            
+            params.forEach((param, index) => {
+                const key = param.querySelector('.key').value;
+                const value = param.querySelector('.value').value;
+                if (key && value) {
+                    const encodedValue = encodeURIComponent(value);
+                    url += (index === 0 ? '?' : '&') + `${key}=${encodedValue}`;
+                }
+            });
+
+            const builtUrlTextarea = document.getElementById('builtUrl');
+            builtUrlTextarea.value = url;
+            autoExpand(builtUrlTextarea);
+        }
+
+        function copyUrl() {
+            const apiName = document.getElementById('apiName').value;
+            if (!apiName.trim()) {
+                alert('错误：API名称不能为空。请输入API名称。');
+                return;
+            }
+            const urlInput = document.getElementById('builtUrl');
+            urlInput.select();
+            document.execCommand('copy');
+            alert('URL 已复制到剪贴板！');
+        }
+
+        function testCall() {
+            const apiName = document.getElementById('apiName').value;
+            if (!apiName.trim()) {
+                alert('错误：API名称不能为空。请输入API名称。');
+                return;
+            }
+            const url = document.getElementById('builtUrl').value;
+            
+            if (isMobile()) {
+                window.location.href = url;
+            } else {
+                alert('测试调用功能仅在移动设备上可用。在桌面设备上，请手动复制URL并在支持的应用中使用。');
+            }
+        }
+
+        function isMobile() {
+            return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        }
+
+        function parseUrl() {
+            const url = document.getElementById('urlToParse').value.trim();
+            let result = '';
+            
+            try {
+                const parsedUrl = new URL(url);
+                
+                if (url.startsWith('lifeup://api')) {
+                    const apiName = parsedUrl.pathname.split('/').pop();
+                    result = `<p class="font-semibold">LifeUp API 名称：${apiName}</p>`;
+                    result += `<p class="font-semibold mt-2">参数：</p><ul class="list-disc list-inside space-y-2">`;
+                    
+                    for (let [key, value] of parsedUrl.searchParams) {
+                        result += `<li><strong>${key}:</strong> ${decodeURIComponent(value)}</li>`;
+                    }
+                    result += '</ul>';
+                } else {
+                    result = `<p class="font-semibold">非 LifeUp API URL</p>`;
+                    result += `<p><strong>Scheme:</strong> ${parsedUrl.protocol.slice(0, -1)}</p>`;
+                    result += `<p><strong>Host:</strong> ${parsedUrl.hostname}</p>`;
+                    result += `<p><strong>Path:</strong> ${parsedUrl.pathname}</p>`;
+                    if (parsedUrl.search) {
+                        result += `<p class="font-semibold mt-2">查询参数：</p><ul class="list-disc list-inside space-y-2">`;
+                        for (let [key, value] of parsedUrl.searchParams) {
+                            result += `<li><strong>${key}:</strong> ${decodeURIComponent(value)}</li>`;
+                        }
+                        result += '</ul>';
+                    }
+                }
+            } catch (error) {
+                result = `<p class="text-red-500">错误：无效的 URL</p>`;
+            }
+
+            document.getElementById('parseResult').innerHTML = result;
+        }
+
+        function autoExpand(element) {
+            element.style.height = 'auto';
+            element.style.height = (element.scrollHeight) + 'px';
+        }
+
+        // 为所有输入添加事件监听器
+        document.getElementById('apiName').addEventListener('input', updateUrl);
+        document.getElementById('params').addEventListener('input', updateUrl);
+        document.getElementById('urlToParse').addEventListener('input', function() {
+            autoExpand(this);
+        });
+        
+        // 初始添加一个参数输入
+        addParam();
+    </script>
+</body>
+</html>
