@@ -8,18 +8,37 @@
 
 | Platform          | Version         | Update Date     |
 | :---------------- | :-------------- | :-------------- |
-| LifeUp-Android    | v1.95.0-rc01    | 2024/05/24      |
+| LifeUp-Android    | v1.97.0         | 2024/10/21      |
 | LifeUp-iOS        | In development… | In development… |
 | LifeUp-Desktop    | v1.1.1          | 2023/08/29      |
 | LifeUp Cloud(SDK) | v1.3.0          | 2023/06/25      |
 
-(Part of the translation is provided by Google Translate and may not be accurate)
+(Part of the translation is provided by Machine/AI Translate and may not be accurate)
 
 <!-- tabs:start -->
 
 ### **LifeUp-Android**
 
-**🎉1.97.0-rc01 (2024/09/11)**
+**1.97.0 (2024/10/21)**
+
+**♻️Optimization**
+
+1. Optimized the display effect of task cards for unstarted tasks.
+2. Addressed some performance issues.
+3. Optimized the task detail page, resolving the issue where clicking the task name occasionally failed to trigger interactions.
+
+**✨Features**
+
+1. Added JSON format fields to the API broadcast for task overdue.
+
+**🐛 Bug Fixes**
+
+1. Fixed an issue where enabling Material 3 caused crashes when executing certain UI-related APIs.
+2. Removed some obsolete experimental options, such as the feelings switch and the new attribute switch.
+
+
+
+**🎉1.97.0-rc (2024/09/11)**
 
 **✨Features**
 
