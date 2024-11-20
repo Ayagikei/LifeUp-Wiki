@@ -243,27 +243,9 @@
 
 ### 未找到答案？
 
-**QQ群/QQ頻道**
+#### QQ群 / QQ頻道
 
-加入 QQ 頻道**不受人數**限制，推薦優先加入頻道：https://pd.qq.com/s/c61ihv4mf
-
-頻道也更適合按不同的分類進行討論
-
-如果你不使用 QQ，也可以使用微信掃碼使用小程式加入頻道：
-
-<img src="https://wiki.lifeupapp.fun/wechat_channel_small.png" style="zoom:50%;" />
-
-
-
-當然，你也可以加入QQ群，與群友們進行更即時的交流與討論。QQ群的討論可能更偏日常一些，並不侷限於人升：
-
-點選連結加入群聊【人升討論基地】：https://qm.qq.com/q/gRyJiONhEQ
-
-> 加 Q 群請留意群人數和群公告的子群群號，群滿請更換其他子群加入。也留意回覆加群問題哦~
-
-### QQ群 / QQ頻道
-
-#### 加入QQ頻道
+##### 加入QQ頻道
 - **無任何人數**限制，且頻道支援按不同分類進行專題討論，我們強烈推薦您加入此渠道。
   - 頻道入口：[點此進入](https://pd.qq.com/s/c61ihv4mf)
 
@@ -271,7 +253,7 @@
 - 使用微信掃描二維碼，透過小程式便捷地訪問頻道。
   - <img src="https://wiki.lifeupapp.fun/wechat_channel_small.png" style="zoom:50%;" />
 
-#### 關於QQ群
+##### 關於QQ群
 我們也歡迎您加入我們的QQ群，這裏更注重於即時的交流和分享，話題廣泛而豐富，不僅限於討論「人升」相關的話題。
 - 點選連結直接加入：[加入群聊：人升討論基地](https://qm.qq.com/q/gRyJiONhEQ)
 

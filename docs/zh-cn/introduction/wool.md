@@ -4,44 +4,11 @@
 
 
 
-**1. 淘宝双十一红包**
-
-> 每天可领取一次
-
-![Screenshot_2024-10-17-21-55-46-65_33a2a1f7135f7a2](./_media/wool/Screenshot_2024-10-17-21-55-46-65_33a2a1f7135f7a2.jpg)
-
-- 保存图片，然后使用淘宝 app 扫码
-- 或打开链接：https://m.tb.cn/h.gEaggNK
-
-- 或复制以下口令打开淘宝app：
-
-88￥ CZ0015 ohrD3O65yks￥ https://m.tb.cn/h.gEaggNK  双11超级红包主会场
-
-
-
 ---
 
 
 
-**2. 京东双十一红包**
-
-> 每天可领取三次
-
-![08280cd014e4dce099f762f4efbd5e65](./_media/wool/08280cd014e4dce099f762f4efbd5e65.jpeg)
-
-- 保存图片，使用微信或者京东 app 扫码都可
-- 或打开链接：https://u.jd.com/Cr7nfQ6
-- 或复制以下口令打开京东 app
-
-11:/￥Y1ahZ4oR9uxu7jYl￥
-
-
-
----
-
-
-
-**3. 支付宝每日小红包**
+**1. 支付宝每日小红包**
 
 ![1729173975913](./_media/wool/1729173975913.jpg)
 

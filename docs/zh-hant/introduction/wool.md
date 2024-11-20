@@ -4,44 +4,11 @@
 
 
 
-**1. 淘寶雙十一紅包**
-
-> 每天可領取一次
-
-![Screenshot_2024-10-17-21-55-46-65_33a2a1f7135f7a2](./_media/wool/Screenshot_2024-10-17-21-55-46-65_33a2a1f7135f7a2.jpg)
-
-- 儲存圖片，然後使用淘寶 app 掃碼
-- 或開啟連結：https://m.tb.cn/h.gEaggNK
-
-- 或複製以下口令開啟淘寶app：
-
-88￥ CZ0015 ohrD3O65yks￥ https://m.tb.cn/h.gEaggNK  雙11超級紅包主會場
-
-
-
 ---
 
 
 
-**2. 京東雙十一紅包**
-
-> 每天可領取三次
-
-![08280cd014e4dce099f762f4efbd5e65](./_media/wool/08280cd014e4dce099f762f4efbd5e65.jpeg)
-
-- 儲存圖片，使用微信或者京東 app 掃碼都可
-- 或開啟連結：https://u.jd.com/Cr7nfQ6
-- 或複製以下口令開啟京東 app
-
-11:/￥Y1ahZ4oR9uxu7jYl￥
-
-
-
----
-
-
-
-**3. 支付寶每日小紅包**
+**1. 支付寶每日小紅包**
 
 ![1729173975913](./_media/wool/1729173975913.jpg)
 
