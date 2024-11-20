@@ -19,6 +19,26 @@
 
 ### **LifeUp-Android**
 
+**1.97.0 (2024/11/20)**
+
+**✨Features**
+
+1. Updated Translations.
+2. Supported automatic display of multiple item rewards in notes.
+
+**♻️Optimization**
+
+1. Optimized network request handling to reduce unnecessary HTTP requests and improve performance.
+2. Optimized the display of level in the status page, improving visual experience and efficiency in conveying information.
+
+**🐛 Bug Fixes**
+
+1. Fixed the color of subtask count text.
+2. Fixed the time calculation errors for monthly and yearly tasks, ensuring accurate task trigger times.
+3. Fixed the time calculation issues for monthly and yearly subtasks, ensuring all subtasks are scheduled accurately.
+4. Fixed the issue where the task background could not be restored correctly when restoring from a task template, ensuring task background settings are applied properly.
+
+
 **1.97.0 (2024/10/21)**
 
 **♻️Optimization**
