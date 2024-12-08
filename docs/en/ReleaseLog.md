@@ -7,8 +7,8 @@
 ## Notes
 
 | Platform          | Version         | Update Date     |
-| :---------------- | :-------------- | :-------------- |
-| LifeUp-Android    | v1.97.0         | 2024/10/21      |
+| :---------------- |:----------------|:----------------|
+| LifeUp-Android    | v1.97.2         | 2024/12/08      |
 | LifeUp-iOS        | In development… | In development… |
 | LifeUp-Desktop    | v1.1.1          | 2023/08/29      |
 | LifeUp Cloud(SDK) | v1.3.0          | 2023/06/25      |
@@ -18,6 +18,25 @@
 <!-- tabs:start -->
 
 ### **LifeUp-Android**
+
+**1.97.2 (2024/12/08)**
+
+**✨Features**
+
+1. Added automatic task generation using system's WorkManager mechanism to prevent missing task generation when widgets are not used and the app hasn't been launched for over a day.
+2. Improved API exception handling by returning a unified success field and passing exception information to the content provider interface.
+
+**♻️Optimization**
+
+1. Optimized the default time generation logic to improve the accuracy of monthly and yearly time generation.
+2. Optimized the logic for deleting unused image files by adding a secondary verification step from the database to prevent accidental file deletion.
+
+**🐛 Bug Fixes**
+
+1. Improved error messages for API when entities are not found.
+2. Fixed concurrency issues in the built-in downloader.
+3. Fixed Pomodoro statistics logic for cross-day scenarios, unifying record attribution to the time period of the end time (previously cross-day records couldn't be correctly attributed to the day's time period).
+4. Fixed issues where task continuity and time period completion counts could be incorrect in certain scenarios.
 
 **1.97.1 (2024/11/20)**
 
