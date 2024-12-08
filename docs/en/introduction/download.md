@@ -1,37 +1,35 @@
-### 1. Google Play
+# LifeUp Download Guide
 
-Click the button below to go to the Google Play page:
+## 🏪 1. Google Play Store (Recommended)
 
 <p align="start">
   <a href="https://play.google.com/store/apps/details?id=net.sarasarasa.lifeup">
     <img src="https://img.shields.io/static/v1?labelColor=56595b&color=97db99&logo=google-play&logoColor=ffffff&label=google play&style=for-the-badge&message=get"/>
   </a>
-
 </p>
 
-LifeUp is currently available as a paid app on Google Play.
+Google Play Store is our primary distribution channel for LifeUp. We recommend purchasing through Google Play for the best experience and most timely updates.
 
-#### 1.0 Direct Purchase
+### 💫 1.1 Purchase from Google Play
 
-**With one purchase, you can enjoy all the features for life.**
+With a Google Play purchase, you get:
 
-And there are no ads or in-app purchases!
+- **One-time purchase for lifetime access to all features**
+- Completely ad-free with no in-app purchases
+- Regular updates and improvements
+- Option to request a refund if you're not satisfied after purchase
 
-We also provide regular updates and improvements.
+### ✨ 1.2 Google Play Pass
 
-On Google Play, if you are not satisfied after paying, you can contact us for a refund.
+If you have a Google Play Pass subscription:
 
-#### 1.1 Google Play Pass
+- Download LifeUp for free
+- Access all features while your Play Pass subscription is active
+- No additional purchases needed
 
-LifeUp has joined Google Play Pass.
+---
 
-So if you have a Google Play Pass, you can also download LifeUp for free and access all the features **while your Google Play Pass subscription is active.**
-
-------
-
-### 2. Free Trial
-
-Click the button below to go to the download page:
+## 🎯 2. Standalone Direct Download (with 7-day Trial)
 
 <p align="start">
   <a href="https://github.com/Ayagikei/LifeUp/releases">
@@ -39,30 +37,52 @@ Click the button below to go to the download page:
   </a>
 </p>
 
-If you want to try it out for free, you can download the 7-day trial version here.
+Want to try all features before purchasing? The standalone version offers:
 
-This version does not require Google services but it is only free for a limited time.
+- 7-day free trial period
+- Access to all LifeUp features
+- No Google services required
 
-**During the trial period, you can use all the features of LifeUp.**
+### ⚡ Important Notes
 
-After the trial is over, you can choose to
+While the standalone version APK can be downloaded directly from GitHub, please note:
 
-1. export your data and transfer it to the Google Play version.
-2. Buy a direct redemption code from us to continue using this version.
+- **Google or Facebook login is required to bind your license**
+- We are working on alternative binding methods that don't require these login options, but they're not yet available
+- You need to stay logged in for license verification
+- This version requires server connection for license validation
 
-Notes:
+After the trial period ends, you can:
 
-1. This version is not linked to Google services. We need to connect to the server to verify your license. So you need to stay logged in.
+1. Export your data and transfer it to the Google Play version
+2. Purchase a direct redemption code to continue using this version
 
-------
+---
 
-### 3. Cracked Version
+## 📱 3. Amazon Appstore Version
 
-Some websites may offer a cracked version of *LifeUp*. These versions may work, but:
+LifeUp Pro is also available as a paid app on the Amazon Appstore. Similar to the Google Play version, it offers:
 
-1. You won’t get continuous updates. LifeUp is under active development and will receive many updates and bug fixes.
-2. You may lose your user data and not be able to export it.
-3. Ads or malicious permissions may be added to spy on your privacy.
-4. You may not be able to log in properly, and you may not be able to use online features.
+- One-time purchase for permanent access
+- Ad-free experience
+- All features included
+- Regular updates
 
-LifeUp is a one-time purchase indie app. If you like it, please consider supporting us.
+Please note that updates on the Amazon Appstore may be released slightly later compared to the Google Play version. We appreciate your understanding.
+
+---
+
+## ⚠️ 4. Warning About Cracked Versions
+
+We've found some websites offering cracked versions of LifeUp. Using these versions comes with risks:
+
+- No access to continuous updates and bug fixes
+- Potential loss of user data with no export capability
+- Risk of added advertisements or malicious permissions that may compromise your privacy
+- Inability to log in properly or use online features
+
+LifeUp is a one-time purchase indie app. If you enjoy using it, please consider supporting our development work.
+
+---
+
+_Last updated: 2024_
