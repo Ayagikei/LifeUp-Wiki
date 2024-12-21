@@ -61,6 +61,8 @@ If you come across:
 
 ### Rewards (experience points, goods)
 
+[Can I assign different experience points to different attributes for a single task?](/guide/faq?id=different-xp-per-attribute)
+
 [The automatic calculation logic of experience value and coins?](/guide/faq?id=the-automatic-calculation-logic-of-experience-value-and-coins)
 
 [How is life level calculated?](/guide/faq?id=how-is-life-level-calculated)
@@ -273,6 +275,23 @@ Temporarily not supported, but we will consider about it.
 
 
 ## Rewards (experience points, goods)
+
+##### Can I assign different experience points to different attributes for a single task?
+
+Currently, LifeUp prioritizes quick setup, assigning a single experience point value per attribute per task. This simplifies input.  While not directly supported for individual tasks, you can achieve a similar effect using a workaround:
+
+1. Create an item.
+2. Assign different experience point values to various attributes for this item.
+3. Set the item to be automatically used after completing a task.
+
+This allows for the following workflow:
+
+1. Complete Task
+2. Acquire and Use Item
+3. Trigger Item Effects
+4. Award Different Experience Points to Different Attributes
+
+We plan to add direct support for multiple experience points per attribute per task in a future update.
 
 ##### The automatic calculation logic of experience value and coins?
 
