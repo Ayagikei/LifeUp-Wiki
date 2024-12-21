@@ -1,4 +1,4 @@
-# LifeUp Download Guide
+# LifeUp Purchase and License Guide
 
 ## 🏪 1. Google Play Store (Recommended)
 
@@ -17,7 +17,17 @@ With a Google Play purchase, you get:
 - **One-time purchase for lifetime access to all features**
 - Completely ad-free with no in-app purchases
 - Regular updates and improvements
-- Option to request a refund if you're not satisfied after purchase
+- 7-day trial period after purchase with refund options
+- Support for users in regions without Google Play payment access
+
+If you need to gift a license to a friend or are in a region where Google Play payments are not supported, please contact us at lifeup@ulives.io for assistance.
+
+#### Refund Policy
+- Automatic refund available within hours of purchase through Google Play
+- Manual refund available within 7 days by contacting lifeup@ulives.io with your GPA order number
+- Please use the Gmail address associated with your purchase when requesting a refund
+- Refund requests cannot be processed after 7 days from purchase
+- Note: Leaving a review on Google Play will not assist with the refund process
 
 ### ✨ 1.2 Google Play Pass
 
