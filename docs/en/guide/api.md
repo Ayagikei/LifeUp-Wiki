@@ -1706,14 +1706,18 @@ Only supported since version 1.90.6
 
 `LifeUp` provides user intervention processing methods for parameters.
 
-| Placeholder       | Meaning                                                    | Example |
-| ----------------- | ---------------------------------------------------------- | ------- |
-| [$text\|title]    | text placeholder                                           | [$text\|Enter task name] |
-| [$number\|Title]  | Number placeholder (without decimal point)                 | [$number\|Enter price] |
-| [$decimal\|title] | Number placeholder (with decimal point)                    | [$decimal\|Enter ATM rate] |
-| [$item]           | Select an item, it will be replaced with item id           | [$item] |
-| [$task_category]  | Select task list, which will be replaced with task list id | [$task_category] |
+| Placeholder                          | Meaning                                                      | Example                                                      |
+|--------------------------------------|--------------------------------------------------------------|--------------------------------------------------------------|
+| [$text\|title]                       | Text placeholder                                             | [$text\|Enter task name]                                     |
+| [$number\|Title]                     | Number placeholder (without decimal point)                   | [$number\|Enter price]                                       |
+| [$number\|Title\|signed]             | Number placeholder (without decimal point), show sign        | [$number\|Enter price\|signed]                               |
+| [$decimal\|title]                    | Number placeholder (with decimal point)                      | [$decimal\|Enter ATM rate]                                   |
+| [$decimal\|title\|signed]            | Number placeholder (with decimal point), show sign           | [$decimal\|Enter ATM rate\|signed]                           |
+| [$item]                              | Select an item, it will be replaced with item id              | [$item]                                                      |
+| [$task_category]                     | Select task list, which will be replaced with task list id    | [$task_category]                                             |
 | [$time\|Anchor Time\|Offset in Milliseconds(optional)] | Time Placeholder (Supported from v1.93.0-beta01 (502) + only) <br/><br/>Possible values for Anchor Time:<br/>`current`, `today`, `this_monday`, `last_monday`, `this_month`, `last_month`, `this_year`, `last_year` <br/><br/>Offset in milliseconds should be an integer, default is 0 milliseconds | Midnight today: [$time\|today]<br/>Midnight tomorrow: [$time\|today\|8600000] |
+| [$random_number\|Min\|Max]           | Random number placeholder (without decimal point)             | [$random_number\|0\|3000]                                    |
+| [$random_decimal\|Min\|Max]          | Random number placeholder (with decimal point)                | [$random_decimal\|1.0\|2.0]                                  |
 
 **Example 1: When using, select an item to reduce the price by 1 coin**
 
