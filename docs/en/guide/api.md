@@ -273,6 +273,129 @@ For details, see the broadcast broadcast parameters below.
 
 <br/>
 
+### Basics - JSON Data Structure
+
+This section introduces the commonly used JSON data structures in the API.
+
+#### 1. Item Reward Structure
+
+A JSON array specifying item rewards, each item containing an ID and quantity.
+
+```json
+[
+    {
+        "item_id": 1,    // Item ID
+        "amount": 2      // Quantity
+    },
+    {
+        "item_id": 2,
+        "amount": 3
+    }
+]
+```
+
+#### 2. Achievement Unlock Condition Structure
+
+```json
+[
+    {
+        "type": 7,           // Condition type
+        "related_id": null,  // Related ID (some types must provide)
+        "target": 1000000    // Target value
+    }
+]
+```
+
+#### 3. Purchase Limit Structure
+
+```json
+[
+    {
+        "type": "daily",     // Limit type: daily (daily), total (total)
+        "value": 5           // Limit quantity
+    }
+]
+```
+
+#### 4. Item Effect Structure
+
+```json
+[
+    {
+        "type": 2,           // Effect type
+        "info": {            // Effect parameters, different for different types
+            "min": 100,      // Minimum value (used for gold rewards, etc.)
+            "max": 200       // Maximum value (used for gold rewards, etc.)
+        }
+    }
+]
+```
+
+#### Effect Type Description
+
+| Type Code | Meaning | Parameter Description |
+| ------- | ---- | ------- |
+| 0 | No special effect | No parameters |
+| 1 | Not usable | No parameters |
+| 2 | Increase gold | min: Minimum gold amount<br/>max: Maximum gold amount (optional, if not filled, it equals min) |
+| 3 | Decrease gold | min: Minimum gold amount<br/>max: Maximum gold amount (optional, if not filled, it equals min) |
+| 4 | Increase experience | ids: Skill ID array<br/>value: Experience value<br/>using_limit: Whether to use limit (optional, default false) |
+| 5 | Decrease experience | ids: Skill ID array<br/>value: Experience value<br/>using_limit: Whether to use limit (optional, default false) |
+| 6 | Simple synthesis | require_number: Required quantity<br/>item_id: Item ID |
+| 7 | Open box | items: Item array, each item contains:<br/>- item_id: Item ID<br/>- amount: Quantity<br/>- probability: Probability<br/>- is_fixed_reward: Whether it is a fixed reward |
+| 8 | Countdown | seconds: Countdown seconds |
+| 9 | Web link | url: Link address<br/>use_web_view: Whether to use the built-in browser (optional, default false) |
+
+**Effect Example:**
+
+Increase random gold:
+```json
+{
+    "type": 2,
+    "info": {
+        "min": 100,
+        "max": 200
+    }
+}
+```
+
+Increase experience points:
+```json
+{
+    "type": 4,
+    "info": {
+        "ids": [1, 2],
+        "value": 50,
+        "using_limit": false
+    }
+}
+```
+
+Open box effect:
+```json
+{
+    "type": 7,
+    "info": {
+        "items": [
+            {
+                "item_id": 1,
+                "amount": 1,
+                "probability": 50,
+                "is_fixed_reward": false
+            },
+            {
+                "item_id": 2,
+                "amount": 1,
+                "probability": 50,
+                "is_fixed_reward": true
+            }
+        ]
+    }
+}
+```
+
+<br/>
+
 ### Popup message
 
 **Method name:** toast
@@ -357,58 +480,54 @@ For details, see the broadcast broadcast parameters below.
 
 <br/>
 
-### Task
+
+### Tasks
 
 #### Add a Task
 
-**Method name:** add_task
+**Method:** add_task
 
-**Description:** Create tasks automatically
+**Description:** Create a task directly
 
-**Example 1:**
+**Example:**
+[lifeup://api/add_task?todo=This is an auto-added task&notes=notes&coin=10&coin_var=1&exp=2048&skills=1&skills=2&skills=3&category=0&item_name=coin](lifeup://api/add_task?todo=This is an auto-added task&notes=notes&coin=10&coin_var=1&exp=2048&skills=1&skills=2&skills=3&category=0&item_name=coin)
 
-<a href="lifeup://api/add_task?todo=This is an automatically added task&notes=notes&coin=10&coin_var=1&exp=2048&skills=1&skills=2&skills=3&category=0&item_name=treasure">lifeup://api/add_task?todo=This is an automatically added task&notes=notes&coin=10&coin_var=1&exp=2048&skills=1&skills=2&skills=3&category=0&item_name=treasure</a>
+| Parameter         | Meaning             | Values                | Example   | Required | Notes                           |
+| ---------------- | ------------------- | -------------------- | --------- | -------- | ------------------------------- |
+| todo             | Task content        | any text             | Write diary | Yes     |                                |
+| notes            | Notes               | any text             | Notes      | No       | Defaults to empty               |
+| coin             | Coin reward         | [0, 999999]         | 10         | No       | Defaults to 0                   |
+| coin_var         | Coin reward variance| number >= 0          | 1          | No       | Defaults to 0; if >0, random reward between [coin, coin+coin_var] |
+| exp              | Experience reward   | [0, 99999]          | 100        | No       | Defaults to 0                   |
+| skills           | Skill IDs           | array of numbers > 0 | 1          | No       | Supports arrays (e.g., &skills=1&skills=2) |
+| category         | List ID             | number >= 0          | 0          | No       | Defaults to 0 (default list); smart lists not allowed |
+| frequency        | Repeat frequency    | integer              | 0          | No       | Defaults to 0 (once)<br/>0 - Once<br/>1 - Daily<br/>N (N>1) - Every N days<br/>-1 - Unlimited<br/>-4 - Monthly<br/>-5 - Yearly |
+| importance       | Importance level    | [1, 4]              | 1          | No       | Defaults to 1                   |
+| difficulty       | Difficulty level    | [1, 4]              | 1          | No       | Defaults to 1                   |
+| deadline         | Due time            | timestamp (milliseconds) | 1640995200000 | No |                               |
+| color            | Tag color           | color string         | #66CCFF    | No       | # must be escaped as %23        |
+| background_url   | Background image URL| web URL             | http://example.com/bg.jpg | No | Must be accessible web image |
+| background_alpha | Background opacity  | float between [0, 1] | 0.5        | No       | Defaults to 1.0                |
+| start_time       | Start time          | timestamp (milliseconds) | 1640995200000 | No | Task start time              |
+| auto_use_item    | Auto use reward items| true or false      | false      | No       | Automatically use rewards on completion |
+| remind_time      | Reminder time       | timestamp (milliseconds) | 1640995200000 | No | Task reminder time          |
+| pin              | Pin task            | true or false       | false      | No       | Pin task to top                |
+| frozen           | Freeze status       | true or false       | false      | No       | Defaults to false              |
+| freeze_until     | Freeze until        | timestamp (milliseconds) | 1640995200000 | No | Only effective when frozen is true |
+| coin_penalty_factor | Coin penalty factor| float between [0, 100) | 0.5    | No       |                               |
+| exp_penalty_factor | Experience penalty factor| float between [0, 100) | 0.5 | No    |                               |
+| write_feelings   | Enable feelings     | true or false       | false      | No       | Defaults to false              |
+| item_id          | Item ID             | number > 0          | 1          | No*      | Either item_id or item_name required |
+| item_name        | Item name           | any text            | Treasure   | No*      | Either item_id or item_name required |
+| item_amount      | Item quantity       | [1, 99]             | 1          | No       | Defaults to 1                  |
+| items            | Item rewards        | JSON text           | See [Item Rewards Structure](#1-item-rewards-structure) | No | Set multiple item rewards |
 
-**Explanation 1:** Add a task to the default list (id is 0) with the content "This is an automatically added task", the notes are "notes", the coin reward is random from 10 to 11, the experience value reward is 2048, the selected The skill ids are 1, 2, and 3 (generally corresponding to the first 3 built-in attributes). The shop item reward is a fuzzy search for a "treasure" shop item.
+**Response:**
 
-**Example 2:**
-
-[lifeup://api/add_task?todo=Task due tomorrow&deadline=[$time|today|86400000]](lifeup://api/add_task?todo=Task due tomorrow&deadline=[$time|today|86400000])
-
-**Explanation 2:** Dynamically add a task due tomorrow using a time placeholder.
-
-Note: This feature requires LifeUp version 1.93.0-beta01 (502) or higher.
-
-| Parameter      | Meaning                         | Type                                        | Example                        | Required | Notes |
-| -------------- | ------------------------------- | ------------------------------------------- | ------------------------------ | -------- | ----- |
-| todo           | task content                    | any text                                    | Write journey                  | yes      |       |
-| notes          | notes                           | any text                                    | Notes                          | no       |       |
-| coin           | coin reward amount              | a number greater than 0                     | 10                             | no       | The maximum value is 999999 |
-| coin_var       | coin reward amount offset value | a number greater than 0                     | 1                              | no       | If the value is greater than 0, when completing the task, gold coins will be randomly calculated in the interval [coin, coin+coin_var] |
-| exp            | experience reward               | a number greater than 0                     | 1                              | no       | maximum value is 99999 |
-| skills         | attribute (skill) id            | array of numbers greater than 0             | 1                              | no       | Support array (ie &skills=1&skills=2&skills=3)<br/>For the acquisition method, please refer to the above "Basic Knowledge - Person Level Data ID" |
-| category       | list id                         | a number greater than or equal to 0         | 0                              | no       | 0 or not passed represents the default list, and cannot select a smart list<br/>For the acquisition method, please refer to the above "Basic Knowledge - Person Level Data ID" |
-| frequency      | repetition frequency            | number, see remarks for the range of values ​​| 0                              | no       | <br/> -1 - Unlimited<br/> -3 - Ebbinghaus<br/> -4 - Monthly<br/> -5 - Yearly |
-| importance     | importance level                | number from 1 to 4                          | 1                              | no       | default is 1 |
-| difficulty     | difficulty level                | number from 1 to 4                          | 2                              | no       | default is 1 |
-| item_id        | id of the rewarded item         | a number greater than 0                     | 1                              | no       |       |
-| item_name      | the name of the reward item     | any text                                    | treasure                       | no       | fuzzy search item name |
-| item_amount    | amount of reward                | Number from 1 to 99                         | 1                              | no       | default is 1 |
-| deadline       | deadline time                   | timestamp (milliseconds)                    | 0                              | no       | Consider using an external tool to calculate the timestamp and provide it.<br/>Alternatively, you can refer to the time placeholders in the [variable placeholders] in the following text.|
-| color          | the color of the task tag       | color text                                  | \#66CCFF                       | no       | available in v1.91+<br/>Note that the # character needs to be escaped when used. <br/>For example, when the color value of the example is actually used, it should be `color=%2366CCFF`|
-| background_url | background picture URL          | URL text                                    | http://www.aaabbbccc.com/1.jpg | no       |       |
-| frozen                | Whether frozen           | true or false                  | false   | No       | Default is false                                                   |
-| freeze_until          | Timestamp until frozen   | Timestamp (milliseconds)       | 0       | No       | Only effective when `frozen` is true; can be omitted for indefinite freezing |
-| coin_penalty_factor   | Coin penalty factor      | Any floating point number between [0, 100) | 0.5   | No       |                                                                    |
-| exp_penalty_factor    | Experience penalty factor| Any floating point number between [0, 100) | 0.5   | No       |                                                                    |
-| write_feelings        | Enable feelings          | true or false                  | false   | No       |                                                                    |
-
-**Return Value:**
-
-| Parameter | Meaning                   | Value  | Example | Required | Notes |
-| --------- | ------------------------- | ------ | ------- | -------- | ----- |
-| task_id   | new task id               | number | 1000    | yes      |       |
-| task_gid  | newly added task group id | number | 1000    | yes      |       |
+| Field    | Type    | Description      | Example | Notes                    |
+| -------- | ------- | ---------------- | ------- | ------------------------ |
+| task_id  | Number  | Task ID          | 1000    |                          |
+| task_gid | Number  | Task group ID    | 1000    |                          |
 
 <br/>
 
@@ -703,73 +822,77 @@ For example, jump to the details page of the specified task id 53: `lifeup://api
 
 ### Shop
 
-#### Adding items
+#### Adding Items
 
 **Method name:** add_item
 
-**Description:** To create a shop item. The icon only supports network URLs, and the use effect is not supported yet.
+**Description:** Create a shop item with customizable properties including purchase limits and use effects.
 
-**Example:** <a href="lifeup://api/add_item?name=Take a 10-minute break&desc=Go and take a short break!&price=10&action_text=rest">lifeup://api/add_item?name=Take a 10-minute break&desc=Go and take a short break!&price=10&action_text=rest</a>
+**Example:** [lifeup://api/add_item?name=Take a 10-minute break&desc=Go and take a short break!&price=10&action_text=rest](lifeup://api/add_item?name=Take a 10-minute break&desc=Go and take a short break!&price=10&action_text=rest)
 
-**Explanation:** Create a shop item with the name "Take a 10-minute break", the description as "Go and take a short break! ", and the action text copy as "Rest" with a price of 10 gold coins.
+| Parameter        | Meaning                | Values               | Example       | Required | Notes                           |
+| --------------- | --------------------- | -------------------- | ------------- | -------- | ------------------------------- |
+| name            | Item name             | any text             | 10 minute break | Yes    |                                 |
+| desc            | Description           | any text             | Take a break  | No       |                                 |
+| icon            | Icon                  | URL text             | http://...    | No       | Must be a web URL               |
+| price           | Price                 | [0, 999999]         | 10            | No       | Default is 0                    |
+| stock_number    | Stock quantity        | [-1, 99999]         | -1            | No       | -1 means unlimited              |
+| action_text     | Action button text    | any text             | rest          | No       |                                 |
+| disable_purchase| Disable purchase      | true or false        | false         | No       | Default is false                |
+| disable_use     | Disable use           | true or false        | false         | No       | Default is false                |
+| category        | Category ID           | number greater than or equal to 0 | 0 | No    | 0 for default category          |
+| order           | Display order         | integer              | 1             | No       | Position in category            |
+| purchase_limit  | Purchase limits       | JSON text            | See [Purchase Limit Structure](#3-purchase-limit-structure) | No | Limit purchase frequency |
+| effects         | Use effects           | JSON text            | See [Item Effects Structure](#4-item-effects-structure) | No | Item usage effects |
+| own_number      | Initial owned quantity | integer             | 0             | No       | Set initial inventory quantity  |
+| unlist          | Hide from shop        | true or false        | false         | No       | Default is false                |
 
-| Parameter        | Meaning                      | Type                                | Example         | Required | Notes |
-| ---------------- | ---------------------------- | ----------------------------------- | --------------- | -------- | ----- |
-| name             | shop item name               | any text                            | 10 minute break | yes      | shop item name |
-| desc             | description                  | any text                            | get a gift      | no       |       |
-| icon             | icon                         | any text                            |                 | no       | icon should be a web address URL |
-| price            | price value                  | number from 1 to 999999]            | 1               | no       |       |
-| action_text      | action button text           | any text                            | rest            | no       |       |
-| disable_purchase | whether to disable purchases | true or false                       | 1               | no       | default false |
-| stock_number     | number of stocks             | number from -1, 99999]              | 1               | no       |       |
-| category         | shop item list id            | a number greater than or equal to 0 | 0               | no       | 0 or not passed represents the default list, and cannot select a smart list<br/>For the acquisition method, please refer to the above "Basic Knowledge - Person Level Data ID" |
-| order       | Order in the category     | Any integer      | 1       | No       | Controls the display order of items in the list    |
-| own_number  | Number owned              | Any integer      | 100     | No       | A negative number indicates a negative ownership   |
-| unlist      | Whether to unlist the item| true or false    | false   | No       | Default is false, true means the item is not displayed in the shop |
+**Return Data:**
 
-**Return Value:**
+| Field    | Type    | Description    | Example | Notes                    |
+| -------- | ------- | -------------- | ------- | ------------------------ |
+| item_id  | Number  | Item ID        | 1000    | ID of the created item   |
 
-| Parameter | Meaning     | Type   | Example | Required | Notes |
-| --------- | ----------- | ------ | ------- | -------- | ----- |
-| item_id   | new item id | number | 1000    | yes      |       |
+!> The effects parameter will override disable_use. If you set effects to indicate an unusable item, disable_use will be ignored.
 
 <br/>
 
-#### Edit items
+### Shop
 
-**method name:** item
+#### Edit Item
 
-**Description:** Various operations on the shop item with the specified id only support the [On Shelf] shop item.
+**Method:** item
 
-**Example:** [lifeup://api/item?id=1&set_price=1&set_price_type=relative&own_number=1&own_number_type=relative](lifeup://api/item?id=1&set_price=1&set_price_type=relative&own_number=1&own_number_type=relative)
+**Description:** Modify existing items, including price, stock, effects, and other properties
 
-**Explanation:** For a shop with an id of 1, increase its price by 1 coin and increase the own number of it by 1
+**Examples:**
+- Adjust price: [lifeup://api/item?id=1&set_price=1&set_price_type=relative](lifeup://api/item?id=1&set_price=1&set_price_type=relative)
+- Modify effects: [lifeup://api/item?id=1&effects=[{"type":2,"info":{"min":100,"max":200}}]](lifeup://api/item?id=1&effects=[{"type":2,"info":{"min":100,"max":200}}])
 
-| Parameter          | Meaning            | Type                    | Example    | Required | Notes |
-| ------------------ | ------------------ | ----------------------- | ---------- | -------- | ----- |
-| id                 | shop item id       | a number greater than 0 | 1          | no*      |       |
-| name               | shop item name     | any text                | treasure   | no*      | when used for unknown id, fuzzy search for commodities, not name modification |
-| set_name           | modify name        | any text                | treasure   | no       | cannot be empty if you provide this param |
-| set_desc           | modify description | any text                | get a gift | no       |       |
-| set_icon           | modify icon        | any text                |            | no       | Icon should be a web address URL |
-| set_price          | adjust price value | number                  | 1          | no       |       |
-| set_price_type     | price adjustment method (absolute/relative) | One of the following values: <br/>absolute<br/>relative | relative | no | absolute - absolute value, that is, directly set the target to value<br/>relative - relative values, adding or subtracting from the original value |
-| own_number         | modify own number  | number [-, +]           | 1          | no       |       |
-| own_number_type    | own number adjustment method (absolute/relative) | One of the following values:<br/>absolute<br/>relative | relative | no | absolute - absolute value, that is, directly set the target to value<br/>relative - relative values, adding or subtracting from the original value |
-| stock_number       | stock number       | number [-, +]           | 1          | no       |       |
-| stock_number_type  | stock number adjustment method (absolute/relative) | One of the following values: <br/>absolute<br/>relative | relative | no | absolute - absolute value, that is, directly set the target to value<br/>relative - relative values, adding or subtracting from the original value |
-| disable_purchase   | Is it disabled to purchase the item | `true` or `false` | true | no | available in v1.91 |
-| action_text        | Action text        | Any text                | Unlock     | No       | Supported from v1.93.0-beta01 (502) and later |
-| disable_use        | Disable use        | Boolean                 | true       | No       | Supported from v1.93.0-beta01 (502) and later |
-| title_color_string | Title color        | Color string            | #66CCFF    | No       | Requires v1.91+<br/>Note that in practical use, the # character needs to be escaped.<br/>For example, the color value in the example should be used as color=%2366CCFF.(v1.94.0+) To reset to default values, you can pass an empty value, like `title_color_string=`|
-| order        | Order in the category           | Any integer             | 1       | No       | Controls the display order of items in the list                                             |
-| own_number   | Number owned                    | Any integer             | 100     | No       | A negative number indicates a negative ownership                                            |
-| unlist       | Whether to unlist the item      | true or false           | false   | No       | Default is false, true means the item is not displayed in the store                        |
-| category_id  | Shop list ID            | Number greater than or equal to 0 | 0 | No       | 0 or not passing means default list, cannot choose smart list<br/>For retrieval method, see 'Basic Knowledge - LifeUp Data ID' |
+| Parameter         | Meaning             | Values               | Example   | Required | Notes                           |
+| ---------------- | ------------------- | -------------------- | --------- | -------- | ------------------------------- |
+| id               | Item ID             | number greater than 0| 1         | No*      | Either id or name required      |
+| name             | Item name           | any text             | Treasure  | No*      | For fuzzy search, not renaming  |
+| set_name         | Set name            | any text             | Treasure  | No       | Cannot be empty                 |
+| set_desc         | Set description     | any text             | Get gift  | No       |                                |
+| set_icon         | Set icon            | URL text             | http://...| No       | Must be a web URL               |
+| set_price        | Adjust price        | integer              | 1         | No       |                                |
+| set_price_type   | Price adjust method | absolute or relative | relative  | No       | absolute-set directly<br/>relative-add/subtract |
+| own_number       | Adjust owned quantity| integer             | 1         | No       | Supports negative with relative |
+| own_number_type  | Own number adjustment| absolute or relative| relative  | No       | absolute-set directly<br/>relative-add/subtract |
+| stock_number     | Adjust stock        | [-1, 99999]         | 1         | No       | -1 means unlimited stock        |
+| stock_number_type| Stock adjust method | absolute or relative | relative  | No       | absolute-set directly<br/>relative-add/subtract |
+| disable_purchase | Disable purchase    | true or false        | false     | No       | Defaults to false              |
+| disable_use      | Disable use         | true or false        | false     | No       | Defaults to false              |
+| action_text      | Use button text     | any text             | Use       | No       |                                |
+| title_color_string| Title color        | color string         | #66CCFF   | No       | # must be escaped as %23<br/>Empty value restores default |
+| effects          | Use effects         | JSON text            | See [Item Effects Structure](#4-item-effects-structure) | No | Set item usage effects |
+| purchase_limit   | Purchase limits     | JSON text            | See [Purchase Limit Structure](#3-purchase-limit-structure) | No | Limit purchase frequency |
+| category_id      | Category ID         | number >= 0          | 1         | No       | 0 for default category         |
+| order            | Display order       | integer              | 1         | No       | Position in category           |
+| unlist           | Remove from shop    | true or false        | false     | No       | Defaults to false              |
 
-**Notice:**
-
-1. In order for `LifeUp` to search for a shop item, either an `id` or `name` must be provided.
+!> Either id or name parameter must be provided to locate the item to modify
 
 <br/>
 
