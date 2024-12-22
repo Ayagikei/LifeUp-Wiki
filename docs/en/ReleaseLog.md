@@ -8,7 +8,7 @@
 
 | Platform          | Version         | Update Date     |
 | :---------------- |:----------------|:----------------|
-| LifeUp-Android    | v1.97.2         | 2024/12/08      |
+| LifeUp-Android    | v1.97.3         | 2024/12/16      |
 | LifeUp-iOS        | In development… | In development… |
 | LifeUp-Desktop    | v1.1.1          | 2023/08/29      |
 | LifeUp Cloud(SDK) | v1.3.0          | 2023/06/25      |
@@ -18,6 +18,21 @@
 <!-- tabs:start -->
 
 ### **LifeUp-Android**
+
+**v1.97.3 (2024/12/16)**
+
+**✨Features**
+
+1. Allows remembering the last selection of the "Use team description as task notes" switch.
+
+**♻️Optimization**
+
+1. Optimized the performance related to the usage effect of products.
+
+
+**🐛Bug Fixes**
+
+1. Fixed the issue of specific API call failures. When using a specific callback function to call the product API, the unpacking function works normally, but the internal API operation to add items cannot be executed.
 
 **1.97.2 (2024/12/08)**
 
