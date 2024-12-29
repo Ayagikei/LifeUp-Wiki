@@ -156,6 +156,9 @@ http://{host:port}/tasks_categories
 // 所有商品
 http://{host:port}/items
 
+// 查询指定 id 为 1、4 的商品
+http://{host:port}/items?id=1&id=4
+
 // 指定清单${id}里面的商品
 http://{host:port}/items/${id}
 

@@ -226,6 +226,9 @@ http://{host:port}/tasks_categories
 // All items
 http://{host:port}/items
 
+// Query items with specific item id 1 and 4
+http://{host:port}/items?id=1&id=4
+
 // Items in list id 1
 http://{host:port}/items/1
 
