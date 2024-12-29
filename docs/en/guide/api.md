@@ -275,6 +275,8 @@ For details, see the broadcast broadcast parameters below.
 
 ### Basics - JSON Data Structure
 
+?> Requires v1.98.0+
+
 This section introduces the commonly used JSON data structures in the API.
 
 #### 1. Item Reward Structure
@@ -485,6 +487,8 @@ Open box effect:
 
 #### Add a Task
 
+?> Some fields like `pin` requires v1.98.0+
+
 **Method:** add_task
 
 **Description:** Create a task directly
@@ -666,6 +670,8 @@ The method of obtaining the id is to open the "Developer Mode" on the "Labs" pag
 
 ### Edit Task
 
+?> Requires v1.98.0+
+
 **Method:** edit_task
 
 **Description:** Edit content and properties of an existing task
@@ -716,6 +722,8 @@ The method of obtaining the id is to open the "Developer Mode" on the "Labs" pag
 <br/>
 
 ### History Task Operation
+
+?> Requires v1.98.0+
 
 **Method:** history_operation
 
@@ -824,6 +832,8 @@ For example, jump to the details page of the specified task id 53: `lifeup://api
 
 #### Adding Items
 
+?> Some fields like `effects` requires v1.98.0+
+
 **Method name:** add_item
 
 **Description:** Create a shop item with customizable properties including purchase limits and use effects.
@@ -860,6 +870,8 @@ For example, jump to the details page of the specified task id 53: `lifeup://api
 ### Shop
 
 #### Edit Item
+
+?> Requires v1.98.0+
 
 **Method:** item
 
@@ -1170,6 +1182,8 @@ For example, jump to the details page of the specified task id 53: `lifeup://api
 
 ### Tomato Count
 
+?> Requires v1.98.0+
+
 **Method:** tomato
 
 **Description:** Adjust the number of tomatoes (increase, decrease, or set to a specific amount)
@@ -1193,6 +1207,8 @@ For example, jump to the details page of the specified task id 53: `lifeup://api
 <br/>
 
 ### Synthesis
+
+?> Requires v1.98.0+
 
 **Method:** synthesize
 
@@ -1230,6 +1246,8 @@ For example, jump to the details page of the specified task id 53: `lifeup://api
 
 ### Synthesis Formula Management
 
+?> Requires v1.98.0+
+
 **Method:** synthesis_formula
 
 **Description:** Create, modify, or delete synthesis formulas
@@ -1266,6 +1284,8 @@ For example, jump to the details page of the specified task id 53: `lifeup://api
 <br/>
 
 ### Subtask Management
+
+?> Requires v1.98.0+
 
 **Method:** subtask
 
@@ -1308,6 +1328,8 @@ For example, jump to the details page of the specified task id 53: `lifeup://api
 
 ### Category Management
 
+?> Requires v1.98.0+
+
 **Method:** category
 
 **Description:** Add or edit categories (task lists, achievement lists, shop lists, synthesis lists)
@@ -1339,6 +1361,8 @@ For example, jump to the details page of the specified task id 53: `lifeup://api
 
 ### Export Backup
 
+?> Requires v1.98.0+
+
 **Method:** export_backup
 
 **Description:** Create a backup file and return its URI (Content Provider calls only)
@@ -1359,6 +1383,8 @@ For example, jump to the details page of the specified task id 53: `lifeup://api
 <br/>
 
 ### Subtask Operation
+
+?> Requires v1.98.0+
 
 **Method:** subtask_operation
 
