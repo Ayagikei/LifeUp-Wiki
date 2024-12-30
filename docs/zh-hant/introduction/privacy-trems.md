@@ -1,5 +1,7 @@
 # 《人升》隱私宣告和條款
 
+?> 開發者名稱：廣州希露軟體工作室
+
 ?> 隱私政策更新生效日期：2023年03月26日
 
 我們作為人升的運營者，深知個人資訊對你的重要性，我們將按照法律法規的規定，保護你的個人資訊及隱私安全。我們制定本隱私政策並特別提示：希望你在使用人升及相關服務前仔細閱讀並理解本隱私政策，以便作出適當的選擇。
@@ -21,7 +23,7 @@
 1. 日曆讀寫許可權是爲了使用者使用“系統日曆”提醒方式，並且該許可權只會在使用者選擇該提醒方式時申請
 2. 前臺服務許可權是爲了實現桌面小部件的相關功能。
 3. 啟動許可權用於重新整理桌面小部件資料和重置提醒
-4. 活動許可權用於協助應用內統計步數
+4. 活動許可權用於協助應用內統計步數，該許可權會呼叫計步器感測器實現相關功能（TYPE_STEP_DETECTOR, TYPE_STEP_COUNTER）
 5. 應用會在手機重啟時自啟動，以重新設定提醒和重新整理小部件內容
 
 
@@ -139,29 +141,29 @@
 
 9. App 支付寶客戶端 SDK
 
-  第三方名稱：支付寶（中國）網絡技術有限公司
+第三方名稱：支付寶（中國）網絡技術有限公司
 
-  使用目的：支援使用者使用支付寶支付
+使用目的：支援使用者使用支付寶支付
 
-  收集個人資訊型別：設**備標識資訊（包括 IMEI（針對 Android Q 以下版本）/OAID（針對 Android Q 及以上版本））、網路狀態資訊(IP、當前網路型別和名稱)**
+收集個人資訊型別：設**備標識資訊（包括 IMEI（針對 Android Q 以下版本）/OAID（針對 Android Q 及以上版本））、網路狀態資訊(IP、當前網路型別和名稱)**
 
-  官網連結：https://open.alipay.com/platform/home.htm
+官網連結：https://open.alipay.com/platform/home.htm
 
-  隱私政策連結：https://opendocs.alipay.com/open/54/01g6qm
+隱私政策連結：https://opendocs.alipay.com/open/54/01g6qm
 
 <br />
 
 10. 微信 Open SDK
 
-  第三方名稱：深圳市騰訊計算機系統有限公司
+第三方名稱：深圳市騰訊計算機系統有限公司
 
-  使用目的：支援使用者使用微信支付
+使用目的：支援使用者使用微信支付
 
-  收集個人資訊型別：**裝置標識資訊（包括 IMEI（針對 Android Q 以下版本）/OAID（針對 Android Q 及以上版本））、網路狀態資訊(IP、當前網路型別和名稱)**
+收集個人資訊型別：**裝置標識資訊（包括 IMEI（針對 Android Q 以下版本）/OAID（針對 Android Q 及以上版本））、網路狀態資訊(IP、當前網路型別和名稱)**
 
-  官網連結：[https://open.weixin.qq.com](https://open.weixin.qq.com/)
+官網連結：[https://open.weixin.qq.com](https://open.weixin.qq.com/)
 
-  隱私政策連結：[https://weixin.qq.com/cgi-bin/readtemplate?lang=zh_CN&t=weixin_agreement&s=privacy](https://weixin.qq.com/cgi-bin/readtemplate?lang=zh_CN&t=weixin_agreement&s=privacy)
+隱私政策連結：[https://weixin.qq.com/cgi-bin/readtemplate?lang=zh_CN&t=weixin_agreement&s=privacy](https://weixin.qq.com/cgi-bin/readtemplate?lang=zh_CN&t=weixin_agreement&s=privacy)
 
 ## 3. 安全
 
