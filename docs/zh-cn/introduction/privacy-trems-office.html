@@ -1,13 +1,13 @@
 <!doctype html>
 <html>
 <head>
-<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+    <meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
 
-<link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css' /><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color: #ffffff; --text-color: #333333; --select-text-bg-color: #B5D6FC; --select-text-font-color: auto; --monospace: "Lucida Console",Consolas,"Courier",monospace; --title-bar-height: 20px; }
 .mac-os-11 { --title-bar-height: 28px; }
 html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
 h1, h2, h3, h4, h5 { white-space: pre-wrap; }
-body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.428571; overflow-x: hidden; background: inherit; }
 iframe { margin: auto; }
 a.url { word-break: break-all; }
 a:active, a:hover { outline: 0px; }
@@ -27,7 +27,7 @@ body.typora-export { padding-left: 30px; padding-right: 30px; }
 #write li > figure:last-child { margin-bottom: 0.5rem; }
 #write ol, #write ul { position: relative; }
 img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
-button, input, select, textarea { color: inherit; font: inherit; }
+button, input, select, textarea { color: inherit; font-style: inherit; font-variant-caps: inherit; font-weight: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; font-size-adjust: inherit; font-kerning: inherit; font-variant-alternates: inherit; font-variant-ligatures: inherit; font-variant-numeric: inherit; font-variant-east-asian: inherit; font-variant-position: inherit; font-variant-emoji: inherit; font-feature-settings: inherit; font-optical-sizing: inherit; font-variation-settings: inherit; }
 input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
 *, ::after, ::before { box-sizing: border-box; }
 #write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
@@ -54,8 +54,8 @@ thead, tr { break-inside: avoid; break-after: auto; }
 thead { display: table-header-group; }
 table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
 table.md-table td { min-width: 32px; }
-.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
-.CodeMirror-linenumber { user-select: none; }
+.CodeMirror-gutters { border-right-width: 0px; border-right-style: none; border-right-color: currentcolor; background-color: inherit; }
+.CodeMirror-linenumber { -webkit-user-select: none; }
 .CodeMirror { text-align: left; }
 .CodeMirror-placeholder { opacity: 0.3; }
 .CodeMirror pre { padding: 0px 4px; }
@@ -75,7 +75,7 @@ div.hr:focus { cursor: none; }
 svg { break-inside: avoid; }
 .footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
 .footnotes + .footnotes { margin-top: 0px; }
-.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
 li div { padding-top: 0px; }
 blockquote { margin: 1rem 0px; }
 li .mathjax-block, li p { margin: 0.5rem 0px; }
@@ -88,7 +88,7 @@ blockquote > :first-child, li > :first-child { margin-top: 0px; }
 @media print {
   body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
   #write { margin-top: 0px; border-color: transparent !important; padding-top: 0px !important; padding-bottom: 0px !important; }
-  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export * { print-color-adjust: exact; }
   .typora-export #write { break-after: avoid; }
   .typora-export #write::after { height: 0px; }
   .is-mac table { break-inside: avoid; }
@@ -109,7 +109,7 @@ p > .md-image:only-child { display: inline-block; width: 100%; }
 [contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
 .md-task-list-item { position: relative; list-style-type: none; }
 .task-list-item.md-task-list-item { padding-left: 0px; }
-.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: medium; }
 .math { font-size: 1rem; }
 .md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
 .md-toc-content { position: relative; margin-left: 0px; }
@@ -139,14 +139,14 @@ code, pre, samp, tt { font-family: var(--monospace); }
 kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
 .md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
 code { text-align: left; vertical-align: initial; }
-a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+a.md-print-anchor { white-space: pre !important; border-width: medium !important; border-style: none !important; border-color: currentcolor !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
 .os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
 .md-diagram-panel > svg { max-width: 100%; }
 [lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
 [lang="mermaid"] .node text { font-size: 1rem; }
-table tr th { border-bottom: 0px; }
+table tr th { border-bottom-width: 0px; border-bottom-style: none; border-bottom-color: currentcolor; }
 video { max-width: 100%; display: block; margin: 0px auto; }
-iframe { max-width: 100%; width: 100%; border: none; }
+iframe { max-width: 100%; width: 100%; border: medium; }
 .highlight td, .highlight tr { border: 0px; }
 mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
 .md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
@@ -174,7 +174,7 @@ mark .md-meta { color: rgb(0, 0, 0); }
 .outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; overflow-wrap: anywhere; }
 .outline-content ul { margin-top: 0px; margin-bottom: 0px; }
 .outline-content strong { font-weight: 400; }
-.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander { width: 1rem; height: 1.428571rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
 .outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
 .outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
 .outline-expander:hover::before { content: ""; }
@@ -187,14 +187,14 @@ mark .md-meta { color: rgb(0, 0, 0); }
 .outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
 .outline-label:hover { text-decoration: underline; }
 .outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
-.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left-width: 28px; border-left-style: solid; border-left-color: transparent; border-right-width: 28px; border-right-style: solid; border-right-color: transparent; }
 .outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
 .outline-item-open > .outline-item > .outline-expander::before { content: ""; }
 .outline-children { display: none; }
 .info-panel-tab-wrapper { display: none; }
 .outline-item-open > .outline-children { display: block; }
 .typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
-.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right-width: 8px; border-right-style: solid; border-right-color: transparent; }
 .typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
 .typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
 .typora-export-collapse-outline .outline-children { display: none; }
@@ -208,7 +208,7 @@ mjx-container { break-inside: avoid; }
 .md-alert.md-alert-warning { border-left-color: rgb(154, 103, 0); }
 .md-alert.md-alert-tip { border-left-color: rgb(31, 136, 61); }
 .md-alert.md-alert-caution { border-left-color: rgb(207, 34, 46); }
-.md-alert { padding: 0px 1em; margin-bottom: 16px; color: inherit; border-left: 0.25em solid rgb(0, 0, 0); }
+.md-alert { padding: 0px 1em; margin-bottom: 16px; color: inherit; border-left-width: 0.25em; border-left-style: solid; border-left-color: rgb(0, 0, 0); }
 .md-alert-text-note { color: rgb(9, 105, 218); }
 .md-alert-text-important { color: rgb(130, 80, 223); }
 .md-alert-text-warning { color: rgb(154, 103, 0); }
@@ -532,7 +532,7 @@ code {
     opacity: 1;
 }
 
-.md-toc { 
+.md-toc {
     margin-top:20px;
     padding-bottom:20px;
 }
@@ -604,17 +604,17 @@ header, .context-menu, .megamenu-content, footer{
 
 .menu-item-container a.menu-style-btn {
     background-color: #f5f8fa;
-    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0)); 
+    background-image: linear-gradient( 180deg , hsla(0, 0%, 100%, 0.8), hsla(0, 0%, 100%, 0));
 }
 
 
-
+ @media print { @page {margin: 0 0 0 0;} body.typora-export {padding-left: 0; padding-right: 0;} #write {padding:0;}}
 </style><title>privacy-trems-office</title>
 </head>
-<body class='typora-export os-windows'><div class='typora-export-content'>
-<div id='write'  class=''><h1 id='人升隐私声明和条款'><span>《人升》隐私声明和条款</span></h1><blockquote><p><span>隐私政策更新生效日期：2023年03月26日</span></p></blockquote><p><span>“人升”指</span><strong><span>广州希露软件工作室</span></strong><span>（以下简称“我们”）合法拥有并运营的、标注名称为人升（以下简称“人升”）的客户端应用程序。</span>
-<span>我们作为人升的运营者，深知个人信息对你的重要性，我们将按照法律法规的规定，保护你的个人信息及隐私安全。我们制定本隐私政策并特别提示：希望你在使用人升及相关服务前仔细阅读并理解本隐私政策，以便作出适当的选择。</span></p><p><strong><span>有关你个人信息权益的重要条款已用加粗形式提示，请特别关注。</span></strong></p><h2 id='1-信息收集和使用'><span>1. 信息收集和使用</span></h2><ul><li><p><span>您自愿向我们提供的个人信息</span></p></li></ul><p><span>我们不主动收集个人信息（如：邮箱地址等），除非用户自己提供。</span>
-<span>只有用户授权登录之后，</span><strong><span>我们会获取到授权平台所用的部分个人信息（昵称、性别、头像等）。并且用户在提供反馈或注册时所给的个人信息，我们将不会透露给第三方。</span></strong>
-<span>另外，我们不会主动读取任何用户的文件。除非用户选择图片并主动上传。</span></p><ul><li><p><span>我们获取的设备权限</span></p></li></ul><p><span>为向您提供便捷、优质的服务，我们可能会调用您设备上的一些权限。在您使用相应功能时会看到弹窗提醒，询问您是否授权。您可以在客户端或设备的设置功能中选择关闭部分或全部权限。在不同设备中，上述权限的开启和关闭方式可能有所不同，具体请参考设备及系统开发方的说明或指引。</span></p><ol start='' ><li><p><span>日历读写权限是为了用户使用“系统日历”提醒方式，并且该权限只会在用户选择该提醒方式时申请</span></p></li><li><p><span>前台服务权限是为了实现桌面小部件的相关功能。</span></p></li><li><p><span>启动权限用于刷新桌面小部件数据和重置提醒</span></p></li><li><p><span>活动权限用于协助应用内统计步数</span></p></li><li><p><span>应用会在手机重启时自启动，以重新设置提醒和刷新小部件内容</span></p></li></ol><h2 id='2-第三方sdk接入'><span>2. 第三方SDK接入</span></h2><p><span>为了实现《人升》的基础功能（如登录）、性能分析和数据统计，应用接入了部分第三方SDK。我们会对第三方获取信息的软件工具开发包（SDK）进行严格的安全监测，以保护数据安全。</span></p><p><span>为了保障服务的安全性，第三方 SDK 可能会收集您的 </span><strong><span>唯一设备识别符（Android ID、匿名广告ID）、IP地址、访问日期和时间、服务日志信息</span></strong><span>。我们收集您的上述信息是为了保障应用运行安全，如果您不提供上述信息，则我们无法保证您在使用期间的应用运行安全。</span></p><ul><li><p><span>为了实现授权登录服务，应用接入了谷歌授权登录、Facebook授权登录、微博授权登录、QQ授权登录等SDK。我们会获取到这些平台返回的ID、昵称、性别和头像等信息用于登录功能。并且只会在用户自愿授权后才会采集，并且随时可编辑自己的个人资料，并不会存有历史记录。</span></p></li><li><p><span>为了实现应用的稳定性，我们接入了ACRA和华为崩溃管理服务。ACRA收集到崩溃后，会让用户自愿提交崩溃信息，发送到我们的邮箱。华为崩溃管理服务会收集崩溃发生时的代码堆栈信息、设备型号、系统版本等与崩溃排查相关的信息，并且不会与个人信息相关联。</span></p></li><li><p><span>为了实现产品的发展规划和产品决策，应用还接入了华为移动服务（HMS）和性能分析服务，收集一些日常活跃信息、页面访问信息、抽样部分设备的性能分析、网络请求成功率。同样，这些信息也不与具体的个人信息相关联。</span></p></li></ul><p><span>我们将这些第三方SDK的名称、使用目的、官网链接以及收集个人信息类型列明如下：</span></p><br /><ol start='' ><li><p><span>腾讯QQ互联;腾讯开放平台;微信Open;微信开放平台 SDK</span></p></li></ol><p><span>    使用目的：为用户提供QQ三方登录功能</span></p><p><span>    收集个人信息类型：</span><strong><span>设备信息、用户个人信息</span></strong></p><p><span>    官网链接：</span><a href='https://connect.qq.com/' target='_blank' class='url'>https://connect.qq.com/</a></p><p><span>    隐私政策链接：</span><a href='https://wiki.connect.qq.com/QQ' target='_blank' class='url'>https://wiki.connect.qq.com/QQ</a><span>互联SDK隐私保护声明</span></p><br /><ol start='2' ><li><p><span>新浪微博</span></p></li></ol><p><span>    使用目的：为用户提供微博三方登录功能</span></p><p><span>    收集个人信息类型：</span><strong><span>设备信息、用户个人信息</span></strong></p><p><span>    官网链接：</span><a href='https://open.weibo.com' target='_blank' class='url'>https://open.weibo.com</a></p><p><span>    隐私政策链接：</span><a href='https://weibo.com/signup/v5/privacy?spm=a1zaa.8161610.0.0.4f8776217Wu8R1' target='_blank' class='url'>https://weibo.com/signup/v5/privacy?spm=a1zaa.8161610.0.0.4f8776217Wu8R1</a></p><br /><ol start='3' ><li><p><span>Facebook</span></p></li></ol><p><span>    使用目的：为用户提供facebook三方登录功能</span></p><p><span>    收集个人信息类型：</span><strong><span>设备信息、用户个人信息</span></strong></p><p><span>    官网链接：</span><a href='https://developers.facebook.com/' target='_blank' class='url'>https://developers.facebook.com/</a></p><p><span>    隐私政策链接：</span><a href='https://www.facebook.com/privacy/explanation' target='_blank' class='url'>https://www.facebook.com/privacy/explanation</a></p><br /><ol start='4' ><li><p><span>谷歌SDK</span></p></li></ol><p><span>    使用目的：为用户提供谷歌三方登录功能</span></p><p><span>    收集个人信息类型：</span><strong><span>设备信息；网络连通状态信息、用户个人信息</span></strong></p><p><span>    官网链接：</span><a href='https://developers.google.com/identity/sign-in/android/' target='_blank' class='url'>https://developers.google.com/identity/sign-in/android/</a></p><p><span>    隐私政策链接：</span><a href='https://policies.google.com/privacy' target='_blank' class='url'>https://policies.google.com/privacy</a></p><br /><ol start='5' ><li><p><span>Sentry SDK</span></p></li></ol><p><span>    使用目的：用于收集线上用户APP运行状态，用于记录APP网络连通状态，崩溃收集</span></p><p><span>    收集个人信息类型：</span><strong><span>设备信息；网络连通状态信息；</span></strong><span>崩溃堆栈信息</span></p><p><span>    官网链接：</span><a href='https://sentry.io/' target='_blank' class='url'>https://sentry.io/</a></p><p><span>    隐私政策链接：</span><a href='https://sentry.io/privacy/' target='_blank' class='url'>https://sentry.io/privacy/</a></p><br /><ol start='6' ><li><p><span>友盟+SDK</span></p></li></ol><p><span>    使用目的：用于收集线上用户APP运行状态，用于记录APP网络连通状态，崩溃收集</span></p><p><span>    收集个人信息类型：</span><strong><span>设备信息；网络连通状态信息；</span></strong><span>崩溃堆栈信息</span></p><p><span>    官网链接：</span><a href='https://www.umeng.com/' target='_blank' class='url'>https://www.umeng.com/</a></p><p><span>    隐私政策链接：</span><a href='https://sentry.io/privacy/' target='_blank' class='url'>https://sentry.io/privacy/</a></p><br /><ol start='7' ><li><p><span>阿里公共DNS</span></p></li></ol><p><span>    使用目的：使用阿里云公共 DNS 提升用户的网络体验</span></p><p><span>    收集个人信息类型：</span><strong><span>设备信息 (bssid、MAC、ssid) 地址、；网络连通状态信息(WIFI信息）</span></strong></p><p><span>    官网链接：</span><a href='https://www.alidns.com/' target='_blank' class='url'>https://www.alidns.com/</a></p><p><span>    隐私政策链接：</span><a href='https://terms.aliyun.com/legal-agreement/terms/suit_bu1_ali_cloud/suit_bu1_ali_cloud202108111133_15842.html' target='_blank' class='url'>https://terms.aliyun.com/legal-agreement/terms/suit_bu1_ali_cloud/suit_bu1_ali_cloud202108111133_15842.html</a></p><br /><ol start='8' ><li><p><span>七牛 SDK</span></p></li></ol><p><span>    使用目的：用于实现用户上传图片文件</span></p><p><span>    收集个人信息类型：</span><strong><span>用户自主选择要上传的图片文件</span></strong></p><p><span>    官网链接：</span><a href='https://www.qiniu.com/' target='_blank' class='url'>https://www.qiniu.com/</a></p><p><span>    隐私政策链接：</span><a href='https://developer.qiniu.com/pili/8027/sdk-privacy-policy' target='_blank' class='url'>https://developer.qiniu.com/pili/8027/sdk-privacy-policy</a></p><br /><ol start='9' ><li><p><span>App 支付宝客户端 SDK</span></p></li></ol><p><span>  第三方名称：支付宝（中国）网络技术有限公司</span></p><p><span>  使用目的：支持用户使用支付宝支付</span></p><p><span>  收集个人信息类型：设</span><strong><span>备标识信息（包括 IMEI（针对 Android Q 以下版本）/OAID（针对 Android Q 及以上版本））、网络状态信息(IP、当前网络类型和名称)</span></strong></p><p><span>  官网链接：</span><a href='https://open.alipay.com/platform/home.htm' target='_blank' class='url'>https://open.alipay.com/platform/home.htm</a></p><p><span>  隐私政策链接：</span><a href='https://opendocs.alipay.com/open/54/01g6qm' target='_blank' class='url'>https://opendocs.alipay.com/open/54/01g6qm</a></p><br /><ol start='10' ><li><p><span>微信 Open SDK</span></p></li></ol><p><span>  第三方名称：深圳市腾讯计算机系统有限公司</span></p><p><span>  使用目的：支持用户使用微信支付</span></p><p><span>  收集个人信息类型：</span><strong><span>设备标识信息（包括 IMEI（针对 Android Q 以下版本）/OAID（针对 Android Q 及以上版本））、网络状态信息(IP、当前网络类型和名称)</span></strong></p><p><span>  官网链接：</span><a href='https://open.weixin.qq.com/'><span>https://open.weixin.qq.com</span></a></p><p><span>  隐私政策链接：</span><a href='https://weixin.qq.com/cgi-bin/readtemplate?lang=zh_CN&amp;t=weixin_agreement&amp;s=privacy'><span>https://weixin.qq.com/cgi-bin/readtemplate?lang=zh_CN&amp;t=weixin_agreement&amp;s=privacy</span></a></p><h2 id='3-安全'><span>3. 安全</span></h2><p><span>我们非常重视您向我们提供您的个人信息，因此我们正在努力使用商业上可接受的方式来保护您的个人信息。但请记住，没有通过互联网传输的方法或电子存储方法是100％安全可靠的，我们无法保证其绝对的安全性。</span></p><h2 id='4-您所享有的数据主体权利'><span>4. 您所享有的数据主体权利</span></h2><h3 id='41-访问及更正你的个人信息'><span>4.1 访问及更正你的个人信息</span></h3><p><span>你可以随时在编辑自己的个人信息，如昵称、头像等。</span></p><h3 id='42-删除你的个人信息'><span>4.2 删除你的个人信息</span></h3><p><span>你有权随时撤销隐私协议，并且可以在应用内自助删除服务器数据和本地数据，或者是撤销权限。</span></p><h2 id='5-同意'><span>5. 同意</span></h2><p><span>通过使用这个应用程序，您同意本隐私政策的条款并同意你将为你的数据记录完全负责。万一有数据记录遗失，我们将不负责。我们有权随时修改并补充声明和条款。我们会尽量在声明和条款变更后，提醒用户更改内容。</span></p><h2 id='6-联系我们'><span>6. 联系我们</span></h2><p><span>如果您对我们的隐私政策有任何问题或建议，请随时与我们联系。</span></p><p><span>公司名称：广州希露软件工作室</span></p><p><span>注册地址（常用办公地址）：广州市天河区中山大道西6、8号天河购物中心第13层自编1310-G10房</span></p><p><span>联系邮箱: ayagikei@lifeupapp.fun</span></p></div></div>
+<body class='typora-export'><div class='typora-export-content'>
+    <div id='write'  class=''><h1 id='人升隐私声明和条款'><span>《人升》隐私声明和条款</span></h1><p><span>&gt; 开发者名称：广州希露软件工作室</span></p><p><span>&gt; 隐私政策更新生效日期：2023年03月26日</span></p><p><span>“人升”指</span><strong><span>广州希露软件工作室</span></strong><span>（以下简称“我们”）合法拥有并运营的、标注名称为人升（以下简称“人升”）的客户端应用程序。</span>
+        <span>我们作为人升的运营者，深知个人信息对你的重要性，我们将按照法律法规的规定，保护你的个人信息及隐私安全。我们制定本隐私政策并特别提示：希望你在使用人升及相关服务前仔细阅读并理解本隐私政策，以便作出适当的选择。</span></p><p><strong><span>有关你个人信息权益的重要条款已用加粗形式提示，请特别关注。</span></strong></p><h2 id='1-信息收集和使用'><span>1. 信息收集和使用</span></h2><ul><li><p><span>您自愿向我们提供的个人信息</span></p></li></ul><p><span>我们不主动收集个人信息（如：邮箱地址等），除非用户自己提供。</span>
+        <span>只有用户授权登录之后，</span><strong><span>我们会获取到授权平台所用的部分个人信息（昵称、性别、头像等）。并且用户在提供反馈或注册时所给的个人信息，我们将不会透露给第三方。</span></strong>
+        <span>另外，我们不会主动读取任何用户的文件。除非用户选择图片并主动上传。</span></p><ul><li><p><span>我们获取的设备权限</span></p></li></ul><p><span>为向您提供便捷、优质的服务，我们可能会调用您设备上的一些权限。在您使用相应功能时会看到弹窗提醒，询问您是否授权。您可以在客户端或设备的设置功能中选择关闭部分或全部权限。在不同设备中，上述权限的开启和关闭方式可能有所不同，具体请参考设备及系统开发方的说明或指引。</span></p><ol start='' ><li><p><span>日历读写权限是为了用户使用“系统日历”提醒方式，并且该权限只会在用户选择该提醒方式时申请</span></p></li><li><p><span>前台服务权限是为了实现桌面小部件的相关功能。</span></p></li><li><p><span>启动权限用于刷新桌面小部件数据和重置提醒</span></p></li><li><p><span>活动权限用于协助应用内统计步数，该权限会调用计步器传感器实现相关功能（TYPE_STEP_DETECTOR, TYPE_STEP_COUNTER）</span></p></li><li><p><span>应用会在手机重启时自启动，以重新设置提醒和刷新小部件内容</span></p></li></ol><h2 id='2-第三方sdk接入'><span>2. 第三方SDK接入</span></h2><p><span>为了实现《人升》的基础功能（如登录）、性能分析和数据统计，应用接入了部分第三方SDK。我们会对第三方获取信息的软件工具开发包（SDK）进行严格的安全监测，以保护数据安全。</span></p><p><span>为了保障服务的安全性，第三方 SDK 可能会收集您的 </span><strong><span>唯一设备识别符（Android ID、匿名广告ID）、IP地址、访问日期和时间、服务日志信息</span></strong><span>。我们收集您的上述信息是为了保障应用运行安全，如果您不提供上述信息，则我们无法保证您在使用期间的应用运行安全。</span></p><ul><li><p><span>为了实现授权登录服务，应用接入了谷歌授权登录、Facebook授权登录、微博授权登录、QQ授权登录等SDK。我们会获取到这些平台返回的ID、昵称、性别和头像等信息用于登录功能。并且只会在用户自愿授权后才会采集，并且随时可编辑自己的个人资料，并不会存有历史记录。</span></p></li><li><p><span>为了实现应用的稳定性，我们接入了ACRA和华为崩溃管理服务。ACRA收集到崩溃后，会让用户自愿提交崩溃信息，发送到我们的邮箱。华为崩溃管理服务会收集崩溃发生时的代码堆栈信息、设备型号、系统版本等与崩溃排查相关的信息，并且不会与个人信息相关联。</span></p></li><li><p><span>为了实现产品的发展规划和产品决策，应用还接入了华为移动服务（HMS）和性能分析服务，收集一些日常活跃信息、页面访问信息、抽样部分设备的性能分析、网络请求成功率。同样，这些信息也不与具体的个人信息相关联。</span></p></li></ul><p><span>我们将这些第三方SDK的名称、使用目的、官网链接以及收集个人信息类型列明如下：</span></p><br /><ol start='' ><li><p><span>腾讯QQ互联;腾讯开放平台;微信Open;微信开放平台 SDK</span></p></li></ol><p><span>    使用目的：为用户提供QQ三方登录功能</span></p><p><span>    收集个人信息类型：</span><strong><span>设备信息、用户个人信息</span></strong></p><p><span>    官网链接：</span><a href='https://connect.qq.com/' target='_blank' class='url'>https://connect.qq.com/</a></p><p><span>    隐私政策链接：</span><a href='https://wiki.connect.qq.com/QQ' target='_blank' class='url'>https://wiki.connect.qq.com/QQ</a><span>互联SDK隐私保护声明</span></p><br /><ol start='2' ><li><p><span>新浪微博</span></p></li></ol><p><span>    使用目的：为用户提供微博三方登录功能</span></p><p><span>    收集个人信息类型：</span><strong><span>设备信息、用户个人信息</span></strong></p><p><span>    官网链接：</span><a href='https://open.weibo.com' target='_blank' class='url'>https://open.weibo.com</a></p><p><span>    隐私政策链接：</span><a href='https://weibo.com/signup/v5/privacy?spm=a1zaa.8161610.0.0.4f8776217Wu8R1' target='_blank' class='url'>https://weibo.com/signup/v5/privacy?spm=a1zaa.8161610.0.0.4f8776217Wu8R1</a></p><br /><ol start='3' ><li><p><span>Facebook</span></p></li></ol><p><span>    使用目的：为用户提供facebook三方登录功能</span></p><p><span>    收集个人信息类型：</span><strong><span>设备信息、用户个人信息</span></strong></p><p><span>    官网链接：</span><a href='https://developers.facebook.com/' target='_blank' class='url'>https://developers.facebook.com/</a></p><p><span>    隐私政策链接：</span><a href='https://www.facebook.com/privacy/explanation' target='_blank' class='url'>https://www.facebook.com/privacy/explanation</a></p><br /><ol start='4' ><li><p><span>谷歌SDK</span></p></li></ol><p><span>    使用目的：为用户提供谷歌三方登录功能</span></p><p><span>    收集个人信息类型：</span><strong><span>设备信息；网络连通状态信息、用户个人信息</span></strong></p><p><span>    官网链接：</span><a href='https://developers.google.com/identity/sign-in/android/' target='_blank' class='url'>https://developers.google.com/identity/sign-in/android/</a></p><p><span>    隐私政策链接：</span><a href='https://policies.google.com/privacy' target='_blank' class='url'>https://policies.google.com/privacy</a></p><br /><ol start='5' ><li><p><span>Sentry SDK</span></p></li></ol><p><span>    使用目的：用于收集线上用户APP运行状态，用于记录APP网络连通状态，崩溃收集</span></p><p><span>    收集个人信息类型：</span><strong><span>设备信息；网络连通状态信息；</span></strong><span>崩溃堆栈信息</span></p><p><span>    官网链接：</span><a href='https://sentry.io/' target='_blank' class='url'>https://sentry.io/</a></p><p><span>    隐私政策链接：</span><a href='https://sentry.io/privacy/' target='_blank' class='url'>https://sentry.io/privacy/</a></p><br /><ol start='6' ><li><p><span>友盟+SDK</span></p></li></ol><p><span>    使用目的：用于收集线上用户APP运行状态，用于记录APP网络连通状态，崩溃收集</span></p><p><span>    收集个人信息类型：</span><strong><span>设备信息；网络连通状态信息；</span></strong><span>崩溃堆栈信息</span></p><p><span>    官网链接：</span><a href='https://www.umeng.com/' target='_blank' class='url'>https://www.umeng.com/</a></p><p><span>    隐私政策链接：</span><a href='https://sentry.io/privacy/' target='_blank' class='url'>https://sentry.io/privacy/</a></p><br /><ol start='7' ><li><p><span>阿里公共DNS</span></p></li></ol><p><span>    使用目的：使用阿里云公共 DNS 提升用户的网络体验</span></p><p><span>    收集个人信息类型：</span><strong><span>设备信息 (bssid、MAC、ssid) 地址、；网络连通状态信息(WIFI信息）</span></strong></p><p><span>    官网链接：</span><a href='https://www.alidns.com/' target='_blank' class='url'>https://www.alidns.com/</a></p><p><span>    隐私政策链接：</span><a href='https://terms.aliyun.com/legal-agreement/terms/suit_bu1_ali_cloud/suit_bu1_ali_cloud202108111133_15842.html' target='_blank' class='url'>https://terms.aliyun.com/legal-agreement/terms/suit_bu1_ali_cloud/suit_bu1_ali_cloud202108111133_15842.html</a></p><br /><ol start='8' ><li><p><span>七牛 SDK</span></p></li></ol><p><span>    使用目的：用于实现用户上传图片文件</span></p><p><span>    收集个人信息类型：</span><strong><span>用户自主选择要上传的图片文件</span></strong></p><p><span>    官网链接：</span><a href='https://www.qiniu.com/' target='_blank' class='url'>https://www.qiniu.com/</a></p><p><span>    隐私政策链接：</span><a href='https://developer.qiniu.com/pili/8027/sdk-privacy-policy' target='_blank' class='url'>https://developer.qiniu.com/pili/8027/sdk-privacy-policy</a></p><br /><ol start='9' ><li><p><span>App 支付宝客户端 SDK</span></p></li></ol><p><span>  第三方名称：支付宝（中国）网络技术有限公司</span></p><p><span>  使用目的：支持用户使用支付宝支付</span></p><p><span>  收集个人信息类型：设</span><strong><span>备标识信息（包括 IMEI（针对 Android Q 以下版本）/OAID（针对 Android Q 及以上版本））、网络状态信息(IP、当前网络类型和名称)</span></strong></p><p><span>  官网链接：</span><a href='https://open.alipay.com/platform/home.htm' target='_blank' class='url'>https://open.alipay.com/platform/home.htm</a></p><p><span>  隐私政策链接：</span><a href='https://opendocs.alipay.com/open/54/01g6qm' target='_blank' class='url'>https://opendocs.alipay.com/open/54/01g6qm</a></p><br /><ol start='10' ><li><p><span>微信 Open SDK</span></p></li></ol><p><span>  第三方名称：深圳市腾讯计算机系统有限公司</span></p><p><span>  使用目的：支持用户使用微信支付</span></p><p><span>  收集个人信息类型：</span><strong><span>设备标识信息（包括 IMEI（针对 Android Q 以下版本）/OAID（针对 Android Q 及以上版本））、网络状态信息(IP、当前网络类型和名称)</span></strong></p><p><span>  官网链接：</span><a href='https://open.weixin.qq.com/'><span>https://open.weixin.qq.com</span></a></p><p><span>  隐私政策链接：</span><a href='https://weixin.qq.com/cgi-bin/readtemplate?lang=zh_CN&amp;t=weixin_agreement&amp;s=privacy'><span>https://weixin.qq.com/cgi-bin/readtemplate?lang=zh_CN&amp;t=weixin_agreement&amp;s=privacy</span></a></p><h2 id='3-安全'><span>3. 安全</span></h2><p><span>我们非常重视您向我们提供您的个人信息，因此我们正在努力使用商业上可接受的方式来保护您的个人信息。但请记住，没有通过互联网传输的方法或电子存储方法是100％安全可靠的，我们无法保证其绝对的安全性。</span></p><h2 id='4-您所享有的数据主体权利'><span>4. 您所享有的数据主体权利</span></h2><h3 id='41-访问及更正你的个人信息'><span>4.1 访问及更正你的个人信息</span></h3><p><span>你可以随时在编辑自己的个人信息，如昵称、头像等。</span></p><h3 id='42-删除你的个人信息'><span>4.2 删除你的个人信息</span></h3><p><span>你有权随时撤销隐私协议，并且可以在应用内自助删除服务器数据和本地数据，或者是撤销权限。</span></p><h2 id='5-同意'><span>5. 同意</span></h2><p><span>通过使用这个应用程序，您同意本隐私政策的条款并同意你将为你的数据记录完全负责。万一有数据记录遗失，我们将不负责。我们有权随时修改并补充声明和条款。我们会尽量在声明和条款变更后，提醒用户更改内容。</span></p><h2 id='6-联系我们'><span>6. 联系我们</span></h2><p><span>如果您对我们的隐私政策有任何问题或建议，请随时与我们联系。</span></p><p><span>公司名称：广州希露软件工作室</span></p><p><span>注册地址（常用办公地址）：广州市天河区中山大道西6、8号天河购物中心第13层自编1310-G10房</span></p><p><span>联系邮箱: ayagikei@lifeupapp.fun</span></p></div></div>
 </body>
 </html>

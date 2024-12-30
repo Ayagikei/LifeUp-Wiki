@@ -1,5 +1,7 @@
 # 《人升》隐私声明和条款
 
+?> 开发者名称：广州希露软件工作室
+
 ?> 隐私政策更新生效日期：2023年03月26日
 
 “人升”指**广州希露软件工作室**（以下简称“我们”）合法拥有并运营的、标注名称为人升（以下简称“人升”）的客户端应用程序。
@@ -22,7 +24,7 @@
 1. 日历读写权限是为了用户使用“系统日历”提醒方式，并且该权限只会在用户选择该提醒方式时申请
 2. 前台服务权限是为了实现桌面小部件的相关功能。
 3. 启动权限用于刷新桌面小部件数据和重置提醒
-4. 活动权限用于协助应用内统计步数
+4. 活动权限用于协助应用内统计步数，该权限会调用计步器传感器实现相关功能（TYPE_STEP_DETECTOR, TYPE_STEP_COUNTER）
 5. 应用会在手机重启时自启动，以重新设置提醒和刷新小部件内容
 
 
@@ -138,29 +140,29 @@
 
 9. App 支付宝客户端 SDK
 
-  第三方名称：支付宝（中国）网络技术有限公司
+第三方名称：支付宝（中国）网络技术有限公司
 
-  使用目的：支持用户使用支付宝支付
+使用目的：支持用户使用支付宝支付
 
-  收集个人信息类型：设**备标识信息（包括 IMEI（针对 Android Q 以下版本）/OAID（针对 Android Q 及以上版本））、网络状态信息(IP、当前网络类型和名称)**
+收集个人信息类型：设**备标识信息（包括 IMEI（针对 Android Q 以下版本）/OAID（针对 Android Q 及以上版本））、网络状态信息(IP、当前网络类型和名称)**
 
-  官网链接：https://open.alipay.com/platform/home.htm
+官网链接：https://open.alipay.com/platform/home.htm
 
-  隐私政策链接：https://opendocs.alipay.com/open/54/01g6qm
+隐私政策链接：https://opendocs.alipay.com/open/54/01g6qm
 
 <br />
 
 10. 微信 Open SDK
 
-  第三方名称：深圳市腾讯计算机系统有限公司
+第三方名称：深圳市腾讯计算机系统有限公司
 
-  使用目的：支持用户使用微信支付
+使用目的：支持用户使用微信支付
 
-  收集个人信息类型：**设备标识信息（包括 IMEI（针对 Android Q 以下版本）/OAID（针对 Android Q 及以上版本））、网络状态信息(IP、当前网络类型和名称)**
+收集个人信息类型：**设备标识信息（包括 IMEI（针对 Android Q 以下版本）/OAID（针对 Android Q 及以上版本））、网络状态信息(IP、当前网络类型和名称)**
 
-  官网链接：[https://open.weixin.qq.com](https://open.weixin.qq.com/)
+官网链接：[https://open.weixin.qq.com](https://open.weixin.qq.com/)
 
-  隐私政策链接：[https://weixin.qq.com/cgi-bin/readtemplate?lang=zh_CN&t=weixin_agreement&s=privacy](https://weixin.qq.com/cgi-bin/readtemplate?lang=zh_CN&t=weixin_agreement&s=privacy)
+隐私政策链接：[https://weixin.qq.com/cgi-bin/readtemplate?lang=zh_CN&t=weixin_agreement&s=privacy](https://weixin.qq.com/cgi-bin/readtemplate?lang=zh_CN&t=weixin_agreement&s=privacy)
 
 ## 3. 安全
 
