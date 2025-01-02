@@ -107,11 +107,11 @@ http://{host:port}/api/contentprovider
 **⚠Note:**
 
 1. You need version v1.91 of  LifeUp and the latest version of "LifeUp Cloud".
-2. You need to apply for "Read LifeUp  Data" permission in "LifeUp Cloud" first.
+2. You need to apply for "Read LifeUp Data" permission in "LifeUp Cloud" first.
 
 Function:
 
-> Query the complete data in "Ren Sheng", such as task list, item list.
+> Query the complete data in "LifeUp", such as task list, item list.
 
 Request URL:
 
@@ -164,6 +164,26 @@ http://{host:port}/achievement_categories
 http://{host:port}/feelings?offset=${offset}&limit=${limit}
 ```
 
+**Synthesis Categories**
+
+```
+// All synthesis categories
+http://{host:port}/synthesis_categories
+
+// Synthesis categories in the specified list ${id}
+http://{host:port}/synthesis_categories/${id}
+```
+
+**Synthesis Recipes**
+
+```
+// All synthesis recipes
+http://{host:port}/synthesis
+
+// Synthesis recipes in the specified category ${id}
+http://{host:port}/synthesis/${id}
+```
+
 **Attributes**
 
 ```
@@ -180,6 +200,7 @@ http://{host:port}/skills
 | id     | Corresponding data ID | Query | Number     | Yes      | -                                           |
 | offset | Query offset          | Query | Number     | No       | Currently required only for some interfaces |
 | limit  | Limit number          | Query | Number     | No       | Currently required only for some interfaces |
+| filterGid | Filter for repeating task history            | Query | Number     | No       | Optional parameter for history query        |
 
 **Request example:**
 
@@ -204,6 +225,9 @@ http://{host:port}/tasks_categories
 ```
 // All items
 http://{host:port}/items
+
+// Query items with specific item id 1 and 4
+http://{host:port}/items?id=1&id=4
 
 // Items in list id 1
 http://{host:port}/items/1
@@ -237,6 +261,27 @@ http://{host:port}/feelings?offset=0&limit=100
 ```
 // All attributes
 http://{host:port}/skills
+```
+
+
+**Synthesis Categories**
+
+```
+// All synthesis categories
+http://{host:port}/synthesis_categories
+
+// Synthesis categories in list 1
+http://{host:port}/synthesis_categories/1
+```
+
+**Synthesis Recipes**
+
+```
+// All synthesis recipes
+http://{host:port}/synthesis
+
+// Synthesis recipes in category 1
+http://{host:port}/synthesis/1
 ```
 
 <br/>

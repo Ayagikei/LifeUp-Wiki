@@ -273,6 +273,131 @@ For details, see the broadcast broadcast parameters below.
 
 <br/>
 
+### Basics - JSON Data Structure
+
+?> Requires v1.98.0+
+
+This section introduces the commonly used JSON data structures in the API.
+
+#### 1. Item Reward Structure
+
+A JSON array specifying item rewards, each item containing an ID and quantity.
+
+```json
+[
+    {
+        "item_id": 1,    // Item ID
+        "amount": 2      // Quantity
+    },
+    {
+        "item_id": 2,
+        "amount": 3
+    }
+]
+```
+
+#### 2. Achievement Unlock Condition Structure
+
+```json
+[
+    {
+        "type": 7,           // Condition type
+        "related_id": null,  // Related ID (some types must provide)
+        "target": 1000000    // Target value
+    }
+]
+```
+
+#### 3. Purchase Limit Structure
+
+```json
+[
+    {
+        "type": "daily",     // Limit type: daily (daily), total (total)
+        "value": 5           // Limit quantity
+    }
+]
+```
+
+#### 4. Item Effect Structure
+
+```json
+[
+    {
+        "type": 2,           // Effect type
+        "info": {            // Effect parameters, different for different types
+            "min": 100,      // Minimum value (used for gold rewards, etc.)
+            "max": 200       // Maximum value (used for gold rewards, etc.)
+        }
+    }
+]
+```
+
+#### Effect Type Description
+
+| Type Code | Meaning | Parameter Description |
+| ------- | ---- | ------- |
+| 0 | No special effect | No parameters |
+| 1 | Not usable | No parameters |
+| 2 | Increase gold | min: Minimum gold amount<br/>max: Maximum gold amount (optional, if not filled, it equals min) |
+| 3 | Decrease gold | min: Minimum gold amount<br/>max: Maximum gold amount (optional, if not filled, it equals min) |
+| 4 | Increase experience | ids: Skill ID array<br/>value: Experience value<br/>using_limit: Whether to use limit (optional, default false) |
+| 5 | Decrease experience | ids: Skill ID array<br/>value: Experience value<br/>using_limit: Whether to use limit (optional, default false) |
+| 6 | Simple synthesis | require_number: Required quantity<br/>item_id: Item ID |
+| 7 | Open box | items: Item array, each item contains:<br/>- item_id: Item ID<br/>- amount: Quantity<br/>- probability: Probability<br/>- is_fixed_reward: Whether it is a fixed reward |
+| 8 | Countdown | seconds: Countdown seconds |
+| 9 | Web link | url: Link address<br/>use_web_view: Whether to use the built-in browser (optional, default false) |
+
+**Effect Example:**
+
+Increase random gold:
+```json
+{
+    "type": 2,
+    "info": {
+        "min": 100,
+        "max": 200
+    }
+}
+```
+
+Increase experience points:
+```json
+{
+    "type": 4,
+    "info": {
+        "ids": [1, 2],
+        "value": 50,
+        "using_limit": false
+    }
+}
+```
+
+Open box effect:
+```json
+{
+    "type": 7,
+    "info": {
+        "items": [
+            {
+                "item_id": 1,
+                "amount": 1,
+                "probability": 50,
+                "is_fixed_reward": false
+            },
+            {
+                "item_id": 2,
+                "amount": 1,
+                "probability": 50,
+                "is_fixed_reward": true
+            }
+        ]
+    }
+}
+```
+
+<br/>
+
 ### Popup message
 
 **Method name:** toast
@@ -357,58 +482,56 @@ For details, see the broadcast broadcast parameters below.
 
 <br/>
 
-### Task
+
+### Tasks
 
 #### Add a Task
 
-**Method name:** add_task
+?> Some fields like `pin` requires v1.98.0+
 
-**Description:** Create tasks automatically
+**Method:** add_task
 
-**Example 1:**
+**Description:** Create a task directly
 
-<a href="lifeup://api/add_task?todo=This is an automatically added task&notes=notes&coin=10&coin_var=1&exp=2048&skills=1&skills=2&skills=3&category=0&item_name=treasure">lifeup://api/add_task?todo=This is an automatically added task&notes=notes&coin=10&coin_var=1&exp=2048&skills=1&skills=2&skills=3&category=0&item_name=treasure</a>
+**Example:**
+[lifeup://api/add_task?todo=This is an auto-added task&notes=notes&coin=10&coin_var=1&exp=2048&skills=1&skills=2&skills=3&category=0&item_name=coin](lifeup://api/add_task?todo=This is an auto-added task&notes=notes&coin=10&coin_var=1&exp=2048&skills=1&skills=2&skills=3&category=0&item_name=coin)
 
-**Explanation 1:** Add a task to the default list (id is 0) with the content "This is an automatically added task", the notes are "notes", the coin reward is random from 10 to 11, the experience value reward is 2048, the selected The skill ids are 1, 2, and 3 (generally corresponding to the first 3 built-in attributes). The shop item reward is a fuzzy search for a "treasure" shop item.
+| Parameter         | Meaning             | Values                | Example   | Required | Notes                           |
+| ---------------- | ------------------- | -------------------- | --------- | -------- | ------------------------------- |
+| todo             | Task content        | any text             | Write diary | Yes     |                                |
+| notes            | Notes               | any text             | Notes      | No       | Defaults to empty               |
+| coin             | Coin reward         | [0, 999999]         | 10         | No       | Defaults to 0                   |
+| coin_var         | Coin reward variance| number >= 0          | 1          | No       | Defaults to 0; if >0, random reward between [coin, coin+coin_var] |
+| exp              | Experience reward   | [0, 99999]          | 100        | No       | Defaults to 0                   |
+| skills           | Skill IDs           | array of numbers > 0 | 1          | No       | Supports arrays (e.g., &skills=1&skills=2) |
+| category         | List ID             | number >= 0          | 0          | No       | Defaults to 0 (default list); smart lists not allowed |
+| frequency        | Repeat frequency    | integer              | 0          | No       | Defaults to 0 (once)<br/>0 - Once<br/>1 - Daily<br/>N (N>1) - Every N days<br/>-1 - Unlimited<br/>-4 - Monthly<br/>-5 - Yearly |
+| importance       | Importance level    | [1, 4]              | 1          | No       | Defaults to 1                   |
+| difficulty       | Difficulty level    | [1, 4]              | 1          | No       | Defaults to 1                   |
+| deadline         | Due time            | timestamp (milliseconds) | 1640995200000 | No |                               |
+| color            | Tag color           | color string         | #66CCFF    | No       | # must be escaped as %23        |
+| background_url   | Background image URL| web URL             | http://example.com/bg.jpg | No | Must be accessible web image |
+| background_alpha | Background opacity  | float between [0, 1] | 0.5        | No       | Defaults to 1.0                |
+| start_time       | Start time          | timestamp (milliseconds) | 1640995200000 | No | Task start time              |
+| auto_use_item    | Auto use reward items| true or false      | false      | No       | Automatically use rewards on completion |
+| remind_time      | Reminder time       | timestamp (milliseconds) | 1640995200000 | No | Task reminder time          |
+| pin              | Pin task            | true or false       | false      | No       | Pin task to top                |
+| frozen           | Freeze status       | true or false       | false      | No       | Defaults to false              |
+| freeze_until     | Freeze until        | timestamp (milliseconds) | 1640995200000 | No | Only effective when frozen is true |
+| coin_penalty_factor | Coin penalty factor| float between [0, 100) | 0.5    | No       |                               |
+| exp_penalty_factor | Experience penalty factor| float between [0, 100) | 0.5 | No    |                               |
+| write_feelings   | Enable feelings     | true or false       | false      | No       | Defaults to false              |
+| item_id          | Item ID             | number > 0          | 1          | No*      | Either item_id or item_name required |
+| item_name        | Item name           | any text            | Treasure   | No*      | Either item_id or item_name required |
+| item_amount      | Item quantity       | [1, 99]             | 1          | No       | Defaults to 1                  |
+| items            | Item rewards        | JSON text           | See [Item Rewards Structure](#1-item-rewards-structure) | No | Set multiple item rewards |
 
-**Example 2:**
+**Response:**
 
-[lifeup://api/add_task?todo=Task due tomorrow&deadline=[$time|today|86400000]](lifeup://api/add_task?todo=Task due tomorrow&deadline=[$time|today|86400000])
-
-**Explanation 2:** Dynamically add a task due tomorrow using a time placeholder.
-
-Note: This feature requires LifeUp version 1.93.0-beta01 (502) or higher.
-
-| Parameter      | Meaning                         | Type                                        | Example                        | Required | Notes |
-| -------------- | ------------------------------- | ------------------------------------------- | ------------------------------ | -------- | ----- |
-| todo           | task content                    | any text                                    | Write journey                  | yes      |       |
-| notes          | notes                           | any text                                    | Notes                          | no       |       |
-| coin           | coin reward amount              | a number greater than 0                     | 10                             | no       | The maximum value is 999999 |
-| coin_var       | coin reward amount offset value | a number greater than 0                     | 1                              | no       | If the value is greater than 0, when completing the task, gold coins will be randomly calculated in the interval [coin, coin+coin_var] |
-| exp            | experience reward               | a number greater than 0                     | 1                              | no       | maximum value is 99999 |
-| skills         | attribute (skill) id            | array of numbers greater than 0             | 1                              | no       | Support array (ie &skills=1&skills=2&skills=3)<br/>For the acquisition method, please refer to the above "Basic Knowledge - Person Level Data ID" |
-| category       | list id                         | a number greater than or equal to 0         | 0                              | no       | 0 or not passed represents the default list, and cannot select a smart list<br/>For the acquisition method, please refer to the above "Basic Knowledge - Person Level Data ID" |
-| frequency      | repetition frequency            | number, see remarks for the range of values ​​| 0                              | no       | <br/> -1 - Unlimited<br/> -3 - Ebbinghaus<br/> -4 - Monthly<br/> -5 - Yearly |
-| importance     | importance level                | number from 1 to 4                          | 1                              | no       | default is 1 |
-| difficulty     | difficulty level                | number from 1 to 4                          | 2                              | no       | default is 1 |
-| item_id        | id of the rewarded item         | a number greater than 0                     | 1                              | no       |       |
-| item_name      | the name of the reward item     | any text                                    | treasure                       | no       | fuzzy search item name |
-| item_amount    | amount of reward                | Number from 1 to 99                         | 1                              | no       | default is 1 |
-| deadline       | deadline time                   | timestamp (milliseconds)                    | 0                              | no       | Consider using an external tool to calculate the timestamp and provide it.<br/>Alternatively, you can refer to the time placeholders in the [variable placeholders] in the following text.|
-| color          | the color of the task tag       | color text                                  | \#66CCFF                       | no       | available in v1.91+<br/>Note that the # character needs to be escaped when used. <br/>For example, when the color value of the example is actually used, it should be `color=%2366CCFF`|
-| background_url | background picture URL          | URL text                                    | http://www.aaabbbccc.com/1.jpg | no       |       |
-| frozen                | Whether frozen           | true or false                  | false   | No       | Default is false                                                   |
-| freeze_until          | Timestamp until frozen   | Timestamp (milliseconds)       | 0       | No       | Only effective when `frozen` is true; can be omitted for indefinite freezing |
-| coin_penalty_factor   | Coin penalty factor      | Any floating point number between [0, 100) | 0.5   | No       |                                                                    |
-| exp_penalty_factor    | Experience penalty factor| Any floating point number between [0, 100) | 0.5   | No       |                                                                    |
-| write_feelings        | Enable feelings          | true or false                  | false   | No       |                                                                    |
-
-**Return Value:**
-
-| Parameter | Meaning                   | Value  | Example | Required | Notes |
-| --------- | ------------------------- | ------ | ------- | -------- | ----- |
-| task_id   | new task id               | number | 1000    | yes      |       |
-| task_gid  | newly added task group id | number | 1000    | yes      |       |
+| Field    | Type    | Description      | Example | Notes                    |
+| -------- | ------- | ---------------- | ------- | ------------------------ |
+| task_id  | Number  | Task ID          | 1000    |                          |
+| task_gid | Number  | Task group ID    | 1000    |                          |
 
 <br/>
 
@@ -545,6 +668,88 @@ The method of obtaining the id is to open the "Developer Mode" on the "Labs" pag
 
 <br/>
 
+### Edit Task
+
+?> Requires v1.98.0+
+
+**Method:** edit_task
+
+**Description:** Edit content and properties of an existing task
+
+**Example:**
+[lifeup://api/edit_task?id=1&todo=Modified task content&notes=notes&coin=10&exp=20&skills=1&skills=2&category=0](lifeup://api/edit_task?id=1&todo=Modified task content&notes=notes&coin=10&exp=20&skills=1&skills=2&category=0)
+
+| Parameter           | Meaning              | Values                | Example   | Required | Notes                           |
+| ------------------ | -------------------- | -------------------- | --------- | -------- | ------------------------------- |
+| id                 | Task ID              | number greater than 0 | 1        | No*      | One of id, gid, or name required |
+| gid                | Task group ID        | number greater than 0 | 1        | No*      | One of id, gid, or name required |
+| name               | Task name            | any text             | Write diary| No*      | One of id, gid, or name required |
+| todo               | Task content         | any text             | Write weekly| No      |                                |
+| notes              | Notes                | any text             | Note content| No      |                                |
+| coin               | Coin reward          | [0, 999999]         | 10        | No       | Coins earned upon completion    |
+| coin_var           | Coin variance        | number greater than 0 | 1        | No       | Random reward between [coin, coin+coin_var] |
+| exp                | Experience reward    | [0, 99999]          | 20        | No       | Experience points earned        |
+| skills             | Skill IDs            | array of numbers greater than 0 | 1 | No    | Supports arrays (e.g., &skills=1&skills=2) |
+| category           | List ID              | number greater than or equal to 0 | 0 | No  | 0 for default list, smart lists not supported |
+| frequency          | Repeat frequency     | integer              | 0         | No       | -1 - Unlimited<br/>-3 - Ebbinghaus<br/>-4 - Monthly<br/>-5 - Yearly |
+| importance         | Importance level     | [1, 4]              | 1         | No       | Defaults to 1                   |
+| difficulty         | Difficulty level     | [1, 4]              | 2         | No       | Defaults to 1                   |
+| deadline           | Due date             | timestamp (milliseconds) | 1640995200000 | No |                               |
+| remind_time        | Reminder time        | timestamp (milliseconds) | 1640995200000 | No |                               |
+| start_time         | Start time           | timestamp (milliseconds) | 1640995200000 | No |                               |
+| color              | Tag color            | color string         | #66CCFF   | No       | # must be escaped as %23        |
+| background_url     | Background image URL | web URL address      | http://example.com/bg.jpg | No |                         |
+| background_alpha   | Background opacity   | floating point between [0, 1] | 0.5 | No   |                                |
+| item_id            | Item ID              | number greater than 0 | 1        | No*      | One of item_id or item_name required |
+| item_name          | Item name            | any text             | Treasure  | No*      | One of item_id or item_name required |
+| item_amount        | Item amount          | [1, 99]             | 1         | No       | Defaults to 1                   |
+| items              | Items reward JSON    | JSON text           | [{"itemId":1,"amount":1}] | No | Set multiple item rewards |
+| auto_use_item      | Auto use item        | true or false        | false     | No       |                                |
+| frozen             | Freeze status        | true or false        | false     | No       | Defaults to false              |
+| freeze_until       | Freeze until         | timestamp (milliseconds) | 1640995200000 | No | Only effective when frozen is true |
+| coin_penalty_factor| Coin penalty factor  | floating point between [0, 100) | 0.5 | No |                                |
+| exp_penalty_factor | Experience penalty factor | floating point between [0, 100) | 0.5 | No |                             |
+| write_feelings     | Enable feelings      | true or false        | false     | No       |                                |
+| pin                | Pin task             | true or false        | false     | No       |                                |
+
+**Response:**
+
+| Field     | Type    | Description      | Example | Notes             |
+| --------- | ------- | ---------------- | ------- | ---------------- |
+| task_id   | Number  | Task ID          | 1000    |                  |
+| task_gid  | Number  | Task group ID    | 1000    |                  |
+
+<br/>
+
+### History Task Operation
+
+?> Requires v1.98.0+
+
+**Method:** history_operation
+
+**Description:** Operate on completed/abandoned/expired tasks
+
+**Examples:**
+- Delete history task: [lifeup://api/history_operation?id=1&operation=delete](lifeup://api/history_operation?id=1&operation=delete)
+- Mark task as given up: [lifeup://api/history_operation?id=1&operation=set_to_give_up](lifeup://api/history_operation?id=1&operation=set_to_give_up)
+- Restart task: [lifeup://api/history_operation?id=1&operation=restart](lifeup://api/history_operation?id=1&operation=restart)
+
+!> This API is only applicable to non-uncompleted tasks (completed, given up, or expired)
+
+| Parameter      | Meaning           | Values               | Example    | Required | Notes                           |
+| ------------- | ----------------- | -------------------- | ---------- | -------- | ------------------------------- |
+| id            | Task ID           | number greater than 0 | 1         | Yes      | ID of the history task          |
+| operation     | Operation type    | One of:<br/>delete<br/>complete<br/>undo_complete<br/>set_to_give_up<br/>set_to_overdue<br/>edit_completed_time<br/>restart | delete | Yes | delete - Delete task<br/>complete - Mark as completed<br/>undo_complete - Undo completion<br/>set_to_give_up - Mark as given up<br/>set_to_overdue - Mark as expired<br/>edit_completed_time - Modify completion time<br/>restart - Restart task |
+| completed_time | Completion time   | timestamp (milliseconds) | 1640995200000 | No* | Required only when operation is edit_completed_time |
+
+**Response:**
+
+| Field    | Type    | Description    | Example | Notes                    |
+| -------- | ------- | -------------- | ------- | ------------------------ |
+| task_id  | Number  | Task ID        | 1000    | ID of the operated task  |
+
+<br/>
+
 ### Shop Settings
 
 **Method name:** shop_settings
@@ -562,6 +767,8 @@ The method of obtaining the id is to open the "Developer Mode" on the "Labs" pag
 | value     | numeric value        | decimal number or integer | 0.01 | yes | different keys correspond to different value ranges<br/>For example, ATM balances do not support decimal points |
 | set_type  | How to set the value | One of the following values:<br/>absolute<br/>relative | absolute | yes |absolute - absolute value, that is, directly set the target to value<br/>relative - relative values, adding or subtracting from the original value|
 | silent    | Whether to execute silently (without displaying UI) | Boolean | false | No | Supported from v1.93.0-beta01 (502) and later<br/>Default is false, which means it will display UI prompts |
+
+<br/>
 
 ### Jump
 
@@ -623,73 +830,81 @@ For example, jump to the details page of the specified task id 53: `lifeup://api
 
 ### Shop
 
-#### Adding items
+#### Adding Items
+
+?> Some fields like `effects` requires v1.98.0+
 
 **Method name:** add_item
 
-**Description:** To create a shop item. The icon only supports network URLs, and the use effect is not supported yet.
+**Description:** Create a shop item with customizable properties including purchase limits and use effects.
 
-**Example:** <a href="lifeup://api/add_item?name=Take a 10-minute break&desc=Go and take a short break!&price=10&action_text=rest">lifeup://api/add_item?name=Take a 10-minute break&desc=Go and take a short break!&price=10&action_text=rest</a>
+**Example:** [lifeup://api/add_item?name=Take a 10-minute break&desc=Go and take a short break!&price=10&action_text=rest](lifeup://api/add_item?name=Take a 10-minute break&desc=Go and take a short break!&price=10&action_text=rest)
 
-**Explanation:** Create a shop item with the name "Take a 10-minute break", the description as "Go and take a short break! ", and the action text copy as "Rest" with a price of 10 gold coins.
+| Parameter        | Meaning                | Values               | Example       | Required | Notes                           |
+| --------------- | --------------------- | -------------------- | ------------- | -------- | ------------------------------- |
+| name            | Item name             | any text             | 10 minute break | Yes    |                                 |
+| desc            | Description           | any text             | Take a break  | No       |                                 |
+| icon            | Icon                  | URL text             | http://...    | No       | Must be a web URL               |
+| price           | Price                 | [0, 999999]         | 10            | No       | Default is 0                    |
+| stock_number    | Stock quantity        | [-1, 99999]         | -1            | No       | -1 means unlimited              |
+| action_text     | Action button text    | any text             | rest          | No       |                                 |
+| disable_purchase| Disable purchase      | true or false        | false         | No       | Default is false                |
+| disable_use     | Disable use           | true or false        | false         | No       | Default is false                |
+| category        | Category ID           | number greater than or equal to 0 | 0 | No    | 0 for default category          |
+| order           | Display order         | integer              | 1             | No       | Position in category            |
+| purchase_limit  | Purchase limits       | JSON text            | See [Purchase Limit Structure](#3-purchase-limit-structure) | No | Limit purchase frequency |
+| effects         | Use effects           | JSON text            | See [Item Effects Structure](#4-item-effects-structure) | No | Item usage effects |
+| own_number      | Initial owned quantity | integer             | 0             | No       | Set initial inventory quantity  |
+| unlist          | Hide from shop        | true or false        | false         | No       | Default is false                |
 
-| Parameter        | Meaning                      | Type                                | Example         | Required | Notes |
-| ---------------- | ---------------------------- | ----------------------------------- | --------------- | -------- | ----- |
-| name             | shop item name               | any text                            | 10 minute break | yes      | shop item name |
-| desc             | description                  | any text                            | get a gift      | no       |       |
-| icon             | icon                         | any text                            |                 | no       | icon should be a web address URL |
-| price            | price value                  | number from 1 to 999999]            | 1               | no       |       |
-| action_text      | action button text           | any text                            | rest            | no       |       |
-| disable_purchase | whether to disable purchases | true or false                       | 1               | no       | default false |
-| stock_number     | number of stocks             | number from -1, 99999]              | 1               | no       |       |
-| category         | shop item list id            | a number greater than or equal to 0 | 0               | no       | 0 or not passed represents the default list, and cannot select a smart list<br/>For the acquisition method, please refer to the above "Basic Knowledge - Person Level Data ID" |
-| order       | Order in the category     | Any integer      | 1       | No       | Controls the display order of items in the list    |
-| own_number  | Number owned              | Any integer      | 100     | No       | A negative number indicates a negative ownership   |
-| unlist      | Whether to unlist the item| true or false    | false   | No       | Default is false, true means the item is not displayed in the shop |
+**Return Data:**
 
-**Return Value:**
+| Field    | Type    | Description    | Example | Notes                    |
+| -------- | ------- | -------------- | ------- | ------------------------ |
+| item_id  | Number  | Item ID        | 1000    | ID of the created item   |
 
-| Parameter | Meaning     | Type   | Example | Required | Notes |
-| --------- | ----------- | ------ | ------- | -------- | ----- |
-| item_id   | new item id | number | 1000    | yes      |       |
+!> The effects parameter will override disable_use. If you set effects to indicate an unusable item, disable_use will be ignored.
 
 <br/>
 
-#### Edit items
+### Shop
 
-**method name:** item
+#### Edit Item
 
-**Description:** Various operations on the shop item with the specified id only support the [On Shelf] shop item.
+?> Requires v1.98.0+
 
-**Example:** [lifeup://api/item?id=1&set_price=1&set_price_type=relative&own_number=1&own_number_type=relative](lifeup://api/item?id=1&set_price=1&set_price_type=relative&own_number=1&own_number_type=relative)
+**Method:** item
 
-**Explanation:** For a shop with an id of 1, increase its price by 1 coin and increase the own number of it by 1
+**Description:** Modify existing items, including price, stock, effects, and other properties
 
-| Parameter          | Meaning            | Type                    | Example    | Required | Notes |
-| ------------------ | ------------------ | ----------------------- | ---------- | -------- | ----- |
-| id                 | shop item id       | a number greater than 0 | 1          | no*      |       |
-| name               | shop item name     | any text                | treasure   | no*      | when used for unknown id, fuzzy search for commodities, not name modification |
-| set_name           | modify name        | any text                | treasure   | no       | cannot be empty if you provide this param |
-| set_desc           | modify description | any text                | get a gift | no       |       |
-| set_icon           | modify icon        | any text                |            | no       | Icon should be a web address URL |
-| set_price          | adjust price value | number                  | 1          | no       |       |
-| set_price_type     | price adjustment method (absolute/relative) | One of the following values: <br/>absolute<br/>relative | relative | no | absolute - absolute value, that is, directly set the target to value<br/>relative - relative values, adding or subtracting from the original value |
-| own_number         | modify own number  | number [-, +]           | 1          | no       |       |
-| own_number_type    | own number adjustment method (absolute/relative) | One of the following values:<br/>absolute<br/>relative | relative | no | absolute - absolute value, that is, directly set the target to value<br/>relative - relative values, adding or subtracting from the original value |
-| stock_number       | stock number       | number [-, +]           | 1          | no       |       |
-| stock_number_type  | stock number adjustment method (absolute/relative) | One of the following values: <br/>absolute<br/>relative | relative | no | absolute - absolute value, that is, directly set the target to value<br/>relative - relative values, adding or subtracting from the original value |
-| disable_purchase   | Is it disabled to purchase the item | `true` or `false` | true | no | available in v1.91 |
-| action_text        | Action text        | Any text                | Unlock     | No       | Supported from v1.93.0-beta01 (502) and later |
-| disable_use        | Disable use        | Boolean                 | true       | No       | Supported from v1.93.0-beta01 (502) and later |
-| title_color_string | Title color        | Color string            | #66CCFF    | No       | Requires v1.91+<br/>Note that in practical use, the # character needs to be escaped.<br/>For example, the color value in the example should be used as color=%2366CCFF.(v1.94.0+) To reset to default values, you can pass an empty value, like `title_color_string=`|
-| order        | Order in the category           | Any integer             | 1       | No       | Controls the display order of items in the list                                             |
-| own_number   | Number owned                    | Any integer             | 100     | No       | A negative number indicates a negative ownership                                            |
-| unlist       | Whether to unlist the item      | true or false           | false   | No       | Default is false, true means the item is not displayed in the store                        |
-| category_id  | Shop list ID            | Number greater than or equal to 0 | 0 | No       | 0 or not passing means default list, cannot choose smart list<br/>For retrieval method, see 'Basic Knowledge - LifeUp Data ID' |
+**Examples:**
+- Adjust price: [lifeup://api/item?id=1&set_price=1&set_price_type=relative](lifeup://api/item?id=1&set_price=1&set_price_type=relative)
+- Modify effects: [lifeup://api/item?id=1&effects=[{"type":2,"info":{"min":100,"max":200}}]](lifeup://api/item?id=1&effects=[{"type":2,"info":{"min":100,"max":200}}])
 
-**Notice:**
+| Parameter         | Meaning             | Values               | Example   | Required | Notes                           |
+| ---------------- | ------------------- | -------------------- | --------- | -------- | ------------------------------- |
+| id               | Item ID             | number greater than 0| 1         | No*      | Either id or name required      |
+| name             | Item name           | any text             | Treasure  | No*      | For fuzzy search, not renaming  |
+| set_name         | Set name            | any text             | Treasure  | No       | Cannot be empty                 |
+| set_desc         | Set description     | any text             | Get gift  | No       |                                |
+| set_icon         | Set icon            | URL text             | http://...| No       | Must be a web URL               |
+| set_price        | Adjust price        | integer              | 1         | No       |                                |
+| set_price_type   | Price adjust method | absolute or relative | relative  | No       | absolute-set directly<br/>relative-add/subtract |
+| own_number       | Adjust owned quantity| integer             | 1         | No       | Supports negative with relative |
+| own_number_type  | Own number adjustment| absolute or relative| relative  | No       | absolute-set directly<br/>relative-add/subtract |
+| stock_number     | Adjust stock        | [-1, 99999]         | 1         | No       | -1 means unlimited stock        |
+| stock_number_type| Stock adjust method | absolute or relative | relative  | No       | absolute-set directly<br/>relative-add/subtract |
+| disable_purchase | Disable purchase    | true or false        | false     | No       | Defaults to false              |
+| disable_use      | Disable use         | true or false        | false     | No       | Defaults to false              |
+| action_text      | Use button text     | any text             | Use       | No       |                                |
+| title_color_string| Title color        | color string         | #66CCFF   | No       | # must be escaped as %23<br/>Empty value restores default |
+| effects          | Use effects         | JSON text            | See [Item Effects Structure](#4-item-effects-structure) | No | Set item usage effects |
+| purchase_limit   | Purchase limits     | JSON text            | See [Purchase Limit Structure](#3-purchase-limit-structure) | No | Limit purchase frequency |
+| category_id      | Category ID         | number >= 0          | 1         | No       | 0 for default category         |
+| order            | Display order       | integer              | 1         | No       | Position in category           |
+| unlist           | Remove from shop    | true or false        | false     | No       | Defaults to false              |
 
-1. In order for `LifeUp` to search for a shop item, either an `id` or `name` must be provided.
+!> Either id or name parameter must be provided to locate the item to modify
 
 <br/>
 
@@ -965,6 +1180,411 @@ For example, jump to the details page of the specified task id 53: `lifeup://api
 
 <br/>
 
+### Tomato Count
+
+?> Requires v1.98.0+
+
+**Method:** tomato
+
+**Description:** Adjust the number of tomatoes (increase, decrease, or set to a specific amount)
+
+**Examples:**
+- Add 1 tomato: [lifeup://api/tomato?action=increase&number=1](lifeup://api/tomato?action=increase&number=1)
+- Remove 2 tomatoes: [lifeup://api/tomato?action=decrease&number=2](lifeup://api/tomato?action=decrease&number=2)
+- Set pomodoro count to 10: [lifeup://api/tomato?action=set&number=10](lifeup://api/tomato?action=set&number=10)
+
+| Parameter | Meaning        | Values                                        | Example   | Required | Notes                                                         |
+| --------- | -------------- | --------------------------------------------- | --------- | -------- | ------------------------------------------------------------- |
+| action    | Operation type | One of:<br/>increase<br/>decrease<br/>set     | increase  | No       | increase - Add pomodoros (default)<br/>decrease - Remove pomodoros<br/>set - Set pomodoro count to specified value |
+| number    | Amount         | Integer                                       | 1         | Yes      | Different meanings based on action:<br/>increase/decrease - Amount to add/remove<br/>set - Target amount to set |
+
+**Response:**
+
+| Field    | Type    | Description              | Example |
+| -------- | ------- | ------------------------ | ------- |
+| tomatoes | Integer | Current pomodoro count   | 10      |
+
+<br/>
+
+### Synthesis
+
+?> Requires v1.98.0+
+
+**Method:** synthesize
+
+**Description:** Synthesize items using an existing formula
+
+**Examples:**
+- Synthesize once using formula ID 1: [lifeup://api/synthesize?id=1](lifeup://api/synthesize?id=1)
+- Synthesize 5 times using formula ID 1: [lifeup://api/synthesize?id=1&times=5](lifeup://api/synthesize?id=1&times=5)
+
+| Parameter | Meaning            | Values                | Example | Required | Notes                    |
+| --------- | ----------------- | -------------------- | ------- | -------- | ------------------------ |
+| id        | Formula ID        | number greater than 0 | 1       | Yes      | ID of synthesis formula  |
+| times     | Number of times   | number greater than 0 | 5       | No       | Defaults to 1           |
+
+**Response:**
+
+| Field           | Type    | Description     | Example          | Notes                    |
+| -------------- | ------- | --------------- | ---------------- | ------------------------ |
+| formulaId      | Number  | Formula ID      | 1                |                          |
+| result         | Integer | Result code     | 0                | See result codes below   |
+| desc           | Text    | Result description | SynthesisSuccess | See result codes below |
+| synthesisResults| Text   | Synthesis results | {...}           | Only returned on success |
+
+**Result Codes:**
+
+| Code | Description          | Notes                 |
+| ---- | ------------------- | --------------------- |
+| 0    | SynthesisSuccess    | Synthesis successful  |
+| 1    | FormulaNotFound     | Formula not found     |
+| 2    | InsufficientMaterials| Not enough materials |
+| 3    | DatabaseError       | Database error        |
+| 4    | UnknownError        | Other errors         |
+
+<br/>
+
+### Synthesis Formula Management
+
+?> Requires v1.98.0+
+
+**Method:** synthesis_formula
+
+**Description:** Create, modify, or delete synthesis formulas
+
+**Examples:**
+- Create new formula: [lifeup://api/synthesis_formula?inputItems=[{"itemId":1,"amount":2}]&outputItems=[{"itemId":3,"amount":1}]](lifeup://api/synthesis_formula?inputItems=[{"itemId":1,"amount":2}]&outputItems=[{"itemId":3,"amount":1}])
+- Delete formula: [lifeup://api/synthesis_formula?id=1&delete=true](lifeup://api/synthesis_formula?id=1&delete=true)
+
+| Parameter   | Meaning        | Values                | Example                        | Required | Notes                          |
+| ----------- | -------------- | -------------------- | ------------------------------ | -------- | ------------------------------ |
+| id          | Formula ID     | number greater than 0 | 1                             | No       | Required for modify or delete  |
+| delete      | Delete flag    | true or false        | true                          | No       | Used only for deletion         |
+| inputItems  | Input items    | Item array, see below | [{"itemId":1,"amount":2}]     | Yes      | Required for create or modify  |
+| outputItems | Output items   | Item array, see below | [{"itemId":3,"amount":1}]     | Yes      | Required for create or modify  |
+| category    | Category ID    | number greater than 0 | 1                             | No       | Defaults to common category    |
+
+!> inputItems and outputItems are JSON arrays where each item contains itemId and amount fields. All item IDs must exist and amounts must be greater than 0
+
+**Response:**
+
+| Field     | Type    | Description      | Example     | Notes                    |
+| --------- | ------- | ---------------- | ----------- | ------------------------ |
+| formulaId | Number  | Formula ID       | 1           | Returned on success      |
+| result    | Integer | Result code      | 0           | See result codes below   |
+| desc      | Text    | Result description | AddSuccess | See result codes below   |
+
+**Result Codes:**
+
+| Code | Description     | Notes             |
+| ---- | -------------- | ----------------- |
+| 0    | Success        | Operation success |
+| 1    | Failed         | Operation failed  |
+
+<br/>
+
+### Subtask Management
+
+?> Requires v1.98.0+
+
+**Method:** subtask
+
+**Description:** Create or edit subtasks
+
+**Examples:**
+- Add a subtask to main task ID 1: [lifeup://api/subtask?main_id=1&todo=Complete%20homework](lifeup://api/subtask?main_id=1&todo=Complete%20homework)
+- Edit subtask and set rewards: [lifeup://api/subtask?main_id=1&edit_id=2&coin=10&exp=5](lifeup://api/subtask?main_id=1&edit_id=2&coin=10&exp=5)
+
+| Parameter     | Meaning            | Values                | Example    | Required | Notes                           |
+| ------------ | ------------------ | -------------------- | ---------- | -------- | ------------------------------- |
+| main_id      | Main task ID       | number greater than 0 | 1         | No*      | One of main_id, main_gid, or main_name required |
+| main_gid     | Main task group ID | number greater than 0 | 1         | No*      | One of main_id, main_gid, or main_name required |
+| main_name    | Main task name     | any text             | Study task | No*      | One of main_id, main_gid, or main_name required |
+| edit_id      | Subtask ID to edit | number greater than 0 | 2         | No*      | One of edit_id, edit_gid, or edit_name required when editing; not needed for creation |
+| edit_gid     | Subtask group ID   | number greater than 0 | 2         | No*      | One of edit_id, edit_gid, or edit_name required when editing; not needed for creation |
+| edit_name    | Subtask name       | any text             | Do homework| No*      | One of edit_id, edit_gid, or edit_name required when editing; not needed for creation |
+| todo         | Task content       | any text             | Do homework| No       | Required when creating new subtask |
+| remind_time  | Reminder time      | timestamp (milliseconds)| 1640995200000 | No | Pass null to clear reminder    |
+| order        | Order              | integer              | 1          | No       | Position in task list           |
+| coin         | Coin reward        | [0, 999999]         | 10         | No       | Coins earned upon completion    |
+| coin_var     | Coin variance      | integer              | 5          | No       | Random variance in coin reward  |
+| exp          | Experience reward  | [0, 99999]          | 5          | No       | Experience points earned        |
+| auto_use_item| Auto use item      | true or false        | true       | No       | Whether to use item automatically on completion |
+| item_id      | Item ID            | number greater than 0 | 1         | No*      | One of item_id or item_name required |
+| item_name    | Item name          | any text             | Health Potion| No*    | One of item_id or item_name required |
+| item_amount  | Item amount        | number greater than 0 | 1         | No       | Only valid when setting item reward |
+| items        | Items JSON         | JSON text            | [{"itemId":1,"amount":1}] | No | Set multiple item rewards at once |
+
+**Response:**
+
+| Field        | Type    | Description      | Example | Notes            |
+| ------------ | ------- | ---------------- | ------- | ---------------- |
+| main_task_id | Number  | Main task ID     | 1       |                  |
+| subtask_id   | Number  | Subtask ID       | 2       |                  |
+| subtask_gid  | Number  | Subtask group ID | 3       | May be empty     |
+
+<br/>
+
+
+### Category Management
+
+?> Requires v1.98.0+
+
+**Method:** category
+
+**Description:** Add or edit categories (task lists, achievement lists, shop lists, synthesis lists)
+
+**Examples:**
+- Create a task list: [lifeup://api/category?type=tasks&name=Study List](lifeup://api/category?type=tasks&name=Study List)
+- Edit a shop list: [lifeup://api/category?type=shop&edit_id=1&name=Equipment Shop&order=1](lifeup://api/category?type=shop&edit_id=1&name=Equipment Shop&order=1)
+
+| Parameter        | Meaning           | Values               | Example    | Required | Notes                           |
+| --------------- | ----------------- | -------------------- | ---------- | -------- | ------------------------------- |
+| type            | Category type     | One of:<br/>tasks<br/>achievements<br/>shop<br/>synthesis | tasks | Yes | tasks - Task lists<br/>achievements - Achievement lists<br/>shop - Shop lists<br/>synthesis - Synthesis lists |
+| edit_id         | Category ID to edit| number greater than 0| 1         | No       | Required when editing           |
+| name            | Category name     | any text             | Study List | No       | Required for new categories; optional when editing |
+| order           | Sort order        | integer              | 1         | No       | Position in the list            |
+| hidden          | Hide category     | true or false        | false     | No       | Only supported for task and shop lists |
+| inventory_hidden| Hide in inventory | true or false        | false     | No       | Only supported for shop lists   |
+| icon_uri        | Icon URI          | URI text             | content://... | No  | Only supported for achievement lists |
+| desc            | Description       | any text             | This is a description | No | Only supported for achievement lists |
+| color           | Tag color         | color string         | #66CCFF   | No       | Only supported for task lists; # must be escaped as %23 |
+
+**Response:**
+
+| Field | Type    | Description    | Example | Notes                    |
+| ----- | ------- | -------------- | ------- | ------------------------ |
+| id    | Number  | Category ID    | 1000    | ID of new or edited category |
+
+<br/>
+
+
+### Export Backup
+
+?> Requires v1.98.0+
+
+**Method:** export_backup
+
+**Description:** Create a backup file and return its URI (Content Provider calls only)
+
+!> This API can only be called through Content Provider, direct URL Scheme calls are not supported
+
+| Parameter      | Meaning        | Values          | Example | Required | Notes                                         |
+| ------------- | -------------- | --------------- | ------- | -------- | --------------------------------------------- |
+| withMedia     | Include media files | true or false | true    | No       | Whether to include media files (images, sound effects, etc.) in backup<br/>Defaults to true |
+| callingPackage| Caller package name | any text      | com.example.app | No | Package identifier for Content Provider calls |
+
+**Response:**
+
+| Field          | Type   | Description          | Example                                       |
+| -------------- | ------ | -------------------- | --------------------------------------------- |
+| backup_file_uri | Text   | Backup file URI      | content://net.sarasarasa.lifeup.api/backup/file.zip |
+
+<br/>
+
+### Subtask Operation
+
+?> Requires v1.98.0+
+
+**Method:** subtask_operation
+
+**Description:** Complete, undo completion, or delete subtasks
+
+**Examples:**
+- Complete a subtask: [lifeup://api/subtask_operation?main_id=1&edit_id=2&operation=complete](lifeup://api/subtask_operation?main_id=1&edit_id=2&operation=complete)
+- Delete a subtask: [lifeup://api/subtask_operation?main_id=1&edit_id=2&operation=delete](lifeup://api/subtask_operation?main_id=1&edit_id=2&operation=delete)
+- Undo subtask completion: [lifeup://api/subtask_operation?main_id=1&edit_id=2&operation=undo_complete](lifeup://api/subtask_operation?main_id=1&edit_id=2&operation=undo_complete)
+
+| Parameter     | Meaning          | Values               | Example    | Required | Notes                          |
+| ------------ | ---------------- | ------------------- | ---------- | -------- | ------------------------------ |
+| main_id      | Main task ID     | number greater than 0| 1         | No*      | One of main_id, main_gid, or main_name required |
+| main_gid     | Main task group ID| number greater than 0| 1        | No*      | One of main_id, main_gid, or main_name required |
+| main_name    | Main task name   | any text            | Study task | No*      | One of main_id, main_gid, or main_name required |
+| edit_id      | Subtask ID       | number greater than 0| 2         | No*      | One of edit_id, edit_gid, or edit_name required |
+| edit_gid     | Subtask group ID | number greater than 0| 2         | No*      | One of edit_id, edit_gid, or edit_name required |
+| edit_name    | Subtask name     | any text            | Do homework| No*      | One of edit_id, edit_gid, or edit_name required |
+| operation    | Operation type   | One of the following:<br/>complete<br/>undo_complete<br/>delete | complete | Yes | complete - Complete task<br/>undo_complete - Undo completion<br/>delete - Delete task |
+
+**Response:**
+
+| Field        | Type    | Description      | Example | Notes            |
+| ------------ | ------- | ---------------- | ------- | ---------------- |
+| main_task_id | Number  | Main task ID     | 1       |                  |
+| subtask_id   | Number  | Subtask ID       | 2       |                  |
+| subtask_gid  | Number  | Subtask group ID | 3       | May be empty     |
+
+<br/>
+
+### Achievement Management
+
+?> Requires v1.98.0+
+
+**Method:** achievement
+
+**Description:** Add or edit custom achievements and achievement subcategories
+
+**Examples:**
+- Create an achievement: [lifeup://api/achievement?name=Collector&desc=Collect 100 items](lifeup://api/achievement?name=Collector&desc=Collect 100 items)
+- Create an achievement with unlock conditions: [lifeup://api/achievement?name=Millionaire&conditions_json=[{"type":7,"target":1000000}]](lifeup://api/achievement?name=Millionaire&conditions_json=[{"type":7,"target":1000000}])
+- Edit existing achievement: [lifeup://api/achievement?edit_id=1&name=New Achievement Name&exp=100](lifeup://api/achievement?edit_id=1&name=New Achievement Name&exp=100)
+
+#### 1. Achievement Parameters
+
+| Parameter      | Meaning           | Values               | Example   | Required | Notes                           |
+| ------------- | ----------------- | -------------------- | --------- | -------- | ------------------------------- |
+| edit_id       | Achievement ID to edit | number greater than 0 | 1      | No       | Required when editing          |
+| is_subcategory| Is subcategory    | true or false        | false     | No       | Defaults to false               |
+| name          | Achievement name   | any text             | Collector | No*      | Required for new achievements   |
+| desc          | Description       | any text             | Collect 100 items | No |                               |
+| order         | Sort order        | integer              | 1         | No       | Position in list                |
+| category_id   | Category ID       | number greater than 0 | 1        | No*      | Required when creating subcategory |
+| unlocked      | Unlock status     | true or false        | true      | No       | true - unlock immediately<br/>false - reset to locked |
+| unlock_time   | Unlock time       | timestamp (milliseconds) | 1640995200000 | No | Only effective when already unlocked |
+| delete        | Delete flag       | true or false        | false     | No       |                                |
+| secret        | Hidden achievement| true or false        | false     | No       |                                |
+| write_feeling | Record feelings   | true or false        | false     | No       |                                |
+| color         | Title color       | color string         | #66CCFF   | No       | # must be escaped as %23        |
+| auto_use_item | Auto use item     | true or false        | false     | No       |                                |
+| skills        | Skill IDs         | array of numbers greater than 0 | 1 | No    | Supports arrays (e.g., &skills=1&skills=2) |
+| exp           | Experience reward | integer              | 100       | No       |                                |
+| item_id       | Item ID           | number greater than 0 | 1        | No*      | One of item_id or item_name required |
+| item_name     | Item name         | any text             | Treasure  | No*      | One of item_id or item_name required |
+| item_amount   | Item quantity     | [1, 99]             | 1         | No       | Defaults to 1                   |
+| items         | Item rewards JSON | JSON text            | [{"item_id":1,"amount":2}] | No | Set multiple item rewards, see format below |
+| conditions_json| Unlock conditions JSON | JSON text      | [{"type":7,"target":1000000}] | No | Set unlock conditions, see format below |
+
+#### 2. Subcategory Parameters
+
+| Parameter     | Meaning           | Values               | Example   | Required | Notes                           |
+| ------------ | ----------------- | -------------------- | --------- | -------- | ------------------------------- |
+| is_collapsed | Collapse status   | true or false        | false     | No       | Only applies to subcategories   |
+
+**Response:**
+
+| Field  | Type    | Description      | Example | Notes                    |
+| ------ | ------- | ---------------- | ------- | ------------------------ |
+| id     | Number  | Achievement ID   | 1000    | ID of new or edited achievement |
+
+#### 3. Unlock Condition Types
+
+| Type Code | Description             | Requires related_id | related_id Type | target Description  |
+| --------- | ----------------------- | ------------------ | --------------- | ------------------ |
+| 0         | Task completion count   | Yes                | Task ID         | Number of completions |
+| 1         | Task completion streak  | Yes                | Task ID         | Streak count       |
+| 3         | Pomodoro count         | No                 | -               | Number of pomodoros |
+| 4         | Days using LifeUp      | No                 | -               | Number of days     |
+| 5         | Like count             | No                 | -               | Number of likes    |
+| 6         | Daily completion streak | No                 | -               | Streak days        |
+| 7         | Current coins          | No                 | -               | Amount of coins    |
+| 8         | Coins earned in one day| No                 | -               | Amount of coins    |
+| 9         | Task pomodoro count    | Yes                | Task ID         | Number of pomodoros |
+| 10        | Item purchase count    | Yes                | Item ID         | Purchase count     |
+| 11        | Item usage count       | Yes                | Item ID         | Usage count        |
+| 12        | Loot box item count    | Yes                | Item ID         | Obtained count     |
+| 13        | Skill level reached    | Yes                | Skill ID        | Level value        |
+| 14        | Life level            | No                 | -               | Level value        |
+| 15        | Total items obtained   | Yes                | Item ID         | Total obtain count |
+| 16        | Items from synthesis   | Yes                | Item ID         | Synthesis count    |
+| 17        | Current item quantity  | Yes                | Item ID         | Own count          |
+| 18        | Task focus duration    | Yes                | Task ID         | Duration (minutes) |
+| 19        | ATM savings           | No                 | -               | Savings amount     |
+| 20        | External API          | No                 | -               | API defined        |
+
+#### 4. JSON Format Specifications
+
+##### Unlock Conditions (conditions_json)
+```json
+[
+    {
+        "type": 7,           // Condition type (refer to table above)
+        "related_id": null,  // Related ID (required for some types)
+        "target": 1000000    // Target value
+    },
+    {
+        "type": 10,          // Example: Purchase specific item
+        "related_id": 1,     // Item ID
+        "target": 5          // Purchase 5 times
+    }
+]
+```
+
+##### Item Rewards (items)
+```json
+[
+    {
+        "item_id": 1,    // Item ID
+        "amount": 2      // Quantity
+    },
+    {
+        "item_id": 2,
+        "amount": 3
+    }
+]
+```
+
+<br/>
+
+### Skill Management
+
+?> Requires v1.98.0+
+
+**Method:** skill
+
+**Description:** Create or edit custom skills (attributes)
+
+**Examples:**
+- Create a skill: [lifeup://api/skill?content=Programming&desc=Coding ability&color=%23FF6B6B](lifeup://api/skill?content=Programming&desc=Coding ability&color=%23FF6B6B)
+- Edit skill experience: [lifeup://api/skill?id=1&exp=100](lifeup://api/skill?id=1&exp=100)
+- Delete skill: [lifeup://api/skill?id=1&delete=true](lifeup://api/skill?id=1&delete=true)
+
+| Parameter    | Meaning           | Values               | Example    | Required | Notes                           |
+| ----------- | ----------------- | -------------------- | ---------- | -------- | ------------------------------- |
+| id          | Skill ID          | number greater than 0 | 1         | No       | Required when editing           |
+| content     | Skill name        | any text             | Programming| No*      | Required for new skills         |
+| desc        | Description       | any text             | Coding ability | No    |                                |
+| icon        | Icon              | any text             | 💻         | No       | Can use emoji                   |
+| color       | Color             | color string         | #FF6B6B    | No       | # must be escaped as %23        |
+| type        | Type              | integer              | 0          | No       |                                |
+| order       | Sort order        | integer              | 1          | No       | Position in list                |
+| status      | Status            | integer              | 0          | No       |                                |
+| exp         | Experience points | number greater than or equal to 0 | 100 | No | Current skill experience        |
+| delete      | Delete flag       | true or false        | false      | No       | Only valid when editing         |
+
+**Response:**
+
+| Field  | Type    | Description    | Example | Notes                    |
+| ------ | ------- | -------------- | ------- | ------------------------ |
+| id     | Number  | Skill ID       | 1000    | ID of new or edited skill |
+
+<br/>
+
+### App Settings
+
+?> Requires v1.98.0+
+
+**Method:** app_settings
+
+**Description:** Adjust app interface settings
+
+**Examples:**
+- Enable compact mode: [lifeup://api/app_settings?is_enable_compact_mode=true](lifeup://api/app_settings?is_enable_compact_mode=true)
+- Enable Material You theme: [lifeup://api/app_settings?is_enable_material_you=true](lifeup://api/app_settings?is_enable_material_you=true)
+- Change settings and restart UI immediately: [lifeup://api/app_settings?is_enable_compact_mode=true&restart_activities=true](lifeup://api/app_settings?is_enable_compact_mode=true&restart_activities=true)
+
+| Parameter              | Meaning           | Values          | Example | Required | Notes                           |
+| --------------------- | ----------------- | --------------- | ------- | -------- | ------------------------------- |
+| is_enable_compact_mode| Enable compact mode| true or false  | true    | No       | Simplify interface elements     |
+| is_enable_material_you| Enable Material You| true or false  | true    | No       | Enable Material You theme       |
+| restart_activities    | Restart interface | true or false   | true    | No       | Apply interface changes immediately |
+
+**Response:**
+
+| Field  | Type    | Description  | Example | Notes                    |
+| ------ | ------- | ------------ | ------- | ------------------------ |
+| result | Integer | Result code  | 0       | 0 indicates success      |
+
+<br/>
+
 ### Simple Query
 
 !> The functions here are used with automated tools/secondary development. If you need to query a complete list of data, you can refer to our [`LifeUp SDK`, `LifeUp Cloud`](https://github.com/Ayagikei/LifeUp-SDK) and [`LifeUp Desktop`.](https://github.com/Ayagikei/LifeUp-Desktop)
@@ -1112,14 +1732,18 @@ Only supported since version 1.90.6
 
 `LifeUp` provides user intervention processing methods for parameters.
 
-| Placeholder       | Meaning                                                    | Example |
-| ----------------- | ---------------------------------------------------------- | ------- |
-| [$text\|title]    | text placeholder                                           | [$text\|Enter task name] |
-| [$number\|Title]  | Number placeholder (without decimal point)                 | [$number\|Enter price] |
-| [$decimal\|title] | Number placeholder (with decimal point)                    | [$decimal\|Enter ATM rate] |
-| [$item]           | Select an item, it will be replaced with item id           | [$item] |
-| [$task_category]  | Select task list, which will be replaced with task list id | [$task_category] |
+| Placeholder                          | Meaning                                                      | Example                                                      |
+|--------------------------------------|--------------------------------------------------------------|--------------------------------------------------------------|
+| [$text\|title]                       | Text placeholder                                             | [$text\|Enter task name]                                     |
+| [$number\|Title]                     | Number placeholder (without decimal point)                   | [$number\|Enter price]                                       |
+| [$number\|Title\|signed]             | Number placeholder (without decimal point), show sign        | [$number\|Enter price\|signed]                               |
+| [$decimal\|title]                    | Number placeholder (with decimal point)                      | [$decimal\|Enter ATM rate]                                   |
+| [$decimal\|title\|signed]            | Number placeholder (with decimal point), show sign           | [$decimal\|Enter ATM rate\|signed]                           |
+| [$item]                              | Select an item, it will be replaced with item id              | [$item]                                                      |
+| [$task_category]                     | Select task list, which will be replaced with task list id    | [$task_category]                                             |
 | [$time\|Anchor Time\|Offset in Milliseconds(optional)] | Time Placeholder (Supported from v1.93.0-beta01 (502) + only) <br/><br/>Possible values for Anchor Time:<br/>`current`, `today`, `this_monday`, `last_monday`, `this_month`, `last_month`, `this_year`, `last_year` <br/><br/>Offset in milliseconds should be an integer, default is 0 milliseconds | Midnight today: [$time\|today]<br/>Midnight tomorrow: [$time\|today\|8600000] |
+| [$random_number\|Min\|Max]           | Random number placeholder (without decimal point)             | [$random_number\|0\|3000]                                    |
+| [$random_decimal\|Min\|Max]          | Random number placeholder (with decimal point)                | [$random_decimal\|1.0\|2.0]                                  |
 
 **Example 1: When using, select an item to reduce the price by 1 coin**
 

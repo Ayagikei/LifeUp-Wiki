@@ -8,16 +8,75 @@
 
 | Platform          | Version         | Update Date     |
 | :---------------- |:----------------|:----------------|
-| LifeUp-Android    | v1.97.3         | 2024/12/16      |
+| LifeUp-Android    | v1.98.0         | 2025/01/01      |
 | LifeUp-iOS        | In development… | In development… |
-| LifeUp-Desktop    | v1.1.1          | 2023/08/29      |
-| LifeUp Cloud(SDK) | v1.3.0          | 2023/06/25      |
+| LifeUp-Desktop    | v1.2.0          | 2025/01/01      |
+| LifeUp Cloud(SDK) | v1.3.0          | 2025/01/01      |
 
 (Part of the translation is provided by Machine/AI Translate and may not be accurate)
 
 <!-- tabs:start -->
 
 ### **LifeUp-Android**
+
+**v1.98.0 (2025/01/01)**
+
+**✨Features**
+
+1. Integrated Google login and Drive authorization using Credential Manager.
+2. Support for selecting Emoji as icons.
+3. Added ContentProvider Query API: Synthesis functionality.
+4. Added ContentProvider Query API: Tomato record functionality.
+5. Added ContentProvider Query API: Support for multiple item returns.
+6. Added tomato API (adjust tomato count).
+7. Added export_backup API (export backup).
+8. Added purchase_item API (purchase item).
+9. Added synthesize API (trigger synthesis).
+10. Added subtask API (create or adjust subtasks).
+11. Added subtask_operation API (operate subtasks, e.g., complete).
+12. Added synthesis_formula API (synthesis formula).
+13. Added edit_task API (edit task).
+14. Added category API (create or adjust list).
+15. Added history_operation API (adjust history).
+16. Added AppSettingsScheme API (adjust some app settings).
+17. Added achievement API (create or edit achievement).
+18. Added skill API (create or edit attribute).
+19. Added support for displaying subtask id and gid.
+20. Added support for displaying synthesis id.
+21. Added support for querying creditLimit.
+22. ContentProvider API supports querying subtasks (id, gid).
+23. ContentProvider API query items: Added "maximum purchasable quantity" field return.
+24. ContentProvider Shop API supports querying items by specified id list.
+25. Optimized return value when querying incorrect ContentProvider URL.
+26. Query interface supports querying single achievement.
+
+
+**♻️Optimization**
+
+1. Optimized default custom sorting for newly added items.
+2. Optimized default custom sorting for newly added attributes.
+3. Added `purchase_limit`, `disable_use`, and `effects` parameters to the "add_item" API.
+4. Added `background_alpha`, `items`, `start_time`, `auto_use_item`, `remind_time`, and `pin` parameters to the "add_task" API.
+5. Added support for more task frequencies to the "add_task" API.
+6. Added support for `effects` and `purchase_limit` parameters to the "item" API.
+7. Added support for terminating operations in preceding APIs (e.g., input).
+8. Added support for specifying the `signed` parameter for numeric placeholders.
+9. Added random number and random decimal placeholders.
+
+**v1.97.3 (2024/12/16)**
+
+**✨Features**
+
+1. Allows remembering the last selection of the "Use team description as task notes" switch.
+
+**♻️Optimization**
+
+1. Optimized the performance related to the usage effect of products.
+
+
+**🐛Bug Fixes**
+
+1. Fixed the issue of specific API call failures. When using a specific callback function to call the product API, the unpacking function works normally, but the internal API operation to add items cannot be executed.
 
 **v1.97.3 (2024/12/16)**
 
@@ -2080,6 +2139,28 @@ Optimization
 
 ### **LifeUp-Desktop**
 
+**v1.2.0 (2025/01/01)**
+
+**🚀Features**
+1. Support Archive Management
+- Backup to computer
+- Restore from computer
+- Support drag-and-drop
+2. Support Creating New Thoughts
+- Support image selection
+- Support image sync to mobile
+3. Support Task Details View
+4. Purchase System Improvements
+- Use new "Purchase Items" API
+- Keep purchase limits consistent with app
+5. Support Optional API Token Validation
+6. Multi-platform Support
+- Windows
+- Linux
+- macOS (Apple Silicon)
+- macOS (Intel) 🆕
+7. Improved error handling and notifications
+
 **v1.1.1 (2023/08/29)**
 
 **🔧Optimization and bug fixes**
@@ -2116,6 +2197,23 @@ Optimization
 1. First release
 
 ### **LifeUp Cloud**
+
+**v2.0.0 (2025/01/01)**
+
+**🚀Features**
+1. Service Optimization
+- Enhanced service discovery logic and compatibility
+- More devices support automatic IP detection
+- Optimized service start/pause state transitions
+- Improved error handling and notifications
+2. Security & Performance
+- Added optional API Token validation
+- Added CORS configuration options
+- Support custom port settings
+- Support custom wake lock duration
+3. UI Enhancement
+- Brand new interface design
+- Improved overall visual experience
 
 **v1.3.0 (2023/06/25)**
 

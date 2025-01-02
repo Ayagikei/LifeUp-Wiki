@@ -10,11 +10,11 @@
 
 
 
-**2024/09/20更新**
+**2024/12/22更新**
 
-本文的 API 参数和定义基于 v1.96.0-rc02 版本编写。
+本文的 API 参数和定义基于 v1.98.0 版本编写。
 
-使用 API 前，建议将应用升级到 v1.96.0-rc02 版本，如果没法检测到更新，请切换更新渠道到【会员内测-尝鲜版】。
+使用 API 前，建议将应用升级到 v1.98.0 版本，如果没法检测到更新，请切换更新渠道到【会员内测-尝鲜版】。
 
 
 
@@ -474,6 +474,129 @@ gid: 事项组id，针对同一个重复任务，其 gid 都不会发生变化�
 
 此外，App 的内部排序逻辑可能会根据不同版本随时进行调整，单次更新 `order` 值无法保证在未来版本中的一致性或预期效果。
 
+### 基础知识 - JSON 数据结构
+
+?> 需要 v1.98.0+
+
+本节介绍 API 中常用的 JSON 数据结构。
+
+#### 1. 物品奖励结构
+
+用于指定物品奖励的 JSON 数组，每个物品包含 ID 和数量。
+
+```json
+[
+    {
+        "item_id": 1,    // 物品ID
+        "amount": 2      // 数量
+    },
+    {
+        "item_id": 2,
+        "amount": 3
+    }
+]
+```
+
+#### 2. 成就解锁条件结构
+
+```json
+[
+    {
+        "type": 7,           // 条件类型
+        "related_id": null,  // 关联ID（部分类型必须提供）
+        "target": 1000000    // 目标数值
+    }
+]
+```
+
+#### 3. 购买限制结构
+
+```json
+[
+    {
+        "type": "daily",     // 限制类型：daily（每日）、total（总计）
+        "value": 5           // 限制数量
+    }
+]
+```
+
+#### 4. 商品效果结构
+
+```json
+[
+    {
+        "type": 2,           // 效果类型
+        "info": {            // 效果参数，根据type不同而不同
+            "min": 100,      // 最小值（用于金币奖励等）
+            "max": 200       // 最大值（用于金币奖励等）
+        }
+    }
+]
+```
+
+#### 效果类型说明
+
+| 类型代码 | 含义 | 参数说明 |
+| ------- | ---- | ------- |
+| 0 | 无特殊效果 | 无需参数 |
+| 1 | 不可使用 | 无需参数 |
+| 2 | 增加金币 | min: 最小金币数<br/>max: 最大金币数（可选，不填则等于min） |
+| 3 | 减少金币 | min: 最小金币数<br/>max: 最大金币数（可选，不填则等于min） |
+| 4 | 增加经验值 | ids: 技能ID数组<br/>value: 经验值<br/>using_limit: 是否使用限制（可选，默认false） |
+| 5 | 减少经验值 | ids: 技能ID数组<br/>value: 经验值<br/>using_limit: 是否使用限制（可选，默认false） |
+| 6 | 简易合成 | require_number: 需求数量<br/>item_id: 物品ID |
+| 7 | 开箱 | items: 物品数组，每个物品包含：<br/>- item_id: 物品ID<br/>- amount: 数量<br/>- probability: 概率<br/>- is_fixed_reward: 是否固定奖励 |
+| 8 | 倒计时 | seconds: 倒计时秒数 |
+| 9 | 网页链接 | url: 链接地址<br/>use_web_view: 是否使用内置浏览器（可选，默认false） |
+
+**效果示例：**
+
+增加随机金币：
+```json
+{
+    "type": 2,
+    "info": {
+        "min": 100,
+        "max": 200
+    }
+}
+```
+
+增加经验值：
+```json
+{
+    "type": 4,
+    "info": {
+        "ids": [1, 2],
+        "value": 50,
+        "using_limit": false
+    }
+}
+```
+
+开箱效果：
+```json
+{
+    "type": 7,
+    "info": {
+        "items": [
+            {
+                "item_id": 1,
+                "amount": 1,
+                "probability": 50,
+                "is_fixed_reward": false
+            },
+            {
+                "item_id": 2,
+                "amount": 1,
+                "probability": 50,
+                "is_fixed_reward": true
+            }
+        ]
+    }
+}
+```
+
 <br/>
 
 ## 接口文档
@@ -566,57 +689,54 @@ gid: 事项组id，针对同一个重复任务，其 gid 都不会发生变化�
 
 #### 添加任务
 
+?> 部分参数需要 v1.98.0+
+
 **方法名：**add_task
 
 **说明：**直接添加一个任务
 
-**示例1：**
+**示例：**
+[lifeup://api/add_task?todo=这是自动添加的任务&notes=备注&coin=10&coin_var=1&exp=2048&skills=1&skills=2&skills=3&category=0&item_name=金币](lifeup://api/add_task?todo=这是自动添加的任务&notes=备注&coin=10&coin_var=1&exp=2048&skills=1&skills=2&skills=3&category=0&item_name=金币)
 
-[lifeup://api/add_task?todo=这是自动添加的任务&notes=备注&coin=10&coin_var=1&exp=2048&skills=1&skills=2&skills=3&category=0&item_name=金币](lifeup://api/add_task?todo=这是自动添加的任务&notes=备注&coin=10&exp=2048&skills=1&skills=2&skills=3&category=0&item_name=金币)
+| 参数             | 含义           | 取值                | 示例       | 是否必须 | 备注                           |
+| --------------- | -------------- | ------------------ | ---------- | -------- | ------------------------------ |
+| todo            | 任务内容       | 任意文本           | 写日记     | 是       |                               |
+| notes           | 备注           | 任意文本           | 备注       | 否       | 默认为空                       |
+| coin            | 金币奖励       | [0, 999999]       | 10        | 否       | 默认为 0                       |
+| coin_var        | 金币奖励浮动值  | 大于等于 0 的数字  | 1         | 否       | 默认为 0；如大于 0，则在 [coin, coin+coin_var] 范围内随机 |
+| exp             | 经验值奖励     | [0, 99999]        | 100       | 否       | 默认为 0                       |
+| skills          | 技能ID         | 大于 0 的数字数组   | 1         | 否       | 支持数组（如 &skills=1&skills=2）|
+| category        | 清单ID         | 大于等于 0 的数字   | 0         | 否       | 默认为 0（默认清单）；不能选择智能清单 |
+| frequency       | 重复频次       | 整数               | 0         | 否       | 默认为 0（单次）<br/>0 - 单次<br/>1 - 每日<br/>N (N>1) - 每 N 日<br/>-1 - 无限<br/>-4 - 每月<br/>-5 - 每年 |
+| importance      | 重要程度       | [1, 4]            | 1         | 否       | 默认为 1                       |
+| difficulty      | 困难程度       | [1, 4]            | 1         | 否       | 默认为 1                       |
+| deadline        | 截止时间       | 时间戳（毫秒）     | 1640995200000 | 否    |                               |
+| color           | 标签颜色       | 颜色字符串         | #66CCFF    | 否       | #需要转义为%23                 |
+| background_url  | 背景图片URL    | 网络地址URL        | http://example.com/bg.jpg | 否 | 必须是可访问的网络图片地址    |
+| background_alpha| 背景透明度     | [0, 1] 之间的浮点数 | 0.5        | 否      | 默认为 1.0                    |
+| start_time      | 开始时间       | 时间戳（毫秒）     | 1640995200000 | 否     | 任务开始时间                  |
+| auto_use_item   | 自动使用奖励物品| true 或者 false   | false      | 否       | 完成任务时自动使用奖励物品      |
+| remind_time     | 提醒时间       | 时间戳（毫秒）     | 1640995200000 | 否    | 任务提醒时间                  |
+| pin             | 置顶           | true 或者 false    | false     | 否       | 将任务置顶显示                 |
+| frozen          | 是否冻结       | true 或者 false    | false     | 否       | 默认为 false                   |
+| freeze_until    | 冻结截止时间   | 时间戳（毫秒）     | 1640995200000 | 否    | 仅当 frozen 为 true 时生效     |
+| coin_penalty_factor | 金币惩罚系数| [0, 100) 之间的浮点数 | 0.5    | 否       |                               |
+| exp_penalty_factor | 经验惩罚系数 | [0, 100) 之间的浮点数 | 0.5    | 否       |                               |
+| write_feelings  | 是否启用感想   | true 或者 false    | false     | 否       | 默认为 false                   |
+| item_id         | 物品ID         | 大于 0 的数字      | 1         | 否*      | 与 item_name 必须提供其中一个   |
+| item_name       | 物品名称       | 任意文本           | 宝箱      | 否*      | 与 item_id 必须提供其中一个     |
+| item_amount     | 物品数量       | [1, 99]           | 1         | 否       | 默认为 1                       |
+| items           | 物品奖励       | JSON文本           | 参见[物品奖励结构](#1-物品奖励结构) | 否 | 可一次性设置多个物品奖励 |
 
-**解释1：**向默认清单（id为0）中添加一个内容为“这是自动添加的任务”，备注为“备注”，金币奖励为10~11随机，经验值奖励为2048，选择的技能id为1、2、3（一般对应前3个内置属性），商品奖励为模糊搜索一件“金币”商品。
+**返回数据：**
 
-**示例2：**
-
-[lifeup://api/add_task?todo=明天截止的任务&deadline=[$time|today|86400000]](lifeup://api/add_task?todo=明天截止的任务&deadline=[$time|today|86400000])
-
-**解释2：**使用时间占位符动态增加一个明天截止的任务。注意：该功能需要 v1.93.0-beta01（502）以上版本的人升。
-
-| 参数                    | 含义           | 取值                      | 示例                           | 是否必须 | 备注                                                         |
-| ----------------------- | -------------- | ------------------------- | ------------------------------ | -------- | ------------------------------------------------------------ |
-| todo                    | 任务内容       | 任意文本                  | coin                           | 是       | coin - 金币                                                  |
-| notes                   | 备注           | 任意文本                  | 备注                           | 否       |                                                              |
-| coin                    | 金币奖励       | 大于 0 的数字             | 10                             | 否       | 取值最大为999999                                             |
-| coin_var                | 金币奖励偏移值 | 大于 0 的数字             | 1                              | 否       | 如果该数值大于0，完成任务时，金币会随机计算区间为[coin, coin+coin_var] |
-| exp                     | 经验值奖励     | 大于 0 的数字             | 1                              | 否       | 取值最大为99999                                              |
-| skills                  | 属性（技能）id | 大于 0 的数字数组         | 1                              | 否       | 支持数组（即&skills=1&skills=2&skills=3）<br/>获取方式请查看上文 「基础知识 - 人升数据 ID」 |
-| category                | 清单id         | 大于或等于 0 的数字       | 0                              | 否       | 0 或不传递代表默认清单，不能选择智能清单<br/>获取方式请查看上文 「基础知识 - 人升数据 ID」 |
-| frequency               | 重复频次       | 数字，取值范围见备注      | 0                              | 否       | 默认为0<br/>0 - 单次<br/>1 - 每日<br/>大于 0 的其他数字 - 每 N 日<br/>-1 - 无限<br/>-4 - 每月<br/> -5 - 每年 |
-| importance              | 重要程度       | 数字 [1, 4]               | 1                              | 否       | 默认为1                                                      |
-| difficulty              | 困难程度       | 数字 [1, 4]               | 2                              | 否       | 默认为1                                                      |
-| item_id                 | 奖励商品的id   | 大于 0 的数字             | 1                              | 否       | 如需奖励商品，只需要提供id或名称其一<br/>获取方式请查看上文 「基础知识 - 人升数据 ID」 |
-| item_name               | 奖励商品的名称 | 任意文本                  | 宝箱                           | 否       | 如需奖励商品，只需要提供id或名称其一<br/>名称会用于模糊匹配  |
-| item_amount             | 奖励数量       | [1, 99]                   | 1                              | 否       | 默认为1                                                      |
-| deadline                | 本次期限时间   | 时间戳（毫秒）            | 0                              | 否       | 建议使用外部工具计算时间戳并提供<br/>或者你可以参考下文的[变量占位符]中的时间占位符 |
-| color                   | 标签颜色       | 字符串                    | \#66CCFF                       | 否       | 需要 v1.91+<br/>注意在实际使用时，# 字符需要转义。<br/>比如示例的色值实际使用时，应为 `color=%2366CCFF` |
-| background_url          | 图片背景       | 字符串（远程URL）         | http://www.aaabbbccc.com/1.jpg | 否       | 仅支持手机可访问的地址                                       |
-| 以下参数为 v1.94.0 引入 |                |                           |                                |          |                                                              |
-| frozen                  | 是否冻结状态   | true 或者 false           | false                          | 否       | 默认为 false                                                 |
-| freeze_until            | 冻结至的时间戳 | 时间戳（毫秒）            | 0                              | 否       | 仅当`frozen`为true时生效，可以不提供，代表持续冻结           |
-| coin_penalty_factor     | 金币惩罚系数   | [0, 100) 之间的任意浮点数 | 0.5                            | 否       |                                                              |
-| exp_penalty_factor      | 经验值惩罚系数 | [0, 100) 之间的任意浮点数 | 0.5                            | 否       |                                                              |
-| write_feelings          | 是否启用感想   | true 或者 false           | false                          | 否       |                                                              |
-
-**返回值：**
-
-| 参数     | 含义           | 取值 | 示例 | 是否必须 | 备注 |
-| -------- | -------------- | ---- | ---- | -------- | ---- |
-| task_id  | 新增的任务id   | 数字 | 1000 | 是       | -    |
-| task_gid | 新增的任务组id | 数字 | 1000 | 是       | -    |
-
-
+| 字段名   | 类型   | 说明       | 示例 | 备注             |
+| -------- | ------ | ---------- | ---- | ---------------- |
+| task_id  | 数字   | 任务ID     | 1000 |                  |
+| task_gid | 数字   | 任务组ID   | 1000 |                  |
 
 <br/>
+
 
 #### 完成任务
 
@@ -753,6 +873,88 @@ id 的获取方法为「实验」页面打开「开发者模式」，然后在�
 
 <br/>
 
+### 编辑任务
+
+?> 需要 v1.98.0+
+
+**方法名：**edit_task
+
+**说明：**编辑已有任务的内容和属性
+
+**示例：**
+[lifeup://api/edit_task?id=1&todo=修改后的任务内容&notes=备注&coin=10&exp=20&skills=1&skills=2&category=0](lifeup://api/edit_task?id=1&todo=修改后的任务内容&notes=备注&coin=10&exp=20&skills=1&skills=2&category=0)
+
+| 参数                | 含义           | 取值                | 示例     | 是否必须 | 备注                           |
+| ------------------ | -------------- | ------------------ | -------- | -------- | ------------------------------ |
+| id                 | 任务ID         | 大于 0 的数字      | 1        | 否*      | id、gid、name 必须提供其中一个  |
+| gid                | 任务组ID       | 大于 0 的数字      | 1        | 否*      | id、gid、name 必须提供其中一个  |
+| name               | 任务名称       | 任意文本           | 写日记    | 否*      | id、gid、name 必须提供其中一个  |
+| todo               | 任务内容       | 任意文本           | 写周记    | 否       |                               |
+| notes              | 备注           | 任意文本           | 备注内容  | 否       |                               |
+| coin               | 金币奖励       | [0, 999999]       | 10       | 否       | 完成任务获得的金币数量         |
+| coin_var           | 金币浮动值     | 大于 0 的数字      | 1        | 否       | 奖励将在 [coin, coin+coin_var] 范围内随机 |
+| exp                | 经验值奖励     | [0, 99999]        | 20       | 否       | 完成任务获得的经验值           |
+| skills             | 技能ID         | 大于 0 的数字数组   | 1        | 否       | 支持数组（如 &skills=1&skills=2）|
+| category           | 列表ID         | 大于或等于 0 的数字 | 0        | 否       | 0 表示默认列表，不能选择智能列表 |
+| frequency          | 重复频率       | 整数               | 0        | 否       | -1 - 无限<br/>-3 - 艾宾浩斯<br/>-4 - 每月<br/>-5 - 每年 |
+| importance         | 重要程度       | [1, 4]            | 1        | 否       | 默认为 1                       |
+| difficulty         | 难度等级       | [1, 4]            | 2        | 否       | 默认为 1                       |
+| deadline           | 截止时间       | 时间戳（毫秒）     | 1640995200000 | 否 |                               |
+| remind_time        | 提醒时间       | 时间戳（毫秒）     | 1640995200000 | 否 |                               |
+| start_time         | 开始时间       | 时间戳（毫秒）     | 1640995200000 | 否 |                               |
+| color              | 标签颜色       | 颜色字符串         | #66CCFF  | 否       | #需要转义为%23                 |
+| background_url     | 背景图片URL    | 网络地址URL        | http://example.com/bg.jpg | 否 |                    |
+| background_alpha   | 背景透明度     | [0, 1] 之间的浮点数 | 0.5      | 否       |                               |
+| item_id            | 物品ID         | 大于 0 的数字      | 1        | 否*      | 与 item_name 必须提供其中一个  |
+| item_name          | 物品名称       | 任意文本           | 宝箱      | 否*      | 与 item_id 必须提供其中一个    |
+| item_amount        | 物品数量       | [1, 99]           | 1        | 否       | 默认为 1                       |
+| items              | 物品奖励JSON   | JSON文本           | [{"item_id":1,"amount":1}] | 否 | 可一次设置多个物品奖励 |
+| auto_use_item      | 自动使用物品   | true 或者 false    | false    | 否       |                               |
+| frozen             | 是否冻结       | true 或者 false    | false    | 否       | 默认为 false                  |
+| freeze_until       | 冻结截止时间   | 时间戳（毫秒）     | 1640995200000 | 否 | 仅当 frozen 为 true 时生效    |
+| coin_penalty_factor| 金币惩罚系数   | [0, 100) 之间的浮点数 | 0.5    | 否       |                               |
+| exp_penalty_factor | 经验惩罚系数   | [0, 100) 之间的浮点数 | 0.5    | 否       |                               |
+| write_feelings     | 是否启用感想   | true 或者 false    | false    | 否       |                               |
+| pin                | 是否置顶       | true 或者 false    | false    | 否       |                               |
+
+**返回数据：**
+
+| 字段名    | 类型   | 说明       | 示例 | 备注             |
+| --------- | ------ | ---------- | ---- | ---------------- |
+| task_id   | 数字   | 任务ID     | 1000 |                  |
+| task_gid  | 数字   | 任务组ID   | 1000 |                  |
+
+<br/>
+
+### 历史任务操作
+
+?> 需要 v1.98.0+
+
+**方法名：**history_operation
+
+**说明：**对已完成/已放弃/已过期的任务进行操作
+
+**示例：**
+- 删除历史任务：[lifeup://api/history_operation?id=1&operation=delete](lifeup://api/history_operation?id=1&operation=delete)
+- 将任务标记为放弃：[lifeup://api/history_operation?id=1&operation=set_to_give_up](lifeup://api/history_operation?id=1&operation=set_to_give_up)
+- 重新开始任务：[lifeup://api/history_operation?id=1&operation=restart](lifeup://api/history_operation?id=1&operation=restart)
+
+!> 此 API 仅适用于非未完成状态的任务（已完成、已放弃或已过期）
+
+| 参数           | 含义           | 取值                | 示例     | 是否必须 | 备注                           |
+| ------------- | -------------- | ------------------ | -------- | -------- | ------------------------------ |
+| id            | 任务ID         | 大于 0 的数字      | 1        | 是       | 历史任务的ID                   |
+| operation     | 操作类型       | 以下数值其一：<br/>delete<br/>complete<br/>undo_complete<br/>set_to_give_up<br/>set_to_overdue<br/>edit_completed_time<br/>restart | delete | 是 | delete - 删除任务<br/>complete - 标记为已完成<br/>undo_complete - 撤销完成<br/>set_to_give_up - 标记为放弃<br/>set_to_overdue - 标记为过期<br/>edit_completed_time - 修改完成时间<br/>restart - 重新开始任务 |
+| completed_time | 完成时间       | 时间戳（毫秒）     | 1640995200000 | 否* | 仅当 operation 为 edit_completed_time 时必须提供 |
+
+**返回数据：**
+
+| 字段名   | 类型   | 说明     | 示例 | 备注             |
+| -------- | ------ | -------- | ---- | ---------------- |
+| task_id  | 数字   | 任务ID   | 1000 | 操作的任务ID     |
+
+<br/>
+
 ### 商店设置
 
 **方法名：**shop_settings
@@ -761,10 +963,8 @@ id 的获取方法为「实验」页面打开「开发者模式」，然后在�
 
 **示例：**
 
--
-将ATM利率设置为0.01%：[lifeup://api/shop_settings?key=atm_interest&value=0.01](lifeup://api/shop_settings?key=atm_interest&value=0.01)
--
-每次点击将利率提升0.01%：[lifeup://api/shop_settings?key=atm_interest&value=0.01&set_type=relative](lifeup://api/shop_settings?key=atm_interest&value=0.01&set_type=relative)
+- 将ATM利率设置为0.01%：[lifeup://api/shop_settings?key=atm_interest&value=0.01](lifeup://api/shop_settings?key=atm_interest&value=0.01)
+- 每次点击将利率提升0.01%：[lifeup://api/shop_settings?key=atm_interest&value=0.01&set_type=relative](lifeup://api/shop_settings?key=atm_interest&value=0.01&set_type=relative)
 
 | 参数     | 含义                     | 取值                                                         | 示例         | 是否必须 | 备注                                                         |
 | -------- | ------------------------ | ------------------------------------------------------------ | ------------ | -------- | ------------------------------------------------------------ |
@@ -852,77 +1052,82 @@ id 的获取方法为「实验」页面打开「开发者模式」，然后在�
 
 #### 添加商品
 
+?> 部分参数需要 v1.98.0+，比如`effects`、`purchase_limit`
+
 **方法名：**add_item
 
-**说明：**创建商品，图标仅支持网络地址，暂不支持自定义使用效果。
+**说明：**创建商品，包含自定义购买限制和使用效果等功能
 
 **示例：**[lifeup://api/add_item?name=休息10分钟&desc=去好好休息一小段时间吧！&price=10&action_text=休息](lifeup://api/add_item?name=休息10分钟&desc=去好好休息一小段时间吧！&price=10&action_text=休息)
 
-**解释：**创建一个名称为「休息10分钟」，描述为「去好好休息一小段时间吧！」，操作文案为「休息」的价格10金币的商品。
+| 参数             | 含义           | 取值                | 示例         | 是否必须 | 备注                           |
+| --------------- | -------------- | ------------------ | ------------ | -------- | ------------------------------ |
+| name            | 商品名称       | 任意文本           | 休息10分钟    | 是      |                                |
+| desc            | 描述           | 任意文本           | 休息一下      | 否       |                               |
+| icon            | 图标           | 网络地址URL        | http://...    | 否      | 必须是网络URL地址              |
+| price           | 价格           | [0, 999999]       | 10            | 否      | 默认为 0                       |
+| stock_number    | 库存数量       | [-1, 99999]       | -1            | 否      | -1 表示无限                    |
+| action_text     | 使用按钮文案   | 任意文本           | 休息          | 否      |                                |
+| disable_purchase| 禁止购买       | true 或者 false    | false         | 否      | 默认为 false                   |
+| disable_use     | 禁止使用       | true 或者 false    | false         | 否      | 默认为 false                   |
+| category        | 分类ID         | 大于或等于 0 的数字 | 0             | 否      | 0 表示默认分类                 |
+| order           | 显示顺序       | 整数              | 1             | 否       | 在分类中的排序位置              |
+| purchase_limit  | 购买限制       | JSON文本          | 参见[购买限制结构](#3-购买限制结构) | 否 | 限制购买频率 |
+| effects         | 使用效果       | JSON文本          | 参见[商品效果结构](#4-商品效果结构) | 否 | 使用商品时的效果 |
+| own_number      | 初始拥有数量   | 整数              | 0             | 否       | 设置初始库存数量               |
+| unlist          | 从商店隐藏     | true 或者 false   | false         | 否       | 默认为 false                   |
 
-| 参数             | 含义         | 取值                | 示例         | 是否必须 | 备注                                                         |
-| ---------------- | ------------ | ------------------- | ------------ | -------- | ------------------------------------------------------------ |
-| name             | 商品名称     | 任意文本            | 休息10分钟   | 是       | 商品名称                                                     |
-| desc             | 描述         | 任意文本            | 获得一个礼物 | 否       | -                                                            |
-| icon             | 图标         | 任意文本            |              | 否       | 图标应为网络地址 URL                                         |
-| price            | 价格数值     | 数字 [0, 999999]    | 1            | 否       | -                                                            |
-| action_text      | 操作按钮文案 | 任意文本            | 休息         | 否       | -                                                            |
-| disable_purchase | 是否禁用购买 | true 或 false       | 1            | 否       | 默认 false                                                   |
-| stock_number     | 库存数       | [-1, 99999]         | 1            | 否       | -                                                            |
-| category         | 商店清单id   | 大于或等于 0 的数字 | 0            | 否       | 0 或不传递代表默认清单，不能选择智能清单<br/>获取方式请查看上文 「基础知识 - 人升数据 ID」 |
-| 以下参数为v1.94引入 |  |  |  |  |  |
-| order            | 在分类中的排序     | 任意整数                | 1            | 否       | 控制商品在同清单中的显示顺序                                  |
-| own_number       | 拥有数 | 任意整数       | 100          | 否       | 负数代表拥有数为负数                                              |
-| unlist           | 是否下架商品       | true 或 false           | false        | 否       | 默认为 false，true 代表商品不显示在商店中                     |
+**返回数据：**
 
+| 字段名   | 类型   | 说明       | 示例  | 备注             |
+| -------- | ------ | ---------- | ----- | ---------------- |
+| item_id  | 数字   | 商品ID     | 1000  | 创建的商品ID     |
 
-**返回值：**
+!> effects 参数会覆盖 disable_use 的设置。如果您设置了 effects 指定商品不可使用，disable_use 将被忽略。
 
-| 参数    | 含义         | 取值 | 示例 | 是否必须 | 备注 |
-| ------- | ------------ | ---- | ---- | -------- | ---- |
-| item_id | 新增的商品id | 数字 | 1000 | 是       |      |
-
+<br/>
 
 
 <br/>
 
+### 商品
+
 #### 调整商品
+
+?> 需要 v1.98.0+
 
 **方法名：**item
 
-**说明：**对指定 id 的商品的各种操作，仅支持【在架】商品。
+**说明：**对现有商品进行修改，包括价格、库存、效果等各项属性
 
-**示例：**[lifeup://api/item?id=1&set_price=1&set_price_type=relative&own_number=1&own_number_type=relative](lifeup://api/item?id=1&set_price=1&set_price_type=relative&own_number=1&own_number_type=relative)
+**示例：**
+- 调整价格：[lifeup://api/item?id=1&set_price=1&set_price_type=relative](lifeup://api/item?id=1&set_price=1&set_price_type=relative)
+- 修改效果：[lifeup://api/item?id=1&effects=[{"type":2,"info":{"min":100,"max":200}}]](lifeup://api/item?id=1&effects=[{"type":2,"info":{"min":100,"max":200}}])
 
-**解释：**对 id 为 1 的商品，将其价格提升 1 金币，并提升拥有数 1
+| 参数              | 含义           | 取值                | 示例       | 是否必须 | 备注                           |
+| ---------------- | -------------- | ------------------ | ---------- | -------- | ------------------------------ |
+| id               | 商品ID         | 大于 0 的数字      | 1          | 否*      | id 和 name 必须提供其中一个    |
+| name             | 商品名称       | 任意文本           | 宝箱       | 否*      | 用于模糊搜索商品，不是用于改名 |
+| set_name         | 修改名称       | 任意文本           | 宝箱       | 否       | 不可为空                       |
+| set_desc         | 修改描述       | 任意文本           | 获得礼物   | 否       |                               |
+| set_icon         | 修改图标       | URL文本            | http://... | 否       | 必须是网络URL地址              |
+| set_price        | 调整价格       | 整数               | 1          | 否       |                               |
+| set_price_type   | 价格调整方式   | absolute 或 relative | relative | 否       | absolute-直接设置<br/>relative-增减值 |
+| own_number       | 调整拥有数量   | 整数               | 1          | 否       | 使用relative时支持负数         |
+| own_number_type  | 拥有数调整方式 | absolute 或 relative | relative | 否       | absolute-直接设置<br/>relative-增减值 |
+| stock_number     | 调整库存数量   | [-1, 99999]       | 1          | 否       | -1表示无限库存                 |
+| stock_number_type| 库存调整方式   | absolute 或 relative | relative | 否       | absolute-直接设置<br/>relative-增减值 |
+| disable_purchase | 禁止购买       | true 或者 false    | false      | 否       | 默认为 false                   |
+| disable_use      | 禁止使用       | true 或者 false    | false      | 否       | 默认为 false                   |
+| action_text      | 使用按钮文案   | 任意文本           | 使用       | 否       |                               |
+| title_color_string| 标题颜色      | 颜色字符串         | #66CCFF    | 否       | #需要转义为%23<br/>传空值可恢复默认 |
+| effects          | 使用效果       | JSON文本           | 参见[商品效果结构](#4-商品效果结构) | 否 | 设置商品使用效果 |
+| purchase_limit   | 购买限制       | JSON文本           | 参见[购买限制结构](#3-购买限制结构) | 否 | 限制购买频率 |
+| category_id      | 所属分类ID     | 大于等于 0 的数字  | 1          | 否       | 0表示默认分类                  |
+| order            | 显示顺序       | 整数               | 1          | 否       | 在分类中的排序位置             |
+| unlist           | 下架商品       | true 或者 false    | false      | 否       | 默认为 false                   |
 
-| 参数                   | 含义                          | 取值                                     | 示例         | 是否必须 | 备注                                                         |
-| ---------------------- | ----------------------------- | ---------------------------------------- | ------------ | -------- | ------------------------------------------------------------ |
-| id                     | 商品id                        | 大于0的数字                              | 1            | 否*      | 获取方式请查看上文 「基础知识 - 人升数据 ID」                |
-| name                   | 商品名称                      | 任意文本                                 | 宝箱         | 否*      | 用于未知 id 时，模糊搜索商品，并非修改名称                   |
-| set_name               | 修改名称                      | 任意文本                                 | 宝箱         | 否       | 不可为空                                                     |
-| set_desc               | 修改描述                      | 任意文本                                 | 获得一个礼物 | 否       | -                                                            |
-| set_icon               | 修改图标                      | 任意文本                                 |              | 否       | 图标应为网络地址 URL                                         |
-| set_price              | 调整价格数值                  | 数字                                     | 1            | 否       | -                                                            |
-| set_price_type         | 调整价格方式（绝对/相对）     | 以下数值其一：<br/>absolute<br/>relative | relative     | 否       | absolute - 绝对取值，即直接将目标设置为 value<br/>relative - 相对取值，比如在原数值的基础上增加或减少 |
-| own_number             | 调整拥有数                    | 正负数                                   | 1            | 否       | 使用绝对取值时，数值应该为[0, MAX]<br/>使用相对取值时，支持负数，但最终结果数值最小为0 |
-| own_number_type        | 调整拥有数量方式（绝对/相对） | 以下数值其一：<br/>absolute<br/>relative | relative     | 否       | absolute - 绝对取值，即直接将目标设置为 value<br/>relative - 相对取值，比如在原数值的基础上增加或减少 |
-| stock_number           | 库存数                        | 正负数                                   | 1            | 否       | 使用绝对取值时，数值应该为[0, MAX]<br/>使用相对取值时，支持负数，但最终结果数值最小为0 |
-| stock_number_type      | 调整库存数方式（绝对/相对）   | 以下数值其一：<br/>absolute<br/>relative | relative     | 否       | absolute - 绝对取值，即直接将目标设置为 value<br/>relative - 相对取值，比如在原数值的基础上增加或减少 |
-| disable_purchase       | 是否禁止购买                  | 布尔值                                   | true         | 否       | 仅 v1.91 +支持                                               |
-| action_text            | 操作文案                      | 任意文本                                 | 解锁         | 否       | 仅 v1.93.0-beta01（502） +支持                               |
-| disable_use            | 是否禁止使用                  | 布尔值                                   | true         | 否       | 仅 v1.93.0-beta01（502）+ 支持                               |
-| title_color_string     | 标题颜色                      | 颜色字符串                               | \#66CCFF     | 否       | 需要 v1.91+<br/>注意在实际使用时，# 字符需要转义。<br/>比如示例的色值实际使用时，应为 `color=%2366CCFF`<br/>（v1.94.0+）如果想要恢复默认值，可传空值，如`title_color_string=` |
-| 以下参数为v1.94引入 |  |  |  |  |  |
-| order            | 在分类中的排序     | 任意整数                | 1            | 否       | 控制商品在同清单中的显示顺序                                  |
-| own_number       | 拥有数 | 任意整数       | 100          | 否       | 负数代表拥有数为负数                                              |
-| unlist           | 是否下架商品       | true 或 false           | false        | 否       | 默认为 false，true 代表商品不显示在商店中                     |
-| category_id | 商店清单id                    | 大于或等于 0 的数字                      | 0            | 否       | 0 或不传递代表默认清单，不能选择智能清单<br/>获取方式请查看上文 「基础知识 - 人升数据 ID」 |
-
-
-**注意：**
-
-1. 为了搜索到商品，必须提供 id 或 name 其一。
+!> id 和 name 参数必须提供其中一个，用于定位要修改的商品
 
 <br/>
 
@@ -1205,6 +1410,450 @@ id 的获取方法为「实验」页面打开「开发者模式」，然后在�
 
 <br/>
 
+### 番茄数量
+
+?> 需要 v1.98.0+
+
+**方法名：**tomato
+
+**说明：**调整番茄数量（增加、减少或设置指定数量）
+
+**示例：**
+- 增加1个番茄：[lifeup://api/tomato?action=increase&number=1](lifeup://api/tomato?action=increase&number=1)
+- 减少2个番茄：[lifeup://api/tomato?action=decrease&number=2](lifeup://api/tomato?action=decrease&number=2)
+- 设置番茄数为10：[lifeup://api/tomato?action=set&number=10](lifeup://api/tomato?action=set&number=10)
+
+| 参数   | 含义     | 取值                                           | 示例     | 是否必须 | 备注                                                    |
+| ------ | -------- | ---------------------------------------------- | -------- | -------- | ------------------------------------------------------- |
+| action | 操作类型 | 以下值之一：<br/>increase<br/>decrease<br/>set | increase | 否       | increase - 增加番茄数（默认）<br/>decrease - 减少番茄数<br/>set - 设置番茄数为指定值 |
+| number | 数量     | 整数                                           | 1        | 是       | 根据 action 不同含义不同：<br/>increase/decrease - 增加/减少的数量<br/>set - 设置的目标数量 |
+
+**返回数据：**
+
+| 字段名   | 类型 | 说明         | 示例 |
+| -------- | ---- | ------------ | ---- |
+| tomatoes | 整数 | 当前番茄总数 | 10   |
+
+
+<br/>
+
+### 购买物品
+
+?> 需要 v1.98.0+
+
+**方法名：**purchase_item
+
+**说明：**购买指定的商品
+
+**示例：**
+- 购买ID为1的商品：[lifeup://api/purchase_item?id=1](lifeup://api/purchase_item?id=1)
+- 购买名称为"生命药水"的商品：[lifeup://api/purchase_item?name=生命药水](lifeup://api/purchase_item?name=生命药水)
+- 购买5个ID为1的商品：[lifeup://api/purchase_item?id=1&purchase_quantity=5](lifeup://api/purchase_item?id=1&purchase_quantity=5)
+
+| 参数              | 含义     | 取值              | 示例       | 是否必须 | 备注                            |
+| ---------------- | -------- | ----------------- | ---------- | -------- | ------------------------------- |
+| id               | 商品ID   | 大于 0 的数字      | 1         | 否*      | id 和 name 必须提供其中一个     |
+| name             | 商品名称 | 任意文本           | 生命药水   | 否*      | id 和 name 必须提供其中一个     |
+| purchase_quantity| 购买数量 | 大于 0 的数字      | 5         | 否       | 默认值为 1                      |
+
+**返回数据：**
+
+| 字段名 | 类型   | 说明     | 示例            | 备注                    |
+| ------ | ------ | -------- | --------------- | ---------------------- |
+| itemId | 数字   | 商品ID   | 1               | 仅购买成功时返回        |
+| result | 整数   | 结果代码 | 0               | 见下方结果代码说明      |
+| desc   | 文本   | 结果描述 | PurchaseSuccess | 见下方结果代码说明      |
+
+**结果代码说明：**
+
+| 代码 | 描述                        | 说明                          |
+| ---- | -------------------------- | ----------------------------- |
+| 0    | PurchaseSuccess           | 购买成功                       |
+| 1    | DatabaseError             | 数据库错误                     |
+| 2    | NotEnoughCoin             | 金币不足                       |
+| 3    | ItemNotFound              | 商品未找到                     |
+| 4    | PurchaseAndUseSuccess     | 购买并使用成功                 |
+| 5    | PurchaseSuccessAndUseFailure | 购买成功但使用失败           |
+
+<br/>
+
+### 物品合成
+
+?> 需要 v1.98.0+
+
+**方法名：**synthesize
+
+**说明：**使用已有的合成配方合成物品
+
+**示例：**
+- 使用ID为1的配方合成一次：[lifeup://api/synthesize?id=1](lifeup://api/synthesize?id=1)
+- 使用ID为1的配方合成5次：[lifeup://api/synthesize?id=1&times=5](lifeup://api/synthesize?id=1&times=5)
+
+| 参数  | 含义     | 取值            | 示例 | 是否必须 | 备注          |
+| ----- | -------- | --------------- | ---- | -------- | ------------- |
+| id    | 配方ID   | 大于 0 的数字    | 1    | 是       | 合成配方的ID  |
+| times | 合成次数 | 大于 0 的数字    | 5    | 否       | 默认值为 1    |
+
+**返回数据：**
+
+| 字段名           | 类型   | 说明         | 示例            | 备注                |
+| --------------- | ------ | ------------ | --------------- | ------------------ |
+| formulaId       | 数字   | 配方ID       | 1               |                    |
+| result          | 整数   | 结果代码     | 0               | 见下方结果代码说明  |
+| desc            | 文本   | 结果描述     | SynthesisSuccess| 见下方结果代码说明  |
+| synthesisResults| 文本   | 合成结果列表 | {...}           | 仅合成成功时返回    |
+
+**结果代码说明：**
+
+| 代码 | 描述                 | 说明         |
+| ---- | ------------------- | ------------ |
+| 0    | SynthesisSuccess    | 合成成功     |
+| 1    | FormulaNotFound     | 配方不存在   |
+| 2    | InsufficientMaterials| 材料不足     |
+| 3    | DatabaseError       | 数据库错误   |
+| 4    | UnknownError        | 其他错误     |
+
+<br/>
+
+### 合成配方管理
+
+?> 需要 v1.98.0+
+
+**方法名：**synthesis_formula
+
+**说明：**新建、修改或删除合成配方
+
+**示例：**
+- 创建新配方：[lifeup://api/synthesis_formula?inputItems=[{"itemId":1,"amount":2}]&outputItems=[{"itemId":3,"amount":1}]](lifeup://api/synthesis_formula?inputItems=[{"itemId":1,"amount":2}]&outputItems=[{"itemId":3,"amount":1}])
+- 删除配方：[lifeup://api/synthesis_formula?id=1&delete=true](lifeup://api/synthesis_formula?id=1&delete=true)
+
+| 参数        | 含义       | 取值                | 示例                               | 是否必须 | 备注                   |
+| ----------- | ---------- | ------------------- | ---------------------------------- | -------- | ---------------------- |
+| id          | 配方ID     | 大于 0 的数字       | 1                                  | 否       | 修改或删除时必须提供   |
+| delete      | 是否删除   | true 或者 false     | true                               | 否       | 仅删除配方时使用       |
+| inputItems  | 材料列表   | 商品数组，格式见下文 | [{"itemId":1,"amount":2}]          | 是       | 新建或修改时必须提供   |
+| outputItems | 产物列表   | 商品数组，格式见下文 | [{"itemId":3,"amount":1}]          | 是       | 新建或修改时必须提供   |
+| category    | 分类ID     | 大于 0 的数字       | 1                                  | 否       | 默认为通用分类         |
+
+!> inputItems 和 outputItems 的格式为 JSON 数组，每个商品包含 itemId（商品ID）和 amount（数量）两个字段，所有商品ID必须存在且数量必须大于0
+
+**返回数据：**
+
+| 字段名    | 类型   | 说明       | 示例        | 备注               |
+| --------- | ------ | ---------- | ----------- | ------------------ |
+| formulaId | 数字   | 配方ID     | 1           | 操作成功时返回     |
+| result    | 整数   | 结果代码   | 0           | 见下方结果代码说明 |
+| desc      | 文本   | 结果描述   | AddSuccess  | 见下方结果代码说明 |
+
+**结果代码说明：**
+
+| 代码 | 描述         | 说明       |
+| ---- | ------------ | ---------- |
+| 0    | Success      | 操作成功   |
+| 1    | Failed       | 操作失败   |
+
+<br/>
+
+### 子任务管理
+
+?> 需要 v1.98.0+
+
+**方法名：**subtask
+
+**说明：**新建或编辑子任务
+
+**示例：**
+- 为任务ID为1的主任务添加子任务：[lifeup://api/subtask?main_id=1&todo=完成作业](lifeup://api/subtask?main_id=1&todo=完成作业)
+- 编辑子任务并设置奖励：[lifeup://api/subtask?main_id=1&edit_id=2&coin=10&exp=5](lifeup://api/subtask?main_id=1&edit_id=2&coin=10&exp=5)
+
+| 参数          | 含义           | 取值                | 示例      | 是否必须 | 备注                           |
+| ------------ | -------------- | ------------------ | --------- | -------- | ------------------------------ |
+| main_id      | 主任务ID       | 大于 0 的数字      | 1         | 否*      | main_id、main_gid、main_name 必须提供其中一个 |
+| main_gid     | 主任务组ID     | 大于 0 的数字      | 1         | 否*      | main_id、main_gid、main_name 必须提供其中一个 |
+| main_name    | 主任务名称     | 任意文本           | 学习任务   | 否*      | main_id、main_gid、main_name 必须提供其中一个 |
+| edit_id      | 编辑的子任务ID | 大于 0 的数字      | 2         | 否*      | 编辑时与 edit_gid、edit_name 必须提供其中一个；新建时无需提供 |
+| edit_gid     | 编辑的子任务组ID| 大于 0 的数字     | 2         | 否*      | 编辑时与 edit_id、edit_name 必须提供其中一个；新建时无需提供 |
+| edit_name    | 编辑的子任务名称| 任意文本          | 完成作业   | 否*      | 编辑时与 edit_id、edit_gid 必须提供其中一个；新建时无需提供 |
+| todo         | 任务内容       | 任意文本           | 完成作业   | 否       | 新建时必须提供                 |
+| remind_time  | 提醒时间       | 时间戳（毫秒）     | 1640995200000 | 否    | 传入 null 可清除提醒时间       |
+| order        | 排序           | 整数              | 1          | 否       | 任务在列表中的排序位置          |
+| coin         | 金币奖励       | [0, 999999]      | 10         | 否       | 完成任务获得的金币数量          |
+| coin_var     | 金币奖励浮动值 | 整数              | 5          | 否       | 金币奖励的浮动范围             |
+| exp          | 经验值奖励     | [0, 99999]       | 5          | 否       | 完成任务获得的经验值            |
+| auto_use_item| 自动使用物品   | true 或者 false   | true       | 否       | 完成任务时是否自动使用物品      |
+| item_id      | 物品ID         | 大于 0 的数字     | 1          | 否*      | 与 item_name 必须提供其中一个   |
+| item_name    | 物品名称       | 任意文本          | 生命药水    | 否*      | 与 item_id 必须提供其中一个     |
+| item_amount  | 物品数量       | 大于 0 的数字     | 1          | 否       | 仅在设置物品奖励时有效          |
+| items        | 物品奖励JSON   | JSON文本          | [{"itemId":1,"amount":1}] | 否 | 可一次性设置多个物品奖励      |
+
+**返回数据：**
+
+| 字段名        | 类型   | 说明         | 示例 | 备注             |
+| ------------ | ------ | ------------ | ---- | ---------------- |
+| main_task_id | 数字   | 主任务ID     | 1    |                  |
+| subtask_id   | 数字   | 子任务ID     | 2    |                  |
+| subtask_gid  | 数字   | 子任务组ID   | 3    | 可能为空         |
+
+<br/>
+
+### 子任务操作
+
+?> 需要 v1.98.0+
+
+**方法名：**subtask_operation
+
+**说明：**对子任务进行完成、撤销完成或删除操作
+
+**示例：**
+- 完成子任务：[lifeup://api/subtask_operation?main_id=1&edit_id=2&operation=complete](lifeup://api/subtask_operation?main_id=1&edit_id=2&operation=complete)
+- 删除子任务：[lifeup://api/subtask_operation?main_id=1&edit_id=2&operation=delete](lifeup://api/subtask_operation?main_id=1&edit_id=2&operation=delete)
+- 撤销完成子任务：[lifeup://api/subtask_operation?main_id=1&edit_id=2&operation=undo_complete](lifeup://api/subtask_operation?main_id=1&edit_id=2&operation=undo_complete)
+
+| 参数          | 含义           | 取值                | 示例      | 是否必须 | 备注                           |
+| ------------ | -------------- | ------------------ | --------- | -------- | ------------------------------ |
+| main_id      | 主任务ID       | 大于 0 的数字      | 1         | 否*      | main_id、main_gid、main_name 必须提供其中一个 |
+| main_gid     | 主任务组ID     | 大于 0 的数字      | 1         | 否*      | main_id、main_gid、main_name 必须提供其中一个 |
+| main_name    | 主任务名称     | 任意文本           | 学习任务   | 否*      | main_id、main_gid、main_name 必须提供其中一个 |
+| edit_id      | 子任务ID       | 大于 0 的数字      | 2         | 否*      | edit_id、edit_gid、edit_name 必须提供其中一个 |
+| edit_gid     | 子任务组ID     | 大于 0 的数字      | 2         | 否*      | edit_id、edit_gid、edit_name 必须提供其中一个 |
+| edit_name    | 子任务名称     | 任意文本           | 完成作业   | 否*      | edit_id、edit_gid、edit_name 必须提供其中一个 |
+| operation    | 操作类型       | 以下数值其一：<br/>complete<br/>undo_complete<br/>delete | complete | 是 | complete - 完成任务<br/>undo_complete - 撤销完成<br/>delete - 删除任务 |
+
+**返回数据：**
+
+| 字段名        | 类型   | 说明         | 示例 | 备注             |
+| ------------ | ------ | ------------ | ---- | ---------------- |
+| main_task_id | 数字   | 主任务ID     | 1    |                  |
+| subtask_id   | 数字   | 子任务ID     | 2    |                  |
+| subtask_gid  | 数字   | 子任务组ID   | 3    | 可能为空         |
+
+<br/>
+
+### 清单管理
+
+?> 需要 v1.98.0+
+
+**方法名：**category
+
+**说明：**添加或编辑各类清单（任务清单、成就清单、商店清单、合成清单）
+
+**示例：**
+- 创建任务清单：[lifeup://api/category?type=tasks&name=学习清单](lifeup://api/category?type=tasks&name=学习清单)
+- 编辑商店清单：[lifeup://api/category?type=shop&edit_id=1&name=装备商店&order=1](lifeup://api/category?type=shop&edit_id=1&name=装备商店&order=1)
+
+| 参数             | 含义           | 取值                | 示例       | 是否必须 | 备注                           |
+| --------------- | -------------- | ------------------ | ---------- | -------- | ------------------------------ |
+| type            | 清单类型       | 以下数值其一：<br/>tasks<br/>achievements<br/>shop<br/>synthesis | tasks | 是 | tasks - 任务清单<br/>achievements - 成就清单<br/>shop - 商店清单<br/>synthesis - 合成清单 |
+| edit_id         | 编辑的清单ID   | 大于 0 的数字      | 1          | 否       | 编辑时必须提供                 |
+| name            | 清单名称       | 任意文本           | 学习清单    | 否       | 新建时必须提供；编辑时可选      |
+| order           | 排序           | 整数               | 1          | 否       | 清单在列表中的排序位置          |
+| hidden          | 是否隐藏       | true 或者 false    | false      | 否       | 仅任务清单和商店清单支持        |
+| inventory_hidden| 是否在仓库隐藏 | true 或者 false    | false      | 否       | 仅商店清单支持                 |
+| icon_uri        | 图标URI        | URI文本            | content://... | 否    | 仅成就清单支持                 |
+| desc            | 描述           | 任意文本           | 这是描述     | 否      | 仅成就清单支持                 |
+| color           | 标签颜色       | 颜色字符串         | #66CCFF     | 否      | 仅任务清单支持；#需要转义为%23  |
+
+**返回数据：**
+
+| 字段名 | 类型   | 说明     | 示例 | 备注             |
+| ------ | ------ | -------- | ---- | ---------------- |
+| id     | 数字   | 清单ID   | 1000 | 新建或编辑的清单ID |
+
+<br/>
+
+### 成就管理
+
+?> 需要 v1.98.0+
+
+**方法名：**achievement
+
+**说明：**添加或编辑自定义成就和成就子分类
+
+**示例：**
+- 创建一个成就：[lifeup://api/achievement?name=收藏家&desc=收集100个物品](lifeup://api/achievement?name=收藏家&desc=收集100个物品)
+- 创建需要解锁条件的成就：[lifeup://api/achievement?name=百万富翁&conditions_json=[{"type":7,"target":1000000}]](lifeup://api/achievement?name=百万富翁&conditions_json=[{"type":7,"target":1000000}])
+- 编辑现有成就：[lifeup://api/achievement?edit_id=1&name=新成就名称&exp=100](lifeup://api/achievement?edit_id=1&name=新成就名称&exp=100)
+
+#### 1. 成就参数
+
+| 参数          | 含义           | 取值                | 示例     | 是否必须 | 备注                           |
+| ------------ | -------------- | ------------------ | -------- | -------- | ------------------------------ |
+| edit_id      | 编辑的成就ID   | 大于 0 的数字      | 1        | 否       | 编辑时必须提供                 |
+| is_subcategory| 是否为子分类   | true 或者 false    | false    | 否       | 默认为 false                   |
+| name         | 成就名称       | 任意文本           | 收藏家    | 否*      | 新建时必须提供                 |
+| desc         | 成就描述       | 任意文本           | 收集100个物品 | 否    |                               |
+| order        | 排序           | 整数              | 1         | 否       | 在列表中的排序位置              |
+| category_id  | 所属分类ID     | 大于 0 的数字      | 1         | 否*      | 创建子分类时必须提供            |
+| unlocked     | 是否解锁       | true 或者 false    | true      | 否       | true-立即解锁<br/>false-重置为未解锁 |
+| unlock_time  | 解锁时间       | 时间戳（毫秒）     | 1640995200000 | 否   | 仅当成就已解锁时有效           |
+| delete       | 是否删除       | true 或者 false    | false     | 否       |                                |
+| secret       | 是否为隐藏成就 | true 或者 false    | false     | 否       |                                |
+| write_feeling| 是否记录感想   | true 或者 false    | false     | 否       |                                |
+| color        | 标题颜色       | 颜色字符串         | #66CCFF   | 否       | #需要转义为%23                  |
+| auto_use_item| 自动使用物品   | true 或者 false    | false     | 否       |                                |
+| skills       | 技能ID         | 大于 0 的数字数组   | 1         | 否       | 支持数组（如 &skills=1&skills=2）|
+| exp          | 经验值奖励     | 整数              | 100       | 否       |                                |
+| item_id      | 物品ID         | 大于 0 的数字      | 1         | 否*      | 与 item_name 必须提供其中一个   |
+| item_name    | 物品名称       | 任意文本           | 宝箱      | 否*      | 与 item_id 必须提供其中一个     |
+| item_amount  | 物品数量       | [1, 99]           | 1         | 否       | 默认为 1                       |
+| items        | 物品奖励JSON   | JSON文本           | [{"item_id":1,"amount":2}] | 否 | 可一次设置多个物品奖励，格式见下文 |
+| conditions_json | 解锁条件JSON | JSON文本          | [{"type":7,"target":1000000}] | 否 | 设置解锁条件，格式见下文 |
+
+#### 2. 子分类专用参数
+
+| 参数          | 含义           | 取值                | 示例     | 是否必须 | 备注                           |
+| ------------ | -------------- | ------------------ | -------- | -------- | ------------------------------ |
+| is_collapsed | 是否折叠       | true 或者 false    | false    | 否       | 仅适用于子分类                  |
+
+**返回数据：**
+
+| 字段名 | 类型   | 说明     | 示例 | 备注             |
+| ------ | ------ | -------- | ---- | ---------------- |
+| id     | 数字   | 成就ID   | 1000 | 新建或编辑的成就ID |
+
+#### 3. 解锁条件类型说明
+
+| 类型代码 | 含义               | 是否需要related_id | related_id类型 | target说明        |
+| ------- | ------------------ | ---------------- | -------------- | ----------------- |
+| 0       | 完成任务次数        | 是              | 任务ID         | 完成次数           |
+| 1       | 连续完成任务次数     | 是              | 任务ID         | 连续次数           |
+| 3       | 番茄数量           | 否              | -              | 番茄数量           |
+| 4       | 使用人升天数        | 否              | -              | 使用天数           |
+| 5       | 被点赞数           | 否              | -              | 点赞数量           |
+| 6       | 连续完成天数        | 否              | -              | 连续天数           |
+| 7       | 当前金币数         | 否              | -              | 金币数量           |
+| 8       | 一天内金币获得数     | 否              | -              | 金币数量           |
+| 9       | 任务的番茄数        | 是              | 任务ID         | 番茄数量           |
+| 10      | 物品购买数         | 是              | 物品ID         | 购买次数           |
+| 11      | 物品使用数         | 是              | 物品ID         | 使用次数           |
+| 12      | 物品开箱获得数      | 是              | 物品ID         | 获得次数           |
+| 13      | 技能达到指定等级     | 是              | 技能ID         | 等级数值           |
+| 14      | 人生等级           | 否              | -              | 等级数值           |
+| 15      | 物品累计获得数      | 是              | 物品ID         | 获得总次数         |
+| 16      | 物品合成获得数      | 是              | 物品ID         | 合成获得次数        |
+| 17      | 物品当前拥有数量     | 是              | 物品ID         | 拥有数量           |
+| 18      | 任务番茄钟专注时长   | 是              | 任务ID         | 专注时长(分钟)      |
+| 19      | ATM存款           | 否              | -              | 存款数量           |
+| 20      | 外部API           | 否              | -              | 根据API定义        |
+
+#### 4. JSON格式说明
+
+##### 解锁条件 (conditions_json)
+```json
+[
+   {
+       "type": 7,           // 条件类型（参考上表）
+       "related_id": null,  // 关联ID（部分类型必须提供）
+       "target": 1000000    // 目标数值
+   },
+   {
+       "type": 10,          // 示例：购买指定物品
+       "related_id": 1,     // 物品ID
+       "target": 5          // 购买5次
+   }
+]
+```
+
+##### 物品奖励 (items)
+```
+[
+    {
+        "item_id": 1,    // 物品ID
+        "amount": 2      // 数量
+    },
+    {
+        "item_id": 2,
+        "amount": 3
+    }
+]
+```
+
+<br/>
+
+### 技能管理
+
+?> 需要 v1.98.0+
+
+**方法名：**skill
+
+**说明：**新建或编辑自定义技能（属性）
+
+**示例：**
+- 创建一个技能：[lifeup://api/skill?content=编程&desc=代码能力&color=%23FF6B6B](lifeup://api/skill?content=编程&desc=代码能力&color=%23FF6B6B)
+- 编辑技能经验值：[lifeup://api/skill?id=1&exp=100](lifeup://api/skill?id=1&exp=100)
+- 删除技能：[lifeup://api/skill?id=1&delete=true](lifeup://api/skill?id=1&delete=true)
+
+| 参数         | 含义           | 取值                | 示例       | 是否必须 | 备注                           |
+| ----------- | -------------- | ------------------ | ---------- | -------- | ------------------------------ |
+| id          | 技能ID         | 大于 0 的数字      | 1          | 否       | 编辑时必须提供                 |
+| content     | 技能名称       | 任意文本           | 编程        | 否*      | 新建时必须提供                 |
+| desc        | 技能描述       | 任意文本           | 代码能力    | 否       |                               |
+| icon        | 图标           | 任意文本           | 💻         | 否       | 可以使用 emoji                 |
+| color       | 颜色           | 颜色字符串         | #FF6B6B    | 否       | #需要转义为%23                 |
+| type        | 类型           | 整数               | 0          | 否       |                               |
+| order       | 排序           | 整数               | 1          | 否       | 在列表中的排序位置             |
+| status      | 状态           | 整数               | 0          | 否       |                               |
+| exp         | 经验值         | 大于或等于 0 的数字 | 100        | 否       | 技能当前经验值                 |
+| delete      | 是否删除       | true 或者 false    | false      | 否       | 仅在编辑模式下有效             |
+
+**返回数据：**
+
+| 字段名 | 类型   | 说明     | 示例 | 备注             |
+| ------ | ------ | -------- | ---- | ---------------- |
+| id     | 数字   | 技能ID   | 1000 | 新建或编辑的技能ID |
+
+<br/>
+
+### 导出备份
+
+?> 需要 v1.98.0+
+
+**方法名：**export_backup
+
+**说明：**创建一个备份文件并返回其 URI（仅支持通过 Content Provider 调用）
+
+!> 此 API 只能通过 Content Provider 方式调用，不支持直接使用 URL Scheme 调用
+
+| 参数          | 含义           | 取值            | 示例  | 是否必须 | 备注                                           |
+| ------------- | -------------- | --------------- | ----- | -------- | ---------------------------------------------- |
+| withMedia     | 是否包含媒体文件 | true 或者 false | true  | 否       | 是否在备份中包含媒体文件（图片、音效等）<br/>默认为 true |
+| callingPackage| 调用方包名     | 任意文本        | com.example.app | 否 | Content Provider 调用时的包名标识 |
+
+**返回数据：**
+
+| 字段名          | 类型   | 说明                 | 示例                                          |
+| --------------- | ------ | -------------------- | --------------------------------------------- |
+| backup_file_uri | 文本   | 备份文件的 URI 地址  | content://net.sarasarasa.lifeup.api/backup/file.zip |
+
+<br/>
+
+### 应用设置
+
+?> 需要 v1.98.0+
+
+**方法名：**app_settings
+
+**说明：**调整应用的界面设置
+
+**示例：**
+- 启用简洁模式：[lifeup://api/app_settings?is_enable_compact_mode=true](lifeup://api/app_settings?is_enable_compact_mode=true)
+- 启用 Material You 主题：[lifeup://api/app_settings?is_enable_material_you=true](lifeup://api/app_settings?is_enable_material_you=true)
+- 更改设置并立即重启界面：[lifeup://api/app_settings?is_enable_compact_mode=true&restart_activities=true](lifeup://api/app_settings?is_enable_compact_mode=true&restart_activities=true)
+
+| 参数                    | 含义              | 取值            | 示例  | 是否必须 | 备注                           |
+| ---------------------- | ----------------- | --------------- | ----- | -------- | ------------------------------ |
+| is_enable_compact_mode | 是否启用简洁模式   | true 或者 false | true  | 否       | 精简界面元素                    |
+| is_enable_material_you | 是否启用Material You| true 或者 false | true  | 否       | 启用 Material You 主题          |
+| restart_activities     | 是否重启界面       | true 或者 false | true  | 否       | 立即应用界面更改                |
+
+**返回数据：**
+
+| 字段名 | 类型   | 说明     | 示例 | 备注             |
+| ------ | ------ | -------- | ---- | ---------------- |
+| result | 整数   | 结果代码 | 0    | 0 表示设置成功   |
+
+<br/>
+
 ### 简单查询
 
 !> 此处的功能是用于搭配自动化工具/二次开发的。如果你需要查询完整的数据列表，可以参考我们的 LifeUp SDK、《云人升》、《人升桌面端》。
@@ -1362,10 +2011,14 @@ id 的获取方法为「实验」页面打开「开发者模式」，然后在�
 | ----------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [$text\|标题]                       | 文本占位符                                                   | [$text\|输入任务名称]                                        |
 | [$number\|标题]                     | 数字占位符（不含小数点）                                     | [$number\|输入价格]                                          |
+| [$number\|标题\|signed]            | 数字占位符（不含小数点），并显示正负符号                     | [$number\|输入价格\|signed]                                  |
 | [$decimal\|标题]                    | 数字占位符（含小数点）                                       | [$decimal\|输入ATM利率]                                       |
+| [$decimal\|标题\|signed]           | 数字占位符（含小数点），并显示正负符号                       | [$decimal\|输入ATM利率\|signed]                                |
 | [$item]                             | 选择商品，将被替换为商品id                                   | [$item]                                                      |
 | [$task_category]                    | 选择任务清单，将被替换为任务清单id                           | [$task_category]                                             |
 | [$time\|锚定时间\|偏移毫秒（可选）] | 时间占位符（仅 v1.93.0-beta01（502）+ 支持）<br/><br/>其中锚定时间的取值有：<br/>`current`、`today`、`this_monday`、`last_monday`、`this_month`、`last_month`、`this_year`、`last_year`<br/><br/>偏移毫秒应该为整数，默认为 0 毫秒 | 今天0点：[$time\|today]<br/>明天0点：[$time\|today\|8600000] |
+| [$random_number\|最小值\|最大值]    | 随机数字占位符（不含小数点）                                 | [$random_number\|0\|3000]                                    |
+| [$random_decimal\|最小值\|最大值]   | 随机数字占位符（含小数点）                                   | [$random_decimal\|1.0\|2.0]                                  |
 
 **示例1：使用时，选择物品降价1金币**
 

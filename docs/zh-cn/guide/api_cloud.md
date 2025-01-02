@@ -52,7 +52,7 @@
 
 接口请求地址：
 
-```awk
+```
 // 【推荐】content provider 机制，兼容性更好
 http://{host:port}/api/contentprovider
 
@@ -134,7 +134,7 @@ http://{host:port}/api/contentprovider
 
 **任务相关**
 
-```awk
+```
 // 所有任务
 http://{host:port}/tasks
 
@@ -152,9 +152,12 @@ http://{host:port}/tasks_categories
 
 **商品相关**
 
-```awk
+```
 // 所有商品
 http://{host:port}/items
+
+// 查询指定 id 为 1、4 的商品
+http://{host:port}/items?id=1&id=4
 
 // 指定清单${id}里面的商品
 http://{host:port}/items/${id}
@@ -165,7 +168,7 @@ http://{host:port}/items_categories
 
 **成就相关**
 
-```awk
+```
 // 所有商品
 http://{host:port}/achievements
 
@@ -178,14 +181,34 @@ http://{host:port}/achievement_categories
 
 **感想**
 
-```awk
+```
 // 所有感想（分页查询）
 http://{host:port}/feelings?offset=${offset}&limit=${limit}
 ```
 
+**合成清单**
+
+```
+// 所有合成清单
+http://{host:port}/synthesis_categories
+
+// 指定清单${id}里面的合成清单
+http://{host:port}/synthesis_categories/${id}
+```
+
+**合成配方**
+
+```
+// 所有合成配方
+http://{host:port}/synthesis
+
+// 指定清单${id}里面的合成配方
+http://{host:port}/synthesis/${id}
+```
+
 **属性**
 
-```awk
+```
 // 所有属性
 http://{host:port}/skills
 ```
@@ -199,13 +222,14 @@ http://{host:port}/skills
 | id     | 对应的数据id | Query | 数字     | 是       | -                  |
 | offset | 查询偏移量   | Query | 数字     | 否       | 目前仅部分接口需要 |
 | limit  | 限制数量     | Query | 数字     | 否       | 目前仅部分接口需要 |
+| filterGid  | 筛选重复任务历史记录         | Query  | 数字     | 否       | 历史记录查询的可选参数 |
 
 **请求实例：**
 
 
 **任务相关**
 
-```awk
+```
 // 所有任务
 http://{host:port}/tasks
 
@@ -221,7 +245,7 @@ http://{host:port}/tasks_categories
 
 **商品相关**
 
-```awk
+```
 // 所有商品
 http://{host:port}/items
 
@@ -234,7 +258,7 @@ http://{host:port}/items_categories
 
 **成就相关**
 
-```awk
+```
 // 所有商品
 http://{host:port}/achievements
 
@@ -247,16 +271,36 @@ http://{host:port}/achievement_categories
 
 **感想**
 
-```awk
+```
 // 所有感想（分页查询），查询第0位开始的 100 条
 http://{host:port}/feelings?offset=0&limit=100
 ```
 
 **属性**
 
-```awk
+```
 // 所有属性
 http://{host:port}/skills
+```
+
+**合成清单**
+
+```awk
+// 所有合成清单
+http://{host:port}/synthesis_categories
+
+// 指定清单id 1 里面的合成清单
+http://{host:port}/synthesis_categories/1
+```
+
+**合成配方**
+
+```awk
+// 所有合成配方
+http://{host:port}/synthesis
+
+// 指定清单id 1 里面的合成配方
+http://{host:port}/synthesis/1
 ```
 
 <br/>
@@ -273,7 +317,7 @@ http://{host:port}/skills
 
 接口请求地址：
 
-```awk
+```
 http://{host:port}/files/${url}
 ```
 
@@ -287,7 +331,7 @@ http://{host:port}/files/${url}
 
 **请求实例：**
 
-```awk
+```
 http://{host:port}/files/xxx
 ```
 
