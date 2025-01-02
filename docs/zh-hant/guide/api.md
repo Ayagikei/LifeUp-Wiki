@@ -10,11 +10,11 @@
 
 
 
-**2024/09/20更新**
+**2024/12/22更新**
 
-本文的 API 引數和定義基於 v1.96.0-rc02 版本編寫。
+本文的 API 引數和定義基於 v1.98.0 版本編寫。
 
-使用 API 前，建議將應用升級到 v1.96.0-rc02 版本，如果沒法檢測到更新，請切換更新渠道到【會員內測-嚐鮮版】。
+使用 API 前，建議將應用升級到 v1.98.0 版本，如果沒法檢測到更新，請切換更新渠道到【會員內測-嚐鮮版】。
 
 
 
@@ -474,6 +474,129 @@ gid: 事項組id，針對同一個重複任務，其 gid 都不會發生變化�
 
 此外，App 的內部排序邏輯可能會根據不同版本隨時進行調整，單次更新 `order` 值無法保證在未來版本中的一致性或預期效果。
 
+### 基礎知識 - JSON 數據結構
+
+?> 需要 v1.98.0+
+
+本節介紹 API 中常用的 JSON 數據結構。
+
+#### 1. 物品獎勵結構
+
+用於指定物品獎勵的 JSON 陣列，每個物品包含 ID 和數量。
+
+```json
+[
+    {
+        "item_id": 1,    // 物品ID
+        "amount": 2      // 數量
+    },
+    {
+        "item_id": 2,
+        "amount": 3
+    }
+]
+```
+
+#### 2. 成就解鎖條件結構
+
+```json
+[
+    {
+        "type": 7,           // 條件型別
+        "related_id": null,  // 關聯ID（部分型別必須提供）
+        "target": 1000000    // 目標數值
+    }
+]
+```
+
+#### 3. 購買限制結構
+
+```json
+[
+    {
+        "type": "daily",     // 限制類型：daily（每日）、total（總計）
+        "value": 5           // 限制數量
+    }
+]
+```
+
+#### 4. 商品效果結構
+
+```json
+[
+    {
+        "type": 2,           // 效果型別
+        "info": {            // 效果引數，根據type不同而不同
+            "min": 100,      // 最小值（用於金幣獎勵等）
+            "max": 200       // 最大值（用於金幣獎勵等）
+        }
+    }
+]
+```
+
+#### 效果型別說明
+
+| 型別程式碼 | 含義 | 引數說明 |
+| ------- | ---- | ------- |
+| 0 | 無特殊效果 | 無需引數 |
+| 1 | 不可使用 | 無需引數 |
+| 2 | 增加金幣 | min: 最小金幣數<br/>max: 最大金幣數（可選，不填則等於min） |
+| 3 | 減少金幣 | min: 最小金幣數<br/>max: 最大金幣數（可選，不填則等於min） |
+| 4 | 增加經驗值 | ids: 技能ID陣列<br/>value: 經驗值<br/>using_limit: 是否使用限制（可選，預設false） |
+| 5 | 減少經驗值 | ids: 技能ID陣列<br/>value: 經驗值<br/>using_limit: 是否使用限制（可選，預設false） |
+| 6 | 簡易合成 | require_number: 需求數量<br/>item_id: 物品ID |
+| 7 | 開箱 | items: 物品陣列，每個物品包含：<br/>- item_id: 物品ID<br/>- amount: 數量<br/>- probability: 機率<br/>- is_fixed_reward: 是否固定獎勵 |
+| 8 | 倒計時 | seconds: 倒計時秒數 |
+| 9 | 網頁連結 | url: 連結地址<br/>use_web_view: 是否使用內建瀏覽器（可選，預設false） |
+
+**效果示例：**
+
+增加隨機金幣：
+```json
+{
+    "type": 2,
+    "info": {
+        "min": 100,
+        "max": 200
+    }
+}
+```
+
+增加經驗值：
+```json
+{
+    "type": 4,
+    "info": {
+        "ids": [1, 2],
+        "value": 50,
+        "using_limit": false
+    }
+}
+```
+
+開箱效果：
+```json
+{
+    "type": 7,
+    "info": {
+        "items": [
+            {
+                "item_id": 1,
+                "amount": 1,
+                "probability": 50,
+                "is_fixed_reward": false
+            },
+            {
+                "item_id": 2,
+                "amount": 1,
+                "probability": 50,
+                "is_fixed_reward": true
+            }
+        ]
+    }
+}
+```
+
 <br/>
 
 ## 介面文件
@@ -566,57 +689,54 @@ gid: 事項組id，針對同一個重複任務，其 gid 都不會發生變化�
 
 #### 新增任務
 
+?> 部分引數需要 v1.98.0+
+
 **方法名：**add_task
 
 **說明：**直接新增一個任務
 
-**示例1：**
+**示例：**
+[lifeup://api/add_task?todo=這是自動新增的任務&notes=備註&coin=10&coin_var=1&exp=2048&skills=1&skills=2&skills=3&category=0&item_name=金幣](lifeup://api/add_task?todo=這是自動新增的任務&notes=備註&coin=10&coin_var=1&exp=2048&skills=1&skills=2&skills=3&category=0&item_name=金幣)
 
-[lifeup://api/add_task?todo=這是自動新增的任務&notes=備註&coin=10&coin_var=1&exp=2048&skills=1&skills=2&skills=3&category=0&item_name=金幣](lifeup://api/add_task?todo=這是自動新增的任務&notes=備註&coin=10&exp=2048&skills=1&skills=2&skills=3&category=0&item_name=金幣)
+| 引數             | 含義           | 取值                | 示例       | 是否必須 | 備註                           |
+| --------------- | -------------- | ------------------ | ---------- | -------- | ------------------------------ |
+| todo            | 任務內容       | 任意文字           | 寫日記     | 是       |                               |
+| notes           | 備註           | 任意文字           | 備註       | 否       | 預設為空                       |
+| coin            | 金幣獎勵       | [0, 999999]       | 10        | 否       | 預設為 0                       |
+| coin_var        | 金幣獎勵浮動值  | 大於等於 0 的數字  | 1         | 否       | 預設為 0；如大於 0，則在 [coin, coin+coin_var] 範圍內隨機 |
+| exp             | 經驗值獎勵     | [0, 99999]        | 100       | 否       | 預設為 0                       |
+| skills          | 技能ID         | 大於 0 的數字陣列   | 1         | 否       | 支援陣列（如 &skills=1&skills=2）|
+| category        | 清單ID         | 大於等於 0 的數字   | 0         | 否       | 預設為 0（預設清單）；不能選擇智慧清單 |
+| frequency       | 重複頻次       | 整數               | 0         | 否       | 預設為 0（單次）<br/>0 - 單次<br/>1 - 每日<br/>N (N>1) - 每 N 日<br/>-1 - 無限<br/>-4 - 每月<br/>-5 - 每年 |
+| importance      | 重要程度       | [1, 4]            | 1         | 否       | 預設為 1                       |
+| difficulty      | 困難程度       | [1, 4]            | 1         | 否       | 預設為 1                       |
+| deadline        | 截止時間       | 時間戳（毫秒）     | 1640995200000 | 否    |                               |
+| color           | 標籤顏色       | 顏色字串         | #66CCFF    | 否       | #需要轉義為%23                 |
+| background_url  | 背景圖片URL    | 網路地址URL        | http://example.com/bg.jpg | 否 | 必須是可訪問的網路圖片地址    |
+| background_alpha| 背景透明度     | [0, 1] 之間的浮點數 | 0.5        | 否      | 預設為 1.0                    |
+| start_time      | 開始時間       | 時間戳（毫秒）     | 1640995200000 | 否     | 任務開始時間                  |
+| auto_use_item   | 自動使用獎勵物品| true 或者 false   | false      | 否       | 完成任務時自動使用獎勵物品      |
+| remind_time     | 提醒時間       | 時間戳（毫秒）     | 1640995200000 | 否    | 任務提醒時間                  |
+| pin             | 置頂           | true 或者 false    | false     | 否       | 將任務置頂顯示                 |
+| frozen          | 是否凍結       | true 或者 false    | false     | 否       | 預設為 false                   |
+| freeze_until    | 凍結截止時間   | 時間戳（毫秒）     | 1640995200000 | 否    | 僅當 frozen 為 true 時生效     |
+| coin_penalty_factor | 金幣懲罰係數| [0, 100) 之間的浮點數 | 0.5    | 否       |                               |
+| exp_penalty_factor | 經驗懲罰係數 | [0, 100) 之間的浮點數 | 0.5    | 否       |                               |
+| write_feelings  | 是否啟用感想   | true 或者 false    | false     | 否       | 預設為 false                   |
+| item_id         | 物品ID         | 大於 0 的數字      | 1         | 否*      | 與 item_name 必須提供其中一個   |
+| item_name       | 物品名稱       | 任意文字           | 寶箱      | 否*      | 與 item_id 必須提供其中一個     |
+| item_amount     | 物品數量       | [1, 99]           | 1         | 否       | 預設為 1                       |
+| items           | 物品獎勵       | JSON文字           | 參見[物品獎勵結構](#1-物品獎勵結構) | 否 | 可一次性設定多個物品獎勵 |
 
-**解釋1：**向預設清單（id為0）中新增一個內容為“這是自動新增的任務”，備註為“備註”，金幣獎勵為10~11隨機，經驗值獎勵為2048，選擇的技能id為1、2、3（一般對應前3個內建屬性），商品獎勵為模糊搜尋一件“金幣”商品。
+**返回資料：**
 
-**示例2：**
-
-[lifeup://api/add_task?todo=明天截止的任務&deadline=[$time|today|86400000]](lifeup://api/add_task?todo=明天截止的任務&deadline=[$time|today|86400000])
-
-**解釋2：**使用時間佔位符動態增加一個明天截止的任務。注意：該功能需要 v1.93.0-beta01（502）以上版本的人升。
-
-| 引數                    | 含義           | 取值                      | 示例                           | 是否必須 | 備註                                                         |
-| ----------------------- | -------------- | ------------------------- | ------------------------------ | -------- | ------------------------------------------------------------ |
-| todo                    | 任務內容       | 任意文字                  | coin                           | 是       | coin - 金幣                                                  |
-| notes                   | 備註           | 任意文字                  | 備註                           | 否       |                                                              |
-| coin                    | 金幣獎勵       | 大於 0 的數字             | 10                             | 否       | 取值最大為999999                                             |
-| coin_var                | 金幣獎勵偏移值 | 大於 0 的數字             | 1                              | 否       | 如果該數值大於0，完成任務時，金幣會隨機計算區間為[coin, coin+coin_var] |
-| exp                     | 經驗值獎勵     | 大於 0 的數字             | 1                              | 否       | 取值最大為99999                                              |
-| skills                  | 屬性（技能）id | 大於 0 的數字陣列         | 1                              | 否       | 支援陣列（即&skills=1&skills=2&skills=3）<br/>獲取方式請檢視上文 「基礎知識 - 人升資料 ID」 |
-| category                | 清單id         | 大於或等於 0 的數字       | 0                              | 否       | 0 或不傳遞代表預設清單，不能選擇智慧清單<br/>獲取方式請檢視上文 「基礎知識 - 人升資料 ID」 |
-| frequency               | 重複頻次       | 數字，取值範圍見備註      | 0                              | 否       | 預設為0<br/>0 - 單次<br/>1 - 每日<br/>大於 0 的其他數字 - 每 N 日<br/>-1 - 無限<br/>-4 - 每月<br/> -5 - 每年 |
-| importance              | 重要程度       | 數字 [1, 4]               | 1                              | 否       | 預設為1                                                      |
-| difficulty              | 困難程度       | 數字 [1, 4]               | 2                              | 否       | 預設為1                                                      |
-| item_id                 | 獎勵商品的id   | 大於 0 的數字             | 1                              | 否       | 如需獎勵商品，只需要提供id或名稱其一<br/>獲取方式請檢視上文 「基礎知識 - 人升資料 ID」 |
-| item_name               | 獎勵商品的名稱 | 任意文字                  | 寶箱                           | 否       | 如需獎勵商品，只需要提供id或名稱其一<br/>名稱會用於模糊匹配  |
-| item_amount             | 獎勵數量       | [1, 99]                   | 1                              | 否       | 預設為1                                                      |
-| deadline                | 本次期限時間   | 時間戳（毫秒）            | 0                              | 否       | 建議使用外部工具計算時間戳並提供<br/>或者你可以參考下文的[變數佔位符]中的時間佔位符 |
-| color                   | 標籤顏色       | 字串                    | \#66CCFF                       | 否       | 需要 v1.91+<br/>注意在實際使用時，# 字元需要轉義。<br/>比如示例的色值實際使用時，應為 `color=%2366CCFF` |
-| background_url          | 圖片背景       | 字串（遠端URL）         | http://www.aaabbbccc.com/1.jpg | 否       | 僅支援手機可訪問的地址                                       |
-| 以下引數為 v1.94.0 引入 |                |                           |                                |          |                                                              |
-| frozen                  | 是否凍結狀態   | true 或者 false           | false                          | 否       | 預設為 false                                                 |
-| freeze_until            | 凍結至的時間戳 | 時間戳（毫秒）            | 0                              | 否       | 僅當`frozen`為true時生效，可以不提供，代表持續凍結           |
-| coin_penalty_factor     | 金幣懲罰係數   | [0, 100) 之間的任意浮點數 | 0.5                            | 否       |                                                              |
-| exp_penalty_factor      | 經驗值懲罰係數 | [0, 100) 之間的任意浮點數 | 0.5                            | 否       |                                                              |
-| write_feelings          | 是否啟用感想   | true 或者 false           | false                          | 否       |                                                              |
-
-**返回值：**
-
-| 引數     | 含義           | 取值 | 示例 | 是否必須 | 備註 |
-| -------- | -------------- | ---- | ---- | -------- | ---- |
-| task_id  | 新增的任務id   | 數字 | 1000 | 是       | -    |
-| task_gid | 新增的任務組id | 數字 | 1000 | 是       | -    |
-
-
+| 欄位名   | 型別   | 說明       | 示例 | 備註             |
+| -------- | ------ | ---------- | ---- | ---------------- |
+| task_id  | 數字   | 任務ID     | 1000 |                  |
+| task_gid | 數字   | 任務組ID   | 1000 |                  |
 
 <br/>
+
 
 #### 完成任務
 
@@ -753,6 +873,88 @@ id 的獲取方法為「實驗」頁面開啟「開發者模式」，然後在�
 
 <br/>
 
+### 編輯任務
+
+?> 需要 v1.98.0+
+
+**方法名：**edit_task
+
+**說明：**編輯已有任務的內容和屬性
+
+**示例：**
+[lifeup://api/edit_task?id=1&todo=修改後的任務內容&notes=備註&coin=10&exp=20&skills=1&skills=2&category=0](lifeup://api/edit_task?id=1&todo=修改後的任務內容&notes=備註&coin=10&exp=20&skills=1&skills=2&category=0)
+
+| 引數                | 含義           | 取值                | 示例     | 是否必須 | 備註                           |
+| ------------------ | -------------- | ------------------ | -------- | -------- | ------------------------------ |
+| id                 | 任務ID         | 大於 0 的數字      | 1        | 否*      | id、gid、name 必須提供其中一個  |
+| gid                | 任務組ID       | 大於 0 的數字      | 1        | 否*      | id、gid、name 必須提供其中一個  |
+| name               | 任務名稱       | 任意文字           | 寫日記    | 否*      | id、gid、name 必須提供其中一個  |
+| todo               | 任務內容       | 任意文字           | 寫週記    | 否       |                               |
+| notes              | 備註           | 任意文字           | 備註內容  | 否       |                               |
+| coin               | 金幣獎勵       | [0, 999999]       | 10       | 否       | 完成任務獲得的金幣數量         |
+| coin_var           | 金幣浮動值     | 大於 0 的數字      | 1        | 否       | 獎勵將在 [coin, coin+coin_var] 範圍內隨機 |
+| exp                | 經驗值獎勵     | [0, 99999]        | 20       | 否       | 完成任務獲得的經驗值           |
+| skills             | 技能ID         | 大於 0 的數字陣列   | 1        | 否       | 支援陣列（如 &skills=1&skills=2）|
+| category           | 列表ID         | 大於或等於 0 的數字 | 0        | 否       | 0 表示預設列表，不能選擇智慧列表 |
+| frequency          | 重複頻率       | 整數               | 0        | 否       | -1 - 無限<br/>-3 - 艾賓浩斯<br/>-4 - 每月<br/>-5 - 每年 |
+| importance         | 重要程度       | [1, 4]            | 1        | 否       | 預設為 1                       |
+| difficulty         | 難度等級       | [1, 4]            | 2        | 否       | 預設為 1                       |
+| deadline           | 截止時間       | 時間戳（毫秒）     | 1640995200000 | 否 |                               |
+| remind_time        | 提醒時間       | 時間戳（毫秒）     | 1640995200000 | 否 |                               |
+| start_time         | 開始時間       | 時間戳（毫秒）     | 1640995200000 | 否 |                               |
+| color              | 標籤顏色       | 顏色字串         | #66CCFF  | 否       | #需要轉義為%23                 |
+| background_url     | 背景圖片URL    | 網路地址URL        | http://example.com/bg.jpg | 否 |                    |
+| background_alpha   | 背景透明度     | [0, 1] 之間的浮點數 | 0.5      | 否       |                               |
+| item_id            | 物品ID         | 大於 0 的數字      | 1        | 否*      | 與 item_name 必須提供其中一個  |
+| item_name          | 物品名稱       | 任意文字           | 寶箱      | 否*      | 與 item_id 必須提供其中一個    |
+| item_amount        | 物品數量       | [1, 99]           | 1        | 否       | 預設為 1                       |
+| items              | 物品獎勵JSON   | JSON文字           | [{"item_id":1,"amount":1}] | 否 | 可一次設定多個物品獎勵 |
+| auto_use_item      | 自動使用物品   | true 或者 false    | false    | 否       |                               |
+| frozen             | 是否凍結       | true 或者 false    | false    | 否       | 預設為 false                  |
+| freeze_until       | 凍結截止時間   | 時間戳（毫秒）     | 1640995200000 | 否 | 僅當 frozen 為 true 時生效    |
+| coin_penalty_factor| 金幣懲罰係數   | [0, 100) 之間的浮點數 | 0.5    | 否       |                               |
+| exp_penalty_factor | 經驗懲罰係數   | [0, 100) 之間的浮點數 | 0.5    | 否       |                               |
+| write_feelings     | 是否啟用感想   | true 或者 false    | false    | 否       |                               |
+| pin                | 是否置頂       | true 或者 false    | false    | 否       |                               |
+
+**返回資料：**
+
+| 欄位名    | 型別   | 說明       | 示例 | 備註             |
+| --------- | ------ | ---------- | ---- | ---------------- |
+| task_id   | 數字   | 任務ID     | 1000 |                  |
+| task_gid  | 數字   | 任務組ID   | 1000 |                  |
+
+<br/>
+
+### 歷史任務操作
+
+?> 需要 v1.98.0+
+
+**方法名：**history_operation
+
+**說明：**對已完成/已放棄/已過期的任務進行操作
+
+**示例：**
+- 刪除歷史任務：[lifeup://api/history_operation?id=1&operation=delete](lifeup://api/history_operation?id=1&operation=delete)
+- 將任務標記為放棄：[lifeup://api/history_operation?id=1&operation=set_to_give_up](lifeup://api/history_operation?id=1&operation=set_to_give_up)
+- 重新開始任務：[lifeup://api/history_operation?id=1&operation=restart](lifeup://api/history_operation?id=1&operation=restart)
+
+!> 此 API 僅適用於非未完成狀態的任務（已完成、已放棄或已過期）
+
+| 引數           | 含義           | 取值                | 示例     | 是否必須 | 備註                           |
+| ------------- | -------------- | ------------------ | -------- | -------- | ------------------------------ |
+| id            | 任務ID         | 大於 0 的數字      | 1        | 是       | 歷史任務的ID                   |
+| operation     | 操作型別       | 以下數值其一：<br/>delete<br/>complete<br/>undo_complete<br/>set_to_give_up<br/>set_to_overdue<br/>edit_completed_time<br/>restart | delete | 是 | delete - 刪除任務<br/>complete - 標記為已完成<br/>undo_complete - 撤銷完成<br/>set_to_give_up - 標記為放棄<br/>set_to_overdue - 標記為過期<br/>edit_completed_time - 修改完成時間<br/>restart - 重新開始任務 |
+| completed_time | 完成時間       | 時間戳（毫秒）     | 1640995200000 | 否* | 僅當 operation 為 edit_completed_time 時必須提供 |
+
+**返回資料：**
+
+| 欄位名   | 型別   | 說明     | 示例 | 備註             |
+| -------- | ------ | -------- | ---- | ---------------- |
+| task_id  | 數字   | 任務ID   | 1000 | 操作的任務ID     |
+
+<br/>
+
 ### 商店設定
 
 **方法名：**shop_settings
@@ -761,10 +963,8 @@ id 的獲取方法為「實驗」頁面開啟「開發者模式」，然後在�
 
 **示例：**
 
--
-將ATM利率設定為0.01%：[lifeup://api/shop_settings?key=atm_interest&value=0.01](lifeup://api/shop_settings?key=atm_interest&value=0.01)
--
-每次點選將利率提升0.01%：[lifeup://api/shop_settings?key=atm_interest&value=0.01&set_type=relative](lifeup://api/shop_settings?key=atm_interest&value=0.01&set_type=relative)
+- 將ATM利率設定為0.01%：[lifeup://api/shop_settings?key=atm_interest&value=0.01](lifeup://api/shop_settings?key=atm_interest&value=0.01)
+- 每次點選將利率提升0.01%：[lifeup://api/shop_settings?key=atm_interest&value=0.01&set_type=relative](lifeup://api/shop_settings?key=atm_interest&value=0.01&set_type=relative)
 
 | 引數     | 含義                     | 取值                                                         | 示例         | 是否必須 | 備註                                                         |
 | -------- | ------------------------ | ------------------------------------------------------------ | ------------ | -------- | ------------------------------------------------------------ |
@@ -852,77 +1052,82 @@ id 的獲取方法為「實驗」頁面開啟「開發者模式」，然後在�
 
 #### 新增商品
 
+?> 部分引數需要 v1.98.0+，比如`effects`、`purchase_limit`
+
 **方法名：**add_item
 
-**說明：**建立商品，圖示僅支援網路地址，暫不支援自定義使用效果。
+**說明：**建立商品，包含自定義購買限制和使用效果等功能
 
 **示例：**[lifeup://api/add_item?name=休息10分鐘&desc=去好好休息一小段時間吧！&price=10&action_text=休息](lifeup://api/add_item?name=休息10分鐘&desc=去好好休息一小段時間吧！&price=10&action_text=休息)
 
-**解釋：**建立一個名稱為「休息10分鐘」，描述為「去好好休息一小段時間吧！」，操作文案為「休息」的價格10金幣的商品。
+| 引數             | 含義           | 取值                | 示例         | 是否必須 | 備註                           |
+| --------------- | -------------- | ------------------ | ------------ | -------- | ------------------------------ |
+| name            | 商品名稱       | 任意文字           | 休息10分鐘    | 是      |                                |
+| desc            | 描述           | 任意文字           | 休息一下      | 否       |                               |
+| icon            | 圖示           | 網路地址URL        | http://...    | 否      | 必須是網路URL地址              |
+| price           | 價格           | [0, 999999]       | 10            | 否      | 預設為 0                       |
+| stock_number    | 庫存數量       | [-1, 99999]       | -1            | 否      | -1 表示無限                    |
+| action_text     | 使用按鈕文案   | 任意文字           | 休息          | 否      |                                |
+| disable_purchase| 禁止購買       | true 或者 false    | false         | 否      | 預設為 false                   |
+| disable_use     | 禁止使用       | true 或者 false    | false         | 否      | 預設為 false                   |
+| category        | 分類ID         | 大於或等於 0 的數字 | 0             | 否      | 0 表示預設分類                 |
+| order           | 顯示順序       | 整數              | 1             | 否       | 在分類中的排序位置              |
+| purchase_limit  | 購買限制       | JSON文字          | 參見[購買限制結構](#3-購買限制結構) | 否 | 限制購買頻率 |
+| effects         | 使用效果       | JSON文字          | 參見[商品效果結構](#4-商品效果結構) | 否 | 使用商品時的效果 |
+| own_number      | 初始擁有數量   | 整數              | 0             | 否       | 設定初始庫存數量               |
+| unlist          | 從商店隱藏     | true 或者 false   | false         | 否       | 預設為 false                   |
 
-| 引數             | 含義         | 取值                | 示例         | 是否必須 | 備註                                                         |
-| ---------------- | ------------ | ------------------- | ------------ | -------- | ------------------------------------------------------------ |
-| name             | 商品名稱     | 任意文字            | 休息10分鐘   | 是       | 商品名稱                                                     |
-| desc             | 描述         | 任意文字            | 獲得一個禮物 | 否       | -                                                            |
-| icon             | 圖示         | 任意文字            |              | 否       | 圖示應為網路地址 URL                                         |
-| price            | 價格數值     | 數字 [0, 999999]    | 1            | 否       | -                                                            |
-| action_text      | 操作按鈕文案 | 任意文字            | 休息         | 否       | -                                                            |
-| disable_purchase | 是否禁用購買 | true 或 false       | 1            | 否       | 預設 false                                                   |
-| stock_number     | 庫存數       | [-1, 99999]         | 1            | 否       | -                                                            |
-| category         | 商店清單id   | 大於或等於 0 的數字 | 0            | 否       | 0 或不傳遞代表預設清單，不能選擇智慧清單<br/>獲取方式請檢視上文 「基礎知識 - 人升資料 ID」 |
-| 以下引數為v1.94引入 |  |  |  |  |  |
-| order            | 在分類中的排序     | 任意整數                | 1            | 否       | 控制商品在同清單中的顯示順序                                  |
-| own_number       | 擁有數 | 任意整數       | 100          | 否       | 負數代表擁有數為負數                                              |
-| unlist           | 是否下架商品       | true 或 false           | false        | 否       | 預設為 false，true 代表商品不顯示在商店中                     |
+**返回資料：**
 
+| 欄位名   | 型別   | 說明       | 示例  | 備註             |
+| -------- | ------ | ---------- | ----- | ---------------- |
+| item_id  | 數字   | 商品ID     | 1000  | 建立的商品ID     |
 
-**返回值：**
+!> effects 引數會覆蓋 disable_use 的設定。如果您設定了 effects 指定商品不可使用，disable_use 將被忽略。
 
-| 引數    | 含義         | 取值 | 示例 | 是否必須 | 備註 |
-| ------- | ------------ | ---- | ---- | -------- | ---- |
-| item_id | 新增的商品id | 數字 | 1000 | 是       |      |
-
+<br/>
 
 
 <br/>
 
+### 商品
+
 #### 調整商品
+
+?> 需要 v1.98.0+
 
 **方法名：**item
 
-**說明：**對指定 id 的商品的各種操作，僅支援【在架】商品。
+**說明：**對現有商品進行修改，包括價格、庫存、效果等各項屬性
 
-**示例：**[lifeup://api/item?id=1&set_price=1&set_price_type=relative&own_number=1&own_number_type=relative](lifeup://api/item?id=1&set_price=1&set_price_type=relative&own_number=1&own_number_type=relative)
+**示例：**
+- 調整價格：[lifeup://api/item?id=1&set_price=1&set_price_type=relative](lifeup://api/item?id=1&set_price=1&set_price_type=relative)
+- 修改效果：[lifeup://api/item?id=1&effects=[{"type":2,"info":{"min":100,"max":200}}]](lifeup://api/item?id=1&effects=[{"type":2,"info":{"min":100,"max":200}}])
 
-**解釋：**對 id 為 1 的商品，將其價格提升 1 金幣，並提升擁有數 1
+| 引數              | 含義           | 取值                | 示例       | 是否必須 | 備註                           |
+| ---------------- | -------------- | ------------------ | ---------- | -------- | ------------------------------ |
+| id               | 商品ID         | 大於 0 的數字      | 1          | 否*      | id 和 name 必須提供其中一個    |
+| name             | 商品名稱       | 任意文字           | 寶箱       | 否*      | 用於模糊搜尋商品，不是用於改名 |
+| set_name         | 修改名稱       | 任意文字           | 寶箱       | 否       | 不可為空                       |
+| set_desc         | 修改描述       | 任意文字           | 獲得禮物   | 否       |                               |
+| set_icon         | 修改圖示       | URL文字            | http://... | 否       | 必須是網路URL地址              |
+| set_price        | 調整價格       | 整數               | 1          | 否       |                               |
+| set_price_type   | 價格調整方式   | absolute 或 relative | relative | 否       | absolute-直接設定<br/>relative-增減值 |
+| own_number       | 調整擁有數量   | 整數               | 1          | 否       | 使用relative時支援負數         |
+| own_number_type  | 擁有數調整方式 | absolute 或 relative | relative | 否       | absolute-直接設定<br/>relative-增減值 |
+| stock_number     | 調整庫存數量   | [-1, 99999]       | 1          | 否       | -1表示無限庫存                 |
+| stock_number_type| 庫存調整方式   | absolute 或 relative | relative | 否       | absolute-直接設定<br/>relative-增減值 |
+| disable_purchase | 禁止購買       | true 或者 false    | false      | 否       | 預設為 false                   |
+| disable_use      | 禁止使用       | true 或者 false    | false      | 否       | 預設為 false                   |
+| action_text      | 使用按鈕文案   | 任意文字           | 使用       | 否       |                               |
+| title_color_string| 標題顏色      | 顏色字串         | #66CCFF    | 否       | #需要轉義為%23<br/>傳空值可恢復預設 |
+| effects          | 使用效果       | JSON文字           | 參見[商品效果結構](#4-商品效果結構) | 否 | 設定商品使用效果 |
+| purchase_limit   | 購買限制       | JSON文字           | 參見[購買限制結構](#3-購買限制結構) | 否 | 限制購買頻率 |
+| category_id      | 所屬分類ID     | 大於等於 0 的數字  | 1          | 否       | 0表示預設分類                  |
+| order            | 顯示順序       | 整數               | 1          | 否       | 在分類中的排序位置             |
+| unlist           | 下架商品       | true 或者 false    | false      | 否       | 預設為 false                   |
 
-| 引數                   | 含義                          | 取值                                     | 示例         | 是否必須 | 備註                                                         |
-| ---------------------- | ----------------------------- | ---------------------------------------- | ------------ | -------- | ------------------------------------------------------------ |
-| id                     | 商品id                        | 大於0的數字                              | 1            | 否*      | 獲取方式請檢視上文 「基礎知識 - 人升資料 ID」                |
-| name                   | 商品名稱                      | 任意文字                                 | 寶箱         | 否*      | 用於未知 id 時，模糊搜尋商品，並非修改名稱                   |
-| set_name               | 修改名稱                      | 任意文字                                 | 寶箱         | 否       | 不可為空                                                     |
-| set_desc               | 修改描述                      | 任意文字                                 | 獲得一個禮物 | 否       | -                                                            |
-| set_icon               | 修改圖示                      | 任意文字                                 |              | 否       | 圖示應為網路地址 URL                                         |
-| set_price              | 調整價格數值                  | 數字                                     | 1            | 否       | -                                                            |
-| set_price_type         | 調整價格方式（絕對/相對）     | 以下數值其一：<br/>absolute<br/>relative | relative     | 否       | absolute - 絕對取值，即直接將目標設定為 value<br/>relative - 相對取值，比如在原數值的基礎上增加或減少 |
-| own_number             | 調整擁有數                    | 正負數                                   | 1            | 否       | 使用絕對取值時，數值應該為[0, MAX]<br/>使用相對取值時，支援負數，但最終結果數值最小為0 |
-| own_number_type        | 調整擁有數量方式（絕對/相對） | 以下數值其一：<br/>absolute<br/>relative | relative     | 否       | absolute - 絕對取值，即直接將目標設定為 value<br/>relative - 相對取值，比如在原數值的基礎上增加或減少 |
-| stock_number           | 庫存數                        | 正負數                                   | 1            | 否       | 使用絕對取值時，數值應該為[0, MAX]<br/>使用相對取值時，支援負數，但最終結果數值最小為0 |
-| stock_number_type      | 調整庫存數方式（絕對/相對）   | 以下數值其一：<br/>absolute<br/>relative | relative     | 否       | absolute - 絕對取值，即直接將目標設定為 value<br/>relative - 相對取值，比如在原數值的基礎上增加或減少 |
-| disable_purchase       | 是否禁止購買                  | 布林值                                   | true         | 否       | 僅 v1.91 +支援                                               |
-| action_text            | 操作文案                      | 任意文字                                 | 解鎖         | 否       | 僅 v1.93.0-beta01（502） +支援                               |
-| disable_use            | 是否禁止使用                  | 布林值                                   | true         | 否       | 僅 v1.93.0-beta01（502）+ 支援                               |
-| title_color_string     | 標題顏色                      | 顏色字串                               | \#66CCFF     | 否       | 需要 v1.91+<br/>注意在實際使用時，# 字元需要轉義。<br/>比如示例的色值實際使用時，應為 `color=%2366CCFF`<br/>（v1.94.0+）如果想要恢復預設值，可傳空值，如`title_color_string=` |
-| 以下引數為v1.94引入 |  |  |  |  |  |
-| order            | 在分類中的排序     | 任意整數                | 1            | 否       | 控制商品在同清單中的顯示順序                                  |
-| own_number       | 擁有數 | 任意整數       | 100          | 否       | 負數代表擁有數為負數                                              |
-| unlist           | 是否下架商品       | true 或 false           | false        | 否       | 預設為 false，true 代表商品不顯示在商店中                     |
-| category_id | 商店清單id                    | 大於或等於 0 的數字                      | 0            | 否       | 0 或不傳遞代表預設清單，不能選擇智慧清單<br/>獲取方式請檢視上文 「基礎知識 - 人升資料 ID」 |
-
-
-**注意：**
-
-1. 爲了搜索到商品，必須提供 id 或 name 其一。
+!> id 和 name 引數必須提供其中一個，用於定位要修改的商品
 
 <br/>
 
@@ -1205,6 +1410,450 @@ id 的獲取方法為「實驗」頁面開啟「開發者模式」，然後在�
 
 <br/>
 
+### 番茄數量
+
+?> 需要 v1.98.0+
+
+**方法名：**tomato
+
+**說明：**調整番茄數量（增加、減少或設定指定數量）
+
+**示例：**
+- 增加1個番茄：[lifeup://api/tomato?action=increase&number=1](lifeup://api/tomato?action=increase&number=1)
+- 減少2個番茄：[lifeup://api/tomato?action=decrease&number=2](lifeup://api/tomato?action=decrease&number=2)
+- 設定番茄數為10：[lifeup://api/tomato?action=set&number=10](lifeup://api/tomato?action=set&number=10)
+
+| 引數   | 含義     | 取值                                           | 示例     | 是否必須 | 備註                                                    |
+| ------ | -------- | ---------------------------------------------- | -------- | -------- | ------------------------------------------------------- |
+| action | 操作型別 | 以下值之一：<br/>increase<br/>decrease<br/>set | increase | 否       | increase - 增加番茄數（預設）<br/>decrease - 減少番茄數<br/>set - 設定番茄數為指定值 |
+| number | 數量     | 整數                                           | 1        | 是       | 根據 action 不同含義不同：<br/>increase/decrease - 增加/減少的數量<br/>set - 設定的目標數量 |
+
+**返回資料：**
+
+| 欄位名   | 型別 | 說明         | 示例 |
+| -------- | ---- | ------------ | ---- |
+| tomatoes | 整數 | 當前番茄總數 | 10   |
+
+
+<br/>
+
+### 購買物品
+
+?> 需要 v1.98.0+
+
+**方法名：**purchase_item
+
+**說明：**購買指定的商品
+
+**示例：**
+- 購買ID為1的商品：[lifeup://api/purchase_item?id=1](lifeup://api/purchase_item?id=1)
+- 購買名稱為"生命藥水"的商品：[lifeup://api/purchase_item?name=生命藥水](lifeup://api/purchase_item?name=生命藥水)
+- 購買5個ID為1的商品：[lifeup://api/purchase_item?id=1&purchase_quantity=5](lifeup://api/purchase_item?id=1&purchase_quantity=5)
+
+| 引數              | 含義     | 取值              | 示例       | 是否必須 | 備註                            |
+| ---------------- | -------- | ----------------- | ---------- | -------- | ------------------------------- |
+| id               | 商品ID   | 大於 0 的數字      | 1         | 否*      | id 和 name 必須提供其中一個     |
+| name             | 商品名稱 | 任意文字           | 生命藥水   | 否*      | id 和 name 必須提供其中一個     |
+| purchase_quantity| 購買數量 | 大於 0 的數字      | 5         | 否       | 預設值為 1                      |
+
+**返回資料：**
+
+| 欄位名 | 型別   | 說明     | 示例            | 備註                    |
+| ------ | ------ | -------- | --------------- | ---------------------- |
+| itemId | 數字   | 商品ID   | 1               | 僅購買成功時返回        |
+| result | 整數   | 結果程式碼 | 0               | 見下方結果程式碼說明      |
+| desc   | 文字   | 結果描述 | PurchaseSuccess | 見下方結果程式碼說明      |
+
+**結果程式碼說明：**
+
+| 程式碼 | 描述                        | 說明                          |
+| ---- | -------------------------- | ----------------------------- |
+| 0    | PurchaseSuccess           | 購買成功                       |
+| 1    | DatabaseError             | 資料庫錯誤                     |
+| 2    | NotEnoughCoin             | 金幣不足                       |
+| 3    | ItemNotFound              | 商品未找到                     |
+| 4    | PurchaseAndUseSuccess     | 購買並使用成功                 |
+| 5    | PurchaseSuccessAndUseFailure | 購買成功但使用失敗           |
+
+<br/>
+
+### 物品合成
+
+?> 需要 v1.98.0+
+
+**方法名：**synthesize
+
+**說明：**使用已有的合成配方合成物品
+
+**示例：**
+- 使用ID為1的配方合成一次：[lifeup://api/synthesize?id=1](lifeup://api/synthesize?id=1)
+- 使用ID為1的配方合成5次：[lifeup://api/synthesize?id=1&times=5](lifeup://api/synthesize?id=1&times=5)
+
+| 引數  | 含義     | 取值            | 示例 | 是否必須 | 備註          |
+| ----- | -------- | --------------- | ---- | -------- | ------------- |
+| id    | 配方ID   | 大於 0 的數字    | 1    | 是       | 合成配方的ID  |
+| times | 合成次數 | 大於 0 的數字    | 5    | 否       | 預設值為 1    |
+
+**返回資料：**
+
+| 欄位名           | 型別   | 說明         | 示例            | 備註                |
+| --------------- | ------ | ------------ | --------------- | ------------------ |
+| formulaId       | 數字   | 配方ID       | 1               |                    |
+| result          | 整數   | 結果程式碼     | 0               | 見下方結果程式碼說明  |
+| desc            | 文字   | 結果描述     | SynthesisSuccess| 見下方結果程式碼說明  |
+| synthesisResults| 文字   | 合成結果列表 | {...}           | 僅合成成功時返回    |
+
+**結果程式碼說明：**
+
+| 程式碼 | 描述                 | 說明         |
+| ---- | ------------------- | ------------ |
+| 0    | SynthesisSuccess    | 合成成功     |
+| 1    | FormulaNotFound     | 配方不存在   |
+| 2    | InsufficientMaterials| 材料不足     |
+| 3    | DatabaseError       | 資料庫錯誤   |
+| 4    | UnknownError        | 其他錯誤     |
+
+<br/>
+
+### 合成配方管理
+
+?> 需要 v1.98.0+
+
+**方法名：**synthesis_formula
+
+**說明：**新建、修改或刪除合成配方
+
+**示例：**
+- 建立新配方：[lifeup://api/synthesis_formula?inputItems=[{"itemId":1,"amount":2}]&outputItems=[{"itemId":3,"amount":1}]](lifeup://api/synthesis_formula?inputItems=[{"itemId":1,"amount":2}]&outputItems=[{"itemId":3,"amount":1}])
+- 刪除配方：[lifeup://api/synthesis_formula?id=1&delete=true](lifeup://api/synthesis_formula?id=1&delete=true)
+
+| 引數        | 含義       | 取值                | 示例                               | 是否必須 | 備註                   |
+| ----------- | ---------- | ------------------- | ---------------------------------- | -------- | ---------------------- |
+| id          | 配方ID     | 大於 0 的數字       | 1                                  | 否       | 修改或刪除時必須提供   |
+| delete      | 是否刪除   | true 或者 false     | true                               | 否       | 僅刪除配方時使用       |
+| inputItems  | 材料列表   | 商品陣列，格式見下文 | [{"itemId":1,"amount":2}]          | 是       | 新建或修改時必須提供   |
+| outputItems | 產物列表   | 商品陣列，格式見下文 | [{"itemId":3,"amount":1}]          | 是       | 新建或修改時必須提供   |
+| category    | 分類ID     | 大於 0 的數字       | 1                                  | 否       | 預設為通用分類         |
+
+!> inputItems 和 outputItems 的格式為 JSON 陣列，每個商品包含 itemId（商品ID）和 amount（數量）兩個欄位，所有商品ID必須存在且數量必須大於0
+
+**返回資料：**
+
+| 欄位名    | 型別   | 說明       | 示例        | 備註               |
+| --------- | ------ | ---------- | ----------- | ------------------ |
+| formulaId | 數字   | 配方ID     | 1           | 操作成功時返回     |
+| result    | 整數   | 結果程式碼   | 0           | 見下方結果程式碼說明 |
+| desc      | 文字   | 結果描述   | AddSuccess  | 見下方結果程式碼說明 |
+
+**結果程式碼說明：**
+
+| 程式碼 | 描述         | 說明       |
+| ---- | ------------ | ---------- |
+| 0    | Success      | 操作成功   |
+| 1    | Failed       | 操作失敗   |
+
+<br/>
+
+### 子任務管理
+
+?> 需要 v1.98.0+
+
+**方法名：**subtask
+
+**說明：**新建或編輯子任務
+
+**示例：**
+- 為任務ID為1的主任務新增子任務：[lifeup://api/subtask?main_id=1&todo=完成作業](lifeup://api/subtask?main_id=1&todo=完成作業)
+- 編輯子任務並設定獎勵：[lifeup://api/subtask?main_id=1&edit_id=2&coin=10&exp=5](lifeup://api/subtask?main_id=1&edit_id=2&coin=10&exp=5)
+
+| 引數          | 含義           | 取值                | 示例      | 是否必須 | 備註                           |
+| ------------ | -------------- | ------------------ | --------- | -------- | ------------------------------ |
+| main_id      | 主任務ID       | 大於 0 的數字      | 1         | 否*      | main_id、main_gid、main_name 必須提供其中一個 |
+| main_gid     | 主任務組ID     | 大於 0 的數字      | 1         | 否*      | main_id、main_gid、main_name 必須提供其中一個 |
+| main_name    | 主任務名稱     | 任意文字           | 學習任務   | 否*      | main_id、main_gid、main_name 必須提供其中一個 |
+| edit_id      | 編輯的子任務ID | 大於 0 的數字      | 2         | 否*      | 編輯時與 edit_gid、edit_name 必須提供其中一個；新建時無需提供 |
+| edit_gid     | 編輯的子任務組ID| 大於 0 的數字     | 2         | 否*      | 編輯時與 edit_id、edit_name 必須提供其中一個；新建時無需提供 |
+| edit_name    | 編輯的子任務名稱| 任意文字          | 完成作業   | 否*      | 編輯時與 edit_id、edit_gid 必須提供其中一個；新建時無需提供 |
+| todo         | 任務內容       | 任意文字           | 完成作業   | 否       | 新建時必須提供                 |
+| remind_time  | 提醒時間       | 時間戳（毫秒）     | 1640995200000 | 否    | 傳入 null 可清除提醒時間       |
+| order        | 排序           | 整數              | 1          | 否       | 任務在列表中的排序位置          |
+| coin         | 金幣獎勵       | [0, 999999]      | 10         | 否       | 完成任務獲得的金幣數量          |
+| coin_var     | 金幣獎勵浮動值 | 整數              | 5          | 否       | 金幣獎勵的浮動範圍             |
+| exp          | 經驗值獎勵     | [0, 99999]       | 5          | 否       | 完成任務獲得的經驗值            |
+| auto_use_item| 自動使用物品   | true 或者 false   | true       | 否       | 完成任務時是否自動使用物品      |
+| item_id      | 物品ID         | 大於 0 的數字     | 1          | 否*      | 與 item_name 必須提供其中一個   |
+| item_name    | 物品名稱       | 任意文字          | 生命藥水    | 否*      | 與 item_id 必須提供其中一個     |
+| item_amount  | 物品數量       | 大於 0 的數字     | 1          | 否       | 僅在設定物品獎勵時有效          |
+| items        | 物品獎勵JSON   | JSON文字          | [{"itemId":1,"amount":1}] | 否 | 可一次性設定多個物品獎勵      |
+
+**返回資料：**
+
+| 欄位名        | 型別   | 說明         | 示例 | 備註             |
+| ------------ | ------ | ------------ | ---- | ---------------- |
+| main_task_id | 數字   | 主任務ID     | 1    |                  |
+| subtask_id   | 數字   | 子任務ID     | 2    |                  |
+| subtask_gid  | 數字   | 子任務組ID   | 3    | 可能為空         |
+
+<br/>
+
+### 子任務操作
+
+?> 需要 v1.98.0+
+
+**方法名：**subtask_operation
+
+**說明：**對子任務進行完成、撤銷完成或刪除操作
+
+**示例：**
+- 完成子任務：[lifeup://api/subtask_operation?main_id=1&edit_id=2&operation=complete](lifeup://api/subtask_operation?main_id=1&edit_id=2&operation=complete)
+- 刪除子任務：[lifeup://api/subtask_operation?main_id=1&edit_id=2&operation=delete](lifeup://api/subtask_operation?main_id=1&edit_id=2&operation=delete)
+- 撤銷完成子任務：[lifeup://api/subtask_operation?main_id=1&edit_id=2&operation=undo_complete](lifeup://api/subtask_operation?main_id=1&edit_id=2&operation=undo_complete)
+
+| 引數          | 含義           | 取值                | 示例      | 是否必須 | 備註                           |
+| ------------ | -------------- | ------------------ | --------- | -------- | ------------------------------ |
+| main_id      | 主任務ID       | 大於 0 的數字      | 1         | 否*      | main_id、main_gid、main_name 必須提供其中一個 |
+| main_gid     | 主任務組ID     | 大於 0 的數字      | 1         | 否*      | main_id、main_gid、main_name 必須提供其中一個 |
+| main_name    | 主任務名稱     | 任意文字           | 學習任務   | 否*      | main_id、main_gid、main_name 必須提供其中一個 |
+| edit_id      | 子任務ID       | 大於 0 的數字      | 2         | 否*      | edit_id、edit_gid、edit_name 必須提供其中一個 |
+| edit_gid     | 子任務組ID     | 大於 0 的數字      | 2         | 否*      | edit_id、edit_gid、edit_name 必須提供其中一個 |
+| edit_name    | 子任務名稱     | 任意文字           | 完成作業   | 否*      | edit_id、edit_gid、edit_name 必須提供其中一個 |
+| operation    | 操作型別       | 以下數值其一：<br/>complete<br/>undo_complete<br/>delete | complete | 是 | complete - 完成任務<br/>undo_complete - 撤銷完成<br/>delete - 刪除任務 |
+
+**返回資料：**
+
+| 欄位名        | 型別   | 說明         | 示例 | 備註             |
+| ------------ | ------ | ------------ | ---- | ---------------- |
+| main_task_id | 數字   | 主任務ID     | 1    |                  |
+| subtask_id   | 數字   | 子任務ID     | 2    |                  |
+| subtask_gid  | 數字   | 子任務組ID   | 3    | 可能為空         |
+
+<br/>
+
+### 清單管理
+
+?> 需要 v1.98.0+
+
+**方法名：**category
+
+**說明：**新增或編輯各類清單（任務清單、成就清單、商店清單、合成清單）
+
+**示例：**
+- 建立任務清單：[lifeup://api/category?type=tasks&name=學習清單](lifeup://api/category?type=tasks&name=學習清單)
+- 編輯商店清單：[lifeup://api/category?type=shop&edit_id=1&name=裝備商店&order=1](lifeup://api/category?type=shop&edit_id=1&name=裝備商店&order=1)
+
+| 引數             | 含義           | 取值                | 示例       | 是否必須 | 備註                           |
+| --------------- | -------------- | ------------------ | ---------- | -------- | ------------------------------ |
+| type            | 清單型別       | 以下數值其一：<br/>tasks<br/>achievements<br/>shop<br/>synthesis | tasks | 是 | tasks - 任務清單<br/>achievements - 成就清單<br/>shop - 商店清單<br/>synthesis - 合成清單 |
+| edit_id         | 編輯的清單ID   | 大於 0 的數字      | 1          | 否       | 編輯時必須提供                 |
+| name            | 清單名稱       | 任意文字           | 學習清單    | 否       | 新建時必須提供；編輯時可選      |
+| order           | 排序           | 整數               | 1          | 否       | 清單在列表中的排序位置          |
+| hidden          | 是否隱藏       | true 或者 false    | false      | 否       | 僅任務清單和商店清單支援        |
+| inventory_hidden| 是否在倉庫隱藏 | true 或者 false    | false      | 否       | 僅商店清單支援                 |
+| icon_uri        | 圖示URI        | URI文字            | content://... | 否    | 僅成就清單支援                 |
+| desc            | 描述           | 任意文字           | 這是描述     | 否      | 僅成就清單支援                 |
+| color           | 標籤顏色       | 顏色字串         | #66CCFF     | 否      | 僅任務清單支援；#需要轉義為%23  |
+
+**返回資料：**
+
+| 欄位名 | 型別   | 說明     | 示例 | 備註             |
+| ------ | ------ | -------- | ---- | ---------------- |
+| id     | 數字   | 清單ID   | 1000 | 新建或編輯的清單ID |
+
+<br/>
+
+### 成就管理
+
+?> 需要 v1.98.0+
+
+**方法名：**achievement
+
+**說明：**新增或編輯自定義成就和成就子分類
+
+**示例：**
+- 建立一個成就：[lifeup://api/achievement?name=收藏家&desc=收集100個物品](lifeup://api/achievement?name=收藏家&desc=收集100個物品)
+- 建立需要解鎖條件的成就：[lifeup://api/achievement?name=百萬富翁&conditions_json=[{"type":7,"target":1000000}]](lifeup://api/achievement?name=百萬富翁&conditions_json=[{"type":7,"target":1000000}])
+- 編輯現有成就：[lifeup://api/achievement?edit_id=1&name=新成就名稱&exp=100](lifeup://api/achievement?edit_id=1&name=新成就名稱&exp=100)
+
+#### 1. 成就引數
+
+| 引數          | 含義           | 取值                | 示例     | 是否必須 | 備註                           |
+| ------------ | -------------- | ------------------ | -------- | -------- | ------------------------------ |
+| edit_id      | 編輯的成就ID   | 大於 0 的數字      | 1        | 否       | 編輯時必須提供                 |
+| is_subcategory| 是否為子分類   | true 或者 false    | false    | 否       | 預設為 false                   |
+| name         | 成就名稱       | 任意文字           | 收藏家    | 否*      | 新建時必須提供                 |
+| desc         | 成就描述       | 任意文字           | 收集100個物品 | 否    |                               |
+| order        | 排序           | 整數              | 1         | 否       | 在列表中的排序位置              |
+| category_id  | 所屬分類ID     | 大於 0 的數字      | 1         | 否*      | 建立子分類時必須提供            |
+| unlocked     | 是否解鎖       | true 或者 false    | true      | 否       | true-立即解鎖<br/>false-重置為未解鎖 |
+| unlock_time  | 解鎖時間       | 時間戳（毫秒）     | 1640995200000 | 否   | 僅當成就已解鎖時有效           |
+| delete       | 是否刪除       | true 或者 false    | false     | 否       |                                |
+| secret       | 是否為隱藏成就 | true 或者 false    | false     | 否       |                                |
+| write_feeling| 是否記錄感想   | true 或者 false    | false     | 否       |                                |
+| color        | 標題顏色       | 顏色字串         | #66CCFF   | 否       | #需要轉義為%23                  |
+| auto_use_item| 自動使用物品   | true 或者 false    | false     | 否       |                                |
+| skills       | 技能ID         | 大於 0 的數字陣列   | 1         | 否       | 支援陣列（如 &skills=1&skills=2）|
+| exp          | 經驗值獎勵     | 整數              | 100       | 否       |                                |
+| item_id      | 物品ID         | 大於 0 的數字      | 1         | 否*      | 與 item_name 必須提供其中一個   |
+| item_name    | 物品名稱       | 任意文字           | 寶箱      | 否*      | 與 item_id 必須提供其中一個     |
+| item_amount  | 物品數量       | [1, 99]           | 1         | 否       | 預設為 1                       |
+| items        | 物品獎勵JSON   | JSON文字           | [{"item_id":1,"amount":2}] | 否 | 可一次設定多個物品獎勵，格式見下文 |
+| conditions_json | 解鎖條件JSON | JSON文字          | [{"type":7,"target":1000000}] | 否 | 設定解鎖條件，格式見下文 |
+
+#### 2. 子分類專用引數
+
+| 引數          | 含義           | 取值                | 示例     | 是否必須 | 備註                           |
+| ------------ | -------------- | ------------------ | -------- | -------- | ------------------------------ |
+| is_collapsed | 是否摺疊       | true 或者 false    | false    | 否       | 僅適用於子分類                  |
+
+**返回資料：**
+
+| 欄位名 | 型別   | 說明     | 示例 | 備註             |
+| ------ | ------ | -------- | ---- | ---------------- |
+| id     | 數字   | 成就ID   | 1000 | 新建或編輯的成就ID |
+
+#### 3. 解鎖條件型別說明
+
+| 型別程式碼 | 含義               | 是否需要related_id | related_id型別 | target說明        |
+| ------- | ------------------ | ---------------- | -------------- | ----------------- |
+| 0       | 完成任務次數        | 是              | 任務ID         | 完成次數           |
+| 1       | 連續完成任務次數     | 是              | 任務ID         | 連續次數           |
+| 3       | 番茄數量           | 否              | -              | 番茄數量           |
+| 4       | 使用人昇天數        | 否              | -              | 使用天數           |
+| 5       | 被點贊數           | 否              | -              | 點贊數量           |
+| 6       | 連續完成天數        | 否              | -              | 連續天數           |
+| 7       | 當前金幣數         | 否              | -              | 金幣數量           |
+| 8       | 一天內金幣獲得數     | 否              | -              | 金幣數量           |
+| 9       | 任務的番茄數        | 是              | 任務ID         | 番茄數量           |
+| 10      | 物品購買數         | 是              | 物品ID         | 購買次數           |
+| 11      | 物品使用數         | 是              | 物品ID         | 使用次數           |
+| 12      | 物品開箱獲得數      | 是              | 物品ID         | 獲得次數           |
+| 13      | 技能達到指定等級     | 是              | 技能ID         | 等級數值           |
+| 14      | 人生等級           | 否              | -              | 等級數值           |
+| 15      | 物品累計獲得數      | 是              | 物品ID         | 獲得總次數         |
+| 16      | 物品合成獲得數      | 是              | 物品ID         | 合成獲得次數        |
+| 17      | 物品當前擁有數量     | 是              | 物品ID         | 擁有數量           |
+| 18      | 任務番茄鍾專注時長   | 是              | 任務ID         | 專注時長(分鐘)      |
+| 19      | ATM存款           | 否              | -              | 存款數量           |
+| 20      | 外部API           | 否              | -              | 根據API定義        |
+
+#### 4. JSON格式說明
+
+##### 解鎖條件 (conditions_json)
+```json
+[
+   {
+       "type": 7,           // 條件型別（參考上表）
+       "related_id": null,  // 關聯ID（部分型別必須提供）
+       "target": 1000000    // 目標數值
+   },
+   {
+       "type": 10,          // 示例：購買指定物品
+       "related_id": 1,     // 物品ID
+       "target": 5          // 購買5次
+   }
+]
+```
+
+##### 物品獎勵 (items)
+```
+[
+    {
+        "item_id": 1,    // 物品ID
+        "amount": 2      // 數量
+    },
+    {
+        "item_id": 2,
+        "amount": 3
+    }
+]
+```
+
+<br/>
+
+### 技能管理
+
+?> 需要 v1.98.0+
+
+**方法名：**skill
+
+**說明：**新建或編輯自定義技能（屬性）
+
+**示例：**
+- 建立一個技能：[lifeup://api/skill?content=程式設計&desc=程式碼能力&color=%23FF6B6B](lifeup://api/skill?content=程式設計&desc=程式碼能力&color=%23FF6B6B)
+- 編輯技能經驗值：[lifeup://api/skill?id=1&exp=100](lifeup://api/skill?id=1&exp=100)
+- 刪除技能：[lifeup://api/skill?id=1&delete=true](lifeup://api/skill?id=1&delete=true)
+
+| 引數         | 含義           | 取值                | 示例       | 是否必須 | 備註                           |
+| ----------- | -------------- | ------------------ | ---------- | -------- | ------------------------------ |
+| id          | 技能ID         | 大於 0 的數字      | 1          | 否       | 編輯時必須提供                 |
+| content     | 技能名稱       | 任意文字           | 程式設計        | 否*      | 新建時必須提供                 |
+| desc        | 技能描述       | 任意文字           | 程式碼能力    | 否       |                               |
+| icon        | 圖示           | 任意文字           | 💻         | 否       | 可以使用 emoji                 |
+| color       | 顏色           | 顏色字串         | #FF6B6B    | 否       | #需要轉義為%23                 |
+| type        | 型別           | 整數               | 0          | 否       |                               |
+| order       | 排序           | 整數               | 1          | 否       | 在列表中的排序位置             |
+| status      | 狀態           | 整數               | 0          | 否       |                               |
+| exp         | 經驗值         | 大於或等於 0 的數字 | 100        | 否       | 技能當前經驗值                 |
+| delete      | 是否刪除       | true 或者 false    | false      | 否       | 僅在編輯模式下有效             |
+
+**返回資料：**
+
+| 欄位名 | 型別   | 說明     | 示例 | 備註             |
+| ------ | ------ | -------- | ---- | ---------------- |
+| id     | 數字   | 技能ID   | 1000 | 新建或編輯的技能ID |
+
+<br/>
+
+### 匯出備份
+
+?> 需要 v1.98.0+
+
+**方法名：**export_backup
+
+**說明：**建立一個備份檔案並返回其 URI（僅支援透過 Content Provider 呼叫）
+
+!> 此 API 只能透過 Content Provider 方式呼叫，不支援直接使用 URL Scheme 呼叫
+
+| 引數          | 含義           | 取值            | 示例  | 是否必須 | 備註                                           |
+| ------------- | -------------- | --------------- | ----- | -------- | ---------------------------------------------- |
+| withMedia     | 是否包含媒體檔案 | true 或者 false | true  | 否       | 是否在備份中包含媒體檔案（圖片、音效等）<br/>預設為 true |
+| callingPackage| 呼叫方包名     | 任意文字        | com.example.app | 否 | Content Provider 呼叫時的包名標識 |
+
+**返回資料：**
+
+| 欄位名          | 型別   | 說明                 | 示例                                          |
+| --------------- | ------ | -------------------- | --------------------------------------------- |
+| backup_file_uri | 文字   | 備份檔案的 URI 地址  | content://net.sarasarasa.lifeup.api/backup/file.zip |
+
+<br/>
+
+### 應用設定
+
+?> 需要 v1.98.0+
+
+**方法名：**app_settings
+
+**說明：**調整應用的介面設定
+
+**示例：**
+- 啟用簡潔模式：[lifeup://api/app_settings?is_enable_compact_mode=true](lifeup://api/app_settings?is_enable_compact_mode=true)
+- 啟用 Material You 主題：[lifeup://api/app_settings?is_enable_material_you=true](lifeup://api/app_settings?is_enable_material_you=true)
+- 更改設定並立即重啟介面：[lifeup://api/app_settings?is_enable_compact_mode=true&restart_activities=true](lifeup://api/app_settings?is_enable_compact_mode=true&restart_activities=true)
+
+| 引數                    | 含義              | 取值            | 示例  | 是否必須 | 備註                           |
+| ---------------------- | ----------------- | --------------- | ----- | -------- | ------------------------------ |
+| is_enable_compact_mode | 是否啟用簡潔模式   | true 或者 false | true  | 否       | 精簡介面元素                    |
+| is_enable_material_you | 是否啟用Material You| true 或者 false | true  | 否       | 啟用 Material You 主題          |
+| restart_activities     | 是否重啟介面       | true 或者 false | true  | 否       | 立即應用介面更改                |
+
+**返回資料：**
+
+| 欄位名 | 型別   | 說明     | 示例 | 備註             |
+| ------ | ------ | -------- | ---- | ---------------- |
+| result | 整數   | 結果程式碼 | 0    | 0 表示設定成功   |
+
+<br/>
+
 ### 簡單查詢
 
 !> 此處的功能是用於搭配自動化工具/二次開發的。如果你需要查詢完整的資料列表，可以參考我們的 LifeUp SDK、《雲人升》、《人升桌面端》。
@@ -1362,10 +2011,14 @@ id 的獲取方法為「實驗」頁面開啟「開發者模式」，然後在�
 | ----------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | [$text\|標題]                       | 文字佔位符                                                   | [$text\|輸入任務名稱]                                        |
 | [$number\|標題]                     | 數字佔位符（不含小數點）                                     | [$number\|輸入價格]                                          |
+| [$number\|標題\|signed]            | 數字佔位符（不含小數點），並顯示正負符號                     | [$number\|輸入價格\|signed]                                  |
 | [$decimal\|標題]                    | 數字佔位符（含小數點）                                       | [$decimal\|輸入ATM利率]                                       |
+| [$decimal\|標題\|signed]           | 數字佔位符（含小數點），並顯示正負符號                       | [$decimal\|輸入ATM利率\|signed]                                |
 | [$item]                             | 選擇商品，將被替換為商品id                                   | [$item]                                                      |
 | [$task_category]                    | 選擇任務清單，將被替換為任務清單id                           | [$task_category]                                             |
 | [$time\|錨定時間\|偏移毫秒（可選）] | 時間佔位符（僅 v1.93.0-beta01（502）+ 支援）<br/><br/>其中錨定時間的取值有：<br/>`current`、`today`、`this_monday`、`last_monday`、`this_month`、`last_month`、`this_year`、`last_year`<br/><br/>偏移毫秒應該為整數，預設為 0 毫秒 | 今天0點：[$time\|today]<br/>明天0點：[$time\|today\|8600000] |
+| [$random_number\|最小值\|最大值]    | 隨機數字佔位符（不含小數點）                                 | [$random_number\|0\|3000]                                    |
+| [$random_decimal\|最小值\|最大值]   | 隨機數字佔位符（含小數點）                                   | [$random_decimal\|1.0\|2.0]                                  |
 
 **示例1：使用時，選擇物品降價1金幣**
 

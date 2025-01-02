@@ -52,7 +52,7 @@
 
 介面請求地址：
 
-```awk
+```
 // 【推薦】content provider 機制，相容性更好
 http://{host:port}/api/contentprovider
 
@@ -134,7 +134,7 @@ http://{host:port}/api/contentprovider
 
 **任務相關**
 
-```awk
+```
 // 所有任務
 http://{host:port}/tasks
 
@@ -152,9 +152,12 @@ http://{host:port}/tasks_categories
 
 **商品相關**
 
-```awk
+```
 // 所有商品
 http://{host:port}/items
+
+// 查詢指定 id 為 1、4 的商品
+http://{host:port}/items?id=1&id=4
 
 // 指定清單${id}裡面的商品
 http://{host:port}/items/${id}
@@ -165,7 +168,7 @@ http://{host:port}/items_categories
 
 **成就相關**
 
-```awk
+```
 // 所有商品
 http://{host:port}/achievements
 
@@ -178,14 +181,34 @@ http://{host:port}/achievement_categories
 
 **感想**
 
-```awk
+```
 // 所有感想（分頁查詢）
 http://{host:port}/feelings?offset=${offset}&limit=${limit}
 ```
 
+**合成清單**
+
+```
+// 所有合成清單
+http://{host:port}/synthesis_categories
+
+// 指定清單${id}裡面的合成清單
+http://{host:port}/synthesis_categories/${id}
+```
+
+**合成配方**
+
+```
+// 所有合成配方
+http://{host:port}/synthesis
+
+// 指定清單${id}裡面的合成配方
+http://{host:port}/synthesis/${id}
+```
+
 **屬性**
 
-```awk
+```
 // 所有屬性
 http://{host:port}/skills
 ```
@@ -199,13 +222,14 @@ http://{host:port}/skills
 | id     | 對應的資料id | Query | 數字     | 是       | -                  |
 | offset | 查詢偏移量   | Query | 數字     | 否       | 目前僅部分介面需要 |
 | limit  | 限制數量     | Query | 數字     | 否       | 目前僅部分介面需要 |
+| filterGid  | 篩選重複任務歷史記錄         | Query  | 數字     | 否       | 歷史記錄查詢的可選引數 |
 
 **請求例項：**
 
 
 **任務相關**
 
-```awk
+```
 // 所有任務
 http://{host:port}/tasks
 
@@ -221,7 +245,7 @@ http://{host:port}/tasks_categories
 
 **商品相關**
 
-```awk
+```
 // 所有商品
 http://{host:port}/items
 
@@ -234,7 +258,7 @@ http://{host:port}/items_categories
 
 **成就相關**
 
-```awk
+```
 // 所有商品
 http://{host:port}/achievements
 
@@ -247,16 +271,36 @@ http://{host:port}/achievement_categories
 
 **感想**
 
-```awk
+```
 // 所有感想（分頁查詢），查詢第0位開始的 100 條
 http://{host:port}/feelings?offset=0&limit=100
 ```
 
 **屬性**
 
-```awk
+```
 // 所有屬性
 http://{host:port}/skills
+```
+
+**合成清單**
+
+```awk
+// 所有合成清單
+http://{host:port}/synthesis_categories
+
+// 指定清單id 1 裡面的合成清單
+http://{host:port}/synthesis_categories/1
+```
+
+**合成配方**
+
+```awk
+// 所有合成配方
+http://{host:port}/synthesis
+
+// 指定清單id 1 裡面的合成配方
+http://{host:port}/synthesis/1
 ```
 
 <br/>
@@ -273,7 +317,7 @@ http://{host:port}/skills
 
 介面請求地址：
 
-```awk
+```
 http://{host:port}/files/${url}
 ```
 
@@ -287,7 +331,7 @@ http://{host:port}/files/${url}
 
 **請求例項：**
 
-```awk
+```
 http://{host:port}/files/xxx
 ```
 
