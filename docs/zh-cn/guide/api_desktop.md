@@ -35,9 +35,9 @@
 
 ## 下载
 
-> 2025/01/03: v1.2.0 发布遇到一些问题，稍后重新发布
+> 2025/01/03: v1.2.0 发布遇到一些问题，我们修复并发布了 v1.2.1 版本，请下载新版本。
 
-- **[Windows 版本](http://lifeupcdnpic.cdn.dfyun.com.cn/download/release/desktop/LifeUp%20Desktop-1.1.1-windows.zip)**
+- **[Windows 版本](https://lifeupcdnpic.cdn.dfyun.com.cn/download/windows/stable/LifeUp-Desktop-1.2.1-windows.zip)**
 - Linux
   - 请前往 Github Release 下载：[https://github.com/Ayagikei/LifeUp-Desktop/releases](https://github.com/Ayagikei/LifeUp-Desktop/releases)
 - **MacOS**
