@@ -30,6 +30,10 @@
   - [体系建设参考手册](guide/user/system_01.md)
   - [体系相关视频](guide/user/system_02.md)
 - 更新
+  - [1.98.0 - API 2.0](features/198.md)
+  - [1.97.0 - 性能优化](features/197.md)
+  - [1.96.0 - 自动使用商品](features/196.md)
+  - [1.95.0 - 大屏幕适配](features/195.md)
   - [1.94.0 - 多选商品奖励](features/194.md)
   - [1.93.0 - 任务模板和新主题](features/193.md)
   - [1.92.0 - 统计2.0](features/192.md)
