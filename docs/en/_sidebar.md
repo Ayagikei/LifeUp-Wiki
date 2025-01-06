@@ -20,6 +20,8 @@
     - [🖥LifeUp Desktop](guide/api_desktop.md)
   
 - What's new
+  - [v1.98.0: API 2.0](feature/198.md)
+  - [v1.95.0 - v1.97.0: Auto use items, Big Screen, Performance Improvement](ReleaseLog.md)
   - [v1.94.0: Multiple Item Rewards!](feature/194.md)
   - [v1.93.0: Task Templates and Material 3! ](feature/193.md)
   - [v1.92.0: New stats! ](feature/192.md)
