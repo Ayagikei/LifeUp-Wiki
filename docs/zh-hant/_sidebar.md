@@ -30,6 +30,10 @@
   - [體系建設參考手冊](guide/user/system_01.md)
   - [體系相關影片](guide/user/system_02.md)
 - 更新
+  - [1.98.0 - API 2.0](features/198.md)
+  - [1.97.0 - 效能最佳化](features/197.md)
+  - [1.96.0 - 自動使用商品](features/196.md)
+  - [1.95.0 - 大螢幕適配](features/195.md)
   - [1.94.0 - 多選商品獎勵](features/194.md)
   - [1.93.0 - 任務模板和新主題](features/193.md)
   - [1.92.0 - 統計2.0](features/192.md)
