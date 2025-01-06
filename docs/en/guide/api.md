@@ -867,7 +867,6 @@ For example, jump to the details page of the specified task id 53: `lifeup://api
 
 <br/>
 
-### Shop
 
 #### Edit Item
 
