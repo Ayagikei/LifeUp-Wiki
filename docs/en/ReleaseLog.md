@@ -19,6 +19,12 @@
 
 ### **LifeUp-Android**
 
+**v1.98.1 (2025/01/14)**
+
+**Bug Fixes**
+
+1. Attempted to fix an issue with Google login authorization, where data for a limited number of accounts could not be correctly authorized and parsed.
+
 **v1.98.0 (2025/01/01)**
 
 **✨Features**
