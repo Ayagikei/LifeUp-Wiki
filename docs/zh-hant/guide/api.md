@@ -1525,18 +1525,20 @@ id 的獲取方法為「實驗」頁面開啟「開發者模式」，然後在�
 **說明：**新建、修改或刪除合成配方
 
 **示例：**
-- 建立新配方：[lifeup://api/synthesis_formula?inputItems=[{"itemId":1,"amount":2}]&outputItems=[{"itemId":3,"amount":1}]](lifeup://api/synthesis_formula?inputItems=[{"itemId":1,"amount":2}]&outputItems=[{"itemId":3,"amount":1}])
+- 建立新配方：[lifeup://api/synthesis_formula?inputItems=%5B%7B%22item_id%22%3A%20296%2C%20%22amount%22%3A%2088%7D%5D&outputItems=%5B%7B%22item_id%22%3A%20295%2C%20%22amount%22%3A%201%7D%5D](lifeup://api/synthesis_formula?inputItems=%5B%7B%22item_id%22%3A%20296%2C%20%22amount%22%3A%2088%7D%5D&outputItems=%5B%7B%22item_id%22%3A%20295%2C%20%22amount%22%3A%201%7D%5D)
+    - 這裏的 inputItems 為 `[{"item_id": 296, "amount": 88}]`
+    - 這裏的 outputItems 為 `[{"item_id": 295, "amount": 1}]`
 - 刪除配方：[lifeup://api/synthesis_formula?id=1&delete=true](lifeup://api/synthesis_formula?id=1&delete=true)
 
 | 引數        | 含義       | 取值                | 示例                               | 是否必須 | 備註                   |
 | ----------- | ---------- | ------------------- | ---------------------------------- | -------- | ---------------------- |
 | id          | 配方ID     | 大於 0 的數字       | 1                                  | 否       | 修改或刪除時必須提供   |
 | delete      | 是否刪除   | true 或者 false     | true                               | 否       | 僅刪除配方時使用       |
-| inputItems  | 材料列表   | 商品陣列，格式見下文 | [{"itemId":1,"amount":2}]          | 是       | 新建或修改時必須提供   |
-| outputItems | 產物列表   | 商品陣列，格式見下文 | [{"itemId":3,"amount":1}]          | 是       | 新建或修改時必須提供   |
-| category    | 分類ID     | 大於 0 的數字       | 1                                  | 否       | 預設為通用分類         |
+| inputItems  | 材料列表   | 商品陣列，格式見下文 | [{"item_id":1,"amount":2}]          | 是       | 新建或修改時必須提供   |
+| outputItems | 產物列表   | 商品陣列，格式見下文 | [{"item_id":3,"amount":1}]          | 是       | 新建或修改時必須提供   |
+| category    | 分類ID     | 大於 0 的數字       | 1                                  | 否       | 如不提供，預設為預設清單         |
 
-!> inputItems 和 outputItems 的格式為 JSON 陣列，每個商品包含 itemId（商品ID）和 amount（數量）兩個欄位，所有商品ID必須存在且數量必須大於0
+!> inputItems 和 outputItems 的格式為 JSON 陣列，每個商品包含 item_id（商品ID）和 amount（數量）兩個欄位，所有商品ID必須存在且數量必須大於0
 
 **返回資料：**
 
@@ -1585,7 +1587,7 @@ id 的獲取方法為「實驗」頁面開啟「開發者模式」，然後在�
 | item_id      | 物品ID         | 大於 0 的數字     | 1          | 否*      | 與 item_name 必須提供其中一個   |
 | item_name    | 物品名稱       | 任意文字          | 生命藥水    | 否*      | 與 item_id 必須提供其中一個     |
 | item_amount  | 物品數量       | 大於 0 的數字     | 1          | 否       | 僅在設定物品獎勵時有效          |
-| items        | 物品獎勵JSON   | JSON文字          | [{"itemId":1,"amount":1}] | 否 | 可一次性設定多個物品獎勵      |
+| items        | 物品獎勵JSON   | JSON文字          | [{"item_id":1,"amount":1}] | 否 | 可一次性設定多個物品獎勵      |
 
 **返回資料：**
 
