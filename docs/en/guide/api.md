@@ -1904,6 +1904,9 @@ Using `No Action`+`Broadcast return value` can achieve this effect in a more con
 | task_ids   | task id **array**       | [1, 2, 3]                       |
 | task_gids  | task group id **array** | [1, 2, 3]                       |
 | names      | task name **array**     | [Getting started, Drink Waters] |
+| task_ids_json  | task id **Json array**   | [1, 2, 3]                       |
+| task_gids_json | task group id **Json array** | [1, 2, 3]                       |
+| names_json     | task name **Json array** | ["Getting started", "Drink Waters"]                      |
 
 
 ### Achievement unlocked

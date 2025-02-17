@@ -19,6 +19,30 @@
 
 ### **LifeUp-Android**
 
+**v1.98.3 (2025/02/16)**
+
+**♻️Optimization**
+
+1. Added a warning when using the default notification reminder method and lacking the "exact alarm" permission.
+
+
+**🐛Bug Fixes**
+
+1. Fixed an issue where the "complete task" API was not working when the UI field was true.
+2. Fixed an issue where the purchase and use of certain quantities of items might not work correctly (e.g., 10).
+3. Fixed an issue where the feelings page might show "loading" indefinitely in certain scenarios.
+
+
+**v1.98.2 (2025/02/06)**
+
+**🐛Bug Fixes**
+
+1. Fixed an issue where, when using a item that deducts experience, there might be insufficient experience even when there is enough.
+2. Fixed an issue where editing a item after copying it might result in abnormal duplicate usage effects.
+3. Fixed an issue where calling the "adjust item" API might result in abnormal purchase limits.
+4. Fixed an issue where modifying certain tomato records might result in an abnormal reduction in tomato counts.
+
+
 **v1.98.1 (2025/01/14)**
 
 **Bug Fixes**

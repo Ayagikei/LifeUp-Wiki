@@ -2182,6 +2182,9 @@ broadcast 的数值相当于 Tasker 中的「收到的意图」的操作一栏�
 | task_ids  | 任务id**数组**   | [1, 2, 3]                       |
 | task_gids | 任务组id**数组** | [1, 2, 3]                       |
 | names     | 事项名称**数组** | [Getting started, Drink Waters] |
+| task_ids_json  | 任务id**Json数组**   | [1, 2, 3]                       |
+| task_gids_json | 任务组id**Json数组** | [1, 2, 3]                       |
+| names_json     | 事项名称**Json数组** | ["Getting started", "Drink Waters"]                      |
 
 
 
