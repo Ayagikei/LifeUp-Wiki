@@ -2182,6 +2182,9 @@ broadcast 的數值相當於 Tasker 中的「收到的意圖」的操作一欄�
 | task_ids  | 任務id**陣列**   | [1, 2, 3]                       |
 | task_gids | 任務組id**陣列** | [1, 2, 3]                       |
 | names     | 事項名稱**陣列** | [Getting started, Drink Waters] |
+| task_ids_json  | 任務id**Json陣列**   | [1, 2, 3]                       |
+| task_gids_json | 任務組id**Json陣列** | [1, 2, 3]                       |
+| names_json     | 事項名稱**Json陣列** | ["Getting started", "Drink Waters"]                      |
 
 
 
