@@ -1169,8 +1169,8 @@ For example, jump to the details page of the specified task id 53: `lifeup://api
 | content     | Content           | Any text               | Happy      | No       | Used for creating a new record or updating the content of an existing one |
 | time        | Timestamp         | Unix timestamp         | 1633036800 | No       | The time of the record, defaults to current time             |
 | is_favorite | Favorite Flag     | true or false          | true       | No       | Marks the record as a favorite or not                        |
-| relate_type | Relation Type     | Number between 0 and 2 | 1          | No       | Specifies the type of relation associated with the record    |
-| relate_id   | Related ID        | Number greater than 0  | 2          | No       | Specifies the ID of the related item                         |
+| relate_type | Relation Type     | Number between 0 and 2 | 1          | No       | Specifies the type of relation associated with the record:<br/>0: Task<br/>1: Custom Achievement<br/>2: No relation |
+| relate_id   | Related ID        | Number greater than 0  | 2          | No       | Specifies the ID of the related item:<br/>When relate_type is 0: represents task ID<br/>When relate_type is 1: represents achievement ID<br/>When relate_type is 2: no ID needed |
 
 **Note:**
 
