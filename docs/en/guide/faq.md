@@ -188,7 +188,7 @@ You can go to the [History] page to delete the corresponding record.
 
 ##### How to uncomplete tasks?
 
-1. When completed a task, click the **“Undo”** button in the prompt box at the bottom.
+1. When completed a task, click the **"Undo"** button in the prompt box at the bottom.
 
 2. On the `History` page of the `Sidebar`, tap the `Undo` button.
 
@@ -450,9 +450,10 @@ Because your local *LifeUp* client is fully functional and can independently com
 
 ##### Will there be a iOS version of LifeUp?
 
-**The answer is yes, but the iOS release may still take a lot of time.**
 
-Here are some reasons:
+**We've launched [ulives](https://app.ulives.io/), a dedicated productivity app designed specifically for iOS users!** It shares the core spirit of LifeUp but is tailored for the Apple ecosystem.
+
+Here are some reasons why a direct LifeUp port to iOS is complex:
 1. LifeUp is currently developed using pure Android technology (my main job is also Android development). Not proficient in iOS development.
 
 2. And since LifeUp is offline storage, the app handles all the data instead of the server. This results in the iOS version also needing to rewrite all UI and calculation logic.

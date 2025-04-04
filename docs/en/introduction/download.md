@@ -1,5 +1,7 @@
 # LifeUp Purchase and License Guide
 
+?> Looking for an iOS alternative? Check out [ulives](https://app.ulives.io/), our productivity app designed for Apple devices!
+
 ## 🏪 1. Google Play Store (Recommended)
 
 <p align="start">
@@ -78,7 +80,7 @@ LifeUp Pro is also available as a paid app on the Amazon Appstore. Similar to th
 - All features included
 - Regular updates
 
-Please note that updates on the Amazon Appstore may be released slightly later compared to the Google Play version. We appreciate your understanding.
+**Important:** Amazon has announced the closure of its Android Appstore for non-Fire devices. We recommend users with non-Fire devices purchase LifeUp through other channels like Google Play. Fire device users can continue to purchase and receive updates via the Amazon Appstore.
 
 ---
 
