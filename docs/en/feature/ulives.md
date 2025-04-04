@@ -64,6 +64,8 @@ This approach allows us to deliver a truly native iOS experience that feels righ
 
 Don't worry, Android users! We remain committed to **maintaining and updating both LifeUp (Android) and ulives (iOS)** concurrently.
 
+P.S. We're already working on exciting new features for LifeUp too, like repeatable achievements (e.g., unlocking every N levels of an attribute) – coming soon! 😉
+
 ---
 
 Ready to start your new quest on iOS?
