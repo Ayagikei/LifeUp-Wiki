@@ -9,7 +9,7 @@
 | Platform          | Version         | Update Date     |
 | :---------------- |:----------------|:----------------|
 | LifeUp-Android    | v1.98.0         | 2025/01/01      |
-| LifeUp-iOS        | In development… | In development… |
+| LifeUp-iOS        | check [feature/ulives] | Alternative app available |
 | LifeUp-Desktop    | v1.2.0          | 2025/01/01      |
 | LifeUp Cloud(SDK) | v1.3.0          | 2025/01/01      |
 
