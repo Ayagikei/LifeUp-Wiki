@@ -1,5 +1,7 @@
 <h1 align="center" padding="100">ulives: Gamify Your Life on iOS! ✨</h1>
 
+!> Since ulives has just been released, there are inevitably some abnormal issues. For example, we have found some issues related to task cycle processing in 1.0.5 and fixed them, but it has not been released due to the delay in App Store review. We are communicating with AppStore to deal with it.<br/> If you encounter any bugs or problems, please contact us directly at fb@ulives.io to get the testflight version.
+
 Hey LifeUp Adventurers! 👋
 
 We're thrilled to announce the launch of **ulives**, a brand-new gamified task management app built from the ground up, exclusively for iOS! 🎉
