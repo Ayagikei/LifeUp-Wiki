@@ -1742,7 +1742,7 @@ Only supported since version 1.90.6
 | [$decimal\|title\|signed]            | Number placeholder (with decimal point), show sign           | [$decimal\|Enter ATM rate\|signed]                           |
 | [$item]                              | Select an item, it will be replaced with item id              | [$item]                                                      |
 | [$task_category]                     | Select task list, which will be replaced with task list id    | [$task_category]                                             |
-| [$time\|Anchor Time\|Offset in Milliseconds(optional)] | Time Placeholder (Supported from v1.93.0-beta01 (502) + only) <br/><br/>Possible values for Anchor Time:<br/>`current`, `today`, `this_monday`, `last_monday`, `this_month`, `last_month`, `this_year`, `last_year` <br/><br/>Offset in milliseconds should be an integer, default is 0 milliseconds | Midnight today: [$time\|today]<br/>Midnight tomorrow: [$time\|today\|8600000] |
+| [$time\|Anchor Time\|Offset in Milliseconds(optional)] | Time Placeholder<br/><br/>Possible values for Anchor Time:<br/>`current`, `today`, `this_monday`, `last_monday`, `this_month`, `last_month`, `this_year`, `last_year` <br/><br/>Offset in milliseconds should be an integer, default is 0 milliseconds | Midnight today: [$time\|today]<br/>Midnight tomorrow: [$time\|today\|86400000] |
 | [$random_number\|Min\|Max]           | Random number placeholder (without decimal point)             | [$random_number\|0\|3000]                                    |
 | [$random_decimal\|Min\|Max]          | Random number placeholder (with decimal point)                | [$random_decimal\|1.0\|2.0]                                  |
 
