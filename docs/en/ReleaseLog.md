@@ -8,8 +8,8 @@
 
 | Platform          | Version         | Update Date     |
 | :---------------- |:----------------|:----------------|
-| LifeUp-Android    | v1.98.0         | 2025/01/01      |
-| LifeUp-iOS        | check [feature/ulives] | Alternative app available |
+| LifeUp-Android    | v1.98.4         | 2025/04/14      |
+| LifeUp-iOS        | check [feature/ulives] | 🎉Alternative app available |
 | LifeUp-Desktop    | v1.2.0          | 2025/01/01      |
 | LifeUp Cloud(SDK) | v1.3.0          | 2025/01/01      |
 
@@ -18,6 +18,15 @@
 <!-- tabs:start -->
 
 ### **LifeUp-Android**
+
+**v1.98.4 (2025/04/14)**
+
+**🐛Bug Fixes**
+
+1. Fixed an issue where the progress bar might not update promptly after completing subtasks on the task details page.  
+2. Fixed an issue where editing a completed task could incorrectly revert its status to "incomplete."  
+3. Fixed an issue where modifying the status of overdue tasks might incorrectly affect the target completion count.  
+4. Fixed an issue where the Pomodoro task selection logic incorrectly displayed frozen tasks and archived lists.  
 
 **v1.98.3 (2025/02/16)**
 
