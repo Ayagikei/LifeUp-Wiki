@@ -19,6 +19,26 @@
 
 ### **LifeUp-Android**
 
+**v1.98.5 (2025/05/01)**
+
+**✨Features**
+
+1. Added support for setting anchor dates (e.g., end of the month) for monthly and yearly recurring tasks.
+2. Improved multi-select interaction for products: default to multi-select mode, and restore previous selections when re-selecting.
+
+**♻️Optimization**
+
+1. Added support for remembering relative reminder time settings.
+2. Minor UI optimizations.
+
+**🐛Bug Fixes**
+
+1. Fixed the issue where products could still be purchased via API when store stock was insufficient.
+2. Fixed the issue where task templates failed to restore automatic coin rewards.
+3. Fixed the occasional failure of long-press on task titles.
+4. Fixed the issue where new products could select deleted lists under certain conditions.
+5. Fixed the missing clear button in the reminder time field when editing tasks.
+
 **v1.98.4 (2025/04/14)**
 
 **🐛Bug Fixes**
