@@ -916,7 +916,8 @@ For example, jump to synthesis category page with id 1: `lifeup://api/goto?page=
 
 **Examples:**
 - Adjust price: [lifeup://api/item?id=1&set_price=1&set_price_type=relative](lifeup://api/item?id=1&set_price=1&set_price_type=relative)
-- Modify effects: [lifeup://api/item?id=1&effects=[{"type":2,"info":{"min":100,"max":200}}]](lifeup://api/item?id=1&effects=[{"type":2,"info":{"min":100,"max":200}}])
+- Modify effects: [lifeup://api/item?effects=%5B%7B%22type%22%3A2%2C%22info%22%3A%7B%22min%22%3A100%2C%22max%22%3A200%7D%7D%5D&id=1](lifeup://api/item?effects=%5B%7B%22type%22%3A2%2C%22info%22%3A%7B%22min%22%3A100%2C%22max%22%3A200%7D%7D%5D&id=1)
+    - The decoded content of effects parameter is: `[{"type":2,"info":{"min":100,"max":200}}]`
 
 | Parameter         | Meaning             | Values               | Example   | Required | Notes                           |
 | ---------------- | ------------------- | -------------------- | --------- | -------- | ------------------------------- |

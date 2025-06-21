@@ -1132,7 +1132,8 @@ id 的获取方法为「实验」页面打开「开发者模式」，然后在�
 
 **示例：**
 - 调整价格：[lifeup://api/item?id=1&set_price=1&set_price_type=relative](lifeup://api/item?id=1&set_price=1&set_price_type=relative)
-- 修改效果：[lifeup://api/item?id=1&effects=[{"type":2,"info":{"min":100,"max":200}}]](lifeup://api/item?id=1&effects=[{"type":2,"info":{"min":100,"max":200}}])
+- 修改效果：[lifeup://api/item?effects=%5B%7B%22type%22%3A2%2C%22info%22%3A%7B%22min%22%3A100%2C%22max%22%3A200%7D%7D%5D&id=1](lifeup://api/item?effects=%5B%7B%22type%22%3A2%2C%22info%22%3A%7B%22min%22%3A100%2C%22max%22%3A200%7D%7D%5D&id=1)
+    - effect 参数的编码前内容为：`[{"type":2,"info":{"min":100,"max":200}}]`
 
 | 参数              | 含义           | 取值                | 示例       | 是否必须 | 备注                           |
 | ---------------- | -------------- | ------------------ | ---------- | -------- | ------------------------------ |
