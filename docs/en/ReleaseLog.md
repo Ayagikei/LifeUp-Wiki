@@ -8,7 +8,7 @@
 
 | Platform          | Version         | Update Date     |
 | :---------------- |:----------------|:----------------|
-| LifeUp-Android    | v1.98.4         | 2025/04/14      |
+| LifeUp-Android    | v1.99.1-rc02         | 2025/06/20      |
 | LifeUp-iOS        | check [feature/ulives] | 🎉Alternative app available |
 | LifeUp-Desktop    | v1.2.0          | 2025/01/01      |
 | LifeUp Cloud(SDK) | v1.3.0          | 2025/01/01      |
@@ -18,6 +18,61 @@
 <!-- tabs:start -->
 
 ### **LifeUp-Android**
+
+**v1.99.1-rc02 (2025/06/20)**
+
+**✨Features**
+
+1. Supports repeatable achievement unlock conditions for "Complete N consecutive tasks".
+2. New/Edit Task API now supports task type, and relative adjustment of gold/experience values.
+3. Achievement API supports setting gold, and relative adjustment of gold/experience values.
+4. APIs support jumping to specific achievement lists and synthesis lists.
+
+**♻️Optimization**
+
+1. Optimized the order of warehouse item history records generated when opening boxes.
+2. Statistics page filter options now support memory.
+3. Filter page options now support "Select All" operation.
+4. Strengthened the deduplication interception logic for task creation.
+5. Task detail page operations supplemented: freeze, adjust deadline.
+6. Supports displaying synthesis list ID.
+
+**🐛 Bug Fixes**
+
+1. Fixed the issue where the previous Task API could not create/edit Ebbinghaus tasks.
+2. Fixed the issue where the task list display and the list name in the top bar might be inconsistent when launching the app from the task list widget.
+3. Fixed the issue where the text in the simple mode card might not be fully displayed.
+
+**v1.99.0 (2025/05/17)**
+
+**✨Features**
+
+1. Added support for repeatable achievement types
+2. Added notification reminder actions: complete task, remind later  
+3. Custom background: added option to enhance text readability
+4. Added support for adjusting achievement icon cropping styles
+5. Added support for adjusting monthly/yearly task anchor dates
+
+**♻️Optimizations**
+
+1. Optimized achievement unlock progress calculation logic
+2. Improved product selection interactions
+3. Adjusted reminder permission button position in new/edit task screens
+4. Optimized relative reminder time storage logic
+5. Allowed freezing non-repeating and infinitely repeating tasks
+
+**🐛Bug Fixes**
+
+> Some fixes will be gradually rolled out to [Member Stable Version] and [Official Version]
+
+1. Fixed issue where editing achievements might accidentally reset API unlock condition progress
+2. Fixed issue where products with 0 stock could still be purchased via API
+3. Fixed issue where deleted lists could be selected in new product page under certain conditions
+4. Fixed issue where task templates couldn't save auto-calculated coin reward status
+5. Removed detail page transition animations to fix long-press interaction failures
+6. Fixed issue where frozen tasks appeared in Pomodoro task selection
+7. Fixed issue where editing tasks through certain methods would incorrectly reset status to incomplete
+8. Fixed interaction issues with feeling popups
 
 **v1.98.5 (2025/05/01)**
 
