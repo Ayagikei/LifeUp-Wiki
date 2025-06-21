@@ -505,7 +505,7 @@ Open box effect:
 | exp              | Experience reward   | [0, 99999]          | 100        | No       | Defaults to 0                   |
 | skills           | Skill IDs           | array of numbers > 0 | 1          | No       | Supports arrays (e.g., &skills=1&skills=2) |
 | category         | List ID             | number >= 0          | 0          | No       | Defaults to 0 (default list); smart lists not allowed |
-| frequency        | Repeat frequency    | integer              | 0          | No       | Defaults to 0 (once)<br/>0 - Once<br/>1 - Daily<br/>N (N>1) - Every N days<br/>-1 - Unlimited<br/>-4 - Monthly<br/>-5 - Yearly |
+| frequency        | Repeat frequency    | integer              | 0          | No       | Defaults to 0 (once)<br/>0 - Once<br/>1 - Daily<br/>N (N>1) - Every N days<br/>-1 - Unlimited<br/>-3 - Ebbinghaus (requires v1.99.1)<br/>-4 - Monthly<br/>-5 - Yearly |
 | importance       | Importance level    | [1, 4]              | 1          | No       | Defaults to 1                   |
 | difficulty       | Difficulty level    | [1, 4]              | 1          | No       | Defaults to 1                   |
 | deadline         | Due time            | timestamp (milliseconds) | 1640995200000 | No |                               |
@@ -525,6 +525,9 @@ Open box effect:
 | item_name        | Item name           | any text            | Treasure   | No*      | Either item_id or item_name required |
 | item_amount      | Item quantity       | [1, 99]             | 1          | No       | Defaults to 1                  |
 | items            | Item rewards        | JSON text           | See [Item Rewards Structure](#1-item-rewards-structure) | No | Set multiple item rewards |
+| task_type        | Task type           | [0, 3]              | 0          | No       | Requires v1.99.1<br/>0 - Normal task<br/>1 - Count task<br/>2 - Negative task<br/>3 - API task |
+| target_times     | Target times        | number > 0          | 1          | No       | Only valid when task_type is 1 (count task) |
+| is_affect_shop_reward | Affect shop reward | true/false      | false    | No       | Only valid when task_type is 1 (count task), whether to affect the reward calculation of items |
 
 **Response:**
 
@@ -691,7 +694,7 @@ The method of obtaining the id is to open the "Developer Mode" on the "Labs" pag
 | exp                | Experience reward    | [0, 99999]          | 20        | No       | Experience points earned        |
 | skills             | Skill IDs            | array of numbers greater than 0 | 1 | No    | Supports arrays (e.g., &skills=1&skills=2) |
 | category           | List ID              | number greater than or equal to 0 | 0 | No  | 0 for default list, smart lists not supported |
-| frequency          | Repeat frequency     | integer              | 0         | No       | -1 - Unlimited<br/>-3 - Ebbinghaus<br/>-4 - Monthly<br/>-5 - Yearly |
+| frequency          | Repeat frequency     | integer              | 0         | No       | -1 - Unlimited<br/>-3 - Ebbinghaus (requires v1.99.1)<br/>-4 - Monthly<br/>-5 - Yearly |
 | importance         | Importance level     | [1, 4]              | 1         | No       | Defaults to 1                   |
 | difficulty         | Difficulty level     | [1, 4]              | 2         | No       | Defaults to 1                   |
 | deadline           | Due date             | timestamp (milliseconds) | 1640995200000 | No |                               |
@@ -711,6 +714,11 @@ The method of obtaining the id is to open the "Developer Mode" on the "Labs" pag
 | exp_penalty_factor | Experience penalty factor | floating point between [0, 100) | 0.5 | No |                             |
 | write_feelings     | Enable feelings      | true or false        | false     | No       |                                |
 | pin                | Pin task             | true or false        | false     | No       |                                |
+| task_type        | Task type           | [0, 3]              | 0          | No       | Requires v1.99.1<br/>0 - Normal task<br/>1 - Count task<br/>2 - Negative task<br/>3 - API task |
+| target_times     | Target times        | number > 0          | 1          | No       | Only valid when task_type is 1 (count task) |
+| is_affect_shop_reward | Affect shop reward | true/false      | false    | No       | Only valid when task_type is 1 (count task), whether to affect the reward calculation of items |
+| coin_set_type     | How to set coin value | One of:<br/>absolute<br/>relative | absolute | No | absolute - directly set coin to value<br/>relative - add/subtract from original coin value |
+| exp_set_type      | How to set exp value | One of:<br/>absolute<br/>relative | absolute | No | absolute - directly set exp to value<br/>relative - add/subtract from original exp value |
 
 **Response:**
 
@@ -782,7 +790,7 @@ The method of obtaining the id is to open the "Developer Mode" on the "Labs" pag
 
 | Parameter | Meaning | Value | Example | Required | Notes |
 | --------- | ------- | ----- | ------- | -------- | ----- |
-| page | page | One of the following values:<br/>main<br/>setting<br/>about<br/>pomodoro<br/>feelings<br/>achievement<br/>history<br/>add_task<br/>add_achievement<br/>add_achievement_cate<br/>exp<br/>coin<br/>backup<br/>add_item<br/>lab<br/>custom_attributes<br/>pomodoro_record<br/>synthesis<br/>pic_manage<br/>purchase_dialog<br/>task_detail<br/>use_item_dialog | lab | yes | `purchase_dialog` refers to the purchase popup<br/> `use_item_dialog` refers to the use item popup<br/>Other entries refer to specific major pages |
+| page | page | One of the following values:<br/>main<br/>setting<br/>about<br/>pomodoro<br/>feelings<br/>achievement<br/>history<br/>add_task<br/>add_achievement<br/>add_achievement_cate<br/>exp<br/>coin<br/>backup<br/>add_item<br/>lab<br/>custom_attributes<br/>pomodoro_record<br/>synthesis<br/>pic_manage<br/>purchase_dialog<br/>task_detail<br/>use_item_dialog<br/>achievement_list<br/>user_achievement | lab | yes | `purchase_dialog` refers to the purchase popup<br/> `use_item_dialog` refers to the use item popup<br/>Other entries refer to specific major pages |
 
 #### 1. Jump to the item purchase/use pop-up window
 
@@ -804,7 +812,7 @@ For example, jump to the store page: `lifeup://api/goto?page=main&sub_page=shop`
 
 | Parameter   | Meaning       | Value | Example | Required | Notes  |
 | ----------- | ------------- | ----- | ------- | -------- | ------ |
-| sub_page    | sub page name | Fixed one of the following values:<br/>todo<br/>shop<br/>inventory<br/>achievement<br/>status<br/>me<br/>statistic<br/>pomodoro<br/>feelings<br/>world | shop    | no       |      |
+| sub_page    | sub page name | One of:<br/>todo<br/>shop<br/>inventory<br/>achievement<br/>status<br/>me<br/>statistic<br/>pomodoro<br/>feelings<br/>world | shop    | no       |      |
 | category_id | list id       | number | 0      | no       | If `sub_page` is a list page, you can specify the list id to jump to. <br/>Such as shop item list, inventory list, task list. |
 
 <br/>
@@ -827,6 +835,36 @@ For example, jump to the details page of the specified task id 53: `lifeup://api
     - If multiple are provided at the same time, there will be an internal priority order. But this is undefined behavior, APP will not guarantee the order.
 
 <br/>
+
+#### 4. Jump to new achievement page
+
+When the `page` parameter is `add_achievement`, you **must** additionally specify the category id:
+
+For example, jump to new achievement page with category id 1: `lifeup://api/goto?page=add_achievement&category_id=1`
+
+| Parameter    | Meaning         | Value         | Example | Required | Notes  |
+| ------------ | --------------- | ------------- | ------- | -------- | ------ |
+| category_id  | Achievement category id | Achievement category id | 1       | Yes      |        |
+
+#### 5. Jump to specific achievement category page
+
+When the `page` parameter is `user_achievement`, you **must** additionally specify the category id:
+
+For example, jump to achievement category page with id 1: `lifeup://api/goto?page=user_achievement&category_id=1`
+
+| Parameter    | Meaning         | Value         | Example | Required | Notes  |
+| ------------ | --------------- | ------------- | ------- | -------- | ------ |
+| category_id  | Achievement category id | Achievement category id | 1       | Yes      |        |
+
+#### 6. Jump to specific synthesis category page
+
+When the `page` parameter is `synthesis`, you can optionally specify the category id:
+
+For example, jump to synthesis category page with id 1: `lifeup://api/goto?page=synthesis&category_id=1`
+
+| Parameter    | Meaning         | Value         | Example | Required | Notes  |
+| ------------ | --------------- | ------------- | ------- | -------- | ------ |
+| category_id  | Synthesis category id | Synthesis category id | 1       | No       |        |
 
 ### Shop
 
@@ -1453,6 +1491,10 @@ For example, jump to the details page of the specified task id 53: `lifeup://api
 | item_amount   | Item quantity     | [1, 99]             | 1         | No       | Defaults to 1                   |
 | items         | Item rewards JSON | JSON text            | [{"item_id":1,"amount":2}] | No | Set multiple item rewards, see format below |
 | conditions_json| Unlock conditions JSON | JSON text      | [{"type":7,"target":1000000}] | No | Set unlock conditions, see format below |
+| coin         | Coin reward       | [0, 999999]      | 10         | No       | Amount of coins earned by completing tasks |
+| coin_var     | Coin reward variation | integer              | 5          | No       | Variation range for coin rewards |
+| coin_set_type| How to set coin value | One of:<br/>absolute<br/>relative | absolute | No | absolute - directly set coin to value<br/>relative - add/subtract from original coin value |
+| exp_set_type | How to set exp value | One of:<br/>absolute<br/>relative | absolute | No | absolute - directly set exp to value<br/>relative - add/subtract from original exp value |
 
 #### 2. Subcategory Parameters
 
