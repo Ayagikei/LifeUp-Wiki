@@ -711,7 +711,7 @@ gid: 事項組id，針對同一個重複任務，其 gid 都不會發生變化�
 | exp             | 經驗值獎勵     | [0, 99999]        | 100       | 否       | 預設為 0                       |
 | skills          | 技能ID         | 大於 0 的數字陣列   | 1         | 否       | 支援陣列（如 &skills=1&skills=2）|
 | category        | 清單ID         | 大於等於 0 的數字   | 0         | 否       | 預設為 0（預設清單）；不能選擇智慧清單 |
-| frequency       | 重複頻次       | 整數               | 0         | 否       | 預設為 0（單次）<br/>0 - 單次<br/>1 - 每日<br/>N (N>1) - 每 N 日<br/>-1 - 無限<br/>-4 - 每月<br/>-5 - 每年 |
+| frequency       | 重複頻次       | 整數               | 0         | 否       | 預設為 0（單次）<br/>0 - 單次<br/>1 - 每日<br/>N (N>1) - 每 N 日<br/>-1 - 無限<br/>-3 - 艾賓浩斯（需v1.99.1）<br/>-4 - 每月<br/>-5 - 每年 |
 | importance      | 重要程度       | [1, 4]            | 1         | 否       | 預設為 1                       |
 | difficulty      | 困難程度       | [1, 4]            | 1         | 否       | 預設為 1                       |
 | deadline        | 截止時間       | 時間戳（毫秒）     | 1640995200000 | 否    |                               |
@@ -731,6 +731,10 @@ gid: 事項組id，針對同一個重複任務，其 gid 都不會發生變化�
 | item_name       | 物品名稱       | 任意文字           | 寶箱      | 否*      | 與 item_id 必須提供其中一個     |
 | item_amount     | 物品數量       | [1, 99]           | 1         | 否       | 預設為 1                       |
 | items           | 物品獎勵       | JSON文字           | 參見[物品獎勵結構](#1-物品獎勵結構) | 否 | 可一次性設定多個物品獎勵 |
+| task_type       | 任務型別       | [0, 3]            | 0         | 否       | 需v1.99.1, 0 - 普通任務<br/>1 - 計數任務<br/>2 - 負面任務<br/>3 - API任務 |
+| target_times    | 目標次數       | 大於0的整數        | 1         | 否       | 僅當 task_type 為1(計數任務)時有效 |
+| is_affect_shop_reward | 是否影響商店獎勵 | true/false      | false    | 否       | 當 task_type 為1(計數任務)時有效，是否影響商品的獎勵計算         |
+
 
 **返回資料：**
 
@@ -901,7 +905,7 @@ id 的獲取方法為「實驗」頁面開啟「開發者模式」，然後在�
 | exp                | 經驗值獎勵     | [0, 99999]        | 20       | 否       | 完成任務獲得的經驗值           |
 | skills             | 技能ID         | 大於 0 的數字陣列   | 1        | 否       | 支援陣列（如 &skills=1&skills=2）|
 | category           | 列表ID         | 大於或等於 0 的數字 | 0        | 否       | 0 表示預設列表，不能選擇智慧列表 |
-| frequency          | 重複頻率       | 整數               | 0        | 否       | -1 - 無限<br/>-3 - 艾賓浩斯<br/>-4 - 每月<br/>-5 - 每年 |
+| frequency       | 重複頻次       | 整數               | 0         | 否       | 預設為 0（單次）<br/>0 - 單次<br/>1 - 每日<br/>N (N>1) - 每 N 日<br/>-1 - 無限<br/>-3 - 艾賓浩斯（需v1.99.1）<br/>-4 - 每月<br/>-5 - 每年 |
 | importance         | 重要程度       | [1, 4]            | 1        | 否       | 預設為 1                       |
 | difficulty         | 難度等級       | [1, 4]            | 2        | 否       | 預設為 1                       |
 | deadline           | 截止時間       | 時間戳（毫秒）     | 1640995200000 | 否 |                               |
@@ -921,6 +925,11 @@ id 的獲取方法為「實驗」頁面開啟「開發者模式」，然後在�
 | exp_penalty_factor | 經驗懲罰係數   | [0, 100) 之間的浮點數 | 0.5    | 否       |                               |
 | write_feelings     | 是否啟用感想   | true 或者 false    | false    | 否       |                               |
 | pin                | 是否置頂       | true 或者 false    | false    | 否       |                               |
+| task_type       | 任務型別       | [0, 3]            | 0         | 否       | 需v1.99.1, 0 - 普通任務<br/>1 - 計數任務<br/>2 - 負面任務<br/>3 - API任務 |
+| target_times    | 目標次數       | 大於0的整數        | 1         | 否       | 僅當 task_type 為1(計數任務)時有效 |
+| is_affect_shop_reward | 是否影響商店獎勵 | true/false      | false    | 否       | 當 task_type 為1(計數任務)時有效，是否影響商品的獎勵計算         |
+| coin_set_type     | 如何設定金幣值 | One of:<br/>absolute<br/>relative | absolute | 否 | absolute - 直接設定金幣為 value<br/>relative - 在原金幣值的基礎上增加或減少 |
+| exp_set_type      | 如何設定經驗值 | One of:<br/>absolute<br/>relative | absolute | 否 | absolute - 直接設定經驗值為 value<br/>relative - 在原經驗值的基礎上增加或減少 |
 
 **返回資料：**
 
@@ -992,7 +1001,7 @@ id 的獲取方法為「實驗」頁面開啟「開發者模式」，然後在�
 
 | 引數 | 含義 | 取值                                                         | 示例 | 是否必須 | 備註                                                         |
 | ---- | ---- | ------------------------------------------------------------ | ---- | -------- | ------------------------------------------------------------ |
-| page | 頁面 | 固定以下數值其一：<br/>main<br/>setting<br/>about<br/>pomodoro<br/>feelings<br/>achievement<br/>history<br/>add_task<br/>add_achievement<br/>add_achievement_cate<br/>exp<br/>coin<br/>backup<br/>add_item<br/>lab<br/>custom_attributes<br/>pomodoro_record<br/>dlc<br/>pomodoro_record<br/>synthesis<br/>pic_manage<br/>purchase_dialog<br/>task_detail<br/>new_default | lab  | 是       | `purchase_dialog`指購買彈窗<br/>`use_item_dialog`指使用商品彈窗<br/>其他的都是具體的大頁面 |
+| page | 頁面 | 固定以下數值其一：<br/>main<br/>setting<br/>about<br/>pomodoro<br/>feelings<br/>achievement<br/>history<br/>add_task<br/>add_achievement<br/>add_achievement_cate<br/>exp<br/>coin<br/>backup<br/>add_item<br/>lab<br/>custom_attributes<br/>pomodoro_record<br/>dlc<br/>pomodoro_record<br/>synthesis - 合成<br/>pic_manage<br/>purchase_dialog<br/>task_detail<br/>new_default<br/>achievement_list - 成就清單<br/>user_achievement - 具體某個成就清單，見下文<br/> | lab  | 是       | `purchase_dialog`指購買彈窗<br/>`use_item_dialog`指使用商品彈窗<br/>其他的都是具體的大頁面 |
 
 
 #### 1. 跳轉商品購買/使用彈窗
@@ -1047,6 +1056,26 @@ id 的獲取方法為「實驗」頁面開啟「開發者模式」，然後在�
 | 引數      | 含義     | 取值     | 示例 | 是否必須 | 備註                                           |
 | --------- | -------- | -------- | ---- | -------- | ---------------------------------------------- |
 | category_id   | 成就清單id   | 成就清單id   | 1   | 是      |  |
+
+#### 5. 跳轉具體的成就清單頁面
+
+當 `page` 引數為 `user_achievement`時，你還**需要**額外指定跳轉的清單 id：
+
+示例如，跳轉到指定清單 id 為 1 的成就清單頁面：`lifeup://api/goto?page=user_achievement&category_id=1`
+
+| 引數      | 含義     | 取值     | 示例 | 是否必須 | 備註                                           |
+| --------- | -------- | -------- | ---- | -------- | ---------------------------------------------- |
+| category_id   | 成就清單id   | 成就清單id   | 1   | 是      |  |
+
+#### 6. 跳轉具體的合成清單頁面
+
+當 `page` 引數為 `synthesis`時，你還**可選**額外指定跳轉的清單 id：
+
+示例如，跳轉到指定清單 id 為 1 的合成清單頁面：`lifeup://api/goto?page=synthesis&category_id=1`
+
+| 引數      | 含義     | 取值     | 示例 | 是否必須 | 備註                                           |
+| --------- | -------- | -------- | ---- | -------- | ---------------------------------------------- |
+| category_id   | 合成清單id   | 合成清單id   | 1   | 否      |  |
 
 
 
@@ -1701,6 +1730,10 @@ id 的獲取方法為「實驗」頁面開啟「開發者模式」，然後在�
 | item_amount  | 物品數量       | [1, 99]           | 1         | 否       | 預設為 1                       |
 | items        | 物品獎勵JSON   | JSON文字           | [{"item_id":1,"amount":2}] | 否 | 可一次設定多個物品獎勵，格式見下文 |
 | conditions_json | 解鎖條件JSON | JSON文字          | [{"type":7,"target":1000000}] | 否 | 設定解鎖條件，格式見下文 |
+| coin         | 金幣獎勵       | [0, 999999]      | 10         | 否       | 完成任務獲得的金幣數量          |
+| coin_var     | 金幣獎勵浮動值 | 整數              | 5          | 否       | 金幣獎勵的浮動範圍             |
+| coin_set_type| 金幣獎勵型別   | 以下數值其一：<br/>absolute<br/>relative | absolute | 否 | absolute - 直接設定金幣為 value<br/>relative - 在原金幣值的基礎上增加或減少 |
+| exp_set_type | 經驗值獎勵型別 | 以下數值其一：<br/>absolute<br/>relative | absolute | 否 | absolute - 直接設定經驗值為 value<br/>relative - 在原經驗值的基礎上增加或減少 |
 
 #### 2. 子分類專用引數
 
