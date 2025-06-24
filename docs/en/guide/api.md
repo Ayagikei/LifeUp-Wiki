@@ -10,13 +10,13 @@
 
 
 
-**Updated on 2024/04/23**
+**Last updated: 2025/06/24**
 
-The API parameters and definitions in this document are based on version v1.94.0.
+The API parameters and definitions in this document are based on version **v1.99.1**.
 
-It is recommended to upgrade your application to version v1.94.0 before using the API.
+Please ensure that your application has been updated to **v1.99.1** before using the API.
 
-If you have not received the update, please wait for it to be pushed through Google Play.
+The update is rolling out gradually through Google Play, and if you haven't received it yet, please be patient and it will arrive soon.
 
 
 
