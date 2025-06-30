@@ -10,11 +10,11 @@
 
 
 
-**Last updated: 2025/06/24**
+**Last updated: 2025/06/30**
 
-The API parameters and definitions in this document are based on version **v1.99.1**.
+The API parameters and definitions in this document are based on version **v1.99.3**.
 
-Please ensure that your application has been updated to **v1.99.1** before using the API.
+Please ensure that your application has been updated to **v1.99.3** before using the API.
 
 The update is rolling out gradually through Google Play, and if you haven't received it yet, please be patient and it will arrive soon.
 
@@ -1354,6 +1354,8 @@ For example, jump to synthesis category page with id 1: `lifeup://api/goto?page=
 | item_name    | Item name          | any text             | Health Potion| No*    | One of item_id or item_name required |
 | item_amount  | Item amount        | number greater than 0 | 1         | No       | Only valid when setting item reward |
 | items        | Items JSON         | JSON text            | [{"item_id":1,"amount":1}] | No | Set multiple item rewards at once |
+| coin_set_type     | How to set coin value | One of:<br/>absolute<br/>relative | absolute | No | absolute - directly set coin to value<br/>relative - add/subtract from original coin value |
+| exp_set_type      | How to set exp value | One of:<br/>absolute<br/>relative | absolute | No | absolute - directly set exp to value<br/>relative - add/subtract from original exp value |
 
 **Response:**
 
