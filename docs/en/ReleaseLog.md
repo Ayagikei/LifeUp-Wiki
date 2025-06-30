@@ -6,18 +6,41 @@
 
 ## Notes
 
-| Platform          | Version         | Update Date     |
-| :---------------- |:----------------|:----------------|
-| LifeUp-Android    | v1.99.1-rc02         | 2025/06/20      |
+| Platform          | Version                | Update Date                 |
+| :---------------- |:-----------------------|:----------------------------|
+| LifeUp-Android    | v1.99.3-rc01           | 2025/06/30                  |
 | LifeUp-iOS        | check [feature/ulives] | 🎉Alternative app available |
-| LifeUp-Desktop    | v1.2.0          | 2025/01/01      |
-| LifeUp Cloud(SDK) | v1.3.0          | 2025/01/01      |
+| LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
+| LifeUp Cloud(SDK) | v1.3.0                 | 2025/01/01                  |
 
 (Part of the translation is provided by Machine/AI Translate and may not be accurate)
 
 <!-- tabs:start -->
 
 ### **LifeUp-Android**
+
+**v1.99.3 (2025/06/30)**
+
+**✨Features**
+
+1. Subtask API supports relative adjustment (set_type).
+2. Supports automatic cleanup of expired calendar reminder events.
+3. Optimized processing logic for archived lists:
+* Smart lists no longer display archived tasks.
+* Tasks in archived lists do not automatically advance by default (similar to frozen status).
+
+**♻️Optimization**
+
+1. When continuously adding tasks/achievements, supports automatic scrolling to the top and focusing the input field.
+2. Optimized the wording related to completing negative tasks.
+3. Optimized the display logic for the "Discard Changes" pop-up on the edit task page.
+4. Optimized the event duration for calendar reminders to avoid potential issues on some devices.
+
+**🐛 Bug Fixes**
+
+1. Fixed the issue where widgets did not support displaying custom coin icons.
+2. Fixed the issue where the task detail page did not support displaying multi-item rewards.
+3. Fixed issues where certain scenarios (e.g., widgets) might not adhere to list sorting rules.
 
 **v1.99.1-rc02 (2025/06/20)**
 
