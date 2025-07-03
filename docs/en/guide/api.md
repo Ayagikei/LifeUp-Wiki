@@ -1466,8 +1466,11 @@ For example, jump to synthesis category page with id 1: `lifeup://api/goto?page=
 **Description:** Add or edit custom achievements and achievement subcategories
 
 **Examples:**
-- Create an achievement: [lifeup://api/achievement?name=Collector&desc=Collect 100 items](lifeup://api/achievement?name=Collector&desc=Collect 100 items)
-- Create an achievement with unlock conditions: [lifeup://api/achievement?name=Millionaire&conditions_json=[{"type":7,"target":1000000}]](lifeup://api/achievement?name=Millionaire&conditions_json=[{"type":7,"target":1000000}])
+- Create an achievement: [lifeup://api/achievement?name=Collector&desc=Collect 100 items&category_id=1](lifeup://api/achievement?name=Collector&desc=Collect 100 items&category_id=1)
+  - You may need to replace `category_id` with your actual available achievement list id to test this example
+- Create an achievement with unlock conditions: [lifeup://api/achievement?name=Millionaire&conditions_json=%5B%7B%22type%22%3A7%2C%22target%22%3A1000000%7D%5D&category_id=1](lifeup://api/achievement?name=Millionaire&conditions_json=%5B%7B%22type%22%3A7%2C%22target%22%3A1000000%7D%5D&category_id=1)
+  - You may need to replace `category_id` with your actual available achievement list id to test this example
+  - The decoded content of `conditions_json` is `[{"type":7,"target":1000000}]`
 - Edit existing achievement: [lifeup://api/achievement?edit_id=1&name=New Achievement Name&exp=100](lifeup://api/achievement?edit_id=1&name=New Achievement Name&exp=100)
 
 #### 1. Achievement Parameters
