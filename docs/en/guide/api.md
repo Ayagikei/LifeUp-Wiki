@@ -1502,6 +1502,14 @@ For example, jump to synthesis category page with id 1: `lifeup://api/goto?page=
 | coin_set_type| How to set coin value | One of:<br/>absolute<br/>relative | absolute | No | absolute - directly set coin to value<br/>relative - add/subtract from original coin value |
 | exp_set_type | How to set exp value | One of:<br/>absolute<br/>relative | absolute | No | absolute - directly set exp to value<br/>relative - add/subtract from original exp value |
 
+
+**Response:**
+
+| Field  | Type    | Description      | Example | Notes                    |
+| ------ | ------- | ---------------- | ------- | ------------------------ |
+| id     | Number  | Achievement ID   | 1000    | ID of new or edited achievement |
+
+
 #### 2. Subcategory Parameters
 
 | Parameter     | Meaning           | Values               | Example   | Required | Notes                           |
@@ -1512,7 +1520,7 @@ For example, jump to synthesis category page with id 1: `lifeup://api/goto?page=
 
 | Field  | Type    | Description      | Example | Notes                    |
 | ------ | ------- | ---------------- | ------- | ------------------------ |
-| id     | Number  | Achievement ID   | 1000    | ID of new or edited achievement |
+| id     | Number  | Achievement ID   | 1000    | ID of new or edited achievement (subcategory) |
 
 #### 3. Unlock Condition Types
 
