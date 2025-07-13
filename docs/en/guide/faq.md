@@ -315,6 +315,8 @@ When creating a new task or achievement, click the corresponding button to custo
 
 ##### Why are item images not displaying or missing?
 
+LifeUp is an offline app, and images for local items are stored on your device. We have no way of knowing what happened on your device.
+
 When item images are missing or not displaying, please first recall what operations you performed recently:
 
 **If item images are missing after importing a backup:**
