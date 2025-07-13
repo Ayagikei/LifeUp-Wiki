@@ -69,6 +69,8 @@ If you come across:
 
 [Does it support custom experience points and coin rewards for tasks?](/guide/faq?id=does-it-support-custom-experience-points-and-coin-rewards-for-tasks)
 
+[Why are item images not displaying or missing?](/guide/faq?id=why-are-item-images-not-displaying-or-missing)
+
 [How to delete a shop item?](/guide/faq?id=how-to-delete-a-shop-item)
 
 [Why can't tasks have different experience values for multiple attributes?](/guide/faq?id=why-cant-tasks-have-different-experience-values-for-multiple-attributes)
@@ -310,6 +312,24 @@ When you are punished, the experience value of life level will also be deducted 
 Yes!
 
 When creating a new task or achievement, click the corresponding button to customize it.
+
+##### Why are item images not displaying or missing?
+
+When item images are missing or not displaying, please first recall what operations you performed recently:
+
+**If item images are missing after importing a backup:**
+- This is usually because the backup file does not contain image files
+- You need to re-import a complete backup that includes image files
+
+**If images were accidentally deleted:**
+- The LifeUp app itself does not actively delete image files
+- It may be that some third-party cleaning apps with high permissions mistakenly deleted the image files
+- We recommend being cautious when using third-party cleaning apps that have access to all files
+- If you have an old backup that contains images, you can first backup your current data, then restore the old backup to retrieve the images, and finally restore your current data
+
+**If images from World module imported items are not displaying:**
+- This may be due to network issues causing loading failures
+- You can try again later, or replace the item images with local images
 
 ##### How to delete a shop item?
 
