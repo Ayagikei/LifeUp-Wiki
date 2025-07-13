@@ -1705,8 +1705,11 @@ id 的獲取方法為「實驗」頁面開啟「開發者模式」，然後在�
 **說明：**新增或編輯自定義成就和成就子分類
 
 **示例：**
-- 建立一個成就：[lifeup://api/achievement?name=收藏家&desc=收集100個物品](lifeup://api/achievement?name=收藏家&desc=收集100個物品)
-- 建立需要解鎖條件的成就：[lifeup://api/achievement?name=百萬富翁&conditions_json=[{"type":7,"target":1000000}]](lifeup://api/achievement?name=百萬富翁&conditions_json=[{"type":7,"target":1000000}])
+- 建立一個成就：[lifeup://api/achievement?name=收藏家&desc=收集100個物品&category_id=1](lifeup://api/achievement?name=收藏家&desc=收集100個物品&category_id=1)
+  - 你可能需要將`category_id`替換成你實際可用的成就清單 id 以測試該示例
+- 建立需要解鎖條件的成就：[lifeup://api/achievement?name=百萬富翁&conditions_json=%5B%7B%22type%22%3A7%2C%22target%22%3A1000000%7D%5D&category_id=1](lifeup://api/achievement?name=百萬富翁&conditions_json=%5B%7B%22type%22%3A7%2C%22target%22%3A1000000%7D%5D&category_id=1)
+  - 你可能需要將`category_id`替換成你實際可用的成就清單 id 以測試該示例
+  - `conditions_json`編碼前內容為`[{"type":7,"target":1000000}]`
 - 編輯現有成就：[lifeup://api/achievement?edit_id=1&name=新成就名稱&exp=100](lifeup://api/achievement?edit_id=1&name=新成就名稱&exp=100)
 
 #### 1. 成就引數
