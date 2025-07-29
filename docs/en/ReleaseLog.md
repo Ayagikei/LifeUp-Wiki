@@ -8,7 +8,7 @@
 
 | Platform          | Version                | Update Date                 |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.99.3-rc01           | 2025/06/30                  |
+| LifeUp-Android    | v1.100.0-alpha         | 2025/07/29                  |
 | LifeUp-iOS        | check [feature/ulives] | 🎉Alternative app available |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
 | LifeUp Cloud(SDK) | v1.3.0                 | 2025/01/01                  |
@@ -18,6 +18,59 @@
 <!-- tabs:start -->
 
 ### **LifeUp-Android**
+
+**v1.100.0-alpha (2025/07/29)**
+
+**✨Features**
+
+1. **Pomodoro timer, experience values, warehouse history, coin details** added one-click jump to corresponding statistics page functionality.
+2. Support for more flexible reminder event settings (X minutes before start or deadline).
+3. Support for hiding synthesis lists.
+4. Support for changing attributes for step counts and persistence rewards.
+5. Support for customizing sidebar functional modules (such as putting store, community in sidebar or hiding unnecessary modules).
+6. Added experimental option **"Low Restriction Mode"**: relaxes numerical limits within the app (such as experience values, coin digits, number of attributes selectable for tasks).
+7. Optimized UI and interaction logic of overdue processing popup.
+8. Added description for auto-use item options.
+9. More repeatable unlock conditions support:
+   - Daily pomodoro tree acquisition.
+   - Daily pomodoro focus time.
+   - Daily completion of N different tasks.
+   - Daily use of a specific item N times.
+   - Daily completion of a specific task N times.
+10. Smart list options migrated to list management popup (click list button at top of task list page).
+11. Added **"Quick Complete"** option: when enabled, completing tasks will skip all popups.
+12. Extended the influence range of custom coin icons, now supports monochrome icons (such as coin icons at the top of the store).
+13. Item details now identify which list the item belongs to, making it easier to confirm item ownership from warehouse.
+14. When editing synthesis recipes, supports drag-to-sort and click-to-edit items.
+15. Added API for directly editing coin numbers.
+16. Query API supports querying pomodoro information (pomodoro count).
+17. Numerical limits for some APIs relaxed (default API is low restriction).
+
+**♻️Optimization**
+
+1. Optimized persistence days on **"My"** page, supports manual click to recalculate.
+2. Fixed RTL layout issues on calendar page, week start day set to **"Monday"** (previously Sunday).
+3. Group display within task and store smart lists supports collapse/expand by group labels.
+4. When task list expands completed, unstarted, frozen at bottom, corresponding labels will also appear at top.
+5. Item icons imported from World module are persistently saved locally, avoiding inability to load when offline.
+6. List selection popup now identifies smart lists.
+7. Optimized default list logic for team tasks and random tasks: when default list is archived, defaults to selecting the first list.
+8. Optimized overdue processing logic for count tasks: if count is achieved, defaults to **"Completed"** status.
+
+**🐛 Bug Fixes**
+
+1. Fixed issue where **"auto-use item"** checkbox state couldn't be correctly restored when editing achievements.
+2. Fixed smart list top card counting issue: failed to exclude tasks belonging to archived lists.
+3. Fixed global memory issue for item purchase **"auto-use"** checkbox state, changed to independent memory per item.
+4. Fixed issue where unlock achievement API couldn't correctly update progress in certain situations.
+5. Fixed default list logic issues for team tasks and random tasks.
+6. Technical dependency library upgrades, target API version adjusted to 35 (Android 15).
+
+**v1.99.5 (2025/07/29)**
+
+**🐛 Bug Fixes**
+
+1. Attempted to fix the issue where custom backgrounds might not display correctly in certain situations.
 
 **v1.99.3 (2025/06/30)**
 
