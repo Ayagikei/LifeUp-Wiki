@@ -689,6 +689,27 @@ gid: 事項組id，針對同一個重複任務，其 gid 都不會發生變化�
 
 <br/>
 
+### 編輯金幣
+
+**方法名：**edit_coin
+
+**說明：**直接編輯使用者的金幣餘額。金幣數量將被設定為指定的值。變更原因可自定義，並將顯示在金幣歷史記錄中。
+
+**示例：**
+
+- 將金幣設定為1000，原因為"API調整"：<a href="lifeup://api/edit_coin?coin=1000&content=API調整">lifeup://api/edit_coin?coin=1000&content=API調整</a>
+- 靜默將金幣設定為500：<a href="lifeup://api/edit_coin?coin=500&silent=true">lifeup://api/edit_coin?coin=500&silent=true</a>
+
+| 引數 | 含義 | 取值 | 示例 | 是否必須 | 備註 |
+| ---- | ---- | ---- | ---- | -------- | ---- |
+| coin | 目標金幣數量 | 大於等於0的數字 | 1000 | 是 | 操作後的最終金幣餘額，最大值為999999 |
+| content | 變更原因 | 任意文字 | API調整 | 否 | 如未提供則使用系統預設原因 |
+| reason | 變更原因（別名） | 任意文字 | API調整 | 否 | content引數的別名 |
+| silent | 禁用UI通知 | true或false | false | 否 | 預設為false，設定為true時不顯示提示訊息 |
+
+
+<br/>
+
 ### 任務
 
 #### 新增任務
