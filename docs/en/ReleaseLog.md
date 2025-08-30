@@ -66,6 +66,20 @@
 5. Fixed default list logic issues for team tasks and random tasks.
 6. Technical dependency library upgrades, target API version adjusted to 35 (Android 15).
 
+**Alpha/Beta Patch Fixes**
+
+1. Removed unnecessary dependencies and adapted to 16K page size, **reducing app package size**.
+2. Fixed **auto-use item** functionality logic: For URL items, now only 1 item will be used with the rest stored in warehouse. (Previously only 1 would take effect but wasn't stored in warehouse, causing loss of usage effect)
+3. Fixed issue where **repeatable achievement conditions** couldn't recalculate progress.
+4. Fixed issue where **backup files** didn't include task templates.
+5. Fixed issue where most emojis would regenerate abnormal icons after backup restoration.
+6. Updated **QQ channel link** for in-app feedback.
+7. Added **feelings publishing broadcast** feature.
+8. **Redesigned** compatibility configuration and reminder method settings interface.
+9. Added "Restrict item usage" option for **coin reduction effects**.
+10. **API-related updates**: Added task API support for motivational message parameters.
+11. Fixed abnormal top spacing issue on new item default settings page.
+
 **v1.99.5 (2025/07/29)**
 
 **🐛 Bug Fixes**

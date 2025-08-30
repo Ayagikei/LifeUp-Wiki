@@ -521,9 +521,9 @@ Open box effect:
 | ---------------- | ------------------- | -------------------- | --------- | -------- | ------------------------------- |
 | todo             | Task content        | any text             | Write diary | Yes     |                                |
 | notes            | Notes               | any text             | Notes      | No       | Defaults to empty               |
-| coin             | Coin reward         | [0, 999999]         | 10         | No       | Defaults to 0                   |
+| coin             | Coin reward         | number >= 0         | 10         | No       | Defaults to 0, subject to system limits                   |
 | coin_var         | Coin reward variance| number >= 0          | 1          | No       | Defaults to 0; if >0, random reward between [coin, coin+coin_var] |
-| exp              | Experience reward   | [0, 99999]          | 100        | No       | Defaults to 0                   |
+| exp              | Experience reward   | number >= 0          | 100        | No       | Defaults to 0, subject to system limits                   |
 | skills           | Skill IDs           | array of numbers > 0 | 1          | No       | Supports arrays (e.g., &skills=1&skills=2) |
 | category         | List ID             | number >= 0          | 0          | No       | Defaults to 0 (default list); smart lists not allowed |
 | frequency        | Repeat frequency    | integer              | 0          | No       | Defaults to 0 (once)<br/>0 - Once<br/>1 - Daily<br/>N (N>1) - Every N days<br/>-1 - Unlimited<br/>-3 - Ebbinghaus (requires v1.99.1)<br/>-4 - Monthly<br/>-5 - Yearly |
@@ -537,6 +537,7 @@ Open box effect:
 | auto_use_item    | Auto use reward items| true or false      | false      | No       | Automatically use rewards on completion |
 | remind_time      | Reminder time       | timestamp (milliseconds) | 1640995200000 | No | Task reminder time          |
 | pin              | Pin task            | true or false       | false      | No       | Pin task to top                |
+| words            | Completion reward text | any text         | Great job! | No       | Motivational text shown when task is completed |
 | frozen           | Freeze status       | true or false       | false      | No       | Defaults to false              |
 | freeze_until     | Freeze until        | timestamp (milliseconds) | 1640995200000 | No | Only effective when frozen is true |
 | coin_penalty_factor | Coin penalty factor| float between [0, 100) | 0.5    | No       |                               |
@@ -710,9 +711,9 @@ The method of obtaining the id is to open the "Developer Mode" on the "Labs" pag
 | name               | Task name            | any text             | Write diary| No*      | One of id, gid, or name required |
 | todo               | Task content         | any text             | Write weekly| No      |                                |
 | notes              | Notes                | any text             | Note content| No      |                                |
-| coin               | Coin reward          | [0, 999999]         | 10        | No       | Coins earned upon completion    |
+| coin               | Coin reward          | number >= 0         | 10        | No       | Coins earned upon completion, subject to system limits    |
 | coin_var           | Coin variance        | number greater than 0 | 1        | No       | Random reward between [coin, coin+coin_var] |
-| exp                | Experience reward    | [0, 99999]          | 20        | No       | Experience points earned        |
+| exp                | Experience reward    | number >= 0          | 20        | No       | Experience points earned, subject to system limits        |
 | skills             | Skill IDs            | array of numbers greater than 0 | 1 | No    | Supports arrays (e.g., &skills=1&skills=2) |
 | category           | List ID              | number greater than or equal to 0 | 0 | No  | 0 for default list, smart lists not supported |
 | frequency          | Repeat frequency     | integer              | 0         | No       | -1 - Unlimited<br/>-3 - Ebbinghaus (requires v1.99.1)<br/>-4 - Monthly<br/>-5 - Yearly |
@@ -735,6 +736,7 @@ The method of obtaining the id is to open the "Developer Mode" on the "Labs" pag
 | exp_penalty_factor | Experience penalty factor | floating point between [0, 100) | 0.5 | No |                             |
 | write_feelings     | Enable feelings      | true or false        | false     | No       |                                |
 | pin                | Pin task             | true or false        | false     | No       |                                |
+| words              | Completion reward text | any text           | Great job!| No       | Motivational text shown when task is completed |
 | task_type        | Task type           | [0, 3]              | 0          | No       | Requires v1.99.1<br/>0 - Normal task<br/>1 - Count task<br/>2 - Negative task<br/>3 - API task |
 | target_times     | Target times        | number > 0          | 1          | No       | Only valid when task_type is 1 (count task) |
 | is_affect_shop_reward | Affect shop reward | true/false      | false    | No       | Only valid when task_type is 1 (count task), whether to affect the reward calculation of items |
@@ -1676,7 +1678,7 @@ For example, jump to synthesis category page with id 1: `lifeup://api/goto?page=
 
 | Parameter   | Meaning              | Type                                                         | Example | Required                                    | Notes                                                        |
 | ----------- | -------------------- | ------------------------------------------------------------ | ------- | ------------------------------------------- | ------------------------------------------------------------ |
-| key         | type of query        | Only one of the following values:<br/>coin<br/>atm<br/>item<br/>item_id_list | coin    | yes                                         | coin - current amount of coins<br/>atm - current ATM balance<br/>item - Item information for the specified `itemId`<br/>item_id_list - List of item IDs specified by `categoryId` |
+| key         | type of query        | Only one of the following values:<br/>coin<br/>atm<br/>item<br/>item_id_list<br/>tomato | coin    | yes                                         | coin - current amount of coins<br/>atm - current ATM balance<br/>item - Item information for the specified `itemId`<br/>item_id_list - List of item IDs specified by `categoryId`<br/>tomato - Tomato data |
 | item_id     | the id of the item   | a number greater than 0                                      | 1       | When the key is `item`, it must be provided |                                                              |
 | category_id | the Shop category id | Number greater than or equal to 0                            | 0       | no*                                         | Required only when the key is `item_id_list`, representing the ID of the list to be queried. |
 
@@ -1704,6 +1706,20 @@ When querying an item:
 | price            | the price                       | number   | 100       | yes      |       |
 | order            | sort by                         | number   | 100       | yes      | Weight value when custom sorting |
 | disable_purchase | Whether to disable purchase     |          | true      | yes      |       |
+
+When querying item_id_list:
+
+| Parameter | Meaning                           | Type   | Example | Required | Notes |
+| --------- | --------------------------------- | ------ | ------- | -------- | ----- |
+| item_ids  | Comma-separated item ID array     | string | 1,2,3,4 | yes      |       |
+
+When querying tomato:
+
+| Parameter | Meaning                  | Type   | Example | Required | Notes |
+| --------- | ------------------------ | ------ | ------- | -------- | ----- |
+| total     | Total tomato count       | number | 100     | yes      |       |
+| available | Available tomato count   | number | 50      | yes      |       |
+| exchanged | Exchanged tomato count   | number | 50      | yes      |       |
 
 
 
