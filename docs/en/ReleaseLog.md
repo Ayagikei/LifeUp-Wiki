@@ -8,7 +8,7 @@
 
 | Platform          | Version                | Update Date                 |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.100.0-alpha         | 2025/07/29                  |
+| LifeUp-Android    | v1.100.1               | 2025/09/03                  |
 | LifeUp-iOS        | check [feature/ulives] | 🎉Alternative app available |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
 | LifeUp Cloud(SDK) | v1.3.0                 | 2025/01/01                  |
@@ -18,6 +18,25 @@
 <!-- tabs:start -->
 
 ### **LifeUp-Android**
+
+**v1.100.1 (2025/09/03)**
+
+**✨Features**
+
+1. **Custom background font color options**: Added support for custom note font color options, further personalizing the interface experience.
+2. **Enhanced item usage effects**: Random coin reduction effects now also support enabling the "Limit Usage" function.
+
+**♻️Optimization**
+
+1. **Calendar reminder functionality optimization**: Added options to adjust the duration of inserted calendar reminder events.
+2. **Task editing interaction optimization**: Improved logic for the "discard changes" popup when editing tasks - no longer shows when exiting without any edits.
+3. **Multi-language localization updates**: Updated localized multi-language text to improve user experience.
+
+**🐛 Bug Fixes**
+
+1. Fixed **compatibility configuration page and reminder settings page** not adapting to dark mode.
+2. Attempted to fix **crash issues related to popup and input method focus** across multiple pages, improving app stability.
+3. Fixed issue where **editing achievements couldn't change whether to automatically use items**.
 
 **v1.100.0-alpha (2025/07/29)**
 
@@ -45,6 +64,7 @@
 15. Added API for directly editing coin numbers.
 16. Query API supports querying pomodoro information (pomodoro count).
 17. Numerical limits for some APIs relaxed (default API is low restriction).
+18. **Redesigned and optimized achievement condition progress calculation mechanism**: Improved calculation performance and progress update speed.
 
 **♻️Optimization**
 
