@@ -8,7 +8,7 @@
 
 | Platform          | Version                | Update Date                 |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.100.2               | 2025/09/05                  |
+| LifeUp-Android    | v1.100.3               | 2025/09/06                  |
 | LifeUp-iOS        | check [feature/ulives] | 🎉Alternative app available |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
 | LifeUp Cloud(SDK) | v1.3.0                 | 2025/01/01                  |
@@ -18,6 +18,12 @@
 <!-- tabs:start -->
 
 ### **LifeUp-Android**
+
+**v1.100.3 (2025/09/06)**
+
+**🐛 Bug Fixes**
+
+1. Fixed an issue where searching was not working when selecting items.
 
 **v1.100.2 (2025/09/05)**
 
