@@ -169,10 +169,10 @@ http://{host:port}/items_categories
 **成就相关**
 
 ```
-// 所有商品
-http://{host:port}/achievements
+// ~~所有成就（app 实际上尚未实现该路径，我们会评估后续版本增加或者移除，截止 v1.100.4）~~
+// ~~http://{host:port}/achievements~~
 
-// 指定清单${id}里面的商品
+// 指定清单${id}里面的成就（只支持指定清单 id 进行查询，建议搭配查询成就清单 api 使用）
 http://{host:port}/achievements/${id}
 
 // 成就清单
@@ -259,10 +259,10 @@ http://{host:port}/items_categories
 **成就相关**
 
 ```
-// 所有商品
-http://{host:port}/achievements
+// ~~所有成就（app 实际上尚未实现该路径，我们会评估后续版本增加或者移除，截止 v1.100.4）~~
+// ~~http://{host:port}/achievements~~
 
-// 指定清单${id}里面的商品
+// 指定清单${id}里面的成就（只支持指定清单 id 进行查询，建议搭配查询成就清单 api 使用）
 http://{host:port}/achievements/${id}
 
 // 成就清单

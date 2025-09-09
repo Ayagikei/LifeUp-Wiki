@@ -147,10 +147,10 @@ http://{host:port}/items_categories
 **Achievements**
 
 ```
-// All achievements
-http://{host:port}/achievements
+// ~~All achievements (Not implemented in app, may be added or removed in future versions as of v1.100.4)~~
+// ~~http://{host:port}/achievements~~
 
-// Achievements in the specified list ${id}
+// Achievements in the specified list ${id} (Only supports querying by specific list ID, recommended to use with achievement categories API)
 http://{host:port}/achievements/${id}
 
 // Achievement list
@@ -239,10 +239,10 @@ http://{host:port}/items_categories
 **Achievement**
 
 ```
-// All achievements
-http://{host:port}/achievements
+// ~~All achievements (Not implemented in app, may be added or removed in future versions as of v1.100.4)~~
+// ~~http://{host:port}/achievements~~
 
-// Achievements in the specified list ${id}
+// Achievements in the specified list ${id} (Only supports querying by specific list ID, recommended to use with achievement categories API)
 http://{host:port}/achievements/${id}
 
 // Achievement list
