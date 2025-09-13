@@ -119,4 +119,4 @@ simple little notes.
 
 - App Privacy Terms & Policy: http://wiki.lifeupapp.fun/en/#/introduction/privacy-terms
 
-- Contact Email: kei.ayagi@gmail.com
+- Contact Email: lifeup@ulives.io

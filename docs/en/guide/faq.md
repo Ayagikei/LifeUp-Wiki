@@ -488,7 +488,7 @@ Here are some reasons why a direct LifeUp port to iOS is complex:
 
 ##### Contact us!
 
-Please feel free to reach out at us by email at kei.ayagi@gmail.com.
+Please feel free to reach out at us by email at lifeup@ulives.io.
 
 Or you can add a new issue in our Github page:
 

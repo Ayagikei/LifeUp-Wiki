@@ -48,7 +48,7 @@
 
 目前文件是使用`markdown`語法編寫的，可能對於未接觸的使用者有一點點上手門檻。
 
-如果你想參與維護，卻被語法問題阻礙的話，[歡迎諮詢我們](mailto:kei.ayagi@gmail.com)。
+如果你想參與維護，卻被語法問題阻礙的話，[歡迎諮詢我們](mailto:lifeup@ulives.io)。
 
 ### 測試機器
 
@@ -66,7 +66,7 @@
 
 [英語文字](https://github.com/Ayagikei/LifeUp-Translation/blob/master/values/strings.xml)
 
-如果你不確定要如何進行翻譯，請隨時[聯絡我們進行諮詢](mailto:kei.ayagi@gmail.com)。 
+如果你不確定要如何進行翻譯，請隨時[聯絡我們進行諮詢](mailto:lifeup@ulives.io)。 
 
 
 ## UI 設計師
@@ -104,4 +104,4 @@
 - 「世界」模組可以考慮引入更多複雜型別的團隊和分享功能
 - 真正的雲同步+增量更新
 
-[聯繫方式](mailto:kei.ayagi@gmail.com)
+[聯繫方式](mailto:lifeup@ulives.io)
