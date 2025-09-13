@@ -169,10 +169,10 @@ http://{host:port}/items_categories
 **成就相關**
 
 ```
-// 所有商品
-http://{host:port}/achievements
+// ~~所有成就（app 實際上尚未實現該路徑，我們會評估後續版本增加或者移除，截止 v1.100.4）~~
+// ~~http://{host:port}/achievements~~
 
-// 指定清單${id}裡面的商品
+// 指定清單${id}裡面的成就（只支援指定清單 id 進行查詢，建議搭配查詢成就清單 api 使用）
 http://{host:port}/achievements/${id}
 
 // 成就清單
@@ -259,10 +259,10 @@ http://{host:port}/items_categories
 **成就相關**
 
 ```
-// 所有商品
-http://{host:port}/achievements
+// ~~所有成就（app 實際上尚未實現該路徑，我們會評估後續版本增加或者移除，截止 v1.100.4）~~
+// ~~http://{host:port}/achievements~~
 
-// 指定清單${id}裡面的商品
+// 指定清單${id}裡面的成就（只支援指定清單 id 進行查詢，建議搭配查詢成就清單 api 使用）
 http://{host:port}/achievements/${id}
 
 // 成就清單
