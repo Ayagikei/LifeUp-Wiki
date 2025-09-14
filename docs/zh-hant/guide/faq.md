@@ -947,7 +947,7 @@ v1.92 版本已經增加了更為完善的統計功能。
 
 ##### 🔶為什麼沒有在AppStore上架？有沒有iOS版本？
 
-暫時《人升》沒有 iOS 版本，《人升》是使用純 Android 技術進行開發的原生 Android 應用。
+《人升》暫時沒有 iOS 版本，《人升》是使用純 Android 技術進行開發的原生 Android 應用。
 
 **我們已經推出了專門為 iOS 使用者設計的效率應用 [ulives](https://apps.apple.com/us/app/ulives-gamify-your-tasks/id6743084261)！它繼承了人升的核心理念，並針對蘋果生態系統進行了最佳化。**
 
