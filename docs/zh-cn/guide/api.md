@@ -739,6 +739,8 @@ gid: 事项组id，针对同一个重复任务，其 gid 都不会发生变化�
 | color           | 标签颜色       | 颜色字符串         | #66CCFF    | 否       | #需要转义为%23                 |
 | background_url  | 背景图片URL    | 网络地址URL        | http://example.com/bg.jpg | 否 | 必须是可访问的网络图片地址    |
 | background_alpha| 背景透明度     | [0, 1] 之间的浮点数 | 0.5        | 否      | 默认为 1.0                    |
+| enable_outline  | 启用文字轮廓   | true 或者 false    | false      | 否       | 仅当设置 background_url 时有效，为文字添加轮廓以提高可读性 |
+| use_light_remark_text_color | 使用浅色备注文字 | true 或者 false | false | 否 | 仅当设置 background_url 时有效，使用浅色显示备注文字 |
 | start_time      | 开始时间       | 时间戳（毫秒）     | 1640995200000 | 否     | 任务开始时间                  |
 | auto_use_item   | 自动使用奖励物品| true 或者 false   | false      | 否       | 完成任务时自动使用奖励物品      |
 | remind_time     | 提醒时间       | 时间戳（毫秒）     | 1640995200000 | 否    | 任务提醒时间                  |
@@ -936,6 +938,8 @@ id 的获取方法为「实验」页面打开「开发者模式」，然后在�
 | color              | 标签颜色       | 颜色字符串         | #66CCFF  | 否       | #需要转义为%23                 |
 | background_url     | 背景图片URL    | 网络地址URL        | http://example.com/bg.jpg | 否 |                    |
 | background_alpha   | 背景透明度     | [0, 1] 之间的浮点数 | 0.5      | 否       |                               |
+| enable_outline     | 启用文字轮廓   | true 或者 false    | false    | 否       | 仅当设置 background_url 时有效，为文字添加轮廓以提高可读性 |
+| use_light_remark_text_color | 使用浅色备注文字 | true 或者 false | false | 否 | 仅当设置 background_url 时有效，使用浅色显示备注文字 |
 | item_id            | 物品ID         | 大于 0 的数字      | 1        | 否*      | 与 item_name 必须提供其中一个  |
 | item_name          | 物品名称       | 任意文本           | 宝箱      | 否*      | 与 item_id 必须提供其中一个    |
 | item_amount        | 物品数量       | [1, 99]           | 1        | 否       | 默认为 1                       |

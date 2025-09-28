@@ -533,6 +533,8 @@ Open box effect:
 | color            | Tag color           | color string         | #66CCFF    | No       | # must be escaped as %23        |
 | background_url   | Background image URL| web URL             | http://example.com/bg.jpg | No | Must be accessible web image |
 | background_alpha | Background opacity  | float between [0, 1] | 0.5        | No       | Defaults to 1.0                |
+| enable_outline   | Enable text outline | true or false       | false      | No       | Only valid with background_url, adds outline to text for better readability |
+| use_light_remark_text_color | Use light text for notes | true or false | false | No | Only valid with background_url, uses light color for notes text |
 | start_time       | Start time          | timestamp (milliseconds) | 1640995200000 | No | Task start time              |
 | auto_use_item    | Auto use reward items| true or false      | false      | No       | Automatically use rewards on completion |
 | remind_time      | Reminder time       | timestamp (milliseconds) | 1640995200000 | No | Task reminder time          |
@@ -725,6 +727,8 @@ The method of obtaining the id is to open the "Developer Mode" on the "Labs" pag
 | color              | Tag color            | color string         | #66CCFF   | No       | # must be escaped as %23        |
 | background_url     | Background image URL | web URL address      | http://example.com/bg.jpg | No |                         |
 | background_alpha   | Background opacity   | floating point between [0, 1] | 0.5 | No   |                                |
+| enable_outline     | Enable text outline  | true or false       | false      | No       | Only valid with background_url, adds outline to text for better readability |
+| use_light_remark_text_color | Use light text for notes | true or false | false | No | Only valid with background_url, uses light color for notes text |
 | item_id            | Item ID              | number greater than 0 | 1        | No*      | One of item_id or item_name required |
 | item_name          | Item name            | any text             | Treasure  | No*      | One of item_id or item_name required |
 | item_amount        | Item amount          | [1, 99]             | 1         | No       | Defaults to 1                   |

@@ -8,7 +8,7 @@
 
 | Platform          | Version                | Update Date                 |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.100.3               | 2025/09/06                  |
+| LifeUp-Android    | v1.100.5               | TBD                         |
 | LifeUp-iOS        | check [feature/ulives] | 🎉Alternative app available |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
 | LifeUp Cloud(SDK) | v1.3.0                 | 2025/01/01                  |
@@ -18,6 +18,49 @@
 <!-- tabs:start -->
 
 ### **LifeUp-Android**
+
+**v1.100.5 (TBD)**
+
+**✨Features**
+
+1. **Custom sound effects now support built-in sound selection**: Access a library of built-in audio effects for a more convenient customization experience.
+2. **Enhanced synthesis filtering**: Added "Show only synthesizable" filter option on the synthesis page for better item management.
+3. **API emoji support**: Item, attribute, and achievement APIs now support direct emoji input for enhanced customization.
+4. **Team creation improvements**: Added ability to select target lists when creating teams for better organization.
+5. **Team task copying**: Support copying team tasks as local tasks without requiring team membership.
+6. **Task API enhancement**: Added parameter support for setting "light note font" state in task-related APIs.
+
+**♻️Optimization**
+
+1. **Improved "discard changes" logic**: Optimized the discard changes confirmation dialog for item editing, synthesis, achievements, and achievement lists - now only appears when actual changes have been made.
+2. **Achievement unlock conditions**: Achievement unlock conditions are now expanded by default for better visibility.
+3. **Enhanced synthesis performance**: Optimized query performance for synthesis details page.
+4. **Toast API stability**: Improved stability and reliability of toast API calls.
+5. **Team task completion flow**: Enhanced team task completion process with better error handling and user guidance.
+6. **Synthesis drag behavior**: Improved drag-to-edge scrolling behavior when custom sorting items on synthesis page.
+7. **Team task collection flow**: Enhanced workflow after collecting team tasks with support for jumping to corresponding lists.
+8. **Calendar reminder optimization**: Improved calendar reminder related logic for better reliability.
+
+**🐛 Bug Fixes**
+
+1. Fixed issue where custom backgrounds from older versions incorrectly used global default "light note font" state.
+2. Fixed status bar adaptation issues on custom sound effects page.
+3. Fixed achievement description potentially overlapping with unlock buttons.
+4. Fixed scrolling issues when drag-sorting on synthesis details page.
+5. Fixed occasional disappearance of search button when World module is placed in sidebar.
+6. Attempted to fix night mode system following abnormalities.
+7. Attempted to fix issue where consecutive team task completions could lead to task duplication.
+8. Fixed "feelings" functionality failure when unlocking achievements.
+
+**v1.100.4 (2025/09/07)**
+
+**♻️Optimization**
+
+1. **Crash reporting improvements**: Enhanced crash collection and reporting for better issue analysis and debugging.
+
+**🐛 Bug Fixes**
+
+1. Fixed a crash issue caused by Facebook SDK.
 
 **v1.100.3 (2025/09/06)**
 
