@@ -8,7 +8,7 @@
 
 | Platform          | Version                | Update Date                 |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.100.5               | TBD                         |
+| LifeUp-Android    | v1.101.0               | TBD                         |
 | LifeUp-iOS        | check [feature/ulives] | 🎉Alternative app available |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
 | LifeUp Cloud(SDK) | v1.3.0                 | 2025/01/01                  |
@@ -19,7 +19,39 @@
 
 ### **LifeUp-Android**
 
-**v1.100.5 (TBD)**
+**v1.101.0 (TBD)**
+
+**✨Features**
+
+1. **Synthesis item filter**: Filter synthesis by items for faster lookup and management.
+2. **Item details → Synthesis recipe**: View an item's synthesis recipe directly on the item details page.
+3. **Shop → Synthesis entry**: If an item is usable in synthesis, a Synthesis button now appears next to the Purchase button.
+4. **Inventory history filters**: Added filters by date, items, and description.
+5. **What’s New dialog**: New version highlights dialog on first launch after update.
+6. **Pomodoro per‑task focus time**: Refactored Pomodoro logic; supports custom focus duration per task.
+7. **Item usage effect: “Record feelings after use”**; the feelings page also supports filtering by item.
+8. **Pomodoro lifecycle broadcasts (API)**: Added lifecycle broadcast events.
+9. **Task API**: Added a simple query to fetch a single task’s details.
+10. **Count tasks auto‑increment**: Supports automatic increment.
+11. **Recurrence end by date**: Tasks now support ending recurrence by a specific date.
+
+**♻️Optimization**
+
+1. **List management UX + dark mode**: Polished interactions and dark mode; the “All” list now shows a disabled delete state instead of an undeletable action.
+2. **Shop settings page**: Moved to an independent page and accessible from the main Settings.
+3. **Task default background**: Clarified wording in the help dialog.
+4. **Quick Complete indicator**: When enabled, the tasks page shows a top indicator of Quick Complete state.
+5. **Per‑list collapse memory**: Collapse/expand state is recorded per list to avoid “All” affecting the day list.
+6. **Expectation dialog (dark mode)**: Improved dark mode styles.
+7. **Feelings filter button logic**: Only displayed for types that support filtering (items/tasks).
+8. **Team local‑tasks‑only flow**: Improved interaction when collecting local tasks only.
+
+**🐛 Bug Fixes**
+
+1. Fixed an issue where the top filter bar did not display correctly after filtering on the History page.
+2. Fixed an issue where negative tasks might not calculate penalties with the correct 1× penalty count in certain cases.
+
+**v1.100.5 (2025/09/28)**
 
 **✨Features**
 

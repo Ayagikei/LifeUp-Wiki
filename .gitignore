@@ -48,3 +48,6 @@ Thumbs.db
 ehthumbs.db
 Desktop.ini
 $RECYCLE.BIN/
+
+# Local notes (ignored)
+.local/
