@@ -24,7 +24,7 @@ We have developed a simple LAN desktop version of "LifeUp" using the API capabil
 
 ## Download
 
-All distribution packages are published on the [LifeUp Desktop GitHub Releases page](https://github.com/Ayagikei/LifeUp-Desktop/releases). Download the latest release and choose the installer that matches your platform:
+All distribution packages are published on the [LifeUp Desktop GitHub Releases page](https://github.com/Ayagikei/LifeUp-Desktop/releases). Open the latest release, expand the **Assets** section, then download the installer that matches your platform:
 
 - **Windows**: `LifeUp Desktop.msi`
 - **macOS (Intel/x64)**: `LifeUp-Desktop-x64.dmg`
@@ -32,6 +32,9 @@ All distribution packages are published on the [LifeUp Desktop GitHub Releases p
 - **Linux**: `lifeup-desktop.deb`
 
 If the file you need is missing, wait a moment and refresh—the upload for that release may still be in progress.
+
+?> **Windows SmartScreen**
+> The MSI is not yet signed with an Extended Validation certificate, so Windows may show the "unrecognized app" banner. Click **More info → Run anyway** after confirming the file was downloaded from the official GitHub release.
 
 ?> **macOS security & signature**
 > The current macOS builds are not notarized, so Gatekeeper will warn that the app is from an unidentified developer. Open the `.dmg`, drag LifeUp Desktop into Applications, then right-click the app and choose **Open**, or go to **System Settings → Privacy & Security** and click **Open Anyway**. Consult [Apple’s official guide](https://support.apple.com/en-hk/guide/mac-help/mh40616/mac) if you need more detail. Some features such as `auto-connect` are still experimental on macOS and may behave differently from Windows/Linux builds.
