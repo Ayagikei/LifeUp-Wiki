@@ -31,7 +31,7 @@
 6. **Pomodoro per‑task focus time**: Refactored Pomodoro logic; supports custom focus duration per task.
 7. **Item usage effect: “Record feelings after use”**; the feelings page also supports filtering by item.
 8. **Pomodoro lifecycle broadcasts (API)**: Added lifecycle broadcast events.
-9. **Task API**: Added a simple query to fetch a single task’s details.
+9. **Simple query API**: Now supports fetching a single task’s details.
 10. **Count tasks auto‑increment**: Supports automatic increment.
 11. **Recurrence end by date**: Tasks now support ending recurrence by a specific date.
 
@@ -42,7 +42,7 @@
 3. **Task default background**: Clarified wording in the help dialog.
 4. **Quick Complete indicator**: When enabled, the tasks page shows a top indicator of Quick Complete state.
 5. **Per‑list collapse memory**: Collapse/expand state is recorded per list to avoid “All” affecting the day list.
-6. **Expectation dialog (dark mode)**: Improved dark mode styles.
+6. **Overdue dialog (dark mode)**: Improved dark mode styles when processing overdue tasks.
 7. **Feelings filter button logic**: Only displayed for types that support filtering (items/tasks).
 8. **Team local‑tasks‑only flow**: Improved interaction when collecting local tasks only.
 
@@ -50,6 +50,14 @@
 
 1. Fixed an issue where the top filter bar did not display correctly after filtering on the History page.
 2. Fixed an issue where negative tasks might not calculate penalties with the correct 1× penalty count in certain cases.
+3. Fixed an issue where the Pomodoro timer’s task picker could lose the “Cancel selection” option under certain conditions.
+
+**v1.100.6 (2025/11/08)**
+
+**🐛 Bug Fixes**
+
+1. Fixed a crash when selecting items if input focus overflowed due to external keyboards/gamepads; fix effectiveness under verification.
+2. Fixed the smart time zone management dialog so it can scroll to reveal the bottom content and buttons.
 
 **v1.100.5 (2025/09/28)**
 
