@@ -24,18 +24,21 @@ We have developed a simple LAN desktop version of "LifeUp" using the API capabil
 
 ## Download
 
-- **[Windows Version](https://github.com/Ayagikei/LifeUp-Desktop/releases/download/1.1.1/LifeUp.Desktop-1.1.1-windows.zip)**
-  - [GitHub Release](https://github.com/Ayagikei/LifeUp-Desktop/releases/latest)
-- Linux (untested, to be released later)
-- **MacOS**
-  - [Release LifeUp Desktop v1.1.0 · Ayagikei/LifeUp-Desktop (github.com)](https://github.com/Ayagikei/LifeUp-Desktop/releases/tag/1.1.0-macos)
-  - The MacOS version is currently unsigned and requires permission to operate when installing: [Open a Mac app from an unidentified developer - Apple Support](https://support.apple.com/en-hk/guide/mac-help/mh40616/mac)
-  - The MacOS version has not been tested in detail, and some functions such as `auto-connect` may not work.
+All distribution packages are published on the [LifeUp Desktop GitHub Releases page](https://github.com/Ayagikei/LifeUp-Desktop/releases). Download the latest release and choose the installer that matches your platform:
 
+- **Windows**: `LifeUp Desktop.msi`
+- **macOS (Intel/x64)**: `LifeUp-Desktop-x64.dmg`
+- **macOS (Apple Silicon/ARM64)**: `LifeUp-Desktop-arm64.dmg`
+- **Linux**: `lifeup-desktop.deb`
+
+If the file you need is missing, wait a moment and refresh—the upload for that release may still be in progress.
+
+?> **macOS security & signature**
+> The current macOS builds are not notarized, so Gatekeeper will warn that the app is from an unidentified developer. Open the `.dmg`, drag LifeUp Desktop into Applications, then right-click the app and choose **Open**, or go to **System Settings → Privacy & Security** and click **Open Anyway**. Consult [Apple’s official guide](https://support.apple.com/en-hk/guide/mac-help/mh40616/mac) if you need more detail. Some features such as `auto-connect` are still experimental on macOS and may behave differently from Windows/Linux builds.
+
+!> Some browsers enforce strict download policies and may block or delete the installer packages. Choose **Keep/Allow** (wording varies by browser) so the download can finish.
 
 !> You need to use "LifeUp Cloud" version 1.3.0 or above. The current "LifeUp Cloud" does not support checking for updates. You can download and overwrite the installation in Google Play or [Releases · Ayagikei/LifeUp-SDK (github.com)](https://github.com/Ayagikei/LifeUp-SDK/releases).
-
-!> Your browser's security policy may block the download. You need to allow the download to proceed.
 
 <br/>
 
