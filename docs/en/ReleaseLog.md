@@ -32,8 +32,9 @@
 7. **Item usage effect: “Record feelings after use”**; the feelings page also supports filtering by item.
 8. **Pomodoro lifecycle broadcasts (API)**: Added lifecycle broadcast events.
 9. **Simple query API**: Now supports fetching a single task’s details.
-10. **Count tasks auto‑increment**: Supports automatic increment.
+10. **Count tasks auto-increment**: Supports automatic increment.
 11. **Recurrence end by date**: Tasks now support ending recurrence by a specific date.
+12. **Desktop widget settings upgrade**: Improved the in-app desktop widget settings page so every supported widget can be previewed and, when the system permits, quickly added to the home screen.
 
 **♻️Optimization**
 
@@ -44,13 +45,17 @@
 5. **Per‑list collapse memory**: Collapse/expand state is recorded per list to avoid “All” affecting the day list.
 6. **Overdue dialog (dark mode)**: Improved dark mode styles when processing overdue tasks.
 7. **Feelings filter button logic**: Only displayed for types that support filtering (items/tasks).
-8. **Team local‑tasks‑only flow**: Improved interaction when collecting local tasks only.
+8. **Team local-tasks-only flow**: Improved interaction when collecting local tasks only.
+9. **Synthesis page UI polish**: Refined the layout and visual feedback on the synthesis page for a smoother presentation.
+10. **Item interaction polish**: Streamlined interactions related to items for a more responsive feel.
 
 **🐛 Bug Fixes**
 
 1. Fixed an issue where the top filter bar did not display correctly after filtering on the History page.
 2. Fixed an issue where negative tasks might not calculate penalties with the correct 1× penalty count in certain cases.
 3. Fixed an issue where the Pomodoro timer’s task picker could lose the “Cancel selection” option under certain conditions.
+4. Fixed several issues around following the system dark mode settings.
+5. Fixed a missing reward popup when a widget completed a count task.
 
 **v1.100.6 (2025/11/08)**
 
