@@ -2,23 +2,15 @@
 
 <p align="center">Create endless possibilities! </p>
 
-
-
-
-
 ?> In the v1.90 version, `LifeUp` has opened a variety of functional interfaces, and any external application integration is welcome. <br/>It also provides the “URL” effect for shop items, and users can directly use commodities to call external applications or the interface of `LifeUp`. <br/>These features can give your `LifeUp` unlimited possibilities, but it also requires a little learning understanding and hands-on ability.
 
+**Last updated: 2025/12/15**
 
+The API parameters and definitions in this document are based on version **v1.101.0**.
 
-**Last updated: 2025/06/30**
-
-The API parameters and definitions in this document are based on version **v1.99.3**.
-
-Please ensure that your application has been updated to **v1.99.3** before using the API.
+Please ensure that your application has been updated to **v1.101.0** before using the API.
 
 The update is rolling out gradually through Google Play, and if you haven't received it yet, please be patient and it will arrive soon.
-
-
 
 ## Scenario example
 
@@ -27,7 +19,6 @@ The update is rolling out gradually through Google Play, and if you haven't rece
 |**LifeUp->Other Applications**<br/>Implemented through the "URL" effect of the shop item| **After using the shop item:**<br/>1. Use a browser to visit a webpage<br/>2. Jump to WeChat and scan Scan, or specify a small program<br/>3. Automatically add accounting records ([such as "Qianji" supports accounting interface](http://docs.qianjiapp.com/plugin/auto_tasker.html))<br/>4. Store the automation tool Tasker configuration (even share it in the Market), and automatically import the configuration into Tasker after use<br/>5. Trigger Tasker to change wallpaper<br/>6. ... (as long as the external application supports this method call) | [Tasker](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm&hl=en_US&gl=US) is an automation tool and it supports exporting configuration as Uri |
 |**LifeUp->LifeUp**<br/>Implemented through the "URL" effect of the shop item| **After using the shop item:**<br/>1. Open a specific page<br/>2. Increase the ATM interest rate<br/>3. The pop-up window allows the user to select the product and reduce the price of the product (price reduction coupon)<br/>4. Trigger a task to complete<br/>5. Pop up a custom motivational message<br/>6. Create a task reward template: just enter the name to create a task automatically<br/>7. Pop up The window asks the user for branch selection, creating a small contextual interaction<br/>8. More in-app operations... |  |
 |**External applications/webpages->LifeUp** | **Configure automation tools:**<br/>1. Determine when the phone is turned on for the first time every day, complete the task of getting up early, or directly trigger the "getting up late" penalty<br/>2. After every 25 words, swipe a specific NFC card and automatically complete the task<br/>3. The GPS determines that a new place is reached, and unlocks the "new place" achievement<br/>4. When connecting to the working WIFI every day, trigger the unlocking condition progress to increase. After accumulating 20 days, unlock the achievement of "Worker"<br/>5. Reward yourself with "arrive home" gold coins when connecting to your home WIFI for the first time every day<br/>6. Capture notifications from other Tomato or Focus applications, and automatically record the timing  to `LifeUp`<br/>7. Capture the completion or end notification of sports and learning software, and automatically issue "strength" and "knowledge" experience points<br/>8. Within the time period set by yourself, every time you open your phone, you will trigger a penalty<br/>9. ...<br/>**External Application linkage/self-developed application:**<br/>1. If you are not satisfied with the Pomodoro of `LifeUp`: you can develop your own timing software, which can be a web application or Android application, and link with "LifeUp" through the interface to Add timing records or add rewards<br/>2. Modify some intelligence mini-games (such as a Wordle example below). When the game is successfully completed, trigger `LifeUp` to send rewards<br/>3. ... |  |
-
 
 <br/>In other words, all the above scenarios are actually "events" that trigger "actions".
 
@@ -41,8 +32,6 @@ if you need
 
 This kind of event requires the intervention of external applications. For example, do secondary development yourself or use automation tools such as `Tasker` and `MacroDroid`.
 
-
-
 **The LifeUp 1.90.2 update will add a series of "events", but these events can be received by automated tools or external applications.**
 
 Can be used to achieve:
@@ -54,7 +43,6 @@ After completing the task, trigger an automated tool such as Tasker to open an a
 **In the 1.90.2 version, it is possible to realize the "LifeUp event" triggering "Tasker's operation".**
 
 Tasker has extremely high permissions, which can be used to change wallpapers, uninstall apps, increase volume, choose to open specified apps, and more. You can even write UI interaction logic without programming foundation.
-
 
 ---
 
@@ -72,16 +60,12 @@ Tasker has extremely high permissions, which can be used to change wallpapers, u
 
 If you want to call an external application in *LifeUp*, you only need to add a "Link" effect to the shop item, **enter a web page or application-specific link**, and then use the shop item to trigger the call.
 
-
-
 **The following are some examples (you can also go to "World"-"Market"-"Link" to view public items with interface call effects):**
 
 - Browser to open Google: https://www.google.com
 - Facebook: [fb://](fb://)
 - Open an app using its package name/app ID: [market://launch?id=net.sarasarasa.lifeup](market://launch?id=net.sarasarasa.lifeup)
 - ...
-
-
 
 Theoretically, as long as the external APP provides the URL, you can jump by using the shop item.
 
@@ -98,8 +82,6 @@ You can find an app's package name (aka ID):
 - by using the App Info action in Tasker
 - by using the Launch App action in Macrodroid
 
-
-
 ---
 
 ## Call LifeUp APIs
@@ -110,8 +92,6 @@ If you:
 - Calling through the web page, you only need to jump to the LifeUp APIs by hyperlink.
 - To call through the APP developed by yourself, you only need to use the Intent to jump to the corresponding interface link.
 - Called by an automated tool (such as Tasker), fill in the corresponding API link in Tasker's Browser URL.
-
-
 
 **Some examples:**
 
@@ -124,8 +104,6 @@ When you click the link below, you will get a coin in "LifeUp", and the reason f
 <a href="lifeup://api/reward?type=coin&content=Learn API Calls&number=1">lifeup://api/reward?type=coin&content=Learn API Calls&number=1</a>
 
 If you copy the link to the item's "link" effect, using the item can also trigger the same effect.
-
-
 
 **An example of external application linkage:**
 
@@ -148,11 +126,9 @@ Wordle is a little word guessing game: guess words of length 5. Orange represent
 
 Unlocking the screen for the first time after 5 o'clock every day can trigger the completion of the task you specify (such as getting up).
 
-**Note: A Task Group Id is required to import this configuration. You can turn on [Developer Mode] in [Settings]-[Labs], and then check the gid on the task details page. **
+**Note: A Task Group Id is required to import this configuration. You can turn on [Developer Mode] in [Settings]-[Labs], and then check the gid on the task details page.**
 
-If you have Tasker installed, [click here to import the configured tasks. ](taskerproject://H4sIAAAAAAAAAKVWTW/bOBA9p7+CENCeshZlfcWtzMJts0ABY1EkaS49FKxE20xlSZDG3s2/3xmSku1ELer25OF7Q/LNB0fO7mT3XbUfJEjWtXPPY8Vez73AY7Cfe8mETwLuiRcX2ae2XulSGacG7ejKY3s196bEXmR5IUGJIEl4NONxMAvDMPMtaOiyEdDuFGJoEaKON4RRMA2vMl8NG1alXHcCIWsQpAsRIYA/tNrqgosozXxjEFJtlVgAi9mN6hSwu41iH+Rj5hNO/J3eWvl5XZmY6JqNiPGOjVttBcfV1q7AcOA4MBwYLvPpLMqK79IymqHZORk6yUcc8YDPfiEfsyf5SJ7k42/ddsA+V2Wdf1fFJXtfb5tSgWJU9kNqrveqgkNujmSj7rpAXZxj9MY08ZsNxrwFlNhvDca2JvFh50X2vq4KDbqulrqzV+qVdT/i7HlOSOjoi6zcdOJlpf4tqKy0cHjdiGCa+XXTAy1ymd/2Hpk/nGxF+CcqbEgmkJGaPqgc+po+8B+VNJmm05TPro5LWklM71Kv1OeGyR3ULHfZx8RLl/lGFx229SVV0tgEggGTS2pvsKBRRVLIpuIZSYBGlJyKQRlREiVpMEvO6C9qpmRopqbVVHKUhAYBi3woi8zBZSE9LnNMERzKfAut9W7XhzIOtUPWun10bYdu1DuynHvc859x059w4SmX+VbriOxgRHaY8mPZnRIrWXZYoc4h73ZV4R61icV11D16GRDvHvqzUjApdLUudZdvJrIq2loXEzATdnJzvby+X/xz9/V+cfNx8W55fStelfAGU4E7Fm0rH+0A9l+t4Q12yJln/Z6Ev+CxUeLL8kHu5aSU1Xpi9ZwvwJ7knhtlx700m79nTREMTVHiA9k1r31fNtrvX8jbtS7mL+myr2gNDXNSXPdM72Wr5bd+7u77yZ6XSrb1Dvp6DmvDqv+augWsHY6Jg20ovd3ugA7sdx4Awzf7XLtvmTEdWAhaF8OyEp/wxk4xXTU7YIBfIwqHrVFEwygm4+Tc8d0FVwTp4QQNAgwCPVKJo4zQ0uHO0fl1cBy2W5ncPUmYmSo0Sp6PlHRspHAeh/zHIyXk6TR+OlLSPxsp6W+MlNEmC8Znzhlz5YSLfsLFjgtHuMRxwbNZ1VfC/to/ZOLF/9uCy6GeCQAA)
-
-
+If you have Tasker installed, [click here to import the configured tasks.](taskerproject://H4sIAAAAAAAAAKVWTW/bOBA9p7+CENCeshZlfcWtzMJts0ABY1EkaS49FKxE20xlSZDG3s2/3xmSku1ELer25OF7Q/LNB0fO7mT3XbUfJEjWtXPPY8Vez73AY7Cfe8mETwLuiRcX2ae2XulSGacG7ejKY3s196bEXmR5IUGJIEl4NONxMAvDMPMtaOiyEdDuFGJoEaKON4RRMA2vMl8NG1alXHcCIWsQpAsRIYA/tNrqgosozXxjEFJtlVgAi9mN6hSwu41iH+Rj5hNO/J3eWvl5XZmY6JqNiPGOjVttBcfV1q7AcOA4MBwYLvPpLMqK79IymqHZORk6yUcc8YDPfiEfsyf5SJ7k42/ddsA+V2Wdf1fFJXtfb5tSgWJU9kNqrveqgkNujmSj7rpAXZxj9MY08ZsNxrwFlNhvDca2JvFh50X2vq4KDbqulrqzV+qVdT/i7HlOSOjoi6zcdOJlpf4tqKy0cHjdiGCa+XXTAy1ymd/2Hpk/nGxF+CcqbEgmkJGaPqgc+po+8B+VNJmm05TPro5LWklM71Kv1OeGyR3ULHfZx8RLl/lGFx229SVV0tgEggGTS2pvsKBRRVLIpuIZSYBGlJyKQRlREiVpMEvO6C9qpmRopqbVVHKUhAYBi3woi8zBZSE9LnNMERzKfAut9W7XhzIOtUPWun10bYdu1DuynHvc859x059w4SmX+VbriOxgRHaY8mPZnRIrWXZYoc4h73ZV4R61icV11D16GRDvHvqzUjApdLUudZdvJrIq2loXEzATdnJzvby+X/xz9/V+cfNx8W55fStelfAGU4E7Fm0rH+0A9l+t4Q12yJln/Z6Ev+CxUeLL8kHu5aSU1Xpi9ZwvwJ7knhtlx700m79nTREMTVHiA9k1r31fNtrvX8jbtS7mL+myr2gNDXNSXPdM72Wr5bd+7u77yZ6XSrb1Dvp6DmvDqv+augWsHY6Jg20ovd3ugA7sdx4Awzf7XLtvmTEdWAhaF8OyEp/wxk4xXTU7YIBfIwqHrVFEwygm4+Tc8d0FVwTp4QQNAgwCPVKJo4zQ0uHO0fl1cBy2W5ncPUmYmSo0Sp6PlHRspHAeh/zHIyXk6TR+OlLSPxsp6W+MlNEmC8Znzhlz5YSLfsLFjgtHuMRxwbNZ1VfC/to/ZOLF/9uCy6GeCQAA)
 
 ![](_media/api/tasker_01.png ':size=30%')
 
@@ -229,7 +205,7 @@ Some of the following interfaces support modifying **specified** shop items and 
 
 For `LifeUp` to find the corresponding data, you need to provide it with an id.
 
-**You can enable "Settings" - "Labs" - "Developer Mode" to view the original id of the data on each detail page in the app.** 
+**You can enable "Settings" - "Labs" - "Developer Mode" to view the original id of the data on each detail page in the app.**
 
 For example, the attributes name displayed like "strength (1)", its attribute id is 1.
 
@@ -255,7 +231,7 @@ After enabling "Developer Mode", click on the shop item to view the details.
 
 #### Achievement condition id
 
-After customizing the unlock condition for the achievement "requires an external API call to unlock", you can see the condition id on the details page.and 
+After customizing the unlock condition for the achievement "requires an external API call to unlock", you can see the condition id on the details page.and
 
 <br/>
 
@@ -351,6 +327,7 @@ A JSON array specifying item rewards, each item containing an ID and quantity.
 **Effect Example:**
 
 Increase random gold:
+
 ```json
 {
     "type": 2,
@@ -362,6 +339,7 @@ Increase random gold:
 ```
 
 Increase experience points:
+
 ```json
 {
     "type": 4,
@@ -374,6 +352,7 @@ Increase experience points:
 ```
 
 Open box effect:
+
 ```json
 {
     "type": 7,
@@ -500,9 +479,7 @@ Open box effect:
 | reason | Reason for change (alias) | any text | API adjustment | No | Alternative to content parameter |
 | silent | Disable UI notification | true or false | false | No | Defaults to false, set to true to suppress toast message |
 
-
 <br/>
-
 
 ### Tasks
 
@@ -765,6 +742,7 @@ The method of obtaining the id is to open the "Developer Mode" on the "Labs" pag
 **Description:** Operate on completed/abandoned/expired tasks
 
 **Examples:**
+
 - Delete history task: [lifeup://api/history_operation?id=1&operation=delete](lifeup://api/history_operation?id=1&operation=delete)
 - Mark task as given up: [lifeup://api/history_operation?id=1&operation=set_to_give_up](lifeup://api/history_operation?id=1&operation=set_to_give_up)
 - Restart task: [lifeup://api/history_operation?id=1&operation=restart](lifeup://api/history_operation?id=1&operation=restart)
@@ -932,7 +910,6 @@ For example, jump to synthesis category page with id 1: `lifeup://api/goto?page=
 
 <br/>
 
-
 #### Edit Item
 
 ?> Requires v1.98.0+
@@ -942,9 +919,10 @@ For example, jump to synthesis category page with id 1: `lifeup://api/goto?page=
 **Description:** Modify existing items, including price, stock, effects, and other properties
 
 **Examples:**
+
 - Adjust price: [lifeup://api/item?id=1&set_price=1&set_price_type=relative](lifeup://api/item?id=1&set_price=1&set_price_type=relative)
 - Modify effects: [lifeup://api/item?effects=%5B%7B%22type%22%3A2%2C%22info%22%3A%7B%22min%22%3A100%2C%22max%22%3A200%7D%7D%5D&id=1](lifeup://api/item?effects=%5B%7B%22type%22%3A2%2C%22info%22%3A%7B%22min%22%3A100%2C%22max%22%3A200%7D%7D%5D&id=1)
-    - The decoded content of effects parameter is: `[{"type":2,"info":{"min":100,"max":200}}]`
+  - The decoded content of effects parameter is: `[{"type":2,"info":{"min":100,"max":200}}]`
 
 | Parameter         | Meaning             | Values               | Example   | Required | Notes                           |
 | ---------------- | ------------------- | -------------------- | --------- | -------- | ------------------------------- |
@@ -1038,11 +1016,9 @@ For example, jump to synthesis category page with id 1: `lifeup://api/goto?page=
 >
 > If you need to adjust the ATM balance value directly, you can check the "Shop Settings" interface above.
 
-
-
 #### Deposit
 
-**Method name: **deposit
+**Method name:**deposit
 
 **Description:** The deposit will be checked for legality (whether the coin balance is sufficient).
 
@@ -1054,7 +1030,7 @@ For example, jump to synthesis category page with id 1: `lifeup://api/goto?page=
 | --------- | -------------- | ----------------------- | ------- | -------- | ----- |
 | amount    | deposit amount | a number greater than 0 | 100     | yes      | -     |
 
-**Return: **
+**Return:**
 
 | Parameter | Meaning                              | Type              | Example | Required | Notes |
 | --------- | ------------------------------------ | ----------------- | ------- | -------- | ----- |
@@ -1064,7 +1040,7 @@ For example, jump to synthesis category page with id 1: `lifeup://api/goto?page=
 
 #### Withdraw
 
-**Method name: **withdraw
+**Method name:**withdraw
 
 **Description:** Withdrawals will be checked for legality (whether the ATM balance is sufficient).
 
@@ -1076,7 +1052,7 @@ For example, jump to synthesis category page with id 1: `lifeup://api/goto?page=
 | --------- | ----------------- | ----------------------- | ------- | -------- | ----- |
 | amount    | withdrawal amount | a number greater than 0 | 100     | yes      | -     |
 
-**Return: **
+**Return:**
 
 | Parameter | Meaning                              | Type              | Example | Required | Notes |
 | --------- | ------------------------------------ | ----------------- | ------- | -------- | ----- |
@@ -1254,6 +1230,7 @@ For example, jump to synthesis category page with id 1: `lifeup://api/goto?page=
 **Description:** Adjust the number of tomatoes (increase, decrease, or set to a specific amount)
 
 **Examples:**
+
 - Add 1 tomato: [lifeup://api/tomato?action=increase&number=1](lifeup://api/tomato?action=increase&number=1)
 - Remove 2 tomatoes: [lifeup://api/tomato?action=decrease&number=2](lifeup://api/tomato?action=decrease&number=2)
 - Set pomodoro count to 10: [lifeup://api/tomato?action=set&number=10](lifeup://api/tomato?action=set&number=10)
@@ -1280,6 +1257,7 @@ For example, jump to synthesis category page with id 1: `lifeup://api/goto?page=
 **Description:** Synthesize items using an existing formula
 
 **Examples:**
+
 - Synthesize once using formula ID 1: [lifeup://api/synthesize?id=1](lifeup://api/synthesize?id=1)
 - Synthesize 5 times using formula ID 1: [lifeup://api/synthesize?id=1&times=5](lifeup://api/synthesize?id=1&times=5)
 
@@ -1318,9 +1296,10 @@ For example, jump to synthesis category page with id 1: `lifeup://api/goto?page=
 **Description:** Create, modify, or delete synthesis formulas
 
 **Examples:**
+
 - Create a new formula: [lifeup://api/synthesis_formula?inputItems=%5B%7B%22item_id%22%3A%20296%2C%20%22amount%22%3A%2088%7D%5D&outputItems=%5B%7B%22item_id%22%3A%20295%2C%20%22amount%22%3A%201%7D%5D](lifeup://api/synthesis_formula?inputItems=%5B%7B%22item_id%22%3A%20296%2C%20%22amount%22%3A%2088%7D%5D&outputItems=%5B%7B%22item_id%22%3A%20295%2C%20%22amount%22%3A%201%7D%5D)
-    - Here, the inputItems are `[{"item_id": 296, "amount": 88}]`
-    - Here, the outputItems are `[{"item_id": 295, "amount": 1}]`
+  - Here, the inputItems are `[{"item_id": 296, "amount": 88}]`
+  - Here, the outputItems are `[{"item_id": 295, "amount": 1}]`
 - Delete formula: [lifeup://api/synthesis_formula?id=1&delete=true](lifeup://api/synthesis_formula?id=1&delete=true)
 
 | Parameter   | Meaning        | Values                | Example                        | Required | Notes                          |
@@ -1359,6 +1338,7 @@ For example, jump to synthesis category page with id 1: `lifeup://api/goto?page=
 **Description:** Create or edit subtasks
 
 **Examples:**
+
 - Add a subtask to main task ID 1: [lifeup://api/subtask?main_id=1&todo=Complete%20homework](lifeup://api/subtask?main_id=1&todo=Complete%20homework)
 - Edit subtask and set rewards: [lifeup://api/subtask?main_id=1&edit_id=2&coin=10&exp=5](lifeup://api/subtask?main_id=1&edit_id=2&coin=10&exp=5)
 
@@ -1394,7 +1374,6 @@ For example, jump to synthesis category page with id 1: `lifeup://api/goto?page=
 
 <br/>
 
-
 ### Category Management
 
 ?> Requires v1.98.0+
@@ -1404,6 +1383,7 @@ For example, jump to synthesis category page with id 1: `lifeup://api/goto?page=
 **Description:** Add or edit categories (task lists, achievement lists, shop lists, synthesis lists)
 
 **Examples:**
+
 - Create a task list: [lifeup://api/category?type=tasks&name=Study List](lifeup://api/category?type=tasks&name=Study List)
 - Edit a shop list: [lifeup://api/category?type=shop&edit_id=1&name=Equipment Shop&order=1](lifeup://api/category?type=shop&edit_id=1&name=Equipment Shop&order=1)
 
@@ -1426,7 +1406,6 @@ For example, jump to synthesis category page with id 1: `lifeup://api/goto?page=
 | id    | Number  | Category ID    | 1000    | ID of new or edited category |
 
 <br/>
-
 
 ### Export Backup
 
@@ -1460,6 +1439,7 @@ For example, jump to synthesis category page with id 1: `lifeup://api/goto?page=
 **Description:** Complete, undo completion, or delete subtasks
 
 **Examples:**
+
 - Complete a subtask: [lifeup://api/subtask_operation?main_id=1&edit_id=2&operation=complete](lifeup://api/subtask_operation?main_id=1&edit_id=2&operation=complete)
 - Delete a subtask: [lifeup://api/subtask_operation?main_id=1&edit_id=2&operation=delete](lifeup://api/subtask_operation?main_id=1&edit_id=2&operation=delete)
 - Undo subtask completion: [lifeup://api/subtask_operation?main_id=1&edit_id=2&operation=undo_complete](lifeup://api/subtask_operation?main_id=1&edit_id=2&operation=undo_complete)
@@ -1493,6 +1473,7 @@ For example, jump to synthesis category page with id 1: `lifeup://api/goto?page=
 **Description:** Add or edit custom achievements and achievement subcategories
 
 **Examples:**
+
 - Create an achievement: [lifeup://api/achievement?name=Collector&desc=Collect 100 items&category_id=1](lifeup://api/achievement?name=Collector&desc=Collect 100 items&category_id=1)
   - You may need to replace `category_id` with your actual available achievement list id to test this example
 - Create an achievement with unlock conditions: [lifeup://api/achievement?name=Millionaire&conditions_json=%5B%7B%22type%22%3A7%2C%22target%22%3A1000000%7D%5D&category_id=1](lifeup://api/achievement?name=Millionaire&conditions_json=%5B%7B%22type%22%3A7%2C%22target%22%3A1000000%7D%5D&category_id=1)
@@ -1529,13 +1510,11 @@ For example, jump to synthesis category page with id 1: `lifeup://api/goto?page=
 | coin_set_type| How to set coin value | One of:<br/>absolute<br/>relative | absolute | No | absolute - directly set coin to value<br/>relative - add/subtract from original coin value |
 | exp_set_type | How to set exp value | One of:<br/>absolute<br/>relative | absolute | No | absolute - directly set exp to value<br/>relative - add/subtract from original exp value |
 
-
 **Response:**
 
 | Field  | Type    | Description      | Example | Notes                    |
 | ------ | ------- | ---------------- | ------- | ------------------------ |
 | id     | Number  | Achievement ID   | 1000    | ID of new or edited achievement |
-
 
 #### 2. Subcategory Parameters
 
@@ -1577,6 +1556,7 @@ For example, jump to synthesis category page with id 1: `lifeup://api/goto?page=
 #### 4. JSON Format Specifications
 
 ##### Unlock Conditions (conditions_json)
+
 ```json
 [
     {
@@ -1593,6 +1573,7 @@ For example, jump to synthesis category page with id 1: `lifeup://api/goto?page=
 ```
 
 ##### Item Rewards (items)
+
 ```json
 [
     {
@@ -1617,6 +1598,7 @@ For example, jump to synthesis category page with id 1: `lifeup://api/goto?page=
 **Description:** Create or edit custom skills (attributes)
 
 **Examples:**
+
 - Create a skill: [lifeup://api/skill?content=Programming&desc=Coding ability&color=%23FF6B6B](lifeup://api/skill?content=Programming&desc=Coding ability&color=%23FF6B6B)
 - Edit skill experience: [lifeup://api/skill?id=1&exp=100](lifeup://api/skill?id=1&exp=100)
 - Delete skill: [lifeup://api/skill?id=1&delete=true](lifeup://api/skill?id=1&delete=true)
@@ -1651,6 +1633,7 @@ For example, jump to synthesis category page with id 1: `lifeup://api/goto?page=
 **Description:** Adjust app interface settings
 
 **Examples:**
+
 - Enable compact mode: [lifeup://api/app_settings?is_enable_compact_mode=true](lifeup://api/app_settings?is_enable_compact_mode=true)
 - Enable Material You theme: [lifeup://api/app_settings?is_enable_material_you=true](lifeup://api/app_settings?is_enable_material_you=true)
 - Change settings and restart UI immediately: [lifeup://api/app_settings?is_enable_compact_mode=true&restart_activities=true](lifeup://api/app_settings?is_enable_compact_mode=true&restart_activities=true)
@@ -1679,7 +1662,6 @@ For example, jump to synthesis category page with id 1: `lifeup://api/goto?page=
 
 **Example:** - Query the current number of coins: [lifeup://api/query?key=coin](lifeup://api/query?key=coin)
 
-
 | Parameter   | Meaning              | Type                                                         | Example | Required                                    | Notes                                                        |
 | ----------- | -------------------- | ------------------------------------------------------------ | ------- | ------------------------------------------- | ------------------------------------------------------------ |
 | key         | type of query        | Only one of the following values:<br/>coin<br/>atm<br/>item<br/>item_id_list<br/>tomato | coin    | yes                                         | coin - current amount of coins<br/>atm - current ATM balance<br/>item - Item information for the specified `itemId`<br/>item_id_list - List of item IDs specified by `categoryId`<br/>tomato - Tomato data |
@@ -1696,7 +1678,7 @@ When querying coin/atm:
 | --------- | ----------------------------------- | ------------------ | ------- | -------- | ----- |
 | value     | Numeric value returned by the query | number             | 1000    | yes      |       |
 
-When querying an item: 
+When querying an item:
 
 | Parameter        | Meaning                         | Type     | Example   | Required | Notes |
 | ---------------- | ------------------------------- | -------- | --------- | -------- | ----- |
@@ -1725,7 +1707,47 @@ When querying tomato:
 | available | Available tomato count   | number | 50      | yes      |       |
 | exchanged | Exchanged tomato count   | number | 50      | yes      |       |
 
+When querying task (v1.101.0+):
 
+| Parameter   | Meaning                      | Type        | Example | Required | Notes                           |
+| ----------- | ---------------------------- | ----------- | ------- | -------- | ------------------------------- |
+| _ID         | Task ID                      | number      | 1       | yes      | -                               |
+| _GID        | Task group ID                | number      | 1       | yes      | -                               |
+| name        | Task name                    | text        | Study   | yes      | -                               |
+| notes       | Notes                        | text        | -       | no       | May be empty                    |
+| status      | Task status                  | number      | 0       | yes      | 0=incomplete, 1=completed       |
+| startTime   | Start time                   | number      | -       | yes      | Unix timestamp (milliseconds)   |
+| deadline    | Deadline time                | number      | -       | no       | Unix timestamp (milliseconds), may be empty |
+| remindTime  | Remind time                  | number      | -       | no       | Unix timestamp (milliseconds), may be empty |
+| frequency   | Repetition frequency         | number      | -       | yes      | -                               |
+| exp         | EXP reward                   | number      | -       | yes      | -                               |
+| skillIds    | Skill ID list                | JSON text   | -       | yes      | JSON array format               |
+| coin        | Coin reward                  | number      | -       | no       | May be empty                    |
+| coinVariable| Random coin reward           | number      | -       | no       | May be empty                    |
+| itemId      | First reward item ID         | number      | -       | no       | May be empty                    |
+| itemCount   | First reward item count      | number      | -       | no       | Returned when itemId exists     |
+| items       | Item reward list             | JSON text   | -       | yes      | JSON array format               |
+| words       | Completion incentive words   | text        | -       | no       | May be empty                    |
+| categoryId  | Category ID                  | number      | -       | no       | May be empty                    |
+| order       | Order                        | number      | -       | yes      | -                               |
+| name_extended | Extended name              | text        | -       | yes      | Same as name                    |
+| subTasks    | Sub-task list                | JSON text   | -       | yes      | JSON array format, see below    |
+
+**Sub-tasks (subTasks) field description:**
+
+The `subTasks` field is a JSON array, each element contains the following fields:
+
+- `id`: Sub-task ID
+- `gid`: Sub-task group ID
+- `todo`: Sub-task content
+- `status`: Sub-task status (0=incomplete, 1=completed)
+- `remindTime`: Remind time (Unix timestamp, milliseconds)
+- `exp`: EXP reward
+- `coin`: Coin reward
+- `coinVariable`: Random coin reward
+- `items`: Item reward list
+- `order`: Order
+- `autoUseItem`: Whether to automatically use item
 
 <br/>
 
@@ -1742,7 +1764,6 @@ It is possible to use this api to customize your attributes widgets.
 **Example:**
 
 - Query strength attribute: [lifeup://api/query_skill?id=1](lifeup://api/query_skill?id=1)
-
 
 | Parameter | Meaning              | Type                    | Example | Required | Notes |
 | --------- | -------------------- | ----------------------- | ------- | -------- | ----- |
@@ -1798,7 +1819,6 @@ Only supported since version 1.90.6
   - Choice of rewards
   - Event branch selection
 
-
 | Parameter       | Meaning              | Type     | Example  | Required | Notes |
 | --------------- | -------------------- | -------- | -------- | -------- | ----- |
 | title           | popup title          | any text | Title    | yes      |       |
@@ -1812,7 +1832,6 @@ Only supported since version 1.90.6
 | cancel_action   | the link response of the cancel action   | URL (other interface) | Same as above | no |  |
 
 <br/>
-
 
 #### No Action
 
@@ -1861,7 +1880,6 @@ You only need to modify the item id to a placeholder [$item], and when the call 
 
 <a href="lifeup://api/add_task?todo=[$text|Enter a task name]&notes=This is a reward template for a task&coin=10&coin_var=10&exp=2048&skills=1&skills=2&skills=3&category=[$task_category]]">lifeup://api/add_task?todo=[$text|Enter a task name]&notes=This is a reward template for a task&coin=10&coin_var=10&exp=2048&skills=1&skills=2&skills=3&category=[$task_category]]</a>
 
-
 <br/>
 
 #### End Callback
@@ -1876,11 +1894,7 @@ You can use the callback parameter. Please also refer to the above **Basics - Es
 
 <a href="lifeup://api/goto?page=lab&callback=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3Dtest callback">lifeup://api/goto?page=lab&callback=lifeup:%2F%2Fapi%2Ftoast%3Ftext%3Dtest callback</a>
 
-
-
 Of course, you can add multiple links to a shop item to achieve this effect.
-
-
 
 Besides, this callback is more used for:
 
@@ -1931,6 +1945,7 @@ The value of broadcast is equivalent to the value of the operation column of "In
 !> The functions here are used with automated tools/secondary development.
 
 > In version 1.90.2, we will broadcast various events to the outside world. You can use automation tools such as Tasker to receive these events to trigger Tasker actions.
+>
 ### Enable
 
 **By default, broadcast events are turned off.**
@@ -1995,7 +2010,6 @@ Using `No Action`+`Broadcast return value` can achieve this effect in a more con
 
 **Return value:**
 
-
 | Parameters | Meaning                 | Examples                        |
 | ---------- | ----------------------- | ------------------------------- |
 | task_ids   | task id **array**       | [1, 2, 3]                       |
@@ -2004,7 +2018,6 @@ Using `No Action`+`Broadcast return value` can achieve this effect in a more con
 | task_ids_json  | task id **Json array**   | [1, 2, 3]                       |
 | task_gids_json | task group id **Json array** | [1, 2, 3]                       |
 | names_json     | task name **Json array** | ["Getting started", "Drink Waters"]                      |
-
 
 ### Achievement unlocked
 
@@ -2067,7 +2080,7 @@ Using `No Action`+`Broadcast return value` can achieve this effect in a more con
 
 ### Shop item countdown
 
-**Name:** 
+**Name:**
 
 - Start: app.lifeup.item.countdown.start
 - Stop: app.lifeup.item.countdown.stop
@@ -2081,11 +2094,45 @@ Using `No Action`+`Broadcast return value` can achieve this effect in a more con
 | name       | item name                     | play games for 30 minutes |
 | time_left  | time remaining (milliseconds) | 30000                     |
 
+### Pomodoro Lifecycle
 
+?> This broadcast event was released in v1.101.0, providing richer event data.
 
+**Name:**
 
+- Start: app.lifeup.pomodoro.start
+- Pause: app.lifeup.pomodoro.pause (new in v1.101.0)
+- Stop: app.lifeup.pomodoro.stop
+- Complete: app.lifeup.pomodoro.complete
 
+**Description:** When the Pomodoro timer starts, pauses, stops, or completes, the system sends corresponding broadcast events carrying task information, timing status, and other detailed data.
 
+**Return value:**
+
+| Parameter          | Meaning                       | Example        | Notes                                                      |
+| ------------------ | ----------------------------- | -------------- | ---------------------------------------------------------- |
+| task_id            | Task ID                       | 1              | Optional, only exists when Pomodoro is associated with a task |
+| task_gid           | Task group ID                 | 1              | Optional, only exists when Pomodoro is associated with a task |
+| name               | Task name                     | Study English  | Task name associated with Pomodoro or custom name         |
+| service_type       | Service type                  | 0              | 0=focus, 1=short break, 2=long break                      |
+| service_type_label | Service type label            | Focus          | Localized service type text                                |
+| duration           | Total duration (milliseconds) | 1500000        | Total duration of focus or break                           |
+| remaining          | Remaining duration (milliseconds) | 900000     | Current remaining duration                                 |
+| elapsed            | Elapsed duration (milliseconds) | 600000       | Duration elapsed                                           |
+| start              | Start time                    | 1639123456789  | Unix timestamp (milliseconds)                              |
+| event_time         | Event trigger time            | 1639123456789  | Unix timestamp (milliseconds)                              |
+| reason             | Stop reason                   | user           | Only for stop event, possible values: manual, cancel, complete, auto |
+
+**Stop reason description:**
+
+The `reason` parameter only exists in the `app.lifeup.pomodoro.stop` event, indicating the reason for the Pomodoro stop:
+
+- `manual`: User manually stopped
+- `cancel`: User canceled
+- `complete`: Completed normally (Note: When completed, `app.lifeup.pomodoro.complete` event is also triggered)
+- `auto`: Automatically stopped (e.g., task deleted)
+
+---
 
 ## Integration
 
@@ -2102,7 +2149,6 @@ In the future, we will continue to add more APIs to meet more usage scenarios.
 If you need more APIs, you can leave Issues on [Github](https://github.com/Ayagikei/LifeUp/issues/new/choose).
 
 <br/>
-
 
 ### How to call
 
@@ -2166,6 +2212,7 @@ location.href='lifeup://api/reward?type=coin&content=consolation+prize&number=1'
 <br/>
 
 ### Application/Web/Automation Developer
+
 Let us know if you've developed anything related to LifeUp!
 
 <br/>
@@ -2173,4 +2220,3 @@ Let us know if you've developed anything related to LifeUp!
 ### Any programming language/platform that supports the HTTP protocol
 
 For details, please refer to https://github.com/Ayagikei/LifeUp-SDK and [LifeUp Cloud - HTTP APIs - Google Play](https://play.google.com/store/apps/details?id=net.lifeupapp.lifeup.http).
-
