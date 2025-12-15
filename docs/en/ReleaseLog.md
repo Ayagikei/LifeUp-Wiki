@@ -8,7 +8,7 @@
 
 | Platform          | Version                | Update Date                 |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.101.0               | TBD                         |
+| LifeUp-Android    | v1.101.3               | 2025/12/14                  |
 | LifeUp-iOS        | check [feature/ulives] | 🎉Alternative app available |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
 | LifeUp Cloud(SDK) | v1.3.0                 | 2025/01/01                  |
@@ -19,7 +19,28 @@
 
 ### **LifeUp-Android**
 
-**v1.101.0 (TBD)**
+**v1.101.3 (2025/12/14)**
+
+**🐛 Bug Fixes**
+
+1. Fixed an issue where the "Due Today" option incorrectly ignored the next-day deadline offset.
+
+**v1.101.2 (2025/12/13)**
+
+**🐛 Bug Fixes**
+
+1. Fixed an issue where the search state was reset when returning to the Shop, Inventory, or Task pages.
+2. Fixed a crash related to `AlarmManager` limits (approx. 500 concurrent alarms).
+3. Fixed crashes related to dynamic colors, timezone dialogs, and pop-up menus.
+4. Optimized crash reporting to ignore common network errors.
+
+**v1.101.1 (2025/12/01)**
+
+**🐛 Bug Fixes**
+
+1. Fixed potential crashes caused by translation formatting errors.
+
+**v1.101.0 (2025/11/29)**
 
 **✨Features**
 
@@ -213,8 +234,9 @@
 1. Subtask API supports relative adjustment (set_type).
 2. Supports automatic cleanup of expired calendar reminder events.
 3. Optimized processing logic for archived lists:
+
 * Smart lists no longer display archived tasks.
-* Tasks in archived lists do not automatically advance by default (similar to frozen status).
+- Tasks in archived lists do not automatically advance by default (similar to frozen status).
 
 **♻️Optimization**
 
@@ -319,13 +341,11 @@
 
 1. Added a warning when using the default notification reminder method and lacking the "exact alarm" permission.
 
-
 **🐛Bug Fixes**
 
 1. Fixed an issue where the "complete task" API was not working when the UI field was true.
 2. Fixed an issue where the purchase and use of certain quantities of items might not work correctly (e.g., 10).
 3. Fixed an issue where the feelings page might show "loading" indefinitely in certain scenarios.
-
 
 **v1.98.2 (2025/02/06)**
 
@@ -335,7 +355,6 @@
 2. Fixed an issue where editing a item after copying it might result in abnormal duplicate usage effects.
 3. Fixed an issue where calling the "adjust item" API might result in abnormal purchase limits.
 4. Fixed an issue where modifying certain tomato records might result in an abnormal reduction in tomato counts.
-
 
 **v1.98.1 (2025/01/14)**
 
@@ -374,7 +393,6 @@
 25. Optimized return value when querying incorrect ContentProvider URL.
 26. Query interface supports querying single achievement.
 
-
 **♻️Optimization**
 
 1. Optimized default custom sorting for newly added items.
@@ -397,11 +415,9 @@
 
 1. Optimized the performance related to the usage effect of products.
 
-
 **🐛Bug Fixes**
 
 1. Fixed the issue of specific API call failures. When using a specific callback function to call the product API, the unpacking function works normally, but the internal API operation to add items cannot be executed.
-
 
 **1.97.2 (2024/12/08)**
 
@@ -441,7 +457,6 @@
 3. Fixed the time calculation issues for monthly and yearly subtasks, ensuring all subtasks are scheduled accurately.
 4. Fixed the issue where the task background could not be restored correctly when restoring from a task template, ensuring task background settings are applied properly.
 
-
 **1.97.0 (2024/10/21)**
 
 **♻️Optimization**
@@ -458,8 +473,6 @@
 
 1. Fixed an issue where enabling Material 3 caused crashes when executing certain UI-related APIs.
 2. Removed some obsolete experimental options, such as the feelings switch and the new attribute switch.
-
-
 
 **🎉1.97.0-rc (2024/09/11)**
 
@@ -508,13 +521,11 @@
 9. Fixed an issue where, in split-screen mode on large screens, when displaying both the task list page and detail page, completing tasks, subtasks, or updating counters would not synchronize the two pages.
 10. Fixed an issue where long-pressing overdue single tasks on the task list page would not allow clearing the deadline display.
 
-
 **1.96.1(2024/07/11)**
 
 **🐛Bug Fixes**
 
 1. Fixed an issue where the displayed reward item count was incorrect when completing subtasks (actual rewards were not affected).
-
 
 **🎉1.96.0 - beta01(2024/06/19)**
 
@@ -797,10 +808,10 @@
 
 **✨Features**
 
-1. Step statistics chart (https://github.com/Ayagikei/LifeUp/issues/85)
-
+1. Step statistics chart (<https://github.com/Ayagikei/LifeUp/issues/85>)
 
 **♻️Optimization**
+
 1. The new team page now adds a reminder of the current word count and upper limit word count
 
 **🐛 Bug Fixes**
@@ -919,7 +930,7 @@
 **✨Features**
 
 1. Shop and inventory lists support setting hide separately
-2. `Goto` API now supports jumping to subpages of the main page (such as tasks, status, shop, inventory) 
+2. `Goto` API now supports jumping to subpages of the main page (such as tasks, status, shop, inventory)
 3. The coin statistics in the statistics now support the exclusion of purchase consumption
 
 **♻️Optimizations**
@@ -956,7 +967,7 @@
 6. When the "Hide Unpurchasable Items" option is enabled and an unpurchasable item is created, a prompt will be displayed.
 7. When the user enables custom levels but does not define any levels, it will now reset to the built-in level table.
 8. Improved widget preview images.
-9. Step inputs are now restricted to numbers. (https://github.com/Ayagikei/LifeUp/issues/75)
+9. Step inputs are now restricted to numbers. (<https://github.com/Ayagikei/LifeUp/issues/75>)
 10. When using the built-in browser for product links, the "https" prefix is no longer required.
 11. Added "Compatibility Configuration" instructions for the product countdown feature.
 
@@ -1046,8 +1057,6 @@ Support the following operations:
 6. Support re-locking unlocked achievements
 7. "Add Product API" supports specifying list id
 
-
-
 **♻️Optimization**
 
 1. Improve the description of deleting history
@@ -1059,8 +1068,6 @@ Support the following operations:
 7. When creating an item from a smart list, if the selectable list is 0 or 1, automatically select it
 8. The developer mode displays the item list ID
 9. Limit the input length of some common fields to avoid crashes
-
-
 
 **🐛 Fixed**
 
@@ -1075,8 +1082,6 @@ Support the following operations:
 9. Widget refresh is now triggered after adjusting the list order
 10. Optimized the problem that some backup methods will get stuck on the interface
 
-
-
 **1.90.6 (2022/10/21)**
 
 **✨Features**
@@ -1085,8 +1090,6 @@ Support the following operations:
 2. Added API for querying the status of specified attributes (experience value, level)
 3. Support direct import of backup data from file manage
 4. APIs related to reward items are no longer limited 99
-
-
 
 **♻️Optimization**
 
@@ -1103,8 +1106,6 @@ Support the following operations:
 11. When a task that is "Pin" is selected, the action is now displayed as "Unpin"
 12. When switching to positive timing, the *experimental* warning no longer pops up every time
 
-
-
 **🐛 Fixed**
 
 1. Fixed the abnormal system boundary of some pages or with tablets
@@ -1112,8 +1113,6 @@ Support the following operations:
 3. Fixed an issue that data cannot be recovered at all due to internal damage (such as image damage) when restoring damaged backup files
 4. Fixed an issue that the "Buy" button will be displayed unexpectedly after long-pressing the sold-out item
 5. Fixed an issue that the attribute introduction of the new team page is the old version
-
-
 
 **1.90.5 (2022/09/22)**
 
@@ -1131,8 +1130,6 @@ Support the following operations:
 2. Fixed several known crash issues
 3. Improve the problem that the countdown of goods may be abnormally interrupted and accumulated time under long-term countdown
 4. Fix the UI exception of the input feeling pop-up window when the widget completes the task
-
-
 
 **1.90.4 (2022/09/15)**
 
@@ -1180,8 +1177,6 @@ Support the following operations:
 5. Adapt to the secondary color of Material 3
 6. Update language translation, add Korean language support
 
-
-
 **♻️Improvements**
 
 1. When unboxes in batches, also display the probability of a single product
@@ -1190,8 +1185,6 @@ Support the following operations:
 4. When the API calls item selection and list selection, the pop-up window no longer supports direct closing (to prevent API calls from being lost)
 5. Optimize the default height of some pop-up windows at the bottom of the tablet horizontal screen
 6. Optimize the automatic closing timing of the pop-up window
-
-
 
 **🐛 Fixes**
 
@@ -1205,8 +1198,6 @@ Support the following operations:
 8. Fix the problem that sometimes -x days ago is displayed
 9. Fixed the issue that subsequent APIs may be canceled abnormally when calling APIs in batches
 10. Fix the problem that the content filled in by the new team may be lost when the page is destroyed
-
-
 
 **1.90.1 (2022/08/22)**
 
@@ -1275,7 +1266,7 @@ Support the following operations:
 1. Negative matters should not be displayed in penalty factor settings
 1. Optimize the refresh effect on the History page
 1. Optimize the logic of automatically triggering the main task after completing the sub-task, and change it to directly on the details page processing
-1. 
+1.
 
 **🐛Fixes**
 
@@ -1460,8 +1451,8 @@ Support the following operations:
 3. Optimize the loading speed of the delegated page
 4. Greatly optimized the loading speed of the product selection pop-up window
 
-
 🐛 Fixes
+
 1. Fixed the problem of custom background disorder
 2. Fixed the problem that the task may be created to the deleted list
 3. Some crash bug fixes
@@ -1503,7 +1494,7 @@ Support the following operations:
 5. The shop supports select all operations
 6. Shop and Inventory related operations support selecting MAX quantity
 7. Tasks support continuous creation
-8. Task support configuration: The description of the product reward will be automatically added to the card remarks (that is, "Reward: [a product] x1" will be automatically displayed) 
+8. Task support configuration: The description of the product reward will be automatically added to the card remarks (that is, "Reward: [a product] x1" will be automatically displayed)
 9. The task supports the specified freezing duration
 
 **⚡️Improvements**
@@ -1629,7 +1620,7 @@ Support the following operations:
 12. Attempt to fix the crash of color toast on some models
 13. Fix the problem that the use button can still be clicked when the warehouse page is selected
 14. Fix the logic of displaying overdue single tasks in the smart list, and adapt to the new overdue time storage method
-15. When the warehouse is selected, the toggle list should be deselected 
+15. When the warehouse is selected, the toggle list should be deselected
 
 **1.85.4 (2021/12/08)**
 
@@ -1714,7 +1705,6 @@ Regular bug fix version, the next feature version is still under development~
 
 *Fixes*
 
-
 1. Fixed the problem that the progress on the list was not refreshed in time when the achievement page was configured to the bottom navigation bar
 2. The state switching problem of historical items is fixed
 3. Negative countdown overdue display repair
@@ -1725,7 +1715,6 @@ Regular bug fix version, the next feature version is still under development~
 8. Fix the problem that clicking different task cards in quick succession may cause the task content of one of the cards to be blank after returning to the page
 9. Logic adjustment of automatic calculation of gold coins and experience points
 10. Fixed some crashes
-
 
 **1.84.4 (2021/10/09)**
 
@@ -1745,12 +1734,9 @@ Regular bug fix version, the next feature version is still under development~
 
 3. Optimize the visual effect of rounded corners of widgets
 
-
 **1.84.1 (2021/09/20)**
 
 1. Fix the problem that the target repeat count cannot be cleared during editing
-
-
 
 **1.84.0 (2021/09/19)**
 
@@ -1770,8 +1756,6 @@ Regular bug fix version, the next feature version is still under development~
 
 6. Support deleting reminder calendar account
 
-
-
 ***Improvements***
 
 1. The Pomodoro page supports horizontal display
@@ -1785,8 +1769,6 @@ Regular bug fix version, the next feature version is still under development~
 5. Part of the page UI display and text optimization
 
 6. Optimize the interaction of new subtasks
-
-
 
 ***Fixes***
 
@@ -1804,7 +1786,7 @@ Regular bug fix version, the next feature version is still under development~
 
 7. Create a new achievement page, fix the problem that the attribute selection cannot be edited and left blank
 
-8. Other minor bug fixes and optimizations 
+8. Other minor bug fixes and optimizations
 
 **1.83.16 (2021/08/20)**
 
@@ -1812,7 +1794,7 @@ Regular bug fix version, the next feature version is still under development~
 2. Optimize the interaction of product unpacking effect selection
 3. Fix the focus problem of some long text input boxes
 4. Fix the issue that the reminder deadline and time are displayed incorrectly in some cases
-5. Fix the problem that the related configuration changes of the concise mode will not take effect immediately 
+5. Fix the problem that the related configuration changes of the concise mode will not take effect immediately
 
 **1.83.15**
 
@@ -1823,7 +1805,7 @@ Regular bug fix version, the next feature version is still under development~
 5. When the penalty is cancelled (marked as completed), no additional reward will be given
 6. The smart list now supports displaying completed items
 7. Fix the abnormal situation of automatically backing up to the download folder in some cases
-8. Fix some UI display problems 
+8. Fix some UI display problems
 
 **1.83.14**
 
@@ -1831,18 +1813,19 @@ Regular bug fix version, the next feature version is still under development~
 2. Fix the problem that penalty items will be executed overdue and penalty logic
 3. Fix issues related to editing penalties
 4. Fix issues related to selecting pictures in landscape mode
-5. Fix the occasional restore failure when restoring a backup from a custom path 
-
+5. Fix the occasional restore failure when restoring a backup from a custom path
 
 **1.83.8-1.83.13**
 Features
+
 1. Support independent setting of card background
 2. The delete record function now supports deleting thoughts, warehouses, and timing records
 3. System achievements can choose whether to get experience points or gold coin rewards
 4. Event search function
-5. Support local automatic backup to "download" folder (Android 10 and above) 
+5. Support local automatic backup to "download" folder (Android 10 and above)
 
 Improvements
+
 1. Improve the default notification reminder calling method, which can theoretically enhance the notification success rate above Android6
 2. Increase the notification priority of the Pomodoro timer to [High], improve the survival probability of the background timer and the notification display
 3. On the page, add QQ group and official website links, optimize the UI, QQ supports one-click group addition
@@ -1858,9 +1841,10 @@ Improvements
 13. Feel that the switch is no longer memorized, and it is turned off by default
 14. Optimize the application process for calendar and camera permissions
 15. Optimize the click effect and display effect of some pages
-16. Optimize the calendar reminder method, try to solve the problem that some devices may delete the calendar account 
+16. Optimize the calendar reminder method, try to solve the problem that some devices may delete the calendar account
 
 Fixes
+
 1. Fix the crash problem of continuous filtering on the impression page
 2. Try to fix the rare crash of the dialog box that is set out of the box
 3. Fix the problem that when the input box is long, clicking on the text will automatically jump to the bottom
@@ -1871,20 +1855,21 @@ Fixes
 8. Fix the problem that the subtasks are still visible when returning to the details page after deleting all subtasks
 9. Fix the problem that the name of the synthetic default list cannot be edited
 10. Fix the problem that the filter box will be displayed on the profile page
-11. Fix the problem that the team item cannot be inherited after setting the product reward 
+11. Fix the problem that the team item cannot be inherited after setting the product reward
 
-**1.83.7 (2021/06/24)** 
+**1.83.7 (2021/06/24)**
 
-1. The list is sorted by gold coin added 
-2. Add language selection to the guide page 
-3. Optimize the loading speed of achievement page 
-4. Change QQ group to join information with one click 
+1. The list is sorted by gold coin added
+2. Add language selection to the guide page
+3. Optimize the loading speed of achievement page
+4. Change QQ group to join information with one click
 5. Fixed the problem that continuous clicking during unpacking may trigger inventory changes multiple times
 6. Fixed the incorrect display of single overdue items in the daily items list
 
 **1.83.6 (2021/06/22)**
 
 Features
+
 1. (Members) Support independent setting of card background
 2. The delete record function now supports deleting thoughts, warehouses, and timing records
 3. System achievements can choose whether to get experience points or gold coin rewards
@@ -1892,6 +1877,7 @@ Features
 5. Support local automatic backup to "download" folder (Android 10 and above)
 
 Optimization
+
 1. Improve the default notification reminder calling method, which can theoretically enhance the notification success rate above Android6
 2. Increase the notification priority of the Pomodoro timer to [High], improve the survival probability of the background timer and the notification display
 3. On the page, add QQ group and official website links, optimize the UI, QQ supports one-click group addition
@@ -1915,7 +1901,7 @@ Optimization
 4. Add a hint to expand and collapse the sample task
 5. Fix the crash that may be caused by the layout at the top of the list on some pages
 6. Optimize the network error prompt when the network is disconnected
-7. Optimized the gold coin reward reminder when completing the sub-tasks, changed to non-obstructive Toast reminder 
+7. Optimized the gold coin reward reminder when completing the sub-tasks, changed to non-obstructive Toast reminder
 
 **1.83.0-alpha03 (2021/05)**
 
@@ -1926,13 +1912,13 @@ Optimization
     (Adapted but the interface is not ready yet, please wait for subsequent updates)
 5. Upgrade the target SDK version to Android11
 6. Fix the empty layout display problem of the "Moment" page
-7. Fix the problem of abnormal interest calculation 
+7. Fix the problem of abnormal interest calculation
 
 **1.83.0-alpha02 (2021/05/16)**
 
 1. Fix the problem that synthetic recipes can be created in the "All" list
 2. After entering the synthesis system interface, no matter which list you are in, the actual display content is the "All" list.
-3. Simple repair of the calculation method of ATM interest 
+3. Simple repair of the calculation method of ATM interest
 
 **1.83.0-alpha01 (2021/05/16)**
 
@@ -1950,16 +1936,16 @@ Optimization
 3. Add ATM entrance at the top of the store
 4. The item attachment supports up to 9 pictures, and the storage path has been adjusted
 5. Team TAG function
-    The implementation is built-in, but the specific TAG content has not been configured yet, so it will not be displayed for the time being 
+    The implementation is built-in, but the specific TAG content has not been configured yet, so it will not be displayed for the time being
 
 **1.82.16 (2021/05)**
 
 1. Fix the problem that the example items cannot execute the overdue logic correctly (only valid for new users)
-2. Fix the problem that the number of completions of infinite items in certain scenarios will be missing 1 time 
+2. Fix the problem that the number of completions of infinite items in certain scenarios will be missing 1 time
 
 **1.82.15 (2021/05)**
 
-1. Fix the background sound effect playback problem 
+1. Fix the background sound effect playback problem
 
 **1.82.14 (2021/05)**
 
@@ -1971,7 +1957,7 @@ Optimization
 2. Fix the problem that the completion of the task in the desktop widget may be played multiple times to complete the sound effect
 3. Fix the problem that the total count of the top items in the smart list is not accurate
 4. Support delete all local data and delete account functions
-5. Fix the problem that the editing of subtasks of team items cannot be inherited 
+5. Fix the problem that the editing of subtasks of team items cannot be inherited
 
 **1.82.12 (2021/05)**
 
@@ -1980,7 +1966,7 @@ Optimization
 3. Some optimizations have been made to the list switching, which may increase the switching speed of old devices and add loading animations
 4. Fix the problem that the custom rest end sound effect does not take effect, and supports setting the end sound effect of commodity timing
 5. Fix the problem that Pomodoro cannot count the concentration time when using the "skip" operation
-6. Fix the problem that the pause button of the product countdown does not take effect 
+6. Fix the problem that the pause button of the product countdown does not take effect
 
 **1.82.11 (2021/05)**
 
@@ -1994,16 +1980,16 @@ Optimization
 
 1. Fix the problem that Pomodoro cannot count the concentration time when using the "skip" operation
 2. Fix the problem that the pause button of the product countdown does not take effect
-3. Capture a crash caused by failure to create a calendar reminder 
+3. Capture a crash caused by failure to create a calendar reminder
 
 **1.82.9 (2021/05)**
 
-1. Fix the problem that the time limit of the copied item may be emptied, and it may cause a crash when repeated 
+1. Fix the problem that the time limit of the copied item may be emptied, and it may cause a crash when repeated
 2. Optimize the refresh speed after completing unlimited items
 2. Fix the problem of calculating reminder time for team tasks
 3. Fix the problem that the completion of sliding may cause the animation to not end correctly and remain blank
 4. Team tasks should support sliding abandonment
-5. The product introduction in the purchase window supports sliding browsing 
+5. The product introduction in the purchase window supports sliding browsing
 
 **1.82.8 (2021/04/28)**
 
@@ -2027,11 +2013,12 @@ Optimization
 6. After the event is completed, remove the notification reminder that is currently being displayed
 7. Optimize the income and expenditure statistics of gold coins
 8. Add some user guidelines and tips
-9.  When editing items, support clearing the product reward selection
+9. When editing items, support clearing the product reward selection
 10. When dealing with continuous crashes, add "Known Issues" notice
 11. Optimize the display effect when the attribute is not selected
 
 【repair】
+
 1. After the homepage sorts the list, the status should be refreshed immediately
 2. Fix the issue that the details page will not refresh the subtask list immediately
 3. Forcibly fix the crash problem of Weibo authorized login
@@ -2040,9 +2027,10 @@ Optimization
 6. Fix the issue that the reward box will not pop up when the item and achievement only have merchandise rewards
 7. Fix the problem of not being able to purchase 0 gold coins under certain circumstances
 8. Optimize the calculation method of repairing Ebbinghaus items
-9. Optimize the calculation method of the number of completions today for unlimited events 
+9. Optimize the calculation method of the number of completions today for unlimited events
 
 **1.82.7 (2021/04/10)**
+
 1. Fixed the UI display when empty data in the [Moments] screen
 2. Font size will follow system settings again
 3. Update English and Portuguese translation
@@ -2053,6 +2041,7 @@ Optimization
 2. Added some new guide
 
 **1.82.4-alpha01/beta (2021/03/25)**
+
 1. Fixed rewards of loot boxes
 2. View feelings of selected tasks
 3. Exp/random coin rewards for custom achievement
@@ -2201,8 +2190,6 @@ Optimization
 
 1. Fix lots bugs of 1.75.0
 
-   
-
 **1.75.0（Released at 2020/09/16）**
 
 1. Gamify pomodoro timer
@@ -2211,13 +2198,9 @@ Optimization
 4. Hide modules settings
 5. Lots of improvements and fixes
 
-
-
 **1.74.2（Released at 2020/08/23）**
 
 1. Portuguese Language
-
-
 
 **1.74.0（Released at 2020/08/13）**
 
@@ -2227,8 +2210,6 @@ Optimization
 4. Improve animation and fixed some bugs
 5. Add hint for Repeat Frequency setting
 6. More.. (update description later)
-
-
 
 **1.73.0（Released at 2020/07/26）**
 
@@ -2319,7 +2300,7 @@ Optimization
 **Fixed:**
 
 - Fixed bug that achievement unlock date incorrectly showing
-- Fixed bug that shop item picture showing empty when the file deleted. 
+- Fixed bug that shop item picture showing empty when the file deleted.
 - Not clear the status of sub-tasks after single task become overdue.
 - Fixed bug that not enough space for Difficulty Degree to show in the Task Detail Page.
 - Fixed bug that after setting overdue task to finished, completed times of the next task not plus one.
@@ -2364,7 +2345,7 @@ Optimization
 
 **v1.70.6 (Released at 2020/03/09)**
 
-**Improvement:** 
+**Improvement:**
 
 - Make the Achievement unlocked Hint colors same as the theme color
 
@@ -2432,7 +2413,7 @@ Optimization
 
 **Improvements**：
 
-- Improve animations of task card 
+- Improve animations of task card
 
 - Remove an unneeded permission
 - Add complete sound
@@ -2452,23 +2433,32 @@ Optimization
 **v1.2.0 (2025/01/01)**
 
 **🚀Features**
+
 1. Support Archive Management
+
 - Backup to computer
 - Restore from computer
 - Support drag-and-drop
+
 2. Support Creating New Thoughts
+
 - Support image selection
 - Support image sync to mobile
+
 3. Support Task Details View
 4. Purchase System Improvements
+
 - Use new "Purchase Items" API
 - Keep purchase limits consistent with app
+
 5. Support Optional API Token Validation
 6. Multi-platform Support
+
 - Windows
 - Linux
 - macOS (Apple Silicon)
 - macOS (Intel) 🆕
+
 7. Improved error handling and notifications
 
 **v1.1.1 (2023/08/29)**
@@ -2511,17 +2501,23 @@ Optimization
 **v2.0.0 (2025/01/01)**
 
 **🚀Features**
+
 1. Service Optimization
+
 - Enhanced service discovery logic and compatibility
 - More devices support automatic IP detection
 - Optimized service start/pause state transitions
 - Improved error handling and notifications
+
 2. Security & Performance
+
 - Added optional API Token validation
 - Added CORS configuration options
 - Support custom port settings
 - Support custom wake lock duration
+
 3. UI Enhancement
+
 - Brand new interface design
 - Improved overall visual experience
 
