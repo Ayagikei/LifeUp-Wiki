@@ -5,6 +5,12 @@ on:
     workflows: ["OpenCC Docs"]
     types: [completed]
   workflow_dispatch:
+    inputs:
+      full_upload:
+        description: "Upload all files under docs/ once (overwrite existing keys)"
+        required: false
+        type: boolean
+        default: false
 
 jobs:
   upload:
@@ -22,6 +28,7 @@ jobs:
           QINIU_ACCESS_KEY: ${{ secrets.QINIU_ACCESS_KEY }}
           QINIU_SECRET_KEY: ${{ secrets.QINIU_SECRET_KEY }}
           QINIU_BUCKET_NAME: ${{ secrets.QINIU_BUCKET_NAME }}
+          QINIU_FULL_UPLOAD: ${{ github.event.inputs.full_upload }}
         run: kotlinc -script publish_to_qiniu.main.kts
 
       - name: "add & commit"
