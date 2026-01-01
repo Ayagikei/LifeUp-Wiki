@@ -8,7 +8,7 @@
 
 | Platform          | Version                | Update Date                 |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.101.3               | 2025/12/14                  |
+| LifeUp-Android    | v1.101.4               | 2025/12/30                  |
 | LifeUp-iOS        | check [feature/ulives] | 🎉Alternative app available |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
 | LifeUp Cloud(SDK) | v1.3.0                 | 2025/01/01                  |
@@ -18,6 +18,17 @@
 <!-- tabs:start -->
 
 ### **LifeUp-Android**
+
+**v1.101.4 (2025/12/30)**
+
+**♻️ Optimization**
+
+1. **Optimized member update detection logic**: Prompting members to switch to the "Member Stable Channel" for updates to ensure the most stable functional experience.
+2. **Reduced unnecessary network requests**: Further saving user data and reducing server costs.
+
+**🐛 Bug Fixes**
+
+1. **Fixed achievement progress update issue (Priority)**: Fixed a bug where achievement progress failed to trigger correctly upon completing Pomodoro records.
 
 **v1.101.3 (2025/12/14)**
 
