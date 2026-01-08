@@ -8,7 +8,7 @@
 
 | Platform          | Version                | Update Date                 |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.101.4               | 2025/12/30                  |
+| LifeUp-Android    | v1.101.5               | 2026/01/08                  |
 | LifeUp-iOS        | check [feature/ulives] | 🎉Alternative app available |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
 | LifeUp Cloud(SDK) | v1.3.0                 | 2025/01/01                  |
@@ -18,6 +18,22 @@
 <!-- tabs:start -->
 
 ### **LifeUp-Android**
+
+**v1.101.5 (2026/01/08)**
+
+**♻️ Optimization**
+
+1. **Optimized system dark mode switching**: Fixed issues where the app might fail to automatically switch themes along with the system settings.
+2. **Optimized attribute selection for rewards**: Improved handling for cases where no attribute is selected in "Persistence Rewards," "Step Rewards," and "Like Rewards." Supported deselecting attributes and fixed issues where experience rewards were not correctly granted.
+3. **Performance configuration optimization**: Optimized internal configurations to potentially improve app performance.
+
+**🐛 Bug Fixes**
+
+1. **Fixed statistics queries and chart display**: Corrected query conditions for task completion time statistics and resolved issues with inaccurate chart data display.
+2. **Fixed widget settings dialog interaction**: Fixed a bug where the "Confirm" button was missing in the widget task filter settings dialog.
+3. **Fixed task count synchronization**: Fixed an issue where the task count on the home screen did not refresh correctly after being updated from the task details page.
+4. **Fixed Feelings API item-use handling**: Fixed incorrect handling of "Item Use" types in the Feelings API.
+5. **Fixed calendar-to-detail navigation**: Resolved several issues when navigating from the calendar view to task details.
 
 **v1.101.4 (2025/12/30)**
 
