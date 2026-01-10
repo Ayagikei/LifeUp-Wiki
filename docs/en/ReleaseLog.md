@@ -8,7 +8,7 @@
 
 | Platform          | Version                | Update Date                 |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.101.5               | 2026/01/08                  |
+| LifeUp-Android    | v1.101.6               | 2026/01/10                  |
 | LifeUp-iOS        | check [feature/ulives] | 🎉Alternative app available |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
 | LifeUp Cloud(SDK) | v1.3.0                 | 2025/01/01                  |
@@ -18,6 +18,12 @@
 <!-- tabs:start -->
 
 ### **LifeUp-Android**
+
+**v1.101.6 (2026/01/10)**
+
+**🐛 Bug Fixes**
+
+1. **Fixed anomalies related to system dark mode switching**.
 
 **v1.101.5 (2026/01/08)**
 
