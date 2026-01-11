@@ -8,7 +8,7 @@
 
 | Platform          | Version                | Update Date                 |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.101.6               | 2026/01/10                  |
+| LifeUp-Android    | v1.101.7               | 2026/01/11                  |
 | LifeUp-iOS        | check [feature/ulives] | 🎉Alternative app available |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
 | LifeUp Cloud(SDK) | v1.3.0                 | 2025/01/01                  |
@@ -18,6 +18,12 @@
 <!-- tabs:start -->
 
 ### **LifeUp-Android**
+
+**v1.101.7 (2026/01/11)**
+
+**🐛 Bug Fixes**
+
+1. **Fixed an issue that could cause Pomodoro timer duration to be abnormally shortened**.
 
 **v1.101.6 (2026/01/10)**
 
