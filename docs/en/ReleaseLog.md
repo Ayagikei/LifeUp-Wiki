@@ -8,7 +8,7 @@
 
 | Platform          | Version                | Update Date                 |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.101.7               | 2026/01/11                  |
+| LifeUp-Android    | v1.101.8               | 2026/01/12                  |
 | LifeUp-iOS        | check [feature/ulives] | 🎉Alternative app available |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
 | LifeUp Cloud(SDK) | v1.3.0                 | 2025/01/01                  |
@@ -18,6 +18,13 @@
 <!-- tabs:start -->
 
 ### **LifeUp-Android**
+
+**v1.101.8 (2026/01/12)**
+
+**🐛 Bug Fixes**
+
+1. **Fixed recurrence end condition settings**: Resolved an issue where the end condition could not be set for "Every 2 days" or custom "Every N days" frequencies.
+2. **Fixed abnormal Pomodoro timer duration**: Fixed an issue where the timer could run significantly longer than expected due to system sleep or process freezing when battery optimization was not properly disabled.
 
 **v1.101.7 (2026/01/11)**
 
