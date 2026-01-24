@@ -4,11 +4,11 @@
 
 ?> In the v1.90 version, `LifeUp` has opened a variety of functional interfaces, and any external application integration is welcome. <br/>It also provides the “URL” effect for shop items, and users can directly use commodities to call external applications or the interface of `LifeUp`. <br/>These features can give your `LifeUp` unlimited possibilities, but it also requires a little learning understanding and hands-on ability.
 
-**Last updated: 2026/01/12**
+**Last updated: 2026/01/21**
 
-The API parameters and definitions in this document are based on version **v1.101.5**.
+The API parameters and definitions in this document are based on version **v1.102.0**.
 
-Please ensure that your application has been updated to **v1.101.5** before using the API.
+Please ensure that your application has been updated to **v1.102.0** before using the latest API.
 
 The update is rolling out gradually through Google Play, and if you haven't received it yet, please be patient and it will arrive soon.
 
@@ -311,18 +311,27 @@ A JSON array specifying item rewards, each item containing an ID and quantity.
 
 #### Effect Type Description
 
+?> Types 10-16 are supported from v1.102.0+.
+
 | Type Code | Meaning | Parameter Description |
 | ------- | ---- | ------- |
 | 0 | No special effect | No parameters |
 | 1 | Not usable | No parameters |
-| 2 | Increase gold | min: Minimum gold amount<br/>max: Maximum gold amount (optional, if not filled, it equals min) |
-| 3 | Decrease gold | min: Minimum gold amount<br/>max: Maximum gold amount (optional, if not filled, it equals min) |
-| 4 | Increase experience | ids: Skill ID array<br/>value: Experience value<br/>using_limit: Whether to use limit (optional, default false) |
-| 5 | Decrease experience | ids: Skill ID array<br/>value: Experience value<br/>using_limit: Whether to use limit (optional, default false) |
+| 2 | Add coins | min: Minimum coins<br/>max: Maximum coins (optional, defaults to min)<br/>using_limit: Whether to apply system limits (optional) |
+| 3 | Remove coins | min: Minimum coins<br/>max: Maximum coins (optional, defaults to min)<br/>using_limit: Whether to apply system limits (optional) |
+| 4 | Add experience | ids: Skill ID array<br/>value: Experience value (legacy, same as min)<br/>min: Minimum experience (optional, if value is not provided)<br/>max: Maximum experience (optional, defaults to min/value)<br/>using_limit: Whether to use limit (optional, default false) |
+| 5 | Remove experience | ids: Skill ID array<br/>value: Experience value (legacy, same as min)<br/>min: Minimum experience (optional, if value is not provided)<br/>max: Maximum experience (optional, defaults to min/value)<br/>using_limit: Whether to use limit (optional, default false) |
 | 6 | Simple synthesis | require_number: Required quantity<br/>item_id: Item ID |
 | 7 | Open box | items: Item array, each item contains:<br/>- item_id: Item ID<br/>- amount: Quantity<br/>- probability: Probability<br/>- is_fixed_reward: Whether it is a fixed reward |
 | 8 | Countdown | seconds: Countdown seconds |
 | 9 | Web link | url: Link address<br/>use_web_view: Whether to use the built-in browser (optional, default false) |
+| 10 | Record feeling | No parameters |
+| 11 | Change coins (increase or decrease) | min: Minimum coins (can be negative)<br/>max: Maximum coins (optional, defaults to min)<br/>using_limit: Whether to apply system limits (optional) |
+| 12 | Change experience (increase or decrease) | ids: Skill ID array<br/>value: Experience value (legacy, same as min)<br/>min: Minimum experience (can be negative)<br/>max: Maximum experience (optional, defaults to min/value)<br/>using_limit: Whether to use limit (optional, default false) |
+| 13 | Add item stock | item_id: Target item ID<br/>min: Minimum stock change<br/>max: Maximum stock change (optional, defaults to min)<br/>using_limit: Whether to apply stock limits (optional) |
+| 14 | Remove item stock | item_id: Target item ID<br/>min: Minimum stock change<br/>max: Maximum stock change (optional, defaults to min)<br/>using_limit: Whether to apply stock limits (optional) |
+| 15 | Change item stock (increase or decrease) | item_id: Target item ID<br/>min: Minimum stock change (can be negative)<br/>max: Maximum stock change (optional, defaults to min)<br/>using_limit: Whether to apply stock limits (optional) |
+| 16 | Play sound | file_name: Local sound file name (preferred)<br/>uri: Sound URI to import (alternative to file_name)<br/>display_name: Display name (optional) |
 
 **Effect Example:**
 
@@ -347,6 +356,43 @@ Increase experience points:
         "ids": [1, 2],
         "value": 50,
         "using_limit": false
+    }
+}
+```
+
+Change coins (random +/-):
+
+```json
+{
+    "type": 11,
+    "info": {
+        "min": -10,
+        "max": 20
+    }
+}
+```
+
+Change item stock (random +/-):
+
+```json
+{
+    "type": 15,
+    "info": {
+        "item_id": 1,
+        "min": -3,
+        "max": 5
+    }
+}
+```
+
+Play sound:
+
+```json
+{
+    "type": 16,
+    "info": {
+        "display_name": "API test sound",
+        "uri": "android.resource://net.sarasarasa.lifeup/raw/bellringing"
     }
 }
 ```
@@ -526,9 +572,14 @@ Open box effect:
 | item_name        | Item name           | any text            | Treasure   | No*      | Either item_id or item_name required |
 | item_amount      | Item quantity       | [1, 99]             | 1          | No       | Defaults to 1                  |
 | items            | Item rewards        | JSON text           | See [Item Rewards Structure](#1-item-rewards-structure) | No | Set multiple item rewards |
-| task_type        | Task type           | [0, 3]              | 0          | No       | Requires v1.99.1<br/>0 - Normal task<br/>1 - Count task<br/>2 - Negative task<br/>3 - API task |
+| task_type        | Task type           | [0, 4]              | 0          | No       | Requires v1.99.1<br/>0 - Normal task<br/>1 - Count task<br/>2 - Negative task<br/>3 - API task<br/>4 - Timed task (v1.102.0+) |
 | target_times     | Target times        | number > 0          | 1          | No       | Only valid when task_type is 1 (count task) |
 | is_affect_shop_reward | Affect shop reward | true/false      | false    | No       | Only valid when task_type is 1 (count task), whether to affect the reward calculation of items |
+| expected_focus_minutes | Expected focus minutes | number > 0 | 25 | No | Only valid when task_type is 4 (timed task); defaults to 25 (v1.102.0+) |
+| repeat_end_mode | Repeat end mode | 0 or 1 | 0 | No | Only valid for repeating tasks (frequency is not 0 / -1)<br/>0 - End by count<br/>1 - End by date (v1.102.0+) |
+| repeat_target_times | Repeat end count | number > 0 | 3 | No | Used when repeat_end_mode=0 (or inferred by presence of this field); do not confuse with target_times (v1.102.0+) |
+| repeat_end_date | Repeat end date | timestamp (milliseconds) | 1640995200000 | No | Used when repeat_end_mode=1 (or inferred by presence of this field) (v1.102.0+) |
+| repeat_end_behavior | Repeat end behavior | 0 or 1 | 0 | No | 0 - Terminate task after reaching end condition<br/>1 - Freeze task after reaching end condition (v1.102.0+) |
 
 **Response:**
 
@@ -573,6 +624,7 @@ The method of obtaining the id is to open the "Developer Mode" on the "Labs" pag
 **Notice:**
 
 1. In order to be able to match the task, one of id, gid, and name must be provided.
+2. Timed tasks cannot be completed manually via this API (v1.102.0+).
 
 <br/>
 
@@ -718,9 +770,13 @@ The method of obtaining the id is to open the "Developer Mode" on the "Labs" pag
 | write_feelings     | Enable feelings      | true or false        | false     | No       |                                |
 | pin                | Pin task             | true or false        | false     | No       |                                |
 | words              | Completion reward text | any text           | Great job!| No       | Motivational text shown when task is completed |
-| task_type        | Task type           | [0, 3]              | 0          | No       | Requires v1.99.1<br/>0 - Normal task<br/>1 - Count task<br/>2 - Negative task<br/>3 - API task |
+| task_type        | Task type           | [0, 4]              | 0          | No       | Requires v1.99.1<br/>0 - Normal task<br/>1 - Count task<br/>2 - Negative task<br/>3 - API task<br/>4 - Timed task (v1.102.0+) |
 | target_times     | Target times        | number > 0          | 1          | No       | Only valid when task_type is 1 (count task) |
 | is_affect_shop_reward | Affect shop reward | true/false      | false    | No       | Only valid when task_type is 1 (count task), whether to affect the reward calculation of items |
+| expected_focus_minutes | Expected focus minutes | number > 0 | 25 | No | Only valid when task_type is 4 (timed task); defaults to 25 (v1.102.0+) |
+| repeat_target_times | Repeat end count | number > 0 | 3 | No | Only valid for repeating tasks (frequency is not 0 / -1); when both repeat_target_times and repeat_end_date are provided, repeat_target_times takes priority (v1.102.0+) |
+| repeat_end_date | Repeat end date | timestamp (milliseconds) | 1640995200000 | No | Only valid for repeating tasks (frequency is not 0 / -1) (v1.102.0+) |
+| repeat_end_behavior | Repeat end behavior | 0 or 1 | 0 | No | 0 - Terminate task after reaching end condition<br/>1 - Freeze task after reaching end condition (v1.102.0+) |
 | coin_set_type     | How to set coin value | One of:<br/>absolute<br/>relative | absolute | No | absolute - directly set coin to value<br/>relative - add/subtract from original coin value |
 | exp_set_type      | How to set exp value | One of:<br/>absolute<br/>relative | absolute | No | absolute - directly set exp to value<br/>relative - add/subtract from original exp value |
 
@@ -730,6 +786,70 @@ The method of obtaining the id is to open the "Developer Mode" on the "Labs" pag
 | --------- | ------- | ---------------- | ------- | ---------------- |
 | task_id   | Number  | Task ID          | 1000    |                  |
 | task_gid  | Number  | Task group ID    | 1000    |                  |
+
+<br/>
+
+### Task Templates
+
+?> Introduced in v1.102.0+
+
+**Method name:** task_template
+
+**Description:** CRUD for task templates.
+
+**Examples:**
+
+- List templates: `lifeup://api/task_template?method=list`
+- Create from parameters: `lifeup://api/task_template?method=create&name=MyTemplate&todo=Write diary&frequency=0`
+- Create from an existing task: `lifeup://api/task_template?method=create&name=MyTemplate&from_task_id=1`
+- Get template: `lifeup://api/task_template?method=get&id=1`
+- Update template name: `lifeup://api/task_template?method=update&id=1&name=NewName`
+- Update template content from a task: `lifeup://api/task_template?method=update&id=1&from_task_id=1`
+- Delete template: `lifeup://api/task_template?method=delete&id=1`
+
+| Parameter | Meaning | Value | Example | Required | Notes |
+| --------- | ------- | ----- | ------- | -------- | ----- |
+| method | Operation | list / get / create / update / delete | list | Yes | - |
+| id | Template id | number > 0 | 1 | No* | Required for get/update/delete; alias: template_id |
+| template_id | Template id | number > 0 | 1 | No* | Alias of id |
+| name | Template name | text | MyTemplate | No* | Required for create; required for update if not using from_task_id/from_task_gid |
+| from_task_id | Build from task id | number > 0 | 1 | No | For create/update |
+| from_task_gid | Build from task group id | number > 0 | 1 | No | For create/update |
+| todo | Task content | text | Write diary | No* | Required for create when not using from_task_id/from_task_gid |
+| notes | Notes | text | Notes | No | Default is empty |
+| category | List ID | number >= 0 | 0 | No | Alias: category_id |
+| category_id | List ID | number >= 0 | 0 | No | Alias of category |
+| frequency | Repeat frequency | integer | 0 | No | Same as add_task |
+| importance | Importance level | [1, 4] | 1 | No | - |
+| difficulty | Difficulty level | [1, 4] | 1 | No | - |
+| coin | Coin reward | number | 10 | No | - |
+| coin_var | Coin reward variance | number | 1 | No | - |
+| exp | Experience reward | number | 100 | No | - |
+| skills | Skill IDs | array params | 1 | No | Supports arrays (e.g., &skills=1&skills=2) |
+| skill_ids | Skill IDs | JSON array or comma list | [1,2] | No | Alternative to skills |
+| deadline | Due time | timestamp (milliseconds) | 1640995200000 | No | - |
+| start_time | Start time | timestamp (milliseconds) | 1640995200000 | No | - |
+| remind_time | Reminder time | timestamp (milliseconds) | 1640995200000 | No | - |
+| words | Completion reward text | text | Great job! | No | - |
+| task_type | Task type | [0, 4] | 0 | No | 0 - Normal<br/>1 - Count<br/>2 - Negative<br/>3 - API<br/>4 - Timed |
+| target_times | Target times | number > 0 | 10 | No | Only valid when task_type is 1 (count task) |
+| is_affect_shop_reward | Affect shop reward | true / false | false | No | Only valid when task_type is 1 (count task) |
+| expected_focus_minutes | Expected focus minutes | number > 0 | 25 | No | Only valid when task_type is 4 (timed task) |
+| repeat_end_mode | Repeat end mode | 0 or 1 | 0 | No | Only valid for repeating tasks (frequency is not 0 / -1)<br/>0 - End by count<br/>1 - End by date |
+| repeat_target_times | Repeat end count | number > 0 | 3 | No | Used when repeat_end_mode=0 (or inferred by presence of this field) |
+| repeat_end_date | Repeat end date | timestamp (milliseconds) | 1640995200000 | No | Used when repeat_end_mode=1 (or inferred by presence of this field) |
+| repeat_end_behavior | Repeat end behavior | 0 or 1 | 0 | No | 0 - Terminate<br/>1 - Freeze |
+
+**Return:**
+
+| Field | Meaning | Type | Notes |
+| ----- | ------- | ---- | ----- |
+| templates | templates list (JSON string) | text | Only for method=list |
+| count | templates count | number | Only for method=list |
+| template | template detail (JSON string) | text | Only for method=get |
+| id | template id | number | For get/create/update/delete |
+| name | template name | text | For get/create/update |
+| success | whether success | true / false | For create/update/delete |
 
 <br/>
 
@@ -871,6 +991,16 @@ For example, jump to synthesis category page with id 1: `lifeup://api/goto?page=
 | ------------ | --------------- | ------------- | ------- | -------- | ------ |
 | category_id  | Synthesis category id | Synthesis category id | 1       | No       |        |
 
+You can also open synthesis page with a filter (v1.102.0+):
+
+For example, filter by product item id 1: `lifeup://api/goto?page=synthesis&filter_type=product&filter_item_id=1&filter_item_name=Gem`
+
+| Parameter        | Meaning           | Value | Example | Required | Notes |
+| --------------- | ----------------- | ----- | ------- | -------- | ----- |
+| filter_type     | Filter type       | product / ingredient / related | product | No* | Requires filter_item_id |
+| filter_item_id  | Filter item id    | number > 0 | 1 | No* | Requires filter_type |
+| filter_item_name| Filter item name  | text | Gem | No | Optional, used for display |
+
 ### Shop
 
 #### Adding Items
@@ -1003,7 +1133,7 @@ For example, jump to synthesis category page with id 1: `lifeup://api/goto?page=
 
 | Parameter | Meaning            | Type     | Example          | Required | Notes                                                        |
 | --------- | ------------------ | -------- | ---------------- | -------- | ------------------------------------------------------------ |
-| result    | Result code        | a number | 0                | Yes      | 0 - Successful usage<br/>1 - Database exception<br/>2 - Insufficient experience points restriction<br/>3 - Item not found<br/>4 - Running countdown conflict<br/>5 - Insufficient inventory |
+| result    | Result code        | a number | 0                | Yes      | 0 - Successful usage<br/>1 - Database exception<br/>2 - Insufficient experience points restriction<br/>3 - Item not found<br/>4 - Running countdown conflict<br/>5 - Insufficient inventory<br/>6 - Unusable item<br/>7 - Coin limit<br/>8 - Target stock limit |
 | desc      | Result description | Text     | RunningCountDown | Yes      |                                                              |
 
 <br/>

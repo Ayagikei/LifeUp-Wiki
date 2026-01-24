@@ -4,11 +4,11 @@
 
 ?> 在 v1.90 版本中，`人升`既开放了多种功能接口，欢迎任意外部应用联动。<br/>亦提供了商品的“链接”效果，用户可以直接使用商品来调用外部应用或者《人升》的接口。<br/>这可以使你的`人升`获得无限的可能性，但也需要你有一定的学习理解和动手能力。
 
-**2026/01/12**
+**2026/01/21**
 
-本文的 API 参数和定义基于 v1.101.5 版本编写。
+本文的 API 参数和定义基于 v1.102.0 版本编写。
 
-使用 API 前，建议将应用升级到 v1.101.5 版本，如果没法检测到更新，请切换更新渠道到【会员内测-尝鲜版】。
+使用 API 前，建议将应用升级到 v1.102.0 版本，如果没法检测到更新，请切换更新渠道到【会员内测-尝鲜版】。
 
 ## 场景示例
 
@@ -511,18 +511,27 @@ gid: 事项组id，针对同一个重复任务，其 gid 都不会发生变化�
 
 #### 效果类型说明
 
+?> v1.102.0+ 新增了 10-16 等效果类型，并增强了金币/经验值效果参数（支持 min/max 随机与正负变动等）。
+
 | 类型代码 | 含义 | 参数说明 |
 | ------- | ---- | ------- |
 | 0 | 无特殊效果 | 无需参数 |
 | 1 | 不可使用 | 无需参数 |
-| 2 | 增加金币 | min: 最小金币数<br/>max: 最大金币数（可选，不填则等于min） |
-| 3 | 减少金币 | min: 最小金币数<br/>max: 最大金币数（可选，不填则等于min） |
-| 4 | 增加经验值 | ids: 技能ID数组<br/>value: 经验值<br/>using_limit: 是否使用限制（可选，默认false） |
-| 5 | 减少经验值 | ids: 技能ID数组<br/>value: 经验值<br/>using_limit: 是否使用限制（可选，默认false） |
+| 2 | 增加金币 | min: 最小金币数<br/>max: 最大金币数（可选，不填则等于min）<br/>using_limit: 是否应用系统限制（可选） |
+| 3 | 减少金币 | min: 最小金币数<br/>max: 最大金币数（可选，不填则等于min）<br/>using_limit: 是否应用系统限制（可选） |
+| 4 | 增加经验值 | ids: 技能ID数组<br/>value: 经验值（旧写法，等同 min）<br/>min: 最小经验值（value 不存在时可用）<br/>max: 最大经验值（可选，不填则等于min/value）<br/>using_limit: 是否使用限制（可选，默认false） |
+| 5 | 减少经验值 | ids: 技能ID数组<br/>value: 经验值（旧写法，等同 min）<br/>min: 最小经验值（value 不存在时可用）<br/>max: 最大经验值（可选，不填则等于min/value）<br/>using_limit: 是否使用限制（可选，默认false） |
 | 6 | 简易合成 | require_number: 需求数量<br/>item_id: 物品ID |
 | 7 | 开箱 | items: 物品数组，每个物品包含：<br/>- item_id: 物品ID<br/>- amount: 数量<br/>- probability: 概率<br/>- is_fixed_reward: 是否固定奖励 |
 | 8 | 倒计时 | seconds: 倒计时秒数 |
 | 9 | 网页链接 | url: 链接地址<br/>use_web_view: 是否使用内置浏览器（可选，默认false） |
+| 10 | 记录感想 | 无需参数 |
+| 11 | 变动金币（可增可减） | min: 最小金币数（可为负）<br/>max: 最大金币数（可选，不填则等于min）<br/>using_limit: 是否应用系统限制（可选） |
+| 12 | 变动经验值（可增可减） | ids: 技能ID数组<br/>value: 经验值（旧写法，等同 min）<br/>min: 最小经验值（可为负）<br/>max: 最大经验值（可选，不填则等于min/value）<br/>using_limit: 是否使用限制（可选，默认false） |
+| 13 | 增加物品库存 | item_id: 目标物品ID<br/>min: 最小库存变动<br/>max: 最大库存变动（可选，不填则等于min）<br/>using_limit: 是否应用库存限制（可选） |
+| 14 | 减少物品库存 | item_id: 目标物品ID<br/>min: 最小库存变动<br/>max: 最大库存变动（可选，不填则等于min）<br/>using_limit: 是否应用库存限制（可选） |
+| 15 | 变动物品库存（可增可减） | item_id: 目标物品ID<br/>min: 最小库存变动（可为负）<br/>max: 最大库存变动（可选，不填则等于min）<br/>using_limit: 是否应用库存限制（可选） |
+| 16 | 播放音效 | file_name: 本地音效文件名（优先）<br/>uri: 导入音效的 Uri（可替代 file_name）<br/>display_name: 显示名称（可选） |
 
 **效果示例：**
 
@@ -547,6 +556,43 @@ gid: 事项组id，针对同一个重复任务，其 gid 都不会发生变化�
         "ids": [1, 2],
         "value": 50,
         "using_limit": false
+    }
+}
+```
+
+随机增减金币：
+
+```json
+{
+    "type": 11,
+    "info": {
+        "min": -10,
+        "max": 20
+    }
+}
+```
+
+随机增减目标物品库存：
+
+```json
+{
+    "type": 15,
+    "info": {
+        "item_id": 1,
+        "min": -3,
+        "max": 5
+    }
+}
+```
+
+播放音效：
+
+```json
+{
+    "type": 16,
+    "info": {
+        "display_name": "API测试音效",
+        "uri": "android.resource://net.sarasarasa.lifeup/raw/bellringing"
     }
 }
 ```
@@ -728,9 +774,14 @@ gid: 事项组id，针对同一个重复任务，其 gid 都不会发生变化�
 | item_name       | 物品名称       | 任意文本           | 宝箱      | 否*      | 与 item_id 必须提供其中一个     |
 | item_amount     | 物品数量       | [1, 99]           | 1         | 否       | 默认为 1                       |
 | items           | 物品奖励       | JSON文本           | 参见[物品奖励结构](#1-物品奖励结构) | 否 | 可一次性设置多个物品奖励 |
-| task_type       | 任务类型       | [0, 3]            | 0         | 否       | 需v1.99.1, 0 - 普通任务<br/>1 - 计数任务<br/>2 - 负面任务<br/>3 - API任务 |
+| task_type       | 任务类型       | [0, 4]            | 0         | 否       | 需v1.99.1, 0 - 普通任务<br/>1 - 计数任务<br/>2 - 负面任务<br/>3 - API任务<br/>4 - 计时任务（v1.102.0+） |
 | target_times    | 目标次数       | 大于0的整数        | 1         | 否       | 仅当 task_type 为1(计数任务)时有效 |
 | is_affect_shop_reward | 是否影响商店奖励 | true/false      | false    | 否       | 当 task_type 为1(计数任务)时有效，是否影响商品的奖励计算         |
+| expected_focus_minutes | 预期专注分钟数 | 大于 0 的整数 | 25 | 否 | 仅当 task_type 为4(计时任务)时有效；默认 25（v1.102.0+） |
+| repeat_end_mode | 重复结束模式 | 0 或 1 | 0 | 否 | 仅对重复任务有效（frequency 非 0 / -1）<br/>0 - 按次数结束<br/>1 - 按日期结束（v1.102.0+） |
+| repeat_target_times | 重复结束次数 | 大于 0 的整数 | 3 | 否 | repeat_end_mode=0 时使用（或通过该字段自动推断）；注意不要与 target_times（计数任务目标次数）混淆（v1.102.0+） |
+| repeat_end_date | 重复结束日期 | 时间戳（毫秒） | 1640995200000 | 否 | repeat_end_mode=1 时使用（或通过该字段自动推断）（v1.102.0+） |
+| repeat_end_behavior | 重复结束后的行为 | 0 或 1 | 0 | 否 | 0 - 终止任务<br/>1 - 冻结任务（v1.102.0+） |
 
 **返回数据：**
 
@@ -776,6 +827,7 @@ id 的获取方法为「实验」页面打开「开发者模式」，然后在�
 **注意：**
 
 1. 为了能够匹配到任务，id、gid、name 必须提供其一。
+2. 计时任务不支持通过该接口手动完成（v1.102.0+）。
 
 <br/>
 
@@ -923,9 +975,13 @@ id 的获取方法为「实验」页面打开「开发者模式」，然后在�
 | write_feelings     | 是否启用感想   | true 或者 false    | false    | 否       |                               |
 | pin                | 是否置顶       | true 或者 false    | false    | 否       |                               |
 | words              | 完成激励语     | 任意文本           | 太棒了！  | 否       | 任务完成时显示的激励文本       |
-| task_type       | 任务类型       | [0, 3]            | 0         | 否       | 需v1.99.1, 0 - 普通任务<br/>1 - 计数任务<br/>2 - 负面任务<br/>3 - API任务 |
+| task_type       | 任务类型       | [0, 4]            | 0         | 否       | 需v1.99.1, 0 - 普通任务<br/>1 - 计数任务<br/>2 - 负面任务<br/>3 - API任务<br/>4 - 计时任务（v1.102.0+） |
 | target_times    | 目标次数       | 大于0的整数        | 1         | 否       | 仅当 task_type 为1(计数任务)时有效 |
 | is_affect_shop_reward | 是否影响商店奖励 | true/false      | false    | 否       | 当 task_type 为1(计数任务)时有效，是否影响商品的奖励计算         |
+| expected_focus_minutes | 预期专注分钟数 | 大于 0 的整数 | 25 | 否 | 仅当 task_type 为4(计时任务)时有效；默认 25（v1.102.0+） |
+| repeat_target_times | 重复结束次数 | 大于 0 的整数 | 3 | 否 | 仅对重复任务有效（frequency 非 0 / -1）；当 repeat_target_times 与 repeat_end_date 同时提供时，repeat_target_times 优先生效（v1.102.0+） |
+| repeat_end_date | 重复结束日期 | 时间戳（毫秒） | 1640995200000 | 否 | 仅对重复任务有效（frequency 非 0 / -1）（v1.102.0+） |
+| repeat_end_behavior | 重复结束后的行为 | 0 或 1 | 0 | 否 | 0 - 终止任务<br/>1 - 冻结任务（v1.102.0+） |
 | coin_set_type     | 如何设置金币值 | One of:<br/>absolute<br/>relative | absolute | 否 | absolute - 直接设置金币为 value<br/>relative - 在原金币值的基础上增加或减少 |
 | exp_set_type      | 如何设置经验值 | One of:<br/>absolute<br/>relative | absolute | 否 | absolute - 直接设置经验值为 value<br/>relative - 在原经验值的基础上增加或减少 |
 
@@ -935,6 +991,70 @@ id 的获取方法为「实验」页面打开「开发者模式」，然后在�
 | --------- | ------ | ---------- | ---- | ---------------- |
 | task_id   | 数字   | 任务ID     | 1000 |                  |
 | task_gid  | 数字   | 任务组ID   | 1000 |                  |
+
+<br/>
+
+### 任务模板
+
+?> 需要 v1.102.0+
+
+**方法名：**task_template
+
+**说明：**任务模板的 CRUD（列出/获取/创建/更新/删除）。
+
+**示例：**
+
+- 列出模板：`lifeup://api/task_template?method=list`
+- 创建（直接指定模板参数）：`lifeup://api/task_template?method=create&name=我的模板&todo=模板任务&frequency=0`
+- 创建（从已有任务生成）：`lifeup://api/task_template?method=create&name=我的模板&from_task_id=1`
+- 获取模板：`lifeup://api/task_template?method=get&id=1`
+- 更新模板名称：`lifeup://api/task_template?method=update&id=1&name=新名称`
+- 从任务更新模板内容：`lifeup://api/task_template?method=update&id=1&from_task_id=1`
+- 删除模板：`lifeup://api/task_template?method=delete&id=1`
+
+| 参数 | 含义 | 取值 | 示例 | 是否必须 | 备注 |
+| ---- | ---- | ---- | ---- | -------- | ---- |
+| method | 操作 | list / get / create / update / delete | list | 是 | - |
+| id | 模板ID | 大于 0 的数字 | 1 | 否* | get/update/delete 必填；别名：template_id |
+| template_id | 模板ID | 大于 0 的数字 | 1 | 否* | id 的别名 |
+| name | 模板名称 | 任意文本 | 我的模板 | 否* | create 必填；update 时如果不传 from_task_id/from_task_gid 则必填 |
+| from_task_id | 从任务生成/更新 | 大于 0 的数字 | 1 | 否 | 用于 create/update |
+| from_task_gid | 从任务组生成/更新 | 大于 0 的数字 | 1 | 否 | 用于 create/update |
+| todo | 模板任务内容 | 任意文本 | 写日记 | 否* | create 且不传 from_task_id/from_task_gid 时必填 |
+| notes | 模板备注 | 任意文本 | 备注 | 否 | 默认为空 |
+| category | 清单ID | 大于等于 0 的数字 | 0 | 否 | 别名：category_id |
+| category_id | 清单ID | 大于等于 0 的数字 | 0 | 否 | category 的别名 |
+| frequency | 重复频次 | 整数 | 0 | 否 | 与 add_task 的 frequency 含义一致 |
+| importance | 重要程度 | [1, 4] | 1 | 否 | - |
+| difficulty | 困难程度 | [1, 4] | 1 | 否 | - |
+| coin | 金币奖励 | 数字 | 10 | 否 | - |
+| coin_var | 金币奖励浮动值 | 数字 | 1 | 否 | - |
+| exp | 经验值奖励 | 数字 | 100 | 否 | - |
+| skills | 技能ID | 多参数数组 | 1 | 否 | 支持数组（如 &skills=1&skills=2） |
+| skill_ids | 技能ID | JSON数组或逗号分隔 | [1,2] | 否 | skills 的替代写法 |
+| deadline | 截止时间 | 时间戳（毫秒） | 1640995200000 | 否 | - |
+| start_time | 开始时间 | 时间戳（毫秒） | 1640995200000 | 否 | - |
+| remind_time | 提醒时间 | 时间戳（毫秒） | 1640995200000 | 否 | - |
+| words | 完成激励语 | 任意文本 | 太棒了！ | 否 | - |
+| task_type | 任务类型 | [0, 4] | 0 | 否 | 0 - 普通任务<br/>1 - 计数任务<br/>2 - 负面任务<br/>3 - API任务<br/>4 - 计时任务 |
+| target_times | 目标次数 | 大于 0 的整数 | 10 | 否 | 仅当 task_type 为 1(计数任务)时有效 |
+| is_affect_shop_reward | 是否影响商店奖励 | true/false | false | 否 | 仅当 task_type 为 1(计数任务)时有效 |
+| expected_focus_minutes | 预期专注分钟数 | 大于 0 的整数 | 25 | 否 | 仅当 task_type 为 4(计时任务)时有效 |
+| repeat_end_mode | 重复结束模式 | 0 或 1 | 0 | 否 | 仅对重复任务有效（frequency 非 0 / -1）<br/>0 - 按次数结束<br/>1 - 按日期结束 |
+| repeat_target_times | 重复结束次数 | 大于 0 的整数 | 3 | 否 | repeat_end_mode=0 时使用（或通过该字段自动推断） |
+| repeat_end_date | 重复结束日期 | 时间戳（毫秒） | 1640995200000 | 否 | repeat_end_mode=1 时使用（或通过该字段自动推断） |
+| repeat_end_behavior | 重复结束后的行为 | 0 或 1 | 0 | 否 | 0 - 终止任务<br/>1 - 冻结任务 |
+
+**返回值：**
+
+| 字段 | 含义 | 类型 | 备注 |
+| ---- | ---- | ---- | ---- |
+| templates | 模板列表（JSON字符串） | 文本 | 仅 method=list |
+| count | 模板数量 | 数字 | 仅 method=list |
+| template | 模板详情（JSON字符串） | 文本 | 仅 method=get |
+| id | 模板ID | 数字 | get/create/update/delete |
+| name | 模板名称 | 文本 | get/create/update |
+| success | 是否成功 | true/false | create/update/delete |
 
 <br/>
 
@@ -1074,6 +1194,16 @@ id 的获取方法为「实验」页面打开「开发者模式」，然后在�
 | --------- | -------- | -------- | ---- | -------- | ---------------------------------------------- |
 | category_id   | 合成清单id   | 合成清单id   | 1   | 否      |  |
 
+你还可以以筛选模式打开合成页（v1.102.0+）：
+
+示例如，筛选「产物=商品ID 1」：`lifeup://api/goto?page=synthesis&filter_type=product&filter_item_id=1&filter_item_name=示例商品`
+
+| 参数            | 含义       | 取值 | 示例 | 是否必须 | 备注 |
+| --------------- | ---------- | ---- | ---- | -------- | ---- |
+| filter_type     | 筛选类型   | product / ingredient / related | product | 否* | 需与 filter_item_id 搭配 |
+| filter_item_id  | 筛选物品ID | 大于 0 的数字 | 1 | 否* | 需与 filter_type 搭配 |
+| filter_item_name| 筛选物品名 | 任意文本 | 示例商品 | 否 | 可选，用于显示 |
+
 <br/>
 
 ### 商品
@@ -1208,7 +1338,7 @@ id 的获取方法为「实验」页面打开「开发者模式」，然后在�
 
 | 参数   | 含义     | 取值 | 示例             | 是否必须 | 备注                                                         |
 | ------ | -------- | ---- | ---------------- | -------- | ------------------------------------------------------------ |
-| result | 结果码   | 数字 | 0                | 是       | 0 - 使用成功<br/>1- 数据库异常<br/>2 - 经验值不足限制<br/>3 - 找不到商品<br/>4 - 运行倒计时冲突<br/>5 - 库存不足 |
+| result | 结果码   | 数字 | 0                | 是       | 0 - 使用成功<br/>1- 数据库异常<br/>2 - 经验值不足限制<br/>3 - 找不到商品<br/>4 - 运行倒计时冲突<br/>5 - 库存不足<br/>6 - 商品不可使用<br/>7 - 金币限制<br/>8 - 目标库存限制 |
 | desc   | 结果描述 | 文本 | RunningCountDown | 是       |                                                              |
 
 <br/>

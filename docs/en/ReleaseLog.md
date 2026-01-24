@@ -19,6 +19,35 @@
 
 ### **LifeUp-Android**
 
+**v1.102.0 (TBD)**
+
+**✨ Features**
+
+1. **Sound Manager**: Import, preview, delete, and reuse sound effects, and use them as item-use effects.
+2. **Shop: new item use effects**: Added random EXP, stock changes, sound playback, countdown, and improved the configuration flow.
+3. **Timed Tasks**: A new task type with an expected focus duration; complete the task after reaching the timer goal.
+4. **Week Start Day Options**: Choose Monday / Saturday / Sunday, and the calendar & statistics will follow.
+5. **Skip onboarding**: An option to skip the tutorial on first launch.
+6. **Emoji input for icons**: Enter an emoji (including combined emojis) to quickly create an icon.
+7. **Calendar: open future recurring task details**: Tapping a recurring task on a future date now opens its details correctly.
+8. **Widget task filter enhancements**: Added a "Fold tasks that have not started yet" filter to reduce clutter.
+9. **Power users: API enhancements**: The URL Scheme API adds/extends task template CRUD, recurrence end conditions, synthesis filter navigation, and more.
+
+**♻️ Optimization**
+
+1. **Performance & smoothness improvements**: Optimized data access and indexing strategies to make task lists, inventory history, and statistics smoother with large datasets.
+2. **Better item effect configuration UX**: Improved effect selection and display interactions, with refined dialogs and icon visuals.
+3. **Localization improvements**: Filled missing translations across multiple languages.
+
+**🐛 Bug Fixes**
+
+1. **Fixed countdown effect reset on edit**: Fixed an issue where confirming an edited countdown effect could reset the value to 1.
+2. **Improved missing sound file handling**: Added clearer prompts when a sound file is missing to avoid unexpected behavior when using items.
+3. **Fixed widget fold filter not working**: Fixed the smart-list widget filter "Fold tasks that have not started yet" not taking effect.
+4. **Fixed a rare crash**: Fixed a crash caused by saving too much state in certain situations.
+5. **Fixed calendar-to-detail navigation for future tasks**: Fixed failures when opening details for future recurring tasks from the calendar view.
+6. **Fixed issues with Ebbinghaus recurring tasks**: Fixed abnormal stages and unintended repeated generation in rare cases, with an upper-bound safeguard added.
+
 **v1.101.8 (2026/01/12)**
 
 **🐛 Bug Fixes**
