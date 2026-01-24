@@ -4,7 +4,6 @@
 
 | 專案 | 描述 | 作者 |
 | :--- | :--- | :--- |
-| [lifeup-mcp](https://github.com/derekprovance/lifeup-mcp) | 一個模型上下文協議（MCP）伺服器，允許大語言模型（如 Claude）透過 SDK 與人升進行互動。 | [@derekprovance](https://github.com/derekprovance) |
+| [lifeup-mcp](https://github.com/derekprovance/lifeup-mcp) | 一個模型上下文協議（MCP）伺服器，允許大語言模型（LLM）透過 SDK 與人升進行互動。 | [@derekprovance](https://github.com/derekprovance) |
 
-> [!TIP]
-> **開發了很酷的東西？** 如果你為人升開發了工具、指令碼或整合，請透過 GitHub Issues 或者郵件告知我們吧！
+?> **開發了很酷的東西？** 如果你為人升開發了工具、指令碼或整合，請透過 GitHub Issues 或者郵件告知我們吧！
