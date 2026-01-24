@@ -4,7 +4,6 @@
 
 | 项目 | 描述 | 作者 |
 | :--- | :--- | :--- |
-| [lifeup-mcp](https://github.com/derekprovance/lifeup-mcp) | 一个模型上下文协议（MCP）服务器，允许大语言模型（如 Claude）通过 SDK 与人升进行交互。 | [@derekprovance](https://github.com/derekprovance) |
+| [lifeup-mcp](https://github.com/derekprovance/lifeup-mcp) | 一个模型上下文协议（MCP）服务器，允许大语言模型（LLM）通过 SDK 与人升进行交互。 | [@derekprovance](https://github.com/derekprovance) |
 
-> [!TIP]
-> **开发了很酷的东西？** 如果你为人升开发了工具、脚本或集成，请通过 GitHub Issues 或者邮件告知我们吧！
+?> **开发了很酷的东西？** 如果你为人升开发了工具、脚本或集成，请通过 GitHub Issues 或者邮件告知我们吧！
