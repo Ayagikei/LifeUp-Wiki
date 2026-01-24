@@ -18,6 +18,7 @@
     - [📄API Lists](guide/api.md)
     - [☁️LifeUp Cloud](guide/api_cloud.md)
     - [🖥LifeUp Desktop](guide/api_desktop.md)
+    - [🤝 Community Contributions](guide/community_contributions.md)
   
 - What's new
   - [v1.98.0: API 2.0](feature/198.md)
