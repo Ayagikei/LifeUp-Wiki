@@ -4,11 +4,11 @@
 
 ?> 在 v1.90 版本中，`人升`既開放了多種功能介面，歡迎任意外部應用聯動。<br/>亦提供了商品的“連結”效果，使用者可以直接使用商品來呼叫外部應用或者《人升》的介面。<br/>這可以使你的`人升`獲得無限的可能性，但也需要你有一定的學習理解和動手能力。
 
-**2026/01/12**
+**2026/01/21**
 
-本文的 API 引數和定義基於 v1.101.5 版本編寫。
+本文的 API 引數和定義基於 v1.102.0 版本編寫。
 
-使用 API 前，建議將應用升級到 v1.101.5 版本，如果沒法檢測到更新，請切換更新渠道到【會員內測-嚐鮮版】。
+使用 API 前，建議將應用升級到 v1.102.0 版本，如果沒法檢測到更新，請切換更新渠道到【會員內測-嚐鮮版】。
 
 ## 場景示例
 
@@ -511,18 +511,27 @@ gid: 事項組id，針對同一個重複任務，其 gid 都不會發生變化�
 
 #### 效果型別說明
 
+?> v1.102.0+ 新增了 10-16 等效果型別，並增強了金幣/經驗值效果引數（支援 min/max 隨機與正負變動等）。
+
 | 型別程式碼 | 含義 | 引數說明 |
 | ------- | ---- | ------- |
 | 0 | 無特殊效果 | 無需引數 |
 | 1 | 不可使用 | 無需引數 |
-| 2 | 增加金幣 | min: 最小金幣數<br/>max: 最大金幣數（可選，不填則等於min） |
-| 3 | 減少金幣 | min: 最小金幣數<br/>max: 最大金幣數（可選，不填則等於min） |
-| 4 | 增加經驗值 | ids: 技能ID陣列<br/>value: 經驗值<br/>using_limit: 是否使用限制（可選，預設false） |
-| 5 | 減少經驗值 | ids: 技能ID陣列<br/>value: 經驗值<br/>using_limit: 是否使用限制（可選，預設false） |
+| 2 | 增加金幣 | min: 最小金幣數<br/>max: 最大金幣數（可選，不填則等於min）<br/>using_limit: 是否應用系統限制（可選） |
+| 3 | 減少金幣 | min: 最小金幣數<br/>max: 最大金幣數（可選，不填則等於min）<br/>using_limit: 是否應用系統限制（可選） |
+| 4 | 增加經驗值 | ids: 技能ID陣列<br/>value: 經驗值（舊寫法，等同 min）<br/>min: 最小經驗值（value 不存在時可用）<br/>max: 最大經驗值（可選，不填則等於min/value）<br/>using_limit: 是否使用限制（可選，預設false） |
+| 5 | 減少經驗值 | ids: 技能ID陣列<br/>value: 經驗值（舊寫法，等同 min）<br/>min: 最小經驗值（value 不存在時可用）<br/>max: 最大經驗值（可選，不填則等於min/value）<br/>using_limit: 是否使用限制（可選，預設false） |
 | 6 | 簡易合成 | require_number: 需求數量<br/>item_id: 物品ID |
 | 7 | 開箱 | items: 物品陣列，每個物品包含：<br/>- item_id: 物品ID<br/>- amount: 數量<br/>- probability: 機率<br/>- is_fixed_reward: 是否固定獎勵 |
 | 8 | 倒計時 | seconds: 倒計時秒數 |
 | 9 | 網頁連結 | url: 連結地址<br/>use_web_view: 是否使用內建瀏覽器（可選，預設false） |
+| 10 | 記錄感想 | 無需引數 |
+| 11 | 變動金幣（可增可減） | min: 最小金幣數（可為負）<br/>max: 最大金幣數（可選，不填則等於min）<br/>using_limit: 是否應用系統限制（可選） |
+| 12 | 變動經驗值（可增可減） | ids: 技能ID陣列<br/>value: 經驗值（舊寫法，等同 min）<br/>min: 最小經驗值（可為負）<br/>max: 最大經驗值（可選，不填則等於min/value）<br/>using_limit: 是否使用限制（可選，預設false） |
+| 13 | 增加物品庫存 | item_id: 目標物品ID<br/>min: 最小庫存變動<br/>max: 最大庫存變動（可選，不填則等於min）<br/>using_limit: 是否應用庫存限制（可選） |
+| 14 | 減少物品庫存 | item_id: 目標物品ID<br/>min: 最小庫存變動<br/>max: 最大庫存變動（可選，不填則等於min）<br/>using_limit: 是否應用庫存限制（可選） |
+| 15 | 變動物品庫存（可增可減） | item_id: 目標物品ID<br/>min: 最小庫存變動（可為負）<br/>max: 最大庫存變動（可選，不填則等於min）<br/>using_limit: 是否應用庫存限制（可選） |
+| 16 | 播放音效 | file_name: 本地音效檔名（優先）<br/>uri: 匯入音效的 Uri（可替代 file_name）<br/>display_name: 顯示名稱（可選） |
 
 **效果示例：**
 
@@ -547,6 +556,43 @@ gid: 事項組id，針對同一個重複任務，其 gid 都不會發生變化�
         "ids": [1, 2],
         "value": 50,
         "using_limit": false
+    }
+}
+```
+
+隨機增減金幣：
+
+```json
+{
+    "type": 11,
+    "info": {
+        "min": -10,
+        "max": 20
+    }
+}
+```
+
+隨機增減目標物品庫存：
+
+```json
+{
+    "type": 15,
+    "info": {
+        "item_id": 1,
+        "min": -3,
+        "max": 5
+    }
+}
+```
+
+播放音效：
+
+```json
+{
+    "type": 16,
+    "info": {
+        "display_name": "API測試音效",
+        "uri": "android.resource://net.sarasarasa.lifeup/raw/bellringing"
     }
 }
 ```
@@ -728,9 +774,14 @@ gid: 事項組id，針對同一個重複任務，其 gid 都不會發生變化�
 | item_name       | 物品名稱       | 任意文字           | 寶箱      | 否*      | 與 item_id 必須提供其中一個     |
 | item_amount     | 物品數量       | [1, 99]           | 1         | 否       | 預設為 1                       |
 | items           | 物品獎勵       | JSON文字           | 參見[物品獎勵結構](#1-物品獎勵結構) | 否 | 可一次性設定多個物品獎勵 |
-| task_type       | 任務型別       | [0, 3]            | 0         | 否       | 需v1.99.1, 0 - 普通任務<br/>1 - 計數任務<br/>2 - 負面任務<br/>3 - API任務 |
+| task_type       | 任務型別       | [0, 4]            | 0         | 否       | 需v1.99.1, 0 - 普通任務<br/>1 - 計數任務<br/>2 - 負面任務<br/>3 - API任務<br/>4 - 計時任務（v1.102.0+） |
 | target_times    | 目標次數       | 大於0的整數        | 1         | 否       | 僅當 task_type 為1(計數任務)時有效 |
 | is_affect_shop_reward | 是否影響商店獎勵 | true/false      | false    | 否       | 當 task_type 為1(計數任務)時有效，是否影響商品的獎勵計算         |
+| expected_focus_minutes | 預期專注分鐘數 | 大於 0 的整數 | 25 | 否 | 僅當 task_type 為4(計時任務)時有效；預設 25（v1.102.0+） |
+| repeat_end_mode | 重複結束模式 | 0 或 1 | 0 | 否 | 僅對重複任務有效（frequency 非 0 / -1）<br/>0 - 按次數結束<br/>1 - 按日期結束（v1.102.0+） |
+| repeat_target_times | 重複結束次數 | 大於 0 的整數 | 3 | 否 | repeat_end_mode=0 時使用（或透過該欄位自動推斷）；注意不要與 target_times（計數任務目標次數）混淆（v1.102.0+） |
+| repeat_end_date | 重複結束日期 | 時間戳（毫秒） | 1640995200000 | 否 | repeat_end_mode=1 時使用（或透過該欄位自動推斷）（v1.102.0+） |
+| repeat_end_behavior | 重複結束後的行為 | 0 或 1 | 0 | 否 | 0 - 終止任務<br/>1 - 凍結任務（v1.102.0+） |
 
 **返回資料：**
 
@@ -776,6 +827,7 @@ id 的獲取方法為「實驗」頁面開啟「開發者模式」，然後在�
 **注意：**
 
 1. 爲了能夠匹配到任務，id、gid、name 必須提供其一。
+2. 計時任務不支援透過該介面手動完成（v1.102.0+）。
 
 <br/>
 
@@ -923,9 +975,13 @@ id 的獲取方法為「實驗」頁面開啟「開發者模式」，然後在�
 | write_feelings     | 是否啟用感想   | true 或者 false    | false    | 否       |                               |
 | pin                | 是否置頂       | true 或者 false    | false    | 否       |                               |
 | words              | 完成激勵語     | 任意文字           | 太棒了！  | 否       | 任務完成時顯示的激勵文字       |
-| task_type       | 任務型別       | [0, 3]            | 0         | 否       | 需v1.99.1, 0 - 普通任務<br/>1 - 計數任務<br/>2 - 負面任務<br/>3 - API任務 |
+| task_type       | 任務型別       | [0, 4]            | 0         | 否       | 需v1.99.1, 0 - 普通任務<br/>1 - 計數任務<br/>2 - 負面任務<br/>3 - API任務<br/>4 - 計時任務（v1.102.0+） |
 | target_times    | 目標次數       | 大於0的整數        | 1         | 否       | 僅當 task_type 為1(計數任務)時有效 |
 | is_affect_shop_reward | 是否影響商店獎勵 | true/false      | false    | 否       | 當 task_type 為1(計數任務)時有效，是否影響商品的獎勵計算         |
+| expected_focus_minutes | 預期專注分鐘數 | 大於 0 的整數 | 25 | 否 | 僅當 task_type 為4(計時任務)時有效；預設 25（v1.102.0+） |
+| repeat_target_times | 重複結束次數 | 大於 0 的整數 | 3 | 否 | 僅對重複任務有效（frequency 非 0 / -1）；當 repeat_target_times 與 repeat_end_date 同時提供時，repeat_target_times 優先生效（v1.102.0+） |
+| repeat_end_date | 重複結束日期 | 時間戳（毫秒） | 1640995200000 | 否 | 僅對重複任務有效（frequency 非 0 / -1）（v1.102.0+） |
+| repeat_end_behavior | 重複結束後的行為 | 0 或 1 | 0 | 否 | 0 - 終止任務<br/>1 - 凍結任務（v1.102.0+） |
 | coin_set_type     | 如何設定金幣值 | One of:<br/>absolute<br/>relative | absolute | 否 | absolute - 直接設定金幣為 value<br/>relative - 在原金幣值的基礎上增加或減少 |
 | exp_set_type      | 如何設定經驗值 | One of:<br/>absolute<br/>relative | absolute | 否 | absolute - 直接設定經驗值為 value<br/>relative - 在原經驗值的基礎上增加或減少 |
 
@@ -935,6 +991,70 @@ id 的獲取方法為「實驗」頁面開啟「開發者模式」，然後在�
 | --------- | ------ | ---------- | ---- | ---------------- |
 | task_id   | 數字   | 任務ID     | 1000 |                  |
 | task_gid  | 數字   | 任務組ID   | 1000 |                  |
+
+<br/>
+
+### 任務模板
+
+?> 需要 v1.102.0+
+
+**方法名：**task_template
+
+**說明：**任務模板的 CRUD（列出/獲取/建立/更新/刪除）。
+
+**示例：**
+
+- 列出模板：`lifeup://api/task_template?method=list`
+- 建立（直接指定模板引數）：`lifeup://api/task_template?method=create&name=我的模板&todo=模板任務&frequency=0`
+- 建立（從已有任務生成）：`lifeup://api/task_template?method=create&name=我的模板&from_task_id=1`
+- 獲取模板：`lifeup://api/task_template?method=get&id=1`
+- 更新模板名稱：`lifeup://api/task_template?method=update&id=1&name=新名稱`
+- 從任務更新模板內容：`lifeup://api/task_template?method=update&id=1&from_task_id=1`
+- 刪除模板：`lifeup://api/task_template?method=delete&id=1`
+
+| 引數 | 含義 | 取值 | 示例 | 是否必須 | 備註 |
+| ---- | ---- | ---- | ---- | -------- | ---- |
+| method | 操作 | list / get / create / update / delete | list | 是 | - |
+| id | 模板ID | 大於 0 的數字 | 1 | 否* | get/update/delete 必填；別名：template_id |
+| template_id | 模板ID | 大於 0 的數字 | 1 | 否* | id 的別名 |
+| name | 模板名稱 | 任意文字 | 我的模板 | 否* | create 必填；update 時如果不傳 from_task_id/from_task_gid 則必填 |
+| from_task_id | 從任務生成/更新 | 大於 0 的數字 | 1 | 否 | 用於 create/update |
+| from_task_gid | 從任務組生成/更新 | 大於 0 的數字 | 1 | 否 | 用於 create/update |
+| todo | 模板任務內容 | 任意文字 | 寫日記 | 否* | create 且不傳 from_task_id/from_task_gid 時必填 |
+| notes | 模板備註 | 任意文字 | 備註 | 否 | 預設為空 |
+| category | 清單ID | 大於等於 0 的數字 | 0 | 否 | 別名：category_id |
+| category_id | 清單ID | 大於等於 0 的數字 | 0 | 否 | category 的別名 |
+| frequency | 重複頻次 | 整數 | 0 | 否 | 與 add_task 的 frequency 含義一致 |
+| importance | 重要程度 | [1, 4] | 1 | 否 | - |
+| difficulty | 困難程度 | [1, 4] | 1 | 否 | - |
+| coin | 金幣獎勵 | 數字 | 10 | 否 | - |
+| coin_var | 金幣獎勵浮動值 | 數字 | 1 | 否 | - |
+| exp | 經驗值獎勵 | 數字 | 100 | 否 | - |
+| skills | 技能ID | 多引數陣列 | 1 | 否 | 支援陣列（如 &skills=1&skills=2） |
+| skill_ids | 技能ID | JSON陣列或逗號分隔 | [1,2] | 否 | skills 的替代寫法 |
+| deadline | 截止時間 | 時間戳（毫秒） | 1640995200000 | 否 | - |
+| start_time | 開始時間 | 時間戳（毫秒） | 1640995200000 | 否 | - |
+| remind_time | 提醒時間 | 時間戳（毫秒） | 1640995200000 | 否 | - |
+| words | 完成激勵語 | 任意文字 | 太棒了！ | 否 | - |
+| task_type | 任務型別 | [0, 4] | 0 | 否 | 0 - 普通任務<br/>1 - 計數任務<br/>2 - 負面任務<br/>3 - API任務<br/>4 - 計時任務 |
+| target_times | 目標次數 | 大於 0 的整數 | 10 | 否 | 僅當 task_type 為 1(計數任務)時有效 |
+| is_affect_shop_reward | 是否影響商店獎勵 | true/false | false | 否 | 僅當 task_type 為 1(計數任務)時有效 |
+| expected_focus_minutes | 預期專注分鐘數 | 大於 0 的整數 | 25 | 否 | 僅當 task_type 為 4(計時任務)時有效 |
+| repeat_end_mode | 重複結束模式 | 0 或 1 | 0 | 否 | 僅對重複任務有效（frequency 非 0 / -1）<br/>0 - 按次數結束<br/>1 - 按日期結束 |
+| repeat_target_times | 重複結束次數 | 大於 0 的整數 | 3 | 否 | repeat_end_mode=0 時使用（或透過該欄位自動推斷） |
+| repeat_end_date | 重複結束日期 | 時間戳（毫秒） | 1640995200000 | 否 | repeat_end_mode=1 時使用（或透過該欄位自動推斷） |
+| repeat_end_behavior | 重複結束後的行為 | 0 或 1 | 0 | 否 | 0 - 終止任務<br/>1 - 凍結任務 |
+
+**返回值：**
+
+| 欄位 | 含義 | 型別 | 備註 |
+| ---- | ---- | ---- | ---- |
+| templates | 模板列表（JSON字串） | 文字 | 僅 method=list |
+| count | 模板數量 | 數字 | 僅 method=list |
+| template | 模板詳情（JSON字串） | 文字 | 僅 method=get |
+| id | 模板ID | 數字 | get/create/update/delete |
+| name | 模板名稱 | 文字 | get/create/update |
+| success | 是否成功 | true/false | create/update/delete |
 
 <br/>
 
@@ -1074,6 +1194,16 @@ id 的獲取方法為「實驗」頁面開啟「開發者模式」，然後在�
 | --------- | -------- | -------- | ---- | -------- | ---------------------------------------------- |
 | category_id   | 合成清單id   | 合成清單id   | 1   | 否      |  |
 
+你還可以以篩選模式開啟合成頁（v1.102.0+）：
+
+示例如，篩選「產物=商品ID 1」：`lifeup://api/goto?page=synthesis&filter_type=product&filter_item_id=1&filter_item_name=示例商品`
+
+| 引數            | 含義       | 取值 | 示例 | 是否必須 | 備註 |
+| --------------- | ---------- | ---- | ---- | -------- | ---- |
+| filter_type     | 篩選型別   | product / ingredient / related | product | 否* | 需與 filter_item_id 搭配 |
+| filter_item_id  | 篩選物品ID | 大於 0 的數字 | 1 | 否* | 需與 filter_type 搭配 |
+| filter_item_name| 篩選物品名 | 任意文字 | 示例商品 | 否 | 可選，用於顯示 |
+
 <br/>
 
 ### 商品
@@ -1208,7 +1338,7 @@ id 的獲取方法為「實驗」頁面開啟「開發者模式」，然後在�
 
 | 引數   | 含義     | 取值 | 示例             | 是否必須 | 備註                                                         |
 | ------ | -------- | ---- | ---------------- | -------- | ------------------------------------------------------------ |
-| result | 結果碼   | 數字 | 0                | 是       | 0 - 使用成功<br/>1- 資料庫異常<br/>2 - 經驗值不足限制<br/>3 - 找不到商品<br/>4 - 執行倒計時衝突<br/>5 - 庫存不足 |
+| result | 結果碼   | 數字 | 0                | 是       | 0 - 使用成功<br/>1- 資料庫異常<br/>2 - 經驗值不足限制<br/>3 - 找不到商品<br/>4 - 執行倒計時衝突<br/>5 - 庫存不足<br/>6 - 商品不可使用<br/>7 - 金幣限制<br/>8 - 目標庫存限制 |
 | desc   | 結果描述 | 文字 | RunningCountDown | 是       |                                                              |
 
 <br/>
