@@ -24,14 +24,13 @@
 **✨ Features**
 
 1. **Sound Manager**: Import, preview, delete, and reuse sound effects, and use them as item-use effects.
-2. **Shop: new item use effects**: Added random EXP, stock changes, sound playback, countdown, and improved the configuration flow.
+2. **Shop: new item use effects**: Added random EXP, stock changes, sound playback, and improved the configuration flow.
 3. **Timed Tasks**: A new task type with an expected focus duration; complete the task after reaching the timer goal.
 4. **Week Start Day Options**: Choose Monday / Saturday / Sunday, and the calendar & statistics will follow.
 5. **Skip onboarding**: An option to skip the tutorial on first launch.
 6. **Emoji input for icons**: Enter an emoji (including combined emojis) to quickly create an icon.
 7. **Calendar: open future recurring task details**: Tapping a recurring task on a future date now opens its details correctly.
-8. **Widget task filter enhancements**: Added a "Fold tasks that have not started yet" filter to reduce clutter.
-9. **Power users: API enhancements**: The URL Scheme API adds/extends task template CRUD, recurrence end conditions, synthesis filter navigation, and more.
+8. **Power users: API enhancements**: The URL Scheme API adds/extends task template CRUD, recurrence end conditions, synthesis filter navigation, and more.
 
 **♻️ Optimization**
 
