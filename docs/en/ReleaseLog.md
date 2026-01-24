@@ -41,14 +41,13 @@
 **🐛 Bug Fixes**
 
 1. **Fixed countdown effect reset on edit**: Fixed an issue where confirming an edited countdown effect could reset the value to 1.
-2. **Improved missing sound file handling**: Added clearer prompts when a sound file is missing to avoid unexpected behavior when using items.
-3. **Fixed team task item reward auto-use not triggering**: Fixed an issue where auto-use would not trigger after claiming item rewards for team tasks.
-4. **Fixed missing "record feelings" prompt after loot box / synthesis**: Fixed an issue where the feelings dialog might not appear after opening loot boxes or using simple synthesis when the item has a "record feelings" effect.
-5. **Fixed Pomodoro manual completion missing settlement dialogs**: Fixed an issue where manually completing a task on the Pomodoro page could skip reward/feelings settlement dialogs, and restored long-press-to-complete on the task title.
-6. **Fixed widget fold filter not working**: Fixed the smart-list widget filter "Fold tasks that have not started yet" not taking effect.
-7. **Fixed a rare crash**: Fixed a crash caused by saving too much state in certain situations.
-8. **Fixed calendar-to-detail navigation for future tasks**: Fixed failures when opening details for future recurring tasks from the calendar view.
-9. **Fixed issues with Ebbinghaus recurring tasks**: Fixed abnormal stages and unintended repeated generation in rare cases, with an upper-bound safeguard added.
+2. **Fixed team task item reward auto-use not triggering**: Fixed an issue where auto-use would not trigger after claiming item rewards for team tasks.
+3. **Fixed missing "record feelings" prompt after loot box / synthesis**: Fixed an issue where the feelings dialog might not appear after opening loot boxes or using simple synthesis when the item has a "record feelings" effect.
+4. **Fixed Pomodoro manual completion missing settlement dialogs**: Fixed an issue where manually completing a task on the Pomodoro page could skip reward/feelings settlement dialogs, and restored long-press-to-complete on the task title.
+5. **Fixed widget fold filter not working**: Fixed the smart-list widget filter "Fold tasks that have not started yet" not taking effect.
+6. **Fixed a rare crash**: Fixed a crash caused by saving too much state in certain situations.
+7. **Fixed calendar-to-detail navigation for future tasks**: Fixed failures when opening details for future recurring tasks from the calendar view.
+8. **Fixed issues with Ebbinghaus recurring tasks**: Fixed abnormal stages and unintended repeated generation in rare cases, with an upper-bound safeguard added.
 
 **v1.101.8 (2026/01/12)**
 
