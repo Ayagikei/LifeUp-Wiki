@@ -25,6 +25,7 @@
     - [📄API列表](guide/api.md)
     - [☁️ 雲人升](guide/api_cloud.md)
     - [🖥 桌面端](guide/api_desktop.md)
+    - [🤝 社羣貢獻](guide/community_contributions.md)
 - 使用者分享
 
   - [體系建設參考手冊](guide/user/system_01.md)

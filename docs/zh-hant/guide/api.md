@@ -2622,7 +2622,6 @@ location.href='lifeup://api/reward?type=coin&content=Wordle沒猜對，安慰獎
 
 可以聯絡我們在應用內互相推薦應用。
 
-> 如需 Google Play 上架等也可聯絡協助。
 
 <br/>
 
