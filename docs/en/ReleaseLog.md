@@ -8,7 +8,8 @@
 
 | Platform          | Version                | Update Date                 |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.101.8               | 2026/01/12                  |
+| LifeUp-Android    | v1.102.1               | 2026/01/27                  |
+| LifeUp-Android    | v1.102.0               | 2026/01/25                  |
 | LifeUp-iOS        | check [feature/ulives] | 🎉Alternative app available |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
 | LifeUp Cloud(SDK) | v1.3.0                 | 2025/01/01                  |
@@ -19,7 +20,18 @@
 
 ### **LifeUp-Android**
 
-**v1.102.0 (TBD)**
+**v1.102.1 (2026/01/27)**
+
+**✨ Features**
+
+1. **Image Preview Zoom**: Restored the image zoom functionality that was lost during the page refactoring, allowing for easier viewing of image details.
+
+**🐛 Bug Fixes**
+
+1. **WebDAV Memory Optimization**: Fixed an issue where downloading from WebDAV could consume excessive memory, potentially causing crashes or performance issues.
+2. **Reflections Image Refresh**: Resolved a bug where edited images in the Reflections page would not refresh immediately.
+
+**v1.102.0 (2026/01/25, replaced by v1.102.1 during rolling release)**
 
 **✨ Features**
 
