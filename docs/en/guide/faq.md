@@ -113,7 +113,7 @@ If you come across:
 
 ### No answer here?
 
-[Contact us!](/guide/faq?id=contact-us!)
+[Contact us!](/guide/faq?id=contact-us)
 
 ## Universal
 
