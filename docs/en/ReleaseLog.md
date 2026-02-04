@@ -8,6 +8,7 @@
 
 | Platform          | Version                | Update Date                 |
 | :---------------- |:-----------------------|:----------------------------|
+| LifeUp-Android    | v1.102.7               | 2026/02/03                  |
 | LifeUp-Android    | v1.102.1               | 2026/01/27                  |
 | LifeUp-Android    | v1.102.0               | 2026/01/25                  |
 | LifeUp-iOS        | check [feature/ulives] | 🎉Alternative app available |
@@ -19,6 +20,18 @@
 <!-- tabs:start -->
 
 ### **LifeUp-Android**
+
+**v1.102.2 - v1.102.7 (2026/02/03)**
+
+**♻️ Optimization**
+
+1. **Widget add tutorial + copy improvements**: Added guidance for adding widgets and refined the related copy and hints.
+
+**🐛 Bug Fixes**
+
+1. **Fixed Pomodoro deadlock with abnormal data**: The Pomodoro page no longer gets stuck/frozen when abnormal data is present.
+2. **Fixed add-on timer desync after screen off**: The “add time” timer now stays in sync after the screen turns off or the device sleeps.
+3. **Fixed default list selection for new tasks**: Improved handling when creating tasks from smart lists, especially if the default list is archived (now falls back properly).
 
 **v1.102.1 (2026/01/27)**
 
