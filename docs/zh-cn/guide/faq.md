@@ -901,7 +901,7 @@ v1.92 版本已经增加了更为完善的统计功能。
 
 这方面我们有两路计划：
 
-- 基于跨平台技术开发的全新应用 Ulives
+- 基于跨平台技术开发的全新应用 ulives
   
   目前已发布 iOS 版本，且适配 iPadOS / 苹果芯片的 macOS
 
@@ -918,7 +918,7 @@ v1.92 版本已经增加了更为完善的统计功能。
 
 《人升》暂时没有 iOS 版本，《人升》是使用纯 Android 技术进行开发的原生 Android 应用，没办法简单迁移到 iOS 版本。
 
-**我们已经推出了专门为 iOS 用户设计的效率应用 [Ulives](https://apps.apple.com/us/app/ulives-gamify-your-tasks/id6743084261)！它继承了人升的核心理念，并针对苹果生态系统进行了优化。**
+**我们已经推出了专门为 iOS 用户设计的效率应用 [ulives](https://apps.apple.com/us/app/ulives-gamify-your-tasks/id6743084261)！它继承了人升的核心理念，并针对苹果生态系统进行了优化。**
 
 
 ---
