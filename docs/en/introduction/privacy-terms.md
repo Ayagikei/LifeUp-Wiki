@@ -2,7 +2,7 @@
 
 ?> The following description of the application server does not apply to the Lite version. The Lite version does not have any interaction with the application server.
 
-LifeUp is an app that helps you improve your lifes. We respect your privacy and we are committed to protecting your personal information. This privacy policy explains how we collect, use, share and delete your personal information when you use our app.
+LifeUp is an app that helps you improve your life. We respect your privacy and we are committed to protecting your personal information. This privacy policy explains how we collect, use, share and delete your personal information when you use our app.
 
 ### 1. Personal Information
 
@@ -43,9 +43,9 @@ will not pass it to the application server and storage.**
 And *LifeUp* only applies for app-specific storage, which means we don't have permission to access
 your private files.
 
-##### DropBox
+##### Dropbox
 
-After you authorize DropBox, **the relevant information will only be kept on your device for backup.
+After you authorize Dropbox, **the relevant information will only be kept on your device for backup.
 and is not passed to the application server.**
 
 And *LifeUp* only applies **for app-specific storage, which means we don't have permission to access
@@ -63,7 +63,7 @@ sent to the application server.** And the password is stored encrypted in the da
 In offline mode,**you do not need to submit any information to our application server.**
 **Your nickname, avatar and other information will be stored and available locally.**
 
-We may only request the application server for the latest announcements and updates, which do not involve infomation submissions.
+We may only request the application server for the latest announcements and updates, which do not involve information submissions.
 
 Your interactions with other SDKs like Dropbox, Google Drive, Facebook. These requests will respond normally under your active use.
 
@@ -100,7 +100,7 @@ The application also provides the function of writing events to the system calen
 
 #### 1.3 Data Storage
 
-**The application is an offline first application and does not have an build-in online
+**The application is an offline-first application and does not have a built-in online
 synchronization function, so most of the data is stored locally on the user's mobile phone.**
 
 For example, all the local tasks you created, all the feelings recorded, the achievements you
