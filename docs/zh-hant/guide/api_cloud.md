@@ -16,7 +16,7 @@
 
 - **提供 HTTP 服務**
 
-  所有 API 以 HTTP 服務的形式提供出來，使得你**無需任何安卓開發知識，就能以跨裝置地以任何其他程式設計工具或者軟體（比如 Python、網頁）呼叫《人升》的 API 呼叫或者查詢資料**。
+  所有 API 都以 HTTP 服務形式提供，使你**無需 Android 開發知識，也能跨裝置使用其他程式設計工具或軟體（如 Python、網頁）呼叫《人升》API 或查詢資料**。
 
   示例：
 
@@ -40,7 +40,7 @@
 
 ## HTTP 介面定義
 
-⚠ 這裏的介面定義更新可能會有滯後性，以我們的原始碼爲準：[LifeUp-SDK/KtorService.kt at main · Ayagikei/LifeUp-SDK (github.com)](https://github.com/Ayagikei/LifeUp-SDK/blob/main/http/src/main/java/net/lifeupapp/lifeup/http/service/KtorService.kt)
+⚠ 本頁介面定義可能滯後，最終請以原始碼爲準：[LifeUp-SDK/KtorService.kt at main · Ayagikei/LifeUp-SDK (github.com)](https://github.com/Ayagikei/LifeUp-SDK/blob/main/http/src/main/java/net/lifeupapp/lifeup/http/service/KtorService.kt)
 
 ### 1. URL Scheme 呼叫介面
 
@@ -66,12 +66,12 @@ http://{host:port}/api
 
 | 欄位名 | 欄位說明                    | 位置  | 欄位型別 | 是否必填 | 備註                                                 |
 | ------ | --------------------------- | ----- | -------- | -------- | ---------------------------------------------------- |
-| url    | lifeup://api 開頭的 API URL | Query | string   | 是       | 如果是手動拼接的話，URL 注意轉義。支援拼接多個 url。 |
+| url    | `lifeup://api` 開頭的 API URL | Query | string   | 是       | 手動拼接時請注意 URL 轉義。支援多個 `url` 引數。 |
 
 **請求例項：**
 
 ```url
-// 單一呼叫（content 
+// 單一呼叫（content provider 形式）
 http://{host:port}/api/contentprovider?url=YOUR_ENCODED_API_URL
 
 // 批次呼叫
@@ -121,14 +121,14 @@ http://{host:port}/api/contentprovider
 
 ### 2. 資料列表查詢介面
 
-**⚠注意：**
+**⚠ 注意：**
 
 1. 你需要 v1.91 版本的《人升》和最新版的《雲人升》。
 2. 你需要先在《雲人升》中申請“讀取人升資料”許可權。
 
 介面功能：
 
-> 查詢《人升》中的完整資料，如任務列表、商品列表
+> 查詢《人升》中的完整資料，例如任務列表、商品列表。
 
 介面請求地址：
 
@@ -219,10 +219,10 @@ http://{host:port}/skills
 
 | 欄位名 | 欄位說明     | 位置  | 欄位型別 | 是否必填 | 備註               |
 | ------ | ------------ | ----- | -------- | -------- | ------------------ |
-| id     | 對應的資料id | Query | 數字     | 是       | -                  |
+| id     | 對應的資料 ID | Query | 數字     | 是       | -                  |
 | offset | 查詢偏移量   | Query | 數字     | 否       | 目前僅部分介面需要 |
 | limit  | 限制數量     | Query | 數字     | 否       | 目前僅部分介面需要 |
-| filterGid  | 篩選重複任務歷史記錄         | Query  | 數字     | 否       | 歷史記錄查詢的可選引數 |
+| filterGid | 篩選重複任務歷史記錄 | Query | 數字 | 否 | 歷史記錄查詢可選引數 |
 
 **請求例項：**
 
@@ -307,13 +307,13 @@ http://{host:port}/synthesis/1
 
 ### 3. 獲取圖片介面
 
-**⚠注意：**
+**⚠ 注意：**
 
 1. 由於安卓的儲存限制，呼叫該介面會需要《雲人升》從《人升》複製一份圖片副本。
 
 介面功能：
 
-> 載入上述介面中返回的圖片（一般為 content:// 樣式）
+> 載入上述介面返回的圖片（通常為 `content://` 形式）。
 
 介面請求地址：
 
