@@ -1,4 +1,3 @@
-
 <h1 align="center" padding="100">Welcome to the world of LifeUp!</h1>
 
 <p align="center">
@@ -13,22 +12,22 @@
 
 
 
-**LifeUp is a unique gamify To-Do and habit forming android application.**
+**LifeUp is a unique gamified To-Do and habit-forming android application.**
 
-It is different from some gamify app that is incorporated into the built-in game.
+It is different from some gamification apps that are incorporated into a built-in game.
 
 It focuses on using game elements to motivate you to act in real life.
 
 You can customize your attributes, rewards, achievements, synthesis, and even treasure chests in LifeUp.
 
-But this also means that the early settings and learning need for a period of time.
+However, this also means that the initial setup and learning curve may take some time.
 
 One thing to note is that LifeUp is positioned as a to-do list, habit-forming app, not a calendar app.
 
 
 ### FAQ before use
 
-But before your use, you may want to know the following information:
+Before you start, you may want to know the following information:
 
 - **I downloaded it through Google Play. If I am not satisfied, how can I get a refund?**
 
@@ -46,7 +45,7 @@ But before your use, you may want to know the following information:
 
   
 
-- **Is my data privacy and safety?**
+- **Is my data private and secure?**
 
   Definitely, We value your privacy!
 
@@ -57,13 +56,13 @@ But before your use, you may want to know the following information:
   not pass through our server, it will only be stored in your device. The same is true of the
   pictures and other information you choose. **You can also choose offline mode.**
   
-- **Since the server does not store data, how can I back up the data?**
+- **Since the server does not store data, how can I back up my data?**
 
   LifeUp supports export and import data functions.
 
   You can also set up the WebDAV server, Google Drive or Dropbox for automatic backup.
 
-- **Do I have to log in? Or when I log in, it is prompted that the network is abnormal?**
+- **Do I have to log in? Or why do I get a network error when logging in?**
 
   No! LifeUp is an *offline-first* app.
 
@@ -94,7 +93,7 @@ But before your use, you may want to know the following information:
 
 - **How can I view more FAQs about app usage?**
 
-  You can always find the link of **the FAQ page** in the app-`sidebar`-`Q&A`.
+  You can always find the link to **the FAQ page** in the app via `Sidebar` -> `Q&A`.
 
   Or you could just remember our website:
 
@@ -124,7 +123,7 @@ Think of it like a game: you level up your workflow over time.
 
 
 
-<h3 align="center" padding="100" id="task">I. Tasks</h2>
+<h3 align="center" padding="100" id="task">I. Tasks</h3>
 
 <p align="center">Tasks are the cornerstone of everything. Set yourself tasks, set rewards, and try to challenge yourself! </p>
 
@@ -242,7 +241,7 @@ Tasks can be linked to almost any other function.
 
 ---
 
-<h3 align="center" padding="100" id="skills">II. Attributes</h2>
+<h3 align="center" padding="100" id="skills">II. Attributes</h3>
 
 <p align="center">Quantify your capabilities and growth in the abstract</p>
 
@@ -259,7 +258,7 @@ The point of attributes is to quantify growth, allowing you to visualize your de
 
 In another layer of meaning, attributes will divide multiple dimensions. Witnessing the difference in the growth of attributes can also make you think about whether to try more areas.
 
-Its concept is similar to the game version of the `10,000 hours law` that counts by experience value.
+Its concept is similar to the gamified version of the `10,000-hour rule` that counts by experience value.
 
 You can create the attributes and skills you want to work on, witness and rejoice in your growth, and implement unique self-rewards with the `Achievements` feature.
 
@@ -298,7 +297,7 @@ You can create the attributes and skills you want to work on, witness and rejoic
 
 ---
 
-<h3 align="center" padding="100" id="shop">III. Shop</h2>
+<h3 align="center" padding="100" id="shop">III. Shop</h3>
 
 <p align="center">Highly customizable self reward and penalty systems. </p>
 
@@ -316,7 +315,7 @@ Broadly speaking, they can be divided into two categories of goods.
 
 **1. Realistic rewards.**
 
-The application can assist in records, purchases, and limits. However, your exact implementation of the rewards requires realistic actions.
+The application can assist in records, purchases, and limits. However, your exact implementation of the rewards requires real-life actions.
 
 Broadly, they can be divided into.
 
@@ -324,13 +323,13 @@ Broadly, they can be divided into.
 - Rest and recreation time/time bonus
 - ...
 
-For example, "take a five-minute break", "watch a movie", "buy a bottle of otaku happy water".
+For example, "take a five-minute break", "watch a movie", "buy a bottle of soda".
 
-**2. in-app rewards.**
+**2. In-app rewards.**
 
 You can achieve in-app data rewards by combining them with "Use Effects."
 
-Such as rewarding a certain amount of coins, experience value, randomly opening boxes (loot boxes) to extract other rewards, etc.
+Such as rewarding a certain amount of coins, experience value, opening loot boxes to get random rewards, etc.
 
 Such rewards can also be paired with realistic rewards to achieve various effects.
 
@@ -338,7 +337,7 @@ Such rewards can also be paired with realistic rewards to achieve various effect
 
 <br/>
 
-##### Don't know what items to set up?
+##### Not sure what items to create?
 
 You can go to the `World`-`Market` module to refer to and import items created by others.
 
@@ -374,7 +373,7 @@ Randomness is a great way to motivate you!
 
 In *LifeUp*, you can create your own loot box.
 
-> Loot boxes in *LifeUp* is based on real probability calculation, there will be no pseudo-random floating effect in the game. **It is recommended to set the probability higher than real game.**
+> Loot boxes in *LifeUp* are based on real probability calculation, there will be no pseudo-random floating effect in the game. **It is recommended to set the probability higher than real game.**
 
 <br/>
 
@@ -496,7 +495,7 @@ To create this type of achievement, you just need to set the unlock conditions f
 - Number of times to use the product
 - Number of synthetic commodities
 - Focus on a particular task for a certain length of time
-- Wait...
+- And more...
 
 
 
@@ -514,7 +513,7 @@ To create this type of achievement, you just need to set the unlock conditions f
 
 ---
 
-<h3 align="center" padding="100" id="pomodoro">V. Pomodoro</h2>
+<h3 align="center" padding="100" id="pomodoro">V. Pomodoro</h3>
 
 <p align="center">Gamified Pomodoros like you've never experienced before, which, with the ability to eat and sell your tomato rewards and a well-established timing system</p>
 
@@ -607,7 +606,7 @@ The linkage has been described in other modules and is not repeated here
 
 ---
 
-<h3 align="center" padding="100" id="feelings">VI. Feelings</h2>
+<h3 align="center" padding="100" id="feelings">VI. Feelings</h3>
 
 <p align="center">Simple text and picture records. Reflect on the past and look to the future.</p>
 
@@ -657,7 +656,7 @@ And since the Feelings supports filtering by repeat tasks, you can also create m
 
 <br/>
 
-<h3 align="center" padding="100" id="feelings">VII. World</h2>
+<h3 align="center" padding="100" id="world">VII. World</h3>
 
 <p align="center">There are enough social apps in the world. Here, there is no communication element. Just your little world to share moments and designs.</p>
 
@@ -693,7 +692,7 @@ You can always import items created by other users in the Market and modify them
 
 <br />
 
-##### Random Taskss
+##### Random Tasks
 
 Don't know what tasks you want to do when you are lost?
 
@@ -726,7 +725,7 @@ For example, pack your things, talk to your loved ones, and take photos to docum
 
 ---
 
-<h3 align="center" padding="100" id="api">VIII. Open Interface (API)</h2>
+<h3 align="center" padding="100" id="api">VIII. Open Interface (API)</h3>
 
 <p align="center">Open in both directions (external apps <--> LifeUp), automate your LifeUp and create endless linkage possibilities~</p>
 
@@ -778,4 +777,3 @@ In most cases, we will get back to you within 48 hours.
 However, it cannot be ruled out that special circumstances (such as email spam filtering or our oversight) may cause us to miss some emails. If you do not receive a response, please consider resending your email.
 
 For a more reliable way to reach us and provide feedback, we recommend using the [GitHub issues page](https://github.com/Ayagikei/LifeUp/issues).
-
