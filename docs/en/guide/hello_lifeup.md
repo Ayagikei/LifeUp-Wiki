@@ -110,19 +110,17 @@ But before your use, you may want to know the following information:
 
 ## Features
 
-> 🚧We're still working on this sections... There may be problems with grammar, incorrect picture language, etc. Corrections are welcome.
+> 🚧 This section is still being improved. You may notice grammar issues or screenshots in other languages. Corrections are welcome.
 
-There are a lot of examples and guidelines in the app right now.
+There are already many examples and guides inside the app.
 
-For higher customization and more feature support, *LifeUp* will have a certain threshold for getting
-started.
+Because *LifeUp* supports deep customization, there is a small learning curve at the beginning.
 
-But don't panic, the vast majority of them are optional.
+The good news is that most advanced options are optional.
 
-**You can focus only on the options you need with minimal usage.** And gradually learn more options
-to unlock more usages.
+**You can start with a minimal setup** and add more options step by step.
 
-It's like playing a game and gradually improving your skills! :D
+Think of it like a game: you level up your workflow over time.
 
 
 
@@ -134,37 +132,37 @@ It's like playing a game and gradually improving your skills! :D
  <img src="guide/_media/hello_world/tasks.png" style="height:600px" />
 </p>
 
-We define a task as something that you can realistically accomplish.
+In LifeUp, a task is something you can realistically complete.
 
-So the task module is purely a `recording` tool to assist you in recording the reality of `completion` and to assist you in reward and punishment control.
+The task module is mainly a `recording` tool. It helps you track real completion and connect it to rewards or penalties.
 
-It is not responsible for taking on some automated operations. But you can use the `achievement` module to track the progress of the tasks.
+It is not designed to automate everything. You can use the `achievement` module to track progress over time.
 
 #### # Quick Start
 1. **Todos**
-    The non-repetitive task is also known as a general to-do list.
-    You only need to enter the `todo` content to create this kind of task.
+    A non-repeating task, similar to a normal to-do item.
+    Usually, entering the `todo` content is enough.
 
 2. **Habits**
 
-  Repetitive tasks are generally used for habit formation, such as `waking up early` and `reading every day`.
+  Repeating tasks are typically used for habits, such as `waking up early` or `reading every day`.
 
-  Generally, you only need to enter the `todo` and `Repeat frequency`.
+  In most cases, you only need to set the `todo` and `Repeat frequency`.
 
 
 <br/>
 
 #### # Advanced Usage
-##### 0. Repeat concepts
+##### 0. Repeat Concepts
 **Deadline time**
 
-`Deadline time` refers to the point in time when **the current task** triggers task failure and penalties, which can also be interpreted as the point in time when it refreshes, rather than the point in time when the entire repeat task ends.
+`Deadline time` is when **the current cycle** is considered failed and penalties are applied. It is also when the cycle refreshes, not when the whole repeating task ends.
 
 > In *LifeUp*, you need to manually `delete` to end the task; if you want to achieve an end after completing 30 repeats, you can check the `target number (of repeats)` setting.
 
-For daily tasks, it is usually sufficient to keep the default ``23:59:59`` for the current day.
+For daily tasks, the default ``23:59:59`` is usually enough.
 
-Of course, **you can also adjust that time if you are used to completing in the early hours of the next morning (e.g., until `2 am the next day`).**
+You can adjust this if you usually finish tasks after midnight (for example, until `2:00 AM`).
 
 <br/>
 
@@ -174,40 +172,40 @@ Of course, **you can also adjust that time if you are used to completing in the 
 
 **Start time**
 
-It is used to limit the time when the todo starts to show.
+Use this to control when a task appears.
 
-Or, for **repeating tasks** limit the period for completing (e.g., limit the waking up early tasks to 6:00 am).
+For **repeating tasks**, it can also limit the valid completion window (for example, a wake-up task before 6:00 AM).
 
-For typical use cases, you can just keep them as default.
+For common usage, the default value is usually fine.
 
 <br/>
 
 **Repeat**
 
-Tasks perform *repeat* logic when they are completed, given up, or overdue.
+Tasks run *repeat* logic after completion, abandonment, or overdue status.
 
-LifeUp will **automatically** calculate the `start time,` `deadline time`, and `reminder time` for the next task circle based on your repeat frequency settings.
+LifeUp will **automatically** calculate the next cycle's `start time`, `deadline time`, and `reminder time` based on your repeat frequency settings.
 
 
 <br/>
 
 **Target times**
 
-Represents how many repetition cycles the task needs to execute.
+This represents how many repeat cycles the task should run.
 
-If the task is a daily task, it is equivalent to representing `how many` days you completed the task.
+For daily tasks, this is essentially `how many` days you want to complete it.
 
 <br/>
 
 **Count tasks**
 
-Counting tasks are used to help you record actions that need to be repeated in a repeating cycle.
+Count tasks help you track actions repeated within one cycle.
 
-For example, the 7 in `drink 7 glasses of water` is a count.
+For example, the 7 in `drink 7 glasses of water` is a count value.
 
 <br/>
 
-##### 1. Task templates
+##### 1. Task Templates
 You can create your own task templates using the `Freeze` + `Copy` functions.
 
 For example, you can create a motion-related task and `freeze` it.
@@ -216,7 +214,7 @@ When you need to create similar tasks, you can directly `copy` this template and
 
 <br/>
 
-##### 2. Archiving tasks
+##### 2. Archiving Tasks
 
 You can use the `Freeze` + `List Archive` functions to achieve similar functionality to task archiving.
 
@@ -230,7 +228,7 @@ You can use the `Freeze` + `List Archive` functions to achieve similar functiona
 
 #### # Linkage
 
-Matters can be linked to almost any other function.
+Tasks can be linked to almost any other function.
 - **Attributes:**
    You get experience points for completing tasks, but you get a penalty for failing them.
 - **Shop:**
@@ -389,8 +387,8 @@ The synthesis system can be used to implement arbitrary item exchanges.
 For example, it can be used to achieve `multi-currency`, `multi-item` rewards, or with `loot boxes` to achieve complex collections of `fishing`, `card upgrades`.
 
 For example.
-- `line` + `bait` + `fishing place` -> `🐟 blind box`
-- `Locked box` (get it by signing in daily) + `Key` (probability of getting it by completing the task) -> `Loot Boxes`
+- `line` + `bait` + `fishing place` → `🐟 blind box`
+- `Locked box` (get it by signing in daily) + `Key` (probability of getting it by completing the task) → `Loot Boxes`
 - ...
 
 The usefulness of the synthesis system depends on your imagination (you can find more uses in  `3. Make your own currency` and `4. Collect five blessings (Gourd boy saves grandpa)` below).
@@ -422,8 +420,8 @@ You can use the `Synthesis` system to build your  currency and Shop.
 <br/>
 
 Realization.
-- Sports Quest->Reward `Sports Coins` ->Use `Sports Coins` to synthesize `Sports` rewards
-- `Tomatoes` -> `Tomato Coins` ->Synthesis of exclusive items
+- Sports Quest → Reward `Sports Coins` → Use `Sports Coins` to synthesize `Sports` rewards
+- `Tomatoes` → `Tomato Coins` → Synthesis of exclusive items
 
 <br/>
 
@@ -434,7 +432,7 @@ Collect a set of cards to exchange for very rare rewards?
 <br/>
 
 The short version is.
-` Complete the quest to get a blind box of shards `->` Get a random type of sha
+`Complete the quest to get a blind box of shards` → `Get a random shard type`
 
 <br/>
 
@@ -761,7 +759,7 @@ You can import API items directly in **World**-**Markets**-**(Link, API, Automat
 
 [Click here for a detailed description of the open interface](/guide/api)
 
-#### # Linkage use
+#### # Linkage Usage
 
 - The API functionality can be tried in conjunction with almost any module, please see the interface documentation for details.
 - External applications, web pages: In addition, the API function can be linked with external applications and web pages, so you are welcome to participate in secondary development.

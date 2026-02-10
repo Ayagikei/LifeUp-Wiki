@@ -1,108 +1,94 @@
-# Keep app alive
+# Keep LifeUp Running in the Background
 
-## Why
+## Why this is needed
 
-### Compatibility configuration
+Some phone manufacturers aggressively restrict background apps to improve battery benchmark results. As a result, features that rely on background execution may fail.
 
-| Feature                                                      | Need keep the app alive?                  | Any other needed  permission?                                | Notes                                                        |
-| ------------------------------------------------------------ | ----------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| Task reminder (system notification)                          | ✔️                                         | Need [notification] permissions.                             | The default method, **need to configure the keepalive as follows**;<br/>And please make sure you have enabled notification permissions for LifeUp. |
-| Task reminder (calendar event)                               | -                                         | need [Calendar Read/Write] permission                        | **Can be set in the app - [Settings] - [Tasks] - [Change Reminder System] options** |
-| Pomodoro timer end reminder                                  | ✔️                                         | -                                                            | **need to configure the keepalive as follows；**<br/>If it is not configured, there may be various phenomena such as not reminding, the countdown is frozen, etc. |
-| Positive timer                                               | -                                         | -                                                            | -                                                            |
-| App widget update                                            | ✔️<br/>（depending on the devices and OS） |                                                              | **need to configure the keepalive as follows；**<br/>If it is not configured, it may always display "Loading" or "All tasks have been completed" and other phenomena |
-| App widget finish count tasks/jump to in-app task detail page<br/>（non MIUI OS） | -                                         | -                                                            | -                                                            |
-| App widget finish count tasks/jump to in-app task detail page<br/>（MIUI OS） | -                                         | may need the MIUI specific [Display UI in background] permission? |                                                              |
+### Compatibility impact matrix
 
-- Some OS will kill the pomodoro reminders when LifeUp in running background or when the phone screen closed.
-- LifeUp app widget might not working properly on some home screen app and OS.
-- The default reminder method might need LifeUp running in background:
-    - you can also consider switching to the system calendar APP reminder (this will require calendar read and write permissions) in the `Settings` - `Tasks Settings` page.
-- For MIUI OS, it may restrict the widget from popping up the UI, which will affect the widget to complete the counting task. 
+| Feature | Requires background keep-alive? | Extra permissions | Notes |
+| --- | --- | --- | --- |
+| Task reminder (system notification) | ✔️ | Notification permission | This is the default reminder method. If reminders are delayed or missing, configure background keep-alive and make sure notifications are enabled for LifeUp. |
+| Task reminder (calendar event) | ✖️ | Calendar read/write permission | You can switch to this mode in `Settings` → `Tasks` → `Change Reminder System`. |
+| Pomodoro end reminder | ✔️ | - | If keep-alive is not configured, reminders may be missed, and countdown may pause or freeze in the background. |
+| Positive timer | ✖️ | - | - |
+| App widget auto refresh | Usually yes (device/OS dependent) | - | Without proper keep-alive, widgets may stay on "Loading" or show stale states like "All tasks completed". |
+| Widget action: complete count task / open task detail (non-MIUI) | ✖️ | - | - |
+| Widget action: complete count task / open task detail (MIUI) | Depends | May require MIUI-specific background popup/display permission | MIUI may block widget-triggered UI actions in background. |
 
+- Some systems freeze or kill background tasks when the screen is off.
+- Widgets may behave differently across launchers and OS variants.
+- If you only care about reminders, you can switch to calendar reminders to reduce background dependency.
 
+## How to configure
 
-## How
+> [!WARNING]
+> These settings may slightly increase battery usage.
 
-!> These methods may increase the battery draining.
+Based on our tests on a OnePlus 8T, 24-hour background usage consumed about **30 mAh**. For most users, this is a small impact.
 
-**According to our actual test using the OnePlus 8T device, the power consumption of running in the background for 24 hours is only 30 milliamps per hour.**
-
-This will not significantly affect your power consumption.
-
-But this data may be affected by application logic updates, usage habits and device changes.
-
-LifeUp only performs limited passive operations in the background: such as sending reminders, updating widgets, running Pomodoro, etc.
-
-
-
+LifeUp only performs limited passive background operations, such as reminders, widget updates, and Pomodoro timing.
 
 ---
 
-### Common ways to keep the app running in the background
+### Common setup steps
 
-### General Settings
+#### General settings
 
-> The following steps are not required to be performed in full, but each step may improve the priority of running LifeUp in the background. Ensure that the function can run normally.
+> You do not need to complete every step. Each step can improve background priority and stability.
 
-**Android System**
+**Android system settings**
 
-1. Enter LifeUp, click on the sidebar - “Settings” - “Compatibility Issues”, click on “Jump to Battery Optimization Settings”, find LifeUp on this page and set it to “Do not optimize”.
+1. In LifeUp, open `Sidebar` → `Settings` → `Compatibility Issues`, then tap `Jump to Battery Optimization Settings`. Find LifeUp and set it to **Do not optimize**.
 
-   a. Some phones may not be able to find LifeUp after jumping, you can ignore this configuration.
+   a. On some devices, LifeUp may not appear after jumping to this page. If so, skip this step.
 
-2. If you want to receive notifications, please make sure that you have granted *LifeUp* notifications permissions.
+2. If you need reminders, ensure notification permission is granted to LifeUp.
 
-3. In the matter setting interface of LifeUp, turn on `Quick Add notification` (optional)
-
-<br/>
-
-**Manufacturer Customization (Phone Manager)**
-
-Many mobile phone manufacturers have added a lot of additional configuration items to prevent applications from running in the background. If you are not using a Pixel or AOSP device, you need some extra configuration.
-
-1. In the system’s multitasking management interface, lock the application
-
-2. In the system, find the application’s background management settings (or power optimization settings, or phone manager), and set LifeUp to “Allow background running (no background restrictions)” and “Allow self-starting”
-
-   a. For details, please check https://dontkillmyapp.com/
-
-3. When using LifeUp related functions, **avoid turning on functions such as super power saving, do not disturb, etc.**; or add LifeUp to the whitelist.
+3. (Optional) In task settings, enable `Quick Add notification`.
 
 <br/>
 
-**Still not working after setting?**
+**Manufacturer background manager (Phone Manager)**
 
-According to our actual tests and user feedback for each manufacturer:
+Many manufacturers add extra background restrictions. If you are not on a Pixel/AOSP-like device, you usually need additional configuration.
 
-**After correctly configuring the above options, LifeUp can use all functions normally on all mainstream devices.**
+1. Lock LifeUp in the system multitasking/recent apps screen.
 
-But as the phone system is constantly updated, the relevant configuration items may change from time to time.
+2. In system app management / battery management / phone manager, set LifeUp to allow background running (no restrictions) and allow auto-start.
 
-1. **Please re-check and fill in the gaps according to the above steps**
+   a. For manufacturer-specific guides, see [dontkillmyapp.com](https://dontkillmyapp.com/).
 
-   a. The restrictions of phone manager type are not traditional application permissions, and the configuration items may be scattered in different system settings pages
+3. When using LifeUp features, avoid aggressive modes like super power saving or strict do-not-disturb policies, or add LifeUp to relevant allowlists.
 
-   b. Try to operate some of the optional steps, such as turning on the persistent notification of LifeUp, and see if it will help
+<br/>
 
-   c. Manually search for options that may affect battery optimization on your phone.
+**Still not working?**
 
-   d. If you only care about reminders, you can try switching to the “Calendar Reminder” mode
+Based on user reports and our tests, LifeUp works normally on mainstream devices after correct setup. However, system updates may move or rename settings.
 
-2. Consult other users who use the same manufacturer’s device in the community, and clearly describe your current system version
+1. Re-check all steps above and fill in any missed settings.
 
-3. Please consult or give feedback to the system engineer of your phone, and ask how to make an application not be killed in the background / keep alive in the background.
+   a. Phone-manager restrictions are often scattered across multiple pages and are not listed as standard app permissions.
 
+   b. Try optional steps (for example, enabling persistent notification) and test again.
 
+   c. Search your system settings for battery optimization, background restrictions, auto-start, and popup/background display options.
+
+   d. If you only care about reminders, try `Calendar Reminder` mode.
+
+2. Ask other users with the same device brand/model in the community, and include your OS version.
+
+3. Contact your phone manufacturer support and ask how to prevent a specific app from being killed in background.
 
 ---
 
-### App Widgets not working
+### App widgets not working
 
-1. First open LifeUp and let it run normally
-2. Re-enable a new app widget (if abnormal, you can try several times)
-3. If it expires after a period of time, please configure it according to https://wiki.lifeupapp.fun/en/#/guide/background_running
-4. If you are using a non-system launcher app, please switch to the system launcher first.
-5. If you are using a non-default system theme, try switching back to the system default theme (some themes will break  app widgets )
-6. If none of the above works, please try restarting the phone
-7. Try changing other launcher programs to rule out the problem from the launcher app.
+1. Open LifeUp first and keep it running in foreground for a moment.
+2. Re-add the widget (if needed, try more than once).
+3. If it fails again later, review this guide and re-check keep-alive settings.
+4. If you use a third-party launcher, switch to the system launcher and test again.
+5. If you use a custom theme, switch to the default system theme and test again.
+6. Restart your phone.
+7. Try another launcher to rule out launcher-specific issues.

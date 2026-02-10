@@ -11,6 +11,7 @@
 
   - [Hello, LifeUp World](guide/hello_lifeup.md)
   - [FAQ](guide/faq.md)
+  - [Backup and Restore](guide/backup.md)
   - [Background Running](guide/background_running.md)
 
 - Features

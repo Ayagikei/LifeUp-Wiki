@@ -15,7 +15,7 @@
 }
 .search .search-keyword,
 .search a:hover {
-  color: var(--theme-color, #42b983);
+  color: var(--theme-color, #44a8f0);
 }
 
 .search .search-keyword {
@@ -94,11 +94,11 @@ li input[type="checkbox"] {
 
 .app-nav a.active,
 .app-nav a:hover {
-  color: var(--theme-color, #42b983);
+  color: var(--theme-color, #44a8f0);
 }
 
 .app-nav a.active {
-  border-bottom: 2px solid var(--theme-color, #42b983);
+  border-bottom: 2px solid var(--theme-color, #44a8f0);
 }
 
 .app-nav li {
@@ -165,7 +165,7 @@ li input[type="checkbox"] {
 
 .github-corner svg {
   color: #fff;
-  fill: var(--theme-color, #42b983);
+  fill: var(--theme-color, #44a8f0);
   height: 80px;
   width: 80px;
 }
@@ -237,7 +237,7 @@ main.hidden {
 }
 
 .sidebar-toggle span {
-  background-color: var(--theme-color, #42b983);
+  background-color: var(--theme-color, #44a8f0);
   display: block;
   margin-bottom: 4px;
   width: 16px;
@@ -561,9 +561,9 @@ section.cover ul {
 
 section.cover .cover-main > p:last-child a {
   border-radius: 2rem;
-  border: 1px solid var(--theme-color, #42b983);
+  border: 1px solid var(--theme-color, #44a8f0);
   box-sizing: border-box;
-  color: var(--theme-color, #42b983);
+  color: var(--theme-color, #44a8f0);
   display: inline-block;
   font-size: 1.05rem;
   letter-spacing: 0.1rem;
@@ -574,7 +574,7 @@ section.cover .cover-main > p:last-child a {
 }
 
 section.cover .cover-main > p:last-child a:last-child {
-  background-color: var(--theme-color, #42b983);
+  background-color: var(--theme-color, #44a8f0);
   color: #fff;
 }
 
@@ -588,12 +588,12 @@ section.cover .cover-main > p:last-child a:hover {
 }
 
 section.cover blockquote > p > a {
-  border-bottom: 2px solid var(--theme-color, #42b983);
+  border-bottom: 2px solid var(--theme-color, #44a8f0);
   transition: color 0.3s;
 }
 
 section.cover blockquote > p > a:hover {
-  color: var(--theme-color, #42b983);
+  color: var(--theme-color, #44a8f0);
 }
 
 .sidebar,
@@ -629,7 +629,7 @@ body {
 
 .sidebar ul li.active > a {
   border-right: 2px solid;
-  color: var(--theme-color, #42b983);
+  color: var(--theme-color, #44a8f0);
   font-weight: 600;
 }
 
@@ -649,7 +649,7 @@ body {
 }
 
 .markdown-section a {
-  color: var(--theme-color, #42b983);
+  color: var(--theme-color, #44a8f0);
   font-weight: 600;
 }
 
@@ -777,7 +777,7 @@ body {
 }
 
 .token.string {
-  color: var(--theme-color, #42b983);
+  color: var(--theme-color, #44a8f0);
 }
 
 .token.selector {
@@ -799,7 +799,7 @@ body {
 .token.control,
 .token.directive,
 .token.unit {
-  color: var(--theme-color, #42b983);
+  color: var(--theme-color, #44a8f0);
 }
 
 .token.function,
@@ -886,4 +886,109 @@ pre:after {
   right: 0;
   text-align: right;
   top: 0;
+}
+
+/* Collapsible FAQ blocks */
+.markdown-section details {
+  background: #fff;
+  border: 1px solid #e1e4e8;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.markdown-section details:hover {
+  border-color: #bbb;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.markdown-section details[open] {
+  border-color: var(--theme-color, #44a8f0);
+  box-shadow: 0 4px 12px rgba(68, 168, 240, 0.16);
+}
+
+.markdown-section summary {
+  padding: 16px 20px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 16px;
+  list-style: none;
+  position: relative;
+  padding-right: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.markdown-section summary::-webkit-details-marker {
+  display: none;
+}
+
+.markdown-section summary::after {
+  content: "+";
+  font-size: 24px;
+  font-weight: 300;
+  color: #999;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.2s ease, color 0.2s ease;
+  line-height: 1;
+}
+
+.markdown-section details[open] summary::after {
+  transform: translateY(-50%) rotate(45deg);
+  color: var(--theme-color, #44a8f0);
+}
+
+.markdown-section .faq-content {
+  padding: 16px 20px 20px;
+  color: #555;
+  font-size: 15px;
+}
+
+.markdown-section details[open] summary {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+/* Normalize spacing for markdown content inside details. */
+.markdown-section details p,
+.markdown-section details ul,
+.markdown-section details ol,
+.markdown-section details blockquote {
+  margin-top: 4px !important;
+  margin-bottom: 4px !important;
+}
+
+.markdown-section details ul,
+.markdown-section details ol {
+  padding-left: 22px;
+}
+
+.markdown-section details .faq-content > :first-child {
+  margin-top: 0;
+}
+
+.markdown-section details .faq-content > :last-child {
+  margin-bottom: 0;
+}
+
+/* Support plain markdown inside <details> blocks (without .faq-content wrapper). */
+.markdown-section details > :not(summary):not(.faq-content) {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.markdown-section details[open] > summary + :not(.faq-content) {
+  margin-top: 16px !important;
+}
+
+.markdown-section details > :not(summary):not(.faq-content):not(:last-child) {
+  margin-bottom: 20px !important;
+}
+
+.markdown-section details > :not(summary):not(.faq-content):last-child {
+  margin-bottom: 20px !important;
 }

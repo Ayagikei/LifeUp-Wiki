@@ -56,6 +56,24 @@
         tabComments: true,      // default
         tabHeadings: true       // default
       },
+      'flexible-alerts': {
+        style: 'callout',
+        note: {
+          label: '說明'
+        },
+        tip: {
+          label: '提示'
+        },
+        warning: {
+          label: '注意'
+        },
+        important: {
+          label: '重要'
+        },
+        attention: {
+          label: '警告'
+        }
+      },
       plugins: [
         // function (hook) {
         //     var footer = [
@@ -110,6 +128,7 @@
   <script src="./js/docsify-themeable.min.js"></script>
   <script src="./js/docsify-pagination.min.js"></script>
   <script src="./js/docsify-tabs.js"></script>
+  <script src="./js/docsify-plugin-flexible-alerts.min.js"></script>
 </body>
 
 </html>

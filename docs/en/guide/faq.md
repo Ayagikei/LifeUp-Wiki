@@ -1,256 +1,199 @@
 # FAQ
 
-> Some parts of this article use machine translation, and the text may not be accurate. Welcome to revise. 
+LifeUp is maintained by two indie teammates in our spare time:
 
-Due to the limited time and energy of the three independent developers which develop the app in out spare time, in order to quickly implement the entire incentive system, there are still many imperfect functions/details/interaction UI in the app, which can only be compensated by time.
+- One developer mainly maintains the app.
+- One teammate focuses on backend services and operations.
 
-If you help us to recommend the application, perhaps we can obtain more development/design resources to make `LifeUp` more perfect!
+Some features and UI details are still being polished, and we are improving them step by step.
 
-If the app really helps you, please consider buy us a coffee :)
+If LifeUp helps you, sharing it with others is a big help for us too.
 
+If you'd like to support development, you can also buy us a coffee.
 
-## Compatibility configuration
+## ⚙️ Compatibility Configuration
 
-If you come across:
+If you run into issues like:
 
-- Reminders do not take effect
-- The Pomodoro does not remind in the background; the commodity countdown is invalid in the
-  background
-- Widget can't finish counting items, can't enter item details
-- Widget refresh exception
+- reminders not firing
+- Pomodoro reminders or item countdowns not working in background
+- widget actions failing (for example, unable to check off count tasks)
+- widget refresh problems
 
-!> [Please click here for compatibility configuration](/guide/compatibility.md) documentation
+please read the compatibility guide:
 
-## Toc
+!> [Compatibility configuration](/guide/compatibility.md)
 
-### Universal
+## 🌍 Universal
 
-[Refund policy](/guide/faq?id=refund-policy)
+<details>
+<summary>Refund policy</summary>
 
-[Is my data privacy and safety?](/guide/faq?id=is-my-data-privacy-and-safety)
+LifeUp is currently listed as a paid app on Google Play due to historical reasons, and it is not easy for us to migrate to a post-download payment model right now.
 
-[Since the server does not store data, how can I back up the data?](/guide/faq?id=since-the-server-does-not-store-data-how-can-i-back-up-the-data)
+Google Play may automatically refund your order if you uninstall shortly after purchase.
 
-[Why is there no XX language? Or why is the translation incomplete and displayed in English?](/guide/faq?id=why-is-there-no-xx-language-or-why-is-the-translation-incomplete-and-displayed-in-english)
+If that automatic refund does not happen, contact us within **7 days** at [lifeup@ulives.io](mailto:lifeup@ulives.io).
+Please include your GPA order number and send the email from the same Google account used for purchase.
 
-[Can I hide the World module if I don't need it?](/guide/faq?id=can-i-hide-the-world-module-if-i-dont-need-it)
+For anti-abuse reasons, we can provide manual refund support only **once per user**.
+We cannot process refund requests after 7 days from the purchase date.
 
-[How to initialize the overdue and given-up count in the "Me" page?](/guide/faq?id=how-to-initialize-the-overdue-and-given-up-count-in-the-me-page)
+Note: Google Play reviews do not include enough order details for refund handling.
 
-[Pedometer is inaccurate, or I don't need this module?](/guide/faq?id=pedometer-is-inaccurate-or-i-dont-need-this-module)
+</details>
 
-### Tasks
+<details>
+<summary>Is my data private and secure?</summary>
 
-[How to uncomplete tasks?](/guide/faq?id=how-to-uncomplete-tasks)
+Yes. We take privacy seriously.
 
-[How to modify an overdue task to completed?](/guide/faq?id=how-to-modify-an-overdue-task-to-completed)
+Most data stays on your device and does not pass through our servers.
 
-[Is there a exp/coin penalty for tasks failure?](/guide/faq?id=is-there-a-expcoin-penalty-for-tasks-failure)
+The main exception is the World module, where users can publicly share designs and templates.
+All sharing there is opt-in: nothing is published unless you choose to share it, and you can delete shared content at any time.
 
-[How to understand the repetition mechanism?](/guide/faq?id=how-to-understand-the-repetition-mechanism)
+You can read more in our [Privacy Policy](https://wiki.lifeupapp.fun/en/#/introduction/privacy-terms).
 
-[How to hide completed items (actually unstarted items)?](/guide/faq?id=how-to-hide-completed-items-actually-unstarted-items)
+</details>
 
-[How to make tasks not overdue at 0 o'clock?](/guide/faq?id=how-to-make-tasks-not-overdue-at-0-oclock)
+<details>
+<summary>How can I back up my data if servers do not store it?</summary>
 
-[Why does the target number of times start from 1/N?](/guide/faq?id=why-does-the-target-number-of-times-start-from-1n)
+LifeUp supports both export/import backups and cloud-style backup targets.
 
-[How to set multiple reminders for a task?](/guide/faq?id=how-to-set-multiple-reminders-for-a-task)
+You can use:
+- Exported backup files
+- WebDAV
+- Google Drive
+- Dropbox
 
-[Can subtasks be displayed in the tasks list?](/guide/faq?id=can-subtasks-be-displayed-in-the-tasks-list)
+</details>
 
-### Rewards (experience points, goods)
+<details>
+<summary>Why is there no XX language? Or why is the translation incomplete and displayed in English?</summary>
 
-[Can I assign different experience points to different attributes for a single task?](/guide/faq?id=different-xp-per-attribute)
+Most languages in *LifeUp* are maintained by the community.
 
-[The automatic calculation logic of experience value and coins?](/guide/faq?id=the-automatic-calculation-logic-of-experience-value-and-coins)
+Since 2026, we have also used AI translation for major languages to improve baseline quality and keep updates faster for users.
 
-[How is life level calculated?](/guide/faq?id=how-is-life-level-calculated)
+Community proofreading and corrections are still very welcome.
 
-[Does it support custom experience points and coin rewards for tasks?](/guide/faq?id=does-it-support-custom-experience-points-and-coin-rewards-for-tasks)
+You can contribute here: [Crowdin - LifeUp](https://crowdin.com/project/lifeup).
 
-[Why are item images not displaying or missing?](/guide/faq?id=why-are-item-images-not-displaying-or-missing)
+</details>
 
-[How to delete a shop item?](/guide/faq?id=how-to-delete-a-shop-item)
+<details>
+<summary>Can I hide the World module if I do not need it?</summary>
 
-[Why can't tasks have different experience values for multiple attributes?](/guide/faq?id=why-cant-tasks-have-different-experience-values-for-multiple-attributes)
+Yes.
 
-[How to clear experience and coins?](/guide/faq?id=how-to-clear-experience-and-coins)
+You can customize the bottom navigation bar in:
+`Sidebar` → `Settings` → `Display` → `Module Config`.
 
-[What are the level caps and experience gradients for attributes?](/guide/faq?id=what-are-the-level-caps-and-experience-gradients-for-attributes)
+From there, you can hide the World module or replace it with another module.
 
-[How to set up loan, ATM interest, loan interest?](/guide/faq?id=how-to-set-up-loan-atm-interest-loan-interest)
+</details>
 
-[How to customize attributes or skills?](/guide/faq?id=how-to-customize-attributes-or-skills)
+<details>
+<summary>Pedometer is inaccurate, or I do not need this module?</summary>
 
-[Do the attributes of sports rewards and world like count rewards support modification?](/guide/faq?id=do-the-attributes-of-sports-rewards-and-world-like-count-rewards-support-modification)
+> You can tap the small question-mark icon next to the pedometer in the app to see how it works.
 
-[How to set the Loot Boxes reward?](/guide/faq?id=how-to-set-the-loot-boxes-reward)
+- For better accuracy, open the app in the morning and evening, and avoid frequent device restarts.
+- You can also enter step counts manually.
+- If you do not need it, hide the pedometer in `Settings` → `Display`.
 
-[Does it support setting an out-of-box probability less than 1%?](/guide/faq?id=does-it-support-setting-an-out-of-box-probability-less-than-1)
+</details>
 
-[How to get more icons?](/guide/faq?id=how-to-get-more-icons)
+## ✅ Tasks
 
-### Reminder/Pomodoro/Countdown
+<details>
+<summary>How do I undo a completed task?</summary>
 
-[How to use the shop item countdown effect?](/guide/faq?id=how-to-use-the-shop-item-countdown-effect)
+You can undo completion in several places:
 
-[Does the Pomodoro have a auto-next function?](/guide/faq?id=does-the-pomodoro-have-a-auto-next-function)
+1. Right after completion, tap **Undo** in the bottom prompt.
+2. On `Sidebar` → `History`, tap `Undo`.
+3. On `Calendar` → `Ended`, tap `Undo`.
 
-[How to quickly start a Pomodoro from the tasks list page?](/guide/faq?id=how-to-quickly-start-a-pomodoro-from-the-tasks-list-page)
+If the task deadline has already passed, direct undo is unavailable.
+In that case, edit the record status instead (for example, set it to overdue or abandoned).
 
-[Does Pomodoro have summary statistics functions similar to professional Pomodoro applications?](/guide/faq?id=does-pomodoro-have-summary-statistics-functions-similar-to-professional-pomodoro-applications)
+</details>
 
-### Backup and restore
+<details>
+<summary>How do I mark an overdue task as completed?</summary>
 
-[How do I backup the data?](/guide/faq?id=how-do-i-backup-the-data)
+When a task becomes overdue, an overdue dialog appears and allows you to mark it as completed.
 
-[Why is it designed as an offline storage application?](/guide/faq?id=why-is-it-designed-as-an-offline-storage-application)
+After closing the dialog, you can still update task status later from:
+- `Sidebar` → `History`
+- `Calendar` → `Ended`
 
-### Planning
+</details>
 
-[Will there be a iOS version of LifeUp?](/guide/faq?id=will-there-be-a-ios-version-of-lifeup)
+<details>
+<summary>Is there an EXP/coin penalty for task failure?</summary>
 
-### No answer here?
+Yes.
 
-[Contact us!](/guide/faq?id=contact-us)
+- EXP penalty is enabled by default (factor: `0.2x`).
+- Coin penalty is disabled by default (factor: `0`).
 
-## Universal
+You can change global settings in:
+`Sidebar` → `Settings` → `Advanced`
 
-##### Refund policy
+You can also set penalties per task in the task editor.
 
-We and Google Play understand that an app may not satisfy everyone.
+</details>
 
-Before purchasing LifeUp, you can access a 7-day trial version available on our [GitHub](https://github.com/Ayagikei/LifeUp/releases).
+<details>
+<summary>How does the repetition mechanism work?</summary>
 
-If you are not satisfied with the app and uninstall it within a few dozen hours after purchase, Google Play will typically process an automatic refund within 24 hours.
+Set only the **first** cycle's `start time`, `deadline`, repeat frequency, and optional reminder time.
 
-If you exceed this automatic refund period (24 hours) but are within 7 days of purchase, you can still contact us at lifeup@ulives.io and provide your GPA order number. We will assist with a manual refund request. Please ensure to use the Gmail address associated with the purchase.
+LifeUp will then calculate subsequent cycles automatically.
 
-Refund requests will not be processed after 7 days from the purchase date.
+</details>
 
-Please note that leaving a review on Google Play will not assist with the refund process. Without key information, we cannot help with refunds through app reviews on Google Play.
+<details>
+<summary>How do I hide completed or unstarted tasks?</summary>
 
-##### Is my data privacy and safety?
+This usually happens in one of these cases:
 
-Definitely, We value your privacy!
+1. If a task shows `xx deadline`, that task has already started.
+   - Edit the task and adjust `start time` if needed.
 
-You can
-check [our privacy policy documents](https://wiki.lifeupapp.fun/en/#/introduction/privacy-terms) to
-get more information.
-
-TL;DR: Except for the world module (similar to the function of sharing design), other data will not
-pass through our server, it will only be stored in your device. The same is true of the pictures and
-other information you choose. **You can also choose offline mode.**
-
-##### Since the server does not store data, how can I back up the data?
-
-*LifeUp* supports export and import data functions.
-
-You can also set up the WebDAV server, Google Drive or Dropbox for automatic backup.
-
-##### Why is there no XX language? Or why is the translation incomplete and displayed in English?
-
-Languages and translations for *LifeUp* are maintained by the community.
-
-You are more than welcome to contribute translated texts.
-
-We will add the latest translated text to the app with every update.
-
-https://crowdin.com/project/lifeup
-
-##### Can I hide the World module if I don't need it?
-
-Sure!
-
-The entire bottom navigation bar of LifeUp supports customs.
-
-You can go to the `[Settings]` - `[Display]` - `[Module Config]` page to customize your bottom
-navigation bar.
-
-##### How to initialize the overdue and given-up count in the "Me" page?
-
-These data are based on historical records.
-
-You can go to the [History] page to delete the corresponding record.
-
-##### Pedometer is inaccurate, or I don't need this module?
-
-> Click the small question mark next to the pedometer module in the app to see how it works
-
-- You can make step counting more accurate by launching the app in the morning and evening, and try not to restart the phone 
-
-- You can try to manually enter the number of steps instead
-- Or directly hide the step counter module in `Settings`-`Display`
-
-
-
-
-## Tasks
-
-##### How to uncomplete tasks?
-
-1. When completed a task, click the **"Undo"** button in the prompt box at the bottom.
-
-2. On the `History` page of the `Sidebar`, tap the `Undo` button.
-
-3. On the `Ended` module on the `Calendar` page, tap the `Undo` button.
-
-4. **Can't see the undo button in [History] or [Calendar] page?**
-
-   If the task deadline has passed, you will not be able to undo it directly. But you can modify the task record to "overdue" or "abandoned" status instead.
-
-##### How to modify an overdue task to completed?
-
-When the item is overdue, an overdue reminder dialog will automatically pop up, and the overdue item can be directly set to the completed state in it.
-
-After closing the dialog, you can also view or change the status of the tasks at any time on the `Sidebar`-`History` or `Calendar`-`Ended` page.
-
-##### Is there a exp/coin penalty for tasks failure?
-
-Yes!
-
-- The exp penalty is enabled by default (the factor is 0.2x).
-
-- The coin penalty is not enabled by default (the factor is 0).
-
-It can be set freely in `Sidebar`-`Settings`-`Advance` page globally, and it can also be set independently for tasks in the `Add Tasks` page.
-
-##### How to understand the repetition mechanism?
-
-In short, you only need to manually set the **first** [start-deadline] time of the tasks and the repetition frequency and maybe remind time, **and the subsequent time will be automatically calculated by the application.**
-
-##### How to hide completed items (actually unstarted items)?
-
-There are two situations:
-
-1. **If the tasks shows `xx deadline`, it means that the item has started.**
-
-   You can edit tasks as needed and set the correct `start time`.
-
-2. **If the tasks shows `xx starts`, and the date is not the current day.**
-
-   You can check whether the folding button at the bottom is folded (▾shape);
-
-   Then check the menu bar (three dots) in the upper right corner of the tasks list page, click `Filter`, and check whether `Show Today Tasks` is selected
+2. If a task shows `xx starts` and the date is not today:
+   - Check whether the bottom fold button is collapsed.
+   - Open the top-right menu (`...`) → `Filter`.
+   - Confirm `Show Today Tasks` is enabled.
 
 > Note:
->
-> (1) The smart list (week, month) list does not support the folding function
->
-> (2) By default, the complete cycle of repetitive items is the entire cycle. For example, a task that is repeated every 21 days can be completed every day of 21 days. If you want to display it only in the last few days, you can adjust the start time. (It only needs to be adjusted once, and the application will automatically calculate the subsequent date)
+> - Smart lists (week/month) do not support folding.
+> - For repeating tasks, one full cycle is valid by default. For example, a 21-day cycle can be completed on any of those 21 days. If you only want it visible near the end, adjust the start time once and let LifeUp calculate later cycles automatically.
 
-##### How to make tasks not overdue at 0 o'clock?
+</details>
 
-Overdue logic is controlled by deadline time.
+<details>
+<summary>How do I avoid tasks becoming overdue at midnight?</summary>
 
-After setting the deadline date, click the `time` button to set the specific time.
+Overdue timing is controlled by the task deadline time.
 
-1. **For example, if you don't want the item to be overdue at 0:00, you only need to adjust the deadline for the item to after 0:00, such as 2:00 in the "next day".**
+After setting the deadline date, tap the `time` button and choose a later time.
 
-2. You can also choose to **adjust the global defaults** on the `Settings`-`Item`-`New item default settings` page (this does not affect the already created items).
+For example, if you do not want an item to expire at `00:00`, set deadline time to something like `02:00` (next day).
 
-##### Why does the target number of times start from 1/N?
+You can also change global defaults in:
+`Settings` → `Item` → `New item default settings`
+
+(Changing defaults does not affect existing items.)
+
+</details>
+
+<details>
+<summary>Why does the target number of times start from 1/N?</summary>
 
 Unlike the progress of counting tasks, the (1/N) **here does not represent the total progress.**
 
@@ -266,90 +209,126 @@ The current card belongs to the 1st time and is completed.
 
 If the total progress is used, because the completed cards can be displayed, there will be scenes such as (⚪1/10 and ✅1/10 coexist), and the cards will disappear when the goal is reached (✅9/10), better Not common sense.
 
-##### How to set multiple reminders for a task?
+</details>
 
-Multiple reminders can be created by creating subtasks, and using this, you can set a different description for each reminder.
+<details>
+<summary>How can I set multiple reminders for one task?</summary>
 
-##### Can subtasks be displayed in the tasks list?
+Create subtasks and assign different reminder descriptions/times to each one.
 
-Temporarily not supported, but we will consider about it.
+This is the recommended way to simulate multiple reminders for one main task.
 
+</details>
 
+<details>
+<summary>Can subtasks be shown directly in the task list?</summary>
 
-## Rewards (experience points, goods)
+Not at the moment. We may consider this in future updates.
 
-##### Can I assign different experience points to different attributes for a single task?
+</details>
 
-Currently, LifeUp prioritizes quick setup, assigning a single experience point value per attribute per task. This simplifies input.  While not directly supported for individual tasks, you can achieve a similar effect using a workaround:
+## 🎁 Rewards (Experience Points, Goods)
+
+<details>
+<summary>Can I assign different EXP values to different attributes for one task?</summary>
+
+Not directly in the current version.
+
+For fast setup, one task currently uses one EXP value per attribute. If you need different EXP values by attribute, use this workaround:
 
 1. Create an item.
-2. Assign different experience point values to various attributes for this item.
-3. Set the item to be automatically used after completing a task.
+2. Configure different EXP effects for different attributes on that item.
+3. Set the item to be auto-used after task completion.
 
-This allows for the following workflow:
+This gives you task completion + item effect as a combined reward pipeline.
 
-1. Complete Task
-2. Acquire and Use Item
-3. Trigger Item Effects
-4. Award Different Experience Points to Different Attributes
+We plan to improve native support for this in future versions.
 
-We plan to add direct support for multiple experience points per attribute per task in a future update.
+</details>
 
-##### The automatic calculation logic of experience value and coins?
+<details>
+<summary>How are EXP and coins calculated automatically?</summary>
 
-The value of experience value is related to `difficulty level`, `importance level` and `number of selected attributes`;
+EXP mainly depends on:
+- `difficulty`
+- `importance`
+- `number of selected attributes`
 
-The value of gold coins is related to `difficulty level` and `importance level`.
+Coins mainly depend on:
+- `difficulty`
+- `importance`
 
-##### How is life level calculated?
+</details>
 
-The experience value of life level is positively related to the experience value of any attribute gained.
+<details>
+<summary>How is Life Level calculated?</summary>
 
-When you are punished, the experience value of life level will also be deducted by a certain percentage.
+Life Level EXP is positively related to EXP gained from any attribute.
 
-##### Does it support custom experience points and coin rewards for tasks?
+When penalties apply, Life Level EXP is also reduced proportionally.
 
-Yes!
+Life Level is designed as a broad, aggregated indicator, so we do not recommend over-focusing on the formula.
 
-When creating a new task or achievement, click the corresponding button to customize it.
+What matters most is that it reflects your overall long-term progress.
 
-##### Why are item images not displaying or missing?
+Formula reference: each EXP gain/loss action contributes 1/5 to Life Level EXP, regardless of how many attributes are rewarded in that action.
 
-LifeUp is an offline app, and images for local items are stored on your device. We have no way of knowing what happened on your device.
+</details>
 
-When item images are missing or not displaying, please first recall what operations you performed recently:
+<details>
+<summary>Can I set custom EXP and coin rewards for tasks?</summary>
 
-**If item images are missing after importing a backup:**
-- This is usually because the backup file does not contain image files
-- You need to re-import a complete backup that includes image files
+Yes.
 
-**If images were accidentally deleted:**
-- The LifeUp app itself does not actively delete image files
-- It may be that some third-party cleaning apps with high permissions mistakenly deleted the image files
-- We recommend being cautious when using third-party cleaning apps that have access to all files
-- If you have an old backup that contains images, you can first backup your current data, then restore the old backup to retrieve the images, and finally restore your current data
+When creating a task or achievement, tap the corresponding reward button and configure values manually.
 
-**If images from World module imported items are not displaying:**
-- This may be due to network issues causing loading failures
-- You can try again later, or replace the item images with local images
+</details>
 
-##### How to delete a shop item?
+<details>
+<summary>Why are item images missing or not displaying?</summary>
 
-On the `Shop` page, long-press the item, then select the "trash can" button at the top.
+LifeUp is offline-first. Local item images are stored on your own device.
 
-##### Why can't tasks have different experience values for multiple attributes?
+If images are missing, check what happened recently:
 
-- In the early design of LifeUp, we prioritized simplifying user interaction and facilitating quick settings. Hence, tasks were created to have only a single uniform experience value reward. This approach is aimed at making it easier and faster for users to set up tasks. We suggest users select the most relevant attribute for their tasks. Additionally, the level differences between attributes can be reflected through the variation between tasks.
-- 🔧 If users in the current version need to set tasks with different experience values for multiple attributes, this can be indirectly accomplished using the "reward items - items usage effect rewards experience value" method. 🛠️ This is because items allows setting different experience values for various attributes.
-- We are planning to further improve this feature in the future.
+**After importing a backup:**
+- The backup may not include image files.
+- Re-import a complete backup that includes images.
 
-##### How to clear experience and coins?
+**After cleanup/file-management operations:**
+- LifeUp does not actively delete image files.
+- Third-party cleaner/file tools with broad permissions may delete them by mistake.
+- Use such tools carefully.
 
-You can clear the  value in the `Sidebar`-`Setting`-`Data backup, restore, clear` interface.
+**For items imported from World:**
+- It may be a temporary network loading issue.
+- Try again later, or replace with local images.
 
-Note: After clearing the value, the server data may not be synchronized in time.
+If you still have an old backup with images, you can restore that backup first to recover media, then restore your latest data backup.
 
-##### What are the level caps and experience gradients for attributes?
+</details>
+
+<details>
+<summary>How do I delete a shop item?</summary>
+
+On the `Shop` page, long-press the item, then tap the `trash` button at the top.
+
+</details>
+
+<details>
+<summary>How do I clear EXP and coins?</summary>
+
+Go to:
+`Sidebar` → `Settings` → `Data backup, restore, clear`
+
+You can clear EXP and coin values there.
+
+Note: if you use online features, related server-side displays may take a short time to refresh.
+
+</details>
+
+<details>
+<summary>What are the level caps and experience gradients for attributes?</summary>
 
 It can be regarded as an unlimited level (currently 2000+, which can hardly be reached by normal means).
 
@@ -359,150 +338,195 @@ In fact, many users will be in the gradient of 2500 experience points for a long
 
 | Level    | Experience Points Required for Each Level |
 | -------- | ----------------------------------------- |
-| 1->2     | 300                                       |
-| 2->3     | 700                                       |
-| 3->4     | 1500                                      |
-| 4->99    | 2500                                      |
-| 99->150  | 5000                                      |
-| 150->200 | 7500                                      |
-| 200->250 | 15000                                     |
-| 250->300 | 30000                                     |
-| 300->325 | 50000                                     |
-| 325->350 | 100000                                    |
+| 1 → 2     | 300                                       |
+| 2 → 3     | 700                                       |
+| 3 → 4     | 1500                                      |
+| 4 → 99    | 2500                                      |
+| 99 → 150  | 5000                                      |
+| 150 → 200 | 7500                                      |
+| 200 → 250 | 15000                                     |
+| 250 → 300 | 30000                                     |
+| 300 → 325 | 50000                                     |
+| 325 → 350 | 100000                                    |
 | >350     | 500000                                    |
 
-##### How to set up loan, ATM interest, loan interest?
+</details>
 
-From the menu (three dots) in the upper right corner of the `Shop` page, select `Settings`.
+<details>
+<summary>How do I configure loans, ATM interest, and loan interest?</summary>
 
+On the `Shop` page, open the top-right menu (`...`) and select `Settings`.
 
-##### How to customize attributes or skills?
+</details>
 
-In `Sidebar`-`Settings`-`Advanced`-`Custom Properties`, you can freely add, delete and modify the current attributes.
+<details>
+<summary>How do I customize attributes or skills?</summary>
 
-If you want to add some skills, just name it like a skill like `Fishing`.
+Go to:
+`Sidebar` → `Settings` → `Advanced` → `Custom Properties`
 
-##### Do the attributes of sports rewards and world like count rewards support modification?
+You can add, edit, or delete custom attributes freely.
 
-The current version does not support modification.
+If you want to track skills, create attributes named after skills (for example, `Fishing` or `Programming`).
 
-##### How to set the Loot Boxes reward?
+</details>
 
-When creating a new shop item, add a loot boxes effect for it.
+<details>
+<summary>Can I modify attributes used by sports rewards or World like-count rewards?</summary>
 
-##### Does it support setting an out-of-box probability less than 1%?
+Not in the current version.
 
-Yes!
+These built-in reward mappings are fixed for now.
 
-After setting the Loot Boxes effect, you can click the `question mark` to view the in-app explanation for help.
+</details>
 
-##### How to get more icons?
+<details>
+<summary>How do I set up Loot Box rewards?</summary>
 
-> Since we are currently an independent developer and have no designers, we cannot have built-in copyright-free icons, and the unit price of icon design requires at least dozens of members to donate to return the cost (this is also one of the disadvantages of the buyout system application), we are currently unable to burn money.
+When creating a shop item, add a `Loot Box` effect to that item.
 
-1. You can import shop items in the `World` - `Market`, or add icons directly from them.
-2. Search online icon sites, user-owned icons do not involve copyright issues
-   - [iconfont-Alibaba Vector Icon Library](https://www.iconfont.cn/)
-   - [Vector Icons and Stickers - PNG, SVG, EPS, PSD and CSS (flaticon.com)](https://www.flaticon.com/)
-   - Or try to search for game materials directly, it is better to use icons with transparent backgrounds
+Then configure reward pool, probability, and related settings in that effect.
 
+</details>
 
+<details>
+<summary>Can I set a Loot Box probability lower than 1%?</summary>
 
-## Reminder/Pomodoro/Countdown
+Yes.
 
+After configuring the Loot Box effect, tap the in-app `?` help button for probability details and setup guidance.
 
-##### How to use the shop item countdown effect?
+</details>
 
-Countdowns to items take the form of app notifications.
+<details>
+<summary>How can I get more icons?</summary>
 
-You can first confirm that the app notification permission is normal.
+We are a small indie team and currently cannot maintain a large built-in icon set.
 
-##### Does the Pomodoro have a auto-next function?
+You can get more icons in these ways:
 
-No. Maybe you can try positive timer mode.
+1. Import items from `World` → `Market` and reuse their icons.
+2. Use external icon resources (make sure usage rights are valid):
+   - [iconfont](https://www.iconfont.cn/)
+   - [Flaticon](https://www.flaticon.com/)
+3. If possible, prefer transparent-background icons for better in-app display.
 
-In pomodoro mode, after the current time for a work ends, **the timer will continue to count up** in the page, and you can decide whether to add this time to the focus time. A auto-next function make break this feature.
+</details>
 
-##### How to quickly start a Pomodoro from the tasks list page?
+## ⏰ Reminder / Pomodoro / Countdown
 
-1. You can long press the task list and then click the `Timer` action in the menu.
+<details>
+<summary>How do I use the shop item countdown effect?</summary>
 
-2. Or in the `Tasks` setting, adjust the sliding operation in a direction to `Timer`.
+Countdown effects are delivered as app notifications.
 
-##### Does Pomodoro have summary statistics functions similar to professional Pomodoro applications?
+First, confirm that notification permission for LifeUp is enabled.
 
-**It does not support complex summary statistics for the time being, and development will be arranged in the future. **
+</details>
 
-At present, the Pomodoro function of *LifeUp* is a secondary function and is in the early development stage (it is still in the experiment, but it is only enabled by default).
+<details>
+<summary>Does Pomodoro support auto-next?</summary>
 
+Not currently.
 
+You can try positive timer mode.
 
-Currently only supported: The detailed records of each focus and the "Status" page have simple summary statistics for today.
+In Pomodoro mode, when one work session ends, the timer keeps counting up. You can then decide whether to add extra time to focus records. Auto-next would conflict with this workflow.
 
+</details>
 
+<details>
+<summary>How can I quickly start Pomodoro from the task list?</summary>
 
-## Backup and restore
+You can:
+1. Long-press a task and tap `Timer` in the action menu.
+2. Or configure a swipe action to `Timer` in `Tasks` settings.
 
-##### How do I backup the data?
+</details>
 
-Please check the [Settings]-[Data Backup] page in the app.
+<details>
+<summary>Does Pomodoro provide summary statistics like dedicated Pomodoro apps?</summary>
 
-You can back up your data via:
-- Export data files
-- Google Drive
-- DropBox
-- Any WebDAV server
+Not yet.
 
+LifeUp's Pomodoro is still a lightweight module in early-stage development.
 
+Currently available:
+- Per-session detailed records
+- Basic daily summary stats on the `Status` page
 
-##### Why is it designed as an offline storage application?
+</details>
 
-`Offline storage` and `Server storage data` belong to two basic technical selection schemes.
+## 💾 Backup and Restore
 
-`Offline storage` means that the data belongs to the user completely, **you can use any form to backup and keep your data.**
+<details>
+<summary>How do I back up data?</summary>
 
-The data will only be stored locally, **no matter how you fiddle with your data locally, there is no need to worry about someone spying on your privacy.**
+Please read the [Backup and Restore Guide](/guide/backup.md) first.
 
-Even if you are in a **no network environment and the server goes down, you can still use most of the functions** (except the world module) locally.
+In short, supported backup methods include:
+- Google Drive (recommended)
+- Dropbox
+- Export backup files
+- WebDAV servers
 
-Because your local *LifeUp* client is fully functional and can independently complete all operations of local functions.
+</details>
 
+<details>
+<summary>Why is LifeUp designed as an offline-first app?</summary>
 
-## Planning
+LifeUp follows an offline-first architecture by design.
 
-##### Will there be a iOS version of LifeUp?
+This means:
+- Your data is owned and controlled by you.
+- Data stays local unless you explicitly choose backup/sync options.
+- Most core features still work without network access.
 
+Because the client handles core logic locally, you can keep using LifeUp even when network or server availability is limited (except online features such as the World module).
 
-**We've launched [ulives](https://app.ulives.io/), a dedicated productivity app designed specifically for iOS users!** It shares the core spirit of LifeUp but is tailored for the Apple ecosystem.
+</details>
 
-Here are some reasons why a direct LifeUp port to iOS is complex:
-1. LifeUp is currently developed using pure Android technology (my main job is also Android development). Not proficient in iOS development.
+## 🧭 Planning
 
-2. And since LifeUp is offline storage, the app handles all the data instead of the server. This results in the iOS version also needing to rewrite all UI and calculation logic.
+<details>
+<summary>Will there be an iOS version of LifeUp?</summary>
 
-3. We still use our spare time for independent development, and the time is relatively limited.
+In **2025**, we launched [ulives](https://app.ulives.io/), a new productivity app for iOS users.
 
+A direct LifeUp port to iOS is not realistic:
+- LifeUp is built with native Android technology.
+- Its offline-first architecture ties UI, local data model, and business logic closely to the Android implementation.
+- A direct port would still require major rewrites to keep data and logic consistent.
 
+So we reorganized and rebuilt with a cross-platform direction through ulives.
 
-## No answer here?
+ulives keeps the core spirit of LifeUp while also addressing several long-standing design and product issues from earlier generations. You can think of it as a fresh evolution, not just a one-to-one clone.
 
-##### Contact us!
+</details>
 
-Please feel free to reach out at us by email at lifeup@ulives.io.
+## 🆘 Still Need Help?
 
-Or you can add a new issue in our Github page:
+<details>
+<summary>Contact us</summary>
 
-https://github.com/Ayagikei/LifeUp/issues
+You can reach us at [lifeup@ulives.io](mailto:lifeup@ulives.io).
 
-##### Would like to buy us a coffee?
+You can also open an issue on GitHub:
+[https://github.com/Ayagikei/LifeUp/issues](https://github.com/Ayagikei/LifeUp/issues)
 
-LifeUp has been in development and update for over 3 years and we will keep on it.
+</details>
 
-If you think LifeUp has had a positive impact on your life and wish we could maintain it longer and
-bring more feature updates (even more platform versions and open apis).
+<details>
+<summary>Would you like to support us?</summary>
 
-Please consider supporting us by buying coffee.
+Thank you for supporting LifeUp.
 
-You can buy us a coffee in the app [About] page or in the following website:
+If LifeUp has been helpful to you, you can support us in two simple ways:
 
-<iframe src="html/buymeacoffe.html" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="100%" height="80px"> </iframe>
+1. Buy us a coffee from the **About** page in the **Google Play version** of the app.
+2. Help more people discover LifeUp by sharing your experience:
+   - Recommend LifeUp to friends
+   - Post your usage stories and workflows
+   - Share tips, guides, or tutorials
+
+</details>

@@ -16,7 +16,7 @@
 
 - **提供 HTTP 服务**
 
-  所有 API 以 HTTP 服务的形式提供出来，使得你**无需任何安卓开发知识，就能以跨设备地以任何其他编程工具或者软件（比如 Python、网页）调用《人升》的 API 调用或者查询数据**。
+  所有 API 都以 HTTP 服务形式提供，使你**无需 Android 开发知识，也能跨设备使用其他编程工具或软件（如 Python、网页）调用《人升》API 或查询数据**。
 
   示例：
 
@@ -40,7 +40,7 @@
 
 ## HTTP 接口定义
 
-⚠ 这里的接口定义更新可能会有滞后性，以我们的源码为准：[LifeUp-SDK/KtorService.kt at main · Ayagikei/LifeUp-SDK (github.com)](https://github.com/Ayagikei/LifeUp-SDK/blob/main/http/src/main/java/net/lifeupapp/lifeup/http/service/KtorService.kt)
+⚠ 本页接口定义可能滞后，最终请以源码为准：[LifeUp-SDK/KtorService.kt at main · Ayagikei/LifeUp-SDK (github.com)](https://github.com/Ayagikei/LifeUp-SDK/blob/main/http/src/main/java/net/lifeupapp/lifeup/http/service/KtorService.kt)
 
 ### 1. URL Scheme 调用接口
 
@@ -66,12 +66,12 @@ http://{host:port}/api
 
 | 字段名 | 字段说明                    | 位置  | 字段类型 | 是否必填 | 备注                                                 |
 | ------ | --------------------------- | ----- | -------- | -------- | ---------------------------------------------------- |
-| url    | lifeup://api 开头的 API URL | Query | string   | 是       | 如果是手动拼接的话，URL 注意转义。支持拼接多个 url。 |
+| url    | `lifeup://api` 开头的 API URL | Query | string   | 是       | 手动拼接时请注意 URL 转义。支持多个 `url` 参数。 |
 
 **请求实例：**
 
 ```url
-// 单一调用（content 
+// 单一调用（content provider 形式）
 http://{host:port}/api/contentprovider?url=YOUR_ENCODED_API_URL
 
 // 批量调用
@@ -121,14 +121,14 @@ http://{host:port}/api/contentprovider
 
 ### 2. 数据列表查询接口
 
-**⚠注意：**
+**⚠ 注意：**
 
 1. 你需要 v1.91 版本的《人升》和最新版的《云人升》。
 2. 你需要先在《云人升》中申请“读取人升数据”权限。
 
 接口功能：
 
-> 查询《人升》中的完整数据，如任务列表、商品列表
+> 查询《人升》中的完整数据，例如任务列表、商品列表。
 
 接口请求地址：
 
@@ -219,10 +219,10 @@ http://{host:port}/skills
 
 | 字段名 | 字段说明     | 位置  | 字段类型 | 是否必填 | 备注               |
 | ------ | ------------ | ----- | -------- | -------- | ------------------ |
-| id     | 对应的数据id | Query | 数字     | 是       | -                  |
+| id     | 对应的数据 ID | Query | 数字     | 是       | -                  |
 | offset | 查询偏移量   | Query | 数字     | 否       | 目前仅部分接口需要 |
 | limit  | 限制数量     | Query | 数字     | 否       | 目前仅部分接口需要 |
-| filterGid  | 筛选重复任务历史记录         | Query  | 数字     | 否       | 历史记录查询的可选参数 |
+| filterGid | 筛选重复任务历史记录 | Query | 数字 | 否 | 历史记录查询可选参数 |
 
 **请求实例：**
 
@@ -307,13 +307,13 @@ http://{host:port}/synthesis/1
 
 ### 3. 获取图片接口
 
-**⚠注意：**
+**⚠ 注意：**
 
 1. 由于安卓的存储限制，调用该接口会需要《云人升》从《人升》复制一份图片副本。
 
 接口功能：
 
-> 加载上述接口中返回的图片（一般为 content:// 样式）
+> 加载上述接口返回的图片（通常为 `content://` 形式）。
 
 接口请求地址：
 

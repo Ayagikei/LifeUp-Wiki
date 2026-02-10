@@ -1,129 +1,156 @@
-<h1 align="center" padding="100">Local Area Network (API) Desktop Client 🖥 </h1> <p align="center"> <img src="guide/_media/api/desktop.png" /> </p>
+<h1 align="center" padding="100">Local Network (API) Desktop Client 🖥</h1>
 
-We have developed a simple LAN desktop version of "LifeUp" using the API capabilities of "LifeUp", which supports multiple platforms such as Windows, Linux, and MacOS.
+<p align="center">
+ <img src="guide/_media/api/desktop.png" />
+</p>
 
-**Please note that it is not a standalone program. It needs to read offline data in "LifeUp" on your phone through API.**
+We built a lightweight desktop client for LifeUp based on LifeUp APIs. It supports Windows, Linux, and macOS.
+
+**It is not a standalone app.** It reads your LifeUp offline data from your phone through API access.
 
 <br/>
 
 ## Features
 
-- **The current version is only a technical demonstration and preview of the API interface, mainly providing some basic information browsing functions, and does not cover all application functions.**
-- Completely open source, you can freely change its UI and implement the functions you want.
-- Basic functions:
-  - Query task list, complete task
-  - Query attribute list, level
-  - Query commodity list, purchase commodity
-  - Query sentiment list and browse large pictures through a computer image browser
-  - Export feelings to markdown files
-  - Add tasks (not fully covering the options in the app)
-  - …
-  - ...
+> [!NOTE]
+> The current version is mainly a technical preview of API capabilities. It focuses on core browsing operations and does not cover every in-app feature.
+
+- Fully open source. You can customize UI and implement your own features.
+- Current basic capabilities:
+  - Query task list and complete tasks
+  - Query attribute list and levels
+  - Query item list and buy items
+  - Query feelings and view full-size images on desktop
+  - Export feelings to Markdown files
+  - Add tasks (not all in-app options are covered yet)
 
 <br/>
 
 ## Download
 
-All distribution packages are published on the [LifeUp Desktop GitHub Releases page](https://github.com/Ayagikei/LifeUp-Desktop/releases). Open the latest release, expand the **Assets** section, then download the installer that matches your platform:
+All desktop packages are published on [LifeUp Desktop Releases](https://github.com/Ayagikei/LifeUp-Desktop/releases).
+
+Open the latest release, then download the installer/package for your platform:
 
 - **Windows**: `LifeUp Desktop.msi`
 - **macOS (Intel/x64)**: `LifeUp-Desktop-x64.dmg`
 - **macOS (Apple Silicon/ARM64)**: `LifeUp-Desktop-arm64.dmg`
 - **Linux**: `lifeup-desktop.deb`
 
-If the file you need is missing, wait a moment and refresh—the upload for that release may still be in progress.
+If a package is temporarily missing, refresh later. Release assets may still be uploading.
 
-?> **Windows SmartScreen**
-> The MSI is not yet signed with an Extended Validation certificate, so Windows may show the "unrecognized app" banner. Click **More info → Run anyway** after confirming the file was downloaded from the official GitHub release.
+> [!TIP]
+> **Windows SmartScreen**<br/>
+> The MSI is not currently EV-signed, so Windows may show an "unrecognized app" warning.<br/>
+> After confirming the file is from the official GitHub release, click **More info → Run anyway**.
 
-?> **macOS security & signature**
-> The current macOS builds are not notarized, so Gatekeeper will warn that the app is from an unidentified developer. Open the `.dmg`, drag LifeUp Desktop into Applications, then right-click the app and choose **Open**, or go to **System Settings → Privacy & Security** and click **Open Anyway**. Consult [Apple’s official guide](https://support.apple.com/en-hk/guide/mac-help/mh40616/mac) if you need more detail. Some features such as `auto-connect` are still experimental on macOS and may behave differently from Windows/Linux builds.
+> [!TIP]
+> **macOS Gatekeeper / signature**<br/>
+> Current macOS builds are not notarized. You may see an "unidentified developer" warning.<br/>
+> You can open the `.dmg`, move the app to Applications, then right-click the app and choose **Open**,<br/>
+> or go to **System Settings → Privacy & Security** and click **Open Anyway**.<br/>
+> See [Apple’s official guide](https://support.apple.com/en-hk/guide/mac-help/mh40616/mac) for details.
 
-!> Some browsers enforce strict download policies and may block or delete the installer packages. Choose **Keep/Allow** (wording varies by browser) so the download can finish.
+> [!WARNING]
+> Use LifeUp Cloud v1.3.0 or above. LifeUp Cloud does not currently support in-app update checks.<br/>
+> You can update via Google Play or [LifeUp SDK releases](https://github.com/Ayagikei/LifeUp-SDK/releases).
 
-!> You need to use "LifeUp Cloud" version 1.3.0 or above. The current "LifeUp Cloud" does not support checking for updates. You can download and overwrite the installation in Google Play or [Releases · Ayagikei/LifeUp-SDK (github.com)](https://github.com/Ayagikei/LifeUp-SDK/releases).
+> [!WARNING]
+> Some browsers apply strict download security policies and may block installer files.<br/>
+> In that case, choose **Keep/Allow** (wording depends on browser) so the download can complete.
 
 <br/>
 
 ## How to use
 
-To use the desktop client, you will need to follow a few steps:
+### First-time setup
 
-### First use
+#### Prerequisites
 
-#### Precautions
-
-- Your phone and computer are on the same LAN (such as connected to the same WIFI).
-- <del>⚠If your network configuration is very complicated, please try to ping your phone's IP address on your computer before attempting to use it.</del>
-  - The new version of the desktop supports automatic detection of the phone’s IP, which can skip this step.
-
+- Your phone and desktop must be on the same LAN (for example, same Wi-Fi).
+- <del>If your network is complex, first test whether desktop can ping your phone IP.</del>
+  - New desktop versions support automatic phone IP detection, so this is often unnecessary.
 
 #### On your phone
 
-1. Update your "LifeUp" to the latest version.
+1. Update LifeUp to the latest version.
+2. In LifeUp, open `Settings` → `Labs`, then install **LifeUp Cloud**.
+3. Open LifeUp Cloud and grant required permissions:
+   - Floating window / draw-over-apps permission
+   - LifeUp data read permission
+4. Tap **Start Service** in LifeUp Cloud.
 
-2. In "LifeUp"-"Settings"-"Labs", find "LifeUp Cloud" and download and install it.
+**Recommended additional setup**
 
-   Our desktop version needs it to read data and perform operations.
+- Do compatibility setup for both LifeUp and LifeUp Cloud, and disable battery optimization to reduce background kill issues.
+- If you use MIUI (Xiaomi/Redmi), allow **Display UI in background** for both apps.
+- Keep both LifeUp and LifeUp Cloud running.
 
-3. Run "LifeUp Cloud" and give floating window permission and LifeUp data reading permission.
+#### On desktop
 
-4. Click "Start Service" in "LifeUp Cloud".
-
-**Additional steps**
-
-- We recommend that you perform "compatibility configuration" for both "LifeUp" and "LifeUp Cloud", turn off battery optimization, avoid system errors killing the application, **and support using the phone after locking the screen.**
-- **If your phone is a MIUI system (Xiaomi, Redmi), please make sure that you have allowed "Display interface in the background" permission for "LifeUp" and "LifeUp Cloud".**
-- Make sure "LifeUp" and "LifeUp Cloud" are both running.
-
-#### On Desktop
-
-1. Download and install the desktop application via the download link in the previous section.
-2. Fill in the service IP address displayed in "LifeUp Cloud" in the desktop version settings page.
-   - After the v1.1.0 version of the desktop, you can try clicking the “Auto Connect” button.
-3. Congratulations, if everything goes well, you should be able to view your LifeUp data on the desktop version.
-   - **If it fails, you may need the additional steps mentioned above.**
+1. Install the desktop app from the release package.
+2. In desktop settings, enter the service IP shown in LifeUp Cloud.
+   - In desktop v1.1.0+, you can try **Auto Connect**.
+3. If everything is configured correctly, you should be able to view LifeUp data on desktop.
+   - If it fails, revisit the additional setup above.
 
 ### Non-first use
 
-1. Open "LifeUp" and "LifeUp Cloud" on your phone.
-2. Click "Start Service" in "LifeUp Cloud".
-3. Run the desktop client.
+1. Open LifeUp and LifeUp Cloud on your phone.
+2. Tap **Start Service** in LifeUp Cloud.
+3. Launch the desktop client.
 
 <br/>
 
 ## FAQ
 
-**Can I add tasks on the desktop?**
+**Can I add tasks from desktop?**
 
-Not at the moment. The current preview version mainly provides data query capabilities, and this adding tasks feature will be developed in future versions.
+Not yet in the current preview build. The desktop currently focuses on data query/browsing.
 
-However, at this stage, you can also add tasks by calling the API through "LifeUp Cloud".
+At this stage, you can still add tasks by calling APIs via LifeUp Cloud.
 
-**After clicking "Request LifeUp Permission" in " LifeUp Cloud", there is no response or the API is not found?**
+**I clicked "Request LifeUp Permission" in LifeUp Cloud, but nothing happened / API not found.**
 
-1. If there is no response, you may have authorized it before. Consider it a success.
-2. If the API is not found, please join the member beta test and update to the latest version of "Life Up".
+1. If nothing happens, you may already have granted it.
+2. If API not found appears, join member beta and update LifeUp to the latest beta version.
 
-**After the phone is locked for a period of time, the desktop cannot read data or use it?**
+**After phone lock for a while, desktop can no longer read data.**
 
-Please perform compatibility configuration for "Life Up" - "LifeUp Cloud".
+Do compatibility setup for both LifeUp and LifeUp Cloud.
 
-**When "Life Up" and "LifeUp Cloud" are in the background, some interfaces cannot be called normally?**
+**When LifeUp and LifeUp Cloud are in background, some APIs fail to execute.**
 
-> This theoretically does not affect the use of the desktop, but may affect custom API calls.
+> This usually does not affect basic desktop usage, but may affect custom API calls.
 
-Please make sure that you have granted "LifeUp Cloud" the permission to draw over other apps.
+Make sure LifeUp Cloud has floating window/draw-over-apps permission.
 
-If you are using MIUI (Xiaomi, Redmi), you also need to additionally configure the "Show on Lock Screen" permission for these two apps in the system settings.
+If you are on MIUI (Xiaomi/Redmi), also enable **Show on Lock Screen** / background UI-related permissions for both apps.
+
+**Windows install fails with `Failed to launch JVM`.**
+
+Reference: [Issue #2](https://github.com/Ayagikei/LifeUp-Desktop/issues/2)
+
+This is usually related to local JVM accessibility configuration.
+
+A common workaround is to comment out these lines in `~/.accessibility.properties`:
+
+```txt
+# assistive_technologies=com.sun.java.accessibility.AccessBridge
+# screen_magnifier_present=true
+```
+
+After editing, restart the app and test again.
+
+> `~` means your user home directory.
 
 <br/>
 
 ## Contribution
 
-The SDK, "LifeUp Cloud", and "Life Up Desktop" are all open source projects.
+The SDK, LifeUp Cloud, and LifeUp Desktop are all open source.
 
-You can obtain the source code and run it using IDEA at the following links:
+Source code:
 
-- [Ayagikei/LifeUp-SDK: Provide LifeUp SDK, and expose LifeUp APIs as HTTP services! (github.com)](https://github.com/Ayagikei/LifeUp-SDK)
-- [Ayagikei/LifeUp-Desktop (github.com)](https://github.com/Ayagikei/LifeUp-Desktop)
+- [Ayagikei/LifeUp-SDK](https://github.com/Ayagikei/LifeUp-SDK)
+- [Ayagikei/LifeUp-Desktop](https://github.com/Ayagikei/LifeUp-Desktop)
