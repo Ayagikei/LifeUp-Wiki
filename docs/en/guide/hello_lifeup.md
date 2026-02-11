@@ -311,13 +311,13 @@ Complete your tasks, earn coins and buy rewards to motivate yourself to keep wor
 
 #### # Quick Start
 ##### Item Type
-Broadly speaking, they can be divided into two categories of goods.
+Broadly speaking, they can be divided into two categories:
 
 **1. Realistic rewards.**
 
 The application can assist in records, purchases, and limits. However, your exact implementation of the rewards requires real-life actions.
 
-Broadly, they can be divided into.
+Broadly, they can be divided into:
 
 - In-kind rewards (such as a computer, a mouse)
 - Rest and recreation time/time bonus
@@ -471,7 +471,7 @@ Normal achievements refer to achievements that **do not set unlocking conditions
 
 Normal achievements can set icons. And after unlocking, its display will also be retained.
 
-So it is recommended for scenes like `Milestones`, `Long-term goals`, `Life goals` and so on.
+So it is recommended for scenes like `Milestones`, `Long-term goals`, `Life goals`, and so on.
 
 For example.
 - Try it once 🎣
@@ -489,7 +489,7 @@ To create this type of achievement, you just need to set the unlock conditions f
 
 <br/>
 
-**Tens of various aspects of achievement unlocking conditions are currently supported within the app, such as:**
+**Dozens of various aspects of achievement unlocking conditions are currently supported within the app, such as:**
 - Total number of tasks completed
 - Number of consecutive tasks completed
 - Number of times to use the product
@@ -522,7 +522,7 @@ To create this type of achievement, you just need to set the unlock conditions f
 </p>
 
 #### # Quick Start
-The Pomodoro is based on the tomato timer method, which in short means working in combination with work (25 minutes of work and 5 minutes of rest).
+The Pomodoro is based on the tomato timer method, which in short means working in intervals (e.g., 25 minutes of work followed by 5 minutes of rest).
 
 *LifeUp*'s Pomodoro is a secondary module, with simple functions and other modules as the main focus. However, there is still plenty of room for improvement, and we will continue to improve the statistics and other features.
 
@@ -540,7 +540,7 @@ Each timing needs to be turned on manually for reminder purposes.
 
 <br/>
 
-##### Positive Timer
+##### Count-up Timer
 Click the `Clock` icon in the upper right corner of the tomato page to switch to positive timing mode.
 
 > Click again to switch back to countdown mode.
@@ -548,7 +548,7 @@ Click the `Clock` icon in the upper right corner of the tomato page to switch to
 **The role of the buttons for positive timing from left to right:**
 - Give up
 - Pause
-- Sum up the reward
+- Settle the reward
 
 <br />
 
@@ -562,7 +562,7 @@ Later you can check the task's details page to see the task's `Duration of Focus
 
 If it is a repeated task, it supports viewing the current focus record and the accumulated focus record separately.
 
-With this feature, you can achieve **simple 1w hour statistics** or maybe something else.
+With this feature, you can achieve **simple 10,000-hour statistics** or maybe something else.
 
 <br/>
 
@@ -574,7 +574,7 @@ And you can set the tasks associated with the timer.
 
 <br/>
 
-##### Uses of Tomato
+##### Uses of Tomatoes
 <p align="center">
  <img src="guide/_media/hello_world/tomato.png" style="height:600px" />
 </p>
@@ -616,9 +616,10 @@ The linkage has been described in other modules and is not repeated here
 
 #### # Quick Start
 
-The Feelings function is a sub-module of *LifeUp*, providing only a short text and picture recording function.
+The Feelings function is a sub-module of *LifeUp*, providing a simple text and picture recording function.
 
-! > Each feeling is currently limited to 750 characters and 9 images.
+> [!NOTE]
+> Each feeling is currently limited to 750 characters and 9 images.
 
 The following are ways to create Feelings.
 
@@ -658,7 +659,7 @@ And since the Feelings supports filtering by repeat tasks, you can also create m
 
 <h3 align="center" padding="100" id="world">VII. World</h3>
 
-<p align="center">There are enough social apps in the world. Here, there is no communication element. Just your little world to share moments and designs.</p>
+<p align="center">There are enough social apps in the world. Here, there are no social communication elements—just your little world to share moments and designs.</p>
 
 <p align="center">
  <img src="guide/_media/hello_world/world.png" style="height:600px" />
@@ -680,7 +681,7 @@ There is no social element here, so there is no need to worry about any interrup
 
 Here, you can browse other users **who have completed team tasks** and posted their Feelings on completion.
 
-You can also follow some positive users, observe their progress and use it to passive motivate yourself.
+You can also follow some positive users, observe their progress and use it to passively motivate yourself.
 
 <br/>
 
@@ -727,7 +728,7 @@ For example, pack your things, talk to your loved ones, and take photos to docum
 
 <h3 align="center" padding="100" id="api">VIII. Open Interface (API)</h3>
 
-<p align="center">Open in both directions (external apps <--> LifeUp), automate your LifeUp and create endless linkage possibilities~</p>
+<p align="center">Bidirectional Open Interface (External Apps ↔ LifeUp): Automate your LifeUp and create endless possibilities.</p>
 
 
 
@@ -736,11 +737,11 @@ For example, pack your things, talk to your loved ones, and take photos to docum
 
 **Open Interface** is an advanced feature in `LifeUp`.
 
-With it, you can achieve
+With it, you can achieve:
 
 - Linking external applications using items (opening external applications, triggering actions of external applications)
 - Using items affects the values in `LifeUp`, such as the ATM rate, the probability of a items being in a certain box.
-- External applications are linked to provide rewards for your `LifeUp`. For example, in the example there is a Wordle Guess the Word web game, and when you guess it, you will get 10 coins in *LifeUp*.
+- External applications are linked to provide rewards for your `LifeUp`. For example, in the example there is a Wordle web game, and when you guess it, you will get 10 coins in *LifeUp*.
 - External automation tools are linked to determine location, wake up, swipe NFC cards, automate tasks, penalties, record focus time for other applications, and more...
 
 <br/>
