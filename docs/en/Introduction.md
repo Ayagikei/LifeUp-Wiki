@@ -4,14 +4,14 @@
 
 > LifeUp, to upgrade your life.
 
-Custom your own gamify list with attribute, exp, coin, reward to stay productive.
+Customize your own gamified list with attribute, exp, coin, reward to stay productive.
 
 <b>Want a gamified and fun to-do & habit-tracking app to stay motivated, organized, and focused?</b>
 
-- Record and complete tasks to gain exp and coins, just like turn your life into an RPG and
+- Record and complete tasks to gain exp and coins, turning your life into an RPG and
   productivity game.
-- Exp can improve your attributes and skill levels. And it will reflect your self-improvement.
-- Use coins to buy the item you want to reward or try to open your exclusive treasure chest. This
+- Exp can improve your attributes and skill levels. It reflects your self-improvement.
+- Use coins to buy the item you want to reward or try to open exclusive treasure chests. This
   can be used for you to balance your work and rewards, and to improve your focus.
 - Set up milestone achievements to auto-track your task progress and goals.
 - More! Pomodoro, Feelings, custom loot boxes and there's even a crafting feature!
@@ -69,7 +69,7 @@ try using 🔑+🔒= treasure chests.
 
 <br />
 
-🎉 <b>One-time payment, No IAPs releated to features</b>
+🎉 <b>One-time payment, No IAPs related to features</b>
 
 <br />
 
@@ -105,7 +105,7 @@ simple little notes.
 - App widgets
 - Dozens of theme colors
 - Night mode(dark theme)
-- Lots of statistic
+- Lots of statistics
 - Keep updating...
 
 ## Support & Help
