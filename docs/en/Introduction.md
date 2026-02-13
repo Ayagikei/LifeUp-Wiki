@@ -4,17 +4,17 @@
 
 > LifeUp, to upgrade your life.
 
-Custom your own gamify list with attribute, exp, coin, reward to stay productive.
+Customize your own gamified list with attributes, EXP, coins, and rewards to stay productive.
 
 <b>Want a gamified and fun to-do & habit-tracking app to stay motivated, organized, and focused?</b>
 
-- Record and complete tasks to gain exp and coins, just like turn your life into an RPG and
+- Record and complete tasks to gain EXP and coins, just like turning your life into an RPG and
   productivity game.
-- Exp can improve your attributes and skill levels. And it will reflect your self-improvement.
-- Use coins to buy the item you want to reward or try to open your exclusive treasure chest. This
-  can be used for you to balance your work and rewards, and to improve your focus.
+- EXP can improve your attributes and skill levels, reflecting your self-improvement.
+- Use coins to buy the items you want as rewards or try to open your exclusive treasure chests. This
+  helps you balance your work and rewards, and improves your focus.
 - Set up milestone achievements to auto-track your task progress and goals.
-- More! Pomodoro, Feelings, custom loot boxes and there's even a crafting feature!
+- And more! Pomodoro, Feelings, custom loot boxes, and even a crafting feature!
 
 This is the gamification of your life, and you can customize your own gamification list for optimal
 motivation, which may be helpful for ADHD.
@@ -27,8 +27,8 @@ Check the [Download](introduction/download.md) page.
 
 ## Key Features
 
-🎨 <b>Attribute or skills</b>
-You can create your own skills such as fishing, writing. Try adding tasks to your skills and
+🎨 <b>Attributes or Skills</b>
+You can create your own skills, such as fishing and writing. Try adding tasks to your skills and
 leveling them up!
 Track your level with achievements to unlock exclusive achievements and rewards when you reach the
 goal. The growth of attributes and skills in the application is also equivalent to digitally
@@ -37,9 +37,7 @@ reflecting your growth, prompting you to stay more motivated and powerful.
 <br />
 
 🎁 <b>Shop</b>
-Abstract your task reward into the app as a shop item, whether it is a realistic reward, a reward
-for rest and entertainment time, or a stat reward in the app, such as taking a 30 mins break,
-watching a movie, or getting a random coin reward.
+Abstract your task rewards into the app as shop items. These can be realistic rewards like rest and entertainment, or in-app stat rewards. Examples include taking a 30-minute break, watching a movie, or getting a random coin reward.
 
 <br />
 
@@ -69,7 +67,7 @@ try using 🔑+🔒= treasure chests.
 
 <br />
 
-🎉 <b>One-time payment, No IAPs releated to features</b>
+🎉 <b>One-time payment, No IAPs related to features</b>
 
 <br />
 
@@ -104,9 +102,9 @@ simple little notes.
 
 - App widgets
 - Dozens of theme colors
-- Night mode(dark theme)
-- Lots of statistic
-- Keep updating...
+- Night mode (dark theme)
+- Lots of statistics
+- Continuous updates...
 
 ## Support & Help
 
