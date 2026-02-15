@@ -30,19 +30,34 @@ We built a lightweight desktop client for LifeUp based on LifeUp APIs. It suppor
 
 All desktop packages are published on [LifeUp Desktop Releases](https://github.com/Ayagikei/LifeUp-Desktop/releases).
 
-Open the latest release, then download the installer/package for your platform:
+> [!WARNING]
+> Before using desktop, make sure LifeUp Cloud is v2.0.0 or above.<br/>
+> If you use the GitHub Releases build, update LifeUp Cloud in `Settings` → `Labs`.<br/>
+> If you use the Google Play build, you can update from [Google Play](https://play.google.com/store/apps/details?id=net.lifeupapp.lifeup.http) or [LifeUp SDK Releases](https://github.com/Ayagikei/LifeUp-SDK/releases/latest).<br/>
+> Some browsers may block installer downloads due to security policy. Choose **Keep/Allow** (wording varies by browser), or use another downloader.
 
-- **Windows**: `LifeUp Desktop.msi`
-- **macOS (Intel/x64)**: `LifeUp-Desktop-x64.dmg`
-- **macOS (Apple Silicon/ARM64)**: `LifeUp-Desktop-arm64.dmg`
-- **Linux**: `lifeup-desktop.deb`
+### Installation Platforms
 
-If a package is temporarily missing, refresh later. Release assets may still be uploading.
+<!-- tabs:start -->
+
+#### **Windows**
+
+- `LifeUp Desktop.msi`
 
 > [!TIP]
 > **Windows SmartScreen**<br/>
 > The MSI is not currently EV-signed, so Windows may show an "unrecognized app" warning.<br/>
 > After confirming the file is from the official GitHub release, click **More info → Run anyway**.
+
+#### **Linux**
+
+- Download from [LifeUp Desktop Releases](https://github.com/Ayagikei/LifeUp-Desktop/releases) and use `lifeup-desktop.deb`.
+
+#### **macOS**
+
+- Intel / x64: `LifeUp-Desktop-x64.dmg`
+- Apple Silicon / ARM64: `LifeUp-Desktop-arm64.dmg`
+- macOS builds are not fully tested yet, and some features like **Auto Connect** may be unavailable.
 
 > [!TIP]
 > **macOS Gatekeeper / signature**<br/>
@@ -51,13 +66,9 @@ If a package is temporarily missing, refresh later. Release assets may still be 
 > or go to **System Settings → Privacy & Security** and click **Open Anyway**.<br/>
 > See [Apple’s official guide](https://support.apple.com/en-hk/guide/mac-help/mh40616/mac) for details.
 
-> [!WARNING]
-> Use LifeUp Cloud v1.3.0 or above. LifeUp Cloud does not currently support in-app update checks.<br/>
-> You can update via Google Play or [LifeUp SDK releases](https://github.com/Ayagikei/LifeUp-SDK/releases).
+<!-- tabs:end -->
 
-> [!WARNING]
-> Some browsers apply strict download security policies and may block installer files.<br/>
-> In that case, choose **Keep/Allow** (wording depends on browser) so the download can complete.
+If a package is temporarily missing, refresh later. Release assets may still be uploading.
 
 <br/>
 
@@ -104,30 +115,43 @@ If a package is temporarily missing, refresh later. Release assets may still be 
 
 ## FAQ
 
-**Can I add tasks from desktop?**
+<details>
+<summary>Can I add tasks from desktop?</summary>
 
 Not yet in the current preview build. The desktop currently focuses on data query/browsing.
 
 At this stage, you can still add tasks by calling APIs via LifeUp Cloud.
 
-**I clicked "Request LifeUp Permission" in LifeUp Cloud, but nothing happened / API not found.**
+</details>
+
+<details>
+<summary>I clicked "Request LifeUp Permission" in LifeUp Cloud, but nothing happened / API not found.</summary>
 
 1. If nothing happens, you may already have granted it.
 2. If API not found appears, join member beta and update LifeUp to the latest beta version.
 
-**After phone lock for a while, desktop can no longer read data.**
+</details>
+
+<details>
+<summary>After phone lock for a while, desktop can no longer read data.</summary>
 
 Do compatibility setup for both LifeUp and LifeUp Cloud.
 
-**When LifeUp and LifeUp Cloud are in background, some APIs fail to execute.**
+</details>
+
+<details>
+<summary>When LifeUp and LifeUp Cloud are in background, some APIs fail to execute.</summary>
 
 > This usually does not affect basic desktop usage, but may affect custom API calls.
 
 Make sure LifeUp Cloud has floating window/draw-over-apps permission.
 
-If you are on MIUI (Xiaomi/Redmi), also enable **Show on Lock Screen** / background UI-related permissions for both apps.
+If you are on MIUI (Xiaomi/Redmi), also enable the **Display UI in background** permission for both apps.
 
-**Windows install fails with `Failed to launch JVM`.**
+</details>
+
+<details>
+<summary>Windows install fails with `Failed to launch JVM`.</summary>
 
 Reference: [Issue #2](https://github.com/Ayagikei/LifeUp-Desktop/issues/2)
 
@@ -143,6 +167,8 @@ A common workaround is to comment out these lines in `~/.accessibility.propertie
 After editing, restart the app and test again.
 
 > `~` means your user home directory.
+
+</details>
 
 <br/>
 
