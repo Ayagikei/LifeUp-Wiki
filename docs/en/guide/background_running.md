@@ -11,7 +11,7 @@ Some phone manufacturers aggressively restrict background apps to improve batter
 | Task reminder (system notification) | ✔️ | Notification permission | This is the default reminder method. If reminders are delayed or missing, configure background keep-alive and make sure notifications are enabled for LifeUp. |
 | Task reminder (calendar event) | ✖️ | Calendar read/write permission | You can switch to this mode in `Settings` → `Tasks` → `Change Reminder System`. |
 | Pomodoro end reminder | ✔️ | - | If keep-alive is not configured, reminders may be missed, and countdown may pause or freeze in the background. |
-| Positive timer | ✖️ | - | - |
+| Count-up Timer | ✖️ | - | - |
 | App widget auto refresh | Usually yes (device/OS dependent) | - | Without proper keep-alive, widgets may stay on "Loading" or show stale states like "All tasks completed". |
 | Widget action: complete count task / open task detail (non-MIUI) | ✖️ | - | - |
 | Widget action: complete count task / open task detail (MIUI) | Depends | May require MIUI-specific background popup/display permission | MIUI may block widget-triggered UI actions in background. |
@@ -39,7 +39,7 @@ LifeUp only performs limited passive background operations, such as reminders, w
 
 **Android system settings**
 
-1. In LifeUp, open `Sidebar` → `Settings` → `Compatibility Issues`, then tap `Jump to Battery Optimization Settings`. Find LifeUp and set it to **Do not optimize**.
+1. In LifeUp, open `Sidebar` → `Settings` → `Compatibility Issues`, then tap `Jump to Battery Optimization Settings`. Find LifeUp and set it to **Do Not Optimize**.
 
    a. On some devices, LifeUp may not appear after jumping to this page. If so, skip this step.
 
