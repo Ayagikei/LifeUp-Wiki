@@ -36,27 +36,41 @@
 
 ## 下載
 
-> [!TIP]
-> 2025/01/03：v1.2.0 釋出後發現問題，已修復併發布 v1.2.1，請優先下載新版本。<br/>
+### 安裝平臺
+
+> [!WARNING]
+> 使用桌面端前，請確認《雲人升》版本為 v2.0.0 及以上。<br/>
+> 如果你使用的是中國大陸應用市場分發版本或 GitHub Releases 版本，可在軟體 `設定` → `實驗` 中更新《雲人升》。<br/>
+> 如果你使用的是 Google Play 版本，也可直接前往 [Google Play 頁面](https://play.google.com/store/apps/details?id=net.lifeupapp.lifeup.http) 或 [GitHub Releases 頁面](https://github.com/Ayagikei/LifeUp-SDK/releases/latest) 下載。<br/>
+> 瀏覽器安全策略可能會阻止下載。你可能需要手動允許下載可執行檔案，或複製連結到其他下載器。
+
+<!-- tabs:start -->
+
+#### **Windows**
 
 - **[Windows 版本](https://lifeupcdnpic.cdn.dfyun.com.cn/download/windows/stable/LifeUp-Desktop-1.2.1-windows.zip)**
-- Linux
-  - 請前往 Github Release 下載：[https://github.com/Ayagikei/LifeUp-Desktop/releases](https://github.com/Ayagikei/LifeUp-Desktop/releases)
-- **macOS**
-  - 請前往 Github Release 下載：[https://github.com/Ayagikei/LifeUp-Desktop/releases](https://github.com/Ayagikei/LifeUp-Desktop/releases)
-  - 自 v1.2.0 開始，現在會提供 x64 和 arm64 版本。如果你的是 Intel 架構的 Mac，請下載 x64 版本，如果是 Apple Silicon 架構的 Mac，請下載 arm64 版本。
-  - macOS 版本目前未簽名，安裝時需要手動允許：[開啟來自身份不明開發者的 Mac App - 官方 Apple 支援 (中國)](https://support.apple.com/zh-cn/guide/mac-help/mh40616/mac)
-  - macOS 版本尚未完整測試，`自動連線`等部分功能可能不可用。
 
+> [!TIP]
+> Windows SmartScreen 可能提示“無法識別的應用”。<br/>
+> 請先確認檔案來自官方釋出，再點選“更多資訊”→“仍要執行”。
 
+#### **Linux**
 
-> [!WARNING]
-> 1. 需搭配《雲人升》v2.0.0 及以上版本使用。<br/>
-> 如果你使用的是中國大陸應用市場分發版本或 GitHub Release 版本，可在軟體 `設定` → `實驗` 中更新《雲人升》。<br/>
-> 如果你使用的是 Google Play 版本，也可直接前往 [Google Play 頁面](https://play.google.com/store/apps/details?id=net.lifeupapp.lifeup.http) 或 [GitHub Release 頁面](https://github.com/Ayagikei/LifeUp-SDK/releases/latest) 下載。
+- 請前往 GitHub Releases 下載：[https://github.com/Ayagikei/LifeUp-Desktop/releases](https://github.com/Ayagikei/LifeUp-Desktop/releases)
 
-> [!WARNING]
-> 2. 瀏覽器安全策略可能會阻止下載。你可能需要手動允許下載可執行檔案，或複製連結到其他下載器。<br/>
+#### **macOS**
+
+- 請前往 GitHub Releases 下載：[https://github.com/Ayagikei/LifeUp-Desktop/releases](https://github.com/Ayagikei/LifeUp-Desktop/releases)
+- 自 v1.2.0 開始，現在會提供 x64 和 arm64 版本。如果你的是 Intel 架構的 Mac，請下載 x64 版本，如果是 Apple Silicon 架構的 Mac，請下載 arm64 版本。
+- macOS 版本尚未完整測試，`自動連線`等部分功能可能不可用。
+
+> [!TIP]
+> macOS 版本目前未簽名，安裝時可能提示“身份不明開發者”。<br/>
+> 你可以在系統設定中手動允許開啟，詳見：[開啟來自身份不明開發者的 Mac App - 官方 Apple 支援 (中國)](https://support.apple.com/zh-cn/guide/mac-help/mh40616/mac)
+
+<!-- tabs:end -->
+
+如果某個平臺安裝包暫時缺失，請稍後重新整理。Release 資產可能仍在上傳中。
 
 <br/>
 
@@ -133,22 +147,32 @@
 
 ## 常見問題
 
-**桌面端能否新增任務？**
+<details>
+<summary>桌面端能否新增任務？</summary>
 
 暫時不能，目前的預覽版本主要提供的是資料查詢能力，該功能會在後續版本開發。
 
 但當前階段，你也能夠透過《雲人升》呼叫 API 來新增任務。
 
-**《雲人升》點選“讀取「人升」資料許可權”後無反應，或顯示 API 不存在？**
+</details>
+
+<details>
+<summary>《雲人升》點選“讀取「人升」資料許可權”後無反應，或顯示 API 不存在？</summary>
 
 1. 如果無反應，通常是因為你之前已授權，可視為成功。
 2. 如果提示 API 不存在，請加入會員內測並更新《人升》到最新版本。
 
-**手機鎖屏一段時間後，桌面端無法讀取資料？**
+</details>
+
+<details>
+<summary>手機鎖屏一段時間後，桌面端無法讀取資料？</summary>
 
 請為《人升》-《雲人升》進行相容性配置。
 
-**《人升》《雲人升》處於後臺時，部分介面無法正常呼叫？**
+</details>
+
+<details>
+<summary>《人升》《雲人升》處於後臺時，部分介面無法正常呼叫？</summary>
 
 > 這通常不影響桌面端基礎使用，但可能影響自定義 API 呼叫。
 
@@ -156,7 +180,10 @@
 
 如果你是 MIUI 系統（小米、紅米），你還需要額外為這兩個應用，在系統設定中，配置`後臺顯示介面`許可權。
 
-**Windows 安裝失敗，顯示 `Failed to launch JVM`？**
+</details>
+
+<details>
+<summary>Windows 安裝失敗，顯示 `Failed to launch JVM`？</summary>
 
 同：https://github.com/Ayagikei/LifeUp-Desktop/issues/2
 
@@ -176,6 +203,8 @@
 修改後，程式通常可恢復正常執行。
 
 > `~` 指使用者目錄路徑。
+
+</details>
 
 ---
 
