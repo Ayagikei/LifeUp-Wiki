@@ -1,8 +1,8 @@
 # 备份与恢复
 
-【在B站查看：《人升》2分钟配置坚果云实现云备份】 https://www.bilibili.com/video/BV1Yg411i7uM/?share_source=copy_web&vd_source=141b0b80de90aedb6b7f25458fa6b5d1
+【在 B 站查看：《人升》2 分钟配置坚果云实现云备份】 https://www.bilibili.com/video/BV1Yg411i7uM/?share_source=copy_web&vd_source=141b0b80de90aedb6b7f25458fa6b5d1
 
-【在B站查看：《人升》一键导入存档数据（恢复）】 https://www.bilibili.com/video/BV1xP411u7dV/?share_source=copy_web&vd_source=141b0b80de90aedb6b7f25458fa6b5d1
+【在 B 站查看：《人升》一键导入存档数据（恢复）】 https://www.bilibili.com/video/BV1xP411u7dV/?share_source=copy_web&vd_source=141b0b80de90aedb6b7f25458fa6b5d1
 
 [在微信公众号查看本文（含坚果云备份的设置视频教程）](https://mp.weixin.qq.com/s?__biz=MzI0OTQ4OTAxMQ==&mid=2247483867&idx=1&sn=d24068b74810d5b91b37c1abda436eca&chksm=e991f2c7dee67bd1ed49e74b3131bf7812c22f2a58a82cdac3c30182665296262a3c86a77b1d&mpshare=1&scene=23&srcid=1205mlIjJmwwyVugMJ7P25jM&sharer_sharetime=1639901809270&sharer_shareid=aefb2cf8bbd4980bf3f827f86feb6b04#rd)
 
@@ -18,14 +18,14 @@
 
 ### 1) 是否支持同步？
 
-- ❌ 服务端直接同步数据（`人升`是离线存储应用）
+- ❌ 服务端直接同步数据（《人升》是离线存储应用）
 - ❌ 增量同步
 - ✔️ 使用自选 WebDAV 云服务 / Dropbox / Google Drive 进行云存储和同步
 - ✔️ 跨设备**手动全量**同步
 
-### 2) 为什么一定要配备份？
+### 2) 为什么一定要配置备份？
 
-`人升`是离线优先应用，你的大部分个人数据默认保存在本地设备。
+《人升》是离线优先应用，你的大部分个人数据默认保存在本地设备。
 
 这意味着如果没有备份，在这些场景下容易丢失数据：
 
@@ -42,7 +42,7 @@
 > [!TIP]
 > 如果你在中国大陆使用，建议优先用坚果云 WebDAV。<br/>如果你有稳定海外网络，也可以直接授权 Google Drive / Dropbox。
 
-### 3) 备份包含哪些内容
+### 3) 备份包含哪些内容？
 
 备份会导出你的本地数据到压缩文件，包含但不限于：
 
@@ -84,10 +84,10 @@
 <details>
 <summary>手机端获取 WebDAV 信息（含截图）</summary>
 
-1. 安装并登录坚果云 APP。  
+1. 安装并登录坚果云 App。
    ![](_media/backup/04.png ': size=50%')
 
-2. 在坚果云 `设置` - `第三方应用管理` 中添加应用密码，应用名称可填 `人升`。  
+2. 在坚果云 `设置` - `第三方应用管理` 中添加应用密码，应用名称可填 `人升`。
    ![](_media/backup/05.png ': size=50%')
 
    <br/>
@@ -98,7 +98,7 @@
 
    ![](_media/backup/07.png ': size=50%')
 
-3. 添加成功后，记录 `服务器地址`、`账号`、`应用密码`。  
+3. 添加成功后，记录 `服务器地址`、`账号`、`应用密码`。
    ![](_media/backup/08.png ': size=50%')
 
 </details>
@@ -108,24 +108,24 @@
 
 1. 登录坚果云官网。
 2. 点右上角用户名 -> `账号信息`。
-3. 切换到安全选项。  
+3. 切换到安全选项。
    ![](_media/backup/02.png ': size=50%')
 4. 在 `第三方应用管理` 新增应用（如：人升）。
-5. 点击 `生成密码`，保存 `服务器地址`、`账号`、`密码`。  
+5. 点击 `生成密码`，保存 `服务器地址`、`账号`、`密码`。
    ![](_media/backup/03.png ': size=50%')
 
 </details>
 
 #### 2. 在人升内填写配置
 
-进入：`侧边栏 -> 设置 -> 数据备份/恢复/清除 -> WebDAV 配置`  
+进入：`侧边栏 -> 设置 -> 数据备份/恢复/清除 -> WebDAV 配置`
 填入三项信息并测试连接，成功后即可使用 `备份至 WebDAV` 和 `自动云同步`。
 
 ![](_media/backup/09.png ': size=30%')
 
 #### 3. 配置建议
 
-- 备份文件大于 10MB 时，建议开启 `忽略媒体文件`。
+- 备份文件大于 10 MB 时，建议开启 `忽略媒体文件`。
 - 同时可适当拉长 `自动备份间隔`，提升成功率并减少流量消耗。
 
 </details>
@@ -191,7 +191,7 @@
 3. 确认恢复（会覆盖当前本地数据）。
 
 > [!WARNING]
-> Android 10/11 对存储权限限制更严格。通过 QQ、微信、部分文件管理器选文件时，可能出现路径不可读导致恢复失败。
+> Android 10 / 11 对存储权限限制更严格。通过 QQ、微信、部分文件管理器选文件时，可能出现路径不可读导致恢复失败。
 
 推荐：使用电脑整理文件后再导入，并优先放在易授权目录。
 

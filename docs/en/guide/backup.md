@@ -1,7 +1,7 @@
 # Backup and Restore
 
 > [!IMPORTANT]
-> LifeUp is offline-first. Most of your personal data stays on your device. If backup is not configured, uninstalling the app, switching phones, or device damage can cause permanent data loss.
+> LifeUp is an offline-first application. Most of your personal data stays on your device. If backup is not configured, uninstalling the app, switching phones, or device damage can cause permanent data loss.
 
 ## Quick Navigation
 
@@ -29,7 +29,7 @@ A reliable backup means your data exists on another device or storage medium, no
 Backups include your local core data, such as tasks, attributes, shop data, achievements, feelings, Pomodoro records, and settings. Media files (attachments, icons, backgrounds, audio) can also be included.
 
 > [!TIP]
-> If backup size is over 10MB, enable "Ignore media/picture files" or increase backup interval for better stability.
+> If backup size is over 10 MB, enable "Ignore media/picture files" or increase backup interval for better stability.
 
 ## 2) How to Configure Backup Methods :id=configure-methods
 
@@ -39,15 +39,15 @@ For most English users, this priority works best:
 | --- | --- | --- | --- | --- |
 | Google Drive | ⭐⭐⭐⭐⭐ | Daily usage, easy cloud sync | Yes | One-tap authorization in app |
 | Dropbox | ⭐⭐⭐⭐ | Daily usage, cross-device sync | Yes | Also supports in-app authorization |
-| Local export (Custom Path) | ⭐⭐⭐⭐ | Manual copy to PC/NAS | No (manual) | Reliable fallback and versioned archives |
+| Local export (Custom Path) | ⭐⭐⭐⭐ | Manual copy to PC / NAS | No (manual) | Reliable fallback and versioned archives |
 | WebDAV | ⭐⭐⭐ | Self-hosting / existing WebDAV service | Yes | Good alternative if you already use WebDAV |
 | Auto backup to Download folder (Android 10+) | ⭐⭐⭐ | Reduce uninstall risk | Yes | Does not protect against device damage |
 
 <details>
-<summary>Set up Google Drive/Dropbox auto backup (recommended)</summary>
+<summary>Set up Google Drive / Dropbox auto backup (recommended)</summary>
 
 In the app, go to:
-`Sidebar -> Settings -> Data Backup/Restore/Clear`
+`Sidebar → Settings → Data Backup/Restore/Clear`
 
 Then:
 
@@ -79,7 +79,7 @@ Use this when you want manual, portable backups:
 1. Tap `Backup`
 2. Choose `Custom Path`
 3. Save the generated file (usually `.lfbak`)
-4. Copy it to PC/NAS/cloud storage
+4. Copy it to PC / NAS / cloud storage
 
 > [!WARNING]
 > Do not keep your only backup on the same phone.
@@ -107,7 +107,7 @@ Create an extra local export before:
 - system reset/reflash
 - phone migration
 
-Use: `Backup -> Custom Path`, then copy file to external storage.
+Use: `Backup → Custom Path`, then copy file to external storage.
 
 </details>
 
@@ -129,7 +129,7 @@ Use: `Backup -> Custom Path`, then copy file to external storage.
 <summary>Restore from local backup file</summary>
 
 1. Move backup file to target device
-2. Tap `Restore -> Custom Path`
+2. Tap `Restore → Custom Path`
 3. Select backup file and confirm
 
 You can also enable "Support file system to open backup files" to import directly from file manager or sharing apps.
@@ -157,7 +157,7 @@ Some phones support full app-data migration (brand migration tools / system clon
 1. On old phone, create a fresh backup first.
 2. On new phone, install LifeUp.
 3. For cloud migration: configure the same cloud method/account, then restore.
-4. For file migration: transfer backup file, then use `Restore -> Custom Path`.
+4. For file migration: transfer backup file, then use `Restore → Custom Path`.
 5. After restore, trigger one manual backup to verify backup chain on new phone.
 
 > [!WARNING]
