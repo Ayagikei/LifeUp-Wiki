@@ -644,7 +644,7 @@ The method of obtaining the id is to open the "Developer Mode" on the "Labs" pag
 | --------- | ------------- | --------------------- | ------- | -------- | ----- |
 | id        | task id       | number greater than 0 | 1       | no*      | task id; if it is a repeating task, the id will be updated every time it repeats. |
 | gid       | task group id | number greater than 0 | 1       | no*      | task group id; |
-| name      | name          | any text              | get up  | no*      | fuzzy search, only one of the tasks found |
+| name      | name          | any text              | get up  | no*      | fuzzy search, operate on only one matched task |
 
 **Notice:**
 
@@ -668,7 +668,8 @@ The method of obtaining the id is to open the "Developer Mode" on the "Labs" pag
 | --------- | ------------- | --------------------- | ------- | -------- | ----- |
 | id        | task id       | number greater than 0 | 1       | no*      | task id; if it is a repeating task, the id will be updated every time it repeats. |
 | gid       | task group id | number greater than 0 | 1       | no*      | task group id; |
-| name      | name          | any text              | get up  | no*      | fuzzy search, only one of the tasks found |
+| name      | name          | any text              | get up  | no*      | fuzzy search, operate on only one matched task |
+| time      | Freeze until  | timestamp             | 1661688800682 | no | - |
 
 **Notice:**
 
@@ -680,7 +681,7 @@ The method of obtaining the id is to open the "Developer Mode" on the "Labs" pag
 
 **Method name:** unfreeze
 
-**Description:** Trigger task freeze, only for repeating tasks.
+**Description:** Trigger task unfreeze.
 
 **Example:**
 
@@ -692,7 +693,7 @@ The method of obtaining the id is to open the "Developer Mode" on the "Labs" pag
 | --------- | ------------- | --------------------- | ------- | -------- | ----- |
 | id        | task id       | number greater than 0 | 1       | no*      | task id; if it is a repeating task, the id will be updated every time it repeats. |
 | gid       | task group id | number greater than 0 | 1       | no*      | task group id; |
-| name      | name          | any text              | get up  | no*      | fuzzy search, only one of the tasks found |
+| name      | name          | any text              | get up  | no*      | fuzzy search, operate on only one matched task |
 
 **Notice:**
 
@@ -704,7 +705,7 @@ The method of obtaining the id is to open the "Developer Mode" on the "Labs" pag
 
 **Method name:** delete_task
 
-**Description:** Delete  a task.
+**Description:** Delete a task.
 
 **Example:**
 
@@ -716,7 +717,7 @@ The method of obtaining the id is to open the "Developer Mode" on the "Labs" pag
 | --------- | ------------- | --------------------- | ------- | -------- | ----- |
 | id        | task id       | number greater than 0 | 1       | no*      | task id; if it is a repeating task, the id will be updated every time it repeats. |
 | gid       | task group id | number greater than 0 | 1       | no*      | task group id; |
-| name      | name          | any text              | get up  | no*      | fuzzy search, only one of the tasks found |
+| name      | name          | any text              | get up  | no*      | fuzzy search, operate on only one matched task |
 
 **Notice:**
 
@@ -1214,6 +1215,7 @@ For example, filter by product item id 1: `lifeup://api/goto?page=synthesis&filt
 | task_id          | task id                    | a number greater than 0 | coin          | no       |       |
 | task_gid         | task group id              | a number greater than 0 | remarks       | no       |       |
 | task_name        | name                       | any text                | 10            | no       | fuzzy search, only one of the tasks found |
+| ui               | Display rewarded tomatoes UI | true or false         | true          | no       | Introduced in v1.94.0, defaults to true |
 
 **Notice:**
 
@@ -1378,6 +1380,47 @@ For example, filter by product item id 1: `lifeup://api/goto?page=synthesis&filt
 | Field    | Type    | Description              | Example |
 | -------- | ------- | ------------------------ | ------- |
 | tomatoes | Integer | Current pomodoro count   | 10      |
+
+<br/>
+
+### Purchase Item
+
+?> Requires v1.98.0+
+
+**Method:** purchase_item
+
+**Description:** Purchase a specific item
+
+**Examples:**
+
+- Purchase item ID 1: [lifeup://api/purchase_item?id=1](lifeup://api/purchase_item?id=1)
+- Purchase item named "Health Potion": [lifeup://api/purchase_item?name=Health%20Potion](lifeup://api/purchase_item?name=Health%20Potion)
+- Purchase 5 copies of item ID 1: [lifeup://api/purchase_item?id=1&purchase_quantity=5](lifeup://api/purchase_item?id=1&purchase_quantity=5)
+
+| Parameter         | Meaning          | Values                | Example       | Required | Notes                      |
+| ----------------- | ---------------- | --------------------- | ------------- | -------- | -------------------------- |
+| id                | Item ID          | number greater than 0 | 1             | No*      | One of id or name required |
+| name              | Item name        | any text              | Health Potion | No*      | One of id or name required |
+| purchase_quantity | Purchase quantity| number greater than 0 | 5             | No       | Defaults to 1              |
+
+**Response:**
+
+| Field  | Type    | Description        | Example         | Notes                       |
+| ------ | ------- | ------------------ | --------------- | --------------------------- |
+| itemId | Number  | Item ID            | 1               | Returned on successful buy  |
+| result | Integer | Result code        | 0               | See result codes below      |
+| desc   | Text    | Result description | PurchaseSuccess | See result codes below      |
+
+**Result Codes:**
+
+| Code | Description               | Notes                         |
+| ---- | ------------------------- | ----------------------------- |
+| 0    | PurchaseSuccess           | Purchase succeeded            |
+| 1    | DatabaseError             | Database error                |
+| 2    | NotEnoughCoin             | Not enough coins              |
+| 3    | ItemNotFound              | Item not found                |
+| 4    | PurchaseAndUseSuccess     | Purchase and use succeeded    |
+| 5    | PurchaseSuccessAndUseFailure | Purchase succeeded but use failed |
 
 <br/>
 
@@ -1638,7 +1681,7 @@ For example, filter by product item id 1: `lifeup://api/goto?page=synthesis&filt
 | item_amount   | Item quantity     | [1, 99]             | 1         | No       | Defaults to 1                   |
 | items         | Item rewards JSON | JSON text            | [{"item_id":1,"amount":2}] | No | Set multiple item rewards, see format below |
 | conditions_json| Unlock conditions JSON | JSON text      | [{"type":7,"target":1000000}] | No | Set unlock conditions, see format below |
-| coin         | Coin reward       | [0, 999999]      | 10         | No       | Amount of coins earned by completing tasks |
+| coin         | Coin reward       | [0, 999999]      | 10         | No       | Amount of coins earned when unlocking the achievement |
 | coin_var     | Coin reward variation | integer              | 5          | No       | Variation range for coin rewards |
 | coin_set_type| How to set coin value | One of:<br/>absolute<br/>relative | absolute | No | absolute - directly set coin to value<br/>relative - add/subtract from original coin value |
 | exp_set_type | How to set exp value | One of:<br/>absolute<br/>relative | absolute | No | absolute - directly set exp to value<br/>relative - add/subtract from original exp value |
@@ -1797,9 +1840,13 @@ For example, filter by product item id 1: `lifeup://api/goto?page=synthesis&filt
 
 | Parameter   | Meaning              | Type                                                         | Example | Required                                    | Notes                                                        |
 | ----------- | -------------------- | ------------------------------------------------------------ | ------- | ------------------------------------------- | ------------------------------------------------------------ |
-| key         | type of query        | Only one of the following values:<br/>coin<br/>atm<br/>item<br/>item_id_list<br/>tomato | coin    | yes                                         | coin - current amount of coins<br/>atm - current ATM balance<br/>item - Item information for the specified `itemId`<br/>item_id_list - List of item IDs specified by `categoryId`<br/>tomato - Tomato data |
+| key         | type of query        | Only one of the following values:<br/>coin<br/>atm<br/>item<br/>item_id_list<br/>tomato<br/>task | coin    | yes                                         | coin - current amount of coins<br/>atm - current ATM balance<br/>item - Item information for the specified `itemId`<br/>item_id_list - List of item IDs specified by `categoryId`<br/>tomato - Tomato data<br/>task - Task information (v1.101.0+) |
 | item_id     | the id of the item   | a number greater than 0                                      | 1       | When the key is `item`, it must be provided |                                                              |
 | category_id | the Shop category id | Number greater than or equal to 0                            | 0       | no*                                         | Required only when the key is `item_id_list`, representing the ID of the list to be queried. |
+| task_id / taskId | Task ID          | Number greater than 0                                        | 1       | When key is `task`, one of three* is required | Queried task ID |
+| task_gid / taskGid / task_group_id / taskGroupId | Task group ID | Number greater than 0 | 1 | When key is `task`, one of three* is required | Queried task group ID |
+| task_name / taskName | Task name      | Any text                                                     | Study   | When key is `task`, one of three* is required | Fuzzy-matched task name |
+| withSubTasks | Include sub-tasks   | true or false                                                | true    | No                                          | Available only when key is `task`; defaults to true |
 
 **Return Value:**
 

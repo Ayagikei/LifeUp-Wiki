@@ -124,7 +124,8 @@ http://{host:port}/tasks
 http://{host:port}/tasks/${id}
 
 // History (supports pagination)
-http://{host:port}/history?offset=${offset}&limit=${limit}
+// filterGid is optional and can be used to filter all history records of a repeating task
+http://{host:port}/history?offset=${offset}&limit=${limit}&filterGid=${filterGid}
 
 // Task categories
 http://{host:port}/tasks_categories

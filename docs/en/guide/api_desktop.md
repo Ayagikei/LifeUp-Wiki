@@ -118,9 +118,9 @@ If a package is temporarily missing, refresh later. Release assets may still be 
 <details>
 <summary>Can I add tasks from desktop?</summary>
 
-Not yet in the current preview build. The desktop currently focuses on data query/browsing.
+Yes. The current desktop build supports basic task creation.
 
-At this stage, you can still add tasks by calling APIs via LifeUp Cloud.
+However, not all advanced in-app task options are available on desktop yet. For complex configurations, use the mobile app or call APIs via LifeUp Cloud.
 
 </details>
 
