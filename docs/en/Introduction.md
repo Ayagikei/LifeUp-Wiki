@@ -1,16 +1,16 @@
 # Introduction
 
-**LifeUp: Gamify To-Do & Habit**
+**LifeUp: Gamified To-Do List & Habit Tracker**
 
 > LifeUp, to upgrade your life.
 
 Customize your own gamified to-do list with attributes, EXP, coins, and rewards to stay productive.
 
-<b>Want a gamified and fun to-do & habit-tracking app to stay motivated, organized, and focused?</b>
+<b>Are you looking for a gamified and fun to-do & habit-tracking app to stay motivated, organized, and focused?</b>
 
 - Record and complete tasks to gain EXP and coins, turning your life into an RPG.
 - EXP can improve your attributes and skill levels, reflecting your self-improvement.
-- Use coins to purchase items you desire as rewards or unlock exclusive treasure chests. This helps you balance your work and rewards, and improves your focus.
+- Use coins to purchase items you desire as rewards or unlock exclusive treasure chests. This helps you balance work and rewards, improving your focus.
 - Set up milestone achievements to auto-track your task progress and goals.
 - And more! Pomodoro, Feelings, custom Loot Boxes, and even a crafting feature!
 
@@ -67,7 +67,7 @@ We value your privacy. Your data is stored locally on your phone and will not be
 📎 <b>Comprehensive To-Do Features</b>
 Repeats, reminders, notes, deadlines, history, checklists, attachments, and more. Record your to-dos and LifeUp will help you keep track of them.
 
-What's more, you can gamify your routine to-do list in LifeUp with tons of custom reward options.
+Furthermore, you can gamify your daily to-do list in LifeUp with a plethora of custom reward options.
 
 <br />
 
@@ -96,6 +96,6 @@ Record your thoughts and attach pictures when completing tasks. Use this for you
 
 - Refund: Google Play Store may automatically process a refund if you uninstall a paid app within a few hours of purchase. Of course, you can always contact us at the email address below for a refund or assistance. <b>Please consider giving it a try! </b>
 
-- App Privacy Terms & Policy: http://wiki.lifeupapp.fun/en/#/introduction/privacy-terms
+- App Privacy Terms & Policy: [Privacy Terms](introduction/privacy-terms)
 
 - Contact Email: lifeup@ulives.io
