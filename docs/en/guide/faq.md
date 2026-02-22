@@ -22,14 +22,15 @@ If you run into issues like:
 
 please read the compatibility guide:
 
-!> [Compatibility configuration](/guide/compatibility.md)
+> [!WARNING]
+> [Compatibility configuration](/guide/compatibility.md)
 
 ## 🌍 Universal
 
 <details>
 <summary>Refund policy</summary>
 
-LifeUp is currently listed as a paid app on Google Play due to historical reasons, and it is not easy for us to migrate to a post-download payment model right now.
+LifeUp is currently listed as a paid app on Google Play due to historical reasons, making it difficult to migrate to a post-download payment model.
 
 Google Play may automatically refund your order if you uninstall shortly after purchase.
 
@@ -75,7 +76,7 @@ You can use:
 
 Most languages in *LifeUp* are maintained by the community.
 
-Since 2026, we have also used AI translation for major languages to improve baseline quality and keep updates faster for users.
+Starting in 2026, we will use AI translation for major languages to improve baseline quality and speed up updates.
 
 Community proofreading and corrections are still very welcome.
 
@@ -195,9 +196,9 @@ You can also change global defaults in:
 <details>
 <summary>Why does the target number of times start from 1/N?</summary>
 
-Unlike the progress of counting tasks, the (1/N) **here does not represent the total progress.**
+Unlike counting tasks, (1/N) **here does not represent total progress.**
 
-Instead, **it is the number of times the current card belongs to, and whether this time is complete is represented by ⚪ or ✅ in front of the card.**
+Instead, **it indicates the current repetition count. Whether this repetition is complete is shown by ⚪ or ✅.**
 
 <br/>
 
@@ -207,7 +208,7 @@ This task will be repeated 10 times in total (a total of 10 cards will be genera
 And ✅1/10 means:
 The current card belongs to the 1st time and is completed.
 
-If the total progress is used, because the completed cards can be displayed, there will be scenes such as (⚪1/10 and ✅1/10 coexist), and the cards will disappear when the goal is reached (✅9/10), better Not common sense.
+If total progress were used, completed cards would display confusing statuses like (⚪1/10 and ✅1/10 coexist). Furthermore, cards might disappear upon reaching the goal (e.g., ✅9/10), which is counterintuitive.
 
 </details>
 
@@ -287,7 +288,7 @@ When creating a task or achievement, tap the corresponding reward button and con
 <details>
 <summary>Why are item images missing or not displaying?</summary>
 
-LifeUp is offline-first. Local item images are stored on your own device.
+LifeUp is offline-first, so item images are stored locally on your device.
 
 If images are missing, check what happened recently:
 
@@ -330,11 +331,11 @@ Note: if you use online features, related server-side displays may take a short 
 <details>
 <summary>What are the level caps and experience gradients for attributes?</summary>
 
-It can be regarded as an unlimited level (currently 2000+, which can hardly be reached by normal means).
+It can be regarded as having unlimited levels (currently 2000+, which is hard to reach by normal means).
 
-The experience value required for each level will have a gradient adjustment, but the current gradient is actually unreasonable. (Therefore, it is impossible to evaluate the reward only by looking at the upper limit of the level, and the upper limit of the experience value is about 2^63).
+The experience required for each level scales up, though the current gradient is steep. (Thus, rewards shouldn't be evaluated solely by level caps; the experience cap is approximately 2^63).
 
-In fact, many users will be in the gradient of 2500 experience points for a long time, and they may find ways to optimize the level system or open customization in the future. (The total amount of experience points is not affected).
+In fact, many users will remain in the 2500 EXP gradient for a long time. We may optimize the level system or allow customization in the future. (Total experience points will not be affected).
 
 | Level    | Experience Points Required for Each Level |
 | -------- | ----------------------------------------- |
@@ -429,7 +430,7 @@ First, confirm that notification permission for LifeUp is enabled.
 
 Not currently.
 
-You can try positive timer mode.
+You can try count-up timer mode.
 
 In Pomodoro mode, when one work session ends, the timer keeps counting up. You can then decide whether to add extra time to focus records. Auto-next would conflict with this workflow.
 
