@@ -1,6 +1,6 @@
 # Introduction
 
-**LifeUp: Gamify To-Do & Habit**
+**LifeUp: Gamified To-Do List & Habit Tracker**
 
 > LifeUp: Upgrade Your Life.
 
@@ -12,7 +12,7 @@ Customize your gamified to-do list with attributes, EXP, coins, and rewards to s
 - Gain EXP to improve attributes and skill levels, reflecting your real-life progress.
 - Use coins to purchase rewards you desire or unlock exclusive treasure chests. This helps balance work and rewards, improving your focus.
 - Set up achievements to automatically track your task progress and goals.
-- And more! Pomodoro timer, Feelings, custom Loot Boxes, and even a crafting feature!
+- And more! Pomodoro Timer, Feelings, custom Loot Boxes, and even a crafting feature!
 
 Gamify your life and customize your lists for optimal motivation—particularly helpful for ADHD.
 
@@ -41,7 +41,7 @@ In addition to dozens of built-in achievements waiting to be unlocked, you can c
 <br />
 
 ⏰ <b>Pomodoro</b>
-Use the Pomodoro timer to stay focused. Upon completion, receive a virtual tomato reward. Decide whether to eat it for EXP, sell it for coins, or exchange it for other items.
+Use the Pomodoro Timer to stay focused. Upon completion, receive a virtual tomato reward. Decide whether to eat it for EXP, sell it for coins, or exchange it for other items.
 
 <br />
 
@@ -59,7 +59,7 @@ Create custom crafting recipes. Beyond making sticks from wood, try combining �
 
 <br />
 
-🔒️ <b>Offline First, Supports Multiple Backup Methods</b>
+🔒️ <b>Offline-First, Supports Multiple Backup Methods</b>
 We value your privacy. Your data is stored locally on your device and is not transmitted to our servers. The app works entirely offline. You can use Google Drive, Dropbox, or WebDAV to sync your data, or export it for local backup.
 
 <br />
@@ -83,11 +83,11 @@ Record your thoughts and attach pictures when completing tasks. Use this for per
 
 🚧 <b>More features!</b>
 
-- App widgets
+- App Widgets
 - Dozens of theme colors
-- Night mode (dark theme)
-- Detailed statistics
-- Continuous updates...
+- Night Mode (Dark Theme)
+- Detailed Statistics
+- Continuous Updates...
 
 ## Support & Help
 
@@ -95,6 +95,6 @@ Record your thoughts and attach pictures when completing tasks. Use this for per
 
 - Refund: Google Play Store may automatically process a refund if you uninstall a paid app within a few hours of purchase. Of course, you can always contact us at the email address below for a refund or assistance. <b>Please consider giving it a try! </b>
 
-- App Privacy Terms & Policy: http://wiki.lifeupapp.fun/en/#/introduction/privacy-terms
+- App Privacy Policy & Terms: http://wiki.lifeupapp.fun/en/#/introduction/privacy-terms
 
 - Contact Email: lifeup@ulives.io

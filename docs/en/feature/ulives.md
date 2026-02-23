@@ -29,7 +29,7 @@ ulives introduces several exciting upgrades to make gamifying your tasks even mo
 *   **📂 Enhanced Organization with Groups:** Beyond simple lists, ulives introduces **Groups**. Organize your tasks, shop items, and achievements into logical categories for a clearer overview and better management.
 *   **⏭️ Clearer Task Cycles & Skip Option:** We've refined how tasks and periods work, making them more explicit. Plus, you can now officially 'skip' a task occurrence without breaking your streak or affecting stats negatively when life happens.
 *   **📜 Unified Activity Log:** Track everything in one place! See completed tasks, unlocked achievements, rewards gained/lost, and quickly create linked Reflections.
-*   **☁️ Offline First & iCloud Backup:** No login required. Your data stays on your device, with seamless iCloud backup and sync.
+*   **☁️ Offline-First & iCloud Backup:** No login required. Your data stays on your device, with seamless iCloud backup and sync.
 
 ## 🌱 Early Version & Future Roadmap
 
