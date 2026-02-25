@@ -12,17 +12,15 @@
 
 
 
-**LifeUp is a unique gamified To-Do and habit-forming android application.**
+**LifeUp is a unique Gamified To-Do List & Habit Tracker.**
 
-It is different from some gamification apps that are incorporated into a built-in game.
+Unlike other gamification apps that force you into a pre-built game, LifeUp focuses on using game elements to motivate you to act in real life.
 
-It focuses on using game elements to motivate you to act in real life.
-
-You can customize your attributes, rewards, achievements, synthesis, and even treasure chests in LifeUp.
+You can customize your Attributes, Rewards, Achievements, Crafting (Synthesis), and even Loot Boxes in LifeUp.
 
 However, this also means that the initial setup and learning curve may take some time.
 
-One thing to note is that LifeUp is positioned as a to-do list, habit-forming app, not a calendar app.
+One thing to note is that LifeUp is designed as a gamified to-do list and habit tracker, not a calendar app.
 
 
 ### FAQ before use
@@ -52,7 +50,7 @@ Before you start, you may want to know the following information:
   You can check [our privacy policy documents](https://wiki.lifeupapp.fun/en/#/introduction/privacy-terms)
   to get more information.
   
-  TL;DR: Except for the world module (similar to the function of sharing design), other data will
+  TL;DR: Except for the World (similar to the function of sharing design), other data will
   not pass through our server, it will only be stored in your device. The same is true of the
   pictures and other information you choose. **You can also choose offline mode.**
   
@@ -66,7 +64,7 @@ Before you start, you may want to know the following information:
 
   No! LifeUp is an *offline-first* app.
 
-  Logging in is only used to access the "World" module, which lets you view teams, items, and random
+  Logging in is only used to access the "World", which lets you view teams, items, and random
   tasks created by others.
 
   If you are unable to log in, it may be due to a problem with your local network, or an abnormality
@@ -89,7 +87,7 @@ Before you start, you may want to know the following information:
 
   > *But some other features (like Pomodoro) may also need to be configured to run in the background.
 
-  For more information, please check this document: https://wiki.lifeupapp.fun/en/index.html#/guide/background_running
+  For more information, please check this document: https://wiki.lifeupapp.fun/en/#/guide/background_running
 
 - **How can I view more FAQs about app usage?**
 
@@ -135,7 +133,7 @@ In LifeUp, a task is something you can realistically complete.
 
 The task module is mainly a `recording` tool. It helps you track real completion and connect it to rewards or penalties.
 
-It is not designed to automate everything. You can use the `achievement` module to track progress over time.
+It is not designed to automate everything. You can use the `Achievements` module to track progress over time.
 
 #### # Quick Start
 1. **Todos**
@@ -229,7 +227,7 @@ You can use the `Freeze` + `List Archive` functions to achieve similar functiona
 
 Tasks can be linked to almost any other function.
 - **Attributes:**
-   You get experience points for completing tasks, but you get a penalty for failing them.
+   You get EXP (Experience Points) for completing tasks, but you get a penalty for failing them.
 - **Shop:**
    Get coins or shop items for completion.
 - **Achievements:**
@@ -254,17 +252,17 @@ Tasks can be linked to almost any other function.
 
 Attributes are an abstract self-driven incentive system.
 
-The point of attributes is to quantify growth, allowing you to visualize your development with a unique perspective while completing your tasks, thus motivating you to work harder.
+The point of Attributes is to quantify growth, allowing you to visualize your development with a unique perspective while completing your tasks, thus motivating you to work harder.
 
-In another layer of meaning, attributes will divide multiple dimensions. Witnessing the difference in the growth of attributes can also make you think about whether to try more areas.
+In another layer of meaning, Attributes will divide multiple dimensions. Witnessing the difference in the growth of Attributes can also make you think about whether to try more areas.
 
-Its concept is similar to the gamified version of the `10,000-hour rule` that counts by experience value.
+Its concept is similar to the gamified version of the `10,000-hour rule` that counts by EXP (Experience Points).
 
 You can create the attributes and skills you want to work on, witness and rejoice in your growth, and implement unique self-rewards with the `Achievements` feature.
 
 1. **Built-in Attributes:**
 
-  *LifeUp* has six primary built-in attributes.
+  *LifeUp* has six primary built-in Attributes.
 
   You can use them and try to work your way up to upgrade them!
 
@@ -272,9 +270,9 @@ You can create the attributes and skills you want to work on, witness and rejoic
 
 
 
-2. **Self-built attributes or skills**.
+2. **Custom Attributes or Skills**.
 
-  In *LifeUp*, you can fully customize your own attributes or skills!
+  In *LifeUp*, you can fully customize your own Attributes or Skills!
 
   For example: `Fishing`, `Programming`, `Reading`.
 
@@ -289,11 +287,11 @@ You can create the attributes and skills you want to work on, witness and rejoic
 #### # Linkage
 > Linkage already described in other modules is not repeated here
 - **Achievements:**
-   A certain attribute reaches a certain level to unlock the achievement.
+   A certain Attribute reaches a certain level to unlock the Achievement.
 - **Pomodoro:**
-   Eat tomatoes to gain experience points.
+   Eat tomatoes to gain EXP.
 - **Shop**.
-   Create items that affect the amount of experience points.
+   Create items that affect the amount of EXP.
 
 ---
 
@@ -329,7 +327,7 @@ For example, "take a five-minute break", "watch a movie", "buy a bottle of soda"
 
 You can achieve in-app data rewards by combining them with "Use Effects."
 
-Such as rewarding a certain amount of coins, experience value, opening loot boxes to get random rewards, etc.
+Such as rewarding a certain amount of coins, EXP, opening Loot Boxes to get random rewards, etc.
 
 Such rewards can also be paired with realistic rewards to achieve various effects.
 
@@ -339,7 +337,7 @@ Such rewards can also be paired with realistic rewards to achieve various effect
 
 ##### Not sure what items to create?
 
-You can go to the `World`-`Market` module to refer to and import items created by others.
+You can go to the `World` -> `Market` to refer to and import items created by others.
 
 If you see an icon you like, you can click the `Menu (three dots)`-`Icons` button to add the icon to your local area.
 
@@ -362,7 +360,7 @@ Also,
 
 #### # Advanced Usage
 
-##### 0. Setting up the loot boxes.
+##### 0. Setting up the Loot Boxes.
 
 <p align="center">
  <img src="guide/_media/hello_world/loot_box.png" style="height:600px" />
@@ -371,9 +369,9 @@ Also,
 
 Randomness is a great way to motivate you!
 
-In *LifeUp*, you can create your own loot box.
+In *LifeUp*, you can create your own Loot Box.
 
-> Loot boxes in *LifeUp* are based on real probability calculation, there will be no pseudo-random floating effect in the game. **It is recommended to set the probability higher than real game.**
+> Loot Boxes in *LifeUp* are based on real probability calculation, there will be no pseudo-random floating effect in the game. **It is recommended to set the probability higher than real game.**
 
 <br/>
 
@@ -383,14 +381,14 @@ Click the `flask` icon on the Shop page to enter the synthesis system.
 
 The synthesis system can be used to implement arbitrary item exchanges.
 
-For example, it can be used to achieve `multi-currency`, `multi-item` rewards, or with `loot boxes` to achieve complex collections of `fishing`, `card upgrades`.
+For example, it can be used to achieve `multi-currency`, `multi-item` rewards, or with `Loot Boxes` to achieve complex collections of `fishing`, `card upgrades`.
 
 For example.
-- `line` + `bait` + `fishing place` → `🐟 blind box`
+- `line` + `bait` + `fishing place` → `🐟 Blind Box`
 - `Locked box` (get it by signing in daily) + `Key` (probability of getting it by completing the task) → `Loot Boxes`
 - ...
 
-The usefulness of the synthesis system depends on your imagination (you can find more uses in  `3. Make your own currency` and `4. Collect five blessings (Gourd boy saves grandpa)` below).
+The usefulness of the synthesis system depends on your imagination.
 
 <br/>
 
@@ -405,8 +403,8 @@ But you can package multiple items into one treasure chest.
 This also facilitates the sharing of commodity rewards between multiple tasks.
 
 For example.
-- Use the open box fixed reward mechanism: task rewards ` treasure box `, open ` treasure box ` fixed rewards `item A`, `item B`.
-- Use the synthesis system: Tasks to reward a `Treasure Chest`, then to use `Treasure Chest` in the synthesis system to get `item A`,  `item B`.
+- Use the open box fixed reward mechanism: task rewards `Treasure Chest`, open `Treasure Chest` fixed rewards `Item A`, `Item B`.
+- Use the synthesis system: Tasks to reward a `Treasure Chest`, then to use `Treasure Chest` in the synthesis system to get `Item A`, `Item B`.
 
 <br/>
 
@@ -419,7 +417,7 @@ You can use the `Synthesis` system to build your  currency and Shop.
 <br/>
 
 Realization.
-- Sports Quest → Reward `Sports Coins` → Use `Sports Coins` to synthesize `Sports` rewards
+- Sports Task → Reward `Sports Coins` → Use `Sports Coins` to synthesize `Sports` rewards
 - `Tomatoes` → `Tomato Coins` → Synthesis of exclusive items
 
 <br/>
@@ -430,8 +428,8 @@ Collect a set of cards to exchange for very rare rewards?
 
 <br/>
 
-The short version is.
-`Complete the quest to get a blind box of shards` → `Get a random shard type`
+The short version is:
+`Complete the task to get a blind box of shards` → `Get a random shard type`
 
 <br/>
 
@@ -540,15 +538,15 @@ Each timing needs to be turned on manually for reminder purposes.
 
 <br/>
 
-##### Positive Timer
-Click the `Clock` icon in the upper right corner of the tomato page to switch to positive timing mode.
+##### Count-up Timer
+Click the `Clock` icon in the upper right corner of the Pomodoro page to switch to Count-up Timer mode.
 
 > Click again to switch back to countdown mode.
 
-**The role of the buttons for positive timing from left to right:**
+**The role of the buttons for Count-up Timer from left to right:**
 - Give up
 - Pause
-- Sum up the reward
+- Settle the reward
 
 <br />
 
@@ -579,7 +577,7 @@ And you can set the tasks associated with the timer.
  <img src="guide/_media/hello_world/tomato.png" style="height:600px" />
 </p>
 
-- Eating: Gain experience value (default stamina)
+- Eating: Gain EXP (default stamina)
 - Sell: Get coins
 - Exchange: Obtaining specific items
 
@@ -624,7 +622,7 @@ The following are ways to create Feelings.
 
 - When you turn on the Feelings switch for the task, the Feelings input box will pop up automatically when you complete the task
 - When you turn on the Feelings switch for the achievement, the Feelings input box will pop up automatically when you receive the achievement reward
-- When you complete the **Team Tasks**, a Feelings input box will pop up by default, and the sentiment of the team Tasks will be automatically posted to the world module publicly
+- When you complete the **Team Tasks**, a Feelings input box will pop up by default, and the sentiment of the team Tasks will be automatically posted to the World publicly
 - You can proactively add Feelings notes to any task record at any time on the `History`, `Calendar-Ended` pages (overdue and abandoned tasks are also supported)
 - You can proactively add your Feelings at any time on the achievement page, just to **long press** on any achievement
 
@@ -658,7 +656,7 @@ And since the Feelings supports filtering by repeat tasks, you can also create m
 
 <h3 align="center" padding="100" id="world">VII. World</h3>
 
-<p align="center">There are enough social apps in the world. Here, there is no communication element. Just your little world to share moments and designs.</p>
+<p align="center">There are enough social apps in the world. Here, there is no communication element. Just your little World to share moments and designs.</p>
 
 <p align="center">
  <img src="guide/_media/hello_world/world.png" style="height:600px" />
@@ -749,7 +747,7 @@ With it, you can achieve
 
 It may sound complicated, but if you do not need customization.
 
-You can import API items directly in **World**-**Markets**-**(Link, API, Automation)** tab and use them directly.
+You can import API items directly in **World** -> **Market** -> **(Link, API, Automation)** tab and use them directly.
 
 <br/>
 
