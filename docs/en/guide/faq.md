@@ -167,7 +167,7 @@ LifeUp does not yet have a direct setting for "at least/at most N times per cycl
 | :--- | :--- | :--- | :--- |
 | **Counting Task** | Set frequency to `Weekly`, enable `Counting Task`, set count (e.g., 3). | Simple setup; progress is clear (e.g., 1/3). | **Rewards are only given after the final count is completed.** No reward for individual completions. |
 | **Infinite Task + Target** | Set frequency to `Infinite`, target count to 3, deadline to Sunday. | **Rewards are given for each completion.** | **Must be recreated manually each week** (since the task ends after completion). |
-| **Subtasks** | Set frequency to `Weekly`, add 3 subtasks inside. | Can set individual rewards and reminders for each completion. | Requires entering the detail page to check off subtasks; more steps involved. |
+| **Subtasks** | Set frequency to `Weekly`, add 3 subtasks inside. | Can set individual rewards and reminders for each completion. | Requires entering the detail page to check off subtasks; must be created manually one by one (suitable only for small counts). |
 | **Infinite Task (Stats Only)** | Set frequency to `Infinite`. | Easiest setup; rewards and stats for every completion. | **No forced constraint.** You must check your stats manually to see if you met the weekly goal. |
 
 > [!NOTE]
