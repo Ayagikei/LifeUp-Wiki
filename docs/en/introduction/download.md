@@ -1,6 +1,7 @@
 # Download & Purchase
 
-?> Looking for an iOS alternative? Check out [ulives](https://app.ulives.io/), our productivity app designed for Apple devices!
+> [!TIP]
+> Looking for an iOS alternative? Check out [ulives](https://app.ulives.io/), our productivity app designed for Apple devices!
 
 ## 🏪 1. Google Play Store (Recommended)
 
@@ -16,7 +17,7 @@ The Google Play Store is our primary distribution channel. We recommend purchasi
 
 With a Google Play purchase, you receive:
 
-- **One-time purchase for lifetime access to all features**
+- **One-time Purchase for lifetime access to all features**
 - A completely ad-free experience with no in-app purchases
 - Regular updates and improvements
 - A 7-day trial period after purchase with refund options
@@ -75,7 +76,7 @@ After the trial period ends, you can:
 
 LifeUp Pro is also available as a paid app on the Amazon Appstore. Similar to the Google Play version, it offers:
 
-- A one-time purchase for permanent access
+- A One-time Purchase for permanent access
 - An ad-free experience
 - All features included
 - Regular updates
@@ -93,7 +94,7 @@ We have found some websites offering cracked versions of LifeUp. Using these ver
 - Risk of added advertisements or malicious permissions that may compromise your privacy
 - Inability to log in properly or use online features
 
-LifeUp is a one-time purchase indie app. If you enjoy using it, please consider supporting our development work.
+LifeUp is a One-time Purchase indie app. If you enjoy using it, please consider supporting our development work.
 
 ---
 

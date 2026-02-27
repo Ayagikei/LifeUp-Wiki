@@ -8,11 +8,12 @@
 
 ## Introduction
 
-?> **Thanks for purchasing and downloading *LifeUp*!**
+> [!NOTE]
+> **Thanks for purchasing and downloading *LifeUp*!**
 
 
 
-**LifeUp is a unique gamified To-Do and habit-forming android application.**
+**LifeUp is a unique Gamified To-Do List & Habit Tracker android application.**
 
 It is different from some gamification apps that are incorporated into a built-in game.
 
@@ -52,7 +53,7 @@ Before you start, you may want to know the following information:
   You can check [our privacy policy documents](https://wiki.lifeupapp.fun/en/#/introduction/privacy-terms)
   to get more information.
   
-  TL;DR: Except for the world module (similar to the function of sharing design), other data will
+  TL;DR: Except for the World module (similar to the function of sharing design), other data will
   not pass through our server, it will only be stored in your device. The same is true of the
   pictures and other information you choose. **You can also choose offline mode.**
   
@@ -109,7 +110,8 @@ Before you start, you may want to know the following information:
 
 ## Features
 
-> 🚧 This section is still being improved. You may notice grammar issues or screenshots in other languages. Corrections are welcome.
+> [!WARNING]
+> This section is still being improved. You may notice grammar issues or screenshots in other languages. Corrections are welcome.
 
 There are already many examples and guides inside the app.
 
@@ -165,7 +167,8 @@ You can adjust this if you usually finish tasks after midnight (for example, unt
 
 <br/>
 
-!> **"No deadline"** means that the task will not automatically expire and repeat. In most scenarios, you only need to keep the default deadline and do not need to set it to "No deadline".
+> [!WARNING]
+> **"No deadline"** means that the task will not automatically expire and repeat. In most scenarios, you only need to keep the default deadline and do not need to set it to "No deadline".
 
 <br/>
 
@@ -329,11 +332,12 @@ For example, "take a five-minute break", "watch a movie", "buy a bottle of soda"
 
 You can achieve in-app data rewards by combining them with "Use Effects."
 
-Such as rewarding a certain amount of coins, experience value, opening loot boxes to get random rewards, etc.
+Such as rewarding a certain amount of coins, experience value, opening Loot Boxes to get random rewards, etc.
 
 Such rewards can also be paired with realistic rewards to achieve various effects.
 
-?> Using random to increase the uncertainty of the reward can significantly increase the incentive effect.
+> [!TIP]
+> Using random to increase the uncertainty of the reward can significantly increase the incentive effect.
 
 <br/>
 
@@ -362,7 +366,7 @@ Also,
 
 #### # Advanced Usage
 
-##### 0. Setting up the loot boxes.
+##### 0. Setting up the Loot Boxes.
 
 <p align="center">
  <img src="guide/_media/hello_world/loot_box.png" style="height:600px" />
@@ -371,9 +375,9 @@ Also,
 
 Randomness is a great way to motivate you!
 
-In *LifeUp*, you can create your own loot box.
+In *LifeUp*, you can create your own Loot Boxes.
 
-> Loot boxes in *LifeUp* are based on real probability calculation, there will be no pseudo-random floating effect in the game. **It is recommended to set the probability higher than real game.**
+> Loot Boxes in *LifeUp* are based on real probability calculation, there will be no pseudo-random floating effect in the game. **It is recommended to set the probability higher than real game.**
 
 <br/>
 
@@ -383,7 +387,7 @@ Click the `flask` icon on the Shop page to enter the synthesis system.
 
 The synthesis system can be used to implement arbitrary item exchanges.
 
-For example, it can be used to achieve `multi-currency`, `multi-item` rewards, or with `loot boxes` to achieve complex collections of `fishing`, `card upgrades`.
+For example, it can be used to achieve `multi-currency`, `multi-item` rewards, or with `Loot Boxes` to achieve complex collections of `fishing`, `card upgrades`.
 
 For example.
 - `line` + `bait` + `fishing place` → `🐟 blind box`
@@ -513,18 +517,18 @@ To create this type of achievement, you just need to set the unlock conditions f
 
 ---
 
-<h3 align="center" padding="100" id="pomodoro">V. Pomodoro</h3>
+<h3 align="center" padding="100" id="pomodoro">V. Pomodoro Timer</h3>
 
-<p align="center">Gamified Pomodoros like you've never experienced before, which, with the ability to eat and sell your tomato rewards and a well-established timing system</p>
+<p align="center">Gamified Pomodoro Timer like you've never experienced before, which, with the ability to eat and sell your tomato rewards and a well-established timing system</p>
 
 <p align="center">
  <img src="guide/_media/hello_world/pomodoro.png" style="height:600px" />
 </p>
 
 #### # Quick Start
-The Pomodoro is based on the tomato timer method, which in short means working in combination with work (25 minutes of work and 5 minutes of rest).
+The Pomodoro Timer is based on the tomato timer method, which in short means working in combination with work (25 minutes of work and 5 minutes of rest).
 
-*LifeUp*'s Pomodoro is a secondary module, with simple functions and other modules as the main focus. However, there is still plenty of room for improvement, and we will continue to improve the statistics and other features.
+*LifeUp*'s Pomodoro Timer is a secondary module, with simple functions and other modules as the main focus. However, there is still plenty of room for improvement, and we will continue to improve the statistics and other features.
 
 <br/>
 
@@ -540,7 +544,7 @@ Each timing needs to be turned on manually for reminder purposes.
 
 <br/>
 
-##### Positive Timer
+##### Count-up Timer
 Click the `Clock` icon in the upper right corner of the tomato page to switch to positive timing mode.
 
 > Click again to switch back to countdown mode.
@@ -548,9 +552,9 @@ Click the `Clock` icon in the upper right corner of the tomato page to switch to
 **The role of the buttons for positive timing from left to right:**
 - Give up
 - Pause
-- Sum up the reward
+- Settle the reward
 
-<br />
+<br/>
 
 ##### Associated tasks
 
@@ -618,7 +622,8 @@ The linkage has been described in other modules and is not repeated here
 
 The Feelings function is a sub-module of *LifeUp*, providing only a short text and picture recording function.
 
-! > Each feeling is currently limited to 750 characters and 9 images.
+> [!WARNING]
+> Each feeling is currently limited to 750 characters and 9 images.
 
 The following are ways to create Feelings.
 
@@ -642,7 +647,7 @@ You can create an infinite task and enable the Feelings function for it to recor
 
 And since the Feelings supports filtering by repeat tasks, you can also create multiple unlimited tasks of different types to record different categories of Feelings.
 
-<br />
+<br/>
 
 #### # Details
 
@@ -690,7 +695,7 @@ Don't know what item rewards to create? Or need to learn how to create advanced 
 
 You can always import items created by other users in the Market and modify them locally to customize them for your own rewards.
 
-<br />
+<br/>
 
 ##### Random Tasks
 
