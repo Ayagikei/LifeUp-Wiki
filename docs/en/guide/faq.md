@@ -159,6 +159,23 @@ LifeUp will then calculate subsequent cycles automatically.
 </details>
 
 <details>
+<summary>How do I set up a task that needs to be completed N times irregularly within a period?</summary>
+
+LifeUp does not yet have a direct setting for "at least/at most N times per cycle." However, you can achieve this in several ways:
+
+| Method | Setup | Pros | Cons |
+| :--- | :--- | :--- | :--- |
+| **Counting Task** | Set frequency to `Weekly`, enable `Counting Task`, set count (e.g., 3). | Simple setup; progress is clear (e.g., 1/3). | **Rewards are only given after the final count is completed.** No reward for individual completions. |
+| **Infinite Task + Target** | Set frequency to `Infinite`, target count to 3, deadline to Sunday. | **Rewards are given for each completion.** | **Must be recreated manually each week** (since the task ends after completion). |
+| **Subtasks** | Set frequency to `Weekly`, add 3 subtasks inside. | Can set individual rewards and reminders for each completion. | Requires entering the detail page to check off subtasks; more steps involved. |
+| **Infinite Task (Stats Only)** | Set frequency to `Infinite`. | Easiest setup; rewards and stats for every completion. | **No forced constraint.** You must check your stats manually to see if you met the weekly goal. |
+
+> [!NOTE]
+> We are considering adding a "Real-time Reward" feature for **Counting Tasks** (rewarding each count immediately), which is currently under evaluation.
+
+</details>
+
+<details>
 <summary>How do I hide completed or unstarted tasks?</summary>
 
 This usually happens in one of these cases:
