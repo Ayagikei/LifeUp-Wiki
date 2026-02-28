@@ -1,6 +1,6 @@
 # Introduction
 
-**LifeUp: Gamify To-Do & Habit**
+**LifeUp: Gamified To-Do List & Habit Tracker**
 
 > LifeUp: Upgrade Your Life.
 
@@ -55,11 +55,11 @@ Create custom crafting recipes. Beyond making sticks from wood, try combining �
 
 <br />
 
-🎉 <b>One-time Payment, No Feature-related IAPs</b>
+🎉 <b>One-time Purchase, No Feature-related IAPs</b>
 
 <br />
 
-🔒️ <b>Offline First, Supports Multiple Backup Methods</b>
+🔒️ <b>Offline-first, Supports Multiple Backup Methods</b>
 We value your privacy. Your data is stored locally on your device and is not transmitted to our servers. The app works entirely offline. You can use Google Drive, Dropbox, or WebDAV to sync your data, or export it for local backup.
 
 <br />
