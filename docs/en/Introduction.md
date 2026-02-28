@@ -1,10 +1,10 @@
 # Introduction
 
-**LifeUp: Gamify To-Do & Habit**
+**LifeUp: Gamified To-Do List & Habit Tracker**
 
 > LifeUp: Upgrade Your Life.
 
-Customize your gamified to-do list with attributes, EXP, coins, and rewards to stay productive.
+Customize your gamified to-do list with Attributes, EXP, coins, and rewards to stay productive.
 
 <b>Looking for a fun, gamified to-do and habit-tracking app to stay motivated, organized, and focused?</b>
 
@@ -12,7 +12,7 @@ Customize your gamified to-do list with attributes, EXP, coins, and rewards to s
 - Gain EXP to improve attributes and skill levels, reflecting your real-life progress.
 - Use coins to purchase rewards you desire or unlock exclusive treasure chests. This helps balance work and rewards, improving your focus.
 - Set up achievements to automatically track your task progress and goals.
-- And more! Pomodoro timer, Feelings, custom Loot Boxes, and even a crafting feature!
+- And more! Pomodoro, Feelings, custom Loot Boxes, and even a crafting feature!
 
 Gamify your life and customize your lists for optimal motivation—particularly helpful for ADHD.
 
@@ -55,11 +55,11 @@ Create custom crafting recipes. Beyond making sticks from wood, try combining �
 
 <br />
 
-🎉 <b>One-time Payment, No Feature-related IAPs</b>
+🎉 <b>One-time Purchase, No Feature-related IAPs</b>
 
 <br />
 
-🔒️ <b>Offline First, Supports Multiple Backup Methods</b>
+🔒️ <b>Offline-first, Supports Multiple Backup Methods</b>
 We value your privacy. Your data is stored locally on your device and is not transmitted to our servers. The app works entirely offline. You can use Google Drive, Dropbox, or WebDAV to sync your data, or export it for local backup.
 
 <br />
@@ -71,7 +71,7 @@ Moreover, you can gamify your routine to-do list with tons of customizable rewar
 
 <br />
 
-🤝 <b>World Module</b>
+🤝 <b>World</b>
 Browse or join task teams created by others. Complete tasks together and post your updates! You can also browse and import shop item configurations and random tasks.
 
 <br />
@@ -83,11 +83,11 @@ Record your thoughts and attach pictures when completing tasks. Use this for per
 
 🚧 <b>More features!</b>
 
-- App widgets
-- Dozens of theme colors
-- Night mode (dark theme)
-- Detailed statistics
-- Continuous updates...
+- App Widgets
+- Dozens of Theme Colors
+- Night Mode (Dark Theme)
+- Detailed Statistics
+- Continuous Updates...
 
 ## Support & Help
 
