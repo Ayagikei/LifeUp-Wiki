@@ -1,10 +1,10 @@
 # Introduction
 
-**LifeUp: Gamify To-Do & Habit**
+**LifeUp: Gamified To-Do List & Habit Tracker**
 
 > LifeUp: Upgrade Your Life.
 
-Customize your gamified to-do list with attributes, EXP, coins, and rewards to stay productive.
+Customize your gamified to-do list with attributes, EXP, coins, and rewards to stay motivated and productive.
 
 <b>Looking for a fun, gamified to-do and habit-tracking app to stay motivated, organized, and focused?</b>
 
@@ -12,7 +12,7 @@ Customize your gamified to-do list with attributes, EXP, coins, and rewards to s
 - Gain EXP to improve attributes and skill levels, reflecting your real-life progress.
 - Use coins to purchase rewards you desire or unlock exclusive treasure chests. This helps balance work and rewards, improving your focus.
 - Set up achievements to automatically track your task progress and goals.
-- And more! Pomodoro timer, Feelings, custom Loot Boxes, and even a crafting feature!
+- And more! Pomodoro Timer, Feelings, custom Loot Boxes, and even a Crafting feature!
 
 Gamify your life and customize your lists for optimal motivation—particularly helpful for ADHD.
 
@@ -59,7 +59,7 @@ Create custom crafting recipes. Beyond making sticks from wood, try combining �
 
 <br />
 
-🔒️ <b>Offline First, Supports Multiple Backup Methods</b>
+🔒️ <b>Offline-First, Supports Multiple Backup Methods</b>
 We value your privacy. Your data is stored locally on your device and is not transmitted to our servers. The app works entirely offline. You can use Google Drive, Dropbox, or WebDAV to sync your data, or export it for local backup.
 
 <br />
@@ -81,13 +81,13 @@ Record your thoughts and attach pictures when completing tasks. Use this for per
 
 <br />
 
-🚧 <b>More features!</b>
+🚧 <b>More Features!</b>
 
-- App widgets
+- App Widgets
 - Dozens of theme colors
-- Night mode (dark theme)
-- Detailed statistics
-- Continuous updates...
+- Night Mode (Dark Theme)
+- Detailed Statistics
+- Continuous Updates...
 
 ## Support & Help
 
