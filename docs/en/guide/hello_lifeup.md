@@ -8,11 +8,12 @@
 
 ## Introduction
 
-?> **Thanks for purchasing and downloading *LifeUp*!**
+> [!NOTE]
+> **Thanks for purchasing and downloading *LifeUp*!**
 
 
 
-**LifeUp is a unique gamified To-Do and habit-forming android application.**
+**LifeUp is a unique gamified To-Do List and habit-forming Android application.**
 
 It is different from some gamification apps that are incorporated into a built-in game.
 
@@ -165,7 +166,8 @@ You can adjust this if you usually finish tasks after midnight (for example, unt
 
 <br/>
 
-!> **"No deadline"** means that the task will not automatically expire and repeat. In most scenarios, you only need to keep the default deadline and do not need to set it to "No deadline".
+> [!WARNING]
+> **"No deadline"** means that the task will not automatically expire and repeat. In most scenarios, you only need to keep the default deadline and do not need to set it to "No deadline".
 
 <br/>
 
@@ -307,7 +309,7 @@ You can create the attributes and skills you want to work on, witness and rejoic
 
 Set a price for your quests and rewards.
 
-Complete your tasks, earn coins and buy rewards to motivate yourself to keep working hard.
+Complete your tasks, earn coins and purchase rewards to motivate yourself to keep working hard.
 
 #### # Quick Start
 ##### Item Type
@@ -323,17 +325,18 @@ Broadly, they can be divided into.
 - Rest and recreation time/time bonus
 - ...
 
-For example, "take a five-minute break", "watch a movie", "buy a bottle of soda".
+For example, "take a five-minute break", "watch a movie", "purchase a bottle of soda".
 
 **2. In-app rewards.**
 
 You can achieve in-app data rewards by combining them with "Use Effects."
 
-Such as rewarding a certain amount of coins, experience value, opening loot boxes to get random rewards, etc.
+Such as rewarding a certain amount of coins, experience value, opening Loot Boxes to get random rewards, etc.
 
 Such rewards can also be paired with realistic rewards to achieve various effects.
 
-?> Using random to increase the uncertainty of the reward can significantly increase the incentive effect.
+> [!TIP]
+> Using random to increase the uncertainty of the reward can significantly increase the incentive effect.
 
 <br/>
 
@@ -373,7 +376,7 @@ Randomness is a great way to motivate you!
 
 In *LifeUp*, you can create your own loot box.
 
-> Loot boxes in *LifeUp* are based on real probability calculation, there will be no pseudo-random floating effect in the game. **It is recommended to set the probability higher than real game.**
+> Loot Boxes in *LifeUp* are based on real probability calculation, there will be no pseudo-random floating effect in the game. **It is recommended to set the probability higher than real game.**
 
 <br/>
 
@@ -383,7 +386,7 @@ Click the `flask` icon on the Shop page to enter the synthesis system.
 
 The synthesis system can be used to implement arbitrary item exchanges.
 
-For example, it can be used to achieve `multi-currency`, `multi-item` rewards, or with `loot boxes` to achieve complex collections of `fishing`, `card upgrades`.
+For example, it can be used to achieve `multi-currency`, `multi-item` rewards, or with `Loot Boxes` to achieve complex collections of `fishing`, `card upgrades`.
 
 For example.
 - `line` + `bait` + `fishing place` → `🐟 blind box`
@@ -540,15 +543,15 @@ Each timing needs to be turned on manually for reminder purposes.
 
 <br/>
 
-##### Positive Timer
-Click the `Clock` icon in the upper right corner of the tomato page to switch to positive timing mode.
+##### Count-up Timer
+Click the `Clock` icon in the upper right corner of the tomato page to switch to count-up timer mode.
 
 > Click again to switch back to countdown mode.
 
-**The role of the buttons for positive timing from left to right:**
+**The role of the buttons for count-up timer from left to right:**
 - Give up
 - Pause
-- Sum up the reward
+- Settle the reward
 
 <br />
 
@@ -618,7 +621,8 @@ The linkage has been described in other modules and is not repeated here
 
 The Feelings function is a sub-module of *LifeUp*, providing only a short text and picture recording function.
 
-! > Each feeling is currently limited to 750 characters and 9 images.
+> [!WARNING]
+> Each feeling is currently limited to 750 characters and 9 images.
 
 The following are ways to create Feelings.
 
@@ -739,7 +743,7 @@ For example, pack your things, talk to your loved ones, and take photos to docum
 With it, you can achieve
 
 - Linking external applications using items (opening external applications, triggering actions of external applications)
-- Using items affects the values in `LifeUp`, such as the ATM rate, the probability of a items being in a certain box.
+- Using items affects the values in `LifeUp`, such as the ATM rate, the probability of items being in a certain box.
 - External applications are linked to provide rewards for your `LifeUp`. For example, in the example there is a Wordle Guess the Word web game, and when you guess it, you will get 10 coins in *LifeUp*.
 - External automation tools are linked to determine location, wake up, swipe NFC cards, automate tasks, penalties, record focus time for other applications, and more...
 
