@@ -12,10 +12,10 @@
 
 ![1092366488477310340.jpeg](./_media/wool/1092366488477310340.jpeg)
 
-- 保存图片，然后使用淘宝 app 扫码
+- 保存图片，然后使用淘宝 App 扫码
 - 或打开链接：https://m.tb.cn/h.T3FjfGD
 
-- 或复制以下口令打开淘宝app：
+- 或复制以下口令打开淘宝 App：
 
 69￥ CZ0000 OrPS3EmqBc9￥ https://m.tb.cn/h.T3FjfGD  超级红包会场
 
