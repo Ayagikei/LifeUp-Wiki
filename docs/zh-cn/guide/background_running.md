@@ -18,7 +18,7 @@
 
 理论上会有些许影响，但《人升》后台只会执行必要的逻辑。
 
-根据[开发工效](introduction/ergonomics.md)中的数据，后台运行 24 小时的耗电量约为 30 mAh，占比不到 1%。
+根据[性能表现](introduction/ergonomics.md)中的数据，后台运行 24 小时的耗电量约为 30 mAh，占比不到 1%。
 
 <br/>
 
@@ -30,12 +30,12 @@
 
 **Android 系统**
 
-1. 进入《人升》，点击侧边栏-「设置」-「兼容性问题」，点击「跳转电池优化设置」，在该页面找到《人升》并设置「不优化」。
+1. 进入《人升》，点击「侧边栏」 -> 「设置」 -> 「兼容性问题」，点击「跳转电池优化设置」，在该页面找到《人升》并设置「不优化」。
    - 部分手机可能会跳转后找不到《人升》，可忽略该配置。
 
 2. 如果你希望收到通知，请确保授予《人升》通知权限。
 
-3. 在《人升》的「设置」-「事项」中，开启「快速创建常驻通知」（可选）。
+3. 在《人升》的「设置」 -> 「事项」中，开启「快速创建常驻通知」（可选）。
 
 <br/>
 
@@ -60,7 +60,7 @@
 
 2. [OPPO 手机](https://www.feishu.cn/hc/zh-CN/articles/360025451293#lineguid-rqfhmK)
 
-3. [Vivo 手机](https://www.feishu.cn/hc/zh-CN/articles/360025451293#lineguid-xi6S8F)
+3. [vivo 手机](https://www.feishu.cn/hc/zh-CN/articles/360025451293#lineguid-xi6S8F)
 
 4. [小米手机](https://www.feishu.cn/hc/zh-CN/articles/360025451293#lineguid-uoxEk6)
 
