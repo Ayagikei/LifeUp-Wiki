@@ -30,13 +30,13 @@
 **♻️ Optimization**
 
 1. **Achievement unlock popup typography improvements**: Improved font rendering and reduced layout issues when large system font sizes are used.
-2. **Module hiding logic improvements**: Refined module hiding behavior so achievements related to the Events module are shown or hidden correctly.
+2. **Module hiding logic improvements**: Refined module hiding behavior so achievements related to the World module are shown or hidden correctly.
 3. **Adjusted random task default assignment behavior**: Newly created random tasks are no longer automatically assigned to the default list, avoiding silent assignment.
 
 **🐛 Bug Fixes**
 
 1. **Fixed a rare crash during task list refresh**.
-2. **Fixed the Reflections API title issue**: Corrected an issue where the API could fail to provide the Reflections title correctly, which could also affect item titles.
+2. **Fixed the Feelings API title issue**: Corrected an issue where the API could fail to provide the Feelings title correctly, which could also affect item titles.
 3. **Fixed Pomodoro landscape layout issues**.
 4. **Fixed the end-time timestamp type in the task history API**.
 5. **Added missing API response fields**: Task progress, completion status, recurrence end conditions, and related fields are now returned correctly.
