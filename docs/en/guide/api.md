@@ -4,11 +4,11 @@
 
 ?> In the v1.90 version, `LifeUp` has opened a variety of functional interfaces, and any external application integration is welcome. <br/>It also provides the “URL” effect for shop items, and users can directly use commodities to call external applications or the interface of `LifeUp`. <br/>These features can give your `LifeUp` unlimited possibilities, but it also requires a little learning understanding and hands-on ability.
 
-**Last updated: 2026/01/21**
+**Last updated: 2026/03/22**
 
-The API parameters and definitions in this document are based on version **v1.102.0**.
+The API parameters and definitions in this document are based on version **v1.102.8**.
 
-Please ensure that your application has been updated to **v1.102.0** before using the latest API.
+Please ensure that your application has been updated to **v1.102.8** before using the latest API.
 
 The update is rolling out gradually through Google Play, and if you haven't received it yet, please be patient and it will arrive soon.
 
@@ -1094,13 +1094,13 @@ For example, filter by product item id 1: `lifeup://api/goto?page=synthesis&filt
 
 | Parameter   | Meaning                               | Type                                                    | Example        | Required | Notes                                                        |
 | ----------- | ------------------------------------- | ------------------------------------------------------- | -------------- | -------- | ------------------------------------------------------------ |
-| id          | item id                               | a number greater than 0                                 | 1              | no*      | Please refer to the above "Basic Knowledge - Person-liter Data ID" for how to obtain |
+| id          | item id                               | a number greater than 0                                 | 1              | no*      | Please refer to the above "Basic Knowledge - LifeUp Data ID" for how to obtain |
 | name        | item name                             | any text                                                | Treasure chest | no*      | When used for unknown id, fuzzy search product, not name modification |
-| sub_id      | content item id                       | a number greater than 0                                 | treasure chest | no*      | id of chest contents                                         |
+| sub_id      | content item id                       | a number greater than 0                                 | 1              | no*      | id of chest contents                                         |
 | sub_name    | content item name                     | any text                                                | Get a gift     | no*      | For fuzzy search items when the id of the contents of the box is unknown |
 | set_type    | adjustment method (absolute/relative) | one of the following values: <br/>absolute<br/>relative | relative       | no       | absolute - absolute value, that is, directly set the target to value<br/>relative - relative values, adding or subtracting from the original value |
 | amount      | number of content item                | number                                                  | 1              | no       | number of rewards for a single item                          |
-| probability | probability of the content item       | number                                                  | relative       | no       | -                                                            |
+| probability | probability of the content item       | number                                                  | 1              | no       | -                                                            |
 | fixed       | whether it is a fixed reward          | boolean                                                 | true/false     | no       | -                                                            |
 
 **Notice:**
@@ -1116,11 +1116,11 @@ For example, filter by product item id 1: `lifeup://api/goto?page=synthesis&filt
 
 **Method name:** use_item
 
-**Description:** Create an item; the icon only supports web addresses and does not currently support custom usage effects.
+**Description:** Use a specified item.
 
 **Example:**
 
-- Open a coin box: [lifeup://api/use_item?name=coin_box&use_times=1](javascript:void(0))
+- Open a coin box: [lifeup://api/use_item?name=coin_box&use_times=1](lifeup://api/use_item?name=coin_box&use_times=1)
 
 | Parameter | Meaning     | Type                    | Example  | Required | Notes                                                        |
 | --------- | ----------- | ----------------------- | -------- | -------- | ------------------------------------------------------------ |
@@ -1212,9 +1212,9 @@ For example, filter by product item id 1: `lifeup://api/goto?page=synthesis&filt
 | duration         | focus duration             | number (in milliseconds) <br/>must be greater than 30000 | 1500000 | no* | |
 | end_time         | timing end time            | timestamp               | 1659326400000 | no*      |       |
 | reward_tomatoes  | whether to reward tomatoes | true or false           | true          | no       | default is false |
-| task_id          | task id                    | a number greater than 0 | coin          | no       |       |
-| task_gid         | task group id              | a number greater than 0 | remarks       | no       |       |
-| task_name        | name                       | any text                | 10            | no       | fuzzy search, only one of the tasks found |
+| task_id          | task id                    | a number greater than 0 | 1             | no       |       |
+| task_gid         | task group id              | a number greater than 0 | 1             | no       |       |
+| task_name        | name                       | any text                | learning      | no       | fuzzy search, only one of the tasks found |
 | ui               | Display rewarded tomatoes UI | true or false         | true          | no       | Introduced in v1.94.0, defaults to true |
 
 **Notice:**
@@ -1436,6 +1436,12 @@ For example, filter by product item id 1: `lifeup://api/goto?page=synthesis&filt
 
 - Synthesize once using formula ID 1: [lifeup://api/synthesize?id=1](lifeup://api/synthesize?id=1)
 - Synthesize 5 times using formula ID 1: [lifeup://api/synthesize?id=1&times=5](lifeup://api/synthesize?id=1&times=5)
+
+**Broadcast behavior:**
+
+- This API is for **recipe synthesis**.
+- When `Broadcast events` is enabled and the synthesis succeeds, LifeUp also sends the broadcast event `app.lifeup.synthesis.complete`.
+- This event is **not** sent for simple synthesis inside `use_item`; that path still belongs to `app.lifeup.item.use`.
 
 | Parameter | Meaning            | Values                | Example | Required | Notes                    |
 | --------- | ----------------- | -------------------- | ------- | -------- | ------------------------ |
@@ -2226,6 +2232,8 @@ Using `No Action`+`Broadcast return value` can achieve this effect in a more con
 
 **Name:** app.lifeup.item.use
 
+**Description:** Sent when a normal item use or simple synthesis use-flow succeeds.
+
 **Return value:**
 
 | Parameters | Meaning      | Examples          |
@@ -2233,6 +2241,44 @@ Using `No Action`+`Broadcast return value` can achieve this effect in a more con
 | item_id    | item id      | 1                 |
 | name       | item name    | Break 10 branches |
 | amount     | use quantity | 1                 |
+
+### Synthesis complete
+
+> [!NOTE]
+> This broadcast event was released in v1.102.8.
+
+**Name:** app.lifeup.synthesis.complete
+
+**Description:** Sent when a recipe synthesis completes successfully.
+
+**Return value:**
+
+| Parameters   | Meaning                            | Examples                                              |
+| ------------ | ---------------------------------- | ----------------------------------------------------- |
+| formula_id   | formula id                         | 1                                                     |
+| formula_name | formula name                       | Toolbox Recipe                                        |
+| times        | execution times                    | 3                                                     |
+| input_count  | number of input item entries       | 2                                                     |
+| output_count | number of output item entries      | 1                                                     |
+| inputs_json  | JSON array of all consumed inputs  | [{"item_id":7,"name":"Wood","amount":6}]              |
+| outputs_json | JSON array of all produced outputs | [{"item_id":9,"name":"Toolbox","amount":3}]           |
+
+**Notes:**
+
+- This event is only sent after the synthesis succeeds.
+- If materials are insufficient, the formula does not exist, saving fails, or `Broadcast events` is disabled, this event is not sent.
+- A single API call sends only one event even if `times > 1`.
+- In `inputs_json` and `outputs_json`, each item uses the following structure:
+
+```json
+{
+  "item_id": 7,
+  "name": "Wood",
+  "amount": 6
+}
+```
+
+- `amount` is the **total consumed / total produced** in this execution, not the per-formula amount.
 
 ### Level up
 

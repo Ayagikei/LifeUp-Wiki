@@ -8,9 +8,7 @@
 
 | Platform          | Version                | Update Date                 |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.102.7               | 2026/02/03                  |
-| LifeUp-Android    | v1.102.1               | 2026/01/27                  |
-| LifeUp-Android    | v1.102.0               | 2026/01/25                  |
+| LifeUp-Android    | v1.102.8               | 2026/03/23                  |
 | LifeUp-iOS        | check [feature/ulives] | 🎉Alternative app available |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
 | LifeUp Cloud(SDK) | v1.3.0                 | 2025/01/01                  |
@@ -20,6 +18,32 @@
 <!-- tabs:start -->
 
 ### **LifeUp-Android**
+
+**v1.102.8 (2026/03/23)**
+
+**✨ Features**
+
+1. **Reset default module layout**: Added a “Restore Default Layout” button to the module configuration page.
+2. **New synthesis formula broadcast event**: Added the API broadcast event `app.lifeup.synthesis.complete`, sent when a synthesis formula completes successfully.
+3. **World search supports source-tag filtering**: The World section can now search by source tags, such as filtering API items in Showcase before searching.
+
+**♻️ Optimization**
+
+1. **Achievement unlock popup typography improvements**: Improved font rendering and reduced layout issues when large system font sizes are used.
+2. **Module hiding logic improvements**: Refined module hiding behavior so achievements related to the Events module are shown or hidden correctly.
+3. **Adjusted random task default assignment behavior**: Newly created random tasks are no longer automatically assigned to the default list, avoiding silent assignment.
+
+**🐛 Bug Fixes**
+
+1. **Fixed a rare crash during task list refresh**.
+2. **Fixed the Reflections API title issue**: Corrected an issue where the API could fail to provide the Reflections title correctly, which could also affect item titles.
+3. **Fixed Pomodoro landscape layout issues**.
+4. **Fixed the end-time timestamp type in the task history API**.
+5. **Added missing API response fields**: Task progress, completion status, recurrence end conditions, and related fields are now returned correctly.
+6. **Fixed stale values on the count task details page**: Values now refresh immediately after updating the count task.
+7. **Fixed an issue that could cause abnormal Pomodoro record durations**.
+8. **Fixed the home page not rebuilding immediately after entering offline mode**: This could previously leave the World section visible unexpectedly.
+9. **Fixed a loading issue on the random task page**: In some cases, the page could get stuck in a loading state.
 
 **v1.102.2 - v1.102.7 (2026/02/03)**
 
