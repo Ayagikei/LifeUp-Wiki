@@ -8,7 +8,7 @@
 
 | Platform          | Version                | Update Date                 |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.102.8               | 2026/03/23                  |
+| LifeUp-Android    | v1.102.9               | 2026/03/23                  |
 | LifeUp-iOS        | check [feature/ulives] | 🎉Alternative app available |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
 | LifeUp Cloud(SDK) | v1.3.0                 | 2025/01/01                  |
@@ -18,6 +18,16 @@
 <!-- tabs:start -->
 
 ### **LifeUp-Android**
+
+**v1.102.9 (2026/03/23)**
+
+**♻️ Optimization**
+
+1. **Bottom navigation disabling rule updated**: At the interaction level, users are no longer allowed to disable all bottom navigation modules.
+
+**🐛 Bug Fixes**
+
+1. **Fixed a startup crash**: Fixed an issue where the app could crash on launch after all bottom navigation modules were disabled.
 
 **v1.102.8 (2026/03/23)**
 
