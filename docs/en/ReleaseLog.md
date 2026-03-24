@@ -8,7 +8,7 @@
 
 | Platform          | Version                | Update Date                 |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.102.9               | 2026/03/23                  |
+| LifeUp-Android    | v1.102.10              | 2026/03/24                  |
 | LifeUp-iOS        | check [feature/ulives] | 🎉Alternative app available |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
 | LifeUp Cloud(SDK) | v1.3.0                 | 2025/01/01                  |
@@ -18,6 +18,12 @@
 <!-- tabs:start -->
 
 ### **LifeUp-Android**
+
+**v1.102.10 (2026/03/24)**
+
+**🐛 Bug Fixes**
+
+1. **Fixed an issue where hidden synthesis formula lists could not be long-pressed to edit or delete formulas.**
 
 **v1.102.9 (2026/03/23)**
 
