@@ -5,5 +5,7 @@
 | 專案 | 描述 | 作者 |
 | :--- | :--- | :--- |
 | [lifeup-mcp](https://github.com/derekprovance/lifeup-mcp) | 一個模型上下文協議（MCP）伺服器，允許大語言模型（LLM）透過 SDK 與人升進行互動。 | [@derekprovance](https://github.com/derekprovance) |
+| [lifeup_mod_coins](https://github.com/klienkross/lifeup_mod_coins) | 一款支援 Obsidian 與人升（LifeUp）聯動的社羣外掛，支援待辦同步（輔助填寫資訊）、感想同步，以及在 Obsidian 檢視人升資料面板等功能。 | [@klienkross](https://github.com/klienkross) |
 
-?> **開發了很酷的東西？** 如果你為人升開發了工具、指令碼或整合，請透過 GitHub Issues 或者郵件告知我們吧！
+> [!TIP]
+> **開發了很酷的東西？** 如果你為人升開發了工具、指令碼或整合，請透過 GitHub Issues 或者郵件告知我們吧！
