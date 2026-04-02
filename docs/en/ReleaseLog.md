@@ -8,7 +8,7 @@
 
 | Platform          | Version                | Update Date                 |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.102.10              | 2026/03/24                  |
+| LifeUp-Android    | v1.102.11              | 2026/04/02                  |
 | LifeUp-iOS        | check [feature/ulives] | 🎉Alternative app available |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
 | LifeUp Cloud(SDK) | v1.3.0                 | 2025/01/01                  |
@@ -18,6 +18,12 @@
 <!-- tabs:start -->
 
 ### **LifeUp-Android**
+
+**v1.102.11 (2026/04/02)**
+
+**🐛 Bug Fixes**
+
+1. **Fixed occasional settlement failures and refresh anomalies on the home page count tasks.**
 
 **v1.102.10 (2026/03/24)**
 
