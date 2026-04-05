@@ -4,11 +4,11 @@
 
 ?> In the v1.90 version, `LifeUp` has opened a variety of functional interfaces, and any external application integration is welcome. <br/>It also provides the “URL” effect for shop items, and users can directly use commodities to call external applications or the interface of `LifeUp`. <br/>These features can give your `LifeUp` unlimited possibilities, but it also requires a little learning understanding and hands-on ability.
 
-**Last updated: 2026/03/22**
+**Last updated: 2026/04/05**
 
-The API parameters and definitions in this document are based on version **v1.102.8**.
+The API parameters and definitions in this document are based on version **v1.103.0**.
 
-Please ensure that your application has been updated to **v1.102.8** before using the latest API.
+Please ensure that your application has been updated to **v1.103.0** before using the latest API.
 
 The update is rolling out gradually through Google Play, and if you haven't received it yet, please be patient and it will arrive soon.
 
@@ -286,11 +286,52 @@ A JSON array specifying item rewards, each item containing an ID and quantity.
 
 #### 3. Purchase Limit Structure
 
+`purchase_limit` is a JSON array. Each object represents one restriction rule.
+
+| Field | Meaning | Type | Required | Notes |
+| ----- | ------- | ---- | -------- | ----- |
+| limitType | Restriction type | number | Yes | See the type table below |
+| limitNumber | Primary numeric value | number | No* | Used by quantity/range based rules |
+| maxNumber | Upper bound of a range | number | No | Used by attribute level range / owned item quantity range |
+| limitId | Related target ID | number | No* | Required for attribute / item / task / achievement based rules |
+| extendInfo | Extra payload | string | No | Used by time-based rules; the value itself is a JSON string |
+
+**Type definitions**
+
+| limitType | Meaning | Required fields / notes |
+| --------- | ------- | ----------------------- |
+| 0 | Daily quantity limit | `limitNumber`: max times per day |
+| 1 | Weekly quantity limit | `limitNumber`: max times per week |
+| 2 | Monthly quantity limit | `limitNumber`: max times per month |
+| 3 | Yearly quantity limit | `limitNumber`: max times per year |
+| 10 | Attribute level rule | `limitId`: attribute ID<br/>`limitNumber`: minimum level<br/>`maxNumber`: optional maximum level |
+| 20 | Daily time range | `extendInfo`: `{"startMinuteOfDay":540,"endMinuteOfDay":1320}` |
+| 21 | Weekday selection | `extendInfo`: `{"weekdays":[1,2,3,4,5]}`<br/>Monday = 1, Sunday = 7 |
+| 22 | Absolute time range | `extendInfo`: `{"startMillis":1710000000000,"endMillis":1710086400000}` |
+| 23 | Month selection | `extendInfo`: `{"months":[1,6,12]}` |
+| 24 | Day-of-month selection | `extendInfo`: `{"daysOfMonth":[1,15,31]}` |
+| 30 | Owned item quantity rule | `limitId`: target item ID<br/>`limitNumber`: minimum owned count<br/>`maxNumber`: optional maximum owned count |
+| 31 | Task completed rule | `limitId`: task ID |
+| 32 | Achievement unlocked rule | `limitId`: achievement ID |
+
+**Notes**
+
+- Legacy-compatible payloads can omit `maxNumber` and `extendInfo`.
+- `extendInfo` is a string field, so when calling the API through a URL, the JSON string inside it usually needs another layer of escaping/encoding.
+
+**Example:**
+
 ```json
 [
     {
-        "type": "daily",     // Limit type: daily (daily), total (total)
-        "value": 5           // Limit quantity
+        "limitType": 0,
+        "limitNumber": 5
+    },
+    {
+        "limitType": 10,
+        "limitId": 1,
+        "limitNumber": 5,
+        "maxNumber": 10
     }
 ]
 ```
@@ -1026,7 +1067,8 @@ For example, filter by product item id 1: `lifeup://api/goto?page=synthesis&filt
 | disable_use     | Disable use           | true or false        | false         | No       | Default is false                |
 | category        | Category ID           | number greater than or equal to 0 | 0 | No    | 0 for default category          |
 | order           | Display order         | integer              | 1             | No       | Position in category            |
-| purchase_limit  | Purchase limits       | JSON text            | See [Purchase Limit Structure](#3-purchase-limit-structure) | No | Limit purchase frequency |
+| purchase_limit  | Restriction rules     | JSON text            | See [Purchase Limit Structure](#3-purchase-limit-structure) | No | Configurable purchase/use restrictions |
+| limit_scope     | Restriction scope     | purchase / use / both | purchase | No | Only effective when `purchase_limit` is not empty; defaults to `purchase` |
 | effects         | Use effects           | JSON text            | See [Item Effects Structure](#4-item-effects-structure) | No | Item usage effects |
 | own_number      | Initial owned quantity | integer             | 0             | No       | Set initial inventory quantity  |
 | unlist          | Hide from shop        | true or false        | false         | No       | Default is false                |
@@ -1073,7 +1115,8 @@ For example, filter by product item id 1: `lifeup://api/goto?page=synthesis&filt
 | action_text      | Use button text     | any text             | Use       | No       |                                |
 | title_color_string| Title color        | color string         | #66CCFF   | No       | # must be escaped as %23<br/>Empty value restores default |
 | effects          | Use effects         | JSON text            | See [Item Effects Structure](#4-item-effects-structure) | No | Set item usage effects |
-| purchase_limit   | Purchase limits     | JSON text            | See [Purchase Limit Structure](#3-purchase-limit-structure) | No | Limit purchase frequency |
+| purchase_limit   | Restriction rules   | JSON text            | See [Purchase Limit Structure](#3-purchase-limit-structure) | No | Pass `null` to clear all restrictions |
+| limit_scope      | Restriction scope   | purchase / use / both | purchase | No | Only updates when this field is provided; cleared automatically when `purchase_limit` becomes empty |
 | category_id      | Category ID         | number >= 0          | 1         | No       | 0 for default category         |
 | order            | Display order       | integer              | 1         | No       | Position in category           |
 | unlist           | Remove from shop    | true or false        | false     | No       | Defaults to false              |
@@ -1134,7 +1177,7 @@ For example, filter by product item id 1: `lifeup://api/goto?page=synthesis&filt
 
 | Parameter | Meaning            | Type     | Example          | Required | Notes                                                        |
 | --------- | ------------------ | -------- | ---------------- | -------- | ------------------------------------------------------------ |
-| result    | Result code        | a number | 0                | Yes      | 0 - Successful usage<br/>1 - Database exception<br/>2 - Insufficient experience points restriction<br/>3 - Item not found<br/>4 - Running countdown conflict<br/>5 - Insufficient inventory<br/>6 - Unusable item<br/>7 - Coin limit<br/>8 - Target stock limit |
+| result    | Result code        | a number | 0                | Yes      | 0 - Successful usage<br/>1 - Database exception<br/>2 - Insufficient experience points restriction<br/>3 - Item not found<br/>4 - Running countdown conflict<br/>5 - Insufficient inventory<br/>6 - Unusable item<br/>7 - Coin limit<br/>8 - Target stock limit<br/>9 - Attribute level restriction<br/>10 - Time restriction<br/>11 - Owned item quantity restriction<br/>12 - Task completion restriction<br/>13 - Achievement unlock restriction<br/>14 - Period quantity restriction |
 | desc      | Result description | Text     | RunningCountDown | Yes      |                                                              |
 
 <br/>
@@ -1397,6 +1440,8 @@ For example, filter by product item id 1: `lifeup://api/goto?page=synthesis&filt
 - Purchase item named "Health Potion": [lifeup://api/purchase_item?name=Health%20Potion](lifeup://api/purchase_item?name=Health%20Potion)
 - Purchase 5 copies of item ID 1: [lifeup://api/purchase_item?id=1&purchase_quantity=5](lifeup://api/purchase_item?id=1&purchase_quantity=5)
 
+If the item has `purchase_limit` configured and `limit_scope` includes `purchase`, this API will also enforce those restrictions.
+
 | Parameter         | Meaning          | Values                | Example       | Required | Notes                      |
 | ----------------- | ---------------- | --------------------- | ------------- | -------- | -------------------------- |
 | id                | Item ID          | number greater than 0 | 1             | No*      | One of id or name required |
@@ -1421,6 +1466,8 @@ For example, filter by product item id 1: `lifeup://api/goto?page=synthesis&filt
 | 3    | ItemNotFound              | Item not found                |
 | 4    | PurchaseAndUseSuccess     | Purchase and use succeeded    |
 | 5    | PurchaseSuccessAndUseFailure | Purchase succeeded but use failed |
+| 6    | NotPurchaseable           | Purchase was blocked by item settings or restrictions |
+| 7    | OutOfStock                | Shop stock is not enough      |
 
 <br/>
 
@@ -1877,7 +1924,9 @@ When querying an item:
 | own_number       | the own number in the Inventory | number   | 10        | yes      |       |
 | price            | the price                       | number   | 100       | yes      |       |
 | order            | sort by                         | number   | 100       | yes      | Weight value when custom sorting |
-| disable_purchase | Whether to disable purchase     |          | true      | yes      |       |
+| disable_purchase | Whether to disable purchase     | true or false | true | yes |       |
+| purchase_limit   | Restriction rules               | JSON text | [{"limitType":0,"limitNumber":5}] | yes | Current restriction list |
+| limit_scope      | Restriction scope               | purchase / use / both | use | yes | Returned as API text value |
 
 When querying item_id_list:
 

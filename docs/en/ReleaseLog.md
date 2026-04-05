@@ -19,6 +19,22 @@
 
 ### **LifeUp-Android**
 
+**v1.103.0 (Upcoming)**
+
+**✨ Features**
+
+1. **Attributes now support subcategories and quick move**: You can group attributes more clearly and move an attribute into a target group more quickly.
+2. **Smoother attribute selection interactions**: Task editing, reward-related flows, and other attribute pickers are now easier to browse when you have many attributes.
+3. **Items now support purchase/use restrictions**: Limits can apply to purchase, use, or both, with richer conditions such as time, unlocked achievements, completed tasks, owned item counts, and attribute level ranges.
+4. **Achievements add more built-in sorting options**: In addition to custom order, achievement lists now support built-in sorting by alphabetical order, completion time, and creation time.
+5. **Achievements support quick move to subcategories**: Move one or multiple achievements into a target subcategory more efficiently.
+
+**♻️ Optimization**
+
+1. **Grouped attribute display is clearer**: The status page and attribute description dialogs now present grouped attributes in a more structured way.
+2. **Attribute-related interactions are more consistent**: Grouped display and selection behaviors are more unified across attribute dialogs and related editing flows.
+3. **Item restriction editing is easier to understand**: Richer restriction types are easier to configure and review.
+
 **v1.102.11 (2026/04/02)**
 
 **🐛 Bug Fixes**
