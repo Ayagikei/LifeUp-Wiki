@@ -2269,7 +2269,6 @@ lifeup://api/skill_group?nodes_json=[{"type":"skill","id":2},{"type":"group","id
 | order                | 原始排序值                   | 数字   | 20    | 是       | v1.103.0+ 新增；`orderInCategory` |
 | group_id             | 技能组ID                     | 数字   | 10    | 是       | v1.103.0+ 新增；未分组时返回 `0` |
 | status               | 状态                         | 数字   | 0     | 是       | v1.103.0+ 新增；`0` = 正常，`1` = 隐藏 |
-| type                 | 技能类型                     | 数字   | 0     | 是       | v1.103.0+ 新增；`0` = 自定义技能 |
 | level                | 等级                         | 数字   | 10    | 是       | -    |
 | total_exp            | 总经验值                     | 数字   | 10000 | 是       | -    |
 | until_next_level_exp | 升到下一级所需的经验值       | 数字   | 99    | 是       | -    |

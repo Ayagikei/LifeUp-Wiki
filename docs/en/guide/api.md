@@ -2060,7 +2060,6 @@ Only supported since version 1.90.6
 | order                | raw sort order                       | number | 20       | yes      | Added in v1.103.0+; `orderInCategory` |
 | group_id             | skill group ID                       | number | 10       | yes      | Added in v1.103.0+; returns `0` when the skill is not in a group |
 | status               | status                               | number | 0        | yes      | Added in v1.103.0+; `0` = normal, `1` = hidden |
-| type                 | skill type                           | number | 0        | yes      | Added in v1.103.0+; `0` = custom skill |
 | level                | level                                | number | 10       | yes      |       |
 | total_exp            | total experience points              | number | 10000    | yes      |       |
 | until_next_level_exp | EXP required to reach the next level | number | 99       | yes      |       |
