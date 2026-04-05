@@ -1841,6 +1841,7 @@ If the item has `purchase_limit` configured and `limit_scope` includes `purchase
 | color       | Color             | color string         | #FF6B6B    | No       | # must be escaped as %23        |
 | type        | Type              | integer              | 0          | No       |                                |
 | order       | Sort order        | integer              | 1          | No       | Position in list                |
+| group_id    | Skill group ID    | integer              | 10         | No       | Requires v1.103.0+; use `0` to clear the current group |
 | status      | Status            | integer              | 0          | No       |                                |
 | exp         | Experience points | number greater than or equal to 0 | 100 | No | Current skill experience        |
 | delete      | Delete flag       | true or false        | false      | No       | Only valid when editing         |
@@ -1850,6 +1851,50 @@ If the item has `purchase_limit` configured and `limit_scope` includes `purchase
 | Field  | Type    | Description    | Example | Notes                    |
 | ------ | ------- | -------------- | ------- | ------------------------ |
 | id     | Number  | Skill ID       | 1000    | ID of new or edited skill |
+
+<br/>
+
+### Skill Group Management :id=skill_group_management
+
+Requires v1.103.0+
+
+**Method:** skill_group
+
+**Description:** Create, edit, delete, or reorder skill groups. The sort API also supports mixed ordering of groups and skills.
+
+**Examples:**
+
+- Create a group: [lifeup://api/skill_group?content=Combat](lifeup://api/skill_group?content=Combat)
+- Edit a group: [lifeup://api/skill_group?id=10&content=Combat&order=20&collapsed=true](lifeup://api/skill_group?id=10&content=Combat&order=20&collapsed=true)
+- Delete a group: [lifeup://api/skill_group?id=10&delete=true](lifeup://api/skill_group?id=10&delete=true)
+- Sort groups and skills together:
+
+```text
+lifeup://api/skill_group?nodes_json=[{"type":"skill","id":2},{"type":"group","id":10},{"type":"skill","id":3}]
+```
+
+| Parameter | Meaning | Values | Example | Required | Notes |
+| --------- | ------- | ------ | ------- | -------- | ----- |
+| id | Skill group ID | number greater than 0 | 10 | No* | Required when editing or deleting |
+| content | Group name | any text | Combat | No* | Required when creating |
+| order | Sort order | integer | 20 | No | Raw `orderInCategory` value |
+| collapsed | Collapse state | true or false | true | No | Whether the group is collapsed |
+| delete | Delete flag | true or false | false | No | Only valid when editing |
+| nodes_json / sort_json | Mixed sort nodes | JSON array | `[{"type":"skill","id":2},{"type":"group","id":10}]` | No* | When provided, CRUD parameters are ignored and the mixed sort plan is applied |
+
+`nodes_json` / `sort_json` node format:
+
+| Field | Meaning | Values |
+| ----- | ------- | ------ |
+| type | Node type | `skill` / `group` |
+| id | Entity ID | number greater than 0 |
+
+**Response:**
+
+| Field | Type | Description | Example | Notes |
+| ----- | ---- | ----------- | ------- | ----- |
+| id | Number | Skill group ID | 10 | Returned for create / edit / delete |
+| count | Number | Number of sorted nodes | 3 | Returned for `nodes_json` / `sort_json` requests |
 
 <br/>
 
@@ -1986,13 +2031,13 @@ The `subTasks` field is a JSON array, each element contains the following fields
 
 <br/>
 
-### Query Attributes
+### Query Attributes :id=query_skill
 
 !> The functions here are used with automated tools/secondary development.
 
 **Method name:** query_skill
 
-**Description:** Query the name, level, total experience value of the specified attribute, the experience value required to reach the next level, and the experience value of the current level.
+**Description:** Query the basic information, raw sort fields, and level/experience data of a specified skill.
 
 It is possible to use this api to customize your attributes widgets.
 
@@ -2010,11 +2055,82 @@ Only supported since version 1.90.6
 
 | Parameter            | Meaning                              | Type   | Example  | Required | Notes |
 | -------------------  | ------------------------------------ | ------ | -------- | -------- | ----- |
+| id                   | skill id                             | number | 1        | yes      | Added to `query_skill` in v1.103.0+ |
 | name                 | attribute name                       | string | strength | yes      |       |
+| order                | raw sort order                       | number | 20       | yes      | Added in v1.103.0+; `orderInCategory` |
+| group_id             | skill group ID                       | number | 10       | yes      | Added in v1.103.0+; returns `0` when the skill is not in a group |
+| status               | status                               | number | 0        | yes      | Added in v1.103.0+; `0` = normal, `1` = hidden |
+| type                 | skill type                           | number | 0        | yes      | Added in v1.103.0+; `0` = custom skill |
 | level                | level                                | number | 10       | yes      |       |
 | total_exp            | total experience points              | number | 10000    | yes      |       |
 | until_next_level_exp | EXP required to reach the next level | number | 99       | yes      |       |
 | current_level_exp    | Earned EXP above current level       | Number | 1000     | Yes      |       |
+
+<br/>
+
+### Query Skill Group :id=query_skill_group
+
+Requires v1.103.0+
+
+**Method name:** query_skill_group
+
+**Description:** Query a single skill group and return its raw sort and collapsed state.
+
+**Example:**
+
+- Query a skill group: [lifeup://api/query_skill_group?id=10](lifeup://api/query_skill_group?id=10)
+
+| Parameter | Meaning | Type | Example | Required | Notes |
+| --------- | ------- | ---- | ------- | -------- | ----- |
+| id | Skill group ID | number greater than 0 | 10 | yes | - |
+
+**Return Value:**
+
+| Parameter | Meaning | Type | Example | Required | Notes |
+| --------- | ------- | ---- | ------- | -------- | ----- |
+| id | Skill group ID | number | 10 | yes | - |
+| content | Group name | string | Combat | yes | - |
+| order | Raw sort order | number | 20 | yes | `orderInCategory` |
+| collapsed | Collapse state | string | true | yes | Returned as `true` / `false` text |
+
+<br/>
+
+### Skill ContentProvider Queries :id=skill_content_provider
+
+Requires v1.103.0+
+
+For list or structured queries, you can read the following ContentProvider URIs:
+
+#### `content://net.sarasarasa.lifeup.provider.api/skills`
+
+Returns visible skills only.
+
+| Column | Meaning | Type | Notes |
+| ------ | ------- | ---- | ----- |
+| _ID | Skill ID | number | - |
+| name | Skill name | string | - |
+| desc | Description | string | May be empty |
+| icon | Icon URI | string | May be empty |
+| order | Raw sort order | number | `orderInCategory` |
+| group_id | Skill group ID | number / null | May be empty when the skill is not in a group |
+| color | Color | number / null | May be empty |
+| exp | Experience points | number | - |
+| level | Current level | number | - |
+| until_next_level_exp | EXP to next level | number | - |
+| current_level_exp | EXP gained in current level | number | - |
+| type | Skill type | number | - |
+| status | Skill status | number | `0` = normal, `1` = hidden |
+
+#### `content://net.sarasarasa.lifeup.provider.api/skill_groups`
+
+Returns visible skill groups only.
+
+| Column | Meaning | Type | Notes |
+| ------ | ------- | ---- | ----- |
+| _ID | Skill group ID | number | - |
+| content | Group name | string | - |
+| order | Raw sort order | number | `orderInCategory` |
+| collapsed | Collapse state | string | Returned as `true` / `false` text |
 
 <br/>
 
