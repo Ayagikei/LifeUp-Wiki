@@ -1870,7 +1870,7 @@ Requires v1.103.0+
 - Sort groups and skills together:
 
 ```text
-lifeup://api/skill_group?nodes_json=[{"type":"skill","id":2},{"type":"group","id":10},{"type":"skill","id":3}]
+lifeup://api/skill_group?sort_json=[{"type":"skill","id":2},{"type":"group","id":10},{"type":"skill","id":3}]
 ```
 
 | Parameter | Meaning | Values | Example | Required | Notes |
@@ -1880,9 +1880,9 @@ lifeup://api/skill_group?nodes_json=[{"type":"skill","id":2},{"type":"group","id
 | order | Sort order | integer | 20 | No | Raw `orderInCategory` value |
 | collapsed | Collapse state | true or false | true | No | Whether the group is collapsed |
 | delete | Delete flag | true or false | false | No | Only valid when editing |
-| nodes_json / sort_json | Mixed sort nodes | JSON array | `[{"type":"skill","id":2},{"type":"group","id":10}]` | No* | When provided, CRUD parameters are ignored and the mixed sort plan is applied |
+| sort_json | Mixed sort nodes | JSON array | `[{"type":"skill","id":2},{"type":"group","id":10}]` | No* | When provided, CRUD parameters are ignored and the mixed sort plan is applied. Partial sorting is supported: unspecified nodes keep their relative order |
 
-`nodes_json` / `sort_json` node format:
+`sort_json` node format:
 
 | Field | Meaning | Values |
 | ----- | ------- | ------ |
@@ -1894,7 +1894,7 @@ lifeup://api/skill_group?nodes_json=[{"type":"skill","id":2},{"type":"group","id
 | Field | Type | Description | Example | Notes |
 | ----- | ---- | ----------- | ------- | ----- |
 | id | Number | Skill group ID | 10 | Returned for create / edit / delete |
-| count | Number | Number of sorted nodes | 3 | Returned for `nodes_json` / `sort_json` requests |
+| count | Number | Number of sorted nodes | 3 | Returned for `sort_json` requests |
 
 <br/>
 
