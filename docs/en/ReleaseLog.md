@@ -35,6 +35,14 @@
 2. **Attribute-related interactions are more consistent**: Grouped display and selection behaviors are more unified across attribute dialogs and related editing flows.
 3. **Item restriction editing is easier to understand**: Richer restriction types are easier to configure and review.
 
+**🐛 Bug Fixes**
+
+1. **Fixed copy generation gid variation issue**: Fixed an issue where copied tasks generated from one-time or infinite overdue tasks would have inconsistent gids.
+2. **Fixed non-functional "Random" checkbox in attribute selection**: Fixed an issue where some attribute selection boxes would display a non-functional "Random" checkbox.
+3. **Fixed reward banner positioning issues**: Fixed an issue where reward banners would be incorrectly positioned, occluded, or jumpy in certain scenarios (especially when triggered by task completion).
+4. **Fixed WebDAV page status bar immersive effect**: Improved the status bar immersion effect on the WebDAV page.
+5. **Fixed crash when claiming achievement rewards in special cases**: Fixed a potential crash when claiming achievement rewards in certain edge cases.
+
 **v1.102.11 (2026/04/02)**
 
 **🐛 Bug Fixes**
