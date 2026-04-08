@@ -2094,43 +2094,6 @@ Requires v1.103.0+
 
 <br/>
 
-### Skill ContentProvider Queries :id=skill_content_provider
-
-Requires v1.103.0+
-
-For list or structured queries, you can read the following ContentProvider URIs:
-
-#### `content://net.sarasarasa.lifeup.provider.api/skills`
-
-Returns visible skills only.
-
-| Column | Meaning | Type | Notes |
-| ------ | ------- | ---- | ----- |
-| _ID | Skill ID | number | - |
-| name | Skill name | string | - |
-| desc | Description | string | May be empty |
-| icon | Icon URI | string | May be empty |
-| order | Raw sort order | number | `orderInCategory` |
-| group_id | Skill group ID | number / null | May be empty when the skill is not in a group |
-| color | Color | number / null | May be empty |
-| exp | Experience points | number | - |
-| level | Current level | number | - |
-| until_next_level_exp | EXP to next level | number | - |
-| current_level_exp | EXP gained in current level | number | - |
-| type | Skill type | number | - |
-| status | Skill status | number | `0` = normal, `1` = hidden |
-
-#### `content://net.sarasarasa.lifeup.provider.api/skill_groups`
-
-Returns visible skill groups only.
-
-| Column | Meaning | Type | Notes |
-| ------ | ------- | ---- | ----- |
-| _ID | Skill group ID | number | - |
-| content | Group name | string | - |
-| order | Raw sort order | number | `orderInCategory` |
-| collapsed | Collapse state | string | Returned as `true` / `false` text |
-
 <br/>
 
 ### Special interface

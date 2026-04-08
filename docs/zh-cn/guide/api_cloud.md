@@ -337,6 +337,46 @@ http://{host:port}/files/xxx
 
 <br/>
 
+### 4. 技能 ContentProvider 查询
+
+**⚠ 注意：**
+需要 v1.103.0+
+
+如果需要列表或结构化查询，可以通过 `http://{host:port}/api/contentprovider` 接口读取以下 ContentProvider URI：
+
+#### `content://net.sarasarasa.lifeup.provider.api/skills`
+
+仅返回当前可见的技能。
+
+| 列名 | 含义 | 取值 | 备注 |
+| ---- | ---- | ---- | ---- |
+| _ID | 技能ID | 数字 | - |
+| name | 技能名称 | 字符串 | - |
+| desc | 描述 | 字符串 | 可能为空 |
+| icon | 图标 URI | 字符串 | 可能为空 |
+| order | 原始排序值 | 数字 | `orderInCategory` |
+| group_id | 技能组ID | 数字 / null | 未分组时可能为空 |
+| color | 颜色 | 数字 / null | 可能为空 |
+| exp | 经验值 | 数字 | - |
+| level | 当前等级 | 数字 | - |
+| until_next_level_exp | 升到下一级所需经验值 | 数字 | - |
+| current_level_exp | 当前等级内已获得经验值 | 数字 | - |
+| type | 技能类型 | 数字 | - |
+| status | 技能状态 | 数字 | `0` = 正常，`1` = 隐藏 |
+
+#### `content://net.sarasarasa.lifeup.provider.api/skill_groups`
+
+仅返回当前可见的技能组。
+
+| 列名 | 含义 | 取值 | 备注 |
+| ---- | ---- | ---- | ---- |
+| _ID | 技能组ID | 数字 | - |
+| content | 技能组名称 | 字符串 | - |
+| order | 原始排序值 | 数字 | `orderInCategory` |
+| collapsed | 折叠状态 | 字符串 | 以 `true` / `false` 文本返回 |
+
+<br/>
+
 ## 贡献
 
 SDK、《云人升》、《桌面端》皆为开源项目。
