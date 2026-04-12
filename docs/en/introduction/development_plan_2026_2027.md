@@ -102,4 +102,15 @@ This is why we choose to invest more time in deepening and optimizing existing f
 
 ---
 
+#### 2.5 Community Highlights
+
+We've been fortunate to encounter many amazing users:
+
+- One user encountered a strange LifeUp crash issue. After multiple rounds of information exchange, they exported their system log (bugreport) and used AI to analyze that it was caused by system calendar data corruption. Since LifeUp uses calendar notifications, it was mistakenly killed by the system. This helped us identify this extremely obscure system-level compatibility issue.
+- Many users have shared their creations, including interesting task systems, item designs, achievement sharing, and other community content.
+
+The overwhelming support from our users is what drives us to continue maintaining and updating our products.
+
+---
+
 > Preview: In 2025 we also launched **ulives**, developed using Kotlin Multiplatform, currently only supporting iOS, iPadOS, and macOS, with plans to support more platforms in the future.
