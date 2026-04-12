@@ -4,7 +4,7 @@
 
 ?> In the v1.90 version, `LifeUp` has opened a variety of functional interfaces, and any external application integration is welcome. <br/>It also provides the “URL” effect for shop items, and users can directly use commodities to call external applications or the interface of `LifeUp`. <br/>These features can give your `LifeUp` unlimited possibilities, but it also requires a little learning understanding and hands-on ability.
 
-**Last updated: 2026/04/05**
+**Last updated: 2026/04/12**
 
 The API parameters and definitions in this document are based on version **v1.103.0**.
 
@@ -2484,6 +2484,30 @@ The `reason` parameter only exists in the `app.lifeup.pomodoro.stop` event, indi
 - `cancel`: User canceled
 - `complete`: Completed normally (Note: When completed, `app.lifeup.pomodoro.complete` event is also triggered)
 - `auto`: Automatically stopped (e.g., task deleted)
+
+### Positive Timer Lifecycle :id=broadcast_positive_timing
+
+> [!NOTE]
+> These events are for the positive timer feature, not the Pomodoro countdown events above. Before using them, make sure `Settings` → `Labs` → `Developer mode` → `Broadcast events` is enabled.
+
+**Name:**
+
+- Start: app.lifeup.timing.start
+- Pause: app.lifeup.timing.pause
+- Complete: app.lifeup.timing.complete
+- Abandon: app.lifeup.timing.abandon
+
+**Description:** When a positive timer starts, pauses, completes, or is abandoned manually, LifeUp sends the corresponding broadcast. `complete` means the session finished normally and was recorded. `abandon` means the current session was stopped or discarded manually.
+
+**Return value:**
+
+| Parameters | Meaning                        | Examples      | Notes                                            |
+| ---------- | ------------------------------ | ------------- | ------------------------------------------------ |
+| task_id    | Task ID                        | 1             | Optional, only present when the timer is linked to a task |
+| name       | Task name                      | Study English | Linked task name or a custom timer name          |
+| time       | Accumulated duration (ms)      | 600000        | Total elapsed duration of the current positive timer |
+| start      | Start time                     | 1639123456789 | Unix timestamp (milliseconds)                    |
+| end        | End time                       | 1639127056789 | Only present in `complete` / `abandon` events    |
 
 ---
 

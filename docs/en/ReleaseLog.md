@@ -8,7 +8,7 @@
 
 | Platform          | Version                | Update Date                 |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.102.11              | 2026/04/02                  |
+| LifeUp-Android    | v1.103.0              | 2026/04/12                  |
 | LifeUp-iOS        | check [feature/ulives] | 🎉Alternative app available |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
 | LifeUp Cloud(SDK) | v1.3.0                 | 2025/01/01                  |
@@ -19,7 +19,7 @@
 
 ### **LifeUp-Android**
 
-**v1.103.0 (Upcoming)**
+**v1.103.0 (2026/04/12)**
 
 **✨ Features**
 
@@ -28,20 +28,25 @@
 3. **Items now support purchase/use restrictions**: Limits can apply to purchase, use, or both, with richer conditions such as time, unlocked achievements, completed tasks, owned item counts, and attribute level ranges.
 4. **Achievements add more built-in sorting options**: In addition to custom order, achievement lists now support built-in sorting by alphabetical order, completion time, and creation time.
 5. **Achievements support quick move to subcategories**: Move one or multiple achievements into a target subcategory more efficiently.
+6. **Overdue handling now includes a help entry**: The overdue dialog now includes a help entry and presents reward changes more clearly when you switch an overdue task back to completed.
 
 **♻️ Optimization**
 
 1. **Grouped attribute display is clearer**: The status page and attribute description dialogs now present grouped attributes in a more structured way.
 2. **Attribute-related interactions are more consistent**: Grouped display and selection behaviors are more unified across attribute dialogs and related editing flows.
 3. **Item restriction editing is easier to understand**: Richer restriction types are easier to configure and review.
+4. **Status bar and top bar rendering is more stable across multiple pages**: Top areas on pages such as Shop, World, Search, Status, Achievements, My Page, and WebDAV now behave more consistently during scrolling, in dark mode, and under Material You.
+5. **Status page attribute layout handles longer text better**: Longer attribute names and level labels now fit more reliably, including on narrow screens or with larger text.
 
 **🐛 Bug Fixes**
 
 1. **Fixed copy generation gid variation issue**: Fixed an issue where copied tasks generated from one-time or infinite overdue tasks would have inconsistent gids.
 2. **Fixed non-functional "Random" checkbox in attribute selection**: Fixed an issue where some attribute selection boxes would display a non-functional "Random" checkbox.
 3. **Fixed reward banner positioning issues**: Fixed an issue where reward banners would be incorrectly positioned, occluded, or jumpy in certain scenarios (especially when triggered by task completion).
-4. **Fixed WebDAV page status bar immersive effect**: Improved the status bar immersion effect on the WebDAV page.
-5. **Fixed crash when claiming achievement rewards in special cases**: Fixed a potential crash when claiming achievement rewards in certain edge cases.
+4. **Fixed inaccurate overdue reward preview / animation data in some cases**: When an overdue task is switched back to completed, XP, coin, and item changes are now presented more accurately without mixing in confusing values.
+5. **Fixed status page level layout wrapping / misalignment in some cases**: Layout is now more stable with long attribute names or longer level labels.
+6. **Fixed page switching when the synthesis list has only a few items**: You can now swipe horizontally from blank areas more reliably when the list content is short.
+7. **Fixed crash when claiming achievement rewards in special cases**: Fixed a potential crash when claiming achievement rewards in certain edge cases.
 
 **v1.102.11 (2026/04/02)**
 
