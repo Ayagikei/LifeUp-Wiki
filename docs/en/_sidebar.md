@@ -4,7 +4,10 @@
   - [Download](introduction/download.md)
   - [Screenshots](Screenshots.md)
   - [Release Log](ReleaseLog.md)
-  - [Roadmap](introduction/roadmap.md)
+  - [Development Plan](introduction/roadmap.md)
+    - [2026-2027](introduction/development_plan_2026_2027.md)
+    - [2024-2025](introduction/development_plan_2024.md)
+    - [2022/10 - 2023/12](introduction/development_plan_2023.md)
   - [Support us](Support_us.md)
   - [Privacy Terms & Policy](introduction/privacy-terms.md)
 - Getting Started
