@@ -1840,8 +1840,8 @@ If the item has `purchase_limit` configured and `limit_scope` includes `purchase
 | icon        | Icon              | any text             | 💻         | No       | Can use emoji                   |
 | color       | Color             | color string         | #FF6B6B    | No       | # must be escaped as %23        |
 | type        | Type              | integer              | 0          | No       |                                |
-| order       | Sort order        | integer              | 1          | No       | Position in list                |
-| group_id    | Skill group ID    | integer              | 10         | No       | Requires v1.103.0+; use `0` to clear the current group |
+| order       | Sort order        | integer              | 1          | No       | Raw mixed-list position. When used alone, the skill is placed at that position and the final group is inferred from layout; when used with `group_id`, it is snapped to the nearest legal position inside the target group |
+| group_id    | Skill group ID    | integer              | 10         | No       | Requires v1.103.0+; it cannot be less than `0`, and only `0` moves the skill to the ungrouped area. When used alone, new skills are appended to the target group tail, while edited skills keep their current position if already in that group, otherwise they move to the group tail; when used with `order`, `group_id` takes priority |
 | status      | Status            | integer              | 0          | No       |                                |
 | exp         | Experience points | number greater than or equal to 0 | 100 | No | Current skill experience        |
 | delete      | Delete flag       | true or false        | false      | No       | Only valid when editing         |
@@ -1877,7 +1877,7 @@ lifeup://api/skill_group?sort_json=[{"type":"skill","id":2},{"type":"group","id"
 | --------- | ------- | ------ | ------- | -------- | ----- |
 | id | Skill group ID | number greater than 0 | 10 | No* | Required when editing or deleting |
 | content | Group name | any text | Combat | No* | Required when creating |
-| order | Sort order | integer | 20 | No | Raw `orderInCategory` value |
+| order | Sort order | integer | 20 | No | Raw `orderInCategory` value; it must be unique in the mixed skill/group list |
 | collapsed | Collapse state | true or false | true | No | Whether the group is collapsed |
 | delete | Delete flag | true or false | false | No | Only valid when editing |
 | sort_json | Mixed sort nodes | JSON array | `[{"type":"skill","id":2},{"type":"group","id":10}]` | No* | When provided, CRUD parameters are ignored and the mixed sort plan is applied. Partial sorting is supported: unspecified nodes keep their relative order |
