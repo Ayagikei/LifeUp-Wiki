@@ -62,6 +62,10 @@ fun main() {
                 continue
             }
             val filePath = "$file"
+            if (!File(filePath).exists()) {
+                println("File not found, skipping: $file")
+                continue
+            }
             val key = filePath.substringAfter("docs/")  // 不包含docs
 
             // need to specify the key to override the existing file
@@ -103,7 +107,7 @@ fun getCurrentCommit(): String {
 }
 
 fun getChangedFiles(lastCommit: String, currentCommit: String): List<String> {
-    val result = runCommand(listOf("git", "diff", "--name-only", lastCommit, currentCommit))
+    val result = runCommand(listOf("git", "diff", "--name-only", "--diff-filter=d", lastCommit, currentCommit))
     if (result.exitCode != 0) {
         println("Failed to get changed files via git diff (exit=${result.exitCode}).")
         println(result.output.trim())
