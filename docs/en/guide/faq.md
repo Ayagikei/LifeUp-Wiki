@@ -9,7 +9,7 @@ Some features and UI details are still being polished, and we are improving them
 
 If LifeUp helps you, sharing it with others is a big help for us too.
 
-If you'd like to support development, you can also buy us a coffee.
+If you'd like to support development, you can also buy us a coffee in the **About** page of the app.
 
 ## ⚙️ Compatibility Configuration
 

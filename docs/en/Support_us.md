@@ -2,7 +2,7 @@
 
 Support are always appreciated. ❤️
 
-With your support, we can get more time to developing and gain more resources to make it better such as UI design, better server and more.
+With your support, we can get more time to developing and gain more resources to make it better such as better servers and more features.
 
 And there are still lots of ideas we want to achieve. 
 
@@ -21,30 +21,24 @@ And suggestions is always welcome.
 
 ### Buy me a coffee
 
-If the app really helps you, please consider buy us a coffee :)
+If the app really helps you, please consider supporting us by buying a coffee in the **About** page of the app. 
 
-[Buy Me A Coffee](../html/buymeacoffe.html ':include :type=iframe width=210px height=80px')
+Alternatively, recommending LifeUp to your friends and communities would also be a fantastic way to support us!
 
 
 ## Translator
 
-Help us the app will also be a great help, we would love to app support various languages.
+Help us with the app translation will also be a great help. We are currently introducing AI-assisted translation, but human review is still essential.
 
-If the app does not support your native language, you can consider assisting us in translating.
+Our translation project is hosted on Crowdin: [LifeUp on Crowdin](https://crowdin.com/project/lifeup).
 
-Or if you find any grammatical errors, please consider correcting them.
-
-[GitHub Repository of All Text](https://github.com/Ayagikei/LifeUp-Translation)
-
-[English text](https://github.com/Ayagikei/LifeUp-Translation/blob/master/values/strings.xml)
-
-Please feel free to contact me if you don't know how to translate.
+If you find any specific translation issues or would like to contribute to a new language, please consider joining our Crowdin project or contact us directly.
 
 
-## UI Designer
+## API & Integration
 
-We currently lack the support of professional UI designers.
+LifeUp provides a wide range of APIs and integration options. We highly welcome community-driven creations and sharing based on these APIs! 
 
-If you want to help us redesign some pages or provide some icons, please contact us.
+Whether it's a custom script, a desktop integration, or a new way to interact with LifeUp, your contributions can help expand the LifeUp ecosystem.
 
-Expectation: The redesigned page can conform to the current overall style and follow the Material Design style.
+Check our [API documentation](guide/api.md) for more details.
