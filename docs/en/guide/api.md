@@ -293,7 +293,7 @@ A JSON array specifying item rewards, each item containing an ID and quantity.
 | limitType | Restriction type | number | Yes | See the type table below |
 | limitNumber | Primary numeric value | number | No* | Used by quantity/range based rules |
 | maxNumber | Upper bound of a range | number | No | Used by attribute level range / owned item quantity range |
-| limitId | Related target ID | number | No* | Required for attribute / item / task / achievement based rules |
+| limitId | Related target ID | number | No* | Required for attribute / item / task / task cycle / achievement based rules |
 | extendInfo | Extra payload | string | No | Used by time-based rules; the value itself is a JSON string |
 
 **Type definitions**
@@ -313,8 +313,11 @@ A JSON array specifying item rewards, each item containing an ID and quantity.
 | 30 | Owned item quantity rule | `limitId`: target item ID<br/>`limitNumber`: minimum owned count<br/>`maxNumber`: optional maximum owned count |
 | 31 | Task completed rule | `limitId`: task ID |
 | 32 | Achievement unlocked rule | `limitId`: achievement ID |
+| 33 | Task cycle completed rule | `limitId`: repeat task group ID (`groupId`)<br/>Validated against the latest started cycle in that group |
 
 **Notes**
+
+- When `limitType=33`, `limitId` is not a task ID. It must be the repeat task `groupId`.
 
 - Legacy-compatible payloads can omit `maxNumber` and `extendInfo`.
 - `extendInfo` is a string field, so when calling the API through a URL, the JSON string inside it usually needs another layer of escaping/encoding.
@@ -1177,7 +1180,7 @@ For example, filter by product item id 1: `lifeup://api/goto?page=synthesis&filt
 
 | Parameter | Meaning            | Type     | Example          | Required | Notes                                                        |
 | --------- | ------------------ | -------- | ---------------- | -------- | ------------------------------------------------------------ |
-| result    | Result code        | a number | 0                | Yes      | 0 - Successful usage<br/>1 - Database exception<br/>2 - Insufficient experience points restriction<br/>3 - Item not found<br/>4 - Running countdown conflict<br/>5 - Insufficient inventory<br/>6 - Unusable item<br/>7 - Coin limit<br/>8 - Target stock limit<br/>9 - Attribute level restriction<br/>10 - Time restriction<br/>11 - Owned item quantity restriction<br/>12 - Task completion restriction<br/>13 - Achievement unlock restriction<br/>14 - Period quantity restriction |
+| result    | Result code        | a number | 0                | Yes      | 0 - Successful usage<br/>1 - Database exception<br/>2 - Insufficient experience points restriction<br/>3 - Item not found<br/>4 - Running countdown conflict<br/>5 - Insufficient inventory<br/>6 - Unusable item<br/>7 - Coin limit<br/>8 - Target stock limit<br/>9 - Attribute level restriction<br/>10 - Time restriction<br/>11 - Owned item quantity restriction<br/>12 - Task completion restriction<br/>13 - Achievement unlock restriction<br/>14 - Period quantity restriction<br/>15 - Task cycle completed restriction |
 | desc      | Result description | Text     | RunningCountDown | Yes      |                                                              |
 
 <br/>
