@@ -8,7 +8,7 @@
 
 | Platform          | Version                | Update Date                 |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.103.0              | 2026/04/12                  |
+| LifeUp-Android    | v1.103.1              | 2026/04/25                  |
 | LifeUp-iOS        | check [feature/ulives] | 🎉Alternative app available |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
 | LifeUp Cloud(SDK) | v1.3.0                 | 2025/01/01                  |
@@ -18,6 +18,14 @@
 <!-- tabs:start -->
 
 ### **LifeUp-Android**
+
+**v1.103.1 (2026/04/25)**
+
+**🐛 Bug Fixes**
+
+1. **Fixed abnormal behavior when an item's use effect modifies its own quantity**
+2. **Fixed some crashes and lag issues captured from production**
+3. **Fixed incorrect quantity values being filled back when editing an item's "Modify Item Quantity" effect**
 
 **v1.103.0 (2026/04/12)**
 
