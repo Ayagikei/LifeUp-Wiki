@@ -20,7 +20,9 @@
 - 反馈方式：
   - 邮件：lifeup@ulives.io（请附上版本号、设备信息与截图/复现步骤，便于排查）。
   - QQ频道：频道入口 [点此进入](https://pd.qq.com/s/c61ihv4mf)，分类讨论、人数无限制。
-  - QQ群：点击链接加入 [人升讨论基地](https://qm.qq.com/q/gRyJiONhEQ)；若人数已满，请按群公告加入子群，或直接选择 QQ 频道避免人数限制。
+  - QQ群：点击链接加入 [人升讨论基地（官方3群）](https://qun.qq.com/universal-share/share?ac=1&authKey=2lxynj03YfCvZd%2BL0ez8mQHErKcgtJ05Gk%2BsNCwWP8cxNPhZEn3EUnk1vRutv3h%2B&busi_data=eyJncm91cENvZGUiOiI1OTUyNzM1NzkiLCJ0b2tlbiI6IkRXd044N0Y3YzF1RU0xRlo2SG5ydXZwVDM5alRsbW00QTE4Q1lIYnZMSlBhaEtnZ3psRGptMVFNM2xPV1hMTFEiLCJ1aW4iOiIxNDUxODY0MjczIn0%3D&data=ZoiqzF4Kt4tns9wG0oVl-s_WvyCeoPPCKv8UMfMAIViwOL699wJ0FVwbH2vORYIO_x-QKmsgNOmqSN89apWpyQ&svctype=4&tempid=h5_group_info)
+    - 如果链接失效，可直接搜索 QQ 群号加入：595273579
+    - 若人数已满，请按群公告加入子群，或直接选择 QQ 频道避免人数限制。
 
 ## ❓ FAQ
 
