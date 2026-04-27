@@ -1016,7 +1016,7 @@
 我们也欢迎加入 QQ 群，这里更偏向即时交流与分享，话题不限于《人升》本身。
 
 - 加群入口：[加入群聊：人升讨论基地（官方3群）](https://qun.qq.com/universal-share/share?ac=1&authKey=2lxynj03YfCvZd%2BL0ez8mQHErKcgtJ05Gk%2BsNCwWP8cxNPhZEn3EUnk1vRutv3h%2B&busi_data=eyJncm91cENvZGUiOiI1OTUyNzM1NzkiLCJ0b2tlbiI6IkRXd044N0Y3YzF1RU0xRlo2SG5ydXZwVDM5alRsbW00QTE4Q1lIYnZMSlBhaEtnZ3psRGptMVFNM2xPV1hMTFEiLCJ1aW4iOiIxNDUxODY0MjczIn0%3D&data=ZoiqzF4Kt4tns9wG0oVl-s_WvyCeoPPCKv8UMfMAIViwOL699wJ0FVwbH2vORYIO_x-QKmsgNOmqSN89apWpyQ&svctype=4&tempid=h5_group_info)
-- Q 群号：595273579
+- 如果链接失效，可直接搜索 QQ 群号加入：595273579
 
 小贴士：
 
