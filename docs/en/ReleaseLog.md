@@ -8,7 +8,7 @@
 
 | Platform          | Version                | Update Date                 |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.103.1              | 2026/04/25                  |
+| LifeUp-Android    | v1.103.2              | 2026/04/30                  |
 | LifeUp-iOS        | check [feature/ulives] | 🎉Alternative app available |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
 | LifeUp Cloud(SDK) | v1.3.0                 | 2025/01/01                  |
@@ -18,6 +18,13 @@
 <!-- tabs:start -->
 
 ### **LifeUp-Android**
+
+**v1.103.2 (2026/04/30)**
+
+**🐛 Bug Fixes**
+
+1. **Fixed a compatibility issue where input fields might not appear when editing item purchase or use restrictions under certain languages or smaller screen sizes.**
+2. **Fixed an issue where using an item could incorrectly trigger a penalty dialog.**
 
 **v1.103.1 (2026/04/25)**
 
