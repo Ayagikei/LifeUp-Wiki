@@ -8,16 +8,28 @@
 
 | Platform          | Version                | Update Date                 |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.103.2              | 2026/04/30                  |
+| LifeUp-Android    | v1.103.4              | 2026/05/05                  |
 | LifeUp-iOS        | check [feature/ulives] | 🎉Alternative app available |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
-| LifeUp Cloud(SDK) | v1.3.0                 | 2025/01/01                  |
+| LifeUp Cloud(SDK) | v2.1.0                 | 2026/03/22                  |
 
 (Part of the translation is provided by Machine/AI Translate and may not be accurate)
 
 <!-- tabs:start -->
 
 ### **LifeUp-Android**
+
+**v1.103.4 (2026/05/05)**
+
+**🐛 Bug Fixes**
+
+1. **Fixed an issue where tasks could disappear due to abnormal interruption while frozen in some edge scenarios.**
+
+**v1.103.3 (2026/05/05)**
+
+**ℹ️ Release Note**
+
+1. **This version was skipped and not released publicly.**
 
 **v1.103.2 (2026/04/30)**
 
@@ -2688,6 +2700,18 @@ Optimization
 1. First release
 
 ### **LifeUp Cloud**
+
+**v2.1.0 (2026/03/22)**
+
+**🚀 Features**
+
+1. Added locale configuration support and Top-14 localization updates.
+2. Exposed count progress and repeat end-condition fields for API tasks.
+
+**🐛 Bug Fixes**
+
+1. Fixed ContentProvider compatibility issues.
+2. Adapted Android 15 UI and service startup behavior.
 
 **v2.0.0 (2025/01/01)**
 
