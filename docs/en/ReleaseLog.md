@@ -8,7 +8,7 @@
 
 | Platform          | Version                | Update Date                 |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.103.4              | 2026/05/05                  |
+| LifeUp-Android    | v1.103.6              | 2026/05/10                  |
 | LifeUp-iOS        | check [feature/ulives] | 🎉Alternative app available |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
 | LifeUp Cloud(SDK) | v2.1.0                 | 2026/03/22                  |
@@ -18,6 +18,20 @@
 <!-- tabs:start -->
 
 ### **LifeUp-Android**
+
+**v1.103.6 (2026/05/10)**
+
+**🐛 Bug Fixes**
+
+1. **Fixed the long-break interval hint not resetting to the initial focus-session state after tapping Give Up.**
+2. **Fixed an issue where the additional focus timer could remain visible and keep counting after tapping Give Up.**
+
+**v1.103.5 (2026/05/10)**
+
+**🐛 Bug Fixes**
+
+1. **Fixed the Pomodoro timer long-break hint not refreshing promptly after a work session finishes naturally.**
+2. **Fixed an issue where the Pomodoro timer could show the old 2-session long-break interval before Pomodoro settings had been opened, instead of the default 4 sessions.**
 
 **v1.103.4 (2026/05/05)**
 
