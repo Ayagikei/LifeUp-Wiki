@@ -8,7 +8,7 @@
 
 | Platform          | Version                | Update Date                 |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.103.6              | 2026/05/10                  |
+| LifeUp-Android    | v1.104.0              | 2026/05/23                  |
 | LifeUp-iOS        | check [feature/ulives] | 🎉Alternative app available |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
 | LifeUp Cloud(SDK) | v2.1.0                 | 2026/03/22                  |
@@ -18,6 +18,28 @@
 <!-- tabs:start -->
 
 ### **LifeUp-Android**
+
+**v1.104.0 (2026/05/23)**
+
+**✨ Features**
+
+1. **Count tasks now support proportional real-time reward settlement**: This is useful for tasks you may progress multiple times at flexible moments within a cycle, such as habits completed a few times per week. When count progress changes, LifeUp can grant or roll back Exp, coins, and item rewards according to the current progress instead of waiting until final completion.
+2. **Task detail history tools are more powerful**: Selecting a date in the history calendar now shows the count for that day, and you can add, edit, or batch-create history records.
+3. **Feelings and items are better connected**: Item details can now jump directly to related Feelings, and the Feelings page supports filtering by shop item.
+
+**♻️ Optimization**
+
+1. **More precise shop item visibility filters**: In addition to sold-out items, you can now hide purchase-disabled, purchase-limited, or currently unaffordable items. Shop widgets follow the same rules.
+2. **Task list search and refresh are more stable**: Regular list search can include completed tasks that are currently visible by settings, and repeated-task refresh plus custom sorting in the All list is more stable with many tasks.
+3. **Better settings and input behavior**: Shop settings now scroll focused inputs above the soft keyboard, and history count inputs select their value on focus.
+4. **More reliable system dark mode handling**: Fixed state races between following the system theme and manual night-mode toggles.
+5. **Expanded URL Scheme API support**: Add/Edit Task now supports the `no_deadline` semantics, and count-task APIs support the real-time settlement flag.
+
+**🐛 Bug Fixes**
+
+1. **Fixed achievement statistics on My Page**: When system achievements are hidden, achievement counts now follow the same visibility rule.
+2. **Fixed history record wording**: Give-up history records are no longer shown with overdue penalty wording.
+3. **Fixed long text handling in URL Scheme APIs**: Long descriptions for skills and achievements are no longer truncated too early.
 
 **v1.103.6 (2026/05/10)**
 
