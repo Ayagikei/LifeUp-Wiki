@@ -31,7 +31,7 @@
 
 1. **More precise shop item visibility filters**: In addition to sold-out items, you can now hide purchase-disabled, purchase-limited, or currently unaffordable items. Shop widgets follow the same rules.
 2. **Task list search and refresh are more stable**: Regular list search can include completed tasks that are currently visible by settings, and repeated-task refresh plus custom sorting in the All list is more stable with many tasks.
-3. **More expressive task detail contribution colors**: Count tasks and unlimited tasks now use different contribution-map color levels based on each day's completion count, making daily activity easier to read at a glance.
+3. **Task detail history stats now follow the selected date**: Count tasks and unlimited tasks now use different contribution-map color levels based on each day's completion count. The monthly, yearly, all-time, and streak stats below the history view are also calculated from the currently selected date instead of always using today's data.
 4. **Improved shop settings input behavior**: Shop settings now scroll focused inputs above the soft keyboard.
 5. **More reliable system dark mode handling**: Fixed state races between following the system theme and manual night-mode toggles.
 6. **Expanded URL Scheme API support**: Add/Edit Task now supports the `no_deadline` semantics, and count-task APIs support the real-time settlement flag.
