@@ -4,11 +4,11 @@
 
 ?> In the v1.90 version, `LifeUp` has opened a variety of functional interfaces, and any external application integration is welcome. <br/>It also provides the “URL” effect for shop items, and users can directly use commodities to call external applications or the interface of `LifeUp`. <br/>These features can give your `LifeUp` unlimited possibilities, but it also requires a little learning understanding and hands-on ability.
 
-**Last updated: 2026/04/12**
+**Last updated: 2026/05/25**
 
-The API parameters and definitions in this document are based on version **v1.103.0**.
+The API parameters and definitions in this document are based on version **v1.104.0**.
 
-Please ensure that your application has been updated to **v1.103.0** before using the latest API.
+Please ensure that your application has been updated to **v1.104.0** before using the latest API.
 
 The update is rolling out gradually through Google Play, and if you haven't received it yet, please be patient and it will arrive soon.
 
@@ -597,6 +597,7 @@ Open box effect:
 | importance       | Importance level    | [1, 4]              | 1          | No       | Defaults to 1                   |
 | difficulty       | Difficulty level    | [1, 4]              | 1          | No       | Defaults to 1                   |
 | deadline         | Due time            | timestamp (milliseconds) | 1640995200000 | No |                               |
+| no_deadline      | No deadline         | true/false         | true      | No       | v1.104.0+; only valid for repeating tasks. Passing `&no_deadline=true` clears the specific due time |
 | color            | Tag color           | color string         | #66CCFF    | No       | # must be escaped as %23        |
 | background_url   | Background image URL| web URL             | http://example.com/bg.jpg | No | Must be accessible web image |
 | background_alpha | Background opacity  | float between [0, 1] | 0.5        | No       | Defaults to 1.0                |
@@ -619,6 +620,7 @@ Open box effect:
 | task_type        | Task type           | [0, 4]              | 0          | No       | Requires v1.99.1<br/>0 - Normal task<br/>1 - Count task<br/>2 - Negative task<br/>3 - API task<br/>4 - Timed task (v1.102.0+) |
 | target_times     | Target times        | number > 0          | 1          | No       | Only valid when task_type is 1 (count task) |
 | is_affect_shop_reward | Affect shop reward | true/false      | false    | No       | Only valid when task_type is 1 (count task), whether to affect the reward calculation of items |
+| enable_proportional_settlement | Enable proportional settlement | true/false | false | No | v1.104.0+; only valid when task_type is 1 (count task). When enabled, count progress settlement grants rewards proportionally, and final completion will not grant already-settled rewards again |
 | expected_focus_minutes | Expected focus minutes | number > 0 | 25 | No | Only valid when task_type is 4 (timed task); defaults to 25 (v1.102.0+) |
 | repeat_end_mode | Repeat end mode | 0 or 1 | 0 | No | Only valid for repeating tasks (frequency is not 0 / -1)<br/>0 - End by count<br/>1 - End by date (v1.102.0+) |
 | repeat_target_times | Repeat end count | number > 0 | 3 | No | Used when repeat_end_mode=0 (or inferred by presence of this field); do not confuse with target_times (v1.102.0+) |
@@ -796,6 +798,7 @@ The method of obtaining the id is to open the "Developer Mode" on the "Labs" pag
 | importance         | Importance level     | [1, 4]              | 1         | No       | Defaults to 1                   |
 | difficulty         | Difficulty level     | [1, 4]              | 2         | No       | Defaults to 1                   |
 | deadline           | Due date             | timestamp (milliseconds) | 1640995200000 | No |                               |
+| no_deadline        | No deadline          | true/false         | true     | No       | v1.104.0+; only valid for repeating tasks. Passing `&no_deadline=true` clears the specific due time |
 | remind_time        | Reminder time        | timestamp (milliseconds) | 1640995200000 | No |                               |
 | start_time         | Start time           | timestamp (milliseconds) | 1640995200000 | No |                               |
 | color              | Tag color            | color string         | #66CCFF   | No       | # must be escaped as %23        |
@@ -818,6 +821,7 @@ The method of obtaining the id is to open the "Developer Mode" on the "Labs" pag
 | task_type        | Task type           | [0, 4]              | 0          | No       | Requires v1.99.1<br/>0 - Normal task<br/>1 - Count task<br/>2 - Negative task<br/>3 - API task<br/>4 - Timed task (v1.102.0+) |
 | target_times     | Target times        | number > 0          | 1          | No       | Only valid when task_type is 1 (count task) |
 | is_affect_shop_reward | Affect shop reward | true/false      | false    | No       | Only valid when task_type is 1 (count task), whether to affect the reward calculation of items |
+| enable_proportional_settlement | Enable proportional settlement | true/false | false | No | v1.104.0+; only valid when task_type is 1 (count task). For existing count tasks, this parameter can be passed alone to turn proportional settlement on or off; changing this setting or reward configuration may reset or roll back settled progress according to app rules |
 | expected_focus_minutes | Expected focus minutes | number > 0 | 25 | No | Only valid when task_type is 4 (timed task); defaults to 25 (v1.102.0+) |
 | repeat_target_times | Repeat end count | number > 0 | 3 | No | Only valid for repeating tasks (frequency is not 0 / -1); when both repeat_target_times and repeat_end_date are provided, repeat_target_times takes priority (v1.102.0+) |
 | repeat_end_date | Repeat end date | timestamp (milliseconds) | 1640995200000 | No | Only valid for repeating tasks (frequency is not 0 / -1) (v1.102.0+) |
@@ -879,6 +883,7 @@ The method of obtaining the id is to open the "Developer Mode" on the "Labs" pag
 | task_type | Task type | [0, 4] | 0 | No | 0 - Normal<br/>1 - Count<br/>2 - Negative<br/>3 - API<br/>4 - Timed |
 | target_times | Target times | number > 0 | 10 | No | Only valid when task_type is 1 (count task) |
 | is_affect_shop_reward | Affect shop reward | true / false | false | No | Only valid when task_type is 1 (count task) |
+| enable_proportional_settlement | Enable proportional settlement | true / false | false | No | v1.104.0+; only valid when task_type is 1 (count task). Tasks created from the template keep this count-task settlement setting |
 | expected_focus_minutes | Expected focus minutes | number > 0 | 25 | No | Only valid when task_type is 4 (timed task) |
 | repeat_end_mode | Repeat end mode | 0 or 1 | 0 | No | Only valid for repeating tasks (frequency is not 0 / -1)<br/>0 - End by count<br/>1 - End by date |
 | repeat_target_times | Repeat end count | number > 0 | 3 | No | Used when repeat_end_mode=0 (or inferred by presence of this field) |
