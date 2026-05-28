@@ -26,16 +26,18 @@
 1. **Count tasks now support proportional real-time reward settlement**: This is useful for tasks you may progress multiple times at flexible moments within a cycle, such as habits completed a few times per week. When count progress changes, LifeUp can grant or roll back Exp, coins, and item rewards according to the current progress instead of waiting until final completion.
 2. **Task detail history tools are more powerful**: Selecting a date in the history calendar now shows the count for that day, and you can add, edit, or batch-create history records.
 3. **Feelings and items are better connected**: Item details can now jump directly to related Feelings, and the Feelings page supports filtering by shop item.
+4. **Subtask completion times are now recorded**: LifeUp now records when each subtask is completed, preparing the data for future API and LifeUp Cloud support.
 
 **♻️ Optimization**
 
 1. **More precise shop item visibility filters**: In addition to sold-out items, you can now hide purchase-disabled, purchase-limited, or currently unaffordable items. Shop widgets follow the same rules.
 2. **Task list search and refresh are more stable**: Regular list search can include completed tasks that are currently visible by settings, and repeated-task refresh plus custom sorting in the All list is more stable with many tasks.
 3. **Task detail history stats now follow the selected date**: Count tasks and unlimited tasks now use different contribution-map color levels based on each day's completion count. The monthly, yearly, all-time, and streak stats below the history view are also calculated from the currently selected date instead of always using today's data.
-4. **Improved shop settings input behavior**: Shop settings now scroll focused inputs above the soft keyboard.
-5. **More reliable system dark mode handling**: Fixed state races between following the system theme and manual night-mode toggles.
-6. **Expanded URL Scheme API support**: Add/Edit Task now supports the `no_deadline` semantics, and count-task APIs support the real-time settlement flag.
-7. **Clearer interest history records**: ATM and credit interest records now show the principal and interest days, making the source of interest easier to verify.
+4. **More intuitive alphabetical sorting**: Alphabetical sorting across modules now follows natural numeric ordering, so names containing numbers are ordered by numeric value instead of simple character-by-character comparison.
+5. **Improved shop settings input behavior**: Shop settings now scroll focused inputs above the soft keyboard.
+6. **More reliable system dark mode handling**: Fixed state races between following the system theme and manual night-mode toggles.
+7. **Expanded URL Scheme API support**: Add/Edit Task now supports the `no_deadline` semantics, and count-task APIs support the real-time settlement flag.
+8. **Clearer interest history records**: ATM and credit interest records now show the principal and interest days, making the source of interest easier to verify.
 
 **🐛 Bug Fixes**
 
