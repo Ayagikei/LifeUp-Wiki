@@ -431,6 +431,33 @@ You can get more icons in these ways:
 
 </details>
 
+<details>
+<summary>What to do if product images cannot be displayed or are missing?</summary>
+
+LifeUp is an offline app. Product images are saved to your device and securely stored in the app's private directory. We cannot directly investigate file changes on your device.
+
+If product images are lost or cannot be displayed, please think about what operations you performed recently:
+
+**If images are missing after restoring a backup:**
+- This is usually because the backup file does not contain image files
+- You need to re-import a complete backup that includes image files
+
+**If images were accidentally deleted:**
+- LifeUp itself does not proactively delete image files
+- If you recently used the image management feature, you may have accidentally deleted images and can try to restore them from a backup
+- Additionally, some system cleaning apps with high permissions may also delete image files; use such apps with caution
+- If you have an older backup containing images, back up current data first, then restore the old backup to retrieve images, then restore your current data
+
+**If product images imported from the World module cannot be displayed:**
+- This may be caused by network issues
+- Try again later, or replace the product image with a local image
+
+**In rare cases, system defects may cause image loss:**
+- To our knowledge, certain customized system versions from some manufacturers have had defects: when the app crashes repeatedly, it may incorrectly clear the app's data, causing data and image files to be lost. Keep your system updated. Additionally, we cannot rule out that there are still system defects that may cause abnormal issues, as these are beyond the app's control. We recommend backing up frequently
+- In extreme cases, unstable device storage or hardware issues may also cause image file loss. Consider backing up to the cloud regularly or replacing the device
+
+</details>
+
 ## ⏰ Reminder / Pomodoro / Countdown
 
 <details>
