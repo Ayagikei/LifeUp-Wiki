@@ -16,6 +16,9 @@ Customize your gamified to-do list with attributes, EXP, coins, and rewards to s
 
 Gamify your life and customize your lists for optimal motivation—particularly helpful for ADHD.
 
+> [!TIP]
+> On mobile, tap the menu icon in the upper-left corner to open the table of contents. On desktop, use the left sidebar to browse more pages.
+
 ## How to get it
 
 Check the [Download](introduction/download.md) page.
