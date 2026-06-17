@@ -37,7 +37,7 @@
 
 **🐛 Bug Fixes**
 
-1. **Fixed ATM withdrawal button text across multiple languages**: Corrected ATM button text that was broken after a merge-conflict rollback in multiple locales.
+1. **Fixed ATM withdrawal button text across multiple languages**: Corrected gerund misuse in the ATM withdrawal button text across some locales.
 2. **Fixed shop item share behavior when not logged in**: Resolved abnormal behavior when sharing shop items without being logged in.
 3. **Fixed color picker echo state**: Fixed an issue where the color picker dialog showed incorrect selected state.
 
