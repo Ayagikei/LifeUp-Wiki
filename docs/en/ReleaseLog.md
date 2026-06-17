@@ -11,13 +11,35 @@
 | LifeUp-Android    | v1.104.0              | 2026/05/23                  |
 | LifeUp-iOS        | check [feature/ulives] | 🎉Alternative app available |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
-| LifeUp Cloud(SDK) | v2.1.0                 | 2026/03/22                  |
+| LifeUp Cloud(SDK) | v2.1.1                 | 2026/06/16                  |
 
 (Part of the translation is provided by Machine/AI Translate and may not be accurate)
 
 <!-- tabs:start -->
 
 ### **LifeUp-Android**
+
+**v1.104.1 (Upcoming)**
+
+**✨ Features**
+
+1. **Enhanced backup export options**: When creating a manual backup, a new bottom sheet lets you choose whether to include media files, account-sensitive info (login state, WebDAV credentials, etc.), and emoji images — making it easy to share a sanitized backup. The automatic backup section also gets three corresponding persistent toggles.
+2. **Improved pomodoro task picker**: Timed tasks now appear first in the task picker with their current focus progress (focused duration / target duration / percentage). A toggle lets you enable or disable prioritizing timed tasks for quick access.
+3. **About page redesign**: The About page is restructured into Links, Feedback, Community, and Developer sections with new entries for the website, release log, FAQ, and API docs. Simplified Chinese users get a Tencent Channel entry, while overseas users gain GitHub Issues/Discussions community access.
+4. **Remove followers**: You can now remove followers from the team members page.
+5. **Shop attribute selector enhancement**: An attribute selector button is added to the shop exp/effect input dialog, supporting quick filtering by skill group and batch multi-selection — much easier when dealing with many attributes.
+
+**♻️ Optimization**
+
+1. **Pomodoro stats now support switching time display format**: Tap the pomodoro stats area in the task detail page to cycle between "hours/minutes", "days/hours/minutes", and "total minutes".
+2. **Clearer subtask completion state**: Completed subtasks now show a strikethrough, making the distinction between done and pending much clearer.
+3. **Fixed pomodoro record sorting**: Pomodoro records are now sorted by end time in descending order.
+
+**🐛 Bug Fixes**
+
+1. **Fixed ATM withdrawal button text across multiple languages**: Corrected ATM button text that was broken after a merge-conflict rollback in multiple locales.
+2. **Fixed shop item share behavior when not logged in**: Resolved abnormal behavior when sharing shop items without being logged in.
+3. **Fixed color picker echo state**: Fixed an issue where the color picker dialog showed incorrect selected state.
 
 **v1.104.0 (2026/05/23)**
 
@@ -2740,6 +2762,12 @@ Optimization
 1. First release
 
 ### **LifeUp Cloud**
+
+**v2.1.1 (2026/06/16)**
+
+**🚀 Features**
+
+1. Exposed subtask completion time (`endTime`) in the SDK data model and HTTP API responses.
 
 **v2.1.0 (2026/03/22)**
 
