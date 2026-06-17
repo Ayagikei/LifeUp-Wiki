@@ -13,7 +13,7 @@
 - Getting Started
 
   - [Hello, LifeUp World](guide/hello_lifeup.md)
-  - [Info & Links](guide/faq.md)
+  - [FAQ](guide/faq.md)
   - [Backup and Restore](guide/backup.md)
   - [Background Running](guide/background_running.md)
 
