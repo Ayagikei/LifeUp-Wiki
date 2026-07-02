@@ -19,7 +19,7 @@
 
 ### **LifeUp-Android**
 
-**v1.104.1 (Upcoming)**
+**v1.104.1 (2026/06/17)**
 
 **✨ Features**
 
