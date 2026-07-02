@@ -15,7 +15,7 @@
 - 指引
 
   - [快速開始](guide/hello_lifeup.md)
-  - [資訊](guide/faq.md)
+  - [常見問題](guide/faq.md)
   - [事項](guide/tasks.md)
   - [屬性](guide/attributes.md)
   - [商品](guide/shop_item.md)
