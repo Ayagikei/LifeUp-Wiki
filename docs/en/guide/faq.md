@@ -5,6 +5,14 @@ LifeUp is maintained by two indie teammates in our spare time:
 - One developer mainly maintains the app.
 - One teammate focuses on backend services and operations.
 
+## Behind the Indie App
+
+Back when we first launched LifeUp in 2020, indie apps were still relatively rare. By 2026, indie developers and indie apps are everywhere — which is great.
+
+But we've also seen a lot of not-so-great trends: churning out a new app every month or two and abandoning them after launch; apps built entirely on AI-generated code with no real engineering behind them, riddled with bugs, poor performance, and impossible to maintain; aggressive hype-driven pricing that jumps from tens to hundreds of dollars before the app is even finished, with urgent forum posts pressuring users to buy a "lifetime" membership before it's too late; or apps that cash in on a v1 lifetime membership, barely maintain it, then suddenly "revive" with a v2.0 to sell lifetime memberships all over again — only for the app to remain unmaintained, become broken, or get delisted, making those lifetime memberships effectively worthless.
+
+In contrast, LifeUp is built by developers who care about long-term maintenance: ~6 years of continuous iteration with 400+ releases. We've stuck with the buy-once model, and our pricing has stayed far below most comparable apps even after modest adjustments over the years. LifeUp also uniquely offers an [API](/guide/api.md) and an [open-source desktop client](/guide/api_desktop.md), so you can integrate LifeUp into your own workflows with AI and your own development skills — or even build on top of it.
+
 Some features and UI details are still being polished, and we are improving them step by step.
 
 If LifeUp helps you, sharing it with others is a big help for us too.
@@ -532,6 +540,21 @@ Because the client handles core logic locally, you can keep using LifeUp even wh
 </details>
 
 ## 🧭 Planning
+
+<details>
+<summary>Will you add AI features?</summary>
+
+LifeUp is a low-cost, buy-once app maintained by a small team. Building in ready-to-use AI features directly (where we cover the API costs) is not realistic given our pricing model — unless we switched to a subscription model or multiplied the one-time price several times over to match modern AI app operating costs. We're not going to do that.
+
+That said, LifeUp is inherently AI-friendly:
+
+1. We exposed most of the [API](/guide/api.md) and core functionality early on, making it naturally compatible with AI agents and third-party tools. AI tools with agent capabilities can already invoke LifeUp's features directly — creating tasks, items, and more. In fact, we've seen many users share workflows combining AI with our API, including custom LifeUp API MCP servers, automation tools for AI-generated daily journal entries, and more.
+
+2. We plan to introduce BYOK (Bring Your Own API Key) AI capabilities in the future. This way you can use your own key to power AI features without us bearing the ongoing API costs.
+
+3. At the end of the day, AI isn't magic — otherwise you could just as easily pair AI with our API to achieve full integration yourself.
+
+</details>
 
 <details>
 <summary>Will there be an iOS version of LifeUp?</summary>
