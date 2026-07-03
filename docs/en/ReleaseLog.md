@@ -38,7 +38,7 @@
 1. **Fixed the pomodoro page not auto-refreshing the tomato count after adding or editing a record.**
 2. **Fixed the toast showing earned tomatoes occasionally not appearing after adding a pomodoro record.**
 3. **Fixed manually added pomodoro records calculating tomatoes based on the currently-selected task instead of the task chosen in the record**: The calculation now uses the task-specific focus duration of the task actually selected in the record. If you've set different focus durations for different tasks, manually logged tomatoes will now be more accurate.
-4. **Fixed incorrect "completion count" display for unlimited tasks in history**: Now displayed as a daily ordinal (e.g., "the Nth time that day"), and abandoned/overdue records no longer incorrectly show a count.
+4. **Fixed incorrect "completion count" display for unlimited tasks in history**: Now displayed as a daily ordinal (e.g., "the Nth time that day").
 5. **Fixed penalty task motivation text not appearing** — it now appears after completing the penalty.
 
 **v1.104.1 (2026/06/17)**
