@@ -8,7 +8,7 @@
 
 | Platform          | Version                | Update Date                 |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.104.0              | 2026/05/23                  |
+| LifeUp-Android    | v1.104.2              | 2026/07/03                  |
 | LifeUp-iOS        | check [feature/ulives] | 🎉Alternative app available |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
 | LifeUp Cloud(SDK) | v2.1.1                 | 2026/06/16                  |
@@ -18,6 +18,28 @@
 <!-- tabs:start -->
 
 ### **LifeUp-Android**
+
+**v1.104.2 (2026/07/03)**
+
+**✨ Features**
+
+1. **"Days Using" renamed to "Companion Days" on the stats page**: Tap the card to customize the start date and define your own anniversary. Related achievement condition descriptions are also updated to use the "companion" wording.
+2. **"Backup & Share" option added to the backup menu**: Share backup files directly to other apps via the system share panel.
+3. **Loot box effect API v2**: A new `loot_box/v2` route supports precise item matching via `sub_amount`, adding/removing items, and independent control of amount and probability modes.
+
+**♻️ Optimization**
+
+1. **URL Scheme now prioritizes exact name matching** when editing shop items, loot boxes, or subtasks, falling back to fuzzy matching only when no exact match is found — preventing unintended edits.
+2. **Sidebar "FAQ" renamed to "Notice" in English**: The Chinese version was already "公告" and remains unchanged.
+3. **Button ripple effects now match corner radius everywhere**: Ripple animations on rounded controls no longer overflow beyond the corner boundaries, making taps feel more polished across the app.
+
+**🐛 Bug Fixes**
+
+1. **Fixed the pomodoro page not auto-refreshing the tomato count after adding or editing a record.**
+2. **Fixed the toast showing earned tomatoes occasionally not appearing after adding a pomodoro record.**
+3. **Fixed manually added pomodoro records calculating tomatoes based on the currently-selected task instead of the task chosen in the record**: The calculation now uses the task-specific focus duration of the task actually selected in the record. If you've set different focus durations for different tasks, manually logged tomatoes will now be more accurate.
+4. **Fixed incorrect "completion count" display for unlimited tasks in history**: Now displayed as a daily ordinal (e.g., "the Nth time that day"), and abandoned/overdue records no longer incorrectly show a count.
+5. **Fixed penalty task motivation text not appearing** — it now appears after completing the penalty.
 
 **v1.104.1 (2026/06/17)**
 

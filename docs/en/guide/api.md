@@ -6,9 +6,9 @@
 
 **Last updated: 2026/06/27**
 
-The API parameters and definitions in this document are based on version **v1.105.0**.
+The API parameters and definitions in this document are based on version **v1.104.2**.
 
-Please ensure that your application has been updated to **v1.105.0** before using the latest API.
+Please ensure that your application has been updated to **v1.104.2** before using the latest API.
 
 The update is rolling out gradually through Google Play, and if you haven't received it yet, please be patient and it will arrive soon.
 
@@ -1175,7 +1175,7 @@ For example, filter by product item id 1: `lifeup://api/goto?page=synthesis&filt
 
 #### Adjust the Loot Box effect (v2)
 
-?> This API was introduced in version v1.105.0.
+?> This API was introduced in version v1.104.2.
 
 **Method name:** loot_box/v2
 
