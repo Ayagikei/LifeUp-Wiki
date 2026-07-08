@@ -19,6 +19,25 @@
 
 ### **LifeUp-Android**
 
+**v1.104.3 (TBD)**
+
+**✨ Features**
+
+1. **New "Quick Setup" guide on the welcome screen**: Two new pages (5 and 6) after the intro cards let you configure notification permissions, reminder method, UI style (Material 2/3), and multi-window display right from onboarding — with accordion-style cards. All options can be adjusted later in Settings.
+
+**♻️ Optimization**
+
+1. **Updated welcome page intro text**: Pages 1–4 have been rewritten to better communicate the app's core value: custom tasks → stat growth → reward system → connect with the world.
+2. **Synthesis dialog redesigned as a bottom sheet**: Materials and results are now displayed in a vertical grid, making the layout cleaner and more intuitive.
+3. **Faster data loading when switching between to-do lists, changing sort order, or toggling grouping settings**.
+
+**🐛 Bug Fixes**
+
+1. **Fixed duplicate "Achievement Unlocked" notifications** for certain system achievements.
+2. **Fixed inaccurate counting for the "Complete N Distinct Tasks Daily" achievement**: Infinite tasks are no longer excluded, and completing the same task multiple times on the same day now counts as one.
+3. **Fixed the add button (+) on the task list occasionally drifting from its correct position**.
+4. **Fixed smart lists not filtering out archived tasks when "Group by List" is disabled**.
+
 **v1.104.2 (2026/07/03)**
 
 **✨ Features**
