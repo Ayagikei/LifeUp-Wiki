@@ -8,7 +8,7 @@
 
 | Platform          | Version                | Update Date                 |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.104.4              | 2026/07/17                  |
+| LifeUp-Android    | v1.104.5              | 2026/07/17                  |
 | LifeUp-iOS        | check [feature/ulives] | 🎉Alternative app available |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
 | LifeUp Cloud(SDK) | v2.1.1                 | 2026/06/16                  |
@@ -18,6 +18,12 @@
 <!-- tabs:start -->
 
 ### **LifeUp-Android**
+
+**v1.104.5 (2026/07/17)**
+
+**🐛 Bug Fixes**
+
+1. **Fixed an issue in the v1.104.4 release build where opening the Pomodoro page could cause the app to crash.**
 
 **v1.104.4 (2026/07/17)**
 
