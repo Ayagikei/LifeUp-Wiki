@@ -8,7 +8,7 @@
 
 | Platform          | Version                | Update Date                 |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.104.2              | 2026/07/03                  |
+| LifeUp-Android    | v1.104.4              | 2026/07/17                  |
 | LifeUp-iOS        | check [feature/ulives] | 🎉Alternative app available |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
 | LifeUp Cloud(SDK) | v2.1.1                 | 2026/06/16                  |
@@ -18,6 +18,19 @@
 <!-- tabs:start -->
 
 ### **LifeUp-Android**
+
+**v1.104.4 (2026/07/17)**
+
+**✨ Features**
+
+1. **Items now support purchase/use restrictions based on Attribute XP ranges**: Set minimum and maximum XP conditions to control whether an item can be purchased, used, or both.
+2. **New achievement condition for completing tasks a total of N times in a day**: Unlike the existing distinct-task condition, this condition counts every valid task completion that day, including repeated completions of the same task.
+
+**♻️ Optimization**
+
+1. **Pomodoro settlement and recovery flow rebuilt**: Timer state, focus records, and reward settlement now follow a unified process. Recovery is also more reliable if the app process is terminated, reducing edge cases such as missing focus time. If you notice any unexpected behavior changes, please contact us at lifeup@ulives.io.
+2. **Smoother quantity editing for synthesis recipes**: Tap an existing ingredient or result to edit its quantity directly, without selecting the same item again. You can still reselect the item when needed.
+3. **Pomodoro can now be opened in landscape directly from the home page**: View and operate the timer more comfortably in a horizontal layout.
 
 **v1.104.3 (TBD)**
 
