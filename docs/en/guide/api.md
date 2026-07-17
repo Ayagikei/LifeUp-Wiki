@@ -4,11 +4,11 @@
 
 ?> In the v1.90 version, `LifeUp` has opened a variety of functional interfaces, and any external application integration is welcome. <br/>It also provides the “URL” effect for shop items, and users can directly use commodities to call external applications or the interface of `LifeUp`. <br/>These features can give your `LifeUp` unlimited possibilities, but it also requires a little learning understanding and hands-on ability.
 
-**Last updated: 2026/06/27**
+**Last updated: 2026/07/17**
 
-The API parameters and definitions in this document are based on version **v1.104.2**.
+The API parameters and definitions in this document are based on version **v1.104.4**.
 
-Please ensure that your application has been updated to **v1.104.2** before using the latest API.
+Please ensure that your application has been updated to **v1.104.4** before using the latest API.
 
 The update is rolling out gradually through Google Play, and if you haven't received it yet, please be patient and it will arrive soon.
 
@@ -1846,6 +1846,16 @@ If the item has `purchase_limit` configured and `limit_scope` includes `purchase
 | 18        | Task focus duration    | Yes                | Task ID         | Duration (minutes) |
 | 19        | ATM savings           | No                 | -               | Savings amount     |
 | 20        | External API          | No                 | -               | API defined        |
+| 520       | Complete N distinct tasks daily | No         | -               | Distinct task count (deduplicated by group ID; existing type) |
+| 524       | Complete N task completions daily | No       | -               | Total valid completion count in a day (v1.104.4+) |
+
+> As of v1.104.4, types `520` and `524` use the following semantics:
+>
+> - Both share the same completion definition and local calendar day boundary (`TimeRange.today()`).
+> - Ordinary tasks count `COMPLETED`; negative tasks count `GIVE_UP`.
+> - Type `520` deduplicates by effective `groupId` (falls back to task record id when group id is missing). Completing the same unlimited task multiple times in a day still counts as 1 distinct task.
+> - Type `524` counts each valid completion row. Completing the same unlimited task 5 times yields `completionCount = 5`.
+> - Existing achievements with `type=520` keep the distinct-task semantics; no migration is required.
 
 #### 4. JSON Format Specifications
 
@@ -1862,6 +1872,16 @@ If the item has `purchase_limit` configured and `limit_scope` includes `purchase
         "type": 10,          // Example: Purchase specific item
         "related_id": 1,     // Item ID
         "target": 5          // Purchase 5 times
+    },
+    {
+        "type": 520,         // Complete N distinct tasks daily
+        "related_id": null,
+        "target": 5
+    },
+    {
+        "type": 524,         // Complete N task completions daily
+        "related_id": null,
+        "target": 10
     }
 ]
 ```
