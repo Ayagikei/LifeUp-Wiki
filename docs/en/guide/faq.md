@@ -118,6 +118,22 @@ From there, you can hide the World module or replace it with another module.
 ## ✅ Tasks
 
 <details>
+<summary>Can I hide the reward dialog when completing a task?</summary>
+
+Yes. In the normal completion flow, the reward dialog appears only when a task has rewards configured, such as Experience Points (XP) or Items. If you leave rewards unset, completing the task will not show this dialog.
+
+We also recommend choosing a sensible completion interval instead of splitting an activity into many small tasks. This reduces both setup work and the number of completion actions.
+
+If you want to keep the rewards but skip completion dialogs, you can use either of these options:
+
+- **Quick Complete:** Enable `Quick Complete` in the top-right corner of the task list. Once enabled, tapping the circle completes a task directly without showing the reward dialog.
+- **Swipe to complete:** Go to `Sidebar` → `Settings` → `Task` → `Swipe` → `Card swipe action`. Select `Swipe Left` or `Swipe Right`, then set the action to `Finish (No Dialog)`.
+
+Both no-dialog options still grant the configured rewards, but they also skip other completion dialogs, including Feelings input and automatic item use.
+
+</details>
+
+<details>
 <summary>How do I undo a completed task?</summary>
 
 You can undo completion in several places:
