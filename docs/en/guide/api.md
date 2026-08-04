@@ -4,11 +4,11 @@
 
 ?> In the v1.90 version, `LifeUp` has opened a variety of functional interfaces, and any external application integration is welcome. <br/>It also provides the “URL” effect for shop items, and users can directly use commodities to call external applications or the interface of `LifeUp`. <br/>These features can give your `LifeUp` unlimited possibilities, but it also requires a little learning understanding and hands-on ability.
 
-**Last updated: 2026/07/25**
+**Last updated: 2026/08/04**
 
-The API parameters and definitions in this document are based on version **v1.104.7**.
+The API parameters and definitions in this document are based on version **v1.105.0**.
 
-Please ensure that your application has been updated to **v1.104.7** before using the latest API.
+Please ensure that your application has been updated to **v1.105.0** before using the latest API.
 
 The update is rolling out gradually through Google Play, and if you haven't received it yet, please be patient and it will arrive soon.
 
