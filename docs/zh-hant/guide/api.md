@@ -4,11 +4,11 @@
 
 ?> 在 v1.90 版本中，`人升`既開放了多種功能介面，歡迎任意外部應用聯動。<br/>亦提供了商品的“連結”效果，使用者可以直接使用商品來呼叫外部應用或者《人升》的介面。<br/>這可以使你的`人升`獲得無限的可能性，但也需要你有一定的學習理解和動手能力。
 
-**2026/07/17**
+**2026/07/25**
 
-本文的 API 引數和定義基於 v1.104.4 版本編寫。
+本文的 API 引數和定義基於 v1.104.7 版本編寫。
 
-使用 API 前，建議將應用升級到 v1.104.4 版本，如果沒法檢測到更新，請切換更新渠道到【會員內測-嚐鮮版】。
+使用 API 前，建議將應用升級到 v1.104.7 版本，如果沒法檢測到更新，請切換更新渠道到【會員內測-嚐鮮版】。
 
 ## 場景示例
 
@@ -1499,6 +1499,107 @@ id 的獲取方法為「實驗」頁面開啟「開發者模式」，然後在�
 | 引數   | 含義         | 取值   | 示例 | 是否必須 | 備註 |
 | ------ | ------------ | ------ | ---- | -------- | ---- |
 | result | 操作是否成功 | 布林值 | true | 是       | -    |
+
+<br/>
+
+### 番茄鍾計時
+
+**方法名：**pomodoro_timer
+
+**說明：**控制人升內真實的番茄倒計時或正計時。該介面與 App UI 啟動同一類計時會話，
+不會直接增加番茄記錄或番茄數量。
+
+**示例：**
+
+- 啟動或恢復預設工作番茄：
+  [lifeup://api/pomodoro_timer?action=start&mode=countdown](lifeup://api/pomodoro_timer?action=start&mode=countdown)
+- 選擇任務 101 並開始正計時：
+  [lifeup://api/pomodoro_timer?action=start&mode=count_up&task_id=101](lifeup://api/pomodoro_timer?action=start&mode=count_up&task_id=101)
+- 暫停倒計時：
+  [lifeup://api/pomodoro_timer?action=pause&mode=countdown](lifeup://api/pomodoro_timer?action=pause&mode=countdown)
+- 放棄並重置番茄生命週期：
+  [lifeup://api/pomodoro_timer?action=abandon&mode=countdown](lifeup://api/pomodoro_timer?action=abandon&mode=countdown)
+- 跳過當前番茄週期：
+  [lifeup://api/pomodoro_timer?action=skip](lifeup://api/pomodoro_timer?action=skip)
+- 結算正計時但不領取番茄獎勵：
+  [lifeup://api/pomodoro_timer?action=complete&mode=count_up&receive_reward=false](lifeup://api/pomodoro_timer?action=complete&mode=count_up&receive_reward=false)
+- 查詢兩種計時狀態：
+  [lifeup://api/pomodoro_timer?action=status](lifeup://api/pomodoro_timer?action=status)
+
+**引數：**
+
+| 引數 | 含義 | 取值 | 是否必須 | 備註 |
+| ---- | ---- | ---- | -------- | ---- |
+| action | 操作 | `start`、`pause`、`abandon`、`skip`、`complete`、`select_task`、`status` | 是 | - |
+| mode | 計時模式 | `countdown`、`count_up` | `start`、`pause`、`abandon`、`complete` 必須 | `skip` 固定操作倒計時。 |
+| stage | 倒計時階段 | `work`、`short_break`、`long_break` | 否 | 僅適用於 `mode=countdown`。未傳入時使用執行中、暫停中或已進入下一週期的 canonical 階段；新生命週期從 `work` 開始。 |
+| receive_reward | 是否領取番茄獎勵 | `true` 或 `false` | `complete` 必須 | 嚴格布林值；`complete` 僅支援 `mode=count_up`。 |
+| task_id | 任務 ID | 大於 0 的整數 | 否 | 不能與 `task_gid` 或 `task_name` 同時使用。 |
+| task_gid | 任務組 ID | 大於 0 的整數 | 否 | 可與 `task_name` 組合以縮小匹配範圍。 |
+| task_name | 任務名稱 | 文字 | 否 | 優先精確匹配，再使用模糊匹配。 |
+| clear_task | 清除計時任務 | `true` 或 `false` | 否 | `true` 不能與任務定位引數同時使用。 |
+
+`select_task` 必須提供任務定位引數或 `clear_task=true`；`start` 也可以攜帶相同的任務選擇
+引數。不支援傳入自定義時長：倒計時使用當前預設時長或所選任務配置的番茄時長。
+
+`abandon&mode=countdown` 等價 App 左下角操作：放棄當前週期、重置番茄生命週期，並回到
+停止的工作週期。`skip` 等價右下角操作：工作週期進入短/長休息，休息週期進入工作週期，
+但不會自動開始下一週期。每次 `skip` 都是一次真實且非冪等的操作，呼叫方不得自動重試。
+
+`complete&mode=count_up` 會結算真實正計時。少於 30 秒的會話會被消費，但不會建立記錄；
+`receive_reward=false` 時，達到記錄門檻的會話仍儲存為放棄記錄，但不獎勵番茄。
+
+**任務切換規則：**
+
+- 工作番茄倒計時執行中禁止切換任務。
+- 正計時執行中允許切換任務，常駐通知會同步更新。
+- 倒計時暫停時允許切換任務；保留已計時部分，並按新任務設定重新計算總時長。
+
+**成功返回值：**
+
+| 引數 | 含義 | 取值 |
+| ---- | ---- | ---- |
+| api_result | 介面是否成功 | 布林值 |
+| applied | 本次呼叫是否改變了計時狀態 | 布林值 |
+| mode | 目標模式或人升當前選擇的模式 | `countdown` 或 `count_up` |
+| state | `mode` 對應的狀態 | `running`、`paused` 或 `stopped` |
+| selected_task_id | 當前計時任務 ID；未選擇時為 `0` | 數字 |
+| can_start_in_background | Android 當前是否允許從後臺啟動計時 | 布林值 |
+| countdown_state | 倒計時 canonical 狀態 | `running`、`paused` 或 `stopped` |
+| countdown_phase | 倒計時生命週期階段 | `idle`、`running`、`paused`、`completing`、`completed` 或 `cancelled` |
+| countdown_stage | 倒計時階段 | `work`、`short_break` 或 `long_break` |
+| countdown_session_id | 倒計時會話 ID | 文字或 null |
+| countdown_total_millis | 倒計時總時長 | 毫秒 |
+| countdown_remaining_millis | 倒計時剩餘時長 | 毫秒 |
+| count_up_state | 正計時狀態 | `running`、`paused` 或 `stopped` |
+| count_up_elapsed_millis | 正計時已計時長 | 毫秒 |
+| battery_optimization_ignored | 人升是否已忽略電池最佳化 | 布林值 |
+
+成功的 `complete` 還會返回 `record_created`、`reward_tomatoes` 和
+`settled_elapsed_millis`。
+
+重複呼叫已經達到目標狀態的 `start`、`pause` 或 `abandon` 會成功返回
+`applied=false`。mutation 呼叫不提供跨程序重試去重。
+
+**錯誤：**
+
+失敗時返回 `api_result=false`、`error_code` 和 `error_message`。計時介面的穩定錯誤碼包括：
+
+- `invalid_parameter`
+- `missing_required_parameter`
+- `unsupported_action_for_mode`
+- `task_not_found`
+- `task_change_not_allowed`
+- `timer_mode_locked`
+- `timer_state_conflict`
+- `background_start_not_allowed`
+- `timer_start_failed`
+- `timer_settlement_failed`
+
+Android 12 及以上版本中，後臺 ContentProvider 呼叫僅在人升已獲准忽略電池最佳化時才能啟動
+計時；否則會在改變計時狀態前返回 `background_start_not_allowed`。透過 URL Scheme Activity
+開啟時，人升會先進入前臺再啟動計時。Android 也可能阻止第三方應用從後臺拉起該 Activity；
+此時人升沒有收到 API 呼叫，因此無法返回錯誤。
 
 <br/>
 
