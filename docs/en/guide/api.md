@@ -223,7 +223,7 @@ After enabling "Developer Mode", view it in the "Select List" pop-up window.
 
 #### Attribute id
 
-After enabling "Developer Mode", view it on the "Custom Properties" page.
+After enabling "Developer Mode", view it on the "Custom Attributes" page.
 
 #### Shop item id
 

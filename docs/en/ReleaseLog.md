@@ -8,7 +8,7 @@
 
 | Platform          | Version                | Update Date                 |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.104.5              | 2026/07/17                  |
+| LifeUp-Android    | v1.105.0              | TBD                         |
 | LifeUp-iOS        | check [feature/ulives] | 🎉Alternative app available |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
 | LifeUp Cloud(SDK) | v2.1.1                 | 2026/06/16                  |
@@ -18,6 +18,36 @@
 <!-- tabs:start -->
 
 ### **LifeUp-Android**
+
+**v1.105.0 (Upcoming)**
+
+**ℹ️ Important Note**
+
+1. **Android 6.0 is now the minimum supported version**: To proactively support features and behavior requirements from newer Android versions, the minimum supported version has been raised from Android 5.0 to Android 6.0. Android 5.x users cannot install or upgrade to this version.
+
+**✨ Features**
+
+1. **Added a Pomodoro control URL Scheme API**: Users can query status, select a task, and start, pause, skip, abandon, or complete Pomodoro/count-up sessions.
+2. **Improved the custom task-ordering mechanism**: Introduced a new ordering mechanism to keep custom order stable when copying, completing, undoing, and handling tasks in other edge cases.
+
+**♻️ Optimization**
+
+1. **Added Android predictive-back support**: Task, shop, synthesis, and achievement editors now support the system predictive-back gesture.
+2. **Improved Facebook login initialization**: The SDK is initialized when login is requested, with improved error-state handling.
+
+**🐛 Bug Fixes**
+
+1. **Fixed edit URL Scheme requests unexpectedly overwriting existing fields**: Omitted fields now keep their previous values, and invalid reward or relation parameters no longer clear existing data.
+2. **Fixed positive-timer notification titles not following the selected task in certain edge cases.**
+3. **Fixed the RGB preview not refreshing after the first pasted hexadecimal color value.**
+4. **Fixed missing shadows on the selection toolbar in synthesis and achievement detail pages.**
+
+**v1.104.6 (2026/07/19, Google Play)**
+
+**🐛 Bug Fixes**
+
+1. **Fixed Pomodoro sessions not restoring correctly after the app or timer service stopped unexpectedly**: Valid sessions can now be restored correctly, while invalid stale state is cleaned up.
+2. **Fixed repeated prompts after a system time-zone change**: After confirming the adjustment, task times are updated correctly without showing the same prompt again.
 
 **v1.104.5 (2026/07/17)**
 
@@ -38,7 +68,7 @@
 2. **Smoother quantity editing for synthesis recipes**: Tap an existing ingredient or result to edit its quantity directly, without selecting the same item again. You can still reselect the item when needed.
 3. **Pomodoro can now be opened in landscape directly from the home page**: View and operate the timer more comfortably in a horizontal layout.
 
-**v1.104.3 (TBD)**
+**v1.104.3 (2026/07/09)**
 
 **✨ Features**
 

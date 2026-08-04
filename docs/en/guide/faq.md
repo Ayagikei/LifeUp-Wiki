@@ -405,9 +405,9 @@ On the `Shop` page, open the top-right menu (`...`) and select `Settings`.
 <summary>How do I customize attributes or skills?</summary>
 
 Go to:
-`Sidebar` → `Settings` → `Advanced` → `Custom Properties`
+`Sidebar` → `Settings` → `Advance` → `Customize attributes`
 
-You can add, edit, or delete custom attributes freely.
+You can customize existing attributes, create new attributes for skills, and delete attributes as needed.
 
 If you want to track skills, create attributes named after skills (for example, `Fishing` or `Programming`).
 
