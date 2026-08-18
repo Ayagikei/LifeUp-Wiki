@@ -213,6 +213,46 @@ http://{host:port}/synthesis/${id}
 http://{host:port}/skills
 ```
 
+**其它**
+
+```
+// 金币余额
+http://{host:port}/coin
+
+// 人升 / 云人升版本
+http://{host:port}/info
+
+// 番茄钟记录（分页；可选时间范围）
+http://{host:port}/pomodoro_records?offset=${offset}&limit=${limit}&time_range_start=${ms}&time_range_end=${ms}
+
+// 全部成就（Cloud 已实现，不再需要清单 id）
+http://{host:port}/achievements
+```
+
+统一响应：`{ code, message, data }`。`code=200` 只表示传输成功。`10001` 人升未开或未授读取；`10002` ContentProvider 查询失败。
+
+历史记录的查询参数是 **`gid`**（不是 `filterGid`）。
+
+### 列表字段取值
+
+ContentProvider / Cloud JSON 字段名与下表一致。
+
+| 接口 | 字段 | 取值 |
+| --- | --- | --- |
+| `/tasks` `/history` | `status` | `0` 未完成 · `1` 已完成 · `2` 逾期 · `3` 放弃 |
+| `/tasks` | `frequency` | `0` 一次 · `1` 每日 · `N>1` 每 N 天 · `-1` 无限制 · `-3` 艾宾浩斯 · `-4` 每月 · `-5` 每年 |
+| `/tasks_categories` | `status` | `0` 正常 · `1` 已归档 |
+| `/tasks_categories` | `type` | `<10` 普通清单 · `10` 每日 · `11` 每周 · `12` 每月 · `20` 进行中 |
+| `/achievements` | `status` | `0` 未解锁 · `1` 已解锁未领奖 · `2` 已解锁已领奖 |
+| `/achievements` | `type` | `0` 普通 · `1` 子分类 |
+| `/achievement_categories` | `type` | `0` 用户 · `1` 系统 |
+| `/feelings` | `type` | `0` 任务 · `1` 成就 · `2` 纯文本 · `3` 使用物品 |
+| `/feelings` | `isFav` | `true`/`false`（Provider 里是 0/1） |
+| `/skills` | `type` | `0` 用户属性 · `1` 力量 · `2` 学识 · `3` 魅力 · `4` 耐力 · `5` 活力 · `6` 创造 |
+| `/pomodoro_records` | `reward` | `0` 放弃 · `0.5×倍数` 半程 · 否则为倍数 |
+
+商品/合成清单的隐藏状态在 App 里有，**Cloud 分类接口不返回**。技能 `status`（0 正常 / 1 隐藏）只出现在 `query`/`query_skill`，**不在** `GET /skills`。
+
 **请求方式：GET**
 
 **请求参数说明：**

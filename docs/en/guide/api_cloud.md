@@ -191,6 +191,45 @@ http://{host:port}/synthesis/${id}
 http://{host:port}/skills
 ```
 
+
+**Other**
+
+```txt
+// Coin balance
+http://{host:port}/coin
+
+// LifeUp / Cloud versions
+http://{host:port}/info
+
+// Pomodoro records (paged; optional time range)
+http://{host:port}/pomodoro_records?offset=${offset}&limit=${limit}&time_range_start=${ms}&time_range_end=${ms}
+
+// All achievements (implemented; category id optional)
+http://{host:port}/achievements
+```
+
+Envelope: `{ code, message, data }`. `200` is transport OK only. `10001` LifeUp not running or Read Data not granted. `10002` ContentProvider query failed.
+
+History filter query param is **`gid`** (not `filterGid`).
+
+### List field values
+
+| Endpoint | Field | Values |
+| --- | --- | --- |
+| `/tasks` `/history` | `status` | `0` unfinished · `1` done · `2` overdue · `3` given up |
+| `/tasks` | `frequency` | `0` once · `1` daily · `N>1` every N days · `-1` unlimited · `-3` Ebbinghaus · `-4` monthly · `-5` yearly |
+| `/tasks_categories` | `status` | `0` normal · `1` archived |
+| `/tasks_categories` | `type` | `<10` normal · `10` daily · `11` weekly · `12` monthly · `20` doing |
+| `/achievements` | `status` | `0` locked · `1` unlocked, reward unclaimed · `2` unlocked, claimed |
+| `/achievements` | `type` | `0` normal · `1` subcategory |
+| `/achievement_categories` | `type` | `0` user · `1` system |
+| `/feelings` | `type` | `0` task · `1` achievement · `2` raw · `3` item use |
+| `/feelings` | `isFav` | bool (CP 0/1) |
+| `/skills` | `type` | `0` user · `1` strength · `2` learning · `3` charm · `4` endurance · `5` vitality · `6` creative |
+| `/pomodoro_records` | `reward` | `0` abandoned · `0.5×n` half · else full multiple |
+
+Shop/synthesis hide flags exist in the app but are **not** on Cloud category lists. Skill `status` (0 normal / 1 hidden) is only on `query`/`query_skill`, **not** `GET /skills`.
+
 **Method: `GET`**
 
 **Parameters:**
