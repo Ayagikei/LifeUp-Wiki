@@ -8,7 +8,7 @@
 
 | Platform          | Version                | Update Date                 |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.105.0              | 2026/08/04                  |
+| LifeUp-Android    | v1.105.1              | 2026/08/19                  |
 | LifeUp-iOS        | check [feature/ulives] | 🎉Alternative app available |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
 | LifeUp Cloud(SDK) | v2.1.1                 | 2026/06/16                  |
@@ -18,6 +18,21 @@
 <!-- tabs:start -->
 
 ### **LifeUp-Android**
+
+**v1.105.1 (2026/08/19)**
+
+**✨ Features**
+
+1. **Custom sound effects can be disabled per scene**: Mute one cue without affecting others; preview still plays so you can check the sound.
+
+**♻️ Optimization**
+
+1. **Clearer backup guidance when Google Play services are unavailable**: If Google Drive cannot be used, the app explains why and suggests a local file, Dropbox, or WebDAV.
+
+**🐛 Bug Fixes**
+
+1. **Fixed tapping Undo on the calendar Completed page doing nothing.**
+2. **Fixed purchase/use limits not restoring (or saving empty) when editing an item.**
 
 **v1.105.0 (2026/08/04)**
 
