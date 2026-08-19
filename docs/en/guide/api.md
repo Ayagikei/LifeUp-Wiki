@@ -4,11 +4,11 @@
 
 ?> In the v1.90 version, `LifeUp` has opened a variety of functional interfaces, and any external application integration is welcome. <br/>It also provides the “URL” effect for shop items, and users can directly use commodities to call external applications or the interface of `LifeUp`. <br/>These features can give your `LifeUp` unlimited possibilities, but it also requires a little learning understanding and hands-on ability.
 
-**Last updated: 2026/08/04**
+**Last updated: 2026/08/19**
 
-The API parameters and definitions in this document are based on version **v1.105.0**.
+The API parameters and definitions in this document are based on version **v1.105.1**.
 
-Please ensure that your application has been updated to **v1.105.0** before using the latest API.
+Please ensure that your application has been updated to **v1.105.1** before using the latest API.
 
 The update is rolling out gradually through Google Play, and if you haven't received it yet, please be patient and it will arrive soon.
 
@@ -1204,11 +1204,12 @@ For example, filter by product item id 1: `lifeup://api/goto?page=synthesis&filt
 | amount                 | number of content item                | number                                                  | 1              | no       | number of rewards for a single item. `0` (absolute) or computed `<=0` (relative) deletes the entry |
 | probability            | probability of the content item       | number                                                  | 1              | no       | -                                                            |
 | fixed                  | whether it is a fixed reward          | boolean                                                 | true/false     | no       | -                                                            |
+| query                  | list box contents                     | true or false                                           | true           | no       | v1.105.1+. Returns item JSON only; sub_id / sub_name not required |
 
 **Notice:**
 
 1. In order to search for a product, either id or name must be provided.
-1. In order to search for content, either sub_id or sub_name must be provided.
+1. In order to search for content, either sub_id or sub_name must be provided. Use `query=true` to list contents without sub_id / sub_name.
 1. If both `sub_id` and `sub_name` are provided, `sub_id` takes precedence. `sub_name` is used only when no valid `sub_id` is provided.
 1. `name` and `sub_name` try exact matching first, then fall back to fuzzy matching.
 1. `sub_amount` defaults to `1`. When the box has multiple entries of the same item with different amounts, provide `sub_amount` to target a specific entry. If no match is found and this is not a deletion request, a new entry with `amount=sub_amount` is added.
@@ -1468,6 +1469,7 @@ the background; when that happens, LifeUp receives no API call and cannot return
 | reward_tomatoes | Whether to reward tomatoes | true or false         | true          | No       | Default is false                                 |
 | edit_item_id    | ID of the item to edit     | Number greater than 0 | 123           | Yes      | Specifies the record ID to edit                  |
 | ui              | Display reward tomatoes UI | true or false         | true          | No       |                                                  |
+| delete          | Delete the record          | true or false         | true          | No       | v1.105.1+. Soft-deletes the pomodoro record (`isDel`), same as the app |
 
 **Return values:**
 
@@ -1497,6 +1499,38 @@ the background; when that happens, LifeUp receives no API call and cannot return
 | Parameter | Meaning      | Type                  | Example | Required | Notes |
 | --------- | ------------ | --------------------- | ------- | -------- |------ |
 | id        | condition id | number greater than 0 | 2       | yes      |       |
+
+<br/>
+
+### Complete / Claim Achievement
+
+?> This API was introduced in v1.105.1.
+
+**Method name:** complete_achievement
+
+**Description:** Complete a manual achievement and claim its reward, or claim the reward of an already unlocked automatic achievement. Same behavior as tapping the complete checkbox / claim-reward button in the app.
+
+**Example:**
+
+- Complete or claim the achievement with id 1: [lifeup://api/complete_achievement?id=1](lifeup://api/complete_achievement?id=1)
+
+| Parameter | Meaning        | Type                  | Example | Required | Notes |
+| --------- | -------------- | --------------------- | ------- | -------- | ----- |
+| id        | achievement id | number greater than 0 | 1       | yes      |       |
+
+**Return value:**
+
+| Field  | Type   | Description | Example | Notes |
+| ------ | ------ | ----------- | ------- | ----- |
+| id     | number | achievement ID | 1 | |
+| status | number | status after the call | 2 | `0` locked · `1` unlocked, reward unclaimed · `2` unlocked, reward claimed |
+
+**Notes:**
+
+1. Manual achievements (no unlock conditions): if still locked, this completes the achievement and grants rewards.
+2. Automatic achievements (with unlock conditions): only claims rewards when already unlocked and a reward is still pending. If conditions are not met, the call fails with `error_code=achievement_not_unlocked`.
+3. Calling again after the reward is already claimed succeeds with `status=2` and does not grant rewards twice.
+4. This is different from `achievement?unlocked=true`, which only writes unlock state and does not grant rewards.
 
 <br/>
 
@@ -1552,13 +1586,15 @@ the background; when that happens, LifeUp receives no API call and cannot return
 
 - Create a new record of feeling: [lifeup://api/feeling?content=Happy&time=1633036800](lifeup://api/feeling?content=Happy&time=1633036800)
 - Update an existing record of feeling and mark it as a favorite: [lifeup://api/feeling?id=1&is_favorite=true](lifeup://api/feeling?id=1&is_favorite=true)
+- Delete a feeling: [lifeup://api/feeling?id=1&delete=true](lifeup://api/feeling?id=1&delete=true)
 
 | Parameter            | Meaning           | Type                               | Example           | Required | Notes                                                                                                                                                                                                                                        |
 | -------------------- | ----------------- | ---------------------------------- | ----------------- | -------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| id                   | Feeling Record ID | Number greater than 0              | 1                 | No       | If provided, the method tries to update a specific record                                                                                                                                                                                    |
+| id                   | Feeling Record ID | Number greater than 0              | 1                 | No       | If provided, the method tries to update a specific record. Required when deleting.                                                                                                                                                           |
 | content              | Content           | Any text                           | Happy             | No       | Used for creating a new record or updating the content of an existing one                                                                                                                                                                    |
 | time                 | Timestamp         | Unix timestamp                     | 1633036800        | No       | The time of the record, defaults to current time                                                                                                                                                                                             |
 | is_favorite          | Favorite Flag     | true or false                      | true              | No       | Marks the record as a favorite or not                                                                                                                                                                                                        |
+| delete               | Delete            | true or false                      | true              | No       | v1.105.1+. Soft-deletes the feeling the same way as the app (attachments are removed).                                                                                                                                                       |
 | relate_type          | Relation Type     | Number between 0 and 3             | 1                 | No       | Specifies the type of relation associated with the record:<br/>0: Task<br/>1: Custom Achievement<br/>2: No relation<br/>3: Item usage                                                                                                        |
 | relate_id            | Related ID        | Number greater than 0              | 2                 | No       | Specifies the ID of the related item:<br/>When relate_type is 0: represents task ID<br/>When relate_type is 1: represents achievement ID<br/>When relate_type is 3: represents item ID<br/>When relate_type is 2: no ID needed                |
 | usage_count          | Usage count       | Integer greater than 1             | 1                 | No       | Only valid when relate_type is 3 (Item usage), records the usage count of the item.                                                                                                                                                          |
@@ -1795,7 +1831,7 @@ If the item has `purchase_limit` configured and `limit_scope` includes `purchase
 | edit_id         | Category ID to edit| number greater than 0| 1         | No       | Required when editing           |
 | name            | Category name     | any text             | Study List | No       | Required for new categories; optional when editing |
 | order           | Sort order        | integer              | 1         | No       | Position in the list            |
-| hidden          | Hide category     | true or false        | false     | No       | Only supported for task and shop lists |
+| hidden          | Hide category     | true or false        | false     | No       | tasks=archive; shop=shop hide; synthesis=hide. Achievement lists reject with `unsupported_parameter`. `false` unhides |
 | inventory_hidden| Hide in inventory | true or false        | false     | No       | Only supported for shop lists   |
 | icon_uri        | Icon URI          | URI text             | content://... | No  | Only supported for achievement lists |
 | desc            | Description       | any text             | This is a description | No | Only supported for achievement lists |

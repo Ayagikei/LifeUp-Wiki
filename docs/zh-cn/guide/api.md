@@ -4,11 +4,11 @@
 
 ?> 在 v1.90 版本中，`人升`既开放了多种功能接口，欢迎任意外部应用联动。<br/>亦提供了商品的“链接”效果，用户可以直接使用商品来调用外部应用或者《人升》的接口。<br/>这可以使你的`人升`获得无限的可能性，但也需要你有一定的学习理解和动手能力。
 
-**2026/08/04**
+**2026/08/19**
 
-本文的 API 参数和定义基于 v1.105.0 版本编写。
+本文的 API 参数和定义基于 v1.105.1 版本编写。
 
-使用 API 前，建议将应用升级到 v1.105.0 版本，如果没法检测到更新，请切换更新渠道到【会员内测-尝鲜版】。
+使用 API 前，建议将应用升级到 v1.105.1 版本，如果没法检测到更新，请切换更新渠道到【会员内测-尝鲜版】。
 
 ## 场景示例
 
@@ -1155,11 +1155,12 @@ id 的获取方法为「实验」页面打开「开发者模式」，然后在�
 
 - 将ATM利率设置为0.01%：[lifeup://api/shop_settings?key=atm_interest&value=0.01](lifeup://api/shop_settings?key=atm_interest&value=0.01)
 - 每次点击将利率提升0.01%：[lifeup://api/shop_settings?key=atm_interest&value=0.01&set_type=relative](lifeup://api/shop_settings?key=atm_interest&value=0.01&set_type=relative)
+- 读取当前商店设置：[lifeup://api/shop_settings?query=true](lifeup://api/shop_settings?query=true)
 
 | 参数     | 含义                     | 取值                                                         | 示例         | 是否必须 | 备注                                                         |
 | -------- | ------------------------ | ------------------------------------------------------------ | ------------ | -------- | ------------------------------------------------------------ |
-| key      | 类型                     | 目前仅支持：<br/>atm_interest<br/>credit_interest<br/>line_of_credit<br/>discount_rate_for_returning<br/>atm_balance | atm_interest | 是       | atm_interest - ATM日利率<br/>credit_interest - 贷款日利率<br/>line_of_credit - 可贷款金额<br/>discount_rate_for_returning - 退货打折比例<br/>atm_balance - ATM 余额 |
-| value    | 数值                     | 浮点数（小数点）                                             | 0.01         | 是       | 不同的 key 对应不同的数值范围<br/>比如 ATM 余额不支持小数点  |
+| key      | 类型                     | 目前仅支持：<br/>atm_interest<br/>credit_interest<br/>line_of_credit<br/>discount_rate_for_returning<br/>atm_balance | atm_interest | 写入时是 | 查询时可不传                                                 |
+| value    | 数值                     | 浮点数（小数点）                                             | 0.01         | 写入时是 | 仅 `query=true` 时读取当前全部设置；不传 value 仍按旧合同报缺参 |
 | set_type | 如何设置数值             | 以下数值其一：<br/>absolute<br/>relative                     | absolute     | 否       | absolute - 绝对取值，即直接将目标设置为 value<br/>relative - 相对取值，在原数值的基础上增加或减少 |
 | silent   | 是否沉默执行（不显示UI） | 布尔值                                                       | false        | 否       | 仅 v1.93.0-beta01（502）+ 支持<br/>默认为 false，即会显示 UI 提示 |
 
@@ -1406,11 +1407,12 @@ id 的获取方法为「实验」页面打开「开发者模式」，然后在�
 | amount               | 奖励数                | 数字                                     | 1            | 否       | 某个单一物品的奖励个数。`0`（absolute）或计算后 `<=0`（relative）时删除条目 |
 | probability          | 奖励比重              | 数字                                     | 1            | 否       | -                                                            |
 | fixed                | 是否是固定奖励        | 布尔值                                   | true/false   | 否       | -                                                            |
+| query                | 查询开箱内容          | true 或 false                            | true         | 否       | v1.105.1+。为 true 时只返回箱子条目 JSON，不修改。此时不需要 sub_id / sub_name |
 
 **注意：**
 
 1. 为了搜索到商品，必须提供 id 或 name 其一。
-1. 为了搜索到内容物，必须提供 sub_id 或 sub_name 其一。
+1. 为了搜索到内容物，必须提供 sub_id 或 sub_name 其一。查询箱子内容时改为提供 `query=true`，此时不需要 sub_id / sub_name。
 1. 如果同时提供 `sub_id` 和 `sub_name`，`sub_id` 优先；只有未提供有效 `sub_id` 时才会使用 `sub_name`。
 1. `name` 和 `sub_name` 会先完整匹配，匹配不到再模糊匹配。
 1. `sub_amount` 默认值为 `1`。当开箱中存在同一物品的多个不同数量条目时，可提供 `sub_amount` 来指定要编辑的条目。匹配不到且不是删除语义时，会新增一条 `amount=sub_amount` 的内容物。
@@ -1666,6 +1668,7 @@ Android 12 及以上版本中，后台 ContentProvider 调用仅在人升已获�
 | reward_tomatoes | 是否奖励番茄           | true 或者 false | true          | 否       | 默认为 false                                |
 | edit_item_id    | 编辑项的 ID            | 大于 0 的数字   | 123           | 是       | 指定编辑的记录 ID                           |
 | ui              | 是否展示奖励番茄数的UI | true 或者 false | true          | 否       |                                             |
+| delete          | 是否删除记录           | true 或者 false | true          | 否       | v1.105.1+。软删除该番茄记录（`isDel`），与 App 内删除一致 |
 
 **返回值：**
 
@@ -1695,6 +1698,38 @@ Android 12 及以上版本中，后台 ContentProvider 调用仅在人升已获�
 | 参数 | 含义   | 取值          | 示例 | 是否必须 | 备注                                          |
 | ---- | ------ | ------------- | ---- | -------- | --------------------------------------------- |
 | id   | 条件id | 大于 0 的数字 | 2    | 是       | 获取方式请查看上文 「基础知识 - 人升数据 ID」 |
+
+<br/>
+
+### 完成 / 领取成就
+
+?> 该 API 于 v1.105.1 版本更新引入。
+
+**方法名：**complete_achievement
+
+**说明：**完成手动成就并领取奖励；或领取已解锁自动成就的奖励。行为与 App 内点击完成勾选 / 领取奖励按钮一致。
+
+**示例：**
+
+- 完成或领取 id 为 1 的成就：[lifeup://api/complete_achievement?id=1](lifeup://api/complete_achievement?id=1)
+
+| 参数 | 含义   | 取值          | 示例 | 是否必须 | 备注                                          |
+| ---- | ------ | ------------- | ---- | -------- | --------------------------------------------- |
+| id   | 成就id | 大于 0 的数字 | 1    | 是       | 获取方式请查看上文 「基础知识 - 人升数据 ID」 |
+
+**返回数据：**
+
+| 字段名 | 类型 | 说明 | 示例 | 备注 |
+| ------ | ---- | ---- | ---- | ---- |
+| id     | 数字 | 成就ID | 1 | |
+| status | 数字 | 完成后的状态 | 2 | `0` 未解锁 · `1` 已解锁未领奖 · `2` 已解锁已领奖 |
+
+**注意：**
+
+1. 无解锁条件的手动成就：未完成时会完成并发放奖励。
+2. 有解锁条件的自动成就：仅在已解锁、仍有未领奖励时发放奖励；条件未达成会失败，`error_code` 为 `achievement_not_unlocked`。
+3. 已经领完奖励时调用会成功返回，`status=2`，不会重复发奖。
+4. 这与 `achievement?unlocked=true` 不同。后者只改解锁状态，不发放奖励。
 
 <br/>
 
@@ -1750,13 +1785,15 @@ Android 12 及以上版本中，后台 ContentProvider 调用仅在人升已获�
 
 - 创建一个新的感想：[lifeup://api/feeling?content=开心&time=1633036800](lifeup://api/feeling?content=开心&time=1633036800)
 - 更新特定 id 的感想，并标记为收藏状态：[lifeup://api/feeling?id=1&is_favorite=true](lifeup://api/feeling?id=1&is_favorite=true)
+- 删除感想：[lifeup://api/feeling?id=1&delete=true](lifeup://api/feeling?id=1&delete=true)
 
 | 参数                     | 含义       | 取值                           | 示例           | 是否必须 | 备注                                                                                                   |
 | ------------------------ | ---------- | ------------------------------ | -------------- | -------- | ------------------------------------------------------------------------------------------------------ |
-| id                       | 感想记录id | 大于 0 的数字                  | 1              | 否       | 如果提供，则用于更新特定记录                                                                           |
+| id                       | 感想记录id | 大于 0 的数字                  | 1              | 否       | 如果提供，则用于更新特定记录。删除时必须提供                                                           |
 | content                  | 内容       | 任意文本                       | 快乐           | 否       | 用于创建记录或更新记录的内容                                                                           |
 | time                     | 时间戳     | Unix 时间戳                    | 1633036800     | 否       | 记录的时间，默认为当前时间                                                                             |
 | is_favorite              | 是否收藏   | true 或 false                  | true           | 否       | 标记记录是否为收藏                                                                                     |
+| delete                   | 是否删除   | true 或 false                  | true           | 否       | v1.105.1+。为 true 时软删除该感想（与 App 内删除一致，会清附件）                                       |
 | relate_type              | 关联类型   | 数字 0-3                       | 1              | 否       | 指定记录的关联类型<br/>0：任务<br/>1：自定义成就<br/>2：无关联<br/>3：物品使用                         |
 | relate_id                | 关联id     | 大于 0 的数字                  | 2              | 否       | 指定记录的关联id<br/>当 relate_type 为 0 时，代表任务 id<br/>当 relate_type 为 1 时，代表成就 id<br/>当 relate_type 为 3 时，代表物品 id<br/>当 relate_type 为 2，无需提供 |
 | usage_count              | 使用次数   | 大于 1 的整数                  | 1              | 否       | 仅当 relate_type 为 3（物品使用）时有效，记录该物品的使用次数                                          |
@@ -2027,7 +2064,7 @@ Android 12 及以上版本中，后台 ContentProvider 调用仅在人升已获�
 | edit_id         | 编辑的清单ID   | 大于 0 的数字      | 1          | 否       | 编辑时必须提供                 |
 | name            | 清单名称       | 任意文本           | 学习清单    | 否       | 新建时必须提供；编辑时可选      |
 | order           | 排序           | 整数               | 1          | 否       | 清单在列表中的排序位置          |
-| hidden          | 是否隐藏       | true 或者 false    | false      | 否       | 仅任务清单和商店清单支持        |
+| hidden          | 是否隐藏       | true 或者 false    | false      | 否       | 任务=归档；商店=商店隐藏；合成=隐藏。成就清单不支持（会报 `unsupported_parameter`）。`false` 为重新显示 |
 | inventory_hidden| 是否在仓库隐藏 | true 或者 false    | false      | 否       | 仅商店清单支持                 |
 | icon_uri        | 图标URI        | URI文本            | content://... | 否    | 仅成就清单支持                 |
 | desc            | 描述           | 任意文本           | 这是描述     | 否      | 仅成就清单支持                 |

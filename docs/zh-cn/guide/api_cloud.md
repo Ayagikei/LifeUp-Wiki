@@ -164,6 +164,9 @@ http://{host:port}/items/${id}
 
 // 商品清单
 http://{host:port}/items_categories
+
+// 包含隐藏清单
+http://{host:port}/items_categories?include_hidden=true
 ```
 
 **成就相关**
@@ -253,9 +256,11 @@ ContentProvider / Cloud JSON 字段名与下表一致。
 | `/feelings` | `type` | `0` 任务 · `1` 成就 · `2` 纯文本 · `3` 使用物品 |
 | `/feelings` | `isFav` | `true`/`false`（Provider 里是 0/1） |
 | `/skills` | `type` | `0` 用户属性 · `1` 力量 · `2` 学识 · `3` 魅力 · `4` 耐力 · `5` 活力 · `6` 创造 |
+| `/items_categories` | `hidden` / `inventoryHidden` | `0` 显示 · `1` 隐藏（两列独立） |
+| `/synthesis_categories` | `hidden` | `0` 显示 · `1` 隐藏 |
 | `/pomodoro_records` | `reward` | `0` 放弃 · `0.5×倍数` 半程 · 否则为倍数 |
 
-商品/合成清单的隐藏状态在 App 里有，**Cloud 分类接口不返回**。技能 `status`（0 正常 / 1 隐藏）只出现在 `query`/`query_skill`，**不在** `GET /skills`。
+`GET /items_categories`、`GET /synthesis_categories`、`GET /skill_groups` 支持 `include_hidden=true`（默认不列出隐藏项）。解锁条件：`GET /achievement_conditions/{id}`。技能 `status`（0 正常 / 1 隐藏）只出现在 `query`/`query_skill`，**不在** `GET /skills`。
 
 **请求方式：GET**
 
@@ -267,6 +272,7 @@ ContentProvider / Cloud JSON 字段名与下表一致。
 | offset | 查询偏移量   | Query | 数字     | 否       | 目前仅部分接口需要 |
 | limit  | 限制数量     | Query | 数字     | 否       | 目前仅部分接口需要 |
 | gid | 筛选重复任务历史记录 | Query | 数字 | 否 | 历史记录查询可选参数 |
+| include_hidden | 是否包含隐藏清单 | Query | 布尔 | 否 | 默认 false。用于 `/items_categories`、`/synthesis_categories`、`/skill_groups` |
 
 **请求实例：**
 

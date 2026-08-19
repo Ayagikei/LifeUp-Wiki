@@ -142,6 +142,9 @@ http://{host:port}/items/${id}
 
 // Item categories
 http://{host:port}/items_categories
+
+// Include hidden lists
+http://{host:port}/items_categories?include_hidden=true
 ```
 
 **Achievement endpoints**
@@ -230,9 +233,11 @@ Envelope: `{ code, message, data }`. `200` is transport OK only. `10001` LifeUp 
 | `/feelings` | `type` | `0` task · `1` achievement · `2` raw · `3` item use |
 | `/feelings` | `isFav` | bool (CP 0/1) |
 | `/skills` | `type` | `0` user · `1` strength · `2` learning · `3` charm · `4` endurance · `5` vitality · `6` creative |
+| `/items_categories` | `hidden` / `inventoryHidden` | `0` visible · `1` hidden (independent flags) |
+| `/synthesis_categories` | `hidden` | `0` visible · `1` hidden |
 | `/pomodoro_records` | `reward` | `0` abandoned · `0.5×n` half · else full multiple |
 
-Shop/synthesis hide flags exist in the app but are **not** on Cloud category lists. Skill `status` (0 normal / 1 hidden) is only on `query`/`query_skill`, **not** `GET /skills`.
+`GET /items_categories`, `GET /synthesis_categories`, and `GET /skill_groups` accept `include_hidden=true` (hidden lists omitted by default). Achievement unlock conditions: `GET /achievement_conditions/{id}`. Skill `status` (0 normal / 1 hidden) is only on `query`/`query_skill`, **not** `GET /skills`.
 
 **Method: `GET`**
 
@@ -244,6 +249,7 @@ Shop/synthesis hide flags exist in the app but are **not** on Cloud category lis
 | offset | Query offset | Query | Number | No | Required only for some paged endpoints |
 | limit | Page size | Query | Number | No | Required only for some paged endpoints |
 | gid | Filter repeating-task history | Query | Number | No | Optional for history query |
+| include_hidden | Include hidden lists | Query | Boolean | No | Default false. Used by `/items_categories`, `/synthesis_categories`, `/skill_groups` |
 
 **Request examples**
 
