@@ -124,8 +124,8 @@ http://{host:port}/tasks
 http://{host:port}/tasks/${id}
 
 // History (supports pagination)
-// filterGid is optional and can be used to filter all history records of a repeating task
-http://{host:port}/history?offset=${offset}&limit=${limit}&filterGid=${filterGid}
+// gid is optional and can be used to filter all history records of a repeating task
+http://{host:port}/history?offset=${offset}&limit=${limit}&gid=${gid}
 
 // Task categories
 http://{host:port}/tasks_categories
@@ -147,8 +147,8 @@ http://{host:port}/items_categories
 **Achievement endpoints**
 
 ```txt
-// ~~All achievements (not currently implemented in app, as of v1.100.4)~~
-// ~~http://{host:port}/achievements~~
+// All achievements
+http://{host:port}/achievements
 
 // Achievements in category/list ${id}
 http://{host:port}/achievements/${id}
@@ -206,11 +206,15 @@ http://{host:port}/pomodoro_records?offset=${offset}&limit=${limit}&time_range_s
 
 // All achievements (implemented; category id optional)
 http://{host:port}/achievements
+
+// Broadcast events (LifeUp Labs → Broadcast events must be on)
+http://{host:port}/events?after=${id}&limit=50
+
+// WebSocket push (Cloud advanced: WebSocket event push; can run with GET)
+ws://{host:port}/events?after=${id}
 ```
 
 Envelope: `{ code, message, data }`. `200` is transport OK only. `10001` LifeUp not running or Read Data not granted. `10002` ContentProvider query failed.
-
-History filter query param is **`gid`** (not `filterGid`).
 
 ### List field values
 
@@ -239,7 +243,7 @@ Shop/synthesis hide flags exist in the app but are **not** on Cloud category lis
 | id | Data ID | Path/Query | Number | Yes (for ID-specific endpoints) | - |
 | offset | Query offset | Query | Number | No | Required only for some paged endpoints |
 | limit | Page size | Query | Number | No | Required only for some paged endpoints |
-| filterGid | Filter repeating-task history | Query | Number | No | Optional for history query |
+| gid | Filter repeating-task history | Query | Number | No | Optional for history query |
 
 **Request examples**
 

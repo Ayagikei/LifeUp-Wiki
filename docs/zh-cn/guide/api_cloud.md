@@ -142,8 +142,8 @@ http://{host:port}/tasks
 http://{host:port}/tasks/${id}
 
 // 历史记录（支持分页查询）
-// filterGid 可选，可用于过滤某个重复任务的所有历史记录
-http://{host:port}/history?offset=${offset}&limit=${limit}&filterGid=${filterGid}
+// gid 可选，可用于过滤某个重复任务的所有历史记录
+http://{host:port}/history?offset=${offset}&limit=${limit}&gid=${gid}
 
 
 // 任务清单
@@ -169,8 +169,8 @@ http://{host:port}/items_categories
 **成就相关**
 
 ```
-// ~~所有成就（app 实际上尚未实现该路径，我们会评估后续版本增加或者移除，截止 v1.100.4）~~
-// ~~http://{host:port}/achievements~~
+// 所有成就
+http://{host:port}/achievements
 
 // 指定清单${id}里面的成就（只支持指定清单 id 进行查询，建议搭配查询成就清单 api 使用）
 http://{host:port}/achievements/${id}
@@ -227,11 +227,15 @@ http://{host:port}/pomodoro_records?offset=${offset}&limit=${limit}&time_range_s
 
 // 全部成就（Cloud 已实现，不再需要清单 id）
 http://{host:port}/achievements
+
+// 广播事件（人升需打开「实验 / 广播事件」）
+http://{host:port}/events?after=${id}&limit=50
+
+// WebSocket 推送（云人升高级设置打开「WebSocket 事件推送」；可与 GET 同时用）
+ws://{host:port}/events?after=${id}
 ```
 
 统一响应：`{ code, message, data }`。`code=200` 只表示传输成功。`10001` 人升未开或未授读取；`10002` ContentProvider 查询失败。
-
-历史记录的查询参数是 **`gid`**（不是 `filterGid`）。
 
 ### 列表字段取值
 
@@ -262,7 +266,7 @@ ContentProvider / Cloud JSON 字段名与下表一致。
 | id     | 对应的数据 ID | Query | 数字     | 是       | -                  |
 | offset | 查询偏移量   | Query | 数字     | 否       | 目前仅部分接口需要 |
 | limit  | 限制数量     | Query | 数字     | 否       | 目前仅部分接口需要 |
-| filterGid | 筛选重复任务历史记录 | Query | 数字 | 否 | 历史记录查询可选参数 |
+| gid | 筛选重复任务历史记录 | Query | 数字 | 否 | 历史记录查询可选参数 |
 
 **请求实例：**
 
@@ -299,8 +303,8 @@ http://{host:port}/items_categories
 **成就相关**
 
 ```
-// ~~所有成就（app 实际上尚未实现该路径，我们会评估后续版本增加或者移除，截止 v1.100.4）~~
-// ~~http://{host:port}/achievements~~
+// 所有成就
+http://{host:port}/achievements
 
 // 指定清单${id}里面的成就（只支持指定清单 id 进行查询，建议搭配查询成就清单 api 使用）
 http://{host:port}/achievements/${id}

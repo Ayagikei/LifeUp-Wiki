@@ -142,8 +142,8 @@ http://{host:port}/tasks
 http://{host:port}/tasks/${id}
 
 // 歷史記錄（支援分頁查詢）
-// filterGid 可選，可用於過濾某個重複任務的所有歷史記錄
-http://{host:port}/history?offset=${offset}&limit=${limit}&filterGid=${filterGid}
+// gid 可選，可用於過濾某個重複任務的所有歷史記錄
+http://{host:port}/history?offset=${offset}&limit=${limit}&gid=${gid}
 
 
 // 任務清單
@@ -169,8 +169,8 @@ http://{host:port}/items_categories
 **成就相關**
 
 ```
-// ~~所有成就（app 實際上尚未實現該路徑，我們會評估後續版本增加或者移除，截止 v1.100.4）~~
-// ~~http://{host:port}/achievements~~
+// 所有成就
+http://{host:port}/achievements
 
 // 指定清單${id}裡面的成就（只支援指定清單 id 進行查詢，建議搭配查詢成就清單 api 使用）
 http://{host:port}/achievements/${id}
@@ -228,11 +228,15 @@ http://{host:port}/pomodoro_records?offset=${offset}&limit=${limit}&time_range_s
 
 // 全部成就（Cloud 已實作）
 http://{host:port}/achievements
+
+// 廣播事件（人升需開啟「實驗 / 廣播事件」）
+http://{host:port}/events?after=${id}&limit=50
+
+// WebSocket 推送（雲人升進階設定開啟「WebSocket 事件推送」；可與 GET 同時用）
+ws://{host:port}/events?after=${id}
 ```
 
 統一回應：`{ code, message, data }`。`code=200` 只表示傳輸成功。`10001` 人升未開或未授讀取；`10002` ContentProvider 查詢失敗。
-
-歷史記錄查詢參數是 **`gid`**（不是 `filterGid`）。
 
 ### 列表欄位取值
 
@@ -261,7 +265,7 @@ http://{host:port}/achievements
 | id     | 對應的資料 ID | Query | 數字     | 是       | -                  |
 | offset | 查詢偏移量   | Query | 數字     | 否       | 目前僅部分介面需要 |
 | limit  | 限制數量     | Query | 數字     | 否       | 目前僅部分介面需要 |
-| filterGid | 篩選重複任務歷史記錄 | Query | 數字 | 否 | 歷史記錄查詢可選引數 |
+| gid | 篩選重複任務歷史記錄 | Query | 數字 | 否 | 歷史記錄查詢可選引數 |
 
 **請求例項：**
 
@@ -298,8 +302,8 @@ http://{host:port}/items_categories
 **成就相關**
 
 ```
-// ~~所有成就（app 實際上尚未實現該路徑，我們會評估後續版本增加或者移除，截止 v1.100.4）~~
-// ~~http://{host:port}/achievements~~
+// 所有成就
+http://{host:port}/achievements
 
 // 指定清單${id}裡面的成就（只支援指定清單 id 進行查詢，建議搭配查詢成就清單 api 使用）
 http://{host:port}/achievements/${id}

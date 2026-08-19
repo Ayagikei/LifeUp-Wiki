@@ -587,7 +587,7 @@ Open box effect:
 
 ?> Some fields like `pin` requires v1.98.0+
 
-**Method:** add_task
+**Method name:** add_task
 
 **Description:** Create a task directly
 
@@ -785,7 +785,7 @@ The method of obtaining the id is to open the "Developer Mode" on the "Labs" pag
 
 ?> Requires v1.98.0+
 
-**Method:** edit_task
+**Method name:** edit_task
 
 **Description:** Edit content and properties of an existing task
 
@@ -804,7 +804,7 @@ The method of obtaining the id is to open the "Developer Mode" on the "Labs" pag
 | exp                | Experience reward    | number >= 0          | 20        | No       | Experience points earned, subject to system limits        |
 | skills             | Skill IDs            | array of numbers greater than 0 | 1 | No    | Supports arrays (e.g., &skills=1&skills=2) |
 | category           | List ID              | number greater than or equal to 0 | 0 | No  | 0 for default list, smart lists not supported |
-| frequency          | Repeat frequency     | integer              | 0         | No       | -1 - Unlimited<br/>-3 - Ebbinghaus (requires v1.99.1)<br/>-4 - Monthly<br/>-5 - Yearly |
+| frequency          | Repeat frequency     | integer              | 0         | No       | Defaults to 0 (once)<br/>0 - Once<br/>1 - Daily<br/>N (N>1) - Every N days<br/>-1 - Unlimited<br/>-3 - Ebbinghaus (requires v1.99.1)<br/>-4 - Monthly<br/>-5 - Yearly |
 | importance         | Importance level     | [1, 4]              | 1         | No       | Defaults to 1                   |
 | difficulty         | Difficulty level     | [1, 4]              | 2         | No       | Defaults to 1                   |
 | deadline           | Due date             | timestamp (milliseconds) | 1640995200000 | No |                               |
@@ -917,7 +917,7 @@ The method of obtaining the id is to open the "Developer Mode" on the "Labs" pag
 
 ?> Requires v1.98.0+
 
-**Method:** history_operation
+**Method name:** history_operation
 
 **Description:** Operate on completed/abandoned/expired tasks
 
@@ -958,7 +958,7 @@ The method of obtaining the id is to open the "Developer Mode" on the "Labs" pag
 | --------- | -------------------- | ---- | ------- | -------- | ----- |
 | key       | type                 | Currently only following values  supported: <br/>atm_interest<br/>credit_interest<br/>line_of_credit<br/>discount_rate_for_returning<br/>atm_balance | atm_interest | yes | atm_interest - ATM daily rate<br/>credit_interest - loan daily rate<br/>line_of_credit - loanable amount<br/>discount_rate_for_returning - return discount Scale<br/>atm_balance - Set ATM balance |
 | value     | numeric value        | decimal number or integer | 0.01 | yes | different keys correspond to different value ranges<br/>For example, ATM balances do not support decimal points |
-| set_type  | How to set the value | One of the following values:<br/>absolute<br/>relative | absolute | yes |absolute - absolute value, that is, directly set the target to value<br/>relative - relative values, adding or subtracting from the original value|
+| set_type  | How to set the value | One of the following values:<br/>absolute<br/>relative | absolute | no |absolute - absolute value, that is, directly set the target to value<br/>relative - relative values, adding or subtracting from the original value|
 | silent    | Whether to execute silently (without displaying UI) | Boolean | false | No | Supported from v1.93.0-beta01 (502) and later<br/>Default is false, which means it will display UI prompts |
 
 <br/>
@@ -975,7 +975,7 @@ The method of obtaining the id is to open the "Developer Mode" on the "Labs" pag
 
 | Parameter | Meaning | Value | Example | Required | Notes |
 | --------- | ------- | ----- | ------- | -------- | ----- |
-| page | page | One of the following values:<br/>main<br/>setting<br/>about<br/>pomodoro<br/>feelings<br/>achievement<br/>history<br/>add_task<br/>add_achievement<br/>add_achievement_cate<br/>exp<br/>coin<br/>backup<br/>add_item<br/>lab<br/>custom_attributes<br/>pomodoro_record<br/>synthesis<br/>pic_manage<br/>purchase_dialog<br/>task_detail<br/>use_item_dialog<br/>achievement_list<br/>user_achievement | lab | yes | `purchase_dialog` refers to the purchase popup<br/> `use_item_dialog` refers to the use item popup<br/>Other entries refer to specific major pages |
+| page | page | One of the following values:<br/>main<br/>setting<br/>about<br/>pomodoro<br/>feelings<br/>achievement<br/>history<br/>add_task<br/>add_achievement<br/>add_achievement_cate<br/>exp<br/>coin<br/>backup<br/>add_item<br/>lab<br/>custom_attributes<br/>pomodoro_record<br/>synthesis<br/>pic_manage<br/>purchase_dialog<br/>task_detail<br/>dlc<br/>new_default<br/>use_item_dialog<br/>achievement_list<br/>user_achievement | lab | yes | `purchase_dialog` refers to the purchase popup<br/> `use_item_dialog` refers to the use item popup<br/>Other entries refer to specific major pages |
 
 #### 1. Jump to the item purchase/use pop-up window
 
@@ -1105,7 +1105,7 @@ For example, filter by product item id 1: `lifeup://api/goto?page=synthesis&filt
 
 ?> Requires v1.98.0+
 
-**Method:** item
+**Method name:** item
 
 **Description:** Modify existing items, including price, stock, effects, and other properties
 
@@ -1257,7 +1257,7 @@ For example, filter by product item id 1: `lifeup://api/goto?page=synthesis&filt
 
 #### Deposit
 
-**Method name:**deposit
+**Method name:** deposit
 
 **Description:** The deposit will be checked for legality (whether the coin balance is sufficient).
 
@@ -1279,7 +1279,7 @@ For example, filter by product item id 1: `lifeup://api/goto?page=synthesis&filt
 
 #### Withdraw
 
-**Method name:**withdraw
+**Method name:** withdraw
 
 **Description:** Withdrawals will be checked for legality (whether the ATM balance is sufficient).
 
@@ -1576,7 +1576,7 @@ the background; when that happens, LifeUp receives no API call and cannot return
 
 ?> Requires v1.98.0+
 
-**Method:** tomato
+**Method name:** tomato
 
 **Description:** Adjust the number of tomatoes (increase, decrease, or set to a specific amount)
 
@@ -1603,7 +1603,7 @@ the background; when that happens, LifeUp receives no API call and cannot return
 
 ?> Requires v1.98.0+
 
-**Method:** purchase_item
+**Method name:** purchase_item
 
 **Description:** Purchase a specific item
 
@@ -1648,7 +1648,7 @@ If the item has `purchase_limit` configured and `limit_scope` includes `purchase
 
 ?> Requires v1.98.0+
 
-**Method:** synthesize
+**Method name:** synthesize
 
 **Description:** Synthesize items using an existing formula
 
@@ -1693,7 +1693,7 @@ If the item has `purchase_limit` configured and `limit_scope` includes `purchase
 
 ?> Requires v1.98.0+
 
-**Method:** synthesis_formula
+**Method name:** synthesis_formula
 
 **Description:** Create, modify, or delete synthesis formulas
 
@@ -1735,7 +1735,7 @@ If the item has `purchase_limit` configured and `limit_scope` includes `purchase
 
 ?> Requires v1.98.0+
 
-**Method:** subtask
+**Method name:** subtask
 
 **Description:** Create or edit subtasks
 
@@ -1780,7 +1780,7 @@ If the item has `purchase_limit` configured and `limit_scope` includes `purchase
 
 ?> Requires v1.98.0+
 
-**Method:** category
+**Method name:** category
 
 **Description:** Add or edit categories (task lists, achievement lists, shop lists, synthesis lists)
 
@@ -1813,7 +1813,7 @@ If the item has `purchase_limit` configured and `limit_scope` includes `purchase
 
 ?> Requires v1.98.0+
 
-**Method:** export_backup
+**Method name:** export_backup
 
 **Description:** Create a backup file and return its URI (Content Provider calls only)
 
@@ -1836,7 +1836,7 @@ If the item has `purchase_limit` configured and `limit_scope` includes `purchase
 
 ?> Requires v1.98.0+
 
-**Method:** subtask_operation
+**Method name:** subtask_operation
 
 **Description:** Complete, undo completion, or delete subtasks
 
@@ -1870,7 +1870,7 @@ If the item has `purchase_limit` configured and `limit_scope` includes `purchase
 
 ?> Requires v1.98.0+
 
-**Method:** achievement
+**Method name:** achievement
 
 **Description:** Add or edit custom achievements and achievement subcategories
 
@@ -2015,7 +2015,7 @@ If the item has `purchase_limit` configured and `limit_scope` includes `purchase
 
 ?> Requires v1.98.0+
 
-**Method:** skill
+**Method name:** skill
 
 **Description:** Create or edit custom skills (attributes)
 
@@ -2051,7 +2051,7 @@ If the item has `purchase_limit` configured and `limit_scope` includes `purchase
 
 Requires v1.103.0+
 
-**Method:** skill_group
+**Method name:** skill_group
 
 **Description:** Create, edit, delete, or reorder skill groups. The sort API also supports mixed ordering of groups and skills.
 
@@ -2095,7 +2095,7 @@ lifeup://api/skill_group?sort_json=[{"type":"skill","id":2},{"type":"group","id"
 
 ?> Requires v1.98.0+
 
-**Method:** app_settings
+**Method name:** app_settings
 
 **Description:** Adjust app interface settings
 
@@ -2599,6 +2599,23 @@ Using `No Action`+`Broadcast return value` can achieve this effect in a more con
 ```
 
 - `amount` is the **total consumed / total produced** in this execution, not the per-formula amount.
+
+### Feelings added / updated
+
+**Name:** app.lifeup.feelings.add
+
+**Return value:**
+
+| Parameters | Meaning | Examples |
+| --- | --- | --- |
+| feelings_id | feeling id | 1 |
+| action_type | `add` or `update` | add |
+| content | feeling text | Feeling good today! |
+| create_time | created-at timestamp (ms) | 1642060800000 |
+| relate_type | related object type | 0 |
+| related_id | related object id | 1 |
+| attachments_count | attachment count | 2 |
+| attachments | attachment path array | ["/path/1", "/path/2"] |
 
 ### Level up
 

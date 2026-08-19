@@ -873,7 +873,6 @@ id 的获取方法为「实验」页面打开「开发者模式」，然后在�
 | gid                       | 任务组id                 | 大于 0 的数字                            | 1        | 否*      | 任务组id；                                                   |
 | name                      | 名称                     | 任意文本                                 | 睡觉     | 否*      | 模糊搜索，只会完成搜索到的其中一个任务                       |
 | ui                        | 是否展示弹窗UI           | true 或 false                            | true     | 否       | 默认为 false，只在后台显示一条消息                           |
-| 以下参数引入自v1.94.0版本 |                          |                                          |          |          |                                                              |
 | count                     | 计数值                   | 数字                                     | 1        | 否       | 仅适用于计数任务，请搭配`count_set_type`参数使用             |
 | count_set_type            | 如何设置计数值           | 以下数值其一：<br/>absolute<br/>relative | absolute | 否       | 默认值为relative<br/>absolute - 绝对取值，即直接将目标设置为 value<br/>relative - 相对取值，在原数值的基础上增加或减少 |
 | count_force_sum_up        | 是否强制结算计数任务奖励 | true 或 false                            | true     | 否       |                                                              |
@@ -1178,7 +1177,7 @@ id 的获取方法为「实验」页面打开「开发者模式」，然后在�
 
 | 参数 | 含义 | 取值                                                         | 示例 | 是否必须 | 备注                                                         |
 | ---- | ---- | ------------------------------------------------------------ | ---- | -------- | ------------------------------------------------------------ |
-| page | 页面 | 固定以下数值其一：<br/>main<br/>setting<br/>about<br/>pomodoro<br/>feelings<br/>achievement<br/>history<br/>add_task<br/>add_achievement<br/>add_achievement_cate<br/>exp<br/>coin<br/>backup<br/>add_item<br/>lab<br/>custom_attributes<br/>pomodoro_record<br/>dlc<br/>pomodoro_record<br/>synthesis - 合成<br/>pic_manage<br/>purchase_dialog<br/>task_detail<br/>new_default<br/>achievement_list - 成就清单<br/>user_achievement - 具体某个成就清单，见下文<br/> | lab  | 是       | `purchase_dialog`指购买弹窗<br/>`use_item_dialog`指使用商品弹窗<br/>其他的都是具体的大页面 |
+| page | 页面 | 固定以下数值其一：<br/>main<br/>setting<br/>about<br/>pomodoro<br/>feelings<br/>achievement<br/>history<br/>add_task<br/>add_achievement<br/>add_achievement_cate<br/>exp<br/>coin<br/>backup<br/>add_item<br/>lab<br/>custom_attributes<br/>pomodoro_record<br/>dlc<br/>pomodoro_record<br/>synthesis - 合成<br/>pic_manage<br/>purchase_dialog<br/>use_item_dialog<br/>task_detail<br/>new_default<br/>achievement_list - 成就清单<br/>user_achievement - 具体某个成就清单，见下文<br/> | lab  | 是       | `purchase_dialog`指购买弹窗<br/>`use_item_dialog`指使用商品弹窗<br/>其他的都是具体的大页面 |
 
 #### 1. 跳转商品购买/使用弹窗
 
