@@ -21,6 +21,7 @@
   - APIs
     - [📄API Lists](guide/api.md)
     - [☁️LifeUp Cloud](guide/api_cloud.md)
+    - [🤖 MCP & Skills](guide/api_mcp.md)
     - [🖥LifeUp Desktop](guide/api_desktop.md)
     - [🤝 Community Contributions](guide/community_contributions.md)
   

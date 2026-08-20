@@ -20,7 +20,7 @@
 
   示例：
 
-  - 《人升-桌面端》就是一个基于《云人升》实现的实例应用。
+  - 《人升-桌面端》就是一个基于《云人升》实现的实例应用。AI 客户端见 [MCP & Skills](guide/api_mcp.md)。
   - [使用《云人升》实现跨设备联动：根据记笔记行为奖励经验值（用户分享） (qq.com)](https://mp.weixin.qq.com/s/ylJEwZbr9QUuQ7e5z-sBLQ)
 
 <br/>

@@ -8,7 +8,7 @@ LifeUp Cloud is one of the core API toolkits for LifeUp.
 
 It exposes LifeUp APIs as HTTP services, so you can call APIs or query data from other tools (such as Python scripts or web apps) **across devices, without Android development experience**.
 
-LifeUp Desktop is a reference app built on top of LifeUp Cloud.
+LifeUp Desktop is a reference app built on top of LifeUp Cloud. For AI clients, see [MCP & Skills](guide/api_mcp.md).
 
 <br/>
 

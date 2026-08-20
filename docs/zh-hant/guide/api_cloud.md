@@ -20,7 +20,7 @@
 
   示例：
 
-  - 《人升-桌面端》就是一個基於《雲人升》實現的例項應用。
+  - 《人升-桌面端》就是一個基於《雲人升》實現的例項應用。AI 客戶端見 [MCP & Skills](guide/api_mcp.md)。
   - [使用《雲人升》實現跨裝置聯動：根據記筆記行為獎勵經驗值（使用者分享） (qq.com)](https://mp.weixin.qq.com/s/ylJEwZbr9QUuQ7e5z-sBLQ)
 
 <br/>
