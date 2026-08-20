@@ -99,3 +99,12 @@ macOS 圖形介面客戶端往往找不到 `npx`，用 `node` 絕對路徑。
 5. 寫入：`complete_task` / `add_task` / `reward` / `purchase_item`，其餘 `call_api`。要彈介面用 `via=launch`。
 
 刪除類介面要 `confirm: true`。參數不要預先 URL 編碼。
+
+## 事件
+
+人升要開「實驗 → 廣播事件」。雲人升 **WebSocket 事件推送預設開**（3.0.0+）。
+
+- `list_events` — `GET /events`，一直可用
+- `subscribe_events` — `WS /events`，預設能連；關了雲人升開關會報錯，HTTP 仍可用
+
+細節：MCP `help broadcasts`。

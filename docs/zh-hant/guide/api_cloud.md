@@ -240,7 +240,7 @@ http://{host:port}/achievements
 // 廣播事件（人升需開啟「實驗 / 廣播事件」）
 http://{host:port}/events?after=${id}&limit=50
 
-// WebSocket 推送（雲人升進階設定開啟「WebSocket 事件推送」；可與 GET 同時用）
+// WebSocket 推送（預設開；雲人升可關「WebSocket 事件推送」；可與 GET 同時用）
 ws://{host:port}/events?after=${id}
 ```
 

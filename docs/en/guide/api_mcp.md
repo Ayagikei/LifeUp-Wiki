@@ -99,3 +99,12 @@ After publish: `npx -y @lifeup/mcp` (npmmirror in China).
 5. Writes: `complete_task` / `add_task` / `reward` / `purchase_item`; else `call_api`. UI needs `via=launch`.
 
 Destructive calls need `confirm: true`. Do not pre-encode params.
+
+## Events
+
+LifeUp: Labs → Broadcast events. Cloud **WebSocket event push is on by default** (3.0.0+).
+
+- `list_events` — `GET /events`, always
+- `subscribe_events` — `WS /events`; errors if the Cloud toggle is off, HTTP still works
+
+Details: MCP `help broadcasts`.

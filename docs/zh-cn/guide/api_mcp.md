@@ -99,3 +99,12 @@ macOS 图形界面客户端往往找不到 `npx`，用 `node` 绝对路径。
 5. 写入：`complete_task` / `add_task` / `reward` / `purchase_item`，其余 `call_api`。要弹界面用 `via=launch`。
 
 删除类接口要 `confirm: true`。参数不要预先 URL 编码。
+
+## 事件
+
+人升要开「实验 → 广播事件」。云人升 **WebSocket 事件推送默认开**（3.0.0+）。
+
+- `list_events` — `GET /events`，一直可用
+- `subscribe_events` — `WS /events`，默认能连；关了云人升开关会报错，HTTP 仍可用
+
+细节：MCP `help broadcasts`。

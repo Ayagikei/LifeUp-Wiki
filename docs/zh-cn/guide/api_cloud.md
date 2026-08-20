@@ -242,7 +242,7 @@ http://{host:port}/achievements
 // 广播事件（人升需打开「实验 / 广播事件」）
 http://{host:port}/events?after=${id}&limit=50
 
-// WebSocket 推送（云人升高级设置打开「WebSocket 事件推送」；可与 GET 同时用）
+// WebSocket 推送（默认开；云人升可关「WebSocket 事件推送」；可与 GET 同时用）
 ws://{host:port}/events?after=${id}
 ```
 

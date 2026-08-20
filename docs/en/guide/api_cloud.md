@@ -220,7 +220,7 @@ http://{host:port}/achievements
 // Broadcast events (LifeUp Labs → Broadcast events must be on)
 http://{host:port}/events?after=${id}&limit=50
 
-// WebSocket push (Cloud advanced: WebSocket event push; can run with GET)
+// WebSocket push (on by default; Cloud setting WebSocket event push)
 ws://{host:port}/events?after=${id}
 ```
 

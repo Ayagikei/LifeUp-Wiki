@@ -1927,6 +1927,7 @@ If the item has `purchase_limit` configured and `limit_scope` includes `purchase
 | is_subcategory| Is subcategory    | true or false        | false     | No       | Defaults to false               |
 | name          | Achievement name   | any text             | Collector | No*      | Required for new achievements   |
 | desc          | Description       | any text             | Collect 100 items | No |                               |
+| icon_uri      | Icon              | emoji, http(s) URL, content URI, or empty | 🏆 | No | Not `icon`. Emoji is stored as an `emoji_` file. Empty clears. |
 | order         | Sort order        | integer              | 1         | No       | Position in list                |
 | category_id   | Category ID       | number greater than 0 | 1        | No*      | Required when creating subcategory |
 | unlocked      | Unlock status     | true or false        | true      | No       | true - unlock immediately<br/>false - reset to locked |
@@ -1960,6 +1961,7 @@ If the item has `purchase_limit` configured and `limit_scope` includes `purchase
 | ------------ | ----------------- | -------------------- | --------- | -------- | ------------------------------- |
 | is_collapsed | Collapse status   | true or false        | false     | No       | Only applies to subcategories   |
 
+Subcategories reject `icon_uri` (including emoji) with `unsupported_parameter`. Editing a subcategory without `is_subcategory=true` returns `is_subcategory_required`.
 **Response:**
 
 | Field  | Type    | Description      | Example | Notes                    |

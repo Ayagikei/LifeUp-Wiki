@@ -2067,6 +2067,7 @@ Android 12 及以上版本中，後臺 ContentProvider 呼叫僅在人升已獲�
 | is_subcategory| 是否為子分類   | true 或者 false    | false    | 否       | 預設為 false                   |
 | name         | 成就名稱       | 任意文字           | 收藏家    | 否*      | 新建時必須提供                 |
 | desc         | 成就描述       | 任意文字           | 收集100個物品 | 否    |                               |
+| icon_uri     | 圖示           | emoji、http(s)、content URI 或空 | 🏆 | 否 | 不是 `icon`。可直接傳 emoji。空字串清除圖示。 |
 | order        | 排序           | 整數              | 1         | 否       | 在列表中的排序位置              |
 | category_id  | 所屬分類ID     | 大於 0 的數字      | 1         | 否*      | 建立子分類時必須提供            |
 | unlocked     | 是否解鎖       | true 或者 false    | true      | 否       | true-立即解鎖<br/>false-重置為未解鎖 |
@@ -2100,6 +2101,7 @@ Android 12 及以上版本中，後臺 ContentProvider 呼叫僅在人升已獲�
 | ------------ | -------------- | ------------------ | -------- | -------- | ------------------------------ |
 | is_collapsed | 是否摺疊       | true 或者 false    | false    | 否       | 僅適用於子分類                  |
 
+子分類不支援 `icon_uri`（含 emoji），傳入會回傳 `unsupported_parameter`。編輯子分類必須帶 `is_subcategory=true`，否則回傳 `is_subcategory_required`（不再誤報缺少 `edit_id`）。
 **返回資料：**
 
 | 欄位名 | 型別   | 說明     | 示例 | 備註             |
