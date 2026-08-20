@@ -228,6 +228,14 @@ http://{host:port}/info
 // 番茄钟记录（分页；可选时间范围）
 http://{host:port}/pomodoro_records?offset=${offset}&limit=${limit}&time_range_start=${ms}&time_range_end=${ms}
 
+// Journals (paged; optional time range). Soft-deleted rows omitted.
+http://{host:port}/coin_records?offset=${offset}&limit=${limit}&time_range_start=${ms}&time_range_end=${ms}
+http://{host:port}/inventory_records?offset=${offset}&limit=${limit}&time_range_start=${ms}&time_range_end=${ms}
+http://{host:port}/exp_records?offset=${offset}&limit=${limit}&time_range_start=${ms}&time_range_end=${ms}
+http://{host:port}/step_records?offset=${offset}&limit=${limit}&time_range_start=${ms}&time_range_end=${ms}
+http://{host:port}/level_defines
+http://{host:port}/statistics?time_range_start=${ms}&time_range_end=${ms}
+
 // 全部成就（Cloud 已实现，不再需要清单 id）
 http://{host:port}/achievements
 
@@ -259,6 +267,8 @@ ContentProvider / Cloud JSON 字段名与下表一致。
 | `/items_categories` | `hidden` / `inventoryHidden` | `0` 显示 · `1` 隐藏（两列独立） |
 | `/synthesis_categories` | `hidden` | `0` 显示 · `1` 隐藏 |
 | `/pomodoro_records` | `reward` | `0` 放弃 · `0.5×倍数` 半程 · 否则为倍数 |
+| `/coin_records` `/inventory_records` | `resCode` | 商店：`0` 买 · `1` 用 · `2` 完成任务 · `3` 撤销完成 · `4` 清数据 · `5` 放弃 · `6` 过期 · `7` 解锁成就 · `8` 撤销放弃 · `9` 撤销过期 · `10` 退货 · `11` 完成子任务 · `12` 撤销子任务 · `13` 解锁用户成就 · `14` 撤销用户成就 · `15` 存款 · `16` 取款 · `17` 卖番茄 · `20` 奖励物品 · `21` 撤销奖励物品 · `23` 合成 · `24` 开箱 · `25` ATM 利息 · `26` 番茄换物品 · `27` 贷款利息 · `28` API · `29` 效果改库存 |
+| `/exp_records` | `resCode` | 经验（不是商店 `28`）：`0` 未知 · `1` 完成 · `2` 成就 · `3` 点赞兑换 · `4` 连续使用 · `5` 步数 · `6` 设为完成 · `7` 撤销放弃 · `8` 撤销过期 · `9` 吃番茄 · `10` 用物品 · `11` 解锁用户成就 · `12` 完成子任务 · `200` API · `101` 撤销完成 · `102` 放弃 · `103` 过期 · `104` 用物品扣经验 · `105` 锁定用户成就 · `106` 撤销子任务 |
 
 `GET /items_categories`、`GET /synthesis_categories`、`GET /skill_groups` 支持 `include_hidden=true`（默认不列出隐藏项）。解锁条件：`GET /achievement_conditions/{id}`。技能 `status`（0 正常 / 1 隐藏）只出现在 `query`/`query_skill`，**不在** `GET /skills`。
 

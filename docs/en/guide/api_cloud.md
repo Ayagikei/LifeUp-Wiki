@@ -207,6 +207,13 @@ http://{host:port}/info
 // Pomodoro records (paged; optional time range)
 http://{host:port}/pomodoro_records?offset=${offset}&limit=${limit}&time_range_start=${ms}&time_range_end=${ms}
 
+// Journals (paged; optional time range). Soft-deleted rows omitted.
+http://{host:port}/coin_records?offset=${offset}&limit=${limit}&time_range_start=${ms}&time_range_end=${ms}
+http://{host:port}/inventory_records?offset=${offset}&limit=${limit}&time_range_start=${ms}&time_range_end=${ms}
+http://{host:port}/exp_records?offset=${offset}&limit=${limit}&time_range_start=${ms}&time_range_end=${ms}
+http://{host:port}/step_records?offset=${offset}&limit=${limit}&time_range_start=${ms}&time_range_end=${ms}
+http://{host:port}/level_defines
+http://{host:port}/statistics?time_range_start=${ms}&time_range_end=${ms}
 // All achievements (implemented; category id optional)
 http://{host:port}/achievements
 
@@ -236,6 +243,8 @@ Envelope: `{ code, message, data }`. `200` is transport OK only. `10001` LifeUp 
 | `/items_categories` | `hidden` / `inventoryHidden` | `0` visible · `1` hidden (independent flags) |
 | `/synthesis_categories` | `hidden` | `0` visible · `1` hidden |
 | `/pomodoro_records` | `reward` | `0` abandoned · `0.5×n` half · else full multiple |
+| `/coin_records` `/inventory_records` | `resCode` | Shop: `0` buy · `1` use · `2` finish task · `3` undo finish · `4` clear · `5` give up · `6` overdue · `7` unlock achievement · `8` revoke give up · `9` revoke overdue · `10` return · `11` finish subtask · `12` undo subtask · `13` unlock user achievement · `14` undo user achievement · `15` deposit · `16` withdraw · `17` sell tomatoes · `20` reward item · `21` undo reward item · `23` synthesis · `24` loot box · `25` ATM interest · `26` tomato exchange · `27` credit interest · `28` API · `29` effect stock |
+| `/exp_records` | `resCode` | Exp (not shop `28`): `0` unknown · `1` finish · `2` achievement · `3` like exchange · `4` day streak · `5` steps · `6` set finished · `7` revoke give up · `8` revoke overdue · `9` eat tomato · `10` used item · `11` unlock user achievement · `12` finish subtask · `200` API · `101` undo finish · `102` give up · `103` overdue · `104` used item debit · `105` lock user achievement · `106` undo subtask |
 
 `GET /items_categories`, `GET /synthesis_categories`, and `GET /skill_groups` accept `include_hidden=true` (hidden lists omitted by default). Achievement unlock conditions: `GET /achievement_conditions/{id}`. Skill `status` (0 normal / 1 hidden) is only on `query`/`query_skill`, **not** `GET /skills`.
 

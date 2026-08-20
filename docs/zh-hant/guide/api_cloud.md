@@ -226,6 +226,14 @@ http://{host:port}/info
 // 番茄鐘記錄（分頁；可選時間範圍）
 http://{host:port}/pomodoro_records?offset=${offset}&limit=${limit}&time_range_start=${ms}&time_range_end=${ms}
 
+// Journals (paged; optional time range). Soft-deleted rows omitted.
+http://{host:port}/coin_records?offset=${offset}&limit=${limit}&time_range_start=${ms}&time_range_end=${ms}
+http://{host:port}/inventory_records?offset=${offset}&limit=${limit}&time_range_start=${ms}&time_range_end=${ms}
+http://{host:port}/exp_records?offset=${offset}&limit=${limit}&time_range_start=${ms}&time_range_end=${ms}
+http://{host:port}/step_records?offset=${offset}&limit=${limit}&time_range_start=${ms}&time_range_end=${ms}
+http://{host:port}/level_defines
+http://{host:port}/statistics?time_range_start=${ms}&time_range_end=${ms}
+
 // 全部成就（Cloud 已實作）
 http://{host:port}/achievements
 
@@ -253,8 +261,10 @@ ws://{host:port}/events?after=${id}
 | `/feelings` | `isFav` | `true`/`false`（Provider 為 0/1） |
 | `/skills` | `type` | `0` 使用者屬性 · `1` 力量 · `2` 學識 · `3` 魅力 · `4` 耐力 · `5` 活力 · `6` 創造 |
 | `/pomodoro_records` | `reward` | `0` 放棄 · `0.5×倍數` 半程 · 否則為倍數 |
+| `/coin_records` `/inventory_records` | `resCode` | 商店：`0` 買 · `1` 用 · `2` 完成任務 · `3` 撤銷完成 · `4` 清資料 · `5` 放棄 · `6` 過期 · `7` 解鎖成就 · `8` 撤銷放棄 · `9` 撤銷過期 · `10` 退貨 · `11` 完成子任務 · `12` 撤銷子任務 · `13` 解鎖用户成就 · `14` 撤銷用户成就 · `15` 存款 · `16` 提款 · `17` 賣番茄 · `20` 獎勵物品 · `21` 撤銷獎勵物品 · `23` 合成 · `24` 開箱 · `25` ATM 利息 · `26` 番茄換物品 · `27` 貸款利息 · `28` API · `29` 效果改庫存 |
+| `/exp_records` | `resCode` | 經驗（不是商店 `28`）：`0` 未知 · `1` 完成 · `2` 成就 · `3` 按讚兌換 · `4` 連續使用 · `5` 步數 · `6` 設為完成 · `7` 撤銷放棄 · `8` 撤銷過期 · `9` 吃番茄 · `10` 用物品 · `11` 解鎖用户成就 · `12` 完成子任務 · `200` API · `101` 撤銷完成 · `102` 放棄 · `103` 過期 · `104` 用物品扣經驗 · `105` 鎖定用户成就 · `106` 撤銷子任務 |
 
-商品/合成清單的隱藏狀態在 App 裡有，**Cloud 分類介面不回傳**。技能 `status`（0 正常 / 1 隱藏）只出現在 `query`/`query_skill`，**不在** `GET /skills`。
+商店/合成/技能組隱藏清單用 `include_hidden=true`。任務清單封存是 `tasks_categories.status=1`。`GET /info` 含人升 `appVersion`/`appVersionName`/`apiVersion` 與雲人升 `cloudVersion`/`cloudVersionName`。技能 `status`（0 正常 / 1 隱藏）只出現在 `query`/`query_skill`，**不在** `GET /skills`。
 
 **請求方式：GET**
 
