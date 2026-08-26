@@ -8,7 +8,7 @@
 
 | Platform          | Version                | Update Date                 |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.105.1              | 2026/08/19                  |
+| LifeUp-Android    | v1.105.3              | 2026/08/26                  |
 | LifeUp-iOS        | check [feature/ulives] | 🎉Alternative app available |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
 | LifeUp Cloud(SDK) | v2.1.1                 | 2026/06/16                  |
@@ -18,6 +18,12 @@
 <!-- tabs:start -->
 
 ### **LifeUp-Android**
+
+**v1.105.3 (2026/08/26)**
+
+**🐛 Bug Fixes**
+
+1. **Fixed abnormal task completion after converting a team task into a timed task locally.**
 
 **v1.105.1 (2026/08/19)**
 
