@@ -213,7 +213,6 @@ http://{host:port}/synthesis/${id}
 http://{host:port}/skills
 ```
 
-
 **其它**
 
 ```
@@ -223,7 +222,7 @@ http://{host:port}/coin
 // 人升 / 雲人升版本
 http://{host:port}/info
 
-// 番茄鐘記錄（分頁；可選時間範圍）
+// 番茄鍾記錄（分頁；可選時間範圍）
 http://{host:port}/pomodoro_records?offset=${offset}&limit=${limit}&time_range_start=${ms}&time_range_end=${ms}
 
 // Journals (paged; optional time range). Soft-deleted rows omitted.
@@ -234,7 +233,7 @@ http://{host:port}/step_records?offset=${offset}&limit=${limit}&time_range_start
 http://{host:port}/level_defines
 http://{host:port}/statistics?time_range_start=${ms}&time_range_end=${ms}
 
-// 全部成就（Cloud 已實作）
+// 全部成就（Cloud 已實現，不再需要清單 id）
 http://{host:port}/achievements
 
 // 廣播事件（人升需開啟「實驗 / 廣播事件」）
@@ -244,21 +243,25 @@ http://{host:port}/events?after=${id}&limit=50
 ws://{host:port}/events?after=${id}
 ```
 
-統一回應：`{ code, message, data }`。`code=200` 只表示傳輸成功。`10001` 人升未開或未授讀取；`10002` ContentProvider 查詢失敗。
+統一響應：`{ code, message, data }`。`code=200` 只表示傳輸成功。`10001` 人升未開或未授讀取；`10002` ContentProvider 查詢失敗。
+
+歷史記錄的查詢引數是 **`gid`**（不是 `filterGid`）。
 
 ### 列表欄位取值
+
+ContentProvider / Cloud JSON 欄位名與下表一致。
 
 | 介面 | 欄位 | 取值 |
 | --- | --- | --- |
 | `/tasks` `/history` | `status` | `0` 未完成 · `1` 已完成 · `2` 逾期 · `3` 放棄 |
 | `/tasks` | `frequency` | `0` 一次 · `1` 每日 · `N>1` 每 N 天 · `-1` 無限制 · `-3` 艾賓浩斯 · `-4` 每月 · `-5` 每年 |
-| `/tasks_categories` | `status` | `0` 正常 · `1` 已封存 |
+| `/tasks_categories` | `status` | `0` 正常 · `1` 已歸檔 |
 | `/tasks_categories` | `type` | `<10` 普通清單 · `10` 每日 · `11` 每週 · `12` 每月 · `20` 進行中 |
 | `/achievements` | `status` | `0` 未解鎖 · `1` 已解鎖未領獎 · `2` 已解鎖已領獎 |
 | `/achievements` | `type` | `0` 普通 · `1` 子分類 |
 | `/achievement_categories` | `type` | `0` 使用者 · `1` 系統 |
 | `/feelings` | `type` | `0` 任務 · `1` 成就 · `2` 純文字 · `3` 使用物品 |
-| `/feelings` | `isFav` | `true`/`false`（Provider 為 0/1） |
+| `/feelings` | `isFav` | `true`/`false`（Provider 裡是 0/1） |
 | `/skills` | `type` | `0` 使用者屬性 · `1` 力量 · `2` 學識 · `3` 魅力 · `4` 耐力 · `5` 活力 · `6` 創造 |
 | `/pomodoro_records` | `reward` | `0` 放棄 · `0.5×倍數` 半程 · 否則為倍數 |
 | `/coin_records` `/inventory_records` | `resCode` | 商店：`0` 買 · `1` 用 · `2` 完成任務 · `3` 撤銷完成 · `4` 清資料 · `5` 放棄 · `6` 過期 · `7` 解鎖成就 · `8` 撤銷放棄 · `9` 撤銷過期 · `10` 退貨 · `11` 完成子任務 · `12` 撤銷子任務 · `13` 解鎖用户成就 · `14` 撤銷用户成就 · `15` 存款 · `16` 提款 · `17` 賣番茄 · `20` 獎勵物品 · `21` 撤銷獎勵物品 · `23` 合成 · `24` 開箱 · `25` ATM 利息 · `26` 番茄換物品 · `27` 貸款利息 · `28` API · `29` 效果改庫存 |
