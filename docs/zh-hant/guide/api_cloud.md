@@ -164,6 +164,9 @@ http://{host:port}/items/${id}
 
 // 商品清單
 http://{host:port}/items_categories
+
+// 包含隱藏清單
+http://{host:port}/items_categories?include_hidden=true
 ```
 
 **成就相關**
@@ -245,8 +248,6 @@ ws://{host:port}/events?after=${id}
 
 統一響應：`{ code, message, data }`。`code=200` 只表示傳輸成功。`10001` 人升未開或未授讀取；`10002` ContentProvider 查詢失敗。
 
-歷史記錄的查詢引數是 **`gid`**（不是 `filterGid`）。
-
 ### 列表欄位取值
 
 ContentProvider / Cloud JSON 欄位名與下表一致。
@@ -263,11 +264,13 @@ ContentProvider / Cloud JSON 欄位名與下表一致。
 | `/feelings` | `type` | `0` 任務 · `1` 成就 · `2` 純文字 · `3` 使用物品 |
 | `/feelings` | `isFav` | `true`/`false`（Provider 裡是 0/1） |
 | `/skills` | `type` | `0` 使用者屬性 · `1` 力量 · `2` 學識 · `3` 魅力 · `4` 耐力 · `5` 活力 · `6` 創造 |
+| `/items_categories` | `hidden` / `inventoryHidden` | `0` 顯示 · `1` 隱藏（兩列獨立） |
+| `/synthesis_categories` | `hidden` | `0` 顯示 · `1` 隱藏 |
 | `/pomodoro_records` | `reward` | `0` 放棄 · `0.5×倍數` 半程 · 否則為倍數 |
-| `/coin_records` `/inventory_records` | `resCode` | 商店：`0` 買 · `1` 用 · `2` 完成任務 · `3` 撤銷完成 · `4` 清資料 · `5` 放棄 · `6` 過期 · `7` 解鎖成就 · `8` 撤銷放棄 · `9` 撤銷過期 · `10` 退貨 · `11` 完成子任務 · `12` 撤銷子任務 · `13` 解鎖用户成就 · `14` 撤銷用户成就 · `15` 存款 · `16` 提款 · `17` 賣番茄 · `20` 獎勵物品 · `21` 撤銷獎勵物品 · `23` 合成 · `24` 開箱 · `25` ATM 利息 · `26` 番茄換物品 · `27` 貸款利息 · `28` API · `29` 效果改庫存 |
-| `/exp_records` | `resCode` | 經驗（不是商店 `28`）：`0` 未知 · `1` 完成 · `2` 成就 · `3` 按讚兌換 · `4` 連續使用 · `5` 步數 · `6` 設為完成 · `7` 撤銷放棄 · `8` 撤銷過期 · `9` 吃番茄 · `10` 用物品 · `11` 解鎖用户成就 · `12` 完成子任務 · `200` API · `101` 撤銷完成 · `102` 放棄 · `103` 過期 · `104` 用物品扣經驗 · `105` 鎖定用户成就 · `106` 撤銷子任務 |
+| `/coin_records` `/inventory_records` | `resCode` | 商店：`0` 買 · `1` 用 · `2` 完成任務 · `3` 撤銷完成 · `4` 清資料 · `5` 放棄 · `6` 過期 · `7` 解鎖成就 · `8` 撤銷放棄 · `9` 撤銷過期 · `10` 退貨 · `11` 完成子任務 · `12` 撤銷子任務 · `13` 解鎖使用者成就 · `14` 撤銷使用者成就 · `15` 存款 · `16` 取款 · `17` 賣番茄 · `20` 獎勵物品 · `21` 撤銷獎勵物品 · `23` 合成 · `24` 開箱 · `25` ATM 利息 · `26` 番茄換物品 · `27` 貸款利息 · `28` API · `29` 效果改庫存 |
+| `/exp_records` | `resCode` | 經驗（不是商店 `28`）：`0` 未知 · `1` 完成 · `2` 成就 · `3` 點贊兌換 · `4` 連續使用 · `5` 步數 · `6` 設為完成 · `7` 撤銷放棄 · `8` 撤銷過期 · `9` 吃番茄 · `10` 用物品 · `11` 解鎖使用者成就 · `12` 完成子任務 · `200` API · `101` 撤銷完成 · `102` 放棄 · `103` 過期 · `104` 用物品扣經驗 · `105` 鎖定使用者成就 · `106` 撤銷子任務 |
 
-商店/合成/技能組隱藏清單用 `include_hidden=true`。任務清單封存是 `tasks_categories.status=1`。`GET /info` 含人升 `appVersion`/`appVersionName`/`apiVersion` 與雲人升 `cloudVersion`/`cloudVersionName`。技能 `status`（0 正常 / 1 隱藏）只出現在 `query`/`query_skill`，**不在** `GET /skills`。
+`GET /items_categories`、`GET /synthesis_categories`、`GET /skill_groups` 支援 `include_hidden=true`（預設不列出隱藏項）。解鎖條件：`GET /achievement_conditions/{id}`。技能 `status`（0 正常 / 1 隱藏）只出現在 `query`/`query_skill`，**不在** `GET /skills`。
 
 **請求方式：GET**
 
@@ -279,6 +282,7 @@ ContentProvider / Cloud JSON 欄位名與下表一致。
 | offset | 查詢偏移量   | Query | 數字     | 否       | 目前僅部分介面需要 |
 | limit  | 限制數量     | Query | 數字     | 否       | 目前僅部分介面需要 |
 | gid | 篩選重複任務歷史記錄 | Query | 數字 | 否 | 歷史記錄查詢可選引數 |
+| include_hidden | 是否包含隱藏清單 | Query | 布林 | 否 | 預設 false。用於 `/items_categories`、`/synthesis_categories`、`/skill_groups` |
 
 **請求例項：**
 
