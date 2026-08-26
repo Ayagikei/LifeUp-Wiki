@@ -25,6 +25,13 @@
 
 1. **Fixed abnormal task completion after converting a team task into a timed task locally.**
 
+**v1.105.2 (2026/08/24)**
+
+**🐛 Bug Fixes**
+
+1. **Fixed the task picker showing an empty list when a smart list is selected.**
+2. **Fixed search in a smart list also showing tasks that do not belong to that list.**
+
 **v1.105.1 (2026/08/19)**
 
 **✨ Features**
