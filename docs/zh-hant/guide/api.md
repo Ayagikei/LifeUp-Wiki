@@ -4,11 +4,11 @@
 
 ?> 在 v1.90 版本中，`人升`既開放了多種功能介面，歡迎任意外部應用聯動。<br/>亦提供了商品的“連結”效果，使用者可以直接使用商品來呼叫外部應用或者《人升》的介面。<br/>這可以使你的`人升`獲得無限的可能性，但也需要你有一定的學習理解和動手能力。
 
-**2026/08/04**
+**2026/08/19**
 
-本文的 API 引數和定義基於 v1.105.0 版本編寫。
+本文的 API 引數和定義基於 v1.105.1 版本編寫。
 
-使用 API 前，建議將應用升級到 v1.105.0 版本，如果沒法檢測到更新，請切換更新渠道到【會員內測-嚐鮮版】。
+使用 API 前，建議將應用升級到 v1.105.1 版本，如果沒法檢測到更新，請切換更新渠道到【會員內測-嚐鮮版】。
 
 ## 場景示例
 
@@ -873,7 +873,6 @@ id 的獲取方法為「實驗」頁面開啟「開發者模式」，然後在�
 | gid                       | 任務組id                 | 大於 0 的數字                            | 1        | 否*      | 任務組id；                                                   |
 | name                      | 名稱                     | 任意文字                                 | 睡覺     | 否*      | 模糊搜尋，只會完成搜索到的其中一個任務                       |
 | ui                        | 是否展示彈窗UI           | true 或 false                            | true     | 否       | 預設為 false，只在後臺顯示一條訊息                           |
-| 以下引數引入自v1.94.0版本 |                          |                                          |          |          |                                                              |
 | count                     | 計數值                   | 數字                                     | 1        | 否       | 僅適用於計數任務，請搭配`count_set_type`引數使用             |
 | count_set_type            | 如何設定計數值           | 以下數值其一：<br/>absolute<br/>relative | absolute | 否       | 預設值為relative<br/>absolute - 絕對取值，即直接將目標設定為 value<br/>relative - 相對取值，在原數值的基礎上增加或減少 |
 | count_force_sum_up        | 是否強制結算計數任務獎勵 | true 或 false                            | true     | 否       |                                                              |
@@ -1156,11 +1155,12 @@ id 的獲取方法為「實驗」頁面開啟「開發者模式」，然後在�
 
 - 將ATM利率設定為0.01%：[lifeup://api/shop_settings?key=atm_interest&value=0.01](lifeup://api/shop_settings?key=atm_interest&value=0.01)
 - 每次點選將利率提升0.01%：[lifeup://api/shop_settings?key=atm_interest&value=0.01&set_type=relative](lifeup://api/shop_settings?key=atm_interest&value=0.01&set_type=relative)
+- 讀取當前商店設定：[lifeup://api/shop_settings?query=true](lifeup://api/shop_settings?query=true)
 
 | 引數     | 含義                     | 取值                                                         | 示例         | 是否必須 | 備註                                                         |
 | -------- | ------------------------ | ------------------------------------------------------------ | ------------ | -------- | ------------------------------------------------------------ |
-| key      | 型別                     | 目前僅支援：<br/>atm_interest<br/>credit_interest<br/>line_of_credit<br/>discount_rate_for_returning<br/>atm_balance | atm_interest | 是       | atm_interest - ATM日利率<br/>credit_interest - 貸款日利率<br/>line_of_credit - 可貸款金額<br/>discount_rate_for_returning - 退貨打折比例<br/>atm_balance - ATM 餘額 |
-| value    | 數值                     | 浮點數（小數點）                                             | 0.01         | 是       | 不同的 key 對應不同的數值範圍<br/>比如 ATM 餘額不支援小數點  |
+| key      | 型別                     | 目前僅支援：<br/>atm_interest<br/>credit_interest<br/>line_of_credit<br/>discount_rate_for_returning<br/>atm_balance | atm_interest | 寫入時是 | 查詢時可不傳                                                 |
+| value    | 數值                     | 浮點數（小數點）                                             | 0.01         | 寫入時是 | 僅 `query=true` 時讀取當前全部設定；不傳 value 仍按舊合同報缺參 |
 | set_type | 如何設定數值             | 以下數值其一：<br/>absolute<br/>relative                     | absolute     | 否       | absolute - 絕對取值，即直接將目標設定為 value<br/>relative - 相對取值，在原數值的基礎上增加或減少 |
 | silent   | 是否沉默執行（不顯示UI） | 布林值                                                       | false        | 否       | 僅 v1.93.0-beta01（502）+ 支援<br/>預設為 false，即會顯示 UI 提示 |
 
@@ -1178,7 +1178,7 @@ id 的獲取方法為「實驗」頁面開啟「開發者模式」，然後在�
 
 | 引數 | 含義 | 取值                                                         | 示例 | 是否必須 | 備註                                                         |
 | ---- | ---- | ------------------------------------------------------------ | ---- | -------- | ------------------------------------------------------------ |
-| page | 頁面 | 固定以下數值其一：<br/>main<br/>setting<br/>about<br/>pomodoro<br/>feelings<br/>achievement<br/>history<br/>add_task<br/>add_achievement<br/>add_achievement_cate<br/>exp<br/>coin<br/>backup<br/>add_item<br/>lab<br/>custom_attributes<br/>pomodoro_record<br/>dlc<br/>pomodoro_record<br/>synthesis - 合成<br/>pic_manage<br/>purchase_dialog<br/>task_detail<br/>new_default<br/>achievement_list - 成就清單<br/>user_achievement - 具體某個成就清單，見下文<br/> | lab  | 是       | `purchase_dialog`指購買彈窗<br/>`use_item_dialog`指使用商品彈窗<br/>其他的都是具體的大頁面 |
+| page | 頁面 | 固定以下數值其一：<br/>main<br/>setting<br/>about<br/>pomodoro<br/>feelings<br/>achievement<br/>history<br/>add_task<br/>add_achievement<br/>add_achievement_cate<br/>exp<br/>coin<br/>backup<br/>add_item<br/>lab<br/>custom_attributes<br/>pomodoro_record<br/>dlc<br/>pomodoro_record<br/>synthesis - 合成<br/>pic_manage<br/>purchase_dialog<br/>use_item_dialog<br/>task_detail<br/>new_default<br/>achievement_list - 成就清單<br/>user_achievement - 具體某個成就清單，見下文<br/> | lab  | 是       | `purchase_dialog`指購買彈窗<br/>`use_item_dialog`指使用商品彈窗<br/>其他的都是具體的大頁面 |
 
 #### 1. 跳轉商品購買/使用彈窗
 
@@ -1407,11 +1407,12 @@ id 的獲取方法為「實驗」頁面開啟「開發者模式」，然後在�
 | amount               | 獎勵數                | 數字                                     | 1            | 否       | 某個單一物品的獎勵個數。`0`（absolute）或計算後 `<=0`（relative）時刪除條目 |
 | probability          | 獎勵比重              | 數字                                     | 1            | 否       | -                                                            |
 | fixed                | 是否是固定獎勵        | 布林值                                   | true/false   | 否       | -                                                            |
+| query                | 查詢開箱內容          | true 或 false                            | true         | 否       | v1.105.1+。為 true 時只返回箱子條目 JSON，不修改。此時不需要 sub_id / sub_name |
 
 **注意：**
 
 1. 爲了搜索到商品，必須提供 id 或 name 其一。
-1. 爲了搜索到內容物，必須提供 sub_id 或 sub_name 其一。
+1. 爲了搜索到內容物，必須提供 sub_id 或 sub_name 其一。查詢箱子內容時改為提供 `query=true`，此時不需要 sub_id / sub_name。
 1. 如果同時提供 `sub_id` 和 `sub_name`，`sub_id` 優先；只有未提供有效 `sub_id` 時纔會使用 `sub_name`。
 1. `name` 和 `sub_name` 會先完整匹配，匹配不到再模糊匹配。
 1. `sub_amount` 預設值為 `1`。當開箱中存在同一物品的多個不同數量條目時，可提供 `sub_amount` 來指定要編輯的條目。匹配不到且不是刪除語義時，會新增一條 `amount=sub_amount` 的內容物。
@@ -1667,6 +1668,7 @@ Android 12 及以上版本中，後臺 ContentProvider 呼叫僅在人升已獲�
 | reward_tomatoes | 是否獎勵番茄           | true 或者 false | true          | 否       | 預設為 false                                |
 | edit_item_id    | 編輯項的 ID            | 大於 0 的數字   | 123           | 是       | 指定編輯的記錄 ID                           |
 | ui              | 是否展示獎勵番茄數的UI | true 或者 false | true          | 否       |                                             |
+| delete          | 是否刪除記錄           | true 或者 false | true          | 否       | v1.105.1+。軟刪除該番茄記錄（`isDel`），與 App 內刪除一致 |
 
 **返回值：**
 
@@ -1696,6 +1698,38 @@ Android 12 及以上版本中，後臺 ContentProvider 呼叫僅在人升已獲�
 | 引數 | 含義   | 取值          | 示例 | 是否必須 | 備註                                          |
 | ---- | ------ | ------------- | ---- | -------- | --------------------------------------------- |
 | id   | 條件id | 大於 0 的數字 | 2    | 是       | 獲取方式請檢視上文 「基礎知識 - 人升資料 ID」 |
+
+<br/>
+
+### 完成 / 領取成就
+
+?> 該 API 於 v1.105.1 版本更新引入。
+
+**方法名：**complete_achievement
+
+**說明：**完成手動成就並領取獎勵；或領取已解鎖自動成就的獎勵。行為與 App 內點選完成勾選 / 領取獎勵按鈕一致。
+
+**示例：**
+
+- 完成或領取 id 為 1 的成就：[lifeup://api/complete_achievement?id=1](lifeup://api/complete_achievement?id=1)
+
+| 引數 | 含義   | 取值          | 示例 | 是否必須 | 備註                                          |
+| ---- | ------ | ------------- | ---- | -------- | --------------------------------------------- |
+| id   | 成就id | 大於 0 的數字 | 1    | 是       | 獲取方式請檢視上文 「基礎知識 - 人升資料 ID」 |
+
+**返回資料：**
+
+| 欄位名 | 型別 | 說明 | 示例 | 備註 |
+| ------ | ---- | ---- | ---- | ---- |
+| id     | 數字 | 成就ID | 1 | |
+| status | 數字 | 完成後的狀態 | 2 | `0` 未解鎖 · `1` 已解鎖未領獎 · `2` 已解鎖已領獎 |
+
+**注意：**
+
+1. 無解鎖條件的手動成就：未完成時會完成併發放獎勵。
+2. 有解鎖條件的自動成就：僅在已解鎖、仍有未領獎勵時發放獎勵；條件未達成會失敗，`error_code` 為 `achievement_not_unlocked`。
+3. 已經領完獎勵時呼叫會成功返回，`status=2`，不會重複發獎。
+4. 這與 `achievement?unlocked=true` 不同。後者只改解鎖狀態，不發放獎勵。
 
 <br/>
 
@@ -1751,13 +1785,15 @@ Android 12 及以上版本中，後臺 ContentProvider 呼叫僅在人升已獲�
 
 - 建立一個新的感想：[lifeup://api/feeling?content=開心&time=1633036800](lifeup://api/feeling?content=開心&time=1633036800)
 - 更新特定 id 的感想，並標記為收藏狀態：[lifeup://api/feeling?id=1&is_favorite=true](lifeup://api/feeling?id=1&is_favorite=true)
+- 刪除感想：[lifeup://api/feeling?id=1&delete=true](lifeup://api/feeling?id=1&delete=true)
 
 | 引數                     | 含義       | 取值                           | 示例           | 是否必須 | 備註                                                                                                   |
 | ------------------------ | ---------- | ------------------------------ | -------------- | -------- | ------------------------------------------------------------------------------------------------------ |
-| id                       | 感想記錄id | 大於 0 的數字                  | 1              | 否       | 如果提供，則用於更新特定記錄                                                                           |
+| id                       | 感想記錄id | 大於 0 的數字                  | 1              | 否       | 如果提供，則用於更新特定記錄。刪除時必須提供                                                           |
 | content                  | 內容       | 任意文字                       | 快樂           | 否       | 用於建立記錄或更新記錄的內容                                                                           |
 | time                     | 時間戳     | Unix 時間戳                    | 1633036800     | 否       | 記錄的時間，預設為當前時間                                                                             |
 | is_favorite              | 是否收藏   | true 或 false                  | true           | 否       | 標記記錄是否為收藏                                                                                     |
+| delete                   | 是否刪除   | true 或 false                  | true           | 否       | v1.105.1+。為 true 時軟刪除該感想（與 App 內刪除一致，會清附件）                                       |
 | relate_type              | 關聯型別   | 數字 0-3                       | 1              | 否       | 指定記錄的關聯型別<br/>0：任務<br/>1：自定義成就<br/>2：無關聯<br/>3：物品使用                         |
 | relate_id                | 關聯id     | 大於 0 的數字                  | 2              | 否       | 指定記錄的關聯id<br/>當 relate_type 為 0 時，代表任務 id<br/>當 relate_type 為 1 時，代表成就 id<br/>當 relate_type 為 3 時，代表物品 id<br/>當 relate_type 為 2，無需提供 |
 | usage_count              | 使用次數   | 大於 1 的整數                  | 1              | 否       | 僅當 relate_type 為 3（物品使用）時有效，記錄該物品的使用次數                                          |
@@ -2028,7 +2064,7 @@ Android 12 及以上版本中，後臺 ContentProvider 呼叫僅在人升已獲�
 | edit_id         | 編輯的清單ID   | 大於 0 的數字      | 1          | 否       | 編輯時必須提供                 |
 | name            | 清單名稱       | 任意文字           | 學習清單    | 否       | 新建時必須提供；編輯時可選      |
 | order           | 排序           | 整數               | 1          | 否       | 清單在列表中的排序位置          |
-| hidden          | 是否隱藏       | true 或者 false    | false      | 否       | 僅任務清單和商店清單支援        |
+| hidden          | 是否隱藏       | true 或者 false    | false      | 否       | 任務=歸檔；商店=商店隱藏；合成=隱藏。成就清單不支援（會報 `unsupported_parameter`）。`false` 為重新顯示 |
 | inventory_hidden| 是否在倉庫隱藏 | true 或者 false    | false      | 否       | 僅商店清單支援                 |
 | icon_uri        | 圖示URI        | URI文字            | content://... | 否    | 僅成就清單支援                 |
 | desc            | 描述           | 任意文字           | 這是描述     | 否      | 僅成就清單支援                 |
@@ -2101,7 +2137,7 @@ Android 12 及以上版本中，後臺 ContentProvider 呼叫僅在人升已獲�
 | ------------ | -------------- | ------------------ | -------- | -------- | ------------------------------ |
 | is_collapsed | 是否摺疊       | true 或者 false    | false    | 否       | 僅適用於子分類                  |
 
-子分類不支援 `icon_uri`（含 emoji），傳入會回傳 `unsupported_parameter`。編輯子分類必須帶 `is_subcategory=true`，否則回傳 `is_subcategory_required`（不再誤報缺少 `edit_id`）。
+子分類不支援 `icon_uri`（含 emoji），傳入會返回 `unsupported_parameter`。編輯子分類必須帶 `is_subcategory=true`，否則返回 `is_subcategory_required`（不再誤報缺少 `edit_id`）。
 **返回資料：**
 
 | 欄位名 | 型別   | 說明     | 示例 | 備註             |
