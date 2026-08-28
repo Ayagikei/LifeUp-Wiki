@@ -90,6 +90,9 @@ In short: **turn URL Schemes into scannable physical triggers**, with LifeUp Clo
 
 <br/>
 
+> [!NOTE]
+> LifeUp Cloud is a LAN-only HTTP bridge. How you reach your phone—IP address, router, firewall, same subnet, VPN, or AP isolation—depends on your home network. If you cannot connect, we cannot debug your personal LAN. Check your own networking, use standard network tools, or ask an AI agent for help.
+
 ## HTTP API Definition
 
 > [!WARNING]

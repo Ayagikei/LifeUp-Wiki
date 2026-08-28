@@ -92,6 +92,9 @@ adb shell am start -a android.intent.action.VIEW -d lifeupcloud://start
 
 <br/>
 
+> [!NOTE]
+> 云人升仅在局域网内提供 HTTP 桥梁服务。如何访问手机（IP、路由器、防火墙、同网段、VPN 或 AP 隔离等）取决于各家的网络环境。若无法连接，我们无法帮你排查个人局域网。请自行检查网络、使用常规网络工具，或向 AI Agent 寻求帮助。
+
 ## HTTP 接口定义
 
 ⚠ 本页接口定义可能滞后，最终请以源码为准：[LifeUp-SDK/KtorService.kt at main · Ayagikei/LifeUp-SDK (github.com)](https://github.com/Ayagikei/LifeUp-SDK/blob/main/http/src/main/java/net/lifeupapp/lifeup/http/service/KtorService.kt)
