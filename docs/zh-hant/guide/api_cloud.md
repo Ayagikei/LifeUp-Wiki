@@ -12,7 +12,7 @@
 | --- | --- | --- | --- |
 | **HTTP 服務 + 自研** | 開發者、自動化愛好者 | 用 Python、網頁、指令碼跨裝置調 API、查資料，無需 Android 開發經驗 | [HTTP 介面](#http-介面定義)、[桌面端](guide/api_desktop.md) |
 | **二維碼掃描** | 想與現實行為聯動的人 | 列印二維碼，掃碼完成任務打卡、計時、彈窗，或開啟網頁 / 其他 App | [二維碼掃描](#二維碼掃描) |
-| **啟動 / 暫停快捷方式** | 自動化、NFC、Tasker | `lifeupcloud://start` / `lifeupcloud://stop` 打開雲人升並啟動或暫停 HTTP 服務 | [啟動與暫停](#cloud-scheme) |
+| **啟動 / 暫停快捷方式** | 自動化、NFC、Tasker | `lifeupcloud://start` / `lifeupcloud://stop` 開啟雲人升並啟動或暫停 HTTP 服務 | [啟動與暫停](#cloud-scheme) |
 | **AI Agent + MCP** | Cursor、Claude 等 AI 使用者 | 一句話讓 Agent 搭建任務 / 商店 / 成就等完整主題體系 | [MCP & Skills](guide/api_mcp.md) |
 > **AI 示例話術：** 清理示例任務和商品，然後以「獨立遊戲開發者」為主題，建立完整的任務清單、屬性、商店商品和成就體系。
 
@@ -35,7 +35,7 @@ lifeupcloud://start
 lifeupcloud://stop
 ```
 
-打開其中任意連結都會拉起《雲人升》並執行對應操作。可以做成桌面快捷方式、NFC 標籤、Tasker 等自動化，或：
+開啟其中任意連結都會拉起《雲人升》並執行對應操作。可以做成桌面快捷方式、NFC 標籤、Tasker 等自動化，或：
 
 ```txt
 adb shell am start -a android.intent.action.VIEW -d lifeupcloud://start
