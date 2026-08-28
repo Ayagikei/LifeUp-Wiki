@@ -13,6 +13,7 @@
   <!-- <link rel="stylesheet" href="./css/lifeup.css"> -->
   <link rel="icon" href="_media/icon_small.webp">
   <script src="./js/edit_button_header.js"></script>
+  <script src="./js/copy-code.js"></script>
 </head>
 
 <body>
@@ -31,7 +32,8 @@
         target: 'h2, h3, h4, h5, h6'
       },
       themeColor: '#44a8f0',
-      formatUpdated: '{MM}/{DD} {HH}:{mm}',
+      copyCodeLabel: 'Copy',
+      copyCodeCopiedLabel: 'Copied',
       search: {
         maxAge: 86400000, // 过期时间，单位毫秒，默认一天
         paths: 'auto',
@@ -58,6 +60,7 @@
             return 'Edit on git'
           }
         ),
+        CopyCodePlugin,
         function (hook) {
           var footer = [
             '<hr/>',

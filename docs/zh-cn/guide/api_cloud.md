@@ -4,24 +4,17 @@
  <img src="guide/_media/api/cloud.png" />
 </p>
 
-《云人升》是 API 开发的基础套件之一。
+《云人升》是《人升》API 开发的基础套件之一。它把手机变成 **API 桥梁**：你可以从**电脑或其他设备**控制人升、做**二次扩展开发**（桌面端、网页、自动化脚本），也可以搭配 **AI Agent** 使用。
 
-它能够：
+### 典型使用场景
 
-- **支持解析二维码 API 并跳转**
+| 场景 | 适合谁 | 一句话 | 了解更多 |
+| --- | --- | --- | --- |
+| **HTTP 服务 + 自研** | 开发者、自动化爱好者 | 用 Python、网页、脚本跨设备调 API、查数据，无需 Android 开发经验 | [HTTP 接口](#http-接口定义)、[桌面端](guide/api_desktop.md) |
+| **二维码扫描** | 想与现实行为联动的人 | 打印二维码，扫码完成任务打卡、计时、弹窗，或打开网页 / 其他 App | [二维码扫描](#二维码扫描) |
+| **AI Agent + MCP** | Cursor、Claude 等 AI 用户 | 一句话让 Agent 搭建任务 / 商店 / 成就等完整主题体系 | [MCP & Skills](guide/api_mcp.md) |
 
-  比如实现通过二维码完成任务、添加任务、跳转购买商品弹窗等。
-
-  示例：[扫码也能购买「人升」商品、接受任务、完成任务、获取惩罚等等...？ (qq.com)](https://mp.weixin.qq.com/s/PafJnyce32ipZN52GxUj8w)
-
-- **提供 HTTP 服务**
-
-  所有 API 都以 HTTP 服务形式提供，使你**无需 Android 开发知识，也能跨设备使用其他编程工具或软件（如 Python、网页）调用《人升》API 或查询数据**。
-
-  示例：
-
-  - 《人升-桌面端》就是一个基于《云人升》实现的实例应用。AI 客户端见 [MCP & Skills](guide/api_mcp.md)。
-  - [使用《云人升》实现跨设备联动：根据记笔记行为奖励经验值（用户分享） (qq.com)](https://mp.weixin.qq.com/s/ylJEwZbr9QUuQ7e5z-sBLQ)
+> **AI 示例话术：** 清理示例任务和商品，然后以「独立游戏开发者」为主题，创建完整的任务清单、属性、商店商品和成就体系。
 
 <br/>
 
@@ -34,7 +27,45 @@
 
 ## 二维码扫描
 
-你只需将`lifeup://api/`开头的 URL 生成为二维码图片即可扫码使用。
+云人升首页右上角的 **扫码** 按钮，可读取二维码中的链接并立即打开——无需手动输入。
+
+扫码**不限于人升 API**：`lifeup://api/…`、网页 `https://…`、以及其他 App 的 URL Scheme（如 `weixin://`）均可识别，由 Android 系统打开对应目标。
+
+### 怎么用
+
+1. 在《人升》或 Wiki [API 列表](guide/api.md) 中找到需要的 URL（例如完成任务、开始番茄钟、弹出购买/使用商品对话框，或打开外部网页）。
+
+2. 用任意二维码生成器把完整 URL 转成二维码（可打印贴在桌面、墙面、设备旁）。
+
+3. 打开《云人升》，点 **扫码**（旁边的 **?** 可查看简要说明），对准二维码即可。
+
+### 可以做什么
+
+| 场景 | 示例（示意） |
+| --- | --- |
+| 番茄钟打卡 | `lifeup://api/pomodoro?...` 开始/结束计时 |
+| 任务打卡 | `lifeup://api/complete?name=...` 完成任务 |
+| 商店互动 | `lifeup://api/goto?page=shop` 或购买/使用弹窗 |
+| 奖励/惩罚 | `lifeup://api/reward?...` / `lifeup://api/penalty?...` |
+| 打开网页小游戏 | `https://wiki.lifeupapp.fun/zh-cn/example/wordle/index.html` |
+| 跳转其他 App | `weixin://`、`intent://` 等已安装 App 的 Scheme |
+| 自定义流程 | 任意可扫描 URL 组合 |
+
+### 与现实互动
+
+二维码可以把**现实位置或实体动作**映射到 App 里的游戏化行为，例如：
+
+- 在**健身房器械**旁贴码 → 扫码完成「力量训练」任务
+
+- 在**书桌**贴码 → 扫码开始专注番茄钟
+
+- 在**工位**贴码 → 扫码记录 stand-up 或 Code Review
+
+- 在**活动展板**贴码 → 扫码领取奖励或打开成就详情
+
+本质是：**把 URL Scheme 变成可扫描的物理入口**，让云人升充当 App 与现实世界之间的执行器。
+
+延伸阅读：[扫码也能购买「人升」商品、接受任务、完成任务…？](https://mp.weixin.qq.com/s/PafJnyce32ipZN52GxUj8w)
 
 <br/>
 
@@ -284,6 +315,8 @@ ContentProvider / Cloud JSON 字段名与下表一致。
 | limit  | 限制数量     | Query | 数字     | 否       | 目前仅部分接口需要 |
 | gid | 筛选重复任务历史记录 | Query | 数字 | 否 | 历史记录查询可选参数 |
 | include_hidden | 是否包含隐藏清单 | Query | 布尔 | 否 | 默认 false。用于 `/items_categories`、`/synthesis_categories`、`/skill_groups` |
+| time_range_start | 时间范围起始（毫秒） | Query | 数字 | 否* | 必须与 `time_range_end` 成对。缺一边或非法区间返回 `invalid_parameter` |
+| time_range_end | 时间范围结束（毫秒） | Query | 数字 | 否* | 必须大于 `time_range_start` |
 
 **请求实例：**
 

@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="./css/lifeup_vue_override.css">
   <link rel="icon" href="_media/icon_small.webp">
   <script src="./js/edit_button_header.js"></script>
+  <script src="./js/copy-code.js"></script>
 </head>
 
 <body>
@@ -44,7 +45,8 @@
         crossChapter: true,
         crossChapterText: true,
       },
-      formatUpdated: '{MM}/{DD} {HH}:{mm}',
+      copyCodeLabel: '复制',
+      copyCodeCopiedLabel: '已复制',
       alias: {
         // 修复繁体版本的跳转问题
         '/%2F=': '/guide/hello_lifeup'
@@ -93,7 +95,8 @@
           function (file) {
             return '编辑'
           }
-        )
+        ),
+        CopyCodePlugin
       ]
     }
   </script>

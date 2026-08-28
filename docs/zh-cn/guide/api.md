@@ -2067,7 +2067,7 @@ Android 12 及以上版本中，后台 ContentProvider 调用仅在人升已获�
 | edit_id         | 编辑的清单ID   | 大于 0 的数字      | 1          | 否       | 编辑时必须提供                 |
 | name            | 清单名称       | 任意文本           | 学习清单    | 否       | 新建时必须提供；编辑时可选      |
 | order           | 排序           | 整数               | 1          | 否       | 清单在列表中的排序位置          |
-| hidden          | 是否隐藏       | true 或者 false    | false      | 否       | 任务=归档；商店=商店隐藏；合成=隐藏。成就清单不支持（会报 `unsupported_parameter`）。`false` 为重新显示 |
+| hidden          | 是否隐藏       | true 或者 false    | false      | 否       | 任务=归档；商店=商店隐藏；合成=隐藏。成就清单和合成「全部」清单不支持（会报 `unsupported_parameter`）。`false` 为重新显示 |
 | inventory_hidden| 是否在仓库隐藏 | true 或者 false    | false      | 否       | 仅商店清单支持                 |
 | icon_uri        | 图标URI        | emoji、http(s)、content URI 或空 | 🏆 | 否 | 仅成就清单支持。emoji 存储为 `emoji_*.webp`。空字符串清除图标。 |
 | desc            | 描述           | 任意文本           | 这是描述     | 否      | 仅成就清单支持                 |

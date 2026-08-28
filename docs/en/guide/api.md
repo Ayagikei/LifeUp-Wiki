@@ -4,7 +4,7 @@
 
 ?> In the v1.90 version, `LifeUp` has opened a variety of functional interfaces, and any external application integration is welcome. <br/>It also provides the “URL” effect for shop items, and users can directly use commodities to call external applications or the interface of `LifeUp`. <br/>These features can give your `LifeUp` unlimited possibilities, but it also requires a little learning understanding and hands-on ability.
 
-**Last updated: 2026/08/27**
+**Last updated: 2026/08/28**
 
 The API parameters and definitions in this document are based on version **v1.106.0**.
 
@@ -1834,7 +1834,7 @@ If the item has `purchase_limit` configured and `limit_scope` includes `purchase
 | edit_id         | Category ID to edit| number greater than 0| 1         | No       | Required when editing           |
 | name            | Category name     | any text             | Study List | No       | Required for new categories; optional when editing |
 | order           | Sort order        | integer              | 1         | No       | Position in the list            |
-| hidden          | Hide category     | true or false        | false     | No       | tasks=archive; shop=shop hide; synthesis=hide. Achievement lists reject with `unsupported_parameter`. `false` unhides |
+| hidden          | Hide category     | true or false        | false     | No       | tasks=archive; shop=shop hide; synthesis=hide. Achievement lists and the synthesis ALL list reject with `unsupported_parameter`. `false` unhides |
 | inventory_hidden| Hide in inventory | true or false        | false     | No       | Only supported for shop lists   |
 | icon_uri        | Icon URI          | emoji, http(s) URL, content URI, or empty | 🏆 | No | Only supported for achievement lists. Emoji stored as `emoji_*.webp`. Empty clears. |
 | desc            | Description       | any text             | This is a description | No | Only supported for achievement lists |

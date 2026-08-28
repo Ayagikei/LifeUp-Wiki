@@ -4,11 +4,17 @@
  <img src="guide/_media/api/cloud.png" />
 </p>
 
-LifeUp Cloud is one of the core API toolkits for LifeUp.
+LifeUp Cloud is one of the core API toolkits for LifeUp. It turns your phone into an **API bridge**: control LifeUp from your **computer or other devices**, build **custom integrations** (desktop, web, automation scripts), or pair it with **AI agents**.
 
-It exposes LifeUp APIs as HTTP services, so you can call APIs or query data from other tools (such as Python scripts or web apps) **across devices, without Android development experience**.
+### Typical scenarios
 
-LifeUp Desktop is a reference app built on top of LifeUp Cloud. For AI clients, see [MCP & Skills](guide/api_mcp.md).
+| Scenario | Who it's for | In one sentence | Learn more |
+| --- | --- | --- | --- |
+| **HTTP + build your own** | Developers, automation users | Call APIs and query data from Python, web apps, or scripts over LAN — no Android experience required | [HTTP API](#http-api-definition), [Desktop](guide/api_desktop.md) |
+| **QR scanning** | Real-world check-in fans | Print QR codes to complete tasks, start timers, open dialogs, or launch web pages / other apps | [QR code scanning](#qr-code-scanning) |
+| **AI Agent + MCP** | Cursor, Claude, etc. | One prompt to build task lists, shop items, achievements, and more | [MCP & Skills](guide/api_mcp.md) |
+
+> **Example AI prompt:** Clear the sample tasks and shop items, then create a full indie game developer setup: task lists, attributes, shop items, and achievements.
 
 <br/>
 
@@ -16,6 +22,48 @@ LifeUp Desktop is a reference app built on top of LifeUp Cloud. For AI clients, 
 
 - If you use the Mainland China membership version, you can find the LifeUp Cloud download entry in `Sidebar` → `Settings` → `Experiments`.
 - [Google Play Store](https://play.google.com/store/apps/details?id=net.lifeupapp.lifeup.http)
+
+<br/>
+
+## QR code scanning
+
+The **Scan** button at the top of LifeUp Cloud reads the URL encoded in a QR code and opens it immediately — no manual entry.
+
+Scanning is **not limited to LifeUp APIs**: `lifeup://api/…`, web pages `https://…`, and other app URL schemes (e.g. `weixin://`) all work — Android opens the matching target.
+
+### How to use
+
+1. Pick a URL from LifeUp or the wiki [API list](guide/api.md) (complete a task, start a pomodoro, open purchase/use dialogs, or open an external web page).
+
+2. Generate a QR code from the full URL (print and stick it on a desk, wall, or device).
+
+3. Open LifeUp Cloud, tap **Scan** (tap **?** next to it for a short in-app guide), and point at the code.
+
+### What you can do
+
+| Scenario | Example (illustrative) |
+| --- | --- |
+| Pomodoro check-in | `lifeup://api/pomodoro?...` start/stop timer |
+| Task check-in | `lifeup://api/complete?name=...` complete a task |
+| Shop interaction | `lifeup://api/goto?page=shop` or purchase/use dialogs |
+| Reward / penalty | `lifeup://api/reward?...` / `lifeup://api/penalty?...` |
+| Web mini-game | `https://wiki.lifeupapp.fun/en/example/wordle/index.html` |
+| Other apps | `weixin://`, `intent://`, or any installed app's scheme |
+| Custom flows | Any scannable URL combination |
+
+### Real-world interaction
+
+QR codes map **physical places or actions** to in-app gamification:
+
+- **Gym equipment** sticker → scan to complete a strength-training task
+
+- **Study desk** sticker → scan to start a focus pomodoro
+
+- **Workstation** sticker → scan to log stand-up or code review
+
+- **Event board** sticker → scan to claim a reward or open an achievement
+
+In short: **turn URL Schemes into scannable physical triggers**, with LifeUp Cloud as the executor between the app and the real world.
 
 <br/>
 
@@ -260,6 +308,8 @@ Envelope: `{ code, message, data }`. `200` is transport OK only. `10001` LifeUp 
 | limit | Page size | Query | Number | No | Required only for some paged endpoints |
 | gid | Filter repeating-task history | Query | Number | No | Optional for history query |
 | include_hidden | Include hidden lists | Query | Boolean | No | Default false. Used by `/items_categories`, `/synthesis_categories`, `/skill_groups` |
+| time_range_start | Range start (ms) | Query | Number | No* | Must be paired with `time_range_end`. Partial/invalid range returns `invalid_parameter` |
+| time_range_end | Range end (ms) | Query | Number | No* | Must be greater than `time_range_start` |
 
 **Request examples**
 
