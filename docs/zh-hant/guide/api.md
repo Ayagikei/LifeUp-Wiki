@@ -2067,7 +2067,7 @@ Android 12 及以上版本中，後臺 ContentProvider 呼叫僅在人升已獲�
 | edit_id         | 編輯的清單ID   | 大於 0 的數字      | 1          | 否       | 編輯時必須提供                 |
 | name            | 清單名稱       | 任意文字           | 學習清單    | 否       | 新建時必須提供；編輯時可選      |
 | order           | 排序           | 整數               | 1          | 否       | 清單在列表中的排序位置          |
-| hidden          | 是否隱藏       | true 或者 false    | false      | 否       | 任務=歸檔；商店=商店隱藏；合成=隱藏。成就清單不支援（會報 `unsupported_parameter`）。`false` 為重新顯示 |
+| hidden          | 是否隱藏       | true 或者 false    | false      | 否       | 任務=歸檔；商店=商店隱藏；合成=隱藏。成就清單和合成「全部」清單不支援（會報 `unsupported_parameter`）。`false` 為重新顯示 |
 | inventory_hidden| 是否在倉庫隱藏 | true 或者 false    | false      | 否       | 僅商店清單支援                 |
 | icon_uri        | 圖示URI        | emoji、http(s)、content URI 或空 | 🏆 | 否 | 僅成就清單支援。emoji 儲存為 `emoji_*.webp`。空字串清除圖示。 |
 | desc            | 描述           | 任意文字           | 這是描述     | 否      | 僅成就清單支援                 |

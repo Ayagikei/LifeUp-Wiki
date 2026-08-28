@@ -992,3 +992,42 @@ pre:after {
 .markdown-section details > :not(summary):not(.faq-content):last-child {
   margin-bottom: 20px !important;
 }
+
+/* Code blocks: wrap long lines + copy button (copy-code.js) */
+.markdown-section pre {
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
+  white-space: pre-wrap;
+}
+
+.markdown-section pre > code {
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+.markdown-section pre .docsify-copy-code-button {
+  position: absolute;
+  top: 0.45em;
+  right: 0.55em;
+  z-index: 2;
+  border: 1px solid #d0d7de;
+  border-radius: 4px;
+  background: #fff;
+  color: #57606a;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.72rem;
+  line-height: 1.4;
+  padding: 0.2em 0.55em;
+}
+
+.markdown-section pre .docsify-copy-code-button:hover {
+  border-color: var(--theme-color, #44a8f0);
+  color: var(--theme-color, #44a8f0);
+}
+
+.markdown-section pre .docsify-copy-code-button--copied {
+  border-color: #3fb950;
+  color: #1a7f37;
+}

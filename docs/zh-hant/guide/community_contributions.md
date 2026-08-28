@@ -6,12 +6,12 @@
 
 | 專案 | 說明 |
 | --- | --- |
-| [雲人升 (LifeUp Cloud)](guide/api_cloud.md) | 手機端 HTTP API 橋樑；支援區域網路呼叫與**二維碼掃描**（含 `lifeup://`、網頁、其他 App Scheme） |
-| [@lifeup/mcp](guide/api_mcp.md) | 官方 MCP 伺服器 + Skills，供 Cursor、Claude Desktop 等 AI Agent 透過區域網路操作人升 |
+| [雲人升 (LifeUp Cloud)](guide/api_cloud.md) | 手機端 HTTP API 橋樑；支援區域網呼叫與**二維碼掃描**（含 `lifeup://`、網頁、其他 App Scheme） |
+| [@lifeup/mcp](guide/api_mcp.md) | 官方 MCP 伺服器 + Skills，供 Cursor、Claude Desktop 等 AI Agent 透過區域網操作人升 |
 | [人升-桌面端](guide/api_desktop.md) | 官方桌面客戶端，基於雲人升 HTTP 介面 |
 | [Wordle 聯動示例](example/wordle/index.html) | 猜詞小遊戲；猜中後自動呼叫 `lifeup://api/reward` 發放金幣 |
 
-**Wordle 用法：** 在商店新建商品 → 使用效果（type 9 連結）填入 Wordle 頁面地址 → 使用商品即在瀏覽器打開遊戲；猜中得 10 金幣，未猜中也有安慰獎。也可把 Wordle 連結生成二維碼，用雲人升掃碼打開。詳見 [API · 外部網頁（Wordle）](guide/api.md#外部網頁wordle)。
+**Wordle 用法：** 在商店新建商品 → 使用效果（type 9 連結）填入 Wordle 頁面地址 → 使用商品即在瀏覽器開啟遊戲；猜中得 10 金幣，未猜中也有安慰獎。也可把 Wordle 連結生成二維碼，用雲人升掃碼開啟。詳見 [API · 外部網頁（Wordle）](guide/api.md#外部網頁wordle)。
 
 <br/>
 
