@@ -112,6 +112,14 @@ Token 可选；若填写，请求头里写**原始 Token**，不要加 `Bearer` 
 
 `npx` 会自动 clone 仓库并编译 `mcp/`。合入 `main` 分支后，可去掉 `#feat/mcp`。
 
+本地已 clone [LifeUp-SDK](https://github.com/Ayagikei/LifeUp-SDK) 时，推荐用安装脚本（编译 MCP，写入已检测到的客户端；重复运行会更新，不会再注册一份）：
+
+```bash
+./scripts/install-mcp.sh
+```
+
+默认覆盖 Codex、Cursor、Claude Code、Claude Desktop、Pi。Pi 若已 `imports: ["codex"]`，会沿用 Codex 的配置，避免重复。
+
 macOS 上的图形界面客户端往往找不到 `npx`，可改用 `npx`/`node` 的绝对路径，或手动 clone 后执行 `cd mcp && npm install && npm run build`。
 
 | 变量 | 作用 |

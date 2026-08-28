@@ -112,6 +112,14 @@ Until the package is on npm, install from GitHub:
 
 `npx` clones the repo and builds `mcp/`. After this lands on `main`, drop `#feat/mcp`.
 
+If you already cloned [LifeUp-SDK](https://github.com/Ayagikei/LifeUp-SDK), use the installer (builds MCP and upserts detected clients; re-runs do not register a second copy):
+
+```bash
+./scripts/install-mcp.sh
+```
+
+Default clients: Codex, Cursor, Claude Code, Claude Desktop, Pi. Pi configs that `imports: ["codex"]` inherit Codex and are not duplicated.
+
 GUI apps on macOS often lack `npx` on `PATH`—use an absolute `npx`/`node` path, or clone and run `cd mcp && npm install && npm run build`.
 
 | Variable | Role |
