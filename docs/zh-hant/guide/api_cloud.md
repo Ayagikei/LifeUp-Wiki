@@ -256,6 +256,7 @@ ContentProvider / Cloud JSON 欄位名與下表一致。
 | --- | --- | --- |
 | `/tasks` `/history` | `status` | `0` 未完成 · `1` 已完成 · `2` 逾期 · `3` 放棄 |
 | `/tasks` | `frequency` | `0` 一次 · `1` 每日 · `N>1` 每 N 天 · `-1` 無限制 · `-3` 艾賓浩斯 · `-4` 每月 · `-5` 每年 |
+| `/tasks` | `weekdays` | `1,3,5`（1=週一 … 7=週日）。非每週幾為空。v1.106.0+ |
 | `/tasks_categories` | `status` | `0` 正常 · `1` 已歸檔 |
 | `/tasks_categories` | `type` | `<10` 普通清單 · `10` 每日 · `11` 每週 · `12` 每月 · `20` 進行中 |
 | `/achievements` | `status` | `0` 未解鎖 · `1` 已解鎖未領獎 · `2` 已解鎖已領獎 |
