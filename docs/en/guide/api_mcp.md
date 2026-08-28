@@ -12,14 +12,45 @@ The agent on your computer reaches LifeUp Cloud on your phone over the LAN, then
 > [!NOTE]
 > Requires **LifeUp 1.106.0**+ and **LifeUp Cloud 3.0.0**+. Older builds may still connect, but journals, stats, and the level curve are incomplete. `status.update` can prompt the user to upgrade.
 
+MCP gives the agent **read/write APIs**; the AI layer adds **reasoning**—prioritizing today's backlog, summarizing weekly stats from journals, designing tasks from your attribute levels, or **building a full themed gamification setup in one prompt** (indie game dev, magic academy, and more)—not just fetching raw lists.
+
 ## Try asking
 
-Once MCP is installed, you do not need to memorize APIs—just talk to the AI, for example:
+Once MCP is installed, you do not need to memorize APIs—just talk to the AI.
 
-- “Make an achievement list called Morning Routine, then add 8 achievements with emoji icons and coin rewards.”
+**Plan your day**
+
+- “What's left today? Sort by priority and tell me what to tackle first.”
+- “Pick one unfinished task I can finish in about 25 minutes.”
+
+**Analyze your data**
+
+- “Pull this week's pomodoro, focus, coin, and XP stats—break down where they came from and summarize the patterns.”
+- “Where did my coins come from this month? Show the biggest sources and anything surprising.”
+
+**Coach & design**
+
+- “Look at my attribute levels and design a set of daily tasks to level up my weaker skills.”
+
+**One-shot themed setup**
+
+- “Clear the samples, then build a full indie game developer setup: lists, shop, achievements, and attributes.”
+- “Design a complete magic-academy RPG routine—tasks, attributes, shop items, and achievements.”
+
+**Reflect**
+
 - “Look at what I finished today and write a short journal: what I did, and what I could improve tomorrow.”
-- “Pick a random unfinished task I can finish in about 25 minutes.”
-- “Where did my coins come from this month? Show the biggest sources, and anything surprising.”
+- “Make an achievement list called Morning Routine, then add 8 achievements with emoji icons and coin rewards.”
+<br/>
+
+## Quick start
+
+Send this one-liner to your agent to install MCP and connect for the first time:
+
+```
+Follow this doc to install the LifeUp MCP server and complete the first connection: https://raw.githubusercontent.com/Ayagikei/LifeUp-Wiki/master/docs/en/guide/api_mcp.md
+```
+
 <br/>
 
 ## Skills
@@ -110,3 +141,77 @@ LifeUp: enable Labs → Broadcast events. Cloud **WebSocket event push is on by 
 - `subscribe_events` — `WS /events`; errors if the Cloud toggle is off, HTTP still works
 
 Details: MCP `help broadcasts`.
+
+<br/>
+
+---
+
+## Example: Indie game developer setup
+
+Below is the outcome of a real MCP session: the user asked AI to **clear LifeUp's built-in developer samples**, then build a full RPG-style setup around **indie game development** (task lists, attributes, shop, achievements).
+
+You can start with prompts like:
+
+> Clear the sample tasks and shop items, then create a full indie game developer setup: task lists, attributes, shop items, and achievements.
+
+### What was built
+
+| Area | Content |
+| --- | --- |
+| Task lists | Morning Ritual, Coding Daily, Game Dev, Deep Learning, Learning & Recharge, Wrap-up |
+| Attributes | Execution / Technical / Collaboration / Focus / Wellness / Creativity, plus **Developer Stats** (Game Design, Debugging, Architecture) |
+| Shop | **Dev Supplies** (consumables) + **Fun Collectibles** (easter-egg items) |
+| Achievements | **Indie Dev Journey** (Hello World, First Bug Kill, Ship It!, …) |
+
+> [!TIP]
+> Click any image to zoom. Use the tabs below to switch horizontally instead of scrolling a long page.
+
+<!-- tabs:start -->
+
+#### **1 · Tasks overview**
+
+Morning Ritual recurring tasks in the **All** view, with category chips for Coding Daily, Game Dev, and more.
+
+![Tasks · Morning Ritual and categories](_media/mcp/game-dev-example/02-tasks-overview.jpg ':size=45%')
+
+#### **2 · Attributes**
+
+Core six attributes plus the **Developer Stats** group. Completing tasks grants EXP to the matching skills.
+
+![Attributes panel](_media/mcp/game-dev-example/03-skills.jpg ':size=45%')
+
+#### **3 · Fun Collectibles**
+
+Easter-egg shop items: Inspiration Dice, RGB Keycap, Desk Cat, LEGO Brick, Retro Gamepad, Rubber Duck — some with random coins or attribute bonuses.
+
+![Shop · Fun Collectibles](_media/mcp/game-dev-example/04-shop-fun-collection.jpg ':size=45%')
+
+#### **4 · Achievements**
+
+Milestone achievements: first task, first bug fix, ship a demo, streaks, pomodoros, Piggy Bank, Daily Pentakill, and more — with emoji icons and unlock conditions.
+
+![Indie Dev Journey achievements](_media/mcp/game-dev-example/06-achievements.jpg ':size=45%')
+
+#### **5 · Piggy Bank detail**
+
+Progress-style condition example: reach **500 coins** current balance.
+
+![Achievement detail · Piggy Bank](_media/mcp/game-dev-example/07-achievement-detail-piggy-bank.jpg ':size=45%')
+
+#### **6 · Daily Pentakill detail**
+
+Counter condition example: complete **5 different tasks in one day**.
+
+![Achievement detail · Daily Pentakill](_media/mcp/game-dev-example/08-achievement-detail-pentakill.jpg ':size=45%')
+
+<!-- tabs:end -->
+
+### What the AI typically does
+
+1. `list_tasks` / `list_items` — inspect existing samples; delete old rows when needed (`confirm: true` for destructive calls).
+2. Create task / shop / achievement lists (`category`).
+3. Create attributes and groups (`skill` / `skill_group`).
+4. Batch-write tasks, items, and achievements (`add_task` / `add_item` / `achievement`).
+5. Refresh the matching screens in the App to verify.
+
+For API params see [Skills](#skills) and [Agent workflow](#agent-workflow) above; per-method tables via MCP `help add_task`, etc.

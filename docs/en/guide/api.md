@@ -1074,13 +1074,13 @@ For example, filter by product item id 1: `lifeup://api/goto?page=synthesis&filt
 
 **Description:** Create a shop item with customizable properties including purchase limits and use effects.
 
-**Example:** [lifeup://api/add_item?name=Take a 10-minute break&desc=Go and take a short break!&price=10&action_text=rest](lifeup://api/add_item?name=Take a 10-minute break&desc=Go and take a short break!&price=10&action_text=rest)
+**Example:** [lifeup://api/add_item?name=Take a 10-minute break&desc=Go and take a short break!&price=10&action_text=rest&icon=☕](lifeup://api/add_item?name=Take a 10-minute break&desc=Go and take a short break!&price=10&action_text=rest&icon=☕)
 
 | Parameter        | Meaning                | Values               | Example       | Required | Notes                           |
 | --------------- | --------------------- | -------------------- | ------------- | -------- | ------------------------------- |
 | name            | Item name             | any text             | 10 minute break | Yes    |                                 |
 | desc            | Description           | any text             | Take a break  | No       |                                 |
-| icon            | Icon                  | URL text             | http://...    | No       | Must be a web URL               |
+| icon            | Icon                  | emoji, http(s) URL, or built-in sample name | ☕ | No | Stored as `emoji_*.webp`, `lifeup_sample_*`, or URL. Name emoji does not set the icon. |
 | price           | Price                 | [0, 999999]         | 10            | No       | Default is 0                    |
 | stock_number    | Stock quantity        | [-1, 99999]         | -1            | No       | -1 means unlimited              |
 | action_text     | Action button text    | any text             | rest          | No       |                                 |
@@ -1124,7 +1124,7 @@ For example, filter by product item id 1: `lifeup://api/goto?page=synthesis&filt
 | name             | Item name           | any text             | Treasure  | No*      | For fuzzy search, not renaming  |
 | set_name         | Set name            | any text             | Treasure  | No       | Cannot be empty                 |
 | set_desc         | Set description     | any text             | Get gift  | No       |                                |
-| set_icon         | Set icon            | URL text             | http://...| No       | Must be a web URL               |
+| set_icon         | Set icon            | emoji, http(s) URL, or built-in sample name | ☕ | No | Same as `icon`. Unsupported values return `unsupported_parameter`. |
 | set_price        | Adjust price        | integer              | 1         | No       |                                |
 | set_price_type   | Price adjust method | absolute or relative | relative  | No       | absolute-set directly<br/>relative-add/subtract |
 | own_number       | Adjust owned quantity| integer             | 1         | No       | Supports negative with relative |
@@ -1836,7 +1836,7 @@ If the item has `purchase_limit` configured and `limit_scope` includes `purchase
 | order           | Sort order        | integer              | 1         | No       | Position in the list            |
 | hidden          | Hide category     | true or false        | false     | No       | tasks=archive; shop=shop hide; synthesis=hide. Achievement lists reject with `unsupported_parameter`. `false` unhides |
 | inventory_hidden| Hide in inventory | true or false        | false     | No       | Only supported for shop lists   |
-| icon_uri        | Icon URI          | URI text             | content://... | No  | Only supported for achievement lists |
+| icon_uri        | Icon URI          | emoji, http(s) URL, content URI, or empty | 🏆 | No | Only supported for achievement lists. Emoji stored as `emoji_*.webp`. Empty clears. |
 | desc            | Description       | any text             | This is a description | No | Only supported for achievement lists |
 | color           | Tag color         | color string         | #66CCFF   | No       | Only supported for task lists; # must be escaped as %23 |
 

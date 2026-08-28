@@ -1277,13 +1277,13 @@ id 的獲取方法為「實驗」頁面開啟「開發者模式」，然後在�
 
 **說明：**建立商品，包含自定義購買限制和使用效果等功能
 
-**示例：**[lifeup://api/add_item?name=休息10分鐘&desc=去好好休息一小段時間吧！&price=10&action_text=休息](lifeup://api/add_item?name=休息10分鐘&desc=去好好休息一小段時間吧！&price=10&action_text=休息)
+**示例：**[lifeup://api/add_item?name=休息10分鐘&desc=去好好休息一小段時間吧！&price=10&action_text=休息&icon=☕](lifeup://api/add_item?name=休息10分鐘&desc=去好好休息一小段時間吧！&price=10&action_text=休息&icon=☕)
 
 | 引數             | 含義           | 取值                | 示例         | 是否必須 | 備註                           |
 | --------------- | -------------- | ------------------ | ------------ | -------- | ------------------------------ |
 | name            | 商品名稱       | 任意文字           | 休息10分鐘    | 是      |                                |
 | desc            | 描述           | 任意文字           | 休息一下      | 否       |                               |
-| icon            | 圖示           | 網路地址URL        | http://...    | 否      | 必須是網路URL地址              |
+| icon            | 圖示           | emoji、http(s) URL 或內建樣例名 | ☕ | 否 | 儲存為 `emoji_*.webp`、`lifeup_sample_*` 或 URL。商品名稱裡的 emoji 不會自動成為圖示。 |
 | price           | 價格           | [0, 999999]       | 10            | 否      | 預設為 0                       |
 | stock_number    | 庫存數量       | [-1, 99999]       | -1            | 否      | -1 表示無限                    |
 | action_text     | 使用按鈕文案   | 任意文字           | 休息          | 否      |                                |
@@ -1327,7 +1327,7 @@ id 的獲取方法為「實驗」頁面開啟「開發者模式」，然後在�
 | name             | 商品名稱       | 任意文字           | 寶箱       | 否*      | 用於模糊搜尋商品，不是用於改名 |
 | set_name         | 修改名稱       | 任意文字           | 寶箱       | 否       | 不可為空                       |
 | set_desc         | 修改描述       | 任意文字           | 獲得禮物   | 否       |                               |
-| set_icon         | 修改圖示       | URL文字            | http://... | 否       | 必須是網路URL地址              |
+| set_icon         | 修改圖示       | emoji、http(s) URL 或內建樣例名 | ☕ | 否 | 與 `icon` 相同。不支援的值返回 `unsupported_parameter`。 |
 | set_price        | 調整價格       | 整數               | 1          | 否       |                               |
 | set_price_type   | 價格調整方式   | absolute 或 relative | relative | 否       | absolute-直接設定<br/>relative-增減值 |
 | own_number       | 調整擁有數量   | 整數               | 1          | 否       | 使用relative時支援負數         |
@@ -2069,7 +2069,7 @@ Android 12 及以上版本中，後臺 ContentProvider 呼叫僅在人升已獲�
 | order           | 排序           | 整數               | 1          | 否       | 清單在列表中的排序位置          |
 | hidden          | 是否隱藏       | true 或者 false    | false      | 否       | 任務=歸檔；商店=商店隱藏；合成=隱藏。成就清單不支援（會報 `unsupported_parameter`）。`false` 為重新顯示 |
 | inventory_hidden| 是否在倉庫隱藏 | true 或者 false    | false      | 否       | 僅商店清單支援                 |
-| icon_uri        | 圖示URI        | URI文字            | content://... | 否    | 僅成就清單支援                 |
+| icon_uri        | 圖示URI        | emoji、http(s)、content URI 或空 | 🏆 | 否 | 僅成就清單支援。emoji 儲存為 `emoji_*.webp`。空字串清除圖示。 |
 | desc            | 描述           | 任意文字           | 這是描述     | 否      | 僅成就清單支援                 |
 | color           | 標籤顏色       | 顏色字串         | #66CCFF     | 否      | 僅任務清單支援；#需要轉義為%23  |
 
