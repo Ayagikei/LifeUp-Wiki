@@ -4,11 +4,11 @@
 
 ?> In the v1.90 version, `LifeUp` has opened a variety of functional interfaces, and any external application integration is welcome. <br/>It also provides the “URL” effect for shop items, and users can directly use commodities to call external applications or the interface of `LifeUp`. <br/>These features can give your `LifeUp` unlimited possibilities, but it also requires a little learning understanding and hands-on ability.
 
-**Last updated: 2026/08/19**
+**Last updated: 2026/08/27**
 
-The API parameters and definitions in this document are based on version **v1.105.1**.
+The API parameters and definitions in this document are based on version **v1.106.0**.
 
-Please ensure that your application has been updated to **v1.105.1** before using the latest API.
+Please ensure that your application has been updated to **v1.106.0** before using the latest API.
 
 The update is rolling out gradually through Google Play, and if you haven't received it yet, please be patient and it will arrive soon.
 
@@ -604,6 +604,7 @@ Open box effect:
 | skills           | Skill IDs           | array of numbers > 0 | 1          | No       | Supports arrays (e.g., &skills=1&skills=2) |
 | category         | List ID             | number >= 0          | 0          | No       | Defaults to 0 (default list); smart lists not allowed |
 | frequency        | Repeat frequency    | integer              | 0          | No       | Defaults to 0 (once)<br/>0 - Once<br/>1 - Daily<br/>N (N>1) - Every N days<br/>-1 - Unlimited<br/>-3 - Ebbinghaus (requires v1.99.1)<br/>-4 - Monthly<br/>-5 - Yearly |
+| weekdays         | Weekdays            | `1,3,5` or `none`    | 1,3,5      | No       | v1.106.0+; 1=Monday … 7=Sunday, days **to repeat**. If present, frequency must be omitted or 1. `none` is rejected on add; on edit, `none` clears back to daily. All 7 days is treated as daily |
 | importance       | Importance level    | [1, 4]              | 1          | No       | Defaults to 1                   |
 | difficulty       | Difficulty level    | [1, 4]              | 1          | No       | Defaults to 1                   |
 | deadline         | Due time            | timestamp (milliseconds) | 1640995200000 | No |                               |
@@ -805,6 +806,7 @@ The method of obtaining the id is to open the "Developer Mode" on the "Labs" pag
 | skills             | Skill IDs            | array of numbers greater than 0 | 1 | No    | Supports arrays (e.g., &skills=1&skills=2) |
 | category           | List ID              | number greater than or equal to 0 | 0 | No  | 0 for default list, smart lists not supported |
 | frequency          | Repeat frequency     | integer              | 0         | No       | Defaults to 0 (once)<br/>0 - Once<br/>1 - Daily<br/>N (N>1) - Every N days<br/>-1 - Unlimited<br/>-3 - Ebbinghaus (requires v1.99.1)<br/>-4 - Monthly<br/>-5 - Yearly |
+| weekdays           | Weekdays             | `1,3,5` or `none`    | 1,3,5     | No       | v1.106.0+; same as add_task. Omit to leave unchanged; `none` clears to daily; setting frequency to a non-1 value also clears weekdays |
 | importance         | Importance level     | [1, 4]              | 1         | No       | Defaults to 1                   |
 | difficulty         | Difficulty level     | [1, 4]              | 2         | No       | Defaults to 1                   |
 | deadline           | Due date             | timestamp (milliseconds) | 1640995200000 | No |                               |
@@ -879,6 +881,7 @@ The method of obtaining the id is to open the "Developer Mode" on the "Labs" pag
 | category | List ID | number >= 0 | 0 | No | Alias: category_id |
 | category_id | List ID | number >= 0 | 0 | No | Alias of category |
 | frequency | Repeat frequency | integer | 0 | No | Same as add_task |
+| weekdays | Weekdays | `1,3,5` | 1,3,5 | No | v1.106.0+; same as add_task; create rejects `none` |
 | importance | Importance level | [1, 4] | 1 | No | - |
 | difficulty | Difficulty level | [1, 4] | 1 | No | - |
 | coin | Coin reward | number | 10 | No | - |
@@ -2231,6 +2234,7 @@ When querying task (v1.101.0+):
 | deadline    | Deadline time                | number      | -       | no       | Unix timestamp (milliseconds), may be empty |
 | remindTime  | Remind time                  | number      | -       | no       | Unix timestamp (milliseconds), may be empty |
 | frequency   | Repetition frequency         | number      | -       | yes      | -                               |
+| weekdays    | Weekdays                     | text        | 1,3,5   | no       | v1.106.0+; empty when not weekday mode. 1=Monday … 7=Sunday |
 | exp         | EXP reward                   | number      | -       | yes      | -                               |
 | skillIds    | Skill ID list                | JSON text   | -       | yes      | JSON array format               |
 | coin        | Coin reward                  | number      | -       | no       | May be empty                    |

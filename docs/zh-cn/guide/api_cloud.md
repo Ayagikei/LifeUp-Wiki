@@ -256,6 +256,7 @@ ContentProvider / Cloud JSON 字段名与下表一致。
 | --- | --- | --- |
 | `/tasks` `/history` | `status` | `0` 未完成 · `1` 已完成 · `2` 逾期 · `3` 放弃 |
 | `/tasks` | `frequency` | `0` 一次 · `1` 每日 · `N>1` 每 N 天 · `-1` 无限制 · `-3` 艾宾浩斯 · `-4` 每月 · `-5` 每年 |
+| `/tasks` | `weekdays` | `1,3,5`（1=周一 … 7=周日）。非每周几为空。v1.106.0+ |
 | `/tasks_categories` | `status` | `0` 正常 · `1` 已归档 |
 | `/tasks_categories` | `type` | `<10` 普通清单 · `10` 每日 · `11` 每周 · `12` 每月 · `20` 进行中 |
 | `/achievements` | `status` | `0` 未解锁 · `1` 已解锁未领奖 · `2` 已解锁已领奖 |

@@ -12,6 +12,14 @@
 > [!NOTE]
 > 需要 **人升 1.106.0+** 和 **雲人升 3.0.0+**。更舊也能連，但流水、統計、等級曲線等沒有。`status.update` 會提示升級。
 
+## 可以這樣問
+
+裝好 MCP 之後，直接跟 AI 說話就行，例如：
+
+- 「幫我建一個『早起自律』成就清單，再加 8 個帶 emoji 的成就，完成給金幣。」
+- 「看看我今天完成了什麼，寫一段感想：做了什麼、哪裡可以改進。」
+- 「從還沒做完的任務裡抽一個，最好 25 分鐘能做完。」
+- 「這個月金幣都從哪來的？最大的幾筆，有沒有意外收穫。」
 <br/>
 
 ## Skills
@@ -58,27 +66,22 @@ Token 可選。請求頭是 **原始 Token**，不要 `Bearer`。
 
 ## 安裝 MCP
 
-尚未上架 npm 時從倉庫構建：
-
-```bash
-git clone https://github.com/Ayagikei/LifeUp-SDK.git
-cd LifeUp-SDK/mcp
-npm install
-npm run build
-```
+尚未上架 npm 時，GitHub 即可：
 
 ```json
 {
   "mcpServers": {
     "lifeup": {
-      "command": "node",
-      "args": ["/絕對路徑/LifeUp-SDK/mcp/dist/index.js"]
+      "command": "npx",
+      "args": ["-y", "github:Ayagikei/LifeUp-SDK#feat/mcp"]
     }
   }
 }
 ```
 
-macOS 圖形界面客戶端往往找不到 `npx`，用 `node` 絕對路徑。
+`npx` 會 clone 倉庫並編譯 `mcp/`。合進 `main` 後去掉 `#feat/mcp`。
+
+macOS 圖形介面客戶端往往找不到 `npx`，用 `npx`/`node` 絕對路徑，或 clone 後 `cd mcp && npm install && npm run build`。
 
 | 變數 | 作用 |
 |---|---|
@@ -86,8 +89,7 @@ macOS 圖形界面客戶端往往找不到 `npx`，用 `node` 絕對路徑。
 | `LIFEUP_TOKEN` | 只在程序內，不寫磁碟 |
 | `LIFEUP_MCP_CONFIG` | 自定義配置路徑 |
 
-上架後可用 `npx -y @lifeup/mcp`（國內 npmmirror）。
-
+上架後可用 `npx -y @lifeup/mcp`（中國大陸 npmmirror）。
 <br/>
 
 ## Agent 流程

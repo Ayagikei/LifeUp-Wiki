@@ -232,6 +232,7 @@ Envelope: `{ code, message, data }`. `200` is transport OK only. `10001` LifeUp 
 | --- | --- | --- |
 | `/tasks` `/history` | `status` | `0` unfinished · `1` done · `2` overdue · `3` given up |
 | `/tasks` | `frequency` | `0` once · `1` daily · `N>1` every N days · `-1` unlimited · `-3` Ebbinghaus · `-4` monthly · `-5` yearly |
+| `/tasks` | `weekdays` | `1,3,5` (Mon=1 … Sun=7). Empty when not weekday mode. v1.106.0+ |
 | `/tasks_categories` | `status` | `0` normal · `1` archived |
 | `/tasks_categories` | `type` | `<10` normal · `10` daily · `11` weekly · `12` monthly · `20` doing |
 | `/achievements` | `status` | `0` locked · `1` unlocked, reward unclaimed · `2` unlocked, claimed |

@@ -1,110 +1,112 @@
 <h1 align="center" padding="100">MCP & Skills</h1>
 
-给 AI 用的两层：
+想让 AI 帮你操作《人升》？这里有两层能力：
 
-| | 做什么 | 给谁 |
+| | 做什么 | 适合谁 |
 |---|---|---|
-| **MCP** `@lifeup/mcp` | 发现云人升、发 HTTP、编码、解析返回值 | Cursor / Claude Desktop / WorkBuddy / 任何 MCP 客户端 |
-| **Skills** `lifeup-cloud/` | 怎么连、查什么、怎么调 API、参数表 | 打进 MCP 的 `help`；Claude Code / Pi 也可以当磁盘技能 |
+| **MCP** `@lifeup/mcp` | 发现云人升、发送 HTTP 请求、编码参数、解析返回值 | Cursor、Claude Desktop、WorkBuddy，以及任意 MCP 客户端 |
+| **Skills** `lifeup-cloud/` | 连接方式、查询思路、API 调用方法与参数说明 | 已内置于 MCP 的 `help`；Claude Code / Pi 也可当作磁盘技能使用 |
 
-电脑上的 Agent 经局域网连手机里的《云人升》，再操作《人升》。HTTP 仍以 [云人升](guide/api_cloud.md) 为准。源码：[LifeUp-SDK/mcp](https://github.com/Ayagikei/LifeUp-SDK/tree/feat/mcp/mcp)。
+你电脑上的 Agent 会通过局域网连接手机里的《云人升》，再间接操作《人升》App。HTTP 接口细节仍以 [云人升 API](guide/api_cloud.md) 为准；MCP 源码见 [LifeUp-SDK/mcp](https://github.com/Ayagikei/LifeUp-SDK/tree/feat/mcp/mcp)。
 
 > [!NOTE]
-> 需要 **人升 1.106.0+** 和 **云人升 3.0.0+**。更旧也能连，但流水、统计、等级曲线等没有。`status.update` 会提示升级。
+> 需要 **人升 1.106.0**+ 与 **云人升 3.0.0**+。更早的版本或许能连上，但流水、统计、等级曲线等能力不完整；可通过 `status.update` 提示升级。
 
+## 可以这样问
+
+装好 MCP 后，不必记 API，直接跟 AI 说话即可，例如：
+
+- 「帮我建一个『早起自律』成就清单，再加 8 个带 emoji 的成就，完成时给点金币。」
+- 「看看我今天完成了什么，帮我写一段感想：做了什么、哪里还能改进。」
+- 「从还没做完的任务里抽一个，最好 25 分钟能做完。」
+- 「这个月金币都从哪来的？最大的几笔，有没有意外收获。」
 <br/>
 
 ## Skills
 
-源文件：[`mcp/skills/lifeup-cloud/`](https://github.com/Ayagikei/LifeUp-SDK/tree/feat/mcp/mcp/skills/lifeup-cloud)。没有第二份 npm 包。
+技能文件位于 [`mcp/skills/lifeup-cloud/`](https://github.com/Ayagikei/LifeUp-SDK/tree/feat/mcp/mcp/skills/lifeup-cloud)（仓库内仅此一份，没有单独的 npm 包）。
 
-- **Cursor / Claude Desktop / WorkBuddy：** 只装 MCP。`help` 读的就是这份技能，不要再装一次。
-- **Claude Code / Pi / 自己改流程：** 把该目录拷到 agent 的 skills 路径，或直接指向仓库里的文件夹。
+- **Cursor / Claude Desktop / WorkBuddy**：只安装 MCP 即可；`help` 读的就是这份技能，无需重复安装。
+- **Claude Code / Pi / 自定义流程**：把整个目录复制到 agent 的 skills 路径，或直接指向仓库中的文件夹。
 
 ```text
 mcp/skills/lifeup-cloud/
-  SKILL.md                 连接 + 常用操作（先读这个）
+  SKILL.md                 连接与常用操作（建议先读）
   references/
-    basics.md              错误、编码、JSON、超时
+    basics.md              错误处理、编码、JSON、超时
     discovery.md           mDNS / Token
     query.md               list_data 资源
     tasks.md / economy.md
-    api-index.md           全部方法一行说明
+    api-index.md           全部方法的一行说明
     methods/*.md           单个方法的完整参数表（用到再读）
     broadcasts.md / gaps.md
 ```
 
-Agent 渐进披露：
+Agent 会按「渐进披露」的方式查阅文档：
 
-1. `help`（或磁盘 `SKILL.md`）— 工作流
-2. `help api-index` — 有哪些方法
-3. `help add_task` — 这个方法的参数
-4. `call_api` / `list_data`
+1. `help`（或磁盘上的 `SKILL.md`）— 了解整体工作流
+2. `help api-index` — 查看有哪些方法
+3. `help add_task` — 查看某个方法的参数
+4. `call_api` / `list_data` — 真正发起调用
 
-改技能：拷走目录，改 `SKILL.md` 和 `references/`。MCP 的 `help` 仍读安装包里那份，除非你改的是 MCP 源码再构建。
+若要自定义技能：复制该目录，修改 `SKILL.md` 和 `references/` 即可。MCP 的 `help` 默认仍读取安装包内的版本；只有在你修改 MCP 源码并重新构建后，才会生效。
 
 <br/>
 
-## 准备
+## 使用前准备
 
-1. 手机和电脑同一局域网
-2. 人升运行中，云人升已授权 **读取人升数据**
-3. 云人升已启动（默认 `13276`）
-4. 电脑 [Node.js 20+](https://nodejs.org/)
+1. 手机与电脑在同一局域网
+2. 《人升》正在运行，且已向《云人升》授权 **读取人升数据**
+3. 《云人升》已启动（默认端口 `13276`）
+4. 电脑上已安装 [Node.js 20+](https://nodejs.org/)
 
-Token 可选。请求头是 **原始 Token**，不要 `Bearer`。
+Token 可选；若填写，请求头里写**原始 Token**，不要加 `Bearer` 前缀。
 
 <br/>
 
 ## 安装 MCP
 
-尚未上架 npm 时从仓库构建：
-
-```bash
-git clone https://github.com/Ayagikei/LifeUp-SDK.git
-cd LifeUp-SDK/mcp
-npm install
-npm run build
-```
+包尚未上架 npm 时，可直接从 GitHub 安装：
 
 ```json
 {
   "mcpServers": {
     "lifeup": {
-      "command": "node",
-      "args": ["/绝对路径/LifeUp-SDK/mcp/dist/index.js"]
+      "command": "npx",
+      "args": ["-y", "github:Ayagikei/LifeUp-SDK#feat/mcp"]
     }
   }
 }
 ```
 
-macOS 图形界面客户端往往找不到 `npx`，用 `node` 绝对路径。
+`npx` 会自动 clone 仓库并编译 `mcp/`。合入 `main` 分支后，可去掉 `#feat/mcp`。
+
+macOS 上的图形界面客户端往往找不到 `npx`，可改用 `npx`/`node` 的绝对路径，或手动 clone 后执行 `cd mcp && npm install && npm run build`。
 
 | 变量 | 作用 |
 |---|---|
-| `LIFEUP_HOST` | `192.168.1.8:13276`，跳过 mDNS |
-| `LIFEUP_TOKEN` | 只在进程内，不写磁盘 |
-| `LIFEUP_MCP_CONFIG` | 自定义配置路径 |
+| `LIFEUP_HOST` | 如 `192.168.1.8:13276`，跳过 mDNS 发现 |
+| `LIFEUP_TOKEN` | 仅保存在进程内，不会写入磁盘 |
+| `LIFEUP_MCP_CONFIG` | 自定义配置文件路径 |
 
-上架后可用 `npx -y @lifeup/mcp`（国内 npmmirror）。
-
+上架后可用 `npx -y @lifeup/mcp`（国内可用 npmmirror）。
 <br/>
 
 ## Agent 流程
 
-1. `discover`：mDNS `_lifeup._tcp`，TXT `port` 才是 HTTP 端口。只有一台会自动连。
-2. `connect`：0 台或多台时传 `host`。
-3. `status`：版本。低于 1.106.0 / 3.0.0 看 `update`。
-4. 列表：`list_data`（默认精简字段）。
-5. 写入：`complete_task` / `add_task` / `reward` / `purchase_item`，其余 `call_api`。要弹界面用 `via=launch`。
+1. `discover`：通过 mDNS `_lifeup._tcp` 发现设备；TXT 里的 `port` 才是 HTTP 端口。若只有一台云人升，会自动连接。
+2. `connect`：发现 0 台或多台时，需传入 `host`。
+3. `status`：查看版本；若低于 1.106.0 / 3.0.0，留意 `update` 提示。
+4. 读取列表：用 `list_data`（默认返回精简字段）。
+5. 写入操作：`complete_task` / `add_task` / `reward` / `purchase_item`；其余走 `call_api`。需要弹出 App 界面时，加 `via=launch`。
 
-删除类接口要 `confirm: true`。参数不要预先 URL 编码。
+删除类接口需要 `confirm: true`。参数值不要预先做 URL 编码。
 
 ## 事件
 
-人升要开「实验 → 广播事件」。云人升 **WebSocket 事件推送默认开**（3.0.0+）。
+《人升》需开启「实验 → 广播事件」；《云人升》的 **WebSocket 事件推送默认开启**（3.0.0+）。
 
-- `list_events` — `GET /events`，一直可用
-- `subscribe_events` — `WS /events`，默认能连；关了云人升开关会报错，HTTP 仍可用
+- `list_events` — `GET /events`，始终可用
+- `subscribe_events` — `WS /events`，默认能连；若在云人升中关闭开关会报错，HTTP 接口仍可用
 
-细节：MCP `help broadcasts`。
+更多细节见 MCP `help broadcasts`。
