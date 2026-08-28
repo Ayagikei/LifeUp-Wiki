@@ -12,8 +12,8 @@ LifeUp Cloud is one of the core API toolkits for LifeUp. It turns your phone int
 | --- | --- | --- | --- |
 | **HTTP + build your own** | Developers, automation users | Call APIs and query data from Python, web apps, or scripts over LAN — no Android experience required | [HTTP API](#http-api-definition), [Desktop](guide/api_desktop.md) |
 | **QR scanning** | Real-world check-in fans | Print QR codes to complete tasks, start timers, open dialogs, or launch web pages / other apps | [QR code scanning](#qr-code-scanning) |
+| **Start / stop shortcuts** | Automation, NFC, Tasker | `lifeupcloud://start` and `lifeupcloud://stop` open Cloud and start or stop the HTTP server | [Start and stop](#cloud-scheme) |
 | **AI Agent + MCP** | Cursor, Claude, etc. | One prompt to build task lists, shop items, achievements, and more | [MCP & Skills](guide/api_mcp.md) |
-
 > **Example AI prompt:** Clear the sample tasks and shop items, then create a full indie game developer setup: task lists, attributes, shop items, and achievements.
 
 <br/>
@@ -22,6 +22,29 @@ LifeUp Cloud is one of the core API toolkits for LifeUp. It turns your phone int
 
 - If you use the Mainland China membership version, you can find the LifeUp Cloud download entry in `Sidebar` → `Settings` → `Experiments`.
 - [Google Play Store](https://play.google.com/store/apps/details?id=net.lifeupapp.lifeup.http)
+
+<br/>
+
+
+## Start and stop the Cloud service :id=cloud-scheme
+
+You can start or stop the HTTP server without tapping **Start Service**, using these URL schemes:
+
+```txt
+lifeupcloud://start
+lifeupcloud://stop
+```
+
+Opening either URL launches LifeUp Cloud and applies the action. Use them as a home-screen shortcut, NFC tag, Tasker/automation action, or:
+
+```txt
+adb shell am start -a android.intent.action.VIEW -d lifeupcloud://start
+```
+
+The same URLs are listed on the Cloud status card — tap to copy.
+
+> [!NOTE]
+> `lifeupcloud://` controls the Cloud HTTP server itself. It is not a `lifeup://api/…` game API.
 
 <br/>
 

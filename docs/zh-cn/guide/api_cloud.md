@@ -12,8 +12,8 @@
 | --- | --- | --- | --- |
 | **HTTP 服务 + 自研** | 开发者、自动化爱好者 | 用 Python、网页、脚本跨设备调 API、查数据，无需 Android 开发经验 | [HTTP 接口](#http-接口定义)、[桌面端](guide/api_desktop.md) |
 | **二维码扫描** | 想与现实行为联动的人 | 打印二维码，扫码完成任务打卡、计时、弹窗，或打开网页 / 其他 App | [二维码扫描](#二维码扫描) |
+| **启动 / 暂停快捷方式** | 自动化、NFC、Tasker | `lifeupcloud://start` / `lifeupcloud://stop` 打开云人升并启动或暂停 HTTP 服务 | [启动与暂停](#cloud-scheme) |
 | **AI Agent + MCP** | Cursor、Claude 等 AI 用户 | 一句话让 Agent 搭建任务 / 商店 / 成就等完整主题体系 | [MCP & Skills](guide/api_mcp.md) |
-
 > **AI 示例话术：** 清理示例任务和商品，然后以「独立游戏开发者」为主题，创建完整的任务清单、属性、商店商品和成就体系。
 
 <br/>
@@ -22,6 +22,29 @@
 
 - 如果你是中国大陆版本的会员的话，可以在`侧边栏`-`设置`-`实验`页面找到《云人升》的下载按钮。
 - [Google Play 商店地址](https://play.google.com/store/apps/details?id=net.lifeupapp.lifeup.http)
+
+<br/>
+
+
+## 启动 / 暂停云人升服务 :id=cloud-scheme
+
+不用点应用里的「启动服务」开关，也可以用下面的 URL Scheme 启动或暂停 HTTP 服务：
+
+```txt
+lifeupcloud://start
+lifeupcloud://stop
+```
+
+打开其中任意链接都会拉起《云人升》并执行对应操作。可以做成桌面快捷方式、NFC 标签、Tasker 等自动化，或：
+
+```txt
+adb shell am start -a android.intent.action.VIEW -d lifeupcloud://start
+```
+
+同一组链接也显示在云人升状态卡片上，点按即可复制。
+
+> [!NOTE]
+> `lifeupcloud://` 控制的是云人升自己的 HTTP 服务，不是 `lifeup://api/…` 游戏 API。
 
 <br/>
 
