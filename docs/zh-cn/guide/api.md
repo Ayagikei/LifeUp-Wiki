@@ -2350,6 +2350,7 @@ lifeup://api/skill_group?sort_json=[{"type":"skill","id":2},{"type":"group","id"
 | is_enable_compact_mode | 是否启用简洁模式   | true 或者 false | true  | 否       | 精简界面元素                    |
 | is_enable_material_you | 是否启用Material You| true 或者 false | true  | 否       | 启用 Material You 主题          |
 | restart_activities     | 是否重启界面       | true 或者 false | true  | 否       | 立即应用界面更改                |
+| broadcast_event        | 人升实验「广播事件」 | true 或者 false | true  | 否       | 默认关闭。与设置 → 实验中的开关相同 |
 
 **返回数据：**
 
@@ -2372,10 +2373,11 @@ lifeup://api/skill_group?sort_json=[{"type":"skill","id":2},{"type":"group","id"
 **示例：**
 
 - 查询当前金币数：[lifeup://api/query?key=coin](lifeup://api/query?key=coin)
+- 查询广播事件开关：[lifeup://api/query?key=broadcast](lifeup://api/query?key=broadcast) → `{enabled}`
 
 | 参数        | 含义       | 取值                                                         | 示例 | 是否必须                        | 备注                                                         |
 | ----------- | ---------- | ------------------------------------------------------------ | ---- | ------------------------------- | ------------------------------------------------------------ |
-| key         | 查询的类型 | 仅限以下数值其一：<br/>coin<br/>atm<br/>item<br/>item_id_list<br/>tomato<br/>task | coin | 是                              | coin - 当前金币数<br/>atm - 当前 ATM 存款<br/>item - 指定 `itemId` 的商品信息<br/>item_id_list - 指定`categoryId`的商品id列表<br/>tomato - 番茄数据<br/>task - 任务信息(v1.101.0+) |
+| key         | 查询的类型 | 仅限以下数值其一：<br/>coin<br/>atm<br/>item<br/>item_id_list<br/>tomato<br/>task<br/>broadcast | coin | 是                              | coin - 当前金币数<br/>atm - 当前 ATM 存款<br/>item - 指定 `itemId` 的商品信息<br/>item_id_list - 指定`categoryId`的商品id列表<br/>tomato - 番茄数据<br/>task - 任务信息(v1.101.0+)<br/>broadcast - 实验「广播事件」开关（返回 `{enabled}`） |
 | item_id     | 商品id     | 大于 0 的数字                                                | 1    | 当 key 为 item 时，必须         | 查询的商品 id                                                |
 | category_id | 清单id     | 大于或者等于 0 的数字                                        | 1    | 当 key 为 item_id_list 时，必须 | 只有当key为`item_id_list`时需要，代表查询的清单 id           |
 | task_id / taskId | 任务 ID | 大于 0 的数字 | 1 | 当 key 为 task 时，三选一* | 查询的任务 ID |

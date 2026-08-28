@@ -2350,6 +2350,7 @@ lifeup://api/skill_group?sort_json=[{"type":"skill","id":2},{"type":"group","id"
 | is_enable_compact_mode | 是否啟用簡潔模式   | true 或者 false | true  | 否       | 精簡介面元素                    |
 | is_enable_material_you | 是否啟用Material You| true 或者 false | true  | 否       | 啟用 Material You 主題          |
 | restart_activities     | 是否重啟介面       | true 或者 false | true  | 否       | 立即應用介面更改                |
+| broadcast_event        | 人升實驗「廣播事件」 | true 或者 false | true  | 否       | 預設關閉。與設定 → 實驗中的開關相同 |
 
 **返回資料：**
 
@@ -2372,10 +2373,11 @@ lifeup://api/skill_group?sort_json=[{"type":"skill","id":2},{"type":"group","id"
 **示例：**
 
 - 查詢當前金幣數：[lifeup://api/query?key=coin](lifeup://api/query?key=coin)
+- 查詢廣播事件開關：[lifeup://api/query?key=broadcast](lifeup://api/query?key=broadcast) → `{enabled}`
 
 | 引數        | 含義       | 取值                                                         | 示例 | 是否必須                        | 備註                                                         |
 | ----------- | ---------- | ------------------------------------------------------------ | ---- | ------------------------------- | ------------------------------------------------------------ |
-| key         | 查詢的型別 | 僅限以下數值其一：<br/>coin<br/>atm<br/>item<br/>item_id_list<br/>tomato<br/>task | coin | 是                              | coin - 當前金幣數<br/>atm - 當前 ATM 存款<br/>item - 指定 `itemId` 的商品資訊<br/>item_id_list - 指定`categoryId`的商品id列表<br/>tomato - 番茄資料<br/>task - 任務資訊(v1.101.0+) |
+| key         | 查詢的型別 | 僅限以下數值其一：<br/>coin<br/>atm<br/>item<br/>item_id_list<br/>tomato<br/>task<br/>broadcast | coin | 是                              | coin - 當前金幣數<br/>atm - 當前 ATM 存款<br/>item - 指定 `itemId` 的商品資訊<br/>item_id_list - 指定`categoryId`的商品id列表<br/>tomato - 番茄資料<br/>task - 任務資訊(v1.101.0+)<br/>broadcast - 實驗「廣播事件」開關（返回 `{enabled}`） |
 | item_id     | 商品id     | 大於 0 的數字                                                | 1    | 當 key 為 item 時，必須         | 查詢的商品 id                                                |
 | category_id | 清單id     | 大於或者等於 0 的數字                                        | 1    | 當 key 為 item_id_list 時，必須 | 只有當key為`item_id_list`時需要，代表查詢的清單 id           |
 | task_id / taskId | 任務 ID | 大於 0 的數字 | 1 | 當 key 為 task 時，三選一* | 查詢的任務 ID |

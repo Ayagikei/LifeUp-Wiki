@@ -143,7 +143,7 @@ Destructive calls need `confirm: true`. Do not pre-encode parameter values.
 
 ## Events
 
-LifeUp: enable Labs → Broadcast events. Cloud **WebSocket event push is on by default** (3.0.0+).
+LifeUp: enable Labs → Broadcast events (off by default; Cloud Advanced can show status and enable it). Cloud **WebSocket event push is on by default** (3.0.0+) and is transport only.
 
 - `list_events` — `GET /events`, always available
 - `subscribe_events` — `WS /events`; errors if the Cloud toggle is off, HTTP still works

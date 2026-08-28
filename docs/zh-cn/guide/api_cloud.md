@@ -296,7 +296,7 @@ http://{host:port}/statistics?time_range_start=${ms}&time_range_end=${ms}
 // 全部成就（Cloud 已实现，不再需要清单 id）
 http://{host:port}/achievements
 
-// 广播事件（人升需打开「实验 / 广播事件」）
+// 广播事件。人升「实验 → 广播事件」默认关；云人升高级设置可查看状态并一键开启。GET data.broadcasts 为人升开关（读不到则省略）。WebSocket 开关只控制推送通道。
 http://{host:port}/events?after=${id}&limit=50
 
 // WebSocket 推送（默认开；云人升可关「WebSocket 事件推送」；可与 GET 同时用）

@@ -291,7 +291,7 @@ http://{host:port}/statistics?time_range_start=${ms}&time_range_end=${ms}
 // All achievements (implemented; category id optional)
 http://{host:port}/achievements
 
-// Broadcast events (LifeUp Labs → Broadcast events must be on)
+// Broadcast events. LifeUp Labs → Broadcast events is off by default; Cloud Advanced can show status and enable it. GET data.broadcasts is that switch (omitted if unread). The Cloud WebSocket setting is transport only.
 http://{host:port}/events?after=${id}&limit=50
 
 // WebSocket push (on by default; Cloud setting WebSocket event push)

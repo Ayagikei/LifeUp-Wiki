@@ -2151,6 +2151,7 @@ lifeup://api/skill_group?sort_json=[{"type":"skill","id":2},{"type":"group","id"
 | is_enable_compact_mode| Enable compact mode| true or false  | true    | No       | Simplify interface elements     |
 | is_enable_material_you| Enable Material You| true or false  | true    | No       | Enable Material You theme       |
 | restart_activities    | Restart interface | true or false   | true    | No       | Apply interface changes immediately |
+| broadcast_event | LifeUp Labs broadcast events | true or false | true | No | Default off. Same switch as Settings → Labs |
 
 **Response:**
 
@@ -2169,10 +2170,11 @@ lifeup://api/skill_group?sort_json=[{"type":"skill","id":2},{"type":"group","id"
 **Description:** query parameters
 
 **Example:** - Query the current number of coins: [lifeup://api/query?key=coin](lifeup://api/query?key=coin)
+- Query broadcast events switch: [lifeup://api/query?key=broadcast](lifeup://api/query?key=broadcast) → `{enabled}`
 
 | Parameter   | Meaning              | Type                                                         | Example | Required                                    | Notes                                                        |
 | ----------- | -------------------- | ------------------------------------------------------------ | ------- | ------------------------------------------- | ------------------------------------------------------------ |
-| key         | type of query        | Only one of the following values:<br/>coin<br/>atm<br/>item<br/>item_id_list<br/>tomato<br/>task | coin    | yes                                         | coin - current amount of coins<br/>atm - current ATM balance<br/>item - Item information for the specified `itemId`<br/>item_id_list - List of item IDs specified by `categoryId`<br/>tomato - Tomato data<br/>task - Task information (v1.101.0+) |
+| key         | type of query        | Only one of the following values:<br/>coin<br/>atm<br/>item<br/>item_id_list<br/>tomato<br/>task<br/>broadcast | coin    | yes                                         | coin - current amount of coins<br/>atm - current ATM balance<br/>item - Item information for the specified `itemId`<br/>item_id_list - List of item IDs specified by `categoryId`<br/>tomato - Tomato data<br/>task - Task information (v1.101.0+)<br/>broadcast - Labs broadcast events switch (`{enabled}`) |
 | item_id     | the id of the item   | a number greater than 0                                      | 1       | When the key is `item`, it must be provided |                                                              |
 | category_id | the Shop category id | Number greater than or equal to 0                            | 0       | no*                                         | Required only when the key is `item_id_list`, representing the ID of the list to be queried. |
 | task_id / taskId | Task ID          | Number greater than 0                                        | 1       | When key is `task`, one of three* is required | Queried task ID |
