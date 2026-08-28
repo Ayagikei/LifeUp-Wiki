@@ -575,9 +575,10 @@ That said, LifeUp is inherently AI-friendly:
 <details>
 <summary>Will there be an iOS version of LifeUp?</summary>
 
-In **2025**, we launched [ulives](https://app.ulives.io/), a new productivity app for iOS users.
+In **2025**, we launched [ulives](https://app.ulives.io/), a new cross-platform productivity app for iOS users (also on iPadOS and Apple Silicon Mac).
 
 A direct LifeUp port to iOS is not realistic:
+
 - LifeUp is built with native Android technology.
 - Its offline-first architecture ties UI, local data model, and business logic closely to the Android implementation.
 - A direct port would still require major rewrites to keep data and logic consistent.
@@ -585,6 +586,37 @@ A direct LifeUp port to iOS is not realistic:
 So we reorganized and rebuilt with a cross-platform direction through ulives.
 
 ulives keeps the core spirit of LifeUp while also addressing several long-standing design and product issues from earlier generations. You can think of it as a fresh evolution, not just a one-to-one clone.
+
+**LifeUp membership does not unlock ulives**, but you can import a LifeUp backup (one-way, potentially lossy). See [What is ulives?](/guide/faq?id=ulives_overview). For more detailed reasons, see the comparison doc: [ulives vs LifeUp — Comparison](https://app.ulives.io/docs/comparison-with-lifeup).
+
+</details>
+
+<details id="ulives_overview">
+<summary>What is ulives? Does it share LifeUp membership or data?</summary>
+
+
+[ulives](https://app.ulives.io/) is a **greenfield rewrite** on cross-platform (KMP) technology. It inherits LifeUp's gamification philosophy, but the codebase, team, pricing, and long-term plans are separate — a spiritual successor, **not** an iOS port of LifeUp.
+
+**Why are memberships separate?**
+
+- **LifeUp pricing reflects Android-only scope:** LifeUp has always been built with pure Android-native technology. Its very low lifetime membership price was defined around **having only an Android client** — it was never meant to buy out maintenance for every future app we might build.
+- **ulives pricing reflects cross-platform cost and long-term maintainability:** ulives is a full rewrite with a cross-platform codebase, a not-fully-unified team, and ongoing work for iOS plus future Android and HarmonyOS targets. Premium is defined by **sustainable development and long-term maintainability**, not by copying LifeUp's historical free/paid split.
+- **Different development teams:** A LifeUp iOS port progressed slowly for various reasons. We reorganized a dedicated team for ulives (still small today) to ship a cross-platform product faster and more flexibly.
+- **Separate store ecosystems:** The App Store and Google Play are independent payment and entitlement systems. Licenses cannot be transferred directly between the two apps.
+
+**In short:**
+
+- **LifeUp membership ↔ ulives membership do not transfer:** A LifeUp purchase on Google Play does **not** unlock ulives on the App Store, and vice versa. Each app requires its own purchase.
+- **One-way data import:** Since ulives 1.7.22, you can import a LifeUp backup (`.lfbak`) into ulives. Conversion may be lossy, and import **does not** transfer back to LifeUp.
+- **Import does not transfer your license:** Backups move usage data (tasks, items, etc.), not LifeUp membership entitlements.
+
+**ulives Premium across ulives platforms:**
+
+ulives will also ship its own **Android** client (and HarmonyOS native support, etc.). **Premium purchased for ulives is intended to work across all ulives platforms** — iOS, Android, HarmonyOS — once server-side account management is ready. Early cross-platform cases may require contacting us.
+
+**Both apps offer lifetime membership well below most comparable products** — but headline prices should be read in context: single-platform vs cross-platform scope, development cost, and long-term maintenance differ.
+
+For more detailed reasons (pricing model, sustainability, development investment, and future plans for both apps), see the comparison doc: [ulives vs LifeUp — Comparison](https://app.ulives.io/docs/comparison-with-lifeup). ulives FAQ: [https://app.ulives.io/docs/faq](https://app.ulives.io/docs/faq)
 
 </details>
 

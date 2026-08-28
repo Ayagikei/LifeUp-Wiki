@@ -25,7 +25,7 @@
 
 在 2020 年《人升》刚发布时，独立开发应用还算比较小众。到了 2026 年，独立开发者和独立应用已经遍地开花，这本身是好事。但我们也留意到了不少行业乱象：堆应用数量，每隔一两个月发布一款新 app，开发完就搁置不管；纯 AI 堆砌、缺少技术底子，功能不可用或存在大量严重问题，性能低下，缺乏可维护性；重饥饿营销，应用尚未开发完成便匆匆发布，定价从几十元迅速飙到几百元，并在涨价前到处发帖喊话催促购买永久会员；以及靠第一版永久会员圈完钱后不怎么维护，然后突然「复活」发布 2.0 新版本再圈一波永久会员，结果后续依然不维护甚至功能失效、被平台下架，永久会员实质上作废。
 
-相较之下，《人升》坚持技术导向与长期主义：迄今持续迭代约 6 年、累计发布 400+ 次更新。我们始终遵循买断制，价格在数年间的涨幅也远低于大部分同类应用。此外，《人升》独特地提供了 [API 能力](/guide/api.md)与[开源桌面端](/guide/api_desktop.md)，你可以借助 AI 和自己的开发能力将人升自动化结合到工作流中，甚至实现二次开发。此外，《人升》支持导出完整的数据备份，内含原始媒体文件和 SQLite 数据库，让你随时掌控和拥有自己的数据——你可以将数据转换为其他应用兼容的格式、让 AI 分析生成图表等（当然，这些也可以通过 API 实现，且更直观）。数据备份也可以直接导入到 [ulives](https://app.ulives.io/)（我们的 iOS 新 app）。
+相较之下，《人升》坚持技术导向与长期主义：迄今持续迭代约 6 年、累计发布 400+ 次更新。我们始终遵循买断制，价格在数年间的涨幅也远低于大部分同类应用。此外，《人升》独特地提供了 [API 能力](/guide/api.md)与[开源桌面端](/guide/api_desktop.md)，你可以借助 AI 和自己的开发能力将人升自动化结合到工作流中，甚至实现二次开发。此外，《人升》支持导出完整的数据备份，内含原始媒体文件和 SQLite 数据库，让你随时掌控和拥有自己的数据——你可以将数据转换为其他应用兼容的格式、让 AI 分析生成图表等（当然，这些也可以通过 API 实现，且更直观）。数据备份也可以直接导入到 [ulives](https://ulives.lifeupapp.net/)（我们的跨平台新 app，详见下方 FAQ）。
 
 我们会继续坚持这些核心原则：
 
@@ -783,12 +783,21 @@ v1.92 版本已经增加了更为完善的统计功能。
 <details>
 <summary>是否支持鸿蒙 Next（HarmonyOS NEXT）？</summary>
 
-目前**不支持鸿蒙 Next 原生系统（鸿蒙 5 或以上）**。  
+目前**不支持鸿蒙 Next 原生系统（鸿蒙 5 或以上）**。
 
-「人升」基于安卓开发，**仅兼容支持 Android 应用的鸿蒙系统（HarmonyOS 4.3.0 及以下），或在 HarmonyOS NEXT (5.0+) 上通过「卓易通」等兼容环境运行**。
-会员定价与维护成本基于单一平台（安卓/卓易通）成本控制，具体说明也已在会员须知中强调。
+「人升」基于 Android 开发，**仅兼容支持 Android 应用的鸿蒙系统（HarmonyOS 4.3.0 及以下），或在 HarmonyOS NEXT (5.0+) 上通过「卓易通」等兼容环境运行 Android 版**。
 
-更完整的兼容性说明与限制，请查看：[鸿蒙系统兼容性说明](guide/harmonyos-compatibility.md)。
+**如果你已在 HarmonyOS NEXT 上使用人升：**
+
+- 可以继续通过**卓易通**运行人升 Android 版，**会员权益保持不变**。
+- 登录方式可能与纯 Android 设备不同；如遇账号或会员问题，请按 [鸿蒙系统兼容性说明](guide/harmonyos-compatibility.md) 中的指引操作。
+
+**关于 ulives 与鸿蒙：**
+
+[ulives](https://ulives.lifeupapp.net/) 是我们基于跨平台技术开发的新应用，后续计划推出**鸿蒙原生适配**，有望在不远的将来上线。请注意：**ulives 是全新开发的独立 App，会员权益与人升不互通**；即使未来支持鸿蒙，也需要在 ulives 内单独购买 Premium。
+
+更完整的兼容性说明：[鸿蒙系统兼容性说明](guide/harmonyos-compatibility.md)  
+ulives 与人升更详细、具体的原因可查阅对比文档：[ulives vs 人升 — 对比说明](https://ulives.lifeupapp.net/docs/comparison-with-lifeup)
 
 </details>
 
@@ -799,9 +808,9 @@ v1.92 版本已经增加了更为完善的统计功能。
 
 这方面我们有两路计划：
 
-- 基于跨平台技术开发的全新应用 ulives
+- 基于跨平台技术开发的全新应用 [ulives](https://ulives.lifeupapp.net/)
   
-  目前已发布 iOS 版本，且适配 iPadOS / 苹果芯片的 macOS
+  目前已发布 iOS 版本，且适配 iPadOS / 苹果芯片的 macOS；Android 与鸿蒙原生版本也在规划中。详见 [ulives 是什么？](/guide/faq?id=ulives_overview) 与 [完整对比说明](https://ulives.lifeupapp.net/docs/comparison-with-lifeup)。
 
 - 局域网纯界面客户端
 
@@ -815,18 +824,48 @@ v1.92 版本已经增加了更为完善的统计功能。
 </details>
 
 <details>
-<summary>为什么没有在App Store上架？有没有iOS版本？</summary>
+<summary>为什么没有在 App Store 上架？有没有 iOS 版本？</summary>
 
-《人升》本身是基于安卓原生技术开发的离线应用，无法在不大幅重写的前提下直接迁移到 iOS，并同时保持数据结构与业务逻辑的一致性。
+《人升》本身是基于 Android 原生技术开发的离线应用，无法在不大幅重写的前提下直接迁移到 iOS，并同时保持数据结构与业务逻辑的一致性。
 
-因此，我们在 **2025 年**发布了面向 iOS 用户的新应用 [ulives](https://apps.apple.com/us/app/ulives-gamify-your-tasks/id6743084261)。
+因此，我们在 **2025 年**发布了面向 iOS 用户的新应用 [ulives](https://apps.apple.com/us/app/ulives-gamify-your-tasks/id6743084261)（官网：[ulives.lifeupapp.net](https://ulives.lifeupapp.net/)）。
 
 ulives 不是对《人升》的简单移植，而是我们在重组团队后，基于跨平台技术重新打造的新产品：
 
 - 延续了《人升》的核心理念（激励与成长）
 - 也尝试解决《人升》中一些长期存在的历史问题
-- 整体上更接近“推陈出新”的新一代形态
+- 整体上更接近「推陈出新」的新一代形态
 
+**会员不与人升互通**，但支持导入人升备份数据（单向、可能有损）。详见 [ulives 是什么？](/guide/faq?id=ulives_overview)。更详细和具体原因可查阅对比文档：[ulives vs 人升 — 对比说明](https://ulives.lifeupapp.net/docs/comparison-with-lifeup)。
+
+</details>
+
+<details id="ulives_overview">
+<summary>ulives 是什么？跟人升会员、数据互通吗？</summary>
+
+
+[ulives](https://ulives.lifeupapp.net/) 是我们基于跨平台技术（KMP）**全新开发**的应用，继承了人升的游戏化核心理念，但代码库、团队结构、定价与长期规划都是独立的——是精神续作，**不是**人升的 iOS 移植版。
+
+**为什么两款 App 的会员分开？**
+
+- **人升定价基于 Android 单平台：** 人升自始至终用纯 Android 原生技术开发。极低门槛的永久会员定价，是基于**只有 Android 端**这一事实定义的——从未设计为用一次买断覆盖开发者未来所有 App 的维护成本。
+- **ulives 定价基于跨平台与长期可维护性：** ulives 是完全重写的跨平台代码库，开发成本、并非完全统一的团队结构，以及 iOS / 未来 Android、鸿蒙等多端适配，都计入定价与功能划分。会员定义的核心是**可持续的开发投入与长期可维护性**，而非复刻人升历史上的免费/付费比例。
+- **开发团队不同：** 人升 iOS 版曾进展缓慢；我们为 ulives 重组了专门团队（目前规模仍小），以便更快、更灵活地推进跨平台产品。
+- **平台生态独立：** App Store 与 Google Play 是独立商店与支付体系，数据和许可证无法直接互通。
+
+**简要结论：**
+
+- **人升会员 ↔ ulives 会员不互通：** 在 Google Play / 国内渠道购买的人升会员，**不能**解锁 App Store 上的 ulives，反之亦然。两款 App 需分别购买。
+- **数据可单向导入：** 自 ulives 1.7.22 起，可将人升备份（`.lfbak`）导入 ulives 继续使用；转换可能有损，且**不支持**从 ulives 导回人升。
+- **导入数据不会转移会员：** 备份导入只迁移任务、物品等使用数据，不含人升会员权益。
+
+**关于 ulives 自己的跨平台会员：**
+
+ulives 未来也会推出 **Android 版**（以及鸿蒙原生适配等），预期 **ulives 自身的 Premium 会员将在 iOS、Android、鸿蒙等 ulives 各端互通**（需等服务端与账号系统就绪；现阶段跨平台兑换前期可能需要联系官方）。
+
+**两款 App 的永久会员定价，都远低于绝大部分同类产品**——但比较标价时，也应考虑单平台 vs 跨平台、开发成本与长期维护范围的不同。
+
+更详细和具体的原因（定价模式、商业化、开发投入、两款 App 未来规划等）可查阅对比文档：[ulives vs 人升 — 对比说明](https://ulives.lifeupapp.net/docs/comparison-with-lifeup)。ulives 常见问题见 [ulives FAQ](https://ulives.lifeupapp.net/docs/faq)。
 
 </details>
 
