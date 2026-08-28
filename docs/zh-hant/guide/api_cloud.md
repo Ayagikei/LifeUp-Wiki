@@ -93,7 +93,7 @@ adb shell am start -a android.intent.action.VIEW -d lifeupcloud://start
 <br/>
 
 > [!NOTE]
-> 雲人升僅在區域網路內提供 HTTP 橋接服務。如何連到你的手機（IP、路由器、防火牆、同網段、VPN 或 AP 隔離等）取決於各家的網路環境。若無法連線，我們無法協助排查個人區域網路。請自行檢查網路、使用一般網路工具，或向 AI Agent 尋求協助。
+> 雲人升僅在區域網內提供 HTTP 橋樑服務。如何訪問手機（IP、路由器、防火牆、同網段、VPN 或 AP 隔離等）取決於各家的網路環境。若無法連線，我們無法幫你排查個人區域網。請自行檢查網路、使用常規網路工具，或向 AI Agent 尋求幫助。
 
 ## HTTP 介面定義
 
