@@ -1,0 +1,34 @@
+- Pengenalan
+
+  - [Pengenalan](Introduction.md)
+  - [Unduh](introduction/download.md)
+  - [Tangkapan Layar](Screenshots.md)
+  - [Catatan Rilis](ReleaseLog.md)
+  - [Dukung kami](Support_us.md)
+  - [Privasi & Ketentuan](introduction/privacy-terms.md)
+  - [Rencana Pengembangan](introduction/roadmap.md)
+    - [2026-2027](introduction/development_plan_2026_2027.md)
+    - [2024-2025](introduction/development_plan_2024.md)
+    - [2022/10 - 2023/12](introduction/development_plan_2023.md)
+  - [Penghapusan Data (Lite)](introduction/data-deletion-lite.md)
+  - [Penghapusan Data (Pro)](introduction/data-deletion-pro.md)
+- Memulai
+
+  - [Halo, dunia LifeUp](guide/hello_lifeup.md)
+  - [FAQ](guide/faq.md)
+  - [Backup dan Pemulihan](guide/backup.md)
+  - [Menjalankan LifeUp di Latar Belakang](guide/background_running.md)
+- Fitur
+  - APIs
+    - [📄Daftar API](guide/api.md)
+    - [☁️LifeUp Cloud](guide/api_cloud.md)
+    - [🤖 MCP & Skills](guide/api_mcp.md)
+    - [🖥LifeUp Desktop](guide/api_desktop.md)
+- Yang baru
+  - [v1.98.0: API 2.0](feature/198.md)
+  - [v1.95.0 - v1.97.0: Penggunaan Item otomatis, layar besar, peningkatan performa](ReleaseLog.md)
+  - [v1.94.0: Hadiah Beberapa Item!](feature/194.md)
+  - [v1.93.0: Template Tugas dan Material 3!](feature/193.md)
+  - [v1.92.0: Statistik baru!](feature/192.md)
+  - [v1.91.0: Widget Baru, Level Kustom, 🖥](feature/191.md)
+  - [v1.89.x: Beberapa Kondisi Buka Kunci](feature/189.md)

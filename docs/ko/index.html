@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>LifeUp - 최고의 게이미피케이션 App</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Description">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css">
+  <link rel="stylesheet" href="https://unpkg.com/docsify-plugin-toc@1.3.1/dist/light.css">
+  <link rel="stylesheet" href="./css/lifeup_vue_override.css">
+  <!-- <link rel="stylesheet" href="./css/lifeup.css"> -->
+  <link rel="icon" href="_media/icon_small.webp">
+  <script src="./js/edit_button_header.js"></script>
+  <script src="./js/copy-code.js"></script>
+</head>
+
+<body>
+  <div id="app"></div>
+  <script>
+    window.$docsify = {
+      name: 'LifeUp',
+      repo: '',
+      loadNavbar: true,
+      coverpage: false,
+      loadSidebar: true,
+      auto2top: true,
+      logo: '_media/icon_small.webp',
+      toc: {
+        tocMaxLevel: 5,
+        target: 'h2, h3, h4, h5, h6'
+      },
+      themeColor: '#44a8f0',
+      copyCodeLabel: '복사',
+      copyCodeCopiedLabel: '복사됨',
+      search: {
+        maxAge: 86400000, // 过期时间，单位毫秒，默认一天
+        paths: 'auto',
+        depth: 6,
+        placeholder: '검색...'
+      },
+      // logo: "/_media/icon.png",
+      homepage: 'Introduction.md',
+      pagination: {
+        crossChapter: true,
+        crossChapterText: true,
+      },
+      tabs: {
+        persist: true,      // default
+        sync: true,      // default
+        theme: 'classic', // default
+        tabComments: true,      // default
+        tabHeadings: true       // default
+      },
+      plugins: [
+        EditOnGithubPlugin.create(
+          'https://github.com/Ayagikei/LifeUp-Wiki/tree/master/docs/',
+          "https://github.com/Ayagikei/LifeUp-Wiki/tree/master/docs/",
+          function (file) {
+            return 'GitHub에서 편집'
+          }
+        ),
+        CopyCodePlugin,
+        function (hook) {
+          var footer = [
+            '<hr/>',
+            '<footer>',
+            '<span>Proudly published with <a href="https://github.com/docsifyjs/docsify" target="_blank">docsify</a>.</span>',
+            '</footer>'
+          ].join('');
+
+          hook.afterEach(function (html) {
+            return html + footer;
+          });
+        }
+      ]
+    }
+  </script>
+  <!-- Docsify v4 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/js/docsify-themeable.min.js"></script>
+  <script src="https://unpkg.com/docsify-plugin-toc@1.3.1/dist/docsify-plugin-toc.min.js"></script>
+  <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify-plugin-flexible-alerts"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1"></script>
+  <script>
+    // if (typeof navigator.serviceWorker !== 'undefined') {
+    //   navigator.serviceWorker.register('sw.js')
+    // }
+  </script>
+</body>
+
+</html>

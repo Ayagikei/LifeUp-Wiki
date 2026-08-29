@@ -1,0 +1,1565 @@
+{
+  "files": {
+    "#_coverpage.md": {
+      "en": "41f944c7cff3b2e7261b437ac6f8bb46ef6757efa7b994dec35db40d6168f9ec",
+      "locales": {
+        "ja": {
+          "sourceHashAtSync": "41f944c7cff3b2e7261b437ac6f8bb46ef6757efa7b994dec35db40d6168f9ec"
+        },
+        "ko": {
+          "sourceHashAtSync": "41f944c7cff3b2e7261b437ac6f8bb46ef6757efa7b994dec35db40d6168f9ec"
+        },
+        "es": {
+          "sourceHashAtSync": "41f944c7cff3b2e7261b437ac6f8bb46ef6757efa7b994dec35db40d6168f9ec"
+        },
+        "pt": {
+          "sourceHashAtSync": "41f944c7cff3b2e7261b437ac6f8bb46ef6757efa7b994dec35db40d6168f9ec"
+        },
+        "it": {
+          "sourceHashAtSync": "41f944c7cff3b2e7261b437ac6f8bb46ef6757efa7b994dec35db40d6168f9ec"
+        },
+        "de": {
+          "sourceHashAtSync": "41f944c7cff3b2e7261b437ac6f8bb46ef6757efa7b994dec35db40d6168f9ec"
+        },
+        "fr": {
+          "sourceHashAtSync": "41f944c7cff3b2e7261b437ac6f8bb46ef6757efa7b994dec35db40d6168f9ec"
+        },
+        "tr": {
+          "sourceHashAtSync": "41f944c7cff3b2e7261b437ac6f8bb46ef6757efa7b994dec35db40d6168f9ec"
+        },
+        "ru": {
+          "sourceHashAtSync": "41f944c7cff3b2e7261b437ac6f8bb46ef6757efa7b994dec35db40d6168f9ec"
+        },
+        "id": {
+          "sourceHashAtSync": "41f944c7cff3b2e7261b437ac6f8bb46ef6757efa7b994dec35db40d6168f9ec"
+        },
+        "ar": {
+          "sourceHashAtSync": "41f944c7cff3b2e7261b437ac6f8bb46ef6757efa7b994dec35db40d6168f9ec"
+        }
+      }
+    },
+    "Introduction.md": {
+      "en": "cf182a42560d2a20f9a2b079d6dcc9017e600b76e43ffc99cc7312a30d02cc35",
+      "locales": {
+        "ja": {
+          "sourceHashAtSync": "cf182a42560d2a20f9a2b079d6dcc9017e600b76e43ffc99cc7312a30d02cc35"
+        },
+        "ko": {
+          "sourceHashAtSync": "cf182a42560d2a20f9a2b079d6dcc9017e600b76e43ffc99cc7312a30d02cc35"
+        },
+        "es": {
+          "sourceHashAtSync": "cf182a42560d2a20f9a2b079d6dcc9017e600b76e43ffc99cc7312a30d02cc35"
+        },
+        "pt": {
+          "sourceHashAtSync": "cf182a42560d2a20f9a2b079d6dcc9017e600b76e43ffc99cc7312a30d02cc35"
+        },
+        "it": {
+          "sourceHashAtSync": "cf182a42560d2a20f9a2b079d6dcc9017e600b76e43ffc99cc7312a30d02cc35"
+        },
+        "de": {
+          "sourceHashAtSync": "cf182a42560d2a20f9a2b079d6dcc9017e600b76e43ffc99cc7312a30d02cc35"
+        },
+        "fr": {
+          "sourceHashAtSync": "cf182a42560d2a20f9a2b079d6dcc9017e600b76e43ffc99cc7312a30d02cc35"
+        },
+        "tr": {
+          "sourceHashAtSync": "cf182a42560d2a20f9a2b079d6dcc9017e600b76e43ffc99cc7312a30d02cc35"
+        },
+        "ru": {
+          "sourceHashAtSync": "cf182a42560d2a20f9a2b079d6dcc9017e600b76e43ffc99cc7312a30d02cc35"
+        },
+        "id": {
+          "sourceHashAtSync": "cf182a42560d2a20f9a2b079d6dcc9017e600b76e43ffc99cc7312a30d02cc35"
+        },
+        "ar": {
+          "sourceHashAtSync": "cf182a42560d2a20f9a2b079d6dcc9017e600b76e43ffc99cc7312a30d02cc35"
+        }
+      }
+    },
+    "ReleaseLog.md": {
+      "en": "1beb55c4ab2e9c231ba7b971ea1ffc69457719bc17299e0e34f4e74605a1a7fc",
+      "locales": {
+        "ja": {
+          "sourceHashAtSync": "1beb55c4ab2e9c231ba7b971ea1ffc69457719bc17299e0e34f4e74605a1a7fc"
+        },
+        "ko": {
+          "sourceHashAtSync": "1beb55c4ab2e9c231ba7b971ea1ffc69457719bc17299e0e34f4e74605a1a7fc"
+        },
+        "es": {
+          "sourceHashAtSync": "1beb55c4ab2e9c231ba7b971ea1ffc69457719bc17299e0e34f4e74605a1a7fc"
+        },
+        "de": {
+          "sourceHashAtSync": "1beb55c4ab2e9c231ba7b971ea1ffc69457719bc17299e0e34f4e74605a1a7fc"
+        },
+        "fr": {
+          "sourceHashAtSync": "1beb55c4ab2e9c231ba7b971ea1ffc69457719bc17299e0e34f4e74605a1a7fc"
+        },
+        "it": {
+          "sourceHashAtSync": "1beb55c4ab2e9c231ba7b971ea1ffc69457719bc17299e0e34f4e74605a1a7fc"
+        },
+        "pt": {
+          "sourceHashAtSync": "1beb55c4ab2e9c231ba7b971ea1ffc69457719bc17299e0e34f4e74605a1a7fc"
+        },
+        "tr": {
+          "sourceHashAtSync": "1beb55c4ab2e9c231ba7b971ea1ffc69457719bc17299e0e34f4e74605a1a7fc"
+        },
+        "ru": {
+          "sourceHashAtSync": "1beb55c4ab2e9c231ba7b971ea1ffc69457719bc17299e0e34f4e74605a1a7fc"
+        },
+        "id": {
+          "sourceHashAtSync": "1beb55c4ab2e9c231ba7b971ea1ffc69457719bc17299e0e34f4e74605a1a7fc"
+        },
+        "ar": {
+          "sourceHashAtSync": "1beb55c4ab2e9c231ba7b971ea1ffc69457719bc17299e0e34f4e74605a1a7fc"
+        }
+      }
+    },
+    "Screenshots.md": {
+      "en": "1cd94ad439f036a74c327dd42b8e1b7a23819ec35d29e906ea16f805d88ff271",
+      "locales": {
+        "ja": {
+          "sourceHashAtSync": "1cd94ad439f036a74c327dd42b8e1b7a23819ec35d29e906ea16f805d88ff271"
+        },
+        "ko": {
+          "sourceHashAtSync": "1cd94ad439f036a74c327dd42b8e1b7a23819ec35d29e906ea16f805d88ff271"
+        },
+        "es": {
+          "sourceHashAtSync": "1cd94ad439f036a74c327dd42b8e1b7a23819ec35d29e906ea16f805d88ff271"
+        },
+        "pt": {
+          "sourceHashAtSync": "1cd94ad439f036a74c327dd42b8e1b7a23819ec35d29e906ea16f805d88ff271"
+        },
+        "it": {
+          "sourceHashAtSync": "1cd94ad439f036a74c327dd42b8e1b7a23819ec35d29e906ea16f805d88ff271"
+        },
+        "de": {
+          "sourceHashAtSync": "1cd94ad439f036a74c327dd42b8e1b7a23819ec35d29e906ea16f805d88ff271"
+        },
+        "fr": {
+          "sourceHashAtSync": "1cd94ad439f036a74c327dd42b8e1b7a23819ec35d29e906ea16f805d88ff271"
+        },
+        "tr": {
+          "sourceHashAtSync": "1cd94ad439f036a74c327dd42b8e1b7a23819ec35d29e906ea16f805d88ff271"
+        },
+        "ru": {
+          "sourceHashAtSync": "1cd94ad439f036a74c327dd42b8e1b7a23819ec35d29e906ea16f805d88ff271"
+        },
+        "id": {
+          "sourceHashAtSync": "1cd94ad439f036a74c327dd42b8e1b7a23819ec35d29e906ea16f805d88ff271"
+        },
+        "ar": {
+          "sourceHashAtSync": "1cd94ad439f036a74c327dd42b8e1b7a23819ec35d29e906ea16f805d88ff271"
+        }
+      }
+    },
+    "Support_us.md": {
+      "en": "c66e9b7a3b7e6def27da844fdd151fee356831057ae182d43d16fb6698e051e1",
+      "locales": {
+        "ja": {
+          "sourceHashAtSync": "c66e9b7a3b7e6def27da844fdd151fee356831057ae182d43d16fb6698e051e1"
+        },
+        "ko": {
+          "sourceHashAtSync": "c66e9b7a3b7e6def27da844fdd151fee356831057ae182d43d16fb6698e051e1"
+        },
+        "es": {
+          "sourceHashAtSync": "c66e9b7a3b7e6def27da844fdd151fee356831057ae182d43d16fb6698e051e1"
+        },
+        "pt": {
+          "sourceHashAtSync": "c66e9b7a3b7e6def27da844fdd151fee356831057ae182d43d16fb6698e051e1"
+        },
+        "it": {
+          "sourceHashAtSync": "c66e9b7a3b7e6def27da844fdd151fee356831057ae182d43d16fb6698e051e1"
+        },
+        "de": {
+          "sourceHashAtSync": "c66e9b7a3b7e6def27da844fdd151fee356831057ae182d43d16fb6698e051e1"
+        },
+        "fr": {
+          "sourceHashAtSync": "c66e9b7a3b7e6def27da844fdd151fee356831057ae182d43d16fb6698e051e1"
+        },
+        "tr": {
+          "sourceHashAtSync": "c66e9b7a3b7e6def27da844fdd151fee356831057ae182d43d16fb6698e051e1"
+        },
+        "ru": {
+          "sourceHashAtSync": "c66e9b7a3b7e6def27da844fdd151fee356831057ae182d43d16fb6698e051e1"
+        },
+        "id": {
+          "sourceHashAtSync": "c66e9b7a3b7e6def27da844fdd151fee356831057ae182d43d16fb6698e051e1"
+        },
+        "ar": {
+          "sourceHashAtSync": "c66e9b7a3b7e6def27da844fdd151fee356831057ae182d43d16fb6698e051e1"
+        }
+      }
+    },
+    "_navbar.md": {
+      "en": "121fd9406b3b701947687124eecfea318ce86c56e0b6f8f4954a9b4abc0ec883",
+      "locales": {
+        "ja": {
+          "sourceHashAtSync": "121fd9406b3b701947687124eecfea318ce86c56e0b6f8f4954a9b4abc0ec883"
+        },
+        "ko": {
+          "sourceHashAtSync": "121fd9406b3b701947687124eecfea318ce86c56e0b6f8f4954a9b4abc0ec883"
+        },
+        "es": {
+          "sourceHashAtSync": "121fd9406b3b701947687124eecfea318ce86c56e0b6f8f4954a9b4abc0ec883"
+        },
+        "pt": {
+          "sourceHashAtSync": "121fd9406b3b701947687124eecfea318ce86c56e0b6f8f4954a9b4abc0ec883"
+        },
+        "it": {
+          "sourceHashAtSync": "121fd9406b3b701947687124eecfea318ce86c56e0b6f8f4954a9b4abc0ec883"
+        },
+        "de": {
+          "sourceHashAtSync": "121fd9406b3b701947687124eecfea318ce86c56e0b6f8f4954a9b4abc0ec883"
+        },
+        "fr": {
+          "sourceHashAtSync": "121fd9406b3b701947687124eecfea318ce86c56e0b6f8f4954a9b4abc0ec883"
+        },
+        "tr": {
+          "sourceHashAtSync": "121fd9406b3b701947687124eecfea318ce86c56e0b6f8f4954a9b4abc0ec883"
+        },
+        "ru": {
+          "sourceHashAtSync": "121fd9406b3b701947687124eecfea318ce86c56e0b6f8f4954a9b4abc0ec883"
+        },
+        "id": {
+          "sourceHashAtSync": "121fd9406b3b701947687124eecfea318ce86c56e0b6f8f4954a9b4abc0ec883"
+        },
+        "ar": {
+          "sourceHashAtSync": "121fd9406b3b701947687124eecfea318ce86c56e0b6f8f4954a9b4abc0ec883"
+        },
+        "en": {
+          "sourceHashAtSync": "121fd9406b3b701947687124eecfea318ce86c56e0b6f8f4954a9b4abc0ec883"
+        }
+      }
+    },
+    "_sidebar.md": {
+      "en": "b6fd3bf9acda353bb7484de769f359cf97dd75789c4d906aaceb3577cf5a9f62",
+      "locales": {
+        "ja": {
+          "sourceHashAtSync": "b6fd3bf9acda353bb7484de769f359cf97dd75789c4d906aaceb3577cf5a9f62"
+        },
+        "ko": {
+          "sourceHashAtSync": "b6fd3bf9acda353bb7484de769f359cf97dd75789c4d906aaceb3577cf5a9f62"
+        },
+        "es": {
+          "sourceHashAtSync": "b6fd3bf9acda353bb7484de769f359cf97dd75789c4d906aaceb3577cf5a9f62"
+        },
+        "pt": {
+          "sourceHashAtSync": "b6fd3bf9acda353bb7484de769f359cf97dd75789c4d906aaceb3577cf5a9f62"
+        },
+        "it": {
+          "sourceHashAtSync": "b6fd3bf9acda353bb7484de769f359cf97dd75789c4d906aaceb3577cf5a9f62"
+        },
+        "de": {
+          "sourceHashAtSync": "b6fd3bf9acda353bb7484de769f359cf97dd75789c4d906aaceb3577cf5a9f62"
+        },
+        "fr": {
+          "sourceHashAtSync": "b6fd3bf9acda353bb7484de769f359cf97dd75789c4d906aaceb3577cf5a9f62"
+        },
+        "tr": {
+          "sourceHashAtSync": "b6fd3bf9acda353bb7484de769f359cf97dd75789c4d906aaceb3577cf5a9f62"
+        },
+        "ru": {
+          "sourceHashAtSync": "b6fd3bf9acda353bb7484de769f359cf97dd75789c4d906aaceb3577cf5a9f62"
+        },
+        "id": {
+          "sourceHashAtSync": "b6fd3bf9acda353bb7484de769f359cf97dd75789c4d906aaceb3577cf5a9f62"
+        },
+        "ar": {
+          "sourceHashAtSync": "b6fd3bf9acda353bb7484de769f359cf97dd75789c4d906aaceb3577cf5a9f62"
+        }
+      }
+    },
+    "category.md": {
+      "en": "fc0864a1fba92bca6ec103d1da1224037a80754c7f41b4842392c177c5b809e5",
+      "locales": {
+        "ja": {
+          "sourceHashAtSync": "fc0864a1fba92bca6ec103d1da1224037a80754c7f41b4842392c177c5b809e5"
+        },
+        "ko": {
+          "sourceHashAtSync": "fc0864a1fba92bca6ec103d1da1224037a80754c7f41b4842392c177c5b809e5"
+        },
+        "es": {
+          "sourceHashAtSync": "fc0864a1fba92bca6ec103d1da1224037a80754c7f41b4842392c177c5b809e5"
+        },
+        "pt": {
+          "sourceHashAtSync": "fc0864a1fba92bca6ec103d1da1224037a80754c7f41b4842392c177c5b809e5"
+        },
+        "it": {
+          "sourceHashAtSync": "fc0864a1fba92bca6ec103d1da1224037a80754c7f41b4842392c177c5b809e5"
+        },
+        "de": {
+          "sourceHashAtSync": "fc0864a1fba92bca6ec103d1da1224037a80754c7f41b4842392c177c5b809e5"
+        },
+        "fr": {
+          "sourceHashAtSync": "fc0864a1fba92bca6ec103d1da1224037a80754c7f41b4842392c177c5b809e5"
+        },
+        "tr": {
+          "sourceHashAtSync": "fc0864a1fba92bca6ec103d1da1224037a80754c7f41b4842392c177c5b809e5"
+        },
+        "ru": {
+          "sourceHashAtSync": "fc0864a1fba92bca6ec103d1da1224037a80754c7f41b4842392c177c5b809e5"
+        },
+        "id": {
+          "sourceHashAtSync": "fc0864a1fba92bca6ec103d1da1224037a80754c7f41b4842392c177c5b809e5"
+        },
+        "ar": {
+          "sourceHashAtSync": "fc0864a1fba92bca6ec103d1da1224037a80754c7f41b4842392c177c5b809e5"
+        }
+      }
+    },
+    "credit.md": {
+      "en": "f9de90c9fafb2f04cc9894ab4e3c4e4cb9b9bad9c1625b3ff31de1990f49fa9e",
+      "locales": {
+        "ja": {
+          "sourceHashAtSync": "f9de90c9fafb2f04cc9894ab4e3c4e4cb9b9bad9c1625b3ff31de1990f49fa9e"
+        },
+        "ko": {
+          "sourceHashAtSync": "f9de90c9fafb2f04cc9894ab4e3c4e4cb9b9bad9c1625b3ff31de1990f49fa9e"
+        },
+        "es": {
+          "sourceHashAtSync": "f9de90c9fafb2f04cc9894ab4e3c4e4cb9b9bad9c1625b3ff31de1990f49fa9e"
+        },
+        "pt": {
+          "sourceHashAtSync": "f9de90c9fafb2f04cc9894ab4e3c4e4cb9b9bad9c1625b3ff31de1990f49fa9e"
+        },
+        "it": {
+          "sourceHashAtSync": "f9de90c9fafb2f04cc9894ab4e3c4e4cb9b9bad9c1625b3ff31de1990f49fa9e"
+        },
+        "de": {
+          "sourceHashAtSync": "f9de90c9fafb2f04cc9894ab4e3c4e4cb9b9bad9c1625b3ff31de1990f49fa9e"
+        },
+        "fr": {
+          "sourceHashAtSync": "f9de90c9fafb2f04cc9894ab4e3c4e4cb9b9bad9c1625b3ff31de1990f49fa9e"
+        },
+        "tr": {
+          "sourceHashAtSync": "f9de90c9fafb2f04cc9894ab4e3c4e4cb9b9bad9c1625b3ff31de1990f49fa9e"
+        },
+        "ru": {
+          "sourceHashAtSync": "f9de90c9fafb2f04cc9894ab4e3c4e4cb9b9bad9c1625b3ff31de1990f49fa9e"
+        },
+        "id": {
+          "sourceHashAtSync": "f9de90c9fafb2f04cc9894ab4e3c4e4cb9b9bad9c1625b3ff31de1990f49fa9e"
+        },
+        "ar": {
+          "sourceHashAtSync": "f9de90c9fafb2f04cc9894ab4e3c4e4cb9b9bad9c1625b3ff31de1990f49fa9e"
+        }
+      }
+    },
+    "example/wordle/README.md": {
+      "en": "7374eb2749beed19e156404aaa9bd8f9394b2c39eaa913503f9bd916c4fad1bf",
+      "locales": {
+        "ko": {
+          "sourceHashAtSync": "7374eb2749beed19e156404aaa9bd8f9394b2c39eaa913503f9bd916c4fad1bf"
+        },
+        "ja": {
+          "sourceHashAtSync": "7374eb2749beed19e156404aaa9bd8f9394b2c39eaa913503f9bd916c4fad1bf"
+        },
+        "es": {
+          "sourceHashAtSync": "7374eb2749beed19e156404aaa9bd8f9394b2c39eaa913503f9bd916c4fad1bf"
+        },
+        "de": {
+          "sourceHashAtSync": "7374eb2749beed19e156404aaa9bd8f9394b2c39eaa913503f9bd916c4fad1bf"
+        },
+        "fr": {
+          "sourceHashAtSync": "7374eb2749beed19e156404aaa9bd8f9394b2c39eaa913503f9bd916c4fad1bf"
+        },
+        "it": {
+          "sourceHashAtSync": "7374eb2749beed19e156404aaa9bd8f9394b2c39eaa913503f9bd916c4fad1bf"
+        },
+        "pt": {
+          "sourceHashAtSync": "7374eb2749beed19e156404aaa9bd8f9394b2c39eaa913503f9bd916c4fad1bf"
+        },
+        "tr": {
+          "sourceHashAtSync": "7374eb2749beed19e156404aaa9bd8f9394b2c39eaa913503f9bd916c4fad1bf"
+        },
+        "ru": {
+          "sourceHashAtSync": "7374eb2749beed19e156404aaa9bd8f9394b2c39eaa913503f9bd916c4fad1bf"
+        },
+        "id": {
+          "sourceHashAtSync": "7374eb2749beed19e156404aaa9bd8f9394b2c39eaa913503f9bd916c4fad1bf"
+        },
+        "ar": {
+          "sourceHashAtSync": "7374eb2749beed19e156404aaa9bd8f9394b2c39eaa913503f9bd916c4fad1bf"
+        }
+      }
+    },
+    "example/wordle/index.html": {
+      "en": "9a4aefe8d510f2ee4dba1cd59dfd6389f4f285dc253a22fa161457845202bf3f",
+      "locales": {
+        "ko": {
+          "sourceHashAtSync": "9a4aefe8d510f2ee4dba1cd59dfd6389f4f285dc253a22fa161457845202bf3f"
+        },
+        "ja": {
+          "sourceHashAtSync": "9a4aefe8d510f2ee4dba1cd59dfd6389f4f285dc253a22fa161457845202bf3f"
+        },
+        "es": {
+          "sourceHashAtSync": "9a4aefe8d510f2ee4dba1cd59dfd6389f4f285dc253a22fa161457845202bf3f"
+        },
+        "de": {
+          "sourceHashAtSync": "9a4aefe8d510f2ee4dba1cd59dfd6389f4f285dc253a22fa161457845202bf3f"
+        },
+        "fr": {
+          "sourceHashAtSync": "9a4aefe8d510f2ee4dba1cd59dfd6389f4f285dc253a22fa161457845202bf3f"
+        },
+        "it": {
+          "sourceHashAtSync": "9a4aefe8d510f2ee4dba1cd59dfd6389f4f285dc253a22fa161457845202bf3f"
+        },
+        "pt": {
+          "sourceHashAtSync": "9a4aefe8d510f2ee4dba1cd59dfd6389f4f285dc253a22fa161457845202bf3f"
+        },
+        "tr": {
+          "sourceHashAtSync": "9a4aefe8d510f2ee4dba1cd59dfd6389f4f285dc253a22fa161457845202bf3f"
+        },
+        "ru": {
+          "sourceHashAtSync": "9a4aefe8d510f2ee4dba1cd59dfd6389f4f285dc253a22fa161457845202bf3f"
+        },
+        "id": {
+          "sourceHashAtSync": "9a4aefe8d510f2ee4dba1cd59dfd6389f4f285dc253a22fa161457845202bf3f"
+        },
+        "ar": {
+          "sourceHashAtSync": "9a4aefe8d510f2ee4dba1cd59dfd6389f4f285dc253a22fa161457845202bf3f"
+        }
+      }
+    },
+    "feature/189.md": {
+      "en": "0d3b2e35bc9054292e4bdf3716065b3211ac7ffcdd61c12dfd26089247232e7b",
+      "locales": {
+        "es": {
+          "sourceHashAtSync": "0d3b2e35bc9054292e4bdf3716065b3211ac7ffcdd61c12dfd26089247232e7b"
+        },
+        "ja": {
+          "sourceHashAtSync": "0d3b2e35bc9054292e4bdf3716065b3211ac7ffcdd61c12dfd26089247232e7b"
+        },
+        "ko": {
+          "sourceHashAtSync": "0d3b2e35bc9054292e4bdf3716065b3211ac7ffcdd61c12dfd26089247232e7b"
+        },
+        "pt": {
+          "sourceHashAtSync": "0d3b2e35bc9054292e4bdf3716065b3211ac7ffcdd61c12dfd26089247232e7b"
+        },
+        "it": {
+          "sourceHashAtSync": "0d3b2e35bc9054292e4bdf3716065b3211ac7ffcdd61c12dfd26089247232e7b"
+        },
+        "fr": {
+          "sourceHashAtSync": "0d3b2e35bc9054292e4bdf3716065b3211ac7ffcdd61c12dfd26089247232e7b"
+        },
+        "de": {
+          "sourceHashAtSync": "0d3b2e35bc9054292e4bdf3716065b3211ac7ffcdd61c12dfd26089247232e7b"
+        },
+        "ar": {
+          "sourceHashAtSync": "0d3b2e35bc9054292e4bdf3716065b3211ac7ffcdd61c12dfd26089247232e7b"
+        },
+        "tr": {
+          "sourceHashAtSync": "0d3b2e35bc9054292e4bdf3716065b3211ac7ffcdd61c12dfd26089247232e7b"
+        },
+        "ru": {
+          "sourceHashAtSync": "0d3b2e35bc9054292e4bdf3716065b3211ac7ffcdd61c12dfd26089247232e7b"
+        },
+        "id": {
+          "sourceHashAtSync": "0d3b2e35bc9054292e4bdf3716065b3211ac7ffcdd61c12dfd26089247232e7b"
+        }
+      }
+    },
+    "feature/191.md": {
+      "en": "4aebfdf3761066e2e5e59308b945327bbbf6c21864fefade7ddc0c25cbfd740f",
+      "locales": {
+        "es": {
+          "sourceHashAtSync": "4aebfdf3761066e2e5e59308b945327bbbf6c21864fefade7ddc0c25cbfd740f"
+        },
+        "ja": {
+          "sourceHashAtSync": "4aebfdf3761066e2e5e59308b945327bbbf6c21864fefade7ddc0c25cbfd740f"
+        },
+        "ko": {
+          "sourceHashAtSync": "4aebfdf3761066e2e5e59308b945327bbbf6c21864fefade7ddc0c25cbfd740f"
+        },
+        "pt": {
+          "sourceHashAtSync": "4aebfdf3761066e2e5e59308b945327bbbf6c21864fefade7ddc0c25cbfd740f"
+        },
+        "it": {
+          "sourceHashAtSync": "4aebfdf3761066e2e5e59308b945327bbbf6c21864fefade7ddc0c25cbfd740f"
+        },
+        "fr": {
+          "sourceHashAtSync": "4aebfdf3761066e2e5e59308b945327bbbf6c21864fefade7ddc0c25cbfd740f"
+        },
+        "de": {
+          "sourceHashAtSync": "4aebfdf3761066e2e5e59308b945327bbbf6c21864fefade7ddc0c25cbfd740f"
+        },
+        "ar": {
+          "sourceHashAtSync": "4aebfdf3761066e2e5e59308b945327bbbf6c21864fefade7ddc0c25cbfd740f"
+        },
+        "tr": {
+          "sourceHashAtSync": "4aebfdf3761066e2e5e59308b945327bbbf6c21864fefade7ddc0c25cbfd740f"
+        },
+        "ru": {
+          "sourceHashAtSync": "4aebfdf3761066e2e5e59308b945327bbbf6c21864fefade7ddc0c25cbfd740f"
+        },
+        "id": {
+          "sourceHashAtSync": "4aebfdf3761066e2e5e59308b945327bbbf6c21864fefade7ddc0c25cbfd740f"
+        }
+      }
+    },
+    "feature/192.md": {
+      "en": "181eae94b3be11b37b27f047ccb39dbb8b06c9893c620a82a7eaa9fc676942dd",
+      "locales": {
+        "es": {
+          "sourceHashAtSync": "181eae94b3be11b37b27f047ccb39dbb8b06c9893c620a82a7eaa9fc676942dd"
+        },
+        "ja": {
+          "sourceHashAtSync": "181eae94b3be11b37b27f047ccb39dbb8b06c9893c620a82a7eaa9fc676942dd"
+        },
+        "ko": {
+          "sourceHashAtSync": "181eae94b3be11b37b27f047ccb39dbb8b06c9893c620a82a7eaa9fc676942dd"
+        },
+        "pt": {
+          "sourceHashAtSync": "181eae94b3be11b37b27f047ccb39dbb8b06c9893c620a82a7eaa9fc676942dd"
+        },
+        "it": {
+          "sourceHashAtSync": "181eae94b3be11b37b27f047ccb39dbb8b06c9893c620a82a7eaa9fc676942dd"
+        },
+        "fr": {
+          "sourceHashAtSync": "181eae94b3be11b37b27f047ccb39dbb8b06c9893c620a82a7eaa9fc676942dd"
+        },
+        "de": {
+          "sourceHashAtSync": "181eae94b3be11b37b27f047ccb39dbb8b06c9893c620a82a7eaa9fc676942dd"
+        },
+        "ar": {
+          "sourceHashAtSync": "181eae94b3be11b37b27f047ccb39dbb8b06c9893c620a82a7eaa9fc676942dd"
+        },
+        "tr": {
+          "sourceHashAtSync": "181eae94b3be11b37b27f047ccb39dbb8b06c9893c620a82a7eaa9fc676942dd"
+        },
+        "ru": {
+          "sourceHashAtSync": "181eae94b3be11b37b27f047ccb39dbb8b06c9893c620a82a7eaa9fc676942dd"
+        },
+        "id": {
+          "sourceHashAtSync": "181eae94b3be11b37b27f047ccb39dbb8b06c9893c620a82a7eaa9fc676942dd"
+        }
+      }
+    },
+    "feature/193.md": {
+      "en": "2520bcc7c36399e0bdb4a37d0c5db8d624254b366340d98788b5767710319f0b",
+      "locales": {
+        "es": {
+          "sourceHashAtSync": "2520bcc7c36399e0bdb4a37d0c5db8d624254b366340d98788b5767710319f0b"
+        },
+        "ja": {
+          "sourceHashAtSync": "2520bcc7c36399e0bdb4a37d0c5db8d624254b366340d98788b5767710319f0b"
+        },
+        "ko": {
+          "sourceHashAtSync": "2520bcc7c36399e0bdb4a37d0c5db8d624254b366340d98788b5767710319f0b"
+        },
+        "pt": {
+          "sourceHashAtSync": "2520bcc7c36399e0bdb4a37d0c5db8d624254b366340d98788b5767710319f0b"
+        },
+        "it": {
+          "sourceHashAtSync": "2520bcc7c36399e0bdb4a37d0c5db8d624254b366340d98788b5767710319f0b"
+        },
+        "fr": {
+          "sourceHashAtSync": "2520bcc7c36399e0bdb4a37d0c5db8d624254b366340d98788b5767710319f0b"
+        },
+        "de": {
+          "sourceHashAtSync": "2520bcc7c36399e0bdb4a37d0c5db8d624254b366340d98788b5767710319f0b"
+        },
+        "ar": {
+          "sourceHashAtSync": "2520bcc7c36399e0bdb4a37d0c5db8d624254b366340d98788b5767710319f0b"
+        },
+        "tr": {
+          "sourceHashAtSync": "2520bcc7c36399e0bdb4a37d0c5db8d624254b366340d98788b5767710319f0b"
+        },
+        "ru": {
+          "sourceHashAtSync": "2520bcc7c36399e0bdb4a37d0c5db8d624254b366340d98788b5767710319f0b"
+        },
+        "id": {
+          "sourceHashAtSync": "2520bcc7c36399e0bdb4a37d0c5db8d624254b366340d98788b5767710319f0b"
+        }
+      }
+    },
+    "feature/194.md": {
+      "en": "153c4269ead3c30c58cc31a13b158b69a4f0d3bb4fe47e2bb15fc1ea132ea399",
+      "locales": {
+        "es": {
+          "sourceHashAtSync": "153c4269ead3c30c58cc31a13b158b69a4f0d3bb4fe47e2bb15fc1ea132ea399"
+        },
+        "ja": {
+          "sourceHashAtSync": "153c4269ead3c30c58cc31a13b158b69a4f0d3bb4fe47e2bb15fc1ea132ea399"
+        },
+        "ko": {
+          "sourceHashAtSync": "153c4269ead3c30c58cc31a13b158b69a4f0d3bb4fe47e2bb15fc1ea132ea399"
+        },
+        "pt": {
+          "sourceHashAtSync": "153c4269ead3c30c58cc31a13b158b69a4f0d3bb4fe47e2bb15fc1ea132ea399"
+        },
+        "it": {
+          "sourceHashAtSync": "153c4269ead3c30c58cc31a13b158b69a4f0d3bb4fe47e2bb15fc1ea132ea399"
+        },
+        "fr": {
+          "sourceHashAtSync": "153c4269ead3c30c58cc31a13b158b69a4f0d3bb4fe47e2bb15fc1ea132ea399"
+        },
+        "de": {
+          "sourceHashAtSync": "153c4269ead3c30c58cc31a13b158b69a4f0d3bb4fe47e2bb15fc1ea132ea399"
+        },
+        "ar": {
+          "sourceHashAtSync": "153c4269ead3c30c58cc31a13b158b69a4f0d3bb4fe47e2bb15fc1ea132ea399"
+        },
+        "tr": {
+          "sourceHashAtSync": "153c4269ead3c30c58cc31a13b158b69a4f0d3bb4fe47e2bb15fc1ea132ea399"
+        },
+        "ru": {
+          "sourceHashAtSync": "153c4269ead3c30c58cc31a13b158b69a4f0d3bb4fe47e2bb15fc1ea132ea399"
+        },
+        "id": {
+          "sourceHashAtSync": "153c4269ead3c30c58cc31a13b158b69a4f0d3bb4fe47e2bb15fc1ea132ea399"
+        }
+      }
+    },
+    "feature/198.md": {
+      "en": "5e59141719124d09b0ee4939a253f696d5cdb2f1ff91d967bf3bbae11eb38a03",
+      "locales": {
+        "es": {
+          "sourceHashAtSync": "5e59141719124d09b0ee4939a253f696d5cdb2f1ff91d967bf3bbae11eb38a03"
+        },
+        "ja": {
+          "sourceHashAtSync": "5e59141719124d09b0ee4939a253f696d5cdb2f1ff91d967bf3bbae11eb38a03"
+        },
+        "ko": {
+          "sourceHashAtSync": "5e59141719124d09b0ee4939a253f696d5cdb2f1ff91d967bf3bbae11eb38a03"
+        },
+        "pt": {
+          "sourceHashAtSync": "5e59141719124d09b0ee4939a253f696d5cdb2f1ff91d967bf3bbae11eb38a03"
+        },
+        "it": {
+          "sourceHashAtSync": "5e59141719124d09b0ee4939a253f696d5cdb2f1ff91d967bf3bbae11eb38a03"
+        },
+        "fr": {
+          "sourceHashAtSync": "5e59141719124d09b0ee4939a253f696d5cdb2f1ff91d967bf3bbae11eb38a03"
+        },
+        "de": {
+          "sourceHashAtSync": "5e59141719124d09b0ee4939a253f696d5cdb2f1ff91d967bf3bbae11eb38a03"
+        },
+        "ar": {
+          "sourceHashAtSync": "5e59141719124d09b0ee4939a253f696d5cdb2f1ff91d967bf3bbae11eb38a03"
+        },
+        "tr": {
+          "sourceHashAtSync": "5e59141719124d09b0ee4939a253f696d5cdb2f1ff91d967bf3bbae11eb38a03"
+        },
+        "ru": {
+          "sourceHashAtSync": "5e59141719124d09b0ee4939a253f696d5cdb2f1ff91d967bf3bbae11eb38a03"
+        },
+        "id": {
+          "sourceHashAtSync": "5e59141719124d09b0ee4939a253f696d5cdb2f1ff91d967bf3bbae11eb38a03"
+        }
+      }
+    },
+    "feature/ulives.md": {
+      "en": "7769db87230e609ca989606ec4ac8eb7e6b668c75701e7e4a717b3c5e2d9c94d",
+      "locales": {
+        "es": {
+          "sourceHashAtSync": "7769db87230e609ca989606ec4ac8eb7e6b668c75701e7e4a717b3c5e2d9c94d"
+        },
+        "ja": {
+          "sourceHashAtSync": "7769db87230e609ca989606ec4ac8eb7e6b668c75701e7e4a717b3c5e2d9c94d"
+        },
+        "ko": {
+          "sourceHashAtSync": "7769db87230e609ca989606ec4ac8eb7e6b668c75701e7e4a717b3c5e2d9c94d"
+        },
+        "pt": {
+          "sourceHashAtSync": "7769db87230e609ca989606ec4ac8eb7e6b668c75701e7e4a717b3c5e2d9c94d"
+        },
+        "it": {
+          "sourceHashAtSync": "7769db87230e609ca989606ec4ac8eb7e6b668c75701e7e4a717b3c5e2d9c94d"
+        },
+        "fr": {
+          "sourceHashAtSync": "7769db87230e609ca989606ec4ac8eb7e6b668c75701e7e4a717b3c5e2d9c94d"
+        },
+        "de": {
+          "sourceHashAtSync": "7769db87230e609ca989606ec4ac8eb7e6b668c75701e7e4a717b3c5e2d9c94d"
+        },
+        "ar": {
+          "sourceHashAtSync": "7769db87230e609ca989606ec4ac8eb7e6b668c75701e7e4a717b3c5e2d9c94d"
+        },
+        "tr": {
+          "sourceHashAtSync": "7769db87230e609ca989606ec4ac8eb7e6b668c75701e7e4a717b3c5e2d9c94d"
+        },
+        "ru": {
+          "sourceHashAtSync": "7769db87230e609ca989606ec4ac8eb7e6b668c75701e7e4a717b3c5e2d9c94d"
+        },
+        "id": {
+          "sourceHashAtSync": "7769db87230e609ca989606ec4ac8eb7e6b668c75701e7e4a717b3c5e2d9c94d"
+        }
+      }
+    },
+    "guide/api.md": {
+      "en": "4a0f9444bcbfa21a48aad8cb3b8a4596a13df11ea60d9c6ed96e0e2ec6ca2050",
+      "locales": {
+        "ko": {
+          "sourceHashAtSync": "4a0f9444bcbfa21a48aad8cb3b8a4596a13df11ea60d9c6ed96e0e2ec6ca2050"
+        },
+        "ja": {
+          "sourceHashAtSync": "4a0f9444bcbfa21a48aad8cb3b8a4596a13df11ea60d9c6ed96e0e2ec6ca2050"
+        },
+        "es": {
+          "sourceHashAtSync": "4a0f9444bcbfa21a48aad8cb3b8a4596a13df11ea60d9c6ed96e0e2ec6ca2050"
+        },
+        "de": {
+          "sourceHashAtSync": "4a0f9444bcbfa21a48aad8cb3b8a4596a13df11ea60d9c6ed96e0e2ec6ca2050"
+        },
+        "fr": {
+          "sourceHashAtSync": "4a0f9444bcbfa21a48aad8cb3b8a4596a13df11ea60d9c6ed96e0e2ec6ca2050"
+        },
+        "it": {
+          "sourceHashAtSync": "4a0f9444bcbfa21a48aad8cb3b8a4596a13df11ea60d9c6ed96e0e2ec6ca2050"
+        },
+        "pt": {
+          "sourceHashAtSync": "4a0f9444bcbfa21a48aad8cb3b8a4596a13df11ea60d9c6ed96e0e2ec6ca2050"
+        },
+        "tr": {
+          "sourceHashAtSync": "4a0f9444bcbfa21a48aad8cb3b8a4596a13df11ea60d9c6ed96e0e2ec6ca2050"
+        },
+        "ru": {
+          "sourceHashAtSync": "4a0f9444bcbfa21a48aad8cb3b8a4596a13df11ea60d9c6ed96e0e2ec6ca2050"
+        },
+        "id": {
+          "sourceHashAtSync": "4a0f9444bcbfa21a48aad8cb3b8a4596a13df11ea60d9c6ed96e0e2ec6ca2050"
+        },
+        "ar": {
+          "sourceHashAtSync": "4a0f9444bcbfa21a48aad8cb3b8a4596a13df11ea60d9c6ed96e0e2ec6ca2050"
+        }
+      }
+    },
+    "guide/api_cloud.md": {
+      "en": "440f271f65893d083bb0495ac23b102b3937b8cc5c3eaac019a3cc9fb49aa0c9",
+      "locales": {
+        "ko": {
+          "sourceHashAtSync": "440f271f65893d083bb0495ac23b102b3937b8cc5c3eaac019a3cc9fb49aa0c9"
+        },
+        "es": {
+          "sourceHashAtSync": "440f271f65893d083bb0495ac23b102b3937b8cc5c3eaac019a3cc9fb49aa0c9"
+        },
+        "ja": {
+          "sourceHashAtSync": "440f271f65893d083bb0495ac23b102b3937b8cc5c3eaac019a3cc9fb49aa0c9"
+        },
+        "de": {
+          "sourceHashAtSync": "440f271f65893d083bb0495ac23b102b3937b8cc5c3eaac019a3cc9fb49aa0c9"
+        },
+        "fr": {
+          "sourceHashAtSync": "440f271f65893d083bb0495ac23b102b3937b8cc5c3eaac019a3cc9fb49aa0c9"
+        },
+        "it": {
+          "sourceHashAtSync": "440f271f65893d083bb0495ac23b102b3937b8cc5c3eaac019a3cc9fb49aa0c9"
+        },
+        "pt": {
+          "sourceHashAtSync": "440f271f65893d083bb0495ac23b102b3937b8cc5c3eaac019a3cc9fb49aa0c9"
+        },
+        "ar": {
+          "sourceHashAtSync": "440f271f65893d083bb0495ac23b102b3937b8cc5c3eaac019a3cc9fb49aa0c9"
+        },
+        "tr": {
+          "sourceHashAtSync": "440f271f65893d083bb0495ac23b102b3937b8cc5c3eaac019a3cc9fb49aa0c9"
+        },
+        "ru": {
+          "sourceHashAtSync": "440f271f65893d083bb0495ac23b102b3937b8cc5c3eaac019a3cc9fb49aa0c9"
+        },
+        "id": {
+          "sourceHashAtSync": "440f271f65893d083bb0495ac23b102b3937b8cc5c3eaac019a3cc9fb49aa0c9"
+        }
+      }
+    },
+    "guide/api_desktop.md": {
+      "en": "af5f59dea73e0bef11d5d392dc1727c95240fbd50ee954d1005bb0e130a83c65",
+      "locales": {
+        "ko": {
+          "sourceHashAtSync": "af5f59dea73e0bef11d5d392dc1727c95240fbd50ee954d1005bb0e130a83c65"
+        },
+        "es": {
+          "sourceHashAtSync": "af5f59dea73e0bef11d5d392dc1727c95240fbd50ee954d1005bb0e130a83c65"
+        },
+        "ja": {
+          "sourceHashAtSync": "af5f59dea73e0bef11d5d392dc1727c95240fbd50ee954d1005bb0e130a83c65"
+        },
+        "de": {
+          "sourceHashAtSync": "af5f59dea73e0bef11d5d392dc1727c95240fbd50ee954d1005bb0e130a83c65"
+        },
+        "fr": {
+          "sourceHashAtSync": "af5f59dea73e0bef11d5d392dc1727c95240fbd50ee954d1005bb0e130a83c65"
+        },
+        "it": {
+          "sourceHashAtSync": "af5f59dea73e0bef11d5d392dc1727c95240fbd50ee954d1005bb0e130a83c65"
+        },
+        "pt": {
+          "sourceHashAtSync": "af5f59dea73e0bef11d5d392dc1727c95240fbd50ee954d1005bb0e130a83c65"
+        },
+        "ar": {
+          "sourceHashAtSync": "af5f59dea73e0bef11d5d392dc1727c95240fbd50ee954d1005bb0e130a83c65"
+        },
+        "tr": {
+          "sourceHashAtSync": "af5f59dea73e0bef11d5d392dc1727c95240fbd50ee954d1005bb0e130a83c65"
+        },
+        "ru": {
+          "sourceHashAtSync": "af5f59dea73e0bef11d5d392dc1727c95240fbd50ee954d1005bb0e130a83c65"
+        },
+        "id": {
+          "sourceHashAtSync": "af5f59dea73e0bef11d5d392dc1727c95240fbd50ee954d1005bb0e130a83c65"
+        }
+      }
+    },
+    "guide/api_mcp.md": {
+      "en": "793a19d805153d9d518e731bbdd0c66cd732c137fae081c1244ee650a2129a93",
+      "locales": {
+        "ko": {
+          "sourceHashAtSync": "793a19d805153d9d518e731bbdd0c66cd732c137fae081c1244ee650a2129a93"
+        },
+        "es": {
+          "sourceHashAtSync": "793a19d805153d9d518e731bbdd0c66cd732c137fae081c1244ee650a2129a93"
+        },
+        "ja": {
+          "sourceHashAtSync": "793a19d805153d9d518e731bbdd0c66cd732c137fae081c1244ee650a2129a93"
+        },
+        "de": {
+          "sourceHashAtSync": "793a19d805153d9d518e731bbdd0c66cd732c137fae081c1244ee650a2129a93"
+        },
+        "fr": {
+          "sourceHashAtSync": "793a19d805153d9d518e731bbdd0c66cd732c137fae081c1244ee650a2129a93"
+        },
+        "it": {
+          "sourceHashAtSync": "793a19d805153d9d518e731bbdd0c66cd732c137fae081c1244ee650a2129a93"
+        },
+        "pt": {
+          "sourceHashAtSync": "793a19d805153d9d518e731bbdd0c66cd732c137fae081c1244ee650a2129a93"
+        },
+        "ar": {
+          "sourceHashAtSync": "793a19d805153d9d518e731bbdd0c66cd732c137fae081c1244ee650a2129a93"
+        },
+        "tr": {
+          "sourceHashAtSync": "793a19d805153d9d518e731bbdd0c66cd732c137fae081c1244ee650a2129a93"
+        },
+        "ru": {
+          "sourceHashAtSync": "793a19d805153d9d518e731bbdd0c66cd732c137fae081c1244ee650a2129a93"
+        },
+        "id": {
+          "sourceHashAtSync": "793a19d805153d9d518e731bbdd0c66cd732c137fae081c1244ee650a2129a93"
+        }
+      }
+    },
+    "guide/background_running.md": {
+      "en": "d40c7f4f6c28291e9028da0324f2e99b33b819595ad62d2c72af67ee803c54fc",
+      "locales": {
+        "es": {
+          "sourceHashAtSync": "d40c7f4f6c28291e9028da0324f2e99b33b819595ad62d2c72af67ee803c54fc"
+        },
+        "ko": {
+          "sourceHashAtSync": "d40c7f4f6c28291e9028da0324f2e99b33b819595ad62d2c72af67ee803c54fc"
+        },
+        "ja": {
+          "sourceHashAtSync": "d40c7f4f6c28291e9028da0324f2e99b33b819595ad62d2c72af67ee803c54fc"
+        },
+        "fr": {
+          "sourceHashAtSync": "d40c7f4f6c28291e9028da0324f2e99b33b819595ad62d2c72af67ee803c54fc"
+        },
+        "de": {
+          "sourceHashAtSync": "d40c7f4f6c28291e9028da0324f2e99b33b819595ad62d2c72af67ee803c54fc"
+        },
+        "it": {
+          "sourceHashAtSync": "d40c7f4f6c28291e9028da0324f2e99b33b819595ad62d2c72af67ee803c54fc"
+        },
+        "pt": {
+          "sourceHashAtSync": "d40c7f4f6c28291e9028da0324f2e99b33b819595ad62d2c72af67ee803c54fc"
+        },
+        "tr": {
+          "sourceHashAtSync": "d40c7f4f6c28291e9028da0324f2e99b33b819595ad62d2c72af67ee803c54fc"
+        },
+        "ru": {
+          "sourceHashAtSync": "d40c7f4f6c28291e9028da0324f2e99b33b819595ad62d2c72af67ee803c54fc"
+        },
+        "id": {
+          "sourceHashAtSync": "d40c7f4f6c28291e9028da0324f2e99b33b819595ad62d2c72af67ee803c54fc"
+        },
+        "ar": {
+          "sourceHashAtSync": "d40c7f4f6c28291e9028da0324f2e99b33b819595ad62d2c72af67ee803c54fc"
+        }
+      }
+    },
+    "guide/backup.md": {
+      "en": "8ca60c871a4ce799907d5b13ae6233b3230d80eedb5c978c99f373428a1ddc9b",
+      "locales": {
+        "es": {
+          "sourceHashAtSync": "8ca60c871a4ce799907d5b13ae6233b3230d80eedb5c978c99f373428a1ddc9b"
+        },
+        "ko": {
+          "sourceHashAtSync": "8ca60c871a4ce799907d5b13ae6233b3230d80eedb5c978c99f373428a1ddc9b"
+        },
+        "ja": {
+          "sourceHashAtSync": "8ca60c871a4ce799907d5b13ae6233b3230d80eedb5c978c99f373428a1ddc9b"
+        },
+        "fr": {
+          "sourceHashAtSync": "8ca60c871a4ce799907d5b13ae6233b3230d80eedb5c978c99f373428a1ddc9b"
+        },
+        "de": {
+          "sourceHashAtSync": "8ca60c871a4ce799907d5b13ae6233b3230d80eedb5c978c99f373428a1ddc9b"
+        },
+        "it": {
+          "sourceHashAtSync": "8ca60c871a4ce799907d5b13ae6233b3230d80eedb5c978c99f373428a1ddc9b"
+        },
+        "pt": {
+          "sourceHashAtSync": "8ca60c871a4ce799907d5b13ae6233b3230d80eedb5c978c99f373428a1ddc9b"
+        },
+        "tr": {
+          "sourceHashAtSync": "8ca60c871a4ce799907d5b13ae6233b3230d80eedb5c978c99f373428a1ddc9b"
+        },
+        "ru": {
+          "sourceHashAtSync": "8ca60c871a4ce799907d5b13ae6233b3230d80eedb5c978c99f373428a1ddc9b"
+        },
+        "id": {
+          "sourceHashAtSync": "8ca60c871a4ce799907d5b13ae6233b3230d80eedb5c978c99f373428a1ddc9b"
+        },
+        "ar": {
+          "sourceHashAtSync": "8ca60c871a4ce799907d5b13ae6233b3230d80eedb5c978c99f373428a1ddc9b"
+        }
+      }
+    },
+    "guide/community_contributions.md": {
+      "en": "7bcb7432b04b286814bf54ff3c66440961f614b80002df1687a1cc7e99e1b467",
+      "locales": {
+        "es": {
+          "sourceHashAtSync": "7bcb7432b04b286814bf54ff3c66440961f614b80002df1687a1cc7e99e1b467"
+        },
+        "ko": {
+          "sourceHashAtSync": "7bcb7432b04b286814bf54ff3c66440961f614b80002df1687a1cc7e99e1b467"
+        },
+        "ja": {
+          "sourceHashAtSync": "7bcb7432b04b286814bf54ff3c66440961f614b80002df1687a1cc7e99e1b467"
+        },
+        "fr": {
+          "sourceHashAtSync": "7bcb7432b04b286814bf54ff3c66440961f614b80002df1687a1cc7e99e1b467"
+        },
+        "de": {
+          "sourceHashAtSync": "7bcb7432b04b286814bf54ff3c66440961f614b80002df1687a1cc7e99e1b467"
+        },
+        "it": {
+          "sourceHashAtSync": "7bcb7432b04b286814bf54ff3c66440961f614b80002df1687a1cc7e99e1b467"
+        },
+        "pt": {
+          "sourceHashAtSync": "7bcb7432b04b286814bf54ff3c66440961f614b80002df1687a1cc7e99e1b467"
+        },
+        "tr": {
+          "sourceHashAtSync": "7bcb7432b04b286814bf54ff3c66440961f614b80002df1687a1cc7e99e1b467"
+        },
+        "ru": {
+          "sourceHashAtSync": "7bcb7432b04b286814bf54ff3c66440961f614b80002df1687a1cc7e99e1b467"
+        },
+        "id": {
+          "sourceHashAtSync": "7bcb7432b04b286814bf54ff3c66440961f614b80002df1687a1cc7e99e1b467"
+        },
+        "ar": {
+          "sourceHashAtSync": "7bcb7432b04b286814bf54ff3c66440961f614b80002df1687a1cc7e99e1b467"
+        }
+      }
+    },
+    "guide/faq.md": {
+      "en": "d991099755d1d4ca077731e5447b2d617f6b11529e1a8c0031e896d03f8aec1c",
+      "locales": {
+        "es": {
+          "sourceHashAtSync": "d991099755d1d4ca077731e5447b2d617f6b11529e1a8c0031e896d03f8aec1c"
+        },
+        "ko": {
+          "sourceHashAtSync": "d991099755d1d4ca077731e5447b2d617f6b11529e1a8c0031e896d03f8aec1c"
+        },
+        "ja": {
+          "sourceHashAtSync": "d991099755d1d4ca077731e5447b2d617f6b11529e1a8c0031e896d03f8aec1c"
+        },
+        "pt": {
+          "sourceHashAtSync": "d991099755d1d4ca077731e5447b2d617f6b11529e1a8c0031e896d03f8aec1c"
+        },
+        "de": {
+          "sourceHashAtSync": "d991099755d1d4ca077731e5447b2d617f6b11529e1a8c0031e896d03f8aec1c"
+        },
+        "fr": {
+          "sourceHashAtSync": "d991099755d1d4ca077731e5447b2d617f6b11529e1a8c0031e896d03f8aec1c"
+        },
+        "it": {
+          "sourceHashAtSync": "d991099755d1d4ca077731e5447b2d617f6b11529e1a8c0031e896d03f8aec1c"
+        },
+        "tr": {
+          "sourceHashAtSync": "d991099755d1d4ca077731e5447b2d617f6b11529e1a8c0031e896d03f8aec1c"
+        },
+        "ru": {
+          "sourceHashAtSync": "d991099755d1d4ca077731e5447b2d617f6b11529e1a8c0031e896d03f8aec1c"
+        },
+        "id": {
+          "sourceHashAtSync": "d991099755d1d4ca077731e5447b2d617f6b11529e1a8c0031e896d03f8aec1c"
+        },
+        "ar": {
+          "sourceHashAtSync": "d991099755d1d4ca077731e5447b2d617f6b11529e1a8c0031e896d03f8aec1c"
+        }
+      }
+    },
+    "guide/google_play_rollout.md": {
+      "en": "1a306e6771c69ee05674b659c30d84accaf52d9a5bb77a2b3fad7b4fbda8fa15",
+      "locales": {
+        "es": {
+          "sourceHashAtSync": "1a306e6771c69ee05674b659c30d84accaf52d9a5bb77a2b3fad7b4fbda8fa15"
+        },
+        "ko": {
+          "sourceHashAtSync": "1a306e6771c69ee05674b659c30d84accaf52d9a5bb77a2b3fad7b4fbda8fa15"
+        },
+        "ja": {
+          "sourceHashAtSync": "1a306e6771c69ee05674b659c30d84accaf52d9a5bb77a2b3fad7b4fbda8fa15"
+        },
+        "fr": {
+          "sourceHashAtSync": "1a306e6771c69ee05674b659c30d84accaf52d9a5bb77a2b3fad7b4fbda8fa15"
+        },
+        "de": {
+          "sourceHashAtSync": "1a306e6771c69ee05674b659c30d84accaf52d9a5bb77a2b3fad7b4fbda8fa15"
+        },
+        "it": {
+          "sourceHashAtSync": "1a306e6771c69ee05674b659c30d84accaf52d9a5bb77a2b3fad7b4fbda8fa15"
+        },
+        "pt": {
+          "sourceHashAtSync": "1a306e6771c69ee05674b659c30d84accaf52d9a5bb77a2b3fad7b4fbda8fa15"
+        },
+        "tr": {
+          "sourceHashAtSync": "1a306e6771c69ee05674b659c30d84accaf52d9a5bb77a2b3fad7b4fbda8fa15"
+        },
+        "ru": {
+          "sourceHashAtSync": "1a306e6771c69ee05674b659c30d84accaf52d9a5bb77a2b3fad7b4fbda8fa15"
+        },
+        "id": {
+          "sourceHashAtSync": "1a306e6771c69ee05674b659c30d84accaf52d9a5bb77a2b3fad7b4fbda8fa15"
+        },
+        "ar": {
+          "sourceHashAtSync": "1a306e6771c69ee05674b659c30d84accaf52d9a5bb77a2b3fad7b4fbda8fa15"
+        }
+      }
+    },
+    "guide/hello_lifeup.md": {
+      "en": "7607035bdfc441da47be7b0104777e8bb534740b7c7326f6a19a29db0f585f05",
+      "locales": {
+        "ko": {
+          "sourceHashAtSync": "7607035bdfc441da47be7b0104777e8bb534740b7c7326f6a19a29db0f585f05"
+        },
+        "ja": {
+          "sourceHashAtSync": "7607035bdfc441da47be7b0104777e8bb534740b7c7326f6a19a29db0f585f05"
+        },
+        "es": {
+          "sourceHashAtSync": "7607035bdfc441da47be7b0104777e8bb534740b7c7326f6a19a29db0f585f05"
+        },
+        "pt": {
+          "sourceHashAtSync": "7607035bdfc441da47be7b0104777e8bb534740b7c7326f6a19a29db0f585f05"
+        },
+        "de": {
+          "sourceHashAtSync": "7607035bdfc441da47be7b0104777e8bb534740b7c7326f6a19a29db0f585f05"
+        },
+        "fr": {
+          "sourceHashAtSync": "7607035bdfc441da47be7b0104777e8bb534740b7c7326f6a19a29db0f585f05"
+        },
+        "it": {
+          "sourceHashAtSync": "7607035bdfc441da47be7b0104777e8bb534740b7c7326f6a19a29db0f585f05"
+        },
+        "tr": {
+          "sourceHashAtSync": "7607035bdfc441da47be7b0104777e8bb534740b7c7326f6a19a29db0f585f05"
+        },
+        "ru": {
+          "sourceHashAtSync": "7607035bdfc441da47be7b0104777e8bb534740b7c7326f6a19a29db0f585f05"
+        },
+        "id": {
+          "sourceHashAtSync": "7607035bdfc441da47be7b0104777e8bb534740b7c7326f6a19a29db0f585f05"
+        },
+        "ar": {
+          "sourceHashAtSync": "7607035bdfc441da47be7b0104777e8bb534740b7c7326f6a19a29db0f585f05"
+        }
+      }
+    },
+    "guide/html/url_encoded.html": {
+      "en": "4620ae5a9bb8202d8c9870dffa847e79932437de7e175478fc5c2129e949f48d",
+      "locales": {
+        "ko": {
+          "sourceHashAtSync": "4620ae5a9bb8202d8c9870dffa847e79932437de7e175478fc5c2129e949f48d"
+        },
+        "ja": {
+          "sourceHashAtSync": "4620ae5a9bb8202d8c9870dffa847e79932437de7e175478fc5c2129e949f48d"
+        },
+        "es": {
+          "sourceHashAtSync": "4620ae5a9bb8202d8c9870dffa847e79932437de7e175478fc5c2129e949f48d"
+        },
+        "de": {
+          "sourceHashAtSync": "4620ae5a9bb8202d8c9870dffa847e79932437de7e175478fc5c2129e949f48d"
+        },
+        "fr": {
+          "sourceHashAtSync": "4620ae5a9bb8202d8c9870dffa847e79932437de7e175478fc5c2129e949f48d"
+        },
+        "it": {
+          "sourceHashAtSync": "4620ae5a9bb8202d8c9870dffa847e79932437de7e175478fc5c2129e949f48d"
+        },
+        "pt": {
+          "sourceHashAtSync": "4620ae5a9bb8202d8c9870dffa847e79932437de7e175478fc5c2129e949f48d"
+        },
+        "tr": {
+          "sourceHashAtSync": "4620ae5a9bb8202d8c9870dffa847e79932437de7e175478fc5c2129e949f48d"
+        },
+        "ru": {
+          "sourceHashAtSync": "4620ae5a9bb8202d8c9870dffa847e79932437de7e175478fc5c2129e949f48d"
+        },
+        "id": {
+          "sourceHashAtSync": "4620ae5a9bb8202d8c9870dffa847e79932437de7e175478fc5c2129e949f48d"
+        },
+        "ar": {
+          "sourceHashAtSync": "4620ae5a9bb8202d8c9870dffa847e79932437de7e175478fc5c2129e949f48d"
+        }
+      }
+    },
+    "html/googleplay.html": {
+      "en": "22a7344be9b74440fcec0185fb2daaee0b211f33c5d871b09d9c946e36fd6c06",
+      "locales": {
+        "ko": {
+          "sourceHashAtSync": "22a7344be9b74440fcec0185fb2daaee0b211f33c5d871b09d9c946e36fd6c06"
+        },
+        "ja": {
+          "sourceHashAtSync": "22a7344be9b74440fcec0185fb2daaee0b211f33c5d871b09d9c946e36fd6c06"
+        },
+        "es": {
+          "sourceHashAtSync": "22a7344be9b74440fcec0185fb2daaee0b211f33c5d871b09d9c946e36fd6c06"
+        },
+        "de": {
+          "sourceHashAtSync": "22a7344be9b74440fcec0185fb2daaee0b211f33c5d871b09d9c946e36fd6c06"
+        },
+        "fr": {
+          "sourceHashAtSync": "22a7344be9b74440fcec0185fb2daaee0b211f33c5d871b09d9c946e36fd6c06"
+        },
+        "it": {
+          "sourceHashAtSync": "22a7344be9b74440fcec0185fb2daaee0b211f33c5d871b09d9c946e36fd6c06"
+        },
+        "pt": {
+          "sourceHashAtSync": "22a7344be9b74440fcec0185fb2daaee0b211f33c5d871b09d9c946e36fd6c06"
+        },
+        "tr": {
+          "sourceHashAtSync": "22a7344be9b74440fcec0185fb2daaee0b211f33c5d871b09d9c946e36fd6c06"
+        },
+        "ru": {
+          "sourceHashAtSync": "22a7344be9b74440fcec0185fb2daaee0b211f33c5d871b09d9c946e36fd6c06"
+        },
+        "id": {
+          "sourceHashAtSync": "22a7344be9b74440fcec0185fb2daaee0b211f33c5d871b09d9c946e36fd6c06"
+        },
+        "ar": {
+          "sourceHashAtSync": "22a7344be9b74440fcec0185fb2daaee0b211f33c5d871b09d9c946e36fd6c06"
+        }
+      }
+    },
+    "index.html": {
+      "en": "5e272310a06f66b50c87a530e3ee0da03ab1b0b147ce26b87847d57aaa3dad07",
+      "locales": {
+        "ja": {
+          "sourceHashAtSync": "5e272310a06f66b50c87a530e3ee0da03ab1b0b147ce26b87847d57aaa3dad07"
+        },
+        "ko": {
+          "sourceHashAtSync": "5e272310a06f66b50c87a530e3ee0da03ab1b0b147ce26b87847d57aaa3dad07"
+        },
+        "es": {
+          "sourceHashAtSync": "5e272310a06f66b50c87a530e3ee0da03ab1b0b147ce26b87847d57aaa3dad07"
+        },
+        "pt": {
+          "sourceHashAtSync": "5e272310a06f66b50c87a530e3ee0da03ab1b0b147ce26b87847d57aaa3dad07"
+        },
+        "it": {
+          "sourceHashAtSync": "5e272310a06f66b50c87a530e3ee0da03ab1b0b147ce26b87847d57aaa3dad07"
+        },
+        "de": {
+          "sourceHashAtSync": "5e272310a06f66b50c87a530e3ee0da03ab1b0b147ce26b87847d57aaa3dad07"
+        },
+        "fr": {
+          "sourceHashAtSync": "5e272310a06f66b50c87a530e3ee0da03ab1b0b147ce26b87847d57aaa3dad07"
+        },
+        "tr": {
+          "sourceHashAtSync": "5e272310a06f66b50c87a530e3ee0da03ab1b0b147ce26b87847d57aaa3dad07"
+        },
+        "ru": {
+          "sourceHashAtSync": "5e272310a06f66b50c87a530e3ee0da03ab1b0b147ce26b87847d57aaa3dad07"
+        },
+        "id": {
+          "sourceHashAtSync": "5e272310a06f66b50c87a530e3ee0da03ab1b0b147ce26b87847d57aaa3dad07"
+        },
+        "ar": {
+          "sourceHashAtSync": "5e272310a06f66b50c87a530e3ee0da03ab1b0b147ce26b87847d57aaa3dad07"
+        }
+      }
+    },
+    "introduction/data-deletion-lite.md": {
+      "en": "4c31ced8cb4085854fd8bb1fa461bf562e27d07eaddeac01c3eb4e001407aa9e",
+      "locales": {
+        "ja": {
+          "sourceHashAtSync": "4c31ced8cb4085854fd8bb1fa461bf562e27d07eaddeac01c3eb4e001407aa9e"
+        },
+        "ko": {
+          "sourceHashAtSync": "4c31ced8cb4085854fd8bb1fa461bf562e27d07eaddeac01c3eb4e001407aa9e"
+        },
+        "es": {
+          "sourceHashAtSync": "4c31ced8cb4085854fd8bb1fa461bf562e27d07eaddeac01c3eb4e001407aa9e"
+        },
+        "pt": {
+          "sourceHashAtSync": "4c31ced8cb4085854fd8bb1fa461bf562e27d07eaddeac01c3eb4e001407aa9e"
+        },
+        "it": {
+          "sourceHashAtSync": "4c31ced8cb4085854fd8bb1fa461bf562e27d07eaddeac01c3eb4e001407aa9e"
+        },
+        "de": {
+          "sourceHashAtSync": "4c31ced8cb4085854fd8bb1fa461bf562e27d07eaddeac01c3eb4e001407aa9e"
+        },
+        "fr": {
+          "sourceHashAtSync": "4c31ced8cb4085854fd8bb1fa461bf562e27d07eaddeac01c3eb4e001407aa9e"
+        },
+        "tr": {
+          "sourceHashAtSync": "4c31ced8cb4085854fd8bb1fa461bf562e27d07eaddeac01c3eb4e001407aa9e"
+        },
+        "ru": {
+          "sourceHashAtSync": "4c31ced8cb4085854fd8bb1fa461bf562e27d07eaddeac01c3eb4e001407aa9e"
+        },
+        "id": {
+          "sourceHashAtSync": "4c31ced8cb4085854fd8bb1fa461bf562e27d07eaddeac01c3eb4e001407aa9e"
+        },
+        "ar": {
+          "sourceHashAtSync": "4c31ced8cb4085854fd8bb1fa461bf562e27d07eaddeac01c3eb4e001407aa9e"
+        }
+      }
+    },
+    "introduction/data-deletion-pro.md": {
+      "en": "83e6abc4e9d7c7bf6823a7a324b5f771aa7d5a393ad445a4268053388513fc86",
+      "locales": {
+        "ja": {
+          "sourceHashAtSync": "83e6abc4e9d7c7bf6823a7a324b5f771aa7d5a393ad445a4268053388513fc86"
+        },
+        "ko": {
+          "sourceHashAtSync": "83e6abc4e9d7c7bf6823a7a324b5f771aa7d5a393ad445a4268053388513fc86"
+        },
+        "es": {
+          "sourceHashAtSync": "83e6abc4e9d7c7bf6823a7a324b5f771aa7d5a393ad445a4268053388513fc86"
+        },
+        "pt": {
+          "sourceHashAtSync": "83e6abc4e9d7c7bf6823a7a324b5f771aa7d5a393ad445a4268053388513fc86"
+        },
+        "it": {
+          "sourceHashAtSync": "83e6abc4e9d7c7bf6823a7a324b5f771aa7d5a393ad445a4268053388513fc86"
+        },
+        "de": {
+          "sourceHashAtSync": "83e6abc4e9d7c7bf6823a7a324b5f771aa7d5a393ad445a4268053388513fc86"
+        },
+        "fr": {
+          "sourceHashAtSync": "83e6abc4e9d7c7bf6823a7a324b5f771aa7d5a393ad445a4268053388513fc86"
+        },
+        "tr": {
+          "sourceHashAtSync": "83e6abc4e9d7c7bf6823a7a324b5f771aa7d5a393ad445a4268053388513fc86"
+        },
+        "ru": {
+          "sourceHashAtSync": "83e6abc4e9d7c7bf6823a7a324b5f771aa7d5a393ad445a4268053388513fc86"
+        },
+        "id": {
+          "sourceHashAtSync": "83e6abc4e9d7c7bf6823a7a324b5f771aa7d5a393ad445a4268053388513fc86"
+        },
+        "ar": {
+          "sourceHashAtSync": "83e6abc4e9d7c7bf6823a7a324b5f771aa7d5a393ad445a4268053388513fc86"
+        }
+      }
+    },
+    "introduction/development_plan_2023.md": {
+      "en": "5dd14670948998e79a8593cc79ef7e33a6e1b0cd05187dd5bcf8926b632d1323",
+      "locales": {
+        "es": {
+          "sourceHashAtSync": "5dd14670948998e79a8593cc79ef7e33a6e1b0cd05187dd5bcf8926b632d1323"
+        },
+        "ko": {
+          "sourceHashAtSync": "5dd14670948998e79a8593cc79ef7e33a6e1b0cd05187dd5bcf8926b632d1323"
+        },
+        "ja": {
+          "sourceHashAtSync": "5dd14670948998e79a8593cc79ef7e33a6e1b0cd05187dd5bcf8926b632d1323"
+        },
+        "fr": {
+          "sourceHashAtSync": "5dd14670948998e79a8593cc79ef7e33a6e1b0cd05187dd5bcf8926b632d1323"
+        },
+        "de": {
+          "sourceHashAtSync": "5dd14670948998e79a8593cc79ef7e33a6e1b0cd05187dd5bcf8926b632d1323"
+        },
+        "it": {
+          "sourceHashAtSync": "5dd14670948998e79a8593cc79ef7e33a6e1b0cd05187dd5bcf8926b632d1323"
+        },
+        "pt": {
+          "sourceHashAtSync": "5dd14670948998e79a8593cc79ef7e33a6e1b0cd05187dd5bcf8926b632d1323"
+        },
+        "tr": {
+          "sourceHashAtSync": "5dd14670948998e79a8593cc79ef7e33a6e1b0cd05187dd5bcf8926b632d1323"
+        },
+        "ru": {
+          "sourceHashAtSync": "5dd14670948998e79a8593cc79ef7e33a6e1b0cd05187dd5bcf8926b632d1323"
+        },
+        "id": {
+          "sourceHashAtSync": "5dd14670948998e79a8593cc79ef7e33a6e1b0cd05187dd5bcf8926b632d1323"
+        },
+        "ar": {
+          "sourceHashAtSync": "5dd14670948998e79a8593cc79ef7e33a6e1b0cd05187dd5bcf8926b632d1323"
+        }
+      }
+    },
+    "introduction/development_plan_2024.md": {
+      "en": "e17ce10e6392ad7f51db2787ca9f79bf11233466e25f1b84d8ae4f3d37ab6671",
+      "locales": {
+        "es": {
+          "sourceHashAtSync": "e17ce10e6392ad7f51db2787ca9f79bf11233466e25f1b84d8ae4f3d37ab6671"
+        },
+        "ko": {
+          "sourceHashAtSync": "e17ce10e6392ad7f51db2787ca9f79bf11233466e25f1b84d8ae4f3d37ab6671"
+        },
+        "ja": {
+          "sourceHashAtSync": "e17ce10e6392ad7f51db2787ca9f79bf11233466e25f1b84d8ae4f3d37ab6671"
+        },
+        "fr": {
+          "sourceHashAtSync": "e17ce10e6392ad7f51db2787ca9f79bf11233466e25f1b84d8ae4f3d37ab6671"
+        },
+        "de": {
+          "sourceHashAtSync": "e17ce10e6392ad7f51db2787ca9f79bf11233466e25f1b84d8ae4f3d37ab6671"
+        },
+        "it": {
+          "sourceHashAtSync": "e17ce10e6392ad7f51db2787ca9f79bf11233466e25f1b84d8ae4f3d37ab6671"
+        },
+        "pt": {
+          "sourceHashAtSync": "e17ce10e6392ad7f51db2787ca9f79bf11233466e25f1b84d8ae4f3d37ab6671"
+        },
+        "tr": {
+          "sourceHashAtSync": "e17ce10e6392ad7f51db2787ca9f79bf11233466e25f1b84d8ae4f3d37ab6671"
+        },
+        "ru": {
+          "sourceHashAtSync": "e17ce10e6392ad7f51db2787ca9f79bf11233466e25f1b84d8ae4f3d37ab6671"
+        },
+        "id": {
+          "sourceHashAtSync": "e17ce10e6392ad7f51db2787ca9f79bf11233466e25f1b84d8ae4f3d37ab6671"
+        },
+        "ar": {
+          "sourceHashAtSync": "e17ce10e6392ad7f51db2787ca9f79bf11233466e25f1b84d8ae4f3d37ab6671"
+        }
+      }
+    },
+    "introduction/development_plan_2026_2027.md": {
+      "en": "16aca7e8e036fe53560094edf557c20226a7a6ceb7b91490ee2198dafe0051a8",
+      "locales": {
+        "es": {
+          "sourceHashAtSync": "16aca7e8e036fe53560094edf557c20226a7a6ceb7b91490ee2198dafe0051a8"
+        },
+        "ko": {
+          "sourceHashAtSync": "16aca7e8e036fe53560094edf557c20226a7a6ceb7b91490ee2198dafe0051a8"
+        },
+        "ja": {
+          "sourceHashAtSync": "16aca7e8e036fe53560094edf557c20226a7a6ceb7b91490ee2198dafe0051a8"
+        },
+        "fr": {
+          "sourceHashAtSync": "16aca7e8e036fe53560094edf557c20226a7a6ceb7b91490ee2198dafe0051a8"
+        },
+        "de": {
+          "sourceHashAtSync": "16aca7e8e036fe53560094edf557c20226a7a6ceb7b91490ee2198dafe0051a8"
+        },
+        "it": {
+          "sourceHashAtSync": "16aca7e8e036fe53560094edf557c20226a7a6ceb7b91490ee2198dafe0051a8"
+        },
+        "pt": {
+          "sourceHashAtSync": "16aca7e8e036fe53560094edf557c20226a7a6ceb7b91490ee2198dafe0051a8"
+        },
+        "tr": {
+          "sourceHashAtSync": "16aca7e8e036fe53560094edf557c20226a7a6ceb7b91490ee2198dafe0051a8"
+        },
+        "ru": {
+          "sourceHashAtSync": "16aca7e8e036fe53560094edf557c20226a7a6ceb7b91490ee2198dafe0051a8"
+        },
+        "id": {
+          "sourceHashAtSync": "16aca7e8e036fe53560094edf557c20226a7a6ceb7b91490ee2198dafe0051a8"
+        },
+        "ar": {
+          "sourceHashAtSync": "16aca7e8e036fe53560094edf557c20226a7a6ceb7b91490ee2198dafe0051a8"
+        }
+      }
+    },
+    "introduction/download.md": {
+      "en": "9eee60a34e2b19b0eca6d8ebc03aaaacda0322095c62f669f71b3f8b133db2ca",
+      "locales": {
+        "ja": {
+          "sourceHashAtSync": "9eee60a34e2b19b0eca6d8ebc03aaaacda0322095c62f669f71b3f8b133db2ca"
+        },
+        "ko": {
+          "sourceHashAtSync": "9eee60a34e2b19b0eca6d8ebc03aaaacda0322095c62f669f71b3f8b133db2ca"
+        },
+        "es": {
+          "sourceHashAtSync": "9eee60a34e2b19b0eca6d8ebc03aaaacda0322095c62f669f71b3f8b133db2ca"
+        },
+        "pt": {
+          "sourceHashAtSync": "9eee60a34e2b19b0eca6d8ebc03aaaacda0322095c62f669f71b3f8b133db2ca"
+        },
+        "it": {
+          "sourceHashAtSync": "9eee60a34e2b19b0eca6d8ebc03aaaacda0322095c62f669f71b3f8b133db2ca"
+        },
+        "de": {
+          "sourceHashAtSync": "9eee60a34e2b19b0eca6d8ebc03aaaacda0322095c62f669f71b3f8b133db2ca"
+        },
+        "fr": {
+          "sourceHashAtSync": "9eee60a34e2b19b0eca6d8ebc03aaaacda0322095c62f669f71b3f8b133db2ca"
+        },
+        "tr": {
+          "sourceHashAtSync": "9eee60a34e2b19b0eca6d8ebc03aaaacda0322095c62f669f71b3f8b133db2ca"
+        },
+        "ru": {
+          "sourceHashAtSync": "9eee60a34e2b19b0eca6d8ebc03aaaacda0322095c62f669f71b3f8b133db2ca"
+        },
+        "id": {
+          "sourceHashAtSync": "9eee60a34e2b19b0eca6d8ebc03aaaacda0322095c62f669f71b3f8b133db2ca"
+        },
+        "ar": {
+          "sourceHashAtSync": "9eee60a34e2b19b0eca6d8ebc03aaaacda0322095c62f669f71b3f8b133db2ca"
+        }
+      }
+    },
+    "introduction/privacy-terms.md": {
+      "en": "c6b2a37cac21fef43abf9315eb7092111e04a65e59ce46f1b6d0e185090320da",
+      "locales": {
+        "ja": {
+          "sourceHashAtSync": "c6b2a37cac21fef43abf9315eb7092111e04a65e59ce46f1b6d0e185090320da"
+        },
+        "ko": {
+          "sourceHashAtSync": "c6b2a37cac21fef43abf9315eb7092111e04a65e59ce46f1b6d0e185090320da"
+        },
+        "es": {
+          "sourceHashAtSync": "c6b2a37cac21fef43abf9315eb7092111e04a65e59ce46f1b6d0e185090320da"
+        },
+        "pt": {
+          "sourceHashAtSync": "c6b2a37cac21fef43abf9315eb7092111e04a65e59ce46f1b6d0e185090320da"
+        },
+        "it": {
+          "sourceHashAtSync": "c6b2a37cac21fef43abf9315eb7092111e04a65e59ce46f1b6d0e185090320da"
+        },
+        "de": {
+          "sourceHashAtSync": "c6b2a37cac21fef43abf9315eb7092111e04a65e59ce46f1b6d0e185090320da"
+        },
+        "fr": {
+          "sourceHashAtSync": "c6b2a37cac21fef43abf9315eb7092111e04a65e59ce46f1b6d0e185090320da"
+        },
+        "tr": {
+          "sourceHashAtSync": "c6b2a37cac21fef43abf9315eb7092111e04a65e59ce46f1b6d0e185090320da"
+        },
+        "ru": {
+          "sourceHashAtSync": "c6b2a37cac21fef43abf9315eb7092111e04a65e59ce46f1b6d0e185090320da"
+        },
+        "id": {
+          "sourceHashAtSync": "c6b2a37cac21fef43abf9315eb7092111e04a65e59ce46f1b6d0e185090320da"
+        },
+        "ar": {
+          "sourceHashAtSync": "c6b2a37cac21fef43abf9315eb7092111e04a65e59ce46f1b6d0e185090320da"
+        }
+      }
+    },
+    "introduction/roadmap.md": {
+      "en": "a6502086901bac24b6f1d63e03ece9ad0f914bf5792a3dbe1d1ff3a707f75258",
+      "locales": {
+        "ja": {
+          "sourceHashAtSync": "a6502086901bac24b6f1d63e03ece9ad0f914bf5792a3dbe1d1ff3a707f75258"
+        },
+        "ko": {
+          "sourceHashAtSync": "a6502086901bac24b6f1d63e03ece9ad0f914bf5792a3dbe1d1ff3a707f75258"
+        },
+        "es": {
+          "sourceHashAtSync": "a6502086901bac24b6f1d63e03ece9ad0f914bf5792a3dbe1d1ff3a707f75258"
+        },
+        "pt": {
+          "sourceHashAtSync": "a6502086901bac24b6f1d63e03ece9ad0f914bf5792a3dbe1d1ff3a707f75258"
+        },
+        "it": {
+          "sourceHashAtSync": "a6502086901bac24b6f1d63e03ece9ad0f914bf5792a3dbe1d1ff3a707f75258"
+        },
+        "de": {
+          "sourceHashAtSync": "a6502086901bac24b6f1d63e03ece9ad0f914bf5792a3dbe1d1ff3a707f75258"
+        },
+        "fr": {
+          "sourceHashAtSync": "a6502086901bac24b6f1d63e03ece9ad0f914bf5792a3dbe1d1ff3a707f75258"
+        },
+        "tr": {
+          "sourceHashAtSync": "a6502086901bac24b6f1d63e03ece9ad0f914bf5792a3dbe1d1ff3a707f75258"
+        },
+        "ru": {
+          "sourceHashAtSync": "a6502086901bac24b6f1d63e03ece9ad0f914bf5792a3dbe1d1ff3a707f75258"
+        },
+        "id": {
+          "sourceHashAtSync": "a6502086901bac24b6f1d63e03ece9ad0f914bf5792a3dbe1d1ff3a707f75258"
+        },
+        "ar": {
+          "sourceHashAtSync": "a6502086901bac24b6f1d63e03ece9ad0f914bf5792a3dbe1d1ff3a707f75258"
+        }
+      }
+    },
+    "misc/privacy_terms_of_calendar_manager.md": {
+      "en": "ef4d4c4ae84a71217178efe60f7e18d167e8b20bdd52c45c8a63e5f59def1a79",
+      "locales": {
+        "ko": {
+          "sourceHashAtSync": "ef4d4c4ae84a71217178efe60f7e18d167e8b20bdd52c45c8a63e5f59def1a79"
+        },
+        "ja": {
+          "sourceHashAtSync": "ef4d4c4ae84a71217178efe60f7e18d167e8b20bdd52c45c8a63e5f59def1a79"
+        },
+        "es": {
+          "sourceHashAtSync": "ef4d4c4ae84a71217178efe60f7e18d167e8b20bdd52c45c8a63e5f59def1a79"
+        },
+        "de": {
+          "sourceHashAtSync": "ef4d4c4ae84a71217178efe60f7e18d167e8b20bdd52c45c8a63e5f59def1a79"
+        },
+        "fr": {
+          "sourceHashAtSync": "ef4d4c4ae84a71217178efe60f7e18d167e8b20bdd52c45c8a63e5f59def1a79"
+        },
+        "it": {
+          "sourceHashAtSync": "ef4d4c4ae84a71217178efe60f7e18d167e8b20bdd52c45c8a63e5f59def1a79"
+        },
+        "pt": {
+          "sourceHashAtSync": "ef4d4c4ae84a71217178efe60f7e18d167e8b20bdd52c45c8a63e5f59def1a79"
+        },
+        "tr": {
+          "sourceHashAtSync": "ef4d4c4ae84a71217178efe60f7e18d167e8b20bdd52c45c8a63e5f59def1a79"
+        },
+        "ru": {
+          "sourceHashAtSync": "ef4d4c4ae84a71217178efe60f7e18d167e8b20bdd52c45c8a63e5f59def1a79"
+        },
+        "id": {
+          "sourceHashAtSync": "ef4d4c4ae84a71217178efe60f7e18d167e8b20bdd52c45c8a63e5f59def1a79"
+        },
+        "ar": {
+          "sourceHashAtSync": "ef4d4c4ae84a71217178efe60f7e18d167e8b20bdd52c45c8a63e5f59def1a79"
+        }
+      }
+    },
+    "misc/privacy_terms_of_lifeup_cloud.md": {
+      "en": "cebb8d5388288d4135f146b31faafdf56e7f93ed38f0ab941d9bb9ebb8356ed9",
+      "locales": {
+        "ko": {
+          "sourceHashAtSync": "cebb8d5388288d4135f146b31faafdf56e7f93ed38f0ab941d9bb9ebb8356ed9"
+        },
+        "ja": {
+          "sourceHashAtSync": "cebb8d5388288d4135f146b31faafdf56e7f93ed38f0ab941d9bb9ebb8356ed9"
+        },
+        "es": {
+          "sourceHashAtSync": "cebb8d5388288d4135f146b31faafdf56e7f93ed38f0ab941d9bb9ebb8356ed9"
+        },
+        "de": {
+          "sourceHashAtSync": "cebb8d5388288d4135f146b31faafdf56e7f93ed38f0ab941d9bb9ebb8356ed9"
+        },
+        "fr": {
+          "sourceHashAtSync": "cebb8d5388288d4135f146b31faafdf56e7f93ed38f0ab941d9bb9ebb8356ed9"
+        },
+        "it": {
+          "sourceHashAtSync": "cebb8d5388288d4135f146b31faafdf56e7f93ed38f0ab941d9bb9ebb8356ed9"
+        },
+        "pt": {
+          "sourceHashAtSync": "cebb8d5388288d4135f146b31faafdf56e7f93ed38f0ab941d9bb9ebb8356ed9"
+        },
+        "tr": {
+          "sourceHashAtSync": "cebb8d5388288d4135f146b31faafdf56e7f93ed38f0ab941d9bb9ebb8356ed9"
+        },
+        "ru": {
+          "sourceHashAtSync": "cebb8d5388288d4135f146b31faafdf56e7f93ed38f0ab941d9bb9ebb8356ed9"
+        },
+        "id": {
+          "sourceHashAtSync": "cebb8d5388288d4135f146b31faafdf56e7f93ed38f0ab941d9bb9ebb8356ed9"
+        },
+        "ar": {
+          "sourceHashAtSync": "cebb8d5388288d4135f146b31faafdf56e7f93ed38f0ab941d9bb9ebb8356ed9"
+        }
+      }
+    }
+  }
+}

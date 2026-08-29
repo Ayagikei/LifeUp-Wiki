@@ -1,0 +1,34 @@
+- Giriş
+
+  - [Tanıtım](Introduction.md)
+  - [İndirme](introduction/download.md)
+  - [Ekran Görüntüleri](Screenshots.md)
+  - [Sürüm Notları](ReleaseLog.md)
+  - [Geliştirme Yol Haritası](introduction/roadmap.md)
+    - [2026-2027](introduction/development_plan_2026_2027.md)
+    - [2024-2025](introduction/development_plan_2024.md)
+    - [2022/10 - 2023/12](introduction/development_plan_2023.md)
+  - [Bizi Destekleyin](Support_us.md)
+  - [Gizlilik Şartları ve Politikası](introduction/privacy-terms.md)
+  - [Veri Silme (Lite)](introduction/data-deletion-lite.md)
+  - [Veri Silme (Pro)](introduction/data-deletion-pro.md)
+- Başlangıç
+
+  - [Merhaba, LifeUp dünyası](guide/hello_lifeup.md)
+  - [SSS](guide/faq.md)
+  - [Yedekleme ve Geri Yükleme](guide/backup.md)
+  - [Arka Planda Çalıştırma](guide/background_running.md)
+- İşlevler
+  - APIs
+    - [📄API Listeleri](guide/api.md)
+    - [☁️LifeUp Cloud](guide/api_cloud.md)
+    - [🤖 MCP & Skills](guide/api_mcp.md)
+    - [🖥LifeUp Desktop](guide/api_desktop.md)
+- Yenilikler
+  - [v1.98.0: API 2.0](feature/198.md)
+  - [v1.95.0 - v1.97.0: Otomatik Eşya kullanımı, Büyük Ekran, Performans İyileştirmesi](ReleaseLog.md)
+  - [v1.94.0: Çoklu eşya Ödülleri!](feature/194.md)
+  - [v1.93.0: Görev şablonları ve Material 3!](feature/193.md)
+  - [v1.92.0: Yeni istatistikler!](feature/192.md)
+  - [v1.91.0: Yeni widget'lar, özel seviye, 🖥](feature/191.md)
+  - [v1.89.x: Çoklu kilitleme koşulları](feature/189.md)

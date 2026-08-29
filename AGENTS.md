@@ -5,13 +5,15 @@
 - This repository hosts the **LifeUp Wiki** documentation site.
 - The site is built with Docsify and published from the `docs/` directory.
 - Main language trees:
-  - `docs/zh-cn` (Simplified Chinese)
-  - `docs/en` (English)
-  - `docs/zh-hant` (Traditional Chinese)
+  - `docs/zh-cn` (Simplified Chinese, dual source)
+  - `docs/en` (English, dual source and pivot for new locales)
+  - `docs/zh-hant` (Traditional Chinese, OpenCC from zh-cn)
+  - `docs/ja` `docs/ko` `docs/es` `docs/de` `docs/fr` `docs/it` `docs/pt` `docs/tr` `docs/ru` `docs/id` `docs/ar` (English-pivot translations; see `docs/_i18n/`)
 
 ## Source of Truth
 
 - `docs/zh-cn` and `docs/en` are the manually maintained source content.
+- New locales follow the `docs/en` path tree. Track freshness with `python3 scripts/i18n_status.py`.
 - Shared assets are mainly in `docs/_media` and language-specific `_media` folders.
 
 ## Traditional Chinese Automation (Critical)
@@ -25,6 +27,16 @@
 
 - **Do not manually maintain or edit files under `docs/zh-hant`.**
 - To update Traditional Chinese docs, edit `docs/zh-cn` and push changes; GitHub Action handles conversion and commit automatically.
+
+## Wiki i18n (English-pivot locales)
+
+- Pivot: `docs/en`. Do not treat `zh-cn` as a translation of English.
+- `docs/zh-hant` stays OpenCC from `zh-cn`; never hand-edit it.
+- New locale dirs mirror English paths (`feature/`, `Introduction.md`, `ReleaseLog.md`).
+- Inventory and waves: `docs/_i18n/catalog.json`. Freshness: `python3 scripts/i18n_status.py status|stamp|init`.
+- After translating a locale file, stamp it. Do not copy English `.md` into a locale as a published placeholder.
+- Keep English heading IDs (`:id=`). Translate visible text only.
+- Plan: `docs/plans/2026-08-29-wiki-i18n/delivery-plan.md`.
 
 
 ## Docsify Linking Convention

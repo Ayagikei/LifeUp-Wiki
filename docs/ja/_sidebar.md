@@ -1,0 +1,35 @@
+- はじめに
+
+  - [アプリ紹介](Introduction.md)
+  - [ダウンロード](introduction/download.md)
+  - [スクリーンショット](Screenshots.md)
+  - [リリースノート](ReleaseLog.md)
+  - [サポート](Support_us.md)
+  - [プライバシー規約](introduction/privacy-terms.md)
+  - [開発ロードマップ](introduction/roadmap.md)
+    - [2026-2027](introduction/development_plan_2026_2027.md)
+    - [2024-2025](introduction/development_plan_2024.md)
+    - [2022/10 - 2023/12](introduction/development_plan_2023.md)
+  - [データ削除（Lite）](introduction/data-deletion-lite.md)
+  - [データ削除（Pro）](introduction/data-deletion-pro.md)
+- はじめての方へ
+
+  - [LifeUp の世界へ](guide/hello_lifeup.md)
+  - [FAQ](guide/faq.md)
+  - [バックアップと復元](guide/backup.md)
+  - [バックグラウンド実行](guide/background_running.md)
+- 機能
+  - API
+    - [📄API 一覧](guide/api.md)
+    - [☁️LifeUp Cloud](guide/api_cloud.md)
+    - [🤖 MCP & Skills](guide/api_mcp.md)
+    - [🖥LifeUp Desktop](guide/api_desktop.md)
+    - [🤝 コミュニティ貢献](guide/community_contributions.md)
+- 新着
+  - [v1.98.0: API 2.0](feature/198.md)
+  - [v1.95.0 - v1.97.0: アイテム自動使用、大画面、パフォーマンス改善](ReleaseLog.md)
+  - [v1.94.0: 複数アイテム報酬！](feature/194.md)
+  - [v1.93.0: タスクテンプレートと Material 3！](feature/193.md)
+  - [v1.92.0: 新しい統計！](feature/192.md)
+  - [v1.91.0: 新ウィジェット、カスタムレベル、🖥](feature/191.md)
+  - [v1.89.x: 複数解除条件](feature/189.md)

@@ -1,0 +1,381 @@
+{
+  "sourceLocale": "en",
+  "sourceDir": "docs/en",
+  "generatedLocales": {
+    "zh-hant": {
+      "from": "zh-cn",
+      "engine": "opencc",
+      "track": false
+    }
+  },
+  "dualSourceLocales": [
+    "zh-cn"
+  ],
+  "targetLocales": [
+    {
+      "code": "ja",
+      "name": "日本語",
+      "htmlLang": "ja",
+      "batch": "B1"
+    },
+    {
+      "code": "ko",
+      "name": "한국어",
+      "htmlLang": "ko",
+      "batch": "B1"
+    },
+    {
+      "code": "es",
+      "name": "Español",
+      "htmlLang": "es",
+      "batch": "B1"
+    },
+    {
+      "code": "de",
+      "name": "Deutsch",
+      "htmlLang": "de",
+      "batch": "B2"
+    },
+    {
+      "code": "fr",
+      "name": "Français",
+      "htmlLang": "fr",
+      "batch": "B2"
+    },
+    {
+      "code": "it",
+      "name": "Italiano",
+      "htmlLang": "it",
+      "batch": "B2"
+    },
+    {
+      "code": "pt",
+      "name": "Português",
+      "htmlLang": "pt-BR",
+      "batch": "B2",
+      "note": "Brazilian Portuguese, same as app values-pt"
+    },
+    {
+      "code": "tr",
+      "name": "Türkçe",
+      "htmlLang": "tr",
+      "batch": "B3"
+    },
+    {
+      "code": "ru",
+      "name": "Русский",
+      "htmlLang": "ru",
+      "batch": "B3"
+    },
+    {
+      "code": "id",
+      "name": "Bahasa Indonesia",
+      "htmlLang": "id",
+      "batch": "B3"
+    },
+    {
+      "code": "ar",
+      "name": "العربية",
+      "htmlLang": "ar",
+      "batch": "B3",
+      "rtl": true
+    }
+  ],
+  "waves": {
+    "W1": {
+      "name": "chrome + intro landing",
+      "paths": [
+        "index.html",
+        "_navbar.md",
+        "_sidebar.md",
+        "Introduction.md",
+        "introduction/download.md",
+        "Screenshots.md",
+        "Support_us.md",
+        "introduction/privacy-terms.md",
+        "introduction/roadmap.md",
+        "introduction/data-deletion-lite.md",
+        "introduction/data-deletion-pro.md",
+        "credit.md",
+        "category.md",
+        "#_coverpage.md"
+      ]
+    },
+    "W2": {
+      "name": "hello_lifeup",
+      "paths": [
+        "guide/hello_lifeup.md"
+      ]
+    },
+    "W3": {
+      "name": "faq",
+      "paths": [
+        "guide/faq.md"
+      ]
+    },
+    "W4": {
+      "name": "getting started + plans",
+      "paths": [
+        "guide/backup.md",
+        "guide/background_running.md",
+        "guide/community_contributions.md",
+        "guide/google_play_rollout.md",
+        "introduction/development_plan_2023.md",
+        "introduction/development_plan_2024.md",
+        "introduction/development_plan_2026_2027.md"
+      ]
+    },
+    "W5": {
+      "name": "feature pages",
+      "paths": [
+        "feature/198.md",
+        "feature/194.md",
+        "feature/193.md",
+        "feature/192.md",
+        "feature/191.md",
+        "feature/189.md",
+        "feature/ulives.md"
+      ]
+    },
+    "W6": {
+      "name": "api satellites",
+      "paths": [
+        "guide/api_cloud.md",
+        "guide/api_mcp.md",
+        "guide/api_desktop.md"
+      ]
+    },
+    "W7": {
+      "name": "api.md chunked",
+      "paths": [
+        "guide/api.md"
+      ],
+      "chunkBy": "h3"
+    },
+    "W8": {
+      "name": "ReleaseLog chunked",
+      "paths": [
+        "ReleaseLog.md"
+      ],
+      "chunkBy": "version-band"
+    },
+    "W9": {
+      "name": "leftovers",
+      "paths": [
+        "example/wordle/README.md",
+        "example/wordle/index.html",
+        "guide/html/url_encoded.html",
+        "html/googleplay.html",
+        "misc/privacy_terms_of_calendar_manager.md",
+        "misc/privacy_terms_of_lifeup_cloud.md"
+      ]
+    }
+  },
+  "files": [
+    {
+      "path": "#_coverpage.md",
+      "kind": "md",
+      "bytes": 273
+    },
+    {
+      "path": "Introduction.md",
+      "kind": "md",
+      "bytes": 4060
+    },
+    {
+      "path": "ReleaseLog.md",
+      "kind": "md",
+      "bytes": 148976
+    },
+    {
+      "path": "Screenshots.md",
+      "kind": "md",
+      "bytes": 589
+    },
+    {
+      "path": "Support_us.md",
+      "kind": "md",
+      "bytes": 1607
+    },
+    {
+      "path": "_navbar.md",
+      "kind": "md",
+      "bytes": 241
+    },
+    {
+      "path": "_sidebar.md",
+      "kind": "md",
+      "bytes": 1368
+    },
+    {
+      "path": "category.md",
+      "kind": "md",
+      "bytes": 217
+    },
+    {
+      "path": "credit.md",
+      "kind": "md",
+      "bytes": 337
+    },
+    {
+      "path": "example/wordle/README.md",
+      "kind": "md",
+      "bytes": 305
+    },
+    {
+      "path": "example/wordle/index.html",
+      "kind": "html",
+      "bytes": 3413
+    },
+    {
+      "path": "feature/189.md",
+      "kind": "md",
+      "bytes": 9956
+    },
+    {
+      "path": "feature/191.md",
+      "kind": "md",
+      "bytes": 11612
+    },
+    {
+      "path": "feature/192.md",
+      "kind": "md",
+      "bytes": 8307
+    },
+    {
+      "path": "feature/193.md",
+      "kind": "md",
+      "bytes": 7599
+    },
+    {
+      "path": "feature/194.md",
+      "kind": "md",
+      "bytes": 6842
+    },
+    {
+      "path": "feature/198.md",
+      "kind": "md",
+      "bytes": 8463
+    },
+    {
+      "path": "feature/ulives.md",
+      "kind": "md",
+      "bytes": 5456
+    },
+    {
+      "path": "guide/api.md",
+      "kind": "md",
+      "bytes": 178961
+    },
+    {
+      "path": "guide/api_cloud.md",
+      "kind": "md",
+      "bytes": 16383
+    },
+    {
+      "path": "guide/api_desktop.md",
+      "kind": "md",
+      "bytes": 6134
+    },
+    {
+      "path": "guide/api_mcp.md",
+      "kind": "md",
+      "bytes": 9309
+    },
+    {
+      "path": "guide/background_running.md",
+      "kind": "md",
+      "bytes": 4616
+    },
+    {
+      "path": "guide/backup.md",
+      "kind": "md",
+      "bytes": 6126
+    },
+    {
+      "path": "guide/community_contributions.md",
+      "kind": "md",
+      "bytes": 1722
+    },
+    {
+      "path": "guide/faq.md",
+      "kind": "md",
+      "bytes": 27339
+    },
+    {
+      "path": "guide/google_play_rollout.md",
+      "kind": "md",
+      "bytes": 1130
+    },
+    {
+      "path": "guide/hello_lifeup.md",
+      "kind": "md",
+      "bytes": 25602
+    },
+    {
+      "path": "guide/html/url_encoded.html",
+      "kind": "html",
+      "bytes": 498
+    },
+    {
+      "path": "html/googleplay.html",
+      "kind": "html",
+      "bytes": 330
+    },
+    {
+      "path": "index.html",
+      "kind": "html",
+      "bytes": 3298
+    },
+    {
+      "path": "introduction/data-deletion-lite.md",
+      "kind": "md",
+      "bytes": 1505
+    },
+    {
+      "path": "introduction/data-deletion-pro.md",
+      "kind": "md",
+      "bytes": 2465
+    },
+    {
+      "path": "introduction/development_plan_2023.md",
+      "kind": "md",
+      "bytes": 4343
+    },
+    {
+      "path": "introduction/development_plan_2024.md",
+      "kind": "md",
+      "bytes": 14726
+    },
+    {
+      "path": "introduction/development_plan_2026_2027.md",
+      "kind": "md",
+      "bytes": 9405
+    },
+    {
+      "path": "introduction/download.md",
+      "kind": "md",
+      "bytes": 3944
+    },
+    {
+      "path": "introduction/privacy-terms.md",
+      "kind": "md",
+      "bytes": 11091
+    },
+    {
+      "path": "introduction/roadmap.md",
+      "kind": "md",
+      "bytes": 2390
+    },
+    {
+      "path": "misc/privacy_terms_of_calendar_manager.md",
+      "kind": "md",
+      "bytes": 780
+    },
+    {
+      "path": "misc/privacy_terms_of_lifeup_cloud.md",
+      "kind": "md",
+      "bytes": 488
+    }
+  ]
+}

@@ -1,25 +1,23 @@
 <script type="text/javascript">
-  var type = navigator.appName;
-  if (type == "Netscape") {
-    var lang = navigator.language;//获取浏览器配置语言，支持非IE浏览器
-  } else {
-    var lang = navigator.userLanguage;//获取浏览器配置语言，支持IE5+ == navigator.systemLanguage
-  };
+(function () {
+  var path = location.pathname.replace(/\/index\.html$/, '') || '/';
+  if (path !== '/') return;
 
-  switch (lang.toLowerCase()) {
-    case "zh":
-      location.href = "zh-cn/index.html#/";
-    case "zh-tw":
-      location.href = "zh-hant/index.html#/";
-      break;
-    case "zh-hk":
-      location.href = "zh-hant/index.html#/";
-      break;
-    case "zh-cn":
-      location.href = "zh-cn/index.html#/";
-      break;
-    default:
-      location.href = "en/index.html#/";
-      break;
-  }
+  var lang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+  var dest = '/en/index.html#/';
+  if (lang === 'zh' || lang.indexOf('zh-cn') === 0 || lang.indexOf('zh-hans') === 0) dest = '/zh-cn/index.html#/';
+  else if (lang.indexOf('zh-tw') === 0 || lang.indexOf('zh-hk') === 0 || lang.indexOf('zh-hant') === 0) dest = '/zh-hant/index.html#/';
+  else if (lang.indexOf('ja') === 0) dest = '/ja/index.html#/';
+  else if (lang.indexOf('ko') === 0) dest = '/ko/index.html#/';
+  else if (lang.indexOf('es') === 0) dest = '/es/index.html#/';
+  else if (lang.indexOf('de') === 0) dest = '/de/index.html#/';
+  else if (lang.indexOf('fr') === 0) dest = '/fr/index.html#/';
+  else if (lang.indexOf('it') === 0) dest = '/it/index.html#/';
+  else if (lang.indexOf('pt') === 0) dest = '/pt/index.html#/';
+  else if (lang.indexOf('tr') === 0) dest = '/tr/index.html#/';
+  else if (lang.indexOf('ru') === 0) dest = '/ru/index.html#/';
+  else if (lang === 'in' || lang.indexOf('id') === 0) dest = '/id/index.html#/';
+  else if (lang.indexOf('ar') === 0) dest = '/ar/index.html#/';
+  location.replace(dest);
+})();
 </script>

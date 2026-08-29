@@ -1,0 +1,34 @@
+- Einführung
+
+  - [Einführung](Introduction.md)
+  - [Download](introduction/download.md)
+  - [Screenshots](Screenshots.md)
+  - [Versionshinweise](ReleaseLog.md)
+  - [Unterstütze uns](Support_us.md)
+  - [Datenschutz & Nutzungsbedingungen](introduction/privacy-terms.md)
+  - [Entwicklungs-Roadmap](introduction/roadmap.md)
+    - [2026-2027](introduction/development_plan_2026_2027.md)
+    - [2024-2025](introduction/development_plan_2024.md)
+    - [2022/10 - 2023/12](introduction/development_plan_2023.md)
+  - [Datenlöschung (Lite)](introduction/data-deletion-lite.md)
+  - [Datenlöschung (Pro)](introduction/data-deletion-pro.md)
+- Erste Schritte
+
+  - [Hallo, LifeUp-Welt](guide/hello_lifeup.md)
+  - [FAQ](guide/faq.md)
+  - [Backup und Wiederherstellung](guide/backup.md)
+  - [Hintergrundausführung](guide/background_running.md)
+- Funktionen
+  - APIs
+    - [📄API-Listen](guide/api.md)
+    - [☁️LifeUp Cloud](guide/api_cloud.md)
+    - [🤖 MCP & Skills](guide/api_mcp.md)
+    - [🖥LifeUp Desktop](guide/api_desktop.md)
+- Neuigkeiten
+  - [v1.98.0: API 2.0](feature/198.md)
+  - [v1.95.0 - v1.97.0: Automatische Gegenstandsnutzung, Großbildschirm, Leistungsverbesserung](ReleaseLog.md)
+  - [v1.94.0: Mehrfach-Gegenstandsbelohnungen!](feature/194.md)
+  - [v1.93.0: Aufgabenvorlagen und Material 3!](feature/193.md)
+  - [v1.92.0: Neue Statistik!](feature/192.md)
+  - [v1.91.0: Neue Widgets, benutzerdefinierte Stufe, 🖥](feature/191.md)
+  - [v1.89.x: Mehrere Freischaltbedingungen](feature/189.md)
