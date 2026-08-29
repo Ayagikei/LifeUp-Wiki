@@ -1,13 +1,7 @@
 # İndirme ve Satın Alma
 
 > [!NOTE]
-> **LifeUp yalnızca Android içindir.** Ömür boyu üyelik fiyatı tek platform kapsamını yansıtır — bu yüzden daha düşük tek seferlik fiyat sunabiliyoruz. LifeUp, otomasyon, genişletme ve yapay zekâ iş akışları için tam [API](/guide/api.md) sunan ücretli indirilebilir bir App'tir.
->
-> **Çapraz platform** erişime mi ihtiyacınız var? **[ulives](https://app.ulives.io/)**'a bakın — ücretsiz indirilebilir, iOS, iPadOS ve macOS'ta mevcut, Google Play (Android) yakında geliyor. ulives Premium yeni özellikleri kalıcı olarak açan tek seferlik bir satın alımdır; çapraz platform geliştirme ve uzun vadeli bakımı kapsadığı için LifeUp'tan daha pahalıdır. ulives henüz API genişletmesini desteklemez.
->
-> **Üyelikler ayrıdır:** LifeUp satın alımı ulives'ı açmaz ve tersi de geçerlidir. ulives için satın alınan Premium, hesap senkronizasyonu hazır olduğunda tüm ulives platformlarında çalışması amaçlanır; o zamana kadar çapraz platform yetkisi için [fb@ulives.io](mailto:fb@ulives.io) adresinden bizimle iletişime geçmeniz gerekebilir.
->
-> Tam karşılaştırma: [ulives vs LifeUp — Comparison](https://app.ulives.io/docs/comparison-with-lifeup)
+> **LifeUp yalnızca Android içindir.** Ömür boyu üyelik fiyatı tek platform kapsamını yansıtır — bu yüzden daha düşük tek seferlik fiyat sunabiliyoruz. LifeUp, otomasyon, genişletme ve yapay zekâ iş akışları için tam [API](/guide/api.md) sunan ücretli indirilebilir bir App'tir.<br><br>**Çapraz platform** erişime mi ihtiyacınız var? [**ulives**](https://app.ulives.io/)'a bakın — ücretsiz indirilebilir, iOS, iPadOS ve macOS'ta mevcut, Google Play (Android) yakında geliyor. ulives Premium yeni özellikleri kalıcı olarak açan tek seferlik bir satın alımdır; çapraz platform geliştirme ve uzun vadeli bakımı kapsadığı için LifeUp'tan daha pahalıdır. ulives henüz API genişletmesini desteklemez.<br><br>**Üyelikler ayrıdır:** LifeUp satın alımı ulives'ı açmaz ve tersi de geçerlidir. ulives için satın alınan Premium, hesap senkronizasyonu hazır olduğunda tüm ulives platformlarında çalışması amaçlanır; o zamana kadar çapraz platform yetkisi için [fb@ulives.io](mailto:fb@ulives.io) adresinden bizimle iletişime geçmeniz gerekebilir.<br><br>Tam karşılaştırma: [ulives vs LifeUp — Comparison](https://app.ulives.io/docs/comparison-with-lifeup)
 
 ## 🏪 1. Google Play Store (Önerilen)
 

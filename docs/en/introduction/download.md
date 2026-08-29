@@ -1,13 +1,7 @@
 # Download & Purchase
 
 > [!NOTE]
-> **LifeUp is Android-only.** Its lifetime membership pricing reflects single-platform scope — that is why we can offer a lower one-time price. LifeUp is a paid download with a full [API](/guide/api.md) for automation, extension, and AI workflows.
->
-> Need **cross-platform** access? See **[ulives](https://app.ulives.io/)** — free to download, already on iOS, iPadOS, and macOS, with Google Play (Android) coming soon. ulives Premium is a one-time unlock for new features; pricing is higher than LifeUp because it covers cross-platform development and long-term maintenance. ulives does not yet support API extension.
->
-> **Memberships are separate:** a LifeUp purchase does not unlock ulives, and vice versa. Premium purchased for ulives is intended to work across all ulives platforms once account sync is ready; until then, cross-platform entitlement may require contacting [fb@ulives.io](mailto:fb@ulives.io).
->
-> Full comparison: [ulives vs LifeUp — Comparison](https://app.ulives.io/docs/comparison-with-lifeup)
+> **LifeUp is Android-only.** Its lifetime membership pricing reflects single-platform scope — that is why we can offer a lower one-time price. LifeUp is a paid download with a full [API](/guide/api.md) for automation, extension, and AI workflows.<br><br>Need **cross-platform** access? See [**ulives**](https://app.ulives.io/) — free to download, already on iOS, iPadOS, and macOS, with Google Play (Android) coming soon. ulives Premium is a one-time unlock for new features; pricing is higher than LifeUp because it covers cross-platform development and long-term maintenance. ulives does not yet support API extension.<br><br>**Memberships are separate:** a LifeUp purchase does not unlock ulives, and vice versa. Premium purchased for ulives is intended to work across all ulives platforms once account sync is ready; until then, cross-platform entitlement may require contacting [fb@ulives.io](mailto:fb@ulives.io).<br><br>Full comparison: [ulives vs LifeUp — Comparison](https://app.ulives.io/docs/comparison-with-lifeup)
 
 ## 🏪 1. Google Play Store (Recommended)
 

@@ -62,7 +62,7 @@ li input[type="checkbox"] {
   position: absolute;
   right: 0;
   text-align: right;
-  z-index: 10;
+  z-index: 200;
 }
 
 .app-nav.no-badge {
@@ -124,6 +124,7 @@ li input[type="checkbox"] {
   text-align: left;
   top: 100%;
   white-space: nowrap;
+  z-index: 201;
 }
 
 .app-nav li ul li {
@@ -145,8 +146,14 @@ li input[type="checkbox"] {
   border-bottom: 0;
 }
 
-.app-nav li:hover ul {
+.app-nav li:hover ul,
+.app-nav li ul:hover {
   display: block;
+}
+
+/* Keep page TOC below top nav so Language dropdown stays clickable */
+aside.toc-nav {
+  z-index: 100;
 }
 
 .github-corner {
@@ -646,6 +653,11 @@ body {
 .markdown-section strong {
   color: #2c3e50;
   font-weight: 600;
+}
+
+.markdown-section .alert strong {
+  font-weight: 700;
+  color: #2c3e50;
 }
 
 .markdown-section a {

@@ -1,13 +1,7 @@
 # 下載與購買
 
 > [!NOTE]
-> **《人升》僅面向 Android 平臺。** 永久會員的定價基於單平臺維護範圍——因此我們才能提供較低的買斷價格。《人升》為付費下載，並提供完整的 [開放介面](/guide/api.md)，可用於自動化、擴充套件開發與 AI 工作流。
->
-> 需要**跨平臺**使用？請了解 **[ulives](https://ulives.lifeupapp.net/)** —— 免費下載，已上架 iOS、iPadOS 與 macOS，Google Play（Android）也即將上線。ulives Premium 為一次性解鎖新功能；因跨平臺開發與長期維護成本，定價會高於《人升》。ulives 暫不支援 API 擴充套件。
->
-> **兩款 App 會員不互通：** 購買《人升》不能解鎖 ulives，反之亦然。為 ulives 購買的 Premium 預期在賬號同步就緒後可在各 ulives 平臺通用；現階段跨平臺權益可能需要聯絡 [fb@ulives.io](mailto:fb@ulives.io)。
->
-> 完整對比說明：[ulives vs 人升 — 對比說明](https://ulives.lifeupapp.net/docs/comparison-with-lifeup)
+> **《人升》僅面向 Android 平臺。** 永久會員的定價基於單平臺維護範圍——因此我們才能提供較低的買斷價格。《人升》為付費下載，並提供完整的 [開放介面](/guide/api.md)，可用於自動化、擴充套件開發與 AI 工作流。<br><br>需要**跨平臺**使用？請了解 [**ulives**](https://ulives.lifeupapp.net/) —— 免費下載，已上架 iOS、iPadOS 與 macOS，Google Play（Android）也即將上線。ulives Premium 為一次性解鎖新功能；因跨平臺開發與長期維護成本，定價會高於《人升》。ulives 暫不支援 API 擴充套件。<br><br>**兩款 App 會員不互通：** 購買《人升》不能解鎖 ulives，反之亦然。為 ulives 購買的 Premium 預期在賬號同步就緒後可在各 ulives 平臺通用；現階段跨平臺權益可能需要聯絡 [fb@ulives.io](mailto:fb@ulives.io)。<br><br>完整對比說明：[ulives vs 人升 — 對比說明](https://ulives.lifeupapp.net/docs/comparison-with-lifeup)
 
 ## 🏪 1. Google Play 商店（推薦）
 

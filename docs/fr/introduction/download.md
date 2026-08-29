@@ -1,13 +1,7 @@
 # Téléchargement et achat
 
 > [!NOTE]
-> **LifeUp est réservé à Android.** Le prix de l'adhésion à vie reflète une portée mono-plateforme — c'est pourquoi nous pouvons proposer un prix unique plus bas. LifeUp est un téléchargement payant avec une [API](/guide/api.md) complète pour l'automatisation, les extensions et les workflows IA.
->
-> Besoin d'un accès **multi-plateforme** ? Découvrez **[ulives](https://app.ulives.io/)** — téléchargement gratuit, déjà disponible sur iOS, iPadOS et macOS, Google Play (Android) arrive bientôt. ulives Premium débloque définitivement les nouvelles fonctionnalités ; le prix est plus élevé que LifeUp car il couvre le développement multi-plateforme et la maintenance à long terme. ulives ne prend pas encore en charge l'extension par API.
->
-> **Les adhésions sont distinctes :** un achat LifeUp ne débloque pas ulives, et inversement. Le Premium acheté pour ulives est prévu pour fonctionner sur toutes les plateformes ulives une fois la synchronisation de compte prête ; d'ici là, l'accès multi-plateforme peut nécessiter de nous contacter à [fb@ulives.io](mailto:fb@ulives.io).
->
-> Comparaison complète : [ulives vs LifeUp — Comparison](https://app.ulives.io/docs/comparison-with-lifeup)
+> **LifeUp est réservé à Android.** Le prix de l'adhésion à vie reflète une portée mono-plateforme — c'est pourquoi nous pouvons proposer un prix unique plus bas. LifeUp est un téléchargement payant avec une [API](/guide/api.md) complète pour l'automatisation, les extensions et les workflows IA.<br><br>Besoin d'un accès **multi-plateforme** ? Découvrez [**ulives**](https://app.ulives.io/) — téléchargement gratuit, déjà disponible sur iOS, iPadOS et macOS, Google Play (Android) arrive bientôt. ulives Premium débloque définitivement les nouvelles fonctionnalités ; le prix est plus élevé que LifeUp car il couvre le développement multi-plateforme et la maintenance à long terme. ulives ne prend pas encore en charge l'extension par API.<br><br>**Les adhésions sont distinctes :** un achat LifeUp ne débloque pas ulives, et inversement. Le Premium acheté pour ulives est prévu pour fonctionner sur toutes les plateformes ulives une fois la synchronisation de compte prête ; d'ici là, l'accès multi-plateforme peut nécessiter de nous contacter à [fb@ulives.io](mailto:fb@ulives.io).<br><br>Comparaison complète : [ulives vs LifeUp — Comparison](https://app.ulives.io/docs/comparison-with-lifeup)
 
 ## 🏪 1. Google Play Store (recommandé)
 

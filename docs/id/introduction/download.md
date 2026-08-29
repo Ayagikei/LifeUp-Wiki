@@ -1,13 +1,7 @@
 # Unduh & Pembelian
 
 > [!NOTE]
-> **LifeUp hanya untuk Android.** Harga keanggotaan seumur hidup mencerminkan cakupan platform tunggal — itulah mengapa kami dapat menawarkan harga sekali bayar yang lebih rendah. LifeUp adalah unduhan berbayar dengan [API](/guide/api.md) lengkap untuk otomatisasi, ekstensi, dan alur kerja AI.
->
-> Butuh akses **lintas platform**? Lihat **[ulives](https://app.ulives.io/)** — unduh gratis, sudah tersedia di iOS, iPadOS, dan macOS, dengan Google Play (Android) segera hadir. ulives Premium adalah pembelian sekali untuk membuka fitur baru secara permanen; harganya lebih tinggi dari LifeUp karena mencakup pengembangan lintas platform dan pemeliharaan jangka panjang. ulives belum mendukung ekstensi API.
->
-> **Keanggotaan terpisah:** pembelian LifeUp tidak membuka ulives, dan sebaliknya. Premium yang dibeli untuk ulives dimaksudkan untuk berfungsi di semua platform ulives setelah sinkronisasi akun siap; sampai saat itu, hak lintas platform mungkin memerlukan kontak ke [fb@ulives.io](mailto:fb@ulives.io).
->
-> Perbandingan lengkap: [ulives vs LifeUp — Comparison](https://app.ulives.io/docs/comparison-with-lifeup)
+> **LifeUp hanya untuk Android.** Harga keanggotaan seumur hidup mencerminkan cakupan platform tunggal — itulah mengapa kami dapat menawarkan harga sekali bayar yang lebih rendah. LifeUp adalah unduhan berbayar dengan [API](/guide/api.md) lengkap untuk otomatisasi, ekstensi, dan alur kerja AI.<br><br>Butuh akses **lintas platform**? Lihat [**ulives**](https://app.ulives.io/) — unduh gratis, sudah tersedia di iOS, iPadOS, dan macOS, dengan Google Play (Android) segera hadir. ulives Premium adalah pembelian sekali untuk membuka fitur baru secara permanen; harganya lebih tinggi dari LifeUp karena mencakup pengembangan lintas platform dan pemeliharaan jangka panjang. ulives belum mendukung ekstensi API.<br><br>**Keanggotaan terpisah:** pembelian LifeUp tidak membuka ulives, dan sebaliknya. Premium yang dibeli untuk ulives dimaksudkan untuk berfungsi di semua platform ulives setelah sinkronisasi akun siap; sampai saat itu, hak lintas platform mungkin memerlukan kontak ke [fb@ulives.io](mailto:fb@ulives.io).<br><br>Perbandingan lengkap: [ulives vs LifeUp — Comparison](https://app.ulives.io/docs/comparison-with-lifeup)
 
 ## 🏪 1. Google Play Store (Disarankan)
 

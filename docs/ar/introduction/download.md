@@ -1,13 +1,7 @@
 # التنزيل والشراء
 
 > [!NOTE]
-> **LifeUp مخصص لـ Android فقط.** يعكس سعر العضوية مدى المنصة الواحدة — لذلك يمكننا تقديم سعر دفع لمرة واحدة أقل. LifeUp تنزيل مدفوع مع [API](/guide/api.md) كامل للأتمتة والتوسيع وسير عمل الذكاء الاصطناعي.
->
-> هل تحتاج وصولًا **عبر المنصات**؟ راجع **[ulives](https://app.ulives.io/)** — تنزيل مجاني، متاح بالفعل على iOS وiPadOS وmacOS، مع Google Play (Android) قريبًا. ulives Premium شراء لمرة واحدة لفتح الميزات الجديدة بشكل دائم؛ السعر أعلى من LifeUp لأنه يغطي التطوير عبر المنصات والصيانة طويلة الأمد. ulives لا يدعم التوسيع عبر API بعد.
->
-> **العضويات منفصلة:** شراء LifeUp لا يفتح ulives والعكس صحيح. من المفترض أن يعمل Premium المشترى لـ ulives على جميع منصات ulives بمجرد جاهزية مزامنة الحساب؛ حتى ذلك الحين، قد يتطلب الوصول عبر المنصات التواصل معنا على [fb@ulives.io](mailto:fb@ulives.io).
->
-> مقارنة كاملة: [ulives vs LifeUp — Comparison](https://app.ulives.io/docs/comparison-with-lifeup)
+> **LifeUp مخصص لـ Android فقط.** يعكس سعر العضوية مدى المنصة الواحدة — لذلك يمكننا تقديم سعر دفع لمرة واحدة أقل. LifeUp تنزيل مدفوع مع [API](/guide/api.md) كامل للأتمتة والتوسيع وسير عمل الذكاء الاصطناعي.<br><br>هل تحتاج وصولًا **عبر المنصات**؟ راجع [**ulives**](https://app.ulives.io/) — تنزيل مجاني، متاح بالفعل على iOS وiPadOS وmacOS، مع Google Play (Android) قريبًا. ulives Premium شراء لمرة واحدة لفتح الميزات الجديدة بشكل دائم؛ السعر أعلى من LifeUp لأنه يغطي التطوير عبر المنصات والصيانة طويلة الأمد. ulives لا يدعم التوسيع عبر API بعد.<br><br>**العضويات منفصلة:** شراء LifeUp لا يفتح ulives والعكس صحيح. من المفترض أن يعمل Premium المشترى لـ ulives على جميع منصات ulives بمجرد جاهزية مزامنة الحساب؛ حتى ذلك الحين، قد يتطلب الوصول عبر المنصات التواصل معنا على [fb@ulives.io](mailto:fb@ulives.io).<br><br>مقارنة كاملة: [ulives vs LifeUp — Comparison](https://app.ulives.io/docs/comparison-with-lifeup)
 
 ## 🏪 1. Google Play Store (موصى به)
 
