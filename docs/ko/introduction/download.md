@@ -1,6 +1,13 @@
 # 다운로드 및 구매
 
-?> iOS 대안을 찾고 계신가요? Apple 기기용 생산성 App [ulives](https://app.ulives.io/)를 확인해 보세요!
+> [!NOTE]
+> **LifeUp는 Android 전용입니다.** 평생 멤버십 가격은 단일 플랫폼 범위를 반영합니다 — 그래서 더 낮은 일회성 가격을 제공할 수 있습니다. LifeUp은 자동화, 확장, AI 워크플로를 위한 완전한 [API](/guide/api.md)를 갖춘 유료 다운로드 App입니다.
+>
+> **크로스 플랫폼** 접근이 필요하신가요? **[ulives](https://app.ulives.io/)**를 확인해 보세요 — 무료 다운로드, iOS·iPadOS·macOS에서 이용 가능하며 Google Play(Android)도 곧 출시 예정입니다. ulives Premium은 새 기능을 영구 해제하는 일회성 구매이며, 크로스 플랫폼 개발과 장기 유지보수를 포함하기 때문에 LifeUp보다 가격이 높습니다. ulives는 아직 API 확장을 지원하지 않습니다.
+>
+> **멤버십은 별도입니다:** LifeUp 구매가 ulives를 해제하지 않으며, 그 반대도 마찬가지입니다. ulives용 Premium은 계정 동기화가 준비되면 모든 ulives 플랫폼에서 작동하도록 설계되어 있습니다. 그 전까지는 크로스 플랫폼 이용 권한을 위해 [fb@ulives.io](mailto:fb@ulives.io)로 연락해야 할 수 있습니다.
+>
+> 전체 비교: [ulives vs LifeUp — Comparison](https://app.ulives.io/docs/comparison-with-lifeup)
 
 ## 🏪 1. Google Play Store (권장)
 
@@ -97,4 +104,4 @@ LifeUp은 일회성 구매 인디 App입니다. 즐겁게 사용하신다면 개
 
 ---
 
-_최종 업데이트: 2024_
+_최종 업데이트: 2026_

@@ -2,6 +2,7 @@
 - 概覽
 
   - [應用介紹](README.md)
+  - [下載與購買](introduction/download.md)
   - [更新日誌](introduction/release_log.md)
   - [開發計劃](introduction/development_plan.md)
     - [2026-2027](introduction/development_plan_2026_2027.md)

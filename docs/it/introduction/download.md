@@ -1,6 +1,13 @@
 # Download e acquisto
 
-?> Cerchi un'alternativa per iOS? Scopri [ulives](https://app.ulives.io/), la nostra App di produttività progettata per dispositivi Apple!
+> [!NOTE]
+> **LifeUp è solo per Android.** Il prezzo dell'abbonamento a vita riflette un ambito mono-piattaforma — ecco perché possiamo offrire un prezzo unico più basso. LifeUp è un download a pagamento con una [API](/guide/api.md) completa per automazione, estensioni e flussi di lavoro con IA.
+>
+> Ti serve l'accesso **cross-platform**? Scopri **[ulives](https://app.ulives.io/)** — download gratuito, già su iOS, iPadOS e macOS, con Google Play (Android) in arrivo. ulives Premium sblocca permanentemente le nuove funzionalità; il prezzo è più alto di LifeUp perché copre lo sviluppo cross-platform e la manutenzione a lungo termine. ulives non supporta ancora l'estensione via API.
+>
+> **Gli abbonamenti sono separati:** un acquisto LifeUp non sblocca ulives, e viceversa. Il Premium acquistato per ulives è pensato per funzionare su tutte le piattaforme ulives una volta pronta la sincronizzazione account; fino ad allora, l'accesso cross-platform può richiedere di contattarci a [fb@ulives.io](mailto:fb@ulives.io).
+>
+> Confronto completo: [ulives vs LifeUp — Comparison](https://app.ulives.io/docs/comparison-with-lifeup)
 
 ## 🏪 1. Google Play Store (consigliato)
 
@@ -97,4 +104,4 @@ LifeUp è un'App indie con pagamento unico. Se ti piace usarla, considera di sup
 
 ---
 
-_Ultimo aggiornamento: 2024_
+_Ultimo aggiornamento: 2026_

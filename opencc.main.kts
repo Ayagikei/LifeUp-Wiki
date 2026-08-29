@@ -28,6 +28,9 @@ fun start() {
             }
             it.extension == "md" -> {
                 convert(it, destFile)
+                if (it.name == "_sidebar.md") {
+                    patchZhHantDownloadNav(destFile)
+                }
             }
             else -> {
                 it.copyTo(
@@ -50,6 +53,18 @@ fun convert(input: File, outputFile: File) {
     outputFile.delete()
     outputFile.createNewFile()
     outputFile.writeText(output)
+}
+
+/** zh-hant-only nav: download page lives in zh-cn tree but is hidden from zh-cn sidebar. */
+fun patchZhHantDownloadNav(sidebar: File) {
+    if (!sidebar.path.contains("${File.separator}zh-hant${File.separator}")) return
+    var text = sidebar.readText()
+    if (text.contains("introduction/download.md")) return
+    text = text.replace(
+        "- [應用介紹](README.md)\n",
+        "- [應用介紹](README.md)\n  - [下載與購買](introduction/download.md)\n"
+    )
+    sidebar.writeText(text)
 }
 
 println("start running...")

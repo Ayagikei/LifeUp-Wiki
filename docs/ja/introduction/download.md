@@ -1,7 +1,13 @@
 # ダウンロードと購入
 
 > [!NOTE]
-> iOS 向けの代替 App をお探しですか？[ulives](https://app.ulives.io/) をご覧ください。Apple デバイス向けに設計された生産性 App です！
+> **LifeUp は Android 専用です。** 永久会員の価格は単一プラットフォームの範囲を反映しています — そのため、より低い買い切り価格を提供できます。LifeUp は有料ダウンロードで、自動化・拡張・AI ワークフロー向けの完全な [API](/guide/api.md) を備えています。
+>
+> **クロスプラットフォーム**利用が必要ですか？**[ulives](https://app.ulives.io/)** をご覧ください — 無料ダウンロード、iOS / iPadOS / macOS で利用可能、Google Play（Android）も近日公開予定です。ulives Premium は新機能を永久解放する買い切り購入で、クロスプラットフォーム開発と長期メンテナンスをカバーするため LifeUp より価格が高くなります。ulives は現時点で API 拡張に未対応です。
+>
+> **会員資格は別々です：** LifeUp の購入は ulives をアンロックせず、その逆も同様です。ulives 用 Premium は、アカウント同期の準備が整い次第、すべての ulives プラットフォームで利用できる想定です。それまでは、クロスプラットフォーム利用のために [fb@ulives.io](mailto:fb@ulives.io) への連絡が必要な場合があります。
+>
+> 詳細比較：[ulives vs LifeUp — Comparison](https://app.ulives.io/docs/comparison-with-lifeup)
 
 ## 🏪 1. Google Play Store（推奨）
 
@@ -98,4 +104,4 @@ LifeUp は買い切りのインディー App です。気に入っていただ�
 
 ---
 
-_最終更新: 2024_
+_最終更新: 2026_
