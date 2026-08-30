@@ -4,11 +4,14 @@
 
 - This repository hosts the **LifeUp Wiki** documentation site.
 - The site is built with Docsify and published from the `docs/` directory.
-- Main language trees:
+- **14 published locales:** `zh-cn`, `zh-hant`, `en`, `ja`, `ko`, `es`, `de`, `fr`, `it`, `pt`, `tr`, `ru`, `id`, `ar`.
+- Language trees:
   - `docs/zh-cn` (Simplified Chinese, dual source)
   - `docs/en` (English, dual source and pivot for new locales)
   - `docs/zh-hant` (Traditional Chinese, OpenCC from zh-cn)
-  - `docs/ja` `docs/ko` `docs/es` `docs/de` `docs/fr` `docs/it` `docs/pt` `docs/tr` `docs/ru` `docs/id` `docs/ar` (English-pivot translations; see `docs/_i18n/`)
+  - `docs/ja` … `docs/ar` (English-pivot translations; see `docs/_i18n/`)
+- Root `docs/index.html` redirects by `navigator.language` to a locale entry page.
+- Each locale’s `_navbar.md` includes a **Language** dropdown linking all locales.
 
 ## Source of Truth
 

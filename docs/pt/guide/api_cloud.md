@@ -4,6 +4,9 @@
  <img src="guide/_media/api/cloud.png" />
 </p>
 
+> [!NOTE]
+> Estamos liberando **LifeUp v1.106.0** e **LifeUp Cloud v3.0.0** gradualmente. Os prazos de revisão variam conforme a plataforma, então esta documentação pode ser atualizada antes que os apps estejam amplamente disponíveis; a data real de lançamento pode ser posterior à indicada aqui.
+
 O LifeUp Cloud é um dos principais kits de ferramentas de API do LifeUp. Ele transforma seu celular em uma **ponte de API**: controle o LifeUp a partir do **computador ou de outros dispositivos**, crie **integrações personalizadas** (desktop, web, scripts de automação) ou combine com **agentes de IA**.
 
 ### Cenários típicos

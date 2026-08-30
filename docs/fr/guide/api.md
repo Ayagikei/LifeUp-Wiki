@@ -2,6 +2,9 @@
 
 <p align="center">Créez des possibilités infinies !</p>
 
+> [!NOTE]
+> Nous déployons progressivement **LifeUp v1.106.0** et **LifeUp Cloud v3.0.0**. Les délais de validation varient selon la plateforme ; cette documentation peut être mise à jour avant que les apps soient largement disponibles, et la date de sortie réelle peut être postérieure à celle indiquée ici.
+
 ?> Dans la version v1.90, `LifeUp` a ouvert diverses interfaces fonctionnelles, et toute intégration avec des applications externes est la bienvenue. <br/>Elle propose aussi l'effet « URL » pour les Objets de la Boutique, et les utilisateurs peuvent utiliser directement les Objets pour appeler des applications externes ou l'interface de `LifeUp`. <br/>Ces fonctionnalités peuvent donner à votre `LifeUp` des possibilités illimitées, mais elles demandent aussi un peu de compréhension et de pratique.
 
 **Dernière mise à jour : 2026/08/28**

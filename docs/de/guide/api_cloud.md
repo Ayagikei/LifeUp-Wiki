@@ -4,6 +4,9 @@
  <img src="guide/_media/api/cloud.png" />
 </p>
 
+> [!NOTE]
+> Wir rollen **LifeUp v1.106.0** und **LifeUp Cloud v3.0.0** schrittweise aus. Da sich die Prüfzeiten je Plattform unterscheiden, kann diese Dokumentation aktualisiert werden, bevor die Apps breit verfügbar sind; das tatsächliche Veröffentlichungsdatum kann später liegen als hier angegeben.
+
 LifeUp Cloud ist eines der zentralen API-Toolkits für LifeUp. Es macht dein Telefon zu einer **API-Brücke**: LifeUp vom **Computer oder anderen Geräten** steuern, **eigene Integrationen** bauen (Desktop, Web, Automatisierungsskripte) oder mit **KI-Agenten** koppeln.
 
 ### Typische Szenarien

@@ -4,6 +4,9 @@
  <img src="guide/_media/api/cloud.png" />
 </p>
 
+> [!NOTE]
+> Kami sedang meluncurkan **LifeUp v1.106.0** dan **LifeUp Cloud v3.0.0** secara bertahap. Karena jadwal tinjauan platform bervariasi, dokumentasi ini mungkin diperbarui sebelum App tersedia secara luas; tanggal rilis aktual bisa lebih lambat dari yang tampil di sini.
+
 LifeUp Cloud adalah salah satu toolkit API inti untuk LifeUp. Cloud mengubah ponsel Anda menjadi **jembatan API**: kendalikan LifeUp dari **komputer atau perangkat lain**, bangun **integrasi kustom** (desktop, web, skrip otomatis), atau pasangkan dengan **agen AI**.
 
 ### Skenario umum

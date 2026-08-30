@@ -2,6 +2,9 @@
 
 <p align="center">Sonsuz olasılıklar yaratın!</p>
 
+> [!NOTE]
+> **LifeUp v1.106.0** ve **LifeUp Cloud v3.0.0** sürümlerini kademeli olarak yayınlıyoruz. Platform inceleme süreleri değişkenlik gösterdiğinden, bu belge App'ler genel kullanıma sunulmadan önce güncellenmiş olabilir; gerçek yayın tarihi burada gördüğünüzden daha geç olabilir.
+
 ?> v1.90 sürümünde `LifeUp`, çeşitli işlev arayüzlerini açtı; harici uygulama entegrasyonlarına açıktır. <br/>Mağaza eşyaları için "URL" efektini de sunar; kullanıcılar eşyaları doğrudan harici uygulamaları veya `LifeUp` arayüzünü çağırmak için kullanabilir. <br/>Bu özellikler `LifeUp`'ınıza sınırsız olasılıklar kazandırır; ancak biraz öğrenme, anlama ve uygulama pratiği gerektirir.
 
 **Son güncelleme: 2026/08/28**

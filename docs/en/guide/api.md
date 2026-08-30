@@ -2,6 +2,9 @@
 
 <p align="center">Create endless possibilities! </p>
 
+> [!NOTE]
+> We are rolling out **LifeUp v1.106.0** and **LifeUp Cloud v3.0.0**. Because platform review timelines vary, this documentation may be updated before the apps are widely available, so the actual release date may be later than what you see here.
+
 ?> In the v1.90 version, `LifeUp` has opened a variety of functional interfaces, and any external application integration is welcome. <br/>It also provides the “URL” effect for shop items, and users can directly use commodities to call external applications or the interface of `LifeUp`. <br/>These features can give your `LifeUp` unlimited possibilities, but it also requires a little learning understanding and hands-on ability.
 
 **Last updated: 2026/08/28**

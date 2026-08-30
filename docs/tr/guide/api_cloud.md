@@ -4,6 +4,9 @@
  <img src="guide/_media/api/cloud.png" />
 </p>
 
+> [!NOTE]
+> **LifeUp v1.106.0** ve **LifeUp Cloud v3.0.0** sürümlerini kademeli olarak yayınlıyoruz. Platform inceleme süreleri değişkenlik gösterdiğinden, bu belge App'ler genel kullanıma sunulmadan önce güncellenmiş olabilir; gerçek yayın tarihi burada gördüğünüzden daha geç olabilir.
+
 LifeUp Cloud, LifeUp'ın temel API araç setlerinden biridir. Telefonunuzu bir **API köprüsüne** dönüştürür: LifeUp'ı **bilgisayarınızdan veya diğer cihazlardan** kontrol edin, **özel entegrasyonlar** (masaüstü, web, otomasyon betikleri) oluşturun veya **yapay zekâ ajanları** ile eşleştirin.
 
 ### Tipik senaryolar

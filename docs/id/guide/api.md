@@ -2,6 +2,9 @@
 
 <p align="center">Ciptakan kemungkinan tanpa batas! </p>
 
+> [!NOTE]
+> Kami sedang meluncurkan **LifeUp v1.106.0** dan **LifeUp Cloud v3.0.0** secara bertahap. Karena jadwal tinjauan platform bervariasi, dokumentasi ini mungkin diperbarui sebelum App tersedia secara luas; tanggal rilis aktual bisa lebih lambat dari yang tampil di sini.
+
 ?> Pada versi v1.90, `LifeUp` telah membuka berbagai antarmuka fungsional, dan integrasi aplikasi eksternal apa pun disambut baik. <br/>App ini juga menyediakan efek "URL" untuk Item Toko, sehingga pengguna dapat langsung menggunakan komoditas untuk memanggil aplikasi eksternal atau antarmuka `LifeUp`. <br/>Fitur-fitur ini memberi `LifeUp` Anda kemungkinan tanpa batas, tetapi juga memerlukan sedikit pemahaman belajar dan kemampuan praktik.
 
 **Terakhir diperbarui: 2026/08/28**
