@@ -8,7 +8,7 @@
 
 | Platform          | Version                | Update Date                 |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.105.3              | 2026/08/26                  |
+| LifeUp-Android    | v1.105.4              | 2026/08/30                  |
 | LifeUp-iOS        | check [feature/ulives] | 🎉Alternative app available |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
 | LifeUp Cloud(SDK) | v2.1.1                 | 2026/06/16                  |
@@ -18,6 +18,17 @@
 <!-- tabs:start -->
 
 ### **LifeUp-Android**
+
+**v1.105.4 (2026/08/30)**
+
+**♻️ Optimization**
+
+1. **Improved loading performance for Day/Week/Month smart lists when many tasks have no deadline.**
+
+**🐛 Bug Fixes**
+
+1. **Fixed restarted overdue single tasks not appearing in Day/Week/Month smart lists.**
+2. **Fixed long task names overlapping the list name on the task detail page.**
 
 **v1.105.3 (2026/08/26)**
 
