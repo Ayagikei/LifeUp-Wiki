@@ -8,7 +8,7 @@
 
 | Platform          | Version                | Update Date                 |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.105.4              | 2026/08/30                  |
+| LifeUp-Android    | v1.105.5              | 2026/09/01                  |
 | LifeUp-iOS        | check [feature/ulives] | 🎉Alternative app available |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
 | LifeUp Cloud(SDK) | v2.1.1                 | 2026/06/16                  |
@@ -18,6 +18,12 @@
 <!-- tabs:start -->
 
 ### **LifeUp-Android**
+
+**v1.105.5 (2026/09/01)**
+
+**🐛 Bug Fixes**
+
+1. **Fixed an issue where abnormal task data could build up in certain cases**: This could make task operations such as sorting or deleting slow or unresponsive. The update automatically cleans up affected invalid data and improves performance with large task histories.
 
 **v1.105.4 (2026/08/30)**
 

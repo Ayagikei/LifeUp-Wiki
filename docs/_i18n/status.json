@@ -77,40 +77,40 @@
       }
     },
     "ReleaseLog.md": {
-      "en": "1beb55c4ab2e9c231ba7b971ea1ffc69457719bc17299e0e34f4e74605a1a7fc",
+      "en": "8e035ac872941af3be3d6d2b83491e861bda3e56c5cffd1806e41bd063ef2c19",
       "locales": {
         "ja": {
-          "sourceHashAtSync": "1beb55c4ab2e9c231ba7b971ea1ffc69457719bc17299e0e34f4e74605a1a7fc"
+          "sourceHashAtSync": "8e035ac872941af3be3d6d2b83491e861bda3e56c5cffd1806e41bd063ef2c19"
         },
         "ko": {
-          "sourceHashAtSync": "1beb55c4ab2e9c231ba7b971ea1ffc69457719bc17299e0e34f4e74605a1a7fc"
+          "sourceHashAtSync": "8e035ac872941af3be3d6d2b83491e861bda3e56c5cffd1806e41bd063ef2c19"
         },
         "es": {
-          "sourceHashAtSync": "1beb55c4ab2e9c231ba7b971ea1ffc69457719bc17299e0e34f4e74605a1a7fc"
+          "sourceHashAtSync": "8e035ac872941af3be3d6d2b83491e861bda3e56c5cffd1806e41bd063ef2c19"
         },
         "de": {
-          "sourceHashAtSync": "1beb55c4ab2e9c231ba7b971ea1ffc69457719bc17299e0e34f4e74605a1a7fc"
+          "sourceHashAtSync": "8e035ac872941af3be3d6d2b83491e861bda3e56c5cffd1806e41bd063ef2c19"
         },
         "fr": {
-          "sourceHashAtSync": "1beb55c4ab2e9c231ba7b971ea1ffc69457719bc17299e0e34f4e74605a1a7fc"
+          "sourceHashAtSync": "8e035ac872941af3be3d6d2b83491e861bda3e56c5cffd1806e41bd063ef2c19"
         },
         "it": {
-          "sourceHashAtSync": "1beb55c4ab2e9c231ba7b971ea1ffc69457719bc17299e0e34f4e74605a1a7fc"
+          "sourceHashAtSync": "8e035ac872941af3be3d6d2b83491e861bda3e56c5cffd1806e41bd063ef2c19"
         },
         "pt": {
-          "sourceHashAtSync": "1beb55c4ab2e9c231ba7b971ea1ffc69457719bc17299e0e34f4e74605a1a7fc"
+          "sourceHashAtSync": "8e035ac872941af3be3d6d2b83491e861bda3e56c5cffd1806e41bd063ef2c19"
         },
         "tr": {
-          "sourceHashAtSync": "1beb55c4ab2e9c231ba7b971ea1ffc69457719bc17299e0e34f4e74605a1a7fc"
+          "sourceHashAtSync": "8e035ac872941af3be3d6d2b83491e861bda3e56c5cffd1806e41bd063ef2c19"
         },
         "ru": {
-          "sourceHashAtSync": "1beb55c4ab2e9c231ba7b971ea1ffc69457719bc17299e0e34f4e74605a1a7fc"
+          "sourceHashAtSync": "8e035ac872941af3be3d6d2b83491e861bda3e56c5cffd1806e41bd063ef2c19"
         },
         "id": {
-          "sourceHashAtSync": "1beb55c4ab2e9c231ba7b971ea1ffc69457719bc17299e0e34f4e74605a1a7fc"
+          "sourceHashAtSync": "8e035ac872941af3be3d6d2b83491e861bda3e56c5cffd1806e41bd063ef2c19"
         },
         "ar": {
-          "sourceHashAtSync": "1beb55c4ab2e9c231ba7b971ea1ffc69457719bc17299e0e34f4e74605a1a7fc"
+          "sourceHashAtSync": "8e035ac872941af3be3d6d2b83491e861bda3e56c5cffd1806e41bd063ef2c19"
         }
       }
     },
@@ -1372,7 +1372,7 @@
       }
     },
     "introduction/download.md": {
-      "en": "9eee60a34e2b19b0eca6d8ebc03aaaacda0322095c62f669f71b3f8b133db2ca",
+      "en": "dfe00db3fdd732ef11f23ce729878e3e72d3ba5b4b95be413a7d0bb02a4c772e",
       "locales": {
         "ja": {
           "sourceHashAtSync": "9eee60a34e2b19b0eca6d8ebc03aaaacda0322095c62f669f71b3f8b133db2ca"

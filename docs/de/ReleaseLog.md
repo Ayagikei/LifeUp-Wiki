@@ -8,7 +8,7 @@
 
 | Plattform          | Version                | Aktualisierungsdatum                 |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.105.3              | 2026/08/26                  |
+| LifeUp-Android    | v1.105.5              | 2026/09/01                  |
 | LifeUp-iOS        | check [feature/ulives] | 🎉Alternative App verfügbar |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
 | LifeUp Cloud(SDK) | v2.1.1                 | 2026/06/16                  |
@@ -18,6 +18,12 @@
 <!-- tabs:start -->
 
 ### **LifeUp-Android**
+
+**v1.105.5 (2026/09/01)**
+
+**🐛 Fehlerbehebungen**
+
+1. **Problem behoben, bei dem sich in bestimmten Fällen abnormale Aufgabendaten ansammeln konnten**: Dadurch konnten Aufgabenoperationen wie Sortieren oder Löschen langsam oder ohne Reaktion sein. Das Update bereinigt betroffene ungültige Daten automatisch und verbessert die Leistung bei großen Aufgabenverläufen.
 
 **v1.105.3 (2026/08/26)**
 

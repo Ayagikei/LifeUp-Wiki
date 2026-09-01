@@ -8,7 +8,7 @@
 
 | Plataforma        | Versão                | Data de atualização         |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.105.3              | 2026/08/26                  |
+| LifeUp-Android    | v1.105.5              | 2026/09/01                  |
 | LifeUp-iOS        | consulte [feature/ulives] | 🎉App alternativo disponível |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
 | LifeUp Cloud(SDK) | v2.1.1                 | 2026/06/16                  |
@@ -18,6 +18,12 @@
 <!-- tabs:start -->
 
 ### **LifeUp-Android**
+
+**v1.105.5 (2026/09/01)**
+
+**🐛 Correções de bugs**
+
+1. **Corrigido um problema em que dados anômalos de Tarefas podiam se acumular em certos casos**: Isso podia tornar operações como ordenar ou excluir Tarefas lentas ou sem resposta. A atualização limpa automaticamente os dados inválidos afetados e melhora o desempenho com grandes históricos de Tarefas.
 
 **v1.105.3 (2026/08/26)**
 

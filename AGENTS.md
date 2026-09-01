@@ -41,6 +41,12 @@
 - Keep English heading IDs (`:id=`). Translate visible text only.
 - Plan: `docs/plans/2026-08-29-wiki-i18n/delivery-plan.md`.
 
+### Release log (public Android releases)
+
+- On each public release, update in the same change: `docs/en/ReleaseLog.md`, `docs/zh-cn/introduction/release_log.md`, and every catalog target locale’s `ReleaseLog.md`.
+- `docs/zh-hant/introduction/release_log.md` is OpenCC-only from `zh-cn`; never hand-edit.
+- After translating a locale `ReleaseLog.md`, run `python3 scripts/i18n_status.py stamp <locale> ReleaseLog.md`.
+
 
 ## Docsify Linking Convention
 

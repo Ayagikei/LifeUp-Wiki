@@ -8,7 +8,7 @@
 
 | Piattaforma       | Versione               | Data aggiornamento          |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.105.3              | 2026/08/26                  |
+| LifeUp-Android    | v1.105.5              | 2026/09/01                  |
 | LifeUp-iOS        | consulta [feature/ulives] | 🎉App alternativa disponibile |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
 | LifeUp Cloud(SDK) | v2.1.1                 | 2026/06/16                  |
@@ -18,6 +18,12 @@
 <!-- tabs:start -->
 
 ### **LifeUp-Android**
+
+**v1.105.5 (2026/09/01)**
+
+**🐛 Correzioni bug**
+
+1. **Corretto un problema per cui dati anomali dei Compiti potevano accumularsi in certi casi**: Ciò poteva rendere lente o non reattive operazioni sui Compiti come ordinamento o eliminazione. L'aggiornamento pulisce automaticamente i dati non validi interessati e migliora le prestazioni con cronologie estese di Compiti.
 
 **v1.105.3 (2026/08/26)**
 

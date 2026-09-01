@@ -8,7 +8,7 @@
 
 | Platform          | Sürüm                  | Güncelleme Tarihi           |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.105.3              | 2026/08/26                  |
+| LifeUp-Android    | v1.105.5              | 2026/09/01                  |
 | LifeUp-iOS        | check [feature/ulives] | 🎉Alternatif uygulama mevcut |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
 | LifeUp Cloud(SDK) | v2.1.1                 | 2026/06/16                  |
@@ -18,6 +18,12 @@
 <!-- tabs:start -->
 
 ### **LifeUp-Android**
+
+**v1.105.5 (2026/09/01)**
+
+**🐛 Hata Düzeltmeleri**
+
+1. **Belirli durumlarda anormal Görev verilerinin birikebilmesi sorunu düzeltildi**: Bu durum, sıralama veya silme gibi Görev işlemlerinin yavaşlamasına veya yanıt vermemesine neden olabiliyordu. Güncelleme, etkilenen geçersiz verileri otomatik olarak temizler ve büyük Görev geçmişlerinde performansı iyileştirir.
 
 **v1.105.3 (2026/08/26)**
 

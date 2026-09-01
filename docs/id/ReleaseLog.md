@@ -8,7 +8,7 @@
 
 | Platform          | Versi                  | Tanggal Pembaruan           |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.105.3              | 2026/08/26                  |
+| LifeUp-Android    | v1.105.5              | 2026/09/01                  |
 | LifeUp-iOS        | lihat [feature/ulives] | 🎉App alternatif tersedia   |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
 | LifeUp Cloud(SDK) | v2.1.1                 | 2026/06/16                  |
@@ -18,6 +18,12 @@
 <!-- tabs:start -->
 
 ### **LifeUp-Android**
+
+**v1.105.5 (2026/09/01)**
+
+**🐛 Perbaikan Bug**
+
+1. **Memperbaiki masalah akumulasi data Tugas yang tidak normal dalam kondisi tertentu**: Hal ini dapat membuat operasi Tugas seperti pengurutan atau penghapusan menjadi lambat atau tidak responsif. Pembaruan secara otomatis membersihkan data tidak valid yang terpengaruh dan meningkatkan kinerja pada riwayat Tugas yang besar.
 
 **v1.105.3 (2026/08/26)**
 
