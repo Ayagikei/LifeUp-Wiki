@@ -48,7 +48,7 @@ MCP 提供 Agent **读写 API** 的能力；AI 在此基础上做**理解与决�
 把下面这句话发给 Agent，让它按文档完成 MCP 安装与首次连接即可：
 
 ```
-按这份文档帮我安装 LifeUp MCP 并完成首次连接：https://raw.githubusercontent.com/Ayagikei/LifeUp-Wiki/master/docs/zh-cn/guide/api_mcp.md
+按这份文档帮我安装 LifeUp MCP 并完成首次连接：https://wiki.lifeupapp.fun/zh-cn/guide/api_mcp.md
 ```
 
 <br/>

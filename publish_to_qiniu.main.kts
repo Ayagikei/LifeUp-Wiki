@@ -72,8 +72,9 @@ fun main() {
             val token = auth.uploadToken(bucketName, key)
 
             try {
-                val response = uploadManager.put(filePath, key, token)
-                println("Successfully uploaded $file -> $key: ${response.bodyString()}")
+                val mime = uploadMimeType(filePath)
+                val response = uploadManager.put(filePath, key, token, null, mime, false)
+                println("Successfully uploaded $file -> $key ($mime): ${response.bodyString()}")
             } catch (e: Exception) {
                 println("Failed to upload $file: ${e.message}")
                 allUploadedSuccessfully = false
@@ -143,6 +144,13 @@ fun envFlag(name: String): Boolean {
             raw.equals("true", ignoreCase = true) ||
             raw.equals("yes", ignoreCase = true) ||
             raw.equals("y", ignoreCase = true)
+}
+
+fun uploadMimeType(filePath: String): String? {
+    return when (filePath.substringAfterLast('.', "").lowercase()) {
+        "md" -> "text/plain; charset=utf-8"
+        else -> null
+    }
 }
 
 fun getAllFilesUnderDocs(docsDir: String): List<String> {
