@@ -7,7 +7,7 @@
 | **MCP** `@lifeup/mcp` | 发现云人升、发送 HTTP 请求、编码参数、解析返回值 | Cursor、Claude Desktop、WorkBuddy，以及任意 MCP 客户端 |
 | **Skills** `lifeup-cloud/` | 连接方式、查询思路、API 调用方法与参数说明 | 已内置于 MCP 的 `help`；Claude Code / Pi 也可当作磁盘技能使用 |
 
-你电脑上的 Agent 会通过局域网连接手机里的《云人升》，再间接操作《人升》App。HTTP 接口细节仍以 [云人升 API](guide/api_cloud.md) 为准；MCP 源码见 [LifeUp-SDK/mcp](https://github.com/Ayagikei/LifeUp-SDK/tree/feat/mcp/mcp)。
+你电脑上的 Agent 会通过局域网连接手机里的《云人升》，再间接操作《人升》App。HTTP 接口细节仍以 [云人升 API](guide/api_cloud.md) 为准；MCP 源码见 [LifeUp-SDK/mcp](https://github.com/Ayagikei/LifeUp-SDK/tree/main/mcp)。
 
 > [!NOTE]
 > 需要 **人升 1.106.0**+ 与 **云人升 3.0.0**+。更早的版本或许能连上，但流水、统计、等级曲线等能力不完整；可通过 `status.update` 提示升级。
@@ -55,7 +55,7 @@ MCP 提供 Agent **读写 API** 的能力；AI 在此基础上做**理解与决�
 
 ## Skills
 
-技能文件位于 [`mcp/skills/lifeup-cloud/`](https://github.com/Ayagikei/LifeUp-SDK/tree/feat/mcp/mcp/skills/lifeup-cloud)（仓库内仅此一份，没有单独的 npm 包）。
+技能文件位于 [`mcp/skills/lifeup-cloud/`](https://github.com/Ayagikei/LifeUp-SDK/tree/main/mcp/skills/lifeup-cloud)（仓库内仅此一份，没有单独的 npm 包）。
 
 - **Cursor / Claude Desktop / WorkBuddy**：只安装 MCP 即可；`help` 读的就是这份技能，无需重复安装。
 - **Claude Code / Pi / 自定义流程**：把整个目录复制到 agent 的 skills 路径，或直接指向仓库中的文件夹。
@@ -97,20 +97,35 @@ Token 可选；若填写，请求头里写**原始 Token**，不要加 `Bearer` 
 
 ## 安装 MCP
 
-包尚未上架 npm 时，可直接从 GitHub 安装：
+**npm（推荐）：**
 
 ```json
 {
   "mcpServers": {
     "lifeup": {
       "command": "npx",
-      "args": ["-y", "github:Ayagikei/LifeUp-SDK#feat/mcp"]
+      "args": ["-y", "@lifeup/mcp"]
     }
   }
 }
 ```
 
-`npx` 会自动 clone 仓库并编译 `mcp/`。合入 `main` 分支后，可去掉 `#feat/mcp`。
+若访问 npm 源站不稳定，可在 `npx` 命令后加 `--registry=https://registry.npmmirror.com` 使用镜像。
+
+**GitHub**（跟踪仓库 `main` 分支，经 `prepare` 自动编译）：
+
+```json
+{
+  "mcpServers": {
+    "lifeup": {
+      "command": "npx",
+      "args": ["-y", "github:Ayagikei/LifeUp-SDK"]
+    }
+  }
+}
+```
+
+`npx` 会自动 clone 仓库并编译 `mcp/`。
 
 本地已 clone [LifeUp-SDK](https://github.com/Ayagikei/LifeUp-SDK) 时，推荐用安装脚本（编译 MCP，写入已检测到的客户端；重复运行会更新，不会再注册一份）：
 
@@ -128,7 +143,6 @@ macOS 上的图形界面客户端往往找不到 `npx`，可改用 `npx`/`node` 
 | `LIFEUP_TOKEN` | 仅保存在进程内，不会写入磁盘 |
 | `LIFEUP_MCP_CONFIG` | 自定义配置文件路径 |
 
-上架后可用 `npx -y @lifeup/mcp`（国内可用 npmmirror）。
 <br/>
 
 ## Agent 流程

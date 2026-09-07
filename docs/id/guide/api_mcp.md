@@ -7,7 +7,7 @@ Ingin AI bekerja dengan LifeUp? Ada dua lapisan:
 | **MCP** `@lifeup/mcp` | Menemukan LifeUp Cloud, mengirim permintaan HTTP, mengodekan param, mengurai respons | Cursor, Claude Desktop, WorkBuddy, dan klien MCP apa pun |
 | **Skills** `lifeup-cloud/` | Cara terhubung, apa yang dikueri, dan cara memanggil setiap API | Dibundel sebagai MCP `help`; Claude Code / Pi juga dapat memuat folder sebagai disk skill |
 
-Agen di komputer Anda menjangkau LifeUp Cloud di ponsel lewat LAN, lalu berkomunikasi dengan LifeUp. Detail HTTP ada di [API LifeUp Cloud](guide/api_cloud.md). Sumber MCP: [LifeUp-SDK/mcp](https://github.com/Ayagikei/LifeUp-SDK/tree/feat/mcp/mcp).
+Agen di komputer Anda menjangkau LifeUp Cloud di ponsel lewat LAN, lalu berkomunikasi dengan LifeUp. Detail HTTP ada di [API LifeUp Cloud](guide/api_cloud.md). Sumber MCP: [LifeUp-SDK/mcp](https://github.com/Ayagikei/LifeUp-SDK/tree/main/mcp).
 
 > [!NOTE]
 > Memerlukan **LifeUp 1.106.0**+ dan **LifeUp Cloud 3.0.0**+. Build lama mungkin masih terhubung, tapi jurnal, statistik, dan kurva Level belum lengkap. `status.update` dapat meminta pengguna untuk memperbarui.
@@ -55,7 +55,7 @@ Follow this doc to install the LifeUp MCP server and complete the first connecti
 
 ## Skills
 
-File skill ada di [`mcp/skills/lifeup-cloud/`](https://github.com/Ayagikei/LifeUp-SDK/tree/feat/mcp/mcp/skills/lifeup-cloud) (satu salinan di repo — tanpa paket npm terpisah).
+File skill ada di [`mcp/skills/lifeup-cloud/`](https://github.com/Ayagikei/LifeUp-SDK/tree/main/mcp/skills/lifeup-cloud) (satu salinan di repo — tanpa paket npm terpisah).
 
 - **Cursor / Claude Desktop / WorkBuddy:** pasang MCP saja. `help` membaca skill ini; jangan pasang dua kali.
 - **Claude Code / Pi / alur kustom:** salin folder ke path skills agen, atau arahkan langsung ke repo.
@@ -97,20 +97,35 @@ Token opsional. Jika diset, kirim token **mentah** di header — bukan `Bearer`.
 
 ## Pasang MCP
 
-Sampai paket ada di npm, pasang dari GitHub:
+**npm (disarankan):**
 
 ```json
 {
   "mcpServers": {
     "lifeup": {
       "command": "npx",
-      "args": ["-y", "github:Ayagikei/LifeUp-SDK#feat/mcp"]
+      "args": ["-y", "@lifeup/mcp"]
     }
   }
 }
 ```
 
-`npx` meng-clone repo dan membangun `mcp/`. Setelah ini masuk `main`, hapus `#feat/mcp`.
+Jika registri npm default lambat atau tidak dapat diakses, tambahkan `--registry=https://registry.npmmirror.com` ke baris perintah `npx`.
+
+**GitHub** (mengikuti `main` repo, build via `prepare`):
+
+```json
+{
+  "mcpServers": {
+    "lifeup": {
+      "command": "npx",
+      "args": ["-y", "github:Ayagikei/LifeUp-SDK"]
+    }
+  }
+}
+```
+
+`npx` meng-clone repo dan membangun `mcp/`.
 
 Jika Anda sudah meng-clone [LifeUp-SDK](https://github.com/Ayagikei/LifeUp-SDK), gunakan installer (membangun MCP dan meng-upsert klien terdeteksi; menjalankan ulang tidak mendaftarkan salinan kedua):
 
@@ -127,8 +142,6 @@ App GUI di macOS sering tidak punya `npx` di `PATH` — gunakan path absolut `np
 | `LIFEUP_HOST` | mis. `192.168.1.8:13276`, lewati mDNS |
 | `LIFEUP_TOKEN` | Hanya proses, tidak pernah ditulis ke disk |
 | `LIFEUP_MCP_CONFIG` | Path konfig kustom |
-
-Setelah diterbitkan: `npx -y @lifeup/mcp` (npmmirror di Tiongkok).
 <br/>
 
 ## Alur kerja agen :id=agent-workflow

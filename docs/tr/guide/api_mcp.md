@@ -7,7 +7,7 @@ Yapay zekânın LifeUp ile çalışmasını mı istiyorsunuz? İki katman vardı
 | **MCP** `@lifeup/mcp` | LifeUp Cloud'u keşfeder, HTTP istekleri gönderir, parametreleri kodlar, yanıtları ayrıştırır | Cursor, Claude Desktop, WorkBuddy ve herhangi bir MCP istemcisi |
 | **Skills** `lifeup-cloud/` | Nasıl bağlanılır, ne sorgulanır ve her API nasıl çağrılır | MCP `help` olarak paketlenir; Claude Code / Pi klasörü disk skill'i olarak da yükleyebilir |
 
-Bilgisayarınızdaki ajan LAN üzerinden telefonunuzdaki LifeUp Cloud'a ulaşır, ardından LifeUp ile konuşur. HTTP ayrıntıları [LifeUp Cloud API](guide/api_cloud.md) belgesindedir. MCP kaynağı: [LifeUp-SDK/mcp](https://github.com/Ayagikei/LifeUp-SDK/tree/feat/mcp/mcp).
+Bilgisayarınızdaki ajan LAN üzerinden telefonunuzdaki LifeUp Cloud'a ulaşır, ardından LifeUp ile konuşur. HTTP ayrıntıları [LifeUp Cloud API](guide/api_cloud.md) belgesindedir. MCP kaynağı: [LifeUp-SDK/mcp](https://github.com/Ayagikei/LifeUp-SDK/tree/main/mcp).
 
 > [!NOTE]
 > **LifeUp 1.106.0**+ ve **LifeUp Cloud 3.0.0**+ gerektirir. Eski derlemeler hâlâ bağlanabilir, ancak günlükler, istatistikler ve Seviye eğrisi eksiktir. `status.update` kullanıcıyı yükseltmeye yönlendirebilir.
@@ -55,7 +55,7 @@ Follow this doc to install the LifeUp MCP server and complete the first connecti
 
 ## Skills
 
-Skill dosyaları [`mcp/skills/lifeup-cloud/`](https://github.com/Ayagikei/LifeUp-SDK/tree/feat/mcp/mcp/skills/lifeup-cloud) içindedir (depoda tek kopya — ayrı npm paketi yok).
+Skill dosyaları [`mcp/skills/lifeup-cloud/`](https://github.com/Ayagikei/LifeUp-SDK/tree/main/mcp/skills/lifeup-cloud) içindedir (depoda tek kopya — ayrı npm paketi yok).
 
 - **Cursor / Claude Desktop / WorkBuddy:** yalnızca MCP'yi kurun. `help` bu skill'i okur; iki kez kurmayın.
 - **Claude Code / Pi / özel iş akışı:** klasörü ajanın skills yoluna kopyalayın veya doğrudan depoyu gösterin.
@@ -97,20 +97,35 @@ Token isteğe bağlıdır. Ayarlandıysa başlıkta **ham** token gönderin — 
 
 ## MCP kurulumu
 
-Paket npm'de yayınlanana kadar GitHub'dan kurun:
+**npm (önerilen):**
 
 ```json
 {
   "mcpServers": {
     "lifeup": {
       "command": "npx",
-      "args": ["-y", "github:Ayagikei/LifeUp-SDK#feat/mcp"]
+      "args": ["-y", "@lifeup/mcp"]
     }
   }
 }
 ```
 
-`npx` depoyu klonlar ve `mcp/` derler. `main`'e geçince `#feat/mcp` kaldırın.
+Varsayılan npm kayıt defterine erişim zorsa, `npx` komutuna `--registry=https://registry.npmmirror.com` ekleyin.
+
+**GitHub** (`main` dalını izler, `prepare` ile derler):
+
+```json
+{
+  "mcpServers": {
+    "lifeup": {
+      "command": "npx",
+      "args": ["-y", "github:Ayagikei/LifeUp-SDK"]
+    }
+  }
+}
+```
+
+`npx` depoyu klonlar ve `mcp/` derler.
 
 [LifeUp-SDK](https://github.com/Ayagikei/LifeUp-SDK)'yı zaten klonladıysanız kurulum betiğini kullanın (MCP derler ve algılanan istemcileri günceller; yeniden çalıştırmak ikinci kopya kaydetmez):
 
@@ -128,7 +143,6 @@ macOS GUI App'lerinde genellikle `PATH`'te `npx` yoktur — mutlak `npx`/`node` 
 | `LIFEUP_TOKEN` | Yalnızca süreç içi, diske yazılmaz |
 | `LIFEUP_MCP_CONFIG` | Özel yapılandırma yolu |
 
-Yayından sonra: `npx -y @lifeup/mcp` (Çin'de npmmirror).
 <br/>
 
 ## Ajan iş akışı :id=agent-workflow

@@ -7,7 +7,7 @@ AI に LifeUp を扱わせたい場合、2 つのレイヤーがあります：
 | **MCP** `@lifeup/mcp` | LifeUp Cloud の検出、HTTP リクエスト送信、パラメータエンコード、レスポンス解析 | Cursor、Claude Desktop、WorkBuddy、その他 MCP クライアント |
 | **Skills** `lifeup-cloud/` | 接続方法、照会内容、各 API の呼び方 | MCP の `help` として同梱；Claude Code / Pi ではフォルダをディスクスキルとして読み込み可能 |
 
-PC 上のエージェントは LAN 経由で端末の LifeUp Cloud に到達し、LifeUp と通信します。HTTP の詳細は [LifeUp Cloud API](guide/api_cloud.md) を参照。MCP ソース：[LifeUp-SDK/mcp](https://github.com/Ayagikei/LifeUp-SDK/tree/feat/mcp/mcp)。
+PC 上のエージェントは LAN 経由で端末の LifeUp Cloud に到達し、LifeUp と通信します。HTTP の詳細は [LifeUp Cloud API](guide/api_cloud.md) を参照。MCP ソース：[LifeUp-SDK/mcp](https://github.com/Ayagikei/LifeUp-SDK/tree/main/mcp)。
 
 > [!NOTE]
 > **LifeUp 1.106.0** 以降と **LifeUp Cloud 3.0.0** 以降が必要です。古いビルドでも接続できる場合がありますが、ジャーナル、統計、レベル曲線は不完全です。`status.update` でユーザーにアップグレードを促せます。
@@ -55,7 +55,7 @@ Follow this doc to install the LifeUp MCP server and complete the first connecti
 
 ## Skills :id=skills
 
-スキルファイルは [`mcp/skills/lifeup-cloud/`](https://github.com/Ayagikei/LifeUp-SDK/tree/feat/mcp/mcp/skills/lifeup-cloud) にあります（リポジトリ内に 1 コピー——別 npm パッケージはありません）。
+スキルファイルは [`mcp/skills/lifeup-cloud/`](https://github.com/Ayagikei/LifeUp-SDK/tree/main/mcp/skills/lifeup-cloud) にあります（リポジトリ内に 1 コピー——別 npm パッケージはありません）。
 
 - **Cursor / Claude Desktop / WorkBuddy：** MCP のみインストール。`help` がこのスキルを読みます；二重インストール不要。
 - **Claude Code / Pi / カスタムワークフロー：** フォルダをエージェントの skills パスにコピーするか、リポジトリを直接指定。
@@ -97,20 +97,35 @@ mcp/skills/lifeup-cloud/
 
 ## MCP のインストール
 
-npm 公開前は GitHub からインストール：
+**npm（推奨）：**
 
 ```json
 {
   "mcpServers": {
     "lifeup": {
       "command": "npx",
-      "args": ["-y", "github:Ayagikei/LifeUp-SDK#feat/mcp"]
+      "args": ["-y", "@lifeup/mcp"]
     }
   }
 }
 ```
 
-`npx` がリポジトリをクローンし `mcp/` をビルドします。`main` にマージされたら `#feat/mcp` は外してください。
+npm の既定レジストリへのアクセスが不安定な場合、`npx` コマンドに `--registry=https://registry.npmmirror.com` を追加してください。
+
+**GitHub**（`main` を追跡、`prepare` でビルド）：
+
+```json
+{
+  "mcpServers": {
+    "lifeup": {
+      "command": "npx",
+      "args": ["-y", "github:Ayagikei/LifeUp-SDK"]
+    }
+  }
+}
+```
+
+`npx` がリポジトリをクローンし `mcp/` をビルドします。
 
 すでに [LifeUp-SDK](https://github.com/Ayagikei/LifeUp-SDK) をクローンしている場合はインストーラーを使用（MCP をビルドし検出クライアントを upsert；再実行しても二重登録されません）：
 
@@ -128,7 +143,6 @@ macOS の GUI App は `PATH` に `npx` がないことが多い——`npx`/`node
 | `LIFEUP_TOKEN` | プロセス内のみ、ディスクに書き込まない |
 | `LIFEUP_MCP_CONFIG` | カスタム設定パス |
 
-公開後：`npx -y @lifeup/mcp`（中国では npmmirror）。
 <br/>
 
 ## エージェントワークフロー :id=agent-workflow

@@ -7,7 +7,7 @@
 | **MCP** `@lifeup/mcp` | اكتشاف LifeUp Cloud، إرسال طلبات HTTP، ترميز المعلمات، تحليل الاستجابات | Cursor، Claude Desktop، WorkBuddy، وأي عميل MCP |
 | **Skills** `lifeup-cloud/` | كيفية الاتصال، ماذا تستعلم، وكيف تستدعي كل واجهة API | مضمّنة في MCP `help`؛ Claude Code / Pi يمكنهما أيضًا تحميل المجلد كمهارة على القرص |
 
-الوكيل على الكمبيوتر يصل إلى LifeUp Cloud على هاتفك عبر LAN، ثم يتحدث مع LifeUp. تفاصيل HTTP تبقى في [واجهة LifeUp Cloud API](guide/api_cloud.md). مصدر MCP: [LifeUp-SDK/mcp](https://github.com/Ayagikei/LifeUp-SDK/tree/feat/mcp/mcp).
+الوكيل على الكمبيوتر يصل إلى LifeUp Cloud على هاتفك عبر LAN، ثم يتحدث مع LifeUp. تفاصيل HTTP تبقى في [واجهة LifeUp Cloud API](guide/api_cloud.md). مصدر MCP: [LifeUp-SDK/mcp](https://github.com/Ayagikei/LifeUp-SDK/tree/main/mcp).
 
 > [!NOTE]
 > يتطلب **LifeUp 1.106.0**+ و**LifeUp Cloud 3.0.0**+. الإصدارات الأقدم قد تتصل، لكن اليوميات والإحصائيات ومنحنى المستويات غير مكتملة. `status.update` يمكنه مطالبة المستخدم بالترقية.
@@ -55,7 +55,7 @@ Follow this doc to install the LifeUp MCP server and complete the first connecti
 
 ## Skills
 
-ملفات المهارة في [`mcp/skills/lifeup-cloud/`](https://github.com/Ayagikei/LifeUp-SDK/tree/feat/mcp/mcp/skills/lifeup-cloud) (نسخة واحدة في المستودع — لا حزمة npm منفصلة).
+ملفات المهارة في [`mcp/skills/lifeup-cloud/`](https://github.com/Ayagikei/LifeUp-SDK/tree/main/mcp/skills/lifeup-cloud) (نسخة واحدة في المستودع — لا حزمة npm منفصلة).
 
 - **Cursor / Claude Desktop / WorkBuddy:** ثبّت MCP فقط. `help` يقرأ هذه المهارة؛ لا تثبّتها مرتين.
 - **Claude Code / Pi / سير عمل مخصص:** انسخ المجلد إلى مسار مهارات الوكيل، أو أشر مباشرة إلى المستودع.
@@ -97,20 +97,35 @@ mcp/skills/lifeup-cloud/
 
 ## تثبيت MCP
 
-حتى ينشر الحزمة على npm، ثبّت من GitHub:
+**npm (موصى به):**
 
 ```json
 {
   "mcpServers": {
     "lifeup": {
       "command": "npx",
-      "args": ["-y", "github:Ayagikei/LifeUp-SDK#feat/mcp"]
+      "args": ["-y", "@lifeup/mcp"]
     }
   }
 }
 ```
 
-`npx` يستنسخ المستودع ويبني `mcp/`. بعد الدمج في `main`، احذف `#feat/mcp`.
+إذا كان الوصول إلى سجل npm الافتراضي بطيئًا أو غير متاح، أضِف `--registry=https://registry.npmmirror.com` إلى أمر `npx`.
+
+**GitHub** (يتتبع `main`، يبني عبر `prepare`):
+
+```json
+{
+  "mcpServers": {
+    "lifeup": {
+      "command": "npx",
+      "args": ["-y", "github:Ayagikei/LifeUp-SDK"]
+    }
+  }
+}
+```
+
+`npx` يستنسخ المستودع ويبني `mcp/`.
 
 إذا استنسخت [LifeUp-SDK](https://github.com/Ayagikei/LifeUp-SDK) مسبقًا، استخدم المثبّت (يبني MCP ويحدّث العملاء المكتشفين؛ إعادة التشغيل لا تسجّل نسخة ثانية):
 
@@ -128,7 +143,6 @@ mcp/skills/lifeup-cloud/
 | `LIFEUP_TOKEN` | في الذاكرة فقط، لا يُكتب على القرص |
 | `LIFEUP_MCP_CONFIG` | مسار إعداد مخصص |
 
-بعد النشر: `npx -y @lifeup/mcp` (npmmirror في الصين).
 <br/>
 
 ## سير عمل الوكيل :id=agent-workflow

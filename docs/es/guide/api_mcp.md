@@ -7,7 +7,7 @@
 | **MCP** `@lifeup/mcp` | Descubre LifeUp Cloud, envía peticiones HTTP, codifica parámetros y analiza respuestas | Cursor, Claude Desktop, WorkBuddy y cualquier cliente MCP |
 | **Skills** `lifeup-cloud/` | Cómo conectar, qué consultar y cómo llamar a cada API | Incluido en MCP como `help`; Claude Code / Pi también pueden cargar la carpeta como skill en disco |
 
-El agente en tu ordenador llega a LifeUp Cloud en el teléfono por la LAN y luego habla con LifeUp. Los detalles HTTP están en la [API de LifeUp Cloud](guide/api_cloud.md). Código fuente MCP: [LifeUp-SDK/mcp](https://github.com/Ayagikei/LifeUp-SDK/tree/feat/mcp/mcp).
+El agente en tu ordenador llega a LifeUp Cloud en el teléfono por la LAN y luego habla con LifeUp. Los detalles HTTP están en la [API de LifeUp Cloud](guide/api_cloud.md). Código fuente MCP: [LifeUp-SDK/mcp](https://github.com/Ayagikei/LifeUp-SDK/tree/main/mcp).
 
 > [!NOTE]
 > Requiere **LifeUp 1.106.0**+ y **LifeUp Cloud 3.0.0**+. Versiones anteriores pueden seguir conectando, pero diarios, estadísticas y la curva de nivel están incompletos. `status.update` puede pedir al usuario que actualice.
@@ -55,7 +55,7 @@ Follow this doc to install the LifeUp MCP server and complete the first connecti
 
 ## Skills
 
-Los archivos de Skills están en [`mcp/skills/lifeup-cloud/`](https://github.com/Ayagikei/LifeUp-SDK/tree/feat/mcp/mcp/skills/lifeup-cloud) (una copia en el repo — sin paquete npm aparte).
+Los archivos de Skills están en [`mcp/skills/lifeup-cloud/`](https://github.com/Ayagikei/LifeUp-SDK/tree/main/mcp/skills/lifeup-cloud) (una copia en el repo — sin paquete npm aparte).
 
 - **Cursor / Claude Desktop / WorkBuddy:** instala solo MCP. `help` lee este skill; no lo instales dos veces.
 - **Claude Code / Pi / flujo personalizado:** copia la carpeta en la ruta de skills del agente, o apunta directamente al repo.
@@ -97,20 +97,35 @@ El token es opcional. Si lo usas, envía el token **en bruto** en la cabecera �
 
 ## Instalar MCP
 
-Hasta que el paquete esté en npm, instala desde GitHub:
+**npm (recomendado):**
 
 ```json
 {
   "mcpServers": {
     "lifeup": {
       "command": "npx",
-      "args": ["-y", "github:Ayagikei/LifeUp-SDK#feat/mcp"]
+      "args": ["-y", "@lifeup/mcp"]
     }
   }
 }
 ```
 
-`npx` clona el repo y compila `mcp/`. Cuando esto llegue a `main`, quita `#feat/mcp`.
+Si el registro npm predeterminado es lento o inaccesible, añade `--registry=https://registry.npmmirror.com` al comando `npx`.
+
+**GitHub** (sigue `main`, compila vía `prepare`):
+
+```json
+{
+  "mcpServers": {
+    "lifeup": {
+      "command": "npx",
+      "args": ["-y", "github:Ayagikei/LifeUp-SDK"]
+    }
+  }
+}
+```
+
+`npx` clona el repo y compila `mcp/`.
 
 Si ya clonaste [LifeUp-SDK](https://github.com/Ayagikei/LifeUp-SDK), usa el instalador (compila MCP y actualiza clientes detectados; repetir no registra una segunda copia):
 
@@ -128,7 +143,6 @@ Las apps con GUI en macOS a menudo no tienen `npx` en el `PATH` — usa una ruta
 | `LIFEUP_TOKEN` | Solo en proceso, nunca escrito en disco |
 | `LIFEUP_MCP_CONFIG` | Ruta de config personalizada |
 
-Tras publicar: `npx -y @lifeup/mcp` (npmmirror en China).
 <br/>
 
 ## Flujo del agente :id=agent-workflow
