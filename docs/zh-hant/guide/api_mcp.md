@@ -110,7 +110,7 @@ Token 可選；若填寫，請求頭裏寫**原始 Token**，不要加 `Bearer` 
 }
 ```
 
-若存取 npm 源站不穩定，可在 `npx` 命令後加上 `--registry=https://registry.npmmirror.com` 使用鏡像站。
+若訪問 npm 源站不穩定，可在 `npx` 命令後加 `--registry=https://registry.npmmirror.com` 使用映象。
 
 **GitHub**（跟蹤倉庫 `main` 分支，經 `prepare` 自動編譯）：
 
