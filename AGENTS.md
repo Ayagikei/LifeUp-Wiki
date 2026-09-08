@@ -8,7 +8,7 @@
 - Language trees:
   - `docs/zh-cn` (Simplified Chinese, dual source)
   - `docs/en` (English, dual source and pivot for new locales)
-  - `docs/zh-hant` (Traditional Chinese, OpenCC from zh-cn)
+  - `docs/zh-hant` (Traditional Chinese, manually maintained)
   - `docs/ja` … `docs/ar` (English-pivot translations; see `docs/_i18n/`)
 - Root `docs/index.html` redirects by `navigator.language` to a locale entry page.
 - Each locale’s `_navbar.md` includes a **Language** dropdown linking all locales.
@@ -19,22 +19,17 @@
 - New locales follow the `docs/en` path tree. Track freshness with `python3 scripts/i18n_status.py`.
 - Shared assets are mainly in `docs/_media` and language-specific `_media` folders.
 
-## Traditional Chinese Automation (Critical)
+## Traditional Chinese (Critical)
 
-- `docs/zh-hant` is auto-generated from `docs/zh-cn` by `opencc.main.kts`.
-- GitHub Actions workflow `.github/workflows/opencc.yml` runs this conversion on push to `master`.
-- The workflow automatically commits converted updates (commit message: `chore: update zh-hant`).
-- Publish workflows (`.github/workflows/pages.yml` and `.github/workflows/qiniu.yml`) run after the OpenCC workflow.
-
-### Rule
-
-- **Do not manually maintain or edit files under `docs/zh-hant`.**
-- To update Traditional Chinese docs, edit `docs/zh-cn` and push changes; GitHub Action handles conversion and commit automatically.
+- `docs/zh-hant` is **manually maintained** alongside `docs/zh-cn`.
+- Match App `values-zh-rTW` terminology (e.g. **實驗室**, **自訂**); do not rely on OpenCC output in published pages.
+- Prefer `zh-hant` internal links in `docs/zh-hant/**` (not `zh-cn` URLs).
+- `opencc.main.kts` and `.github/workflows/opencc.yml` remain optional **draft** helpers only; CI does not commit converted files.
 
 ## Wiki i18n (English-pivot locales)
 
 - Pivot: `docs/en`. Do not treat `zh-cn` as a translation of English.
-- `docs/zh-hant` stays OpenCC from `zh-cn`; never hand-edit it.
+- `docs/zh-hant` is manually maintained; update it when `docs/zh-cn` changes for user-facing pages.
 - New locale dirs mirror English paths (`feature/`, `Introduction.md`, `ReleaseLog.md`).
 - Inventory and waves: `docs/_i18n/catalog.json`. Freshness: `python3 scripts/i18n_status.py status|stamp|init`.
 - After translating a locale file, stamp it. Do not copy English `.md` into a locale as a published placeholder.
@@ -43,8 +38,7 @@
 
 ### Release log (public Android releases)
 
-- On each public release, update in the same change: `docs/en/ReleaseLog.md`, `docs/zh-cn/introduction/release_log.md`, and every catalog target locale’s `ReleaseLog.md`.
-- `docs/zh-hant/introduction/release_log.md` is OpenCC-only from `zh-cn`; never hand-edit.
+- On each public release, update in the same change: `docs/en/ReleaseLog.md`, `docs/zh-cn/introduction/release_log.md`, `docs/zh-hant/introduction/release_log.md`, and every catalog target locale’s `ReleaseLog.md`.
 - After translating a locale `ReleaseLog.md`, run `python3 scripts/i18n_status.py stamp <locale> ReleaseLog.md`.
 
 
@@ -69,7 +63,7 @@
 - We use native HTML `details` + `summary` for collapsible FAQ blocks in docsify pages.
 - Global custom styles are defined in:
   - `docs/en/css/lifeup_vue_override.css`
-  - `docs/zh-cn/css/lifeup_vue_override.css` (and `zh-hant` is updated by the OpenCC workflow sync)
+  - `docs/zh-cn/css/lifeup_vue_override.css` and `docs/zh-hant/css/lifeup_vue_override.css` (keep in sync when styles change)
 - Main style hooks: `.markdown-section details`, `.markdown-section summary`, and `.markdown-section .faq-content`.
 - The CSS also supports plain markdown directly inside `<details>` (without a `.faq-content` wrapper).
 - Default behavior: keep FAQ items collapsed (do not add the `open` attribute unless explicitly needed).
@@ -93,7 +87,7 @@
 docsify serve ./docs
 ```
 
-- Local OpenCC run is optional (preview/debug only); CI automation is the default path:
+- Optional OpenCC draft (does not replace manual zh-hant edits):
 
 ```bash
 kotlinc -script opencc.main.kts

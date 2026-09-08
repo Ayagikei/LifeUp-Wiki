@@ -1,15 +1,10 @@
 {
   "sourceLocale": "en",
   "sourceDir": "docs/en",
-  "generatedLocales": {
-    "zh-hant": {
-      "from": "zh-cn",
-      "engine": "opencc",
-      "track": false
-    }
-  },
+  "generatedLocales": {},
   "dualSourceLocales": [
-    "zh-cn"
+    "zh-cn",
+    "zh-hant"
   ],
   "targetLocales": [
     {

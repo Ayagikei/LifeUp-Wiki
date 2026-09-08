@@ -8,7 +8,7 @@
 
 | Platform          | Versi                  | Tanggal Pembaruan           |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.105.5              | 2026/09/01                  |
+| LifeUp-Android    | v1.106.0              | 2026/09/08                  |
 | LifeUp-iOS        | lihat [feature/ulives] | 🎉App alternatif tersedia   |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
 | LifeUp Cloud(SDK) | v2.1.1                 | 2026/06/16                  |
@@ -18,6 +18,26 @@
 <!-- tabs:start -->
 
 ### **LifeUp-Android**
+
+**v1.106.0 (2026/09/08)**
+
+**✨ Fitur**
+
+1. **Server MCP resmi dan Skills (memerlukan LifeUp Cloud)**: agent AI dapat membaca dan mengoperasikan LifeUp (mis. mengurutkan backlog, menganalisis pomodoro/fokus/koin/XP, merancang tugas harian, atau membangun gamification). **Pengaturan → Lab**, atau [dokumentasi MCP](https://wiki.lifeupapp.fun/id/index.html#/guide/api_mcp).
+2. **URL Scheme / API tugas dengan parameter `weekdays`**: buat atau edit tugas berulang per hari (1=Sen … 7=Min); query juga mengembalikan field ini.
+
+**♻️ Optimasi**
+
+1. **Perluasan URL Scheme / API untuk MCP dan otomasi**: penyelesaian achievement, daftar tersembunyi, jurnal koin/XP/inventaris, langkah, kurva level & statistik, event broadcast, toko/loot box/syarat achievement, dll.
+2. **Validasi API dan pesan error lebih jelas**: parameter tidak valid mengembalikan error eksplisit, bukan sukses diam-diam; pemeriksaan lebih ketat untuk level, rentang waktu, dan faktor penalti.
+3. **Warna kalender mengikuti tema app**: hari terpilih, cincin progres, hari ini, dan penanda tampilan tahun.
+
+**🐛 Perbaikan**
+
+1. **Memperbaiki tingkat warna heatmap hitungan di detail tugas yang tidak akurat.**
+2. **Memperbaiki urutan grup atribut kustom yang berantakan setelah long-press tanpa drag.**
+3. **Memperbaiki pemilih tautan item yang ikut tertutup saat keluar dari pengaturan widget inventaris.**
+4. **Memperbaiki widget inventaris yang tidak refresh setelah kuantitas diubah via API.**
 
 **v1.105.5 (2026/09/01)**
 

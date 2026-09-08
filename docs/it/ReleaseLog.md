@@ -8,7 +8,7 @@
 
 | Piattaforma       | Versione               | Data aggiornamento          |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.105.5              | 2026/09/01                  |
+| LifeUp-Android    | v1.106.0              | 2026/09/08                  |
 | LifeUp-iOS        | consulta [feature/ulives] | 🎉App alternativa disponibile |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
 | LifeUp Cloud(SDK) | v2.1.1                 | 2026/06/16                  |
@@ -18,6 +18,26 @@
 <!-- tabs:start -->
 
 ### **LifeUp-Android**
+
+**v1.106.0 (2026/09/08)**
+
+**✨ Funzionalità**
+
+1. **Server MCP ufficiale e Skills (richiede LifeUp Cloud)**: gli agent IA possono leggere e agire su LifeUp (es. ordinare il backlog, analizzare pomodoro/focus/monete/EXP, progettare attività quotidiane o creare un setup gamificato). **Impostazioni → Lab**, o [documentazione MCP](https://wiki.lifeupapp.fun/it/index.html#/guide/api_mcp).
+2. **URL Scheme / API attività con parametro `weekdays`**: creare o modificare ripetizioni settimanali (1=lun … 7=dom); anche le query restituiscono questo campo.
+
+**♻️ Ottimizzazione**
+
+1. **URL Scheme / API ampliati per MCP e automazione**: completamento achievement, liste nascoste, registri monete/EXP/inventario, passi, curva livelli e statistiche, eventi broadcast, negozio/loot box/condizioni achievement, ecc.
+2. **Validazione API ed errori più chiari**: parametri non validi restituiscono errori espliciti invece di successi silenziosi; controlli più rigorosi su generazione livelli, intervalli temporali e fattori penalità.
+3. **Colori del calendario allineati al tema dell’app**: giorno selezionato, anello di progresso, oggi e indicatori della vista annuale.
+
+**🐛 Correzioni**
+
+1. **Corretti livelli colore imprecisi nella heatmap di conteggio nel dettaglio attività.**
+2. **Corretto l’ordine dei gruppi di attributi personalizzati dopo pressione prolungata senza trascinamento.**
+3. **Corretto il selettore link articolo che si chiudeva uscendo dalla configurazione del widget inventario.**
+4. **Corretto il widget inventario che non si aggiornava dopo modifica quantità via API.**
 
 **v1.105.5 (2026/09/01)**
 

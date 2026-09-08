@@ -8,7 +8,7 @@
 
 | Platform          | Sürüm                  | Güncelleme Tarihi           |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.105.5              | 2026/09/01                  |
+| LifeUp-Android    | v1.106.0              | 2026/09/08                  |
 | LifeUp-iOS        | check [feature/ulives] | 🎉Alternatif uygulama mevcut |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
 | LifeUp Cloud(SDK) | v2.1.1                 | 2026/06/16                  |
@@ -18,6 +18,26 @@
 <!-- tabs:start -->
 
 ### **LifeUp-Android**
+
+**v1.106.0 (2026/09/08)**
+
+**✨ Özellikler**
+
+1. **Resmi MCP sunucusu ve Skills (LifeUp Cloud gerekir)**: AI agent’lar LifeUp verilerini okuyup yönetebilir (backlog sıralama, pomodoro/odak/coin/XP analizi, günlük görev tasarımı, gamification kurulumu). **Ayarlar → Lab** veya [MCP belgeleri](https://wiki.lifeupapp.fun/tr/index.html#/guide/api_mcp).
+2. **Görev URL Scheme / API’de `weekdays` parametresi**: belirli günlerde tekrarlayan görevler (1=Pzt … 7=Paz); sorgular da bu alanı döndürür.
+
+**♻️ İyileştirme**
+
+1. **MCP ve otomasyon için genişletilmiş URL Scheme / API**: başarım tamamlama, gizli listeler, coin/XP/envanter kayıtları, adımlar, seviye eğrisi ve istatistikler, broadcast olayları, mağaza/kutu/başarım koşulları vb.
+2. **Daha net API doğrulama ve hata mesajları**: geçersiz parametreler sessiz başarı yerine açık hata döndürür; seviye üretimi, zaman aralıkları ve ceza faktörlerinde daha sıkı kontroller.
+3. **Takvim renkleri uygulama temasına uyumlu**: seçili gün, ilerleme halkası, bugün ve yıl görünümü işaretleri.
+
+**🐛 Düzeltmeler**
+
+1. **Görev detayı sayım heatmap’inde hatalı renk kademeleri düzeltildi.**
+2. **Özel niteliklerde sürüklemeden uzun basınca grup sırasının bozulması düzeltildi.**
+3. **Envanter widget kurulumundan çıkınca ürün bağlantı seçicisinin kapanması düzeltildi.**
+4. **API ile miktar değişince envanter widget’ının yenilenmemesi düzeltildi.**
 
 **v1.105.5 (2026/09/01)**
 

@@ -8,7 +8,7 @@
 
 | Platform          | Version                | Update Date                 |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.105.5              | 2026/09/01                  |
+| LifeUp-Android    | v1.106.0              | 2026/09/08                  |
 | LifeUp-iOS        | check [feature/ulives] | 🎉Alternative app available |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
 | LifeUp Cloud(SDK) | v2.1.1                 | 2026/06/16                  |
@@ -18,6 +18,26 @@
 <!-- tabs:start -->
 
 ### **LifeUp-Android**
+
+**v1.106.0 (2026/09/08)**
+
+**✨ Features**
+
+1. **Official MCP server and Skills (requires LifeUp Cloud)**: AI agents can read and act on your LifeUp data—for example, sort today's backlog, analyze pomodoro/focus/coin/XP, design daily tasks, or spin up a full themed gamification setup. Find it under **Settings → Labs**, or in the [MCP docs](https://wiki.lifeupapp.fun/en/index.html#/guide/api_mcp).
+2. **Task URL Scheme / API now supports `weekdays`**: Create or edit tasks that repeat on specific weekdays (1=Mon … 7=Sun); query results include this field too.
+
+**♻️ Optimization**
+
+1. **Broader URL Scheme / API coverage for MCP and automation**: Adds achievement completion, hidden list queries, coin/exp/inventory journals, step history, level curve and statistics, broadcast events, shop/loot-box/achievement-condition queries, and more.
+2. **Clearer API validation and error messages**: Invalid or out-of-range parameters return explicit errors instead of silent no-ops; stricter checks on edge cases such as level generation, time ranges, and punishment factors.
+3. **Calendar colors now follow the app theme**: Selected day, completion ring, today's date, and year-view markers match your current theme color.
+
+**🐛 Bug Fixes**
+
+1. **Fixed inaccurate color levels on the task-detail count heatmap**: Low values are easier to tell apart; over-target values stay darker.
+2. **Fixed custom attributes jumping out of group order after a long-press with no drag.**
+3. **Fixed the shop-item link picker closing when leaving the inventory widget setup page.**
+4. **Fixed the inventory widget not refreshing after item quantity is changed via API.**
 
 **v1.105.5 (2026/09/01)**
 

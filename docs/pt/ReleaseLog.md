@@ -8,7 +8,7 @@
 
 | Plataforma        | Versão                | Data de atualização         |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.105.5              | 2026/09/01                  |
+| LifeUp-Android    | v1.106.0              | 2026/09/08                  |
 | LifeUp-iOS        | consulte [feature/ulives] | 🎉App alternativo disponível |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
 | LifeUp Cloud(SDK) | v2.1.1                 | 2026/06/16                  |
@@ -18,6 +18,26 @@
 <!-- tabs:start -->
 
 ### **LifeUp-Android**
+
+**v1.106.0 (2026/09/08)**
+
+**✨ Recursos**
+
+1. **Servidor MCP oficial e Skills (requer LifeUp Cloud)**: agentes de IA podem ler e agir no LifeUp (ex.: ordenar backlog, analisar pomodoro/foco/moedas/XP, projetar tarefas diárias ou montar gamificação temática). **Configurações → Laboratório**, ou [documentação MCP](https://wiki.lifeupapp.fun/pt/index.html#/guide/api_mcp).
+2. **URL Scheme / API de tarefas com parâmetro `weekdays`**: criar ou editar repetições semanais (1=seg … 7=dom); consultas também retornam este campo.
+
+**♻️ Otimização**
+
+1. **URL Scheme / API ampliados para MCP e automação**: conclusão de conquistas, listas ocultas, registros de moedas/XP/inventário, passos, curva de nível e estatísticas, eventos broadcast, loja/caixa/condições de conquistas, etc.
+2. **Validação de API e erros mais claros**: parâmetros inválidos retornam erro explícito em vez de sucesso silencioso; checagens mais rígidas em geração de níveis, intervalos de tempo e fatores de penalidade.
+3. **Cores do calendário seguem o tema do app**: dia selecionado, anel de progresso, hoje e marcadores da vista anual.
+
+**🐛 Correções**
+
+1. **Corrigidos níveis de cor imprecisos no mapa de calor de contagem no detalhe da tarefa.**
+2. **Corrigida a ordem de grupos de atributos personalizados após toque longo sem arrastar.**
+3. **Corrigido seletor de link de item que fechava ao sair da configuração do widget de inventário.**
+4. **Corrigido widget de inventário que não atualizava após mudança de quantidade via API.**
 
 **v1.105.5 (2026/09/01)**
 

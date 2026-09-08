@@ -8,7 +8,7 @@
 
 | Plattform          | Version                | Aktualisierungsdatum                 |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.105.5              | 2026/09/01                  |
+| LifeUp-Android    | v1.106.0              | 2026/09/08                  |
 | LifeUp-iOS        | check [feature/ulives] | 🎉Alternative App verfügbar |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
 | LifeUp Cloud(SDK) | v2.1.1                 | 2026/06/16                  |
@@ -18,6 +18,26 @@
 <!-- tabs:start -->
 
 ### **LifeUp-Android**
+
+**v1.106.0 (2026/09/08)**
+
+**✨ Funktionen**
+
+1. **Offizieller MCP-Server und Skills (LifeUp Cloud erforderlich)**: KI-Agenten können LifeUp-Daten nicht nur lesen, sondern verstehen und steuern (z. B. Backlog sortieren, Pomodoro/Fokus/Münzen/XP analysieren, Alltagsaufgaben entwerfen, gamifiziertes Setup aufbauen). Unter **Einstellungen → Lab** oder in der [MCP-Dokumentation](https://wiki.lifeupapp.fun/de/index.html#/guide/api_mcp).
+2. **Aufgaben-URL-Scheme / API unterstützt jetzt `weekdays`**: Wiederholungen an bestimmten Wochentagen erstellen/bearbeiten (1=Mo … 7=So); Abfragen liefern das Feld mit.
+
+**♻️ Optimierung**
+
+1. **Deutlich erweiterte URL-Scheme-/API-Abdeckung für MCP und Automatisierung**: u. a. Erfolge abschließen, versteckte Listen, Münzen-/EP-/Inventar-Journale, Schritte, Stufenkurve und Statistiken, Broadcast-Events, Shop-/Lootbox-/Erfolgsbedingungen.
+2. **Klarere API-Validierung und Fehlermeldungen**: Ungültige Parameter liefern explizite Fehler statt stiller Erfolge; strengere Grenzprüfungen bei Stufengenerierung, Zeitbereichen und Straf-Faktoren.
+3. **Kalenderfarben folgen dem App-Design**: Auswahl, Fortschrittsring, Heute-Markierung und Jahresansicht passen zur Theme-Farbe.
+
+**🐛 Fehlerbehebungen**
+
+1. **Ungenaue Farbstufen in der Aufgaben-Detail-Heatmap behoben**: Niedrige Werte besser unterscheidbar, Übererfüllung bleibt dunkler.
+2. **Behoben, dass benutzerdefinierte Attribute nach Long-Press ohne Ziehen die Gruppenreihenfolge stören konnten.**
+3. **Behoben, dass der Artikel-Link-Dialog beim Verlassen der Inventar-Widget-Einrichtung mitgeschlossen wurde.**
+4. **Behoben, dass das Inventar-Widget nach API-Mengenänderung nicht aktualisiert wurde.**
 
 **v1.105.5 (2026/09/01)**
 

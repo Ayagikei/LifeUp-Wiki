@@ -1,9 +1,8 @@
 name: Upload Changes to Qiniu
 
 on:
-  workflow_run:
-    workflows: ["OpenCC Docs"]
-    types: [completed]
+  push:
+    branches: ["master"]
   workflow_dispatch:
     inputs:
       full_upload:

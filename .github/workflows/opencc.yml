@@ -1,28 +1,16 @@
-name: OpenCC Docs
-on:
-  push:
-    branches:
-      - master # or the name of your main branch
-  workflow_dispatch:
+# Optional draft helper only — does not commit. zh-hant is manually maintained.
+name: OpenCC Docs (draft)
 
+on:
+  workflow_dispatch:
 
 jobs:
   opencc_convert:
     runs-on: ubuntu-latest
 
     steps:
-      - name: "checkout"
-        uses: actions/checkout@v2
+      - name: checkout
+        uses: actions/checkout@v4
 
-      - name: "run kts"
+      - name: run kts (local preview only)
         run: kotlinc -script opencc.main.kts
-
-      - name: "add & commit"
-        uses: EndBug/add-and-commit@v7.4.0
-        with:
-          add: docs/
-          author_name: GitHub
-          author_email: noreply@github.com
-          #        branch: master
-          message: "chore: update zh-hant"
-          github_token: ${{ github.token }}
