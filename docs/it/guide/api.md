@@ -7,7 +7,7 @@
 
 ?> Nella versione v1.90, `LifeUp` ha aperto diverse interfacce funzionali; è benvenuta qualsiasi integrazione con applicazioni esterne. <br/>Offre anche l'effetto «URL» per gli Oggetti del Negozio, così gli utenti possono usarli direttamente per chiamare applicazioni esterne o l'interfaccia di `LifeUp`. <br/>Queste funzioni possono dare al tuo `LifeUp` possibilità illimitate, ma richiedono anche un po' di comprensione e pratica.
 
-**Ultimo aggiornamento: 2026/08/28**
+**Ultimo aggiornamento: 2026/09/11**
 
 I parametri e le definizioni delle API in questo documento si basano sulla versione **v1.106.0**.
 
@@ -524,7 +524,7 @@ Effetto apri Bottino:
 | type      | Tipo di Ricompensa                   | attualmente supporta solo:<br/>coin<br/>exp<br/>item | coin | sì | coin - monete<br/>exp - Punti Esperienza<br/>item - Oggetti del Negozio |
 | content   | Motivo della Ricompensa                 | qualsiasi testo                        | Learning API Calls | Sì      |                                  |
 | skills    | Abilità (Attributi)           | array di numeri maggiori di 0 | 1                  | No       | Solo quando type è exp<br/>Supporta array (es. &skills=1&skills=2&skills=3)<br/>Per sapere come ottenerli, consulta l'articolo «Basics - LifeUp Data ID» più sopra |
-| number    | Quantità di Ricompense             | numero maggiore di 0         | 1                  | Sì      | Se sono monete, il massimo è 999999<br/>Se sono Punti Esperienza, il massimo è 99999<br/>Se è un Oggetto, il massimo è 999 |
+| number    | Quantità di Ricompense             | numero maggiore di 0         | 1                  | Sì      | Se sono monete, il massimo è 999999<br/>Se sono Punti Esperienza, il massimo è 99999<br/>Se è un Oggetto, il massimo è 999999 (i valori sopra il limite vengono ridotti al massimo)<br/>Con Impostazioni → Labs → Riduci restrizioni dell'app attivo, il limite monete/oggetti è 999999999 e il limite esperienza è 99999999 |
 | item_id   | ID Oggetto                       | numero maggiore di 0           | 1                  | no*      | solo quando type è item |
 | item_name | Nome Oggetto                     | qualsiasi testo                        | treasure           | no*      | solo quando type è item; corrispondenza fuzzy con i nomi Oggetto |
 | silent    | Disattiva avvisi interfaccia | true o false                   | false              | no       | false per impostazione predefinita                 |
@@ -556,7 +556,7 @@ Effetto apri Bottino:
 | type      | Tipo di penalità                  | Attualmente supporta solo:<br/>coin<br/>exp<br/>item | coin     | sì      | coin - monete<br/>exp - Punti Esperienza<br/>item - Oggetti del Negozio |
 | content   | Motivo della penalità            | qualsiasi testo                                             | Sleep In | Sì      |                  |
 | skills    | Abilità (Attributi)           | array di numeri maggiori di 0                      | 1        | No       | Solo quando type è exp<br/>Supporta array (es. &skills=1&skills=2&skills=3)<br/>Per sapere come ottenerli, consulta l'articolo «Basics - LifeUp Data ID» più sopra |
-| number    | Quantità penalizzata             | numero maggiore di 0                              | 1        | Sì      | Se sono monete, il massimo è 999999<br/>Se sono Punti Esperienza, il massimo è 99999<br/>Se è un Oggetto, il massimo è 999 |
+| number    | Quantità penalizzata             | numero maggiore di 0                              | 1        | Sì      | Se sono monete, il massimo è 999999<br/>Se sono Punti Esperienza, il massimo è 99999<br/>Se è un Oggetto, il massimo è 999999 (i valori sopra il limite vengono ridotti al massimo)<br/>Con Impostazioni → Labs → Riduci restrizioni dell'app attivo, il limite monete/oggetti è 999999999 e il limite esperienza è 99999999 |
 | item_id   | ID Oggetto                       | numero maggiore di 0                                | 1        | no*      | solo quando type è item |
 | item_name | Nome Oggetto                     | qualsiasi testo                                             | treasure | no*      | solo quando type è item; corrispondenza fuzzy con i nomi Oggetto |
 | silent    | Disattiva avvisi interfaccia | true o false                                        | false    | no       | false per impostazione predefinita |

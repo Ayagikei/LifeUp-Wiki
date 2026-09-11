@@ -7,7 +7,7 @@
 
 ?> v1.90 sürümünde `LifeUp`, çeşitli işlev arayüzlerini açtı; harici uygulama entegrasyonlarına açıktır. <br/>Mağaza eşyaları için "URL" efektini de sunar; kullanıcılar eşyaları doğrudan harici uygulamaları veya `LifeUp` arayüzünü çağırmak için kullanabilir. <br/>Bu özellikler `LifeUp`'ınıza sınırsız olasılıklar kazandırır; ancak biraz öğrenme, anlama ve uygulama pratiği gerektirir.
 
-**Son güncelleme: 2026/08/28**
+**Son güncelleme: 2026/09/11**
 
 Bu belgedeki API parametreleri ve tanımları **v1.106.0** sürümüne dayanır.
 
@@ -525,7 +525,7 @@ Kutu açma efekti:
 | type | Ödül türü | şu anda yalnızca şunlar desteklenir:<br/>coin<br/>exp<br/>item | coin | evet | coin - jeton<br/>exp - Deneyim Puanı<br/>item - Mağaza eşyaları |
 | content | Ödül nedeni | herhangi bir metin | Learning API Calls | Evet | |
 | skills | Yetenekler (Özellikler) | 0'dan büyük sayı dizisi | 1 | Hayır | Yalnızca type exp olduğunda kullanılabilir<br/>Dizi desteklenir (ör. &skills=1&skills=2&skills=3)<br/>Nasıl alınacağı için yukarıdaki "Temel bilgiler - LifeUp Veri Kimliği" bölümüne bakın |
-| number | Ödül miktarı | 0'dan büyük bir sayı | 1 | Evet | Jetonsa en fazla 999999<br/>Deneyim Puanıysa en fazla 99999<br/>Eşyaysa en fazla 999 |
+| number | Ödül miktarı | 0'dan büyük bir sayı | 1 | Evet | Jetonsa en fazla 999999<br/>Deneyim Puanıysa en fazla 99999<br/>Eşyaysa en fazla 999999 (üst sınır aşılırsa bu değere kırpılır)<br/>Ayarlar → Labs → Uygulama Kısıtlamalarını Azalt açıkken jeton/eşya üst sınırı 999999999, deneyim puanı üst sınırı 99999999 |
 | item_id | item id | 0'dan büyük sayı | 1 | hayır* | yalnızca type item olduğunda kullanılabilir |
 | item_name | item name | herhangi bir metin | treasure | hayır* | yalnızca type item olduğunda kullanılabilir; Eşya adlarıyla bulanık eşleştirme |
 | silent | Arayüz bildirimlerini devre dışı bırak | true veya false | false | hayır | varsayılan false |
@@ -557,7 +557,7 @@ Kutu açma efekti:
 | type | Ceza türü | Şu anda yalnızca desteklenenler:<br/>coin<br/>exp<br/>item | coin | evet | coin - jeton<br/>exp - Deneyim Puanı<br/>item - Mağaza eşyaları |
 | content | Ceza nedeni | herhangi bir metin | Sleep In | Evet | |
 | skills | Yetenekler (Özellikler) | 0'dan büyük sayı dizisi | 1 | Hayır | Yalnızca type exp olduğunda kullanılabilir<br/>Dizi desteklenir (ör. &skills=1&skills=2&skills=3)<br/>Nasıl alınacağı için yukarıdaki "Temel bilgiler - LifeUp Veri Kimliği" bölümüne bakın |
-| number | Ceza miktarı | 0'dan büyük bir sayı | 1 | Evet | Jetonsa en fazla 999999<br/>Deneyim Puanıysa en fazla 99999<br/>Eşyaysa en fazla 999 |
+| number | Ceza miktarı | 0'dan büyük bir sayı | 1 | Evet | Jetonsa en fazla 999999<br/>Deneyim Puanıysa en fazla 99999<br/>Eşyaysa en fazla 999999 (üst sınır aşılırsa bu değere kırpılır)<br/>Ayarlar → Labs → Uygulama Kısıtlamalarını Azalt açıkken jeton/eşya üst sınırı 999999999, deneyim puanı üst sınırı 99999999 |
 | item_id | item id | 0'dan büyük sayı | 1 | hayır* | yalnızca type item olduğunda kullanılabilir |
 | item_name | item name | herhangi bir metin | treasure | hayır* | yalnızca type item olduğunda kullanılabilir; Eşya adlarıyla bulanık eşleştirme |
 | silent | Arayüz bildirimlerini devre dışı bırak | true veya false | false | hayır | varsayılan false |

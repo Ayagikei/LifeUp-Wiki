@@ -7,7 +7,7 @@
 
 ?> Pada versi v1.90, `LifeUp` telah membuka berbagai antarmuka fungsional, dan integrasi aplikasi eksternal apa pun disambut baik. <br/>App ini juga menyediakan efek "URL" untuk Item Toko, sehingga pengguna dapat langsung menggunakan komoditas untuk memanggil aplikasi eksternal atau antarmuka `LifeUp`. <br/>Fitur-fitur ini memberi `LifeUp` Anda kemungkinan tanpa batas, tetapi juga memerlukan sedikit pemahaman belajar dan kemampuan praktik.
 
-**Terakhir diperbarui: 2026/08/28**
+**Terakhir diperbarui: 2026/09/11**
 
 Parameter dan definisi API dalam dokumen ini berdasarkan versi **v1.106.0**.
 
@@ -525,7 +525,7 @@ Efek buka Kotak Jarahan:
 | type      | jenis Hadiah                   | saat ini hanya mendukung nilai berikut: <br/>coin<br/>exp<br/>item | coin | ya | coin - koin<br/>exp - Poin Pengalaman<br/>item - Item Toko |
 | content   | alasan Hadiah                 | teks apa pun                        | Learning API Calls | Ya      |                                  |
 | skills    | Keterampilan (Atribut)           | array angka lebih besar dari 0 | 1                  | Tidak       | Hanya tersedia jika type adalah exp<br/>Mendukung array (mis. &skills=1&skills=2&skills=3)<br/>Cara memperolehnya, lihat bagian "Basics - LifeUp Data ID" di atas |
-| number    | jumlah Hadiah             | angka lebih besar dari 0         | 1                  | Ya      | Jika koin, nilai maksimum 999999<br/>Jika Poin Pengalaman, nilai maksimum 99999<br/>Jika Item, nilai maksimum 999 |
+| number    | jumlah Hadiah             | angka lebih besar dari 0         | 1                  | Ya      | Jika koin, nilai maksimum 999999<br/>Jika Poin Pengalaman, nilai maksimum 99999<br/>Jika Item, nilai maksimum 999999 (nilai di atas batas dipotong)<br/>Jika Settings → Labs → Kurangi Pembatasan Apli aktif, batas koin/item adalah 999999999 dan batas pengalaman adalah 99999999 |
 | item_id   | item id                       | angka lebih besar dari 0           | 1                  | tidak*      | hanya tersedia jika type adalah item |
 | item_name | item name                     | teks apa pun                        | treasure           | tidak*      | hanya tersedia jika type adalah item, pencocokan fuzzy dengan nama Item |
 | silent    | nonaktifkan prompt UI | true atau false                   | false              | tidak       | default false                 |
@@ -557,7 +557,7 @@ Efek buka Kotak Jarahan:
 | type      | jenis penalti                  | Saat ini hanya mendukung: <br/>coin<br/>exp<br/>item | coin     | ya      | coin - koin<br/>exp - Poin Pengalaman<br/>item - Item Toko |
 | content   | alasan penalti            | teks apa pun                                             | Sleep In | Ya      |                  |
 | skills    | Keterampilan (Atribut)           | array angka lebih besar dari 0                      | 1        | Tidak       | Hanya tersedia jika type adalah exp<br/>Mendukung array (mis. &skills=1&skills=2&skills=3)<br/>Cara memperolehnya, lihat bagian "Basics - LifeUp Data ID" di atas |
-| number    | jumlah penalti             | angka lebih besar dari 0                              | 1        | Ya      | Jika koin, nilai maksimum 999999<br/>Jika Poin Pengalaman, nilai maksimum 99999<br/>Jika Item, nilai maksimum 999 |
+| number    | jumlah penalti             | angka lebih besar dari 0                              | 1        | Ya      | Jika koin, nilai maksimum 999999<br/>Jika Poin Pengalaman, nilai maksimum 99999<br/>Jika Item, nilai maksimum 999999 (nilai di atas batas dipotong)<br/>Jika Settings → Labs → Kurangi Pembatasan Apli aktif, batas koin/item adalah 999999999 dan batas pengalaman adalah 99999999 |
 | item_id   | item id                       | angka lebih besar dari 0                                | 1        | tidak*      | hanya tersedia jika type adalah item |
 | item_name | item name                     | teks apa pun                                             | treasure | tidak*      | hanya tersedia jika type adalah item, pencocokan fuzzy dengan nama Item |
 | silent    | nonaktifkan prompt UI | true atau false                                        | false    | tidak       | default false |

@@ -7,7 +7,7 @@
 
 ?> v1.90 バージョンより、`LifeUp` はさまざまな機能インターフェースを公開しており、外部アプリケーションとの連携を歓迎しています。<br/>ショップアイテムの「URL」効果も提供されており、ユーザーは商品を使って直接外部アプリや `LifeUp` のインターフェースを呼び出せます。<br/>これらの機能により `LifeUp` に無限の可能性を持たせられますが、少し学習と実践が必要です。
 
-**最終更新: 2026/08/28**
+**最終更新: 2026/09/11**
 
 本ドキュメントの API パラメータと定義は、バージョン **v1.106.0** に基づいています。
 
@@ -523,7 +523,7 @@ API が名前でタスク、ショップアイテム、サブタスクを検索�
 | type      | 報酬タイプ                   | currently only supported following values: <br/>coin<br/>exp<br/>item | coin | yes | coin - コイン<br/>exp - 経験値<br/>item - ショップアイテム |
 | content   | 報酬理由                 | any text                        | Learning API Calls | Yes      |                                  |
 | skills    | スキル（属性）           | array of numbers greater than 0 | 1                  | No       | type が exp の場合のみ利用可能<br/>配列に対応（例 &skills=1&skills=2&skills=3）<br/>取得方法は上記「Basics - LifeUp Data ID」を参照 |
-| number    | 報酬数量             | a number greater than 0         | 1                  | Yes      | コインの場合、最大値は 999999<br/>経験値の場合、最大値は 99999<br/>アイテムの場合、最大値は 999 |
+| number    | 報酬数量             | a number greater than 0         | 1                  | Yes      | コインの場合、最大値は 999999<br/>経験値の場合、最大値は 99999<br/>アイテムの場合、最大値は 999999（上限を超えた分は上限に切り詰め）<br/>「Settings → Labs → アプリ内の一部数値制限を緩和」をオンにすると、コイン/アイテム上限は 999999999、経験値上限は 99999999 |
 | item_id   | item id                       | number greater than 0           | 1                  | no*      | type が item の場合のみ利用可能 |
 | item_name | アイテム名                     | any text                        | treasure           | no*      | type が item の場合のみ利用可能。アイテム名とあいまい一致 |
 | silent    | UI プロンプトを無効にするか | true or false                   | false              | no       | デフォルトは false                 |
@@ -555,7 +555,7 @@ API が名前でタスク、ショップアイテム、サブタスクを検索�
 | type      | ペナルティタイプ                  | Currently only supported: <br/>coin<br/>exp<br/>item | coin     | yes      | coin - コイン<br/>exp - 経験値<br/>item - ショップアイテム |
 | content   | ペナルティ理由            | any text                                             | Sleep In | Yes      |                  |
 | skills    | スキル（属性）           | array of numbers greater than 0                      | 1        | No       | type が exp の場合のみ利用可能<br/>配列に対応（例 &skills=1&skills=2&skills=3）<br/>取得方法は上記「Basics - LifeUp Data ID」を参照 |
-| number    | ペナルティ数量             | a number greater than 0                              | 1        | Yes      | コインの場合、最大値は 999999<br/>経験値の場合、最大値は 99999<br/>アイテムの場合、最大値は 999 |
+| number    | ペナルティ数量             | a number greater than 0                              | 1        | Yes      | コインの場合、最大値は 999999<br/>経験値の場合、最大値は 99999<br/>アイテムの場合、最大値は 999999（上限を超えた分は上限に切り詰め）<br/>「Settings → Labs → アプリ内の一部数値制限を緩和」をオンにすると、コイン/アイテム上限は 999999999、経験値上限は 99999999 |
 | item_id   | item id                       | number greater than 0                                | 1        | no*      | type が item の場合のみ利用可能 |
 | item_name | アイテム名                     | any text                                             | treasure | no*      | type が item の場合のみ利用可能。アイテム名とあいまい一致 |
 | silent    | UI プロンプトを無効にするか | true or false                                        | false    | no       | デフォルトは false |

@@ -7,7 +7,7 @@
 
 ?> Dans la version v1.90, `LifeUp` a ouvert diverses interfaces fonctionnelles, et toute intégration avec des applications externes est la bienvenue. <br/>Elle propose aussi l'effet « URL » pour les Objets de la Boutique, et les utilisateurs peuvent utiliser directement les Objets pour appeler des applications externes ou l'interface de `LifeUp`. <br/>Ces fonctionnalités peuvent donner à votre `LifeUp` des possibilités illimitées, mais elles demandent aussi un peu de compréhension et de pratique.
 
-**Dernière mise à jour : 2026/08/28**
+**Dernière mise à jour : 2026/09/11**
 
 Les paramètres et définitions de l'API dans ce document sont basés sur la version **v1.106.0**.
 
@@ -525,7 +525,7 @@ Effet d'ouverture de Boîte de butin :
 | type      | Type de Récompense                   | actuellement seulement :<br/>coin<br/>exp<br/>item | coin | oui | coin - pièces<br/>exp - Points d'Expérience<br/>item - Objets de la Boutique |
 | content   | Motif de la Récompense                 | texte libre                        | Learning API Calls | Oui      |                                  |
 | skills    | Compétences (Attributs)           | tableau de nombres > 0 | 1                  | Non       | Uniquement lorsque type est exp<br/>Prend en charge les tableaux (p. ex. &skills=1&skills=2&skills=3)<br/>Pour savoir comment les obtenir, consultez la section « Basics - LifeUp Data ID » ci-dessus |
-| number    | Nombre de Récompenses             | nombre > 0         | 1                  | Oui      | Pour les pièces, maximum 999999<br/>Pour les Points d'Expérience, maximum 99999<br/>Pour un Objet, maximum 999 |
+| number    | Nombre de Récompenses             | nombre > 0         | 1                  | Oui      | Pour les pièces, maximum 999999<br/>Pour les Points d'Expérience, maximum 99999<br/>Pour un Objet, maximum 999999 (au-delà, la valeur est plafonnée)<br/>Si Paramètres → Labs → Réduire les restrictions de l'application est activé, la limite pièces/objet est 999999999 et la limite d'expérience est 99999999 |
 | item_id   | ID de l'Objet                       | nombre > 0           | 1                  | non*      | uniquement lorsque type est item |
 | item_name | Nom de l'Objet                     | texte libre                        | treasure           | non*      | uniquement lorsque type est item ; correspondance floue avec les noms d'Objets |
 | silent    | Désactiver les invites de l'interface | true ou false                   | false              | non       | false par défaut                 |
@@ -557,7 +557,7 @@ Effet d'ouverture de Boîte de butin :
 | type      | Type de pénalité                  | Actuellement seulement :<br/>coin<br/>exp<br/>item | coin     | oui      | coin - pièces<br/>exp - Points d'Expérience<br/>item - Objets de la Boutique |
 | content   | Motif de la pénalité            | texte libre                                             | Sleep In | Oui      |                  |
 | skills    | Compétences (Attributs)           | tableau de nombres > 0                      | 1        | Non       | Uniquement lorsque type est exp<br/>Prend en charge les tableaux (p. ex. &skills=1&skills=2&skills=3)<br/>Pour savoir comment les obtenir, consultez la section « Basics - LifeUp Data ID » ci-dessus |
-| number    | Nombre pénalisé             | nombre > 0                              | 1        | Oui      | Pour les pièces, maximum 999999<br/>Pour les Points d'Expérience, maximum 99999<br/>Pour un Objet, maximum 999 |
+| number    | Nombre pénalisé             | nombre > 0                              | 1        | Oui      | Pour les pièces, maximum 999999<br/>Pour les Points d'Expérience, maximum 99999<br/>Pour un Objet, maximum 999999 (au-delà, la valeur est plafonnée)<br/>Si Paramètres → Labs → Réduire les restrictions de l'application est activé, la limite pièces/objet est 999999999 et la limite d'expérience est 99999999 |
 | item_id   | ID de l'Objet                       | nombre > 0                                | 1        | non*      | uniquement lorsque type est item |
 | item_name | Nom de l'Objet                     | texte libre                                             | treasure | non*      | uniquement lorsque type est item ; correspondance floue avec les noms d'Objets |
 | silent    | Désactiver les invites de l'interface | true ou false                                        | false    | non       | false par défaut |

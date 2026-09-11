@@ -7,7 +7,7 @@
 
 ?> Na versão v1.90, o `LifeUp` abriu diversas interfaces funcionais, e qualquer integração com aplicativos externos é bem-vinda. <br/>Também oferece o efeito «URL» para itens da Loja, e os usuários podem usar os itens diretamente para chamar aplicativos externos ou a interface do `LifeUp`. <br/>Esses recursos podem dar ao seu `LifeUp` possibilidades ilimitadas, mas também exigem um pouco de compreensão e prática.
 
-**Última atualização: 2026/08/28**
+**Última atualização: 2026/09/11**
 
 Os parâmetros e definições da API neste documento são baseados na versão **v1.106.0**.
 
@@ -525,7 +525,7 @@ Efeito de abrir caixa:
 | type      | Tipo de Recompensa                   | atualmente só admite:<br/>coin<br/>exp<br/>item | coin | sim | coin - moedas<br/>exp - Pontos de Experiência<br/>item - Itens da Loja |
 | content   | Motivo da Recompensa                 | qualquer texto                        | Learning API Calls | Sim      |                                  |
 | skills    | Habilidades (Atributos)           | array de números maiores que 0 | 1                  | Não       | Somente quando type é exp<br/>Admite arrays (p. ex. &skills=1&skills=2&skills=3)<br/>Para saber como obtê-los, consulte o artigo «Basics - LifeUp Data ID» acima |
-| number    | Quantidade de Recompensas             | número maior que 0         | 1                  | Sim      | Se forem moedas, o máximo é 999999<br/>Se forem Pontos de Experiência, o máximo é 99999<br/>Se for um Item, o máximo é 999 |
+| number    | Quantidade de Recompensas             | número maior que 0         | 1                  | Sim      | Se forem moedas, o máximo é 999999<br/>Se forem Pontos de Experiência, o máximo é 99999<br/>Se for um Item, o máximo é 999999 (valores acima do limite são limitados)<br/>Com Definições → Labs → Reduzir restrições do app ativado, o limite de moedas/itens é 999999999 e o de experiência é 99999999 |
 | item_id   | ID do Item                       | número maior que 0           | 1                  | não*      | somente quando type é item |
 | item_name | Nome do Item                     | qualquer texto                        | treasure           | não*      | somente quando type é item; correspondência difusa com nomes de Itens |
 | silent    | Desativar avisos da interface | true ou false                   | false              | não       | false por padrão                 |
@@ -557,7 +557,7 @@ Efeito de abrir caixa:
 | type      | Tipo de penalidade                  | Atualmente só admite:<br/>coin<br/>exp<br/>item | coin     | sim      | coin - moedas<br/>exp - Pontos de Experiência<br/>item - Itens da Loja |
 | content   | Motivo da penalidade            | qualquer texto                                             | Sleep In | Sim      |                  |
 | skills    | Habilidades (Atributos)           | array de números maiores que 0                      | 1        | Não       | Somente quando type é exp<br/>Admite arrays (p. ex. &skills=1&skills=2&skills=3)<br/>Para saber como obtê-los, consulte o artigo «Basics - LifeUp Data ID» acima |
-| number    | Quantidade penalizada             | número maior que 0                              | 1        | Sim      | Se forem moedas, o máximo é 999999<br/>Se forem Pontos de Experiência, o máximo é 99999<br/>Se for um Item, o máximo é 999 |
+| number    | Quantidade penalizada             | número maior que 0                              | 1        | Sim      | Se forem moedas, o máximo é 999999<br/>Se forem Pontos de Experiência, o máximo é 99999<br/>Se for um Item, o máximo é 999999 (valores acima do limite são limitados)<br/>Com Definições → Labs → Reduzir restrições do app ativado, o limite de moedas/itens é 999999999 e o de experiência é 99999999 |
 | item_id   | ID do Item                       | número maior que 0                                | 1        | não*      | somente quando type é item |
 | item_name | Nome do Item                     | qualquer texto                                             | treasure | não*      | somente quando type é item; correspondência difusa com nomes de Itens |
 | silent    | Desativar avisos da interface | true ou false                                        | false    | não       | false por padrão |

@@ -7,7 +7,7 @@
 
 ?> In the v1.90 version, `LifeUp` has opened a variety of functional interfaces, and any external application integration is welcome. <br/>It also provides the “URL” effect for shop items, and users can directly use commodities to call external applications or the interface of `LifeUp`. <br/>These features can give your `LifeUp` unlimited possibilities, but it also requires a little learning understanding and hands-on ability.
 
-**Last updated: 2026/08/28**
+**Last updated: 2026/09/11**
 
 The API parameters and definitions in this document are based on version **v1.106.0**.
 
@@ -525,7 +525,7 @@ Open box effect:
 | type      | reward type                   | currently only supported following values: <br/>coin<br/>exp<br/>item | coin | yes | coin - coins<br/>exp - experience points<br/>item - shop items |
 | content   | reward reason                 | any text                        | Learning API Calls | Yes      |                                  |
 | skills    | skills (attributes)           | array of numbers greater than 0 | 1                  | No       | Available only when type is exp<br/>Supported arrays (eg &skills=1&skills=2&skills=3)<br/>For how to obtain, see above The article "Basic Knowledge - LifeUp Data ID" |
-| number    | number of rewards             | a number greater than 0         | 1                  | Yes      | If it is a gold coin, the maximum value is 999999<br/>If it is an experience value, the maximum value is 99999<br/>If it is a item, the maximum value is 999 |
+| number    | number of rewards             | a number greater than 0         | 1                  | Yes      | If it is a gold coin, the maximum value is 999999<br/>If it is an experience value, the maximum value is 99999<br/>If it is an item, the maximum value is 999999 (values above the limit are clamped)<br/>With Settings → Labs → Reduce App Restrictions enabled, the coin/item limit is 999999999 and the experience limit is 99999999 |
 | item_id   | item id                       | number greater than 0           | 1                  | no*      | only available when type is item |
 | item_name | item name                     | any text                        | treasure           | no*      | only available when type is item, fuzzy matching with item names |
 | silent    | whether to disable UI prompts | true or false                   | false              | no       | default is false                 |
@@ -557,7 +557,7 @@ Open box effect:
 | type      | penalty type                  | Currently only supported: <br/>coin<br/>exp<br/>item | coin     | yes      | coin - coins<br/>exp - experience points<br/>item - shop items |
 | content   | reason for penalty            | any text                                             | Sleep In | Yes      |                  |
 | skills    | skills (attributes)           | array of numbers greater than 0                      | 1        | No       | Available only when type is exp<br/>Supported arrays (eg &skills=1&skills=2&skills=3)<br/>For how to obtain, see above The article "Basic Knowledge - LifeUp Data ID" |
-| number    | number of rewards             | a number greater than 0                              | 1        | Yes      | If it is a coin, the maximum value is 999999<br/>If it is an experience value, the maximum value is 99999<br/>If it is a item, the maximum value is 999 |
+| number    | number of rewards             | a number greater than 0                              | 1        | Yes      | If it is a coin, the maximum value is 999999<br/>If it is an experience value, the maximum value is 99999<br/>If it is an item, the maximum value is 999999 (values above the limit are clamped)<br/>With Settings → Labs → Reduce App Restrictions enabled, the coin/item limit is 999999999 and the experience limit is 99999999 |
 | item_id   | item id                       | number greater than 0                                | 1        | no*      | only available when type is item |
 | item_name | item name                     | any text                                             | treasure | no*      | only available when type is item, fuzzy matching with item names |
 | silent    | whether to disable UI prompts | true or false                                        | false    | no       | default is false |

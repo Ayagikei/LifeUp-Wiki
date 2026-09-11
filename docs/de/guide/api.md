@@ -7,7 +7,7 @@
 
 ?> Ab Version v1.90 hat `LifeUp` verschiedene Funktionsschnittstellen geöffnet; Integrationen mit externen Anwendungen sind willkommen. <br/>Außerdem gibt es den „URL“-Effekt für Shop-Gegenstände: Nutzer können Gegenstände direkt verwenden, um externe Apps oder Schnittstellen von `LifeUp` aufzurufen. <br/>Diese Funktionen eröffnen deinem `LifeUp` unbegrenzte Möglichkeiten — erfordern aber etwas Lernaufwand und praktisches Ausprobieren.
 
-**Zuletzt aktualisiert: 2026/08/28**
+**Zuletzt aktualisiert: 2026/09/11**
 
 Die API-Parameter und Definitionen in diesem Dokument basieren auf Version **v1.106.0**.
 
@@ -524,7 +524,7 @@ Lootbox-Effekt:
 | type      | Belohnungstyp | Derzeit nur folgende Werte:<br/>coin<br/>exp<br/>item | coin | Ja | coin - Münzen<br/>exp - Erfahrungspunkte<br/>item - Shop-Gegenstände |
 | content   | Belohnungsgrund | Beliebiger Text | Learning API Calls | Ja | |
 | skills    | Fähigkeiten (Attribute) | Array von Zahlen größer als 0 | 1 | Nein | Nur wenn type exp ist<br/>Arrays unterstützt (z. B. &skills=1&skills=2&skills=3)<br/>Zum Ermitteln siehe oben „Grundlagen – LifeUp-Daten-ID“ |
-| number    | Anzahl der Belohnungen | Zahl größer als 0 | 1 | Ja | Bei Münzen maximal 999999<br/>Bei Erfahrungspunkten maximal 99999<br/>Bei Gegenständen maximal 999 |
+| number    | Anzahl der Belohnungen | Zahl größer als 0 | 1 | Ja | Bei Münzen maximal 999999<br/>Bei Erfahrungspunkten maximal 99999<br/>Bei Gegenständen maximal 999999 (Werte über dem Limit werden gekappt)<br/>Mit Einstellungen → Labs → Einschränkungen der App reduzieren ist das Münz-/Gegenstandslimit 999999999 und das Erfahrungslimit 99999999 |
 | item_id   | Gegenstands-ID | Zahl größer als 0 | 1 | Nein* | Nur wenn type item ist |
 | item_name | Gegenstandsname | Beliebiger Text | treasure | Nein* | Nur wenn type item ist; unscharfer Abgleich mit Gegenstandsnamen |
 | silent    | UI-Hinweise deaktivieren | true oder false | false | Nein | Standard ist false |
@@ -556,7 +556,7 @@ Lootbox-Effekt:
 | type      | Strafentyp | Derzeit nur:<br/>coin<br/>exp<br/>item | coin | Ja | coin - Münzen<br/>exp - Erfahrungspunkte<br/>item - Shop-Gegenstände |
 | content   | Strafengrund | Beliebiger Text | Sleep In | Ja | |
 | skills    | Fähigkeiten (Attribute) | Array von Zahlen größer als 0 | 1 | Nein | Nur wenn type exp ist<br/>Arrays unterstützt (z. B. &skills=1&skills=2&skills=3)<br/>Zum Ermitteln siehe oben „Grundlagen – LifeUp-Daten-ID“ |
-| number    | Anzahl der Strafen | Zahl größer als 0 | 1 | Ja | Bei Münzen maximal 999999<br/>Bei Erfahrungspunkten maximal 99999<br/>Bei Gegenständen maximal 999 |
+| number    | Anzahl der Strafen | Zahl größer als 0 | 1 | Ja | Bei Münzen maximal 999999<br/>Bei Erfahrungspunkten maximal 99999<br/>Bei Gegenständen maximal 999999 (Werte über dem Limit werden gekappt)<br/>Mit Einstellungen → Labs → Einschränkungen der App reduzieren ist das Münz-/Gegenstandslimit 999999999 und das Erfahrungslimit 99999999 |
 | item_id   | Gegenstands-ID | Zahl größer als 0 | 1 | Nein* | Nur wenn type item ist |
 | item_name | Gegenstandsname | Beliebiger Text | treasure | Nein* | Nur wenn type item ist; unscharfer Abgleich mit Gegenstandsnamen |
 | silent    | UI-Hinweise deaktivieren | true oder false | false | Nein | Standard ist false |

@@ -7,7 +7,7 @@
 
 ?> في الإصدار v1.90، فتح `LifeUp` مجموعة متنوعة من الواجهات الوظيفية، ونرحب بأي تكامل مع تطبيقات خارجية. <br/>كما يوفر تأثير «URL» لعناصر المتجر، ويمكن للمستخدمين استخدام السلع مباشرةً لاستدعاء تطبيقات خارجية أو واجهة `LifeUp`. <br/>يمكن لهذه الميزات أن تمنح `LifeUp` إمكانيات لا حدود لها، لكنها تتطلب قليلاً من الفهم والتعلم والقدرة على التطبيق العملي.
 
-**آخر تحديث: 2026/08/28**
+**آخر تحديث: 2026/09/11**
 
 تستند معلمات واجهة API وتعريفاتها في هذا المستند إلى الإصدار **v1.106.0**.
 
@@ -525,7 +525,7 @@ gid: معرّف مجموعة العناصر. بالنسبة لنفس المهم�
 | type | نوع المكافأة | currently only supported following values: <br/>coin<br/>exp<br/>item | coin | yes | coin - coins<br/>exp - experience points<br/>item - shop items |
 | content | سبب المكافأة | any text | Learning API Calls | Yes | |
 | skills | المهارات (السمات) | array of numbers greater than 0 | 1 | No | Available only when type is exp<br/>Supported arrays (eg &skills=1&skills=2&skills=3)<br/>For how to obtain, see above The article "Basic Knowledge - LifeUp Data ID" |
-| number | عدد المكافآت | a number greater than 0 | 1 | Yes | If it is a gold coin, the maximum value is 999999<br/>If it is an experience value, the maximum value is 99999<br/>If it is a item, the maximum value is 999 |
+| number | عدد المكافآت | a number greater than 0 | 1 | Yes | If it is a gold coin, the maximum value is 999999<br/>If it is an experience value, the maximum value is 99999<br/>If it is an item, the maximum value is 999999 (values above the limit are clamped)<br/>With Settings → Labs → Reduce App Restrictions enabled, the coin/item limit is 999999999 and the experience limit is 99999999 |
 | item_id | item id | number greater than 0 | 1 | no* | only available when type is item |
 | item_name | item name | any text | treasure | no* | only available when type is item, fuzzy matching with item names |
 | silent | تعطيل مطالبات الواجهة | true or false | false | no | default is false |
@@ -557,7 +557,7 @@ gid: معرّف مجموعة العناصر. بالنسبة لنفس المهم�
 | type | نوع العقوبة | Currently only supported: <br/>coin<br/>exp<br/>item | coin | yes | coin - coins<br/>exp - experience points<br/>item - shop items |
 | content | سبب العقوبة | any text | Sleep In | Yes | |
 | skills | المهارات (السمات) | array of numbers greater than 0 | 1 | No | Available only when type is exp<br/>Supported arrays (eg &skills=1&skills=2&skills=3)<br/>For how to obtain, see above The article "Basic Knowledge - LifeUp Data ID" |
-| number | عدد العقوبات | a number greater than 0 | 1 | Yes | If it is a coin, the maximum value is 999999<br/>If it is an experience value, the maximum value is 99999<br/>If it is a item, the maximum value is 999 |
+| number | عدد العقوبات | a number greater than 0 | 1 | Yes | If it is a coin, the maximum value is 999999<br/>If it is an experience value, the maximum value is 99999<br/>If it is an item, the maximum value is 999999 (values above the limit are clamped)<br/>With Settings → Labs → Reduce App Restrictions enabled, the coin/item limit is 999999999 and the experience limit is 99999999 |
 | item_id | item id | number greater than 0 | 1 | no* | only available when type is item |
 | item_name | item name | any text | treasure | no* | only available when type is item, fuzzy matching with item names |
 | silent | تعطيل مطالبات الواجهة | true or false | false | no | default is false |
