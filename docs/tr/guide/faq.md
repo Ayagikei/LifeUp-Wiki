@@ -600,9 +600,11 @@ ulives, LifeUp'ın temel ruhunu korurken önceki nesillerden gelen birçok uzun 
 **Üyelikler neden ayrı?**
 
 - **LifeUp fiyatlandırması yalnızca Android kapsamını yansıtır:** LifeUp her zaman saf Android yerel teknolojisiyle inşa edilmiştir. Çok düşük ömür boyu üyelik fiyatı **yalnızca bir Android istemcisi olması** etrafında tanımlandı — gelecekte inşa edebileceğimiz her App için bakımı satın almak anlamına gelmiyordu.
-- **ulives fiyatlandırması çapraz platform maliyetini ve uzun vadeli sürdürülebilirliği yansıtır:** ulives tam bir yeniden yazımdır; çapraz platform kod tabanı, tam birleşmemiş bir ekip ve iOS ile gelecekteki Android ve HarmonyOS hedefleri için süregelen çalışma vardır. Premium, LifeUp'ın tarihsel ücretsiz/ücretli ayrımını kopyalamakla değil, **sürdürülebilir geliştirme ve uzun vadeli sürdürülebilirlik** ile tanımlanır.
+- **ulives fiyatlandırması çapraz platform maliyetini ve uzun vadeli sürdürülebilirliği yansıtır:** ulives tam bir yeniden yazımdır; çapraz platform kod tabanı, tam birleşmemiş bir ekip ve iOS, Android ve diğer platformlar için süregelen çalışma vardır. Premium, LifeUp'ın tarihsel ücretsiz/ücretli ayrımını kopyalamakla değil, **sürdürülebilir geliştirme ve uzun vadeli sürdürülebilirlik** ile tanımlanır.
 - **Farklı geliştirme ekipleri:** LifeUp iOS portu çeşitli nedenlerle yavaş ilerledi. ulives için özel bir ekip yeniden organize ettik (bugün hâlâ küçük) ve çapraz platform ürünü daha hızlı ve esnek şekilde sunmak için.
 - **Ayrı mağaza ekosistemleri:** App Store ve Google Play bağımsız ödeme ve yetkilendirme sistemleridir. Lisanslar iki App arasında doğrudan aktarılamaz.
+- **Paketlemeyi seçmedik:** LifeUp ve ulives üyeliklerini *değiştirilebilir yapabilirdik* — ancak bu **paket satış** olurdu: düşük fiyatlı bir LifeUp satın alımı fiilen ulives'i sonsuza kadar içerirdi. Dürüst alternatif, **baştan LifeUp fiyatını yükseltmek** olurdu; böylece tek satın alma her iki uygulamanın geliştirme ve uzun vadeli bakımını karşılardı. Bunu yapmadık; LifeUp Android-only fiyatlandırmasını korur, ulives ayrı satılır.
+- **LifeUp ücretli avantajlar değişmedi ve ulives güncellemelerinden bile faydalanabilir:** Karşılıklı kullanılamazlık, LifeUp üyelerinin zaten ödediği hiçbir şeyi geri almaz. LifeUp'ı sürdürmeye devam ediyoruz; ulives için geliştirilen özellikler de LifeUp'a geri aktarıldı (örneğin birleşik mağaza/depo/sentez ve genişletilmiş satın alma/kullanım kısıtlamaları).
 
 **Kısaca:**
 
@@ -612,7 +614,7 @@ ulives, LifeUp'ın temel ruhunu korurken önceki nesillerden gelen birçok uzun 
 
 **ulives platformları arasında ulives Premium:**
 
-ulives kendi **Android** istemcisini (ve HarmonyOS yerel desteği vb.) de sunacak. **ulives için satın alınan Premium, sunucu tarafı hesap yönetimi hazır olduğunda tüm ulives platformlarında** — iOS, Android, HarmonyOS — çalışması amaçlanır. Erken çapraz platform durumlarında bizimle iletişime geçmeniz gerekebilir.
+ulives **Android** Google Play'de. **ulives için satın alınan Premium, sunucu tarafı hesap yönetimi hazır olduğunda ulives platformları genelinde** (iOS, Android vb.) çalışması amaçlanır. Erken çapraz platform durumlarında bizimle iletişime geçmeniz gerekebilir.
 
 **Her iki App de ömür boyu üyeliği çoğu benzer ürünün çok altında sunar** — ancak başlık fiyatları bağlamında okunmalıdır: tek platform vs çapraz platform kapsamı, geliştirme maliyeti ve uzun vadeli bakım farklıdır.
 

@@ -600,9 +600,11 @@ ulives mempertahankan semangat inti LifeUp sambil juga menangani beberapa masala
 **Mengapa keanggotaan terpisah?**
 
 - **Harga LifeUp mencerminkan cakupan Android saja:** LifeUp selalu dibangun dengan teknologi Android native murni. Harga keanggotaan seumur hidup yang sangat rendah ditetapkan sekitar **hanya memiliki klien Android** — tidak pernah dimaksudkan untuk membeli pemeliharaan setiap app masa depan yang mungkin kami bangun.
-- **Harga ulives mencerminkan biaya cross-platform dan maintainability jangka panjang:** ulives adalah penulisan ulang penuh dengan codebase cross-platform, tim yang belum sepenuhnya terpadu, dan pekerjaan berkelanjutan untuk iOS plus target Android dan HarmonyOS mendatang. Premium ditetapkan oleh **pengembangan berkelanjutan dan maintainability jangka panjang**, bukan dengan menyalin pembagian gratis/berbayar historis LifeUp.
+- **Harga ulives mencerminkan biaya cross-platform dan maintainability jangka panjang:** ulives adalah penulisan ulang penuh dengan codebase cross-platform, tim yang belum sepenuhnya terpadu, dan pekerjaan berkelanjutan untuk iOS, Android, dan platform lain. Premium ditetapkan oleh **pengembangan berkelanjutan dan maintainability jangka panjang**, bukan dengan menyalin pembagian gratis/berbayar historis LifeUp.
 - **Tim pengembangan berbeda:** Port iOS LifeUp berjalan lambat karena berbagai alasan. Kami reorganisasi tim khusus untuk ulives (masih kecil saat ini) agar dapat mengirim produk cross-platform lebih cepat dan fleksibel.
 - **Ekosistem toko terpisah:** App Store dan Google Play adalah sistem pembayaran dan hak terpisah. Lisensi tidak dapat ditransfer langsung antar kedua app.
+- **Kami memilih tidak bundling:** Kami *bisa* membuat keanggotaan LifeUp dan ulives saling dapat ditukar — tetapi itu akan menjadi **penjualan bundling**: pembelian LifeUp berharga rendah secara efektif menyertakan ulives selamanya. Alternatif jujur adalah **menaikkan harga LifeUp sejak awal** agar satu pembelian menutupi pengembangan dan pemeliharaan jangka panjang kedua aplikasi. Kami tidak melakukannya; LifeUp mempertahankan harga khusus Android, dan ulives dijual terpisah.
+- **Manfaat berbayar LifeUp tidak berubah dan bahkan dapat mendapat manfaat dari pembaruan ulives:** Ketidak-dapat-ditukar tidak membatalkan apa pun yang sudah dibayar anggota LifeUp. Kami tetap berkomitmen memelihara LifeUp; fitur yang dikembangkan untuk ulives juga mengalir kembali ke LifeUp (misalnya, penggabungan toko/gudang/sintesis dan pembatasan pembelian/penggunaan yang diperluas).
 
 **Singkatnya:**
 
@@ -612,7 +614,7 @@ ulives mempertahankan semangat inti LifeUp sambil juga menangani beberapa masala
 
 **ulives Premium di semua platform ulives:**
 
-ulives juga akan mengirim **klien Android**-nya sendiri (dan dukungan native HarmonyOS, dll.). **Premium yang dibeli untuk ulives dimaksudkan berfungsi di semua platform ulives** — iOS, Android, HarmonyOS — setelah manajemen akun sisi server siap. Kasus cross-platform awal mungkin memerlukan menghubungi kami.
+ulives **Android** ada di Google Play. **Premium yang dibeli untuk ulives dimaksudkan berfungsi di platform ulives** (iOS, Android, dll.) setelah manajemen akun sisi server siap. Kasus cross-platform awal mungkin memerlukan menghubungi kami.
 
 **Kedua app menawarkan keanggotaan seumur hidup jauh di bawah sebagian besar produk sejenis** — tetapi harga headline harus dibaca dalam konteks: cakupan single-platform vs cross-platform, biaya pengembangan, dan pemeliharaan jangka panjang berbeda.
 

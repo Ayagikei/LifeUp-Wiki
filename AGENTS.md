@@ -19,6 +19,13 @@
 - New locales follow the `docs/en` path tree. Track freshness with `python3 scripts/i18n_status.py`.
 - Shared assets are mainly in `docs/_media` and language-specific `_media` folders.
 
+## Locale Coverage (14 locales)
+
+- **All 14 published locales** (`zh-cn`, `zh-hant`, `en`, `ja`, `ko`, `es`, `de`, `fr`, `it`, `pt`, `tr`, `ru`, `id`, `ar`) should stay aligned for **user-facing, cross-locale topics** (FAQ, ulives/LifeUp membership, download, release log, etc.). Do not stop at `en` + `zh-cn` only.
+- **Authoring flow:** update `docs/en` and `docs/zh-cn` first (dual sources), mirror `docs/zh-hant` manually when `zh-cn` changes, then translate to the 12 English-pivot locales and run `python3 scripts/i18n_status.py stamp <locale> <path>`.
+- **China-only topics (e.g. HarmonyOS):** maintain dedicated pages only under `docs/zh-cn` and `docs/zh-hant` (`guide/harmonyos-compatibility.md`, related FAQ blocks). Other locales **do not** need HarmonyOS sections or mentions unless the English pivot gains an equivalent page later.
+- **Wording source for ulives membership/pricing:** prefer matching [ulives-docs](https://ulives.lifeupapp.net/docs/comparison-with-lifeup) / FAQ phrasing when syncing bundle-pricing and LifeUp-benefits bullets across locales.
+
 ## Traditional Chinese (Critical)
 
 - `docs/zh-hant` is **manually maintained** alongside `docs/zh-cn`.

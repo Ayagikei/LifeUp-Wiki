@@ -600,9 +600,11 @@ ulives mantiene el espíritu central de LifeUp y además aborda varios problemas
 **¿Por qué las membresías son independientes?**
 
 - **El precio de LifeUp refleja el alcance solo Android:** LifeUp siempre se ha construido con tecnología puramente nativa de Android. Su precio de membresía de por vida muy bajo se definió en torno a **tener solo un cliente Android** — nunca estuvo pensado para comprar el mantenimiento de cada app futura que pudiéramos construir.
-- **El precio de ulives refleja el coste multiplataforma y la mantenibilidad a largo plazo:** ulives es una reescritura completa con código multiplataforma, un equipo aún no totalmente unificado y trabajo continuo para iOS más futuros objetivos Android y HarmonyOS. Premium se define por **desarrollo sostenible y mantenibilidad a largo plazo**, no por copiar la división histórica gratis/de pago de LifeUp.
+- **El precio de ulives refleja el coste multiplataforma y la mantenibilidad a largo plazo:** ulives es una reescritura completa con código multiplataforma, un equipo aún no totalmente unificado y trabajo continuo para iOS, Android y otras plataformas. Premium se define por **desarrollo sostenible y mantenibilidad a largo plazo**, no por copiar la división histórica gratis/de pago de LifeUp.
 - **Equipos de desarrollo distintos:** Un port iOS de LifeUp avanzó lentamente por varias razones. Reorganizamos un equipo dedicado para ulives (aún pequeño hoy) para lanzar un producto multiplataforma más rápido y con más flexibilidad.
 - **Ecosistemas de tienda separados:** App Store y Google Play son sistemas de pago y derechos independientes. Las licencias no pueden transferirse directamente entre las dos apps.
+- **Elegimos no agrupar:** *Podríamos* hacer intercambiables las membresías de LifeUp y ulives — pero eso sería **venta agrupada**: una compra barata de LifeUp incluiría ulives para siempre. La alternativa honesta habría sido **subir el precio de LifeUp desde el inicio** para que una compra cubra el desarrollo y mantenimiento a largo plazo de ambas apps. No lo hicimos; LifeUp mantiene su precio solo para Android, y ulives se vende por separado.
+- **Los beneficios de pago de LifeUp no cambian y pueden incluso beneficiarse de las actualizaciones de ulives:** La no transferibilidad no revierte nada de lo que los miembros de LifeUp ya pagaron. Seguimos comprometidos con mantener LifeUp; funciones desarrolladas para ulives también han vuelto a LifeUp (por ejemplo, fusión de tienda/almacén/síntesis y ampliación de restricciones de compra/uso).
 
 **En resumen:**
 
@@ -612,7 +614,7 @@ ulives mantiene el espíritu central de LifeUp y además aborda varios problemas
 
 **ulives Premium en todas las plataformas de ulives:**
 
-ulives también lanzará su propio cliente **Android** (y soporte nativo HarmonyOS, etc.). **Premium comprado para ulives está pensado para funcionar en todas las plataformas de ulives** — iOS, Android, HarmonyOS — una vez que la gestión de cuentas del lado del servidor esté lista. Los casos multiplataforma tempranos pueden requerir contactarnos.
+ulives **Android** está en Google Play. **Premium comprado para ulives está pensado para funcionar en todas las plataformas de ulives** (iOS, Android, etc.) una vez que la gestión de cuentas del lado del servidor esté lista. Los casos multiplataforma tempranos pueden requerir contactarnos.
 
 **Ambas apps ofrecen membresía de por vida muy por debajo de la mayoría de productos comparables** — pero los precios de referencia deben leerse en contexto: el alcance mono-plataforma vs multiplataforma, el coste de desarrollo y el mantenimiento a largo plazo difieren.
 

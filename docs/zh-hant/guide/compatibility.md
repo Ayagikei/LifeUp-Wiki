@@ -62,7 +62,7 @@
 
 ## 鴻蒙系統相容性
 
-僅對雙框架鴻蒙系統（HarmonyOS 4.3.0 及以下）相容，鴻蒙 5 及以上可透過「卓易通」相容環境執行；鴻蒙 Next 原生系統暫不支援。  
+人升僅對雙框架鴻蒙系統（HarmonyOS 4.3.0 及以下）相容；鴻蒙 5 及以上可透過「卓易通」執行 Android 版，或改用 **[ulives 鴻蒙原生版](https://ulives.lifeupapp.net/)**（AppGallery，限時免費公測）。
 
 完整說明與限制請見：[鴻蒙系統相容性說明](guide/harmonyos-compatibility.md)。
 

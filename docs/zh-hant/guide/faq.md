@@ -783,21 +783,26 @@ v1.92 版本已經增加了更為完善的統計功能。
 <details>
 <summary>是否支援鴻蒙 Next（HarmonyOS NEXT）？</summary>
 
-目前**不支援鴻蒙 Next 原生系統（鴻蒙 5 或以上）**。
+**《人升》本身不支援鴻蒙 Next 原生系統（鴻蒙 5 或以上）**。
 
 「人升」基於 Android 開發，**僅相容支援 Android 應用的鴻蒙系統（HarmonyOS 4.3.0 及以下），或在 HarmonyOS NEXT (5.0+) 上透過「卓易通」等相容環境執行 Android 版**。
 
-**如果你已在 HarmonyOS NEXT 上使用人升：**
+**推薦：ulives 鴻蒙原生版**
+
+[ulives](https://ulives.lifeupapp.net/) 鴻蒙原生版**已上線**（華為 AppGallery，手機與平板），**目前正在限時免費公測**，歡迎鴻蒙 Next 使用者使用。請先查閱 [ulives 已知問題](https://ulives.lifeupapp.net/docs/known-issues) 與 [ulives 路線圖（鴻蒙）](https://ulives.lifeupapp.net/docs/roadmap)。
+
+**如果你仍在 HarmonyOS NEXT 上透過卓易通使用人升：**
 
 - 可以繼續透過**卓易通**執行人升 Android 版，**會員權益保持不變**。
 - 登入方式可能與純 Android 裝置不同；**v1.105.3 起支援微信掃碼登入**——若微信已在 Android/iOS 主力裝置登入，可在鴻蒙副機更新至最新版後掃碼登入。**若僅鴻蒙單裝置**，建議聯絡我們換綁會員（需提供含商家訂單號的有效支付賬單）。詳見 [鴻蒙系統相容性說明](guide/harmonyos-compatibility.md)。
 
-**關於 ulives 與鴻蒙：**
+**會員不互通說明：**
 
-[ulives](https://ulives.lifeupapp.net/) 是我們基於跨平臺技術開發的新應用，後續計劃推出**鴻蒙原生適配**，有望在不遠的將來上線。請注意：**ulives 是全新開發的獨立 App，會員權益與人升不互通**；即使未來支援鴻蒙，也需要在 ulives 內單獨購買 Premium。
-
-更完整的相容性說明：[鴻蒙系統相容性說明](guide/harmonyos-compatibility.md)  
-ulives 與人升更詳細、具體的原因可查閱對比文件：[ulives vs 人升 — 對比說明](https://ulives.lifeupapp.net/docs/comparison-with-lifeup)
+- **人升會員 ↔ ulives 會員不互通。** 人升會員定價僅覆蓋 Android 單平臺的維護範圍。
+- **我們刻意不做捆綁：** 技術上也可以讓會員互通，但那相當於捆綁銷售；我們沒有提前把人升定價調高來覆蓋 ulives，人升維持 Android 單平臺定價，ulives 單獨定價。
+- **人升付費權益不受影響，甚至可能受益於 ulives 的更新**——會員不互通並不等於削減已有權益；我們仍會持續維護人升，ulives 開發中的不少功能（如商店/倉庫/合成融合等）也已反哺人升。
+- ulives 是全新開發的獨立 App，定位與功能與人升有所差異；公測結束後也需在 ulives 內單獨購買 Premium（ulives 各端 Premium 預期互通，需等服務端就緒）。
+- 更完整說明：[鴻蒙系統相容性說明](guide/harmonyos-compatibility.md)、[ulives vs 人升 — 對比說明](https://ulives.lifeupapp.net/docs/comparison-with-lifeup)
 
 </details>
 
@@ -810,7 +815,7 @@ ulives 與人升更詳細、具體的原因可查閱對比文件：[ulives vs �
 
 - 基於跨平臺技術開發的全新應用 [ulives](https://ulives.lifeupapp.net/)
   
-  目前已釋出 iOS 版本，且適配 iPadOS / 蘋果晶片的 macOS；Android 與鴻蒙原生版本也在規劃中。詳見 [ulives 是什麼？](/guide/faq?id=ulives_overview) 與 [完整對比說明](https://ulives.lifeupapp.net/docs/comparison-with-lifeup)。
+  目前已釋出 iOS 版本，且適配 iPadOS / 蘋果晶片的 macOS；Android 已登陸 Google Play，鴻蒙原生版已上線 AppGallery（限時免費公測）。詳見 [ulives 是什麼？](/guide/faq?id=ulives_overview) 與 [完整對比說明](https://ulives.lifeupapp.net/docs/comparison-with-lifeup)。
 
 - 區域網純介面客戶端
 
@@ -849,9 +854,11 @@ ulives 不是對《人升》的簡單移植，而是我們在重組團隊後，�
 **為什麼兩款 App 的會員分開？**
 
 - **人升定價基於 Android 單平臺：** 人升自始至終用純 Android 原生技術開發。極低門檻的永久會員定價，是基於**只有 Android 端**這一事實定義的——從未設計為用一次買斷覆蓋開發者未來所有 App 的維護成本。
-- **ulives 定價基於跨平臺與長期可維護性：** ulives 是完全重寫的跨平臺程式碼庫，開發成本、並非完全統一的團隊結構，以及 iOS / 未來 Android、鴻蒙等多端適配，都計入定價與功能劃分。會員定義的核心是**可持續的開發投入與長期可維護性**，而非復刻人升歷史上的免費/付費比例。
+- **ulives 定價基於跨平臺與長期可維護性：** ulives 是完全重寫的跨平臺程式碼庫，開發成本、並非完全統一的團隊結構，以及 iOS / Android、鴻蒙等多端適配，都計入定價與功能劃分。會員定義的核心是**可持續的開發投入與長期可維護性**，而非復刻人升歷史上的免費/付費比例。
 - **開發團隊不同：** 人升 iOS 版曾進展緩慢；我們為 ulives 重組了專門團隊（目前規模仍小），以便更快、更靈活地推進跨平臺產品。
 - **平臺生態獨立：** App Store 與 Google Play 是獨立商店與支付體系，資料和許可證無法直接互通。
+- **我們刻意不做捆綁：** 技術上也可以讓兩款 App 會員互通——但那相當於捆綁銷售；我們沒有提前把人升定價調高來覆蓋 ulives，人升維持 Android 單平臺定價，ulives 單獨定價。
+- **人升付費權益不受影響，甚至可能受益於 ulives 的更新：** 會員不互通並不等於削減已有權益；我們仍會持續維護人升，ulives 開發中的不少功能（如商店/倉庫/合成融合等）也已反哺人升。
 
 **簡要結論：**
 
@@ -861,7 +868,7 @@ ulives 不是對《人升》的簡單移植，而是我們在重組團隊後，�
 
 **關於 ulives 自己的跨平臺會員：**
 
-ulives 未來也會推出 **Android 版**（以及鴻蒙原生適配等），預期 **ulives 自身的 Premium 會員將在 iOS、Android、鴻蒙等 ulives 各端互通**（需等服務端與賬號系統就緒；現階段跨平臺兌換前期可能需要聯絡官方）。
+ulives **Android 版**已登陸 Google Play，**鴻蒙原生版**已上線 AppGallery（限時免費公測）；預期 **ulives 自身的 Premium 會員將在 iOS、Android、鴻蒙等 ulives 各端互通**（需等服務端與賬號系統就緒；現階段跨平臺兌換前期可能需要聯絡官方）。
 
 **兩款 App 的永久會員定價，都遠低於絕大部分同類產品**——但比較標價時，也應考慮單平臺 vs 跨平臺、開發成本與長期維護範圍的不同。
 
