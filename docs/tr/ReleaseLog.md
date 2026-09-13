@@ -11,7 +11,7 @@
 | LifeUp-Android    | v1.106.0              | 2026/09/08                  |
 | LifeUp-iOS        | check [feature/ulives] | 🎉Alternatif uygulama mevcut |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
-| LifeUp Cloud(SDK) | v2.1.1                 | 2026/06/16                  |
+| LifeUp Cloud(SDK) | v3.0.1                 | 2026/09/13                  |
 
 (Çevirinin bir kısmı makine/AI çeviri ile sağlanmıştır ve doğru olmayabilir)
 
@@ -2886,6 +2886,39 @@ Optimizasyon
 1. İlk sürüm
 
 ### **LifeUp Cloud**
+
+**v3.0.1 (2026/09/13)**
+
+**✨ Özellikler**
+
+1. **HTTP/MCP okuma API’leri daha fazla mağaza ve başarım alanı sunuyor**: başlık rengi, eylem metni, listeden kaldır/kullanımı devre dışı bırak, satın alma/kullanım limitleri ve kapsam; başarım rengi. LifeUp **1.106.0+** gerekir.
+
+**♻️ Optimizasyon**
+
+1. **WebSocket olay push’u varsayılan olarak açık** (Gelişmiş’den kapatılabilir); HTTP `GET /events` yoklaması hâlâ kullanılabilir.
+
+**v3.0.0 (2026/08/28)**
+
+**ℹ️ Önemli**
+
+1. **LifeUp 1.106.0+ gerekir**: günlükler, istatistikler, seviye eğrisi, yayın olayları ve ilgili API’ler eşleşen LifeUp sürümünü gerektirir.
+
+**✨ Özellikler**
+
+1. **MCP & Skills köprüsü**: Cursor, Claude ve benzeri AI istemcileri LAN üzerinden Cloud’a bağlanıp LifeUp verilerini okuyabilir ve yönetebilir. [MCP belgeleri](https://wiki.lifeupapp.fun/tr/index.html#/guide/api_mcp).
+2. **lifeup:// API QR kodlarını tara**: Tara yanında yardım.
+3. **lifeupcloud:// kısayolları**: durum kartında `start` / `stop` bağlantıları (Tasker vb.).
+4. **Yayın olayları API’si**: HTTP/WS `/events` LifeUp yayınlarını alır (LifeUp’ta **Ayarlar → Lab → Geliştirici modu → Broadcast events**; Cloud Gelişmiş durumu gösterir).
+5. **Genişletilmiş HTTP okuma API’leri**: coin/envanter/exp günlükleri, adımlar, istatistikler, seviye eğrisi, beceri grupları, başarım koşulları vb.; kategori listeleri `include_hidden` destekler.
+
+**♻️ Optimizasyon**
+
+1. **Geliştirilmiş LAN keşfi**: mDNS gerçek HTTP portunu duyurur.
+2. **Android 16**; uygulamada 14 dil.
+
+**🐛 Düzeltmeler**
+
+1. **Olay aboneliği ve servis yeniden başlatma sorunları düzeltildi**.
 
 **v2.1.1 (2026/06/16)**
 

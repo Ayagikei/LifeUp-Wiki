@@ -448,6 +448,10 @@ gid: 事项组id，针对同一个重复任务，其 gid 都不会发生变化�
 
 <br/>
 
+### 基础知识 - 未列出的参数
+
+URL Scheme 只处理各接口参数表里列出的 query 参数。未列入的参数会被忽略，请求仍可能成功。请以各接口参数表为准。
+
 ### 基础知识 - 排序依据（order）
 
 部分 API 接口提供了排序依据（`order`）的设置字段：
@@ -1298,6 +1302,7 @@ id 的获取方法为「实验」页面打开「开发者模式」，然后在�
 | limit_scope     | 限制作用范围   | purchase / use / both | purchase | 否 | 仅在 `purchase_limit` 非空时生效，默认值为 `purchase` |
 | effects         | 使用效果       | JSON文本          | 参见[商品效果结构](#4-商品效果结构) | 否 | 使用商品时的效果 |
 | own_number      | 初始拥有数量   | 整数              | 0             | 否       | 设置初始库存数量               |
+| title_color_string| 标题颜色      | 颜色字符串         | #66CCFF    | 否       | #需转义为%23 |
 | unlist          | 从商店隐藏     | true 或者 false   | false         | 否       | 默认为 false                   |
 
 **返回数据：**

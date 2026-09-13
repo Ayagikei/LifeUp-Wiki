@@ -11,7 +11,7 @@
 | LifeUp-Android    | v1.106.0              | 2026/09/08                  |
 | LifeUp-iOS        | lihat [feature/ulives] | 🎉App alternatif tersedia   |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
-| LifeUp Cloud(SDK) | v2.1.1                 | 2026/06/16                  |
+| LifeUp Cloud(SDK) | v3.0.1                 | 2026/09/13                  |
 
 (Sebagian terjemahan disediakan oleh mesin/AI dan mungkin tidak akurat)
 
@@ -2907,6 +2907,39 @@ Optimisasi
 1. Rilis pertama
 
 ### **LifeUp Cloud**
+
+**v3.0.1 (2026/09/13)**
+
+**✨ Fitur**
+
+1. **API baca HTTP/MCP menampilkan lebih banyak field toko dan achievement**: warna judul, teks aksi, unlist/nonaktifkan pakai, batas beli/pakai dan cakupan; warna achievement. Membutuhkan LifeUp **1.106.0+**.
+
+**♻️ Optimasi**
+
+1. **Push WebSocket event aktif secara default** (bisa dimatikan di Lanjutan); polling HTTP `GET /events` tetap tersedia.
+
+**v3.0.0 (2026/08/28)**
+
+**ℹ️ Penting**
+
+1. **Membutuhkan LifeUp 1.106.0+**: jurnal, statistik, kurva level, event broadcast, dan API terkait memerlukan versi LifeUp yang sesuai.
+
+**✨ Fitur**
+
+1. **Jembatan MCP & Skills**: Cursor, Claude, dan klien AI serupa terhubung via LAN ke Cloud untuk membaca dan mengelola LifeUp. Lihat [dokumentasi MCP](https://wiki.lifeupapp.fun/id/index.html#/guide/api_mcp).
+2. **Pindai QR code lifeup:// API**: bantuan di samping Pindai.
+3. **Pintasan lifeupcloud://**: kartu status dengan tautan `start` / `stop` (Tasker, dll.).
+4. **API event broadcast**: HTTP/WS `/events` menerima broadcast LifeUp (aktifkan **Pengaturan → Labs → Mode pengembang → Broadcast events** di LifeUp; Lanjutan di Cloud menampilkan status).
+5. **API baca HTTP diperluas**: jurnal koin/inventori/exp, langkah, statistik, kurva level, grup skill, kondisi achievement, dll.; daftar kategori mendukung `include_hidden`.
+
+**♻️ Optimasi**
+
+1. **Penemuan LAN ditingkatkan**: mDNS mengumumkan port HTTP yang sebenarnya.
+2. **Android 16**; 14 bahasa di app.
+
+**🐛 Perbaikan**
+
+1. **Memperbaiki masalah langganan event dan restart layanan**.
 
 **v2.1.1 (2026/06/16)**
 

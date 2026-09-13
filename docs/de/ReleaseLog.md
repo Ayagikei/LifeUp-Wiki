@@ -11,7 +11,7 @@
 | LifeUp-Android    | v1.106.0              | 2026/09/08                  |
 | LifeUp-iOS        | check [feature/ulives] | 🎉Alternative App verfügbar |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
-| LifeUp Cloud(SDK) | v2.1.1                 | 2026/06/16                  |
+| LifeUp Cloud(SDK) | v3.0.1                 | 2026/09/13                  |
 
 (Ein Teil der Übersetzung wurde maschinell bzw. per KI erstellt und ist möglicherweise ungenau.)
 
@@ -2884,6 +2884,39 @@ Optimierung
 1. Erstveröffentlichung
 
 ### **LifeUp Cloud**
+
+**v3.0.1 (2026/09/13)**
+
+**✨ Funktionen**
+
+1. **HTTP/MCP-Lese-APIs liefern mehr Shop- und Erfolgsfelder**: Titel-Farbe, Aktionstext, Delisting/Nutzungssperre, Kauf-/Nutzungslimits und Geltungsbereich; Erfolgsfarbe. Erfordert LifeUp **1.106.0+**.
+
+**♻️ Optimierung**
+
+1. **WebSocket-Event-Push standardmäßig an** (in Erweitert abschaltbar); HTTP `GET /events`-Polling bleibt verfügbar.
+
+**v3.0.0 (2026/08/28)**
+
+**ℹ️ Wichtig**
+
+1. **LifeUp 1.106.0+ erforderlich**: Journale, Statistik, Levelkurve, Broadcast-Events und verwandte APIs benötigen die passende LifeUp-App-Version.
+
+**✨ Funktionen**
+
+1. **MCP- & Skills-Brücke**: Cursor, Claude und ähnliche KI-Clients verbinden sich per LAN mit Cloud, um LifeUp-Daten zu lesen und zu steuern. Siehe [MCP-Dokumentation](https://wiki.lifeupapp.fun/de/index.html#/guide/api_mcp).
+2. **lifeup://-API-QR-Codes scannen**: Hilfe neben „Scannen“.
+3. **lifeupcloud://-Shortcuts**: Statuskarte mit `start` / `stop`-Links (Tasker u. a.).
+4. **Broadcast-Events-API**: HTTP/WS `/events` empfängt LifeUp-Broadcasts (**Einstellungen → Labs → Entwicklermodus → Broadcast events** in LifeUp; Cloud Erweitert zeigt den Status).
+5. **Erweiterte HTTP-Lese-APIs**: Münz-/Inventar-/EP-Logs, Schritte, Statistik, Levelkurve, Skill-Gruppen, Erfolgsbedingungen usw.; Kategorielisten mit `include_hidden`.
+
+**♻️ Optimierung**
+
+1. **Verbesserte LAN-Erkennung**: mDNS kündigt den echten HTTP-Port an.
+2. **Android 16**; 14 Sprachen in der App.
+
+**🐛 Fehlerbehebungen**
+
+1. **Probleme bei Event-Abonnement und Dienst-Neustart behoben**.
 
 **v2.1.1 (2026/06/16)**
 

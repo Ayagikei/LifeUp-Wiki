@@ -303,6 +303,30 @@ ws://{host:port}/events?after=${id}
 
 Envelope: `{ code, message, data }`. `200` is transport OK only. `10001` LifeUp not running or Read Data not granted. `10002` ContentProvider query failed.
 
+For `/api/contentprovider`, also check `data[].result.api_result`. A business failure still returns top-level `code=200` and `message=success`:
+
+```json
+{"code":200,"message":"success","data":[{"url":"lifeup://api/item?id=1","result":{"api_result":true}}]}
+```
+
+```json
+{"code":200,"message":"success","data":[{"url":"lifeup://api/item?id=1&title_color_string=%23","result":{"api_result":false,"error_code":"invalid_parameter","error_message":"invalid color: #"}}]}
+```
+
+List endpoints put an array in `data`. `/coin` and `/info` put an object in `data`:
+
+```json
+{"code":200,"message":"success","data":{"value":46,"api_result":true}}
+```
+
+```json
+{"code":200,"message":"success","data":{"appVersion":11060011,"appVersionName":"1.106.0-alpha01","apiVersion":7,"cloudVersion":30000,"cloudVersionName":"3.0.0"}}
+```
+
+`GET /items` fields (camelCase): `id, name, desc, icon, categoryId, stockNumber, ownNumber, price, order, disablePurchase, maxPurchaseNumber, titleColorString, actionText, unlist, disableUse, purchaseLimit, limitScope`. `effects` is write-only and does not appear in read results.
+
+Write URL Scheme params use snake_case (`category_id`, `stock_number`, `title_color_string`). Cloud JSON reads use camelCase. `query?key=item` still returns snake_case, including `title_color_string`, `action_text`, `unlist`, `disable_use`. `GET /achievements` also returns `color` (`#RRGGBB`, empty when default).
+
 ### List field values
 
 | Endpoint | Field | Values |

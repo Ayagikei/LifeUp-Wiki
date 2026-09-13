@@ -262,6 +262,10 @@ gid: معرّف مجموعة العناصر. بالنسبة لنفس المهم�
 
 <br/>
 
+### Basics - Unknown parameters
+
+تقرأ واجهات URL Scheme فقط معاملات query المذكورة في جدول كل طريقة. تُتجاهل المعاملات الزائدة، وقد ينجح الطلب رغم ذلك.
+
 ### Basics - JSON Data Structure
 
 ?> يتطلب v1.98.0+
@@ -1095,7 +1099,9 @@ gid: معرّف مجموعة العناصر. بالنسبة لنفس المهم�
 | limit_scope     | Restriction scope     | purchase / use / both | purchase | No | يُطبَّق فقط عندما لا يكون `purchase_limit` فارغاً؛ الافتراضي `purchase` |
 | effects         | Use effects           | JSON text            | See [Item Effects Structure](#4-item-effects-structure) | No | تأثيرات استخدام العنصر |
 | own_number      | Initial owned quantity | integer             | 0             | No       | ضبط الكمية الأولية في المخزون  |
+| title_color_string| Title color | color string | #66CCFF | No | Escape `#` as `%23` |
 | unlist          | Hide from shop        | true or false        | false         | No       | الافتراضي false                |
+
 
 **Return Data:**
 

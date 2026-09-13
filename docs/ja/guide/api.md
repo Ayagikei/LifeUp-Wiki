@@ -261,6 +261,10 @@ API が名前でタスク、ショップアイテム、サブタスクを検索�
 
 <br/>
 
+### Basics - Unknown parameters
+
+URL Scheme は各メソッドのパラメータ表に載っている query だけを読みます。表にないパラメータは無視され、リクエストは成功することがあります。
+
 ### Basics - JSON Data Structure
 
 ?> v1.98.0 以降が必要
@@ -1092,6 +1096,7 @@ id の取得方法：「Labs」ページで「Developer Mode」をオンにし�
 | limit_scope     | 制限の適用範囲     | purchase / use / both | purchase | No | `purchase_limit` が空でない場合のみ有効；デフォルトは `purchase` |
 | effects         | 使用効果           | JSON text            | [Item Effects Structure](#4-item-effects-structure) を参照 | No | アイテム使用効果 |
 | own_number      | 初期所持数 | integer             | 0             | No       | 初期インベントリ数量を設定  |
+| title_color_string| Title color | color string | #66CCFF | No | Escape `#` as `%23` |
 | unlist          | ショップから非表示        | true or false        | false         | No       | デフォルトは false                |
 
 **Return Data:**

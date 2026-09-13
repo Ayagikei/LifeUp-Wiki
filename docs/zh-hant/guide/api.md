@@ -448,6 +448,10 @@ gid: 事項組id，針對同一個重複任務，其 gid 都不會發生變化�
 
 <br/>
 
+### 基礎知識 - 未列出的參數
+
+URL Scheme 只處理各介面參數表裡列出的 query 參數。未列入的參數會被忽略，請求仍可能成功。請以各介面參數表為準。
+
 ### 基礎知識 - 排序依據（order）
 
 部分 API 介面提供了排序依據（`order`）的設定欄位：
@@ -1298,6 +1302,7 @@ id 的獲取方法為「實驗」頁面開啟「開發者模式」，然後在�
 | limit_scope     | 限制作用範圍   | purchase / use / both | purchase | 否 | 僅在 `purchase_limit` 非空時生效，預設值為 `purchase` |
 | effects         | 使用效果       | JSON文字          | 參見[商品效果結構](#4-商品效果結構) | 否 | 使用商品時的效果 |
 | own_number      | 初始擁有數量   | 整數              | 0             | 否       | 設定初始庫存數量               |
+| title_color_string| 標題顏色      | 顏色字串         | #66CCFF    | 否       | #需跳脫為%23 |
 | unlist          | 從商店隱藏     | true 或者 false   | false         | 否       | 預設為 false                   |
 
 **返回資料：**

@@ -261,6 +261,10 @@ API가 이름으로 작업, 상점 아이템, 하위 작업을 조회할 수 있
 
 <br/>
 
+### 기본 - 표에 없는 매개변수
+
+URL Scheme은 각 메서드 매개변수 표에 있는 query만 읽습니다. 표에 없는 매개변수는 무시되며, 요청은 성공할 수 있습니다.
+
 ### 기본 - JSON Data Structure
 
 ?> v1.98.0+ 필요
@@ -1094,7 +1098,9 @@ id 확인 방법: [Labs] 페이지에서 "Developer Mode"를 연 뒤 "Task Detai
 | limit_scope     | Restriction scope     | purchase / use / both | purchase | 아니오 | `purchase_limit`가 비어 있지 않을 때만 유효; 기본값 `purchase` |
 | effects         | Use effects           | JSON text            | [아이템 효과 구조](#4-item-effects-structure) 참고 | 아니오 | 아이템 사용 효과 |
 | own_number      | Initial owned quantity | integer             | 0             | 아니오       | 초기 인벤토리 수량 설정  |
+| title_color_string| Title color | color string | #66CCFF | No | Escape `#` as `%23` |
 | unlist          | Hide from shop        | true or false        | false         | 아니오       | 기본값 false                |
+
 
 **반환값:**
 

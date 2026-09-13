@@ -261,6 +261,10 @@ Details siehe die broadcast-Parameter unten.
 
 <br/>
 
+### Grundlagen – Unbekannte Parameter
+
+URL-Scheme-Handler lesen nur die Query-Parameter aus der Tabelle des jeweiligen Endpunkts. Zusätzliche Parameter werden ignoriert; die Anfrage kann trotzdem erfolgreich sein.
+
 ### Grundlagen – JSON-Datenstruktur
 
 ?> Erfordert v1.98.0+
@@ -1094,7 +1098,9 @@ Beispiel, nach Produkt-Gegenstands-ID 1 filtern: `lifeup://api/goto?page=synthes
 | limit_scope     | Geltungsbereich der Einschränkung     | purchase / use / both | purchase | Nein | Nur wirksam, wenn `purchase_limit` nicht leer ist; Standard ist `purchase` |
 | effects         | Nutzungseffekte           | JSON-Text            | Siehe [Gegenstandseffekt-Struktur](#4-gegenstandseffekt-struktur) | Nein | Effekte bei Gegenstandsnutzung |
 | own_number      | Anfangsbesitzmenge | Ganzzahl             | 0             | Nein       | Anfangsbestand im Inventar setzen  |
+| title_color_string| Title color | color string | #66CCFF | No | Escape `#` as `%23` |
 | unlist          | Im Shop ausblenden        | true oder false        | false         | Nein       | Standard ist false                |
+
 
 **Rückgabedaten:**
 

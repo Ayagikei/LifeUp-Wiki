@@ -308,6 +308,30 @@ ws://{host:port}/events?after=${id}
 
 统一响应：`{ code, message, data }`。`code=200` 只表示传输成功。`10001` 人升未开或未授读取；`10002` ContentProvider 查询失败。
 
+`/api/contentprovider` 必须再看 `data[].result.api_result`。业务失败时顶层仍是 `code=200`、`message=success`：
+
+```json
+{"code":200,"message":"success","data":[{"url":"lifeup://api/item?id=1","result":{"api_result":true}}]}
+```
+
+```json
+{"code":200,"message":"success","data":[{"url":"lifeup://api/item?id=1&title_color_string=%23","result":{"api_result":false,"error_code":"invalid_parameter","error_message":"invalid color: #"}}]}
+```
+
+列表接口的 `data` 是数组；`/coin`、`/info` 的 `data` 是对象：
+
+```json
+{"code":200,"message":"success","data":{"value":46,"api_result":true}}
+```
+
+```json
+{"code":200,"message":"success","data":{"appVersion":11060011,"appVersionName":"1.106.0-alpha01","apiVersion":7,"cloudVersion":30000,"cloudVersionName":"3.0.0"}}
+```
+
+`GET /items` 现有字段（camelCase）：`id, name, desc, icon, categoryId, stockNumber, ownNumber, price, order, disablePurchase, maxPurchaseNumber, titleColorString, actionText, unlist, disableUse, purchaseLimit, limitScope`。`effects` 只写入，读取结果里没有。
+
+写入 URL Scheme 用 snake_case（`category_id`、`stock_number`、`title_color_string`）。Cloud JSON 读出来是 camelCase。`query?key=item` 仍返回 snake_case，现含 `title_color_string`、`action_text`、`unlist`、`disable_use`。`/achievements` 增加 `color`（`#RRGGBB`，默认色为空）。
+
 ### 列表字段取值
 
 ContentProvider / Cloud JSON 字段名与下表一致。

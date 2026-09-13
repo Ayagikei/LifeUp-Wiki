@@ -11,7 +11,7 @@
 | LifeUp-Android    | v1.106.0              | 2026/09/08                  |
 | LifeUp-iOS        | check [feature/ulives] | 🎉대체 App 이용 가능 |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
-| LifeUp Cloud(SDK) | v2.1.1                 | 2026/06/16                  |
+| LifeUp Cloud(SDK) | v3.0.1                 | 2026/09/13                  |
 
 (일부 번역은 기계/AI 번역으로 제공되며 정확하지 않을 수 있습니다)
 
@@ -2892,6 +2892,39 @@
 1. 초기 릴리스
 
 ### **LifeUp Cloud**
+
+**v3.0.1 (2026/09/13)**
+
+**✨ 기능**
+
+1. **HTTP/MCP 읽기 API에 상점/업적 필드 확장**: 상품 제목 색, 동작 문구, 비공개/사용 불가, 구매·사용 제한 및 범위, 업적 색상. LifeUp **1.106.0+** 필요.
+
+**♻️ 최적화**
+
+1. **WebSocket 이벤트 푸시 기본 켜짐**(고급 설정에서 끌 수 있음). HTTP `GET /events` 폴링도 계속 사용 가능.
+
+**v3.0.0 (2026/08/28)**
+
+**ℹ️ 중요**
+
+1. **LifeUp 1.106.0+ 필요**: 저널, 통계, 레벨 곡선, 브로드캐스트 이벤트 등 새 API는 해당 LifeUp App 버전 필요.
+
+**✨ 기능**
+
+1. **MCP & Skills 브리지**: Cursor, Claude 등 AI 클라이언트가 LAN으로 Cloud에 연결해 LifeUp 데이터 읽기·조작. [MCP 문서](https://wiki.lifeupapp.fun/ko/index.html#/guide/api_mcp) 참고.
+2. **lifeup:// API QR 코드 스캔**: 「스캔」 옆 도움말 추가.
+3. **lifeupcloud:// 바로가기**: 상태 카드에 `start` / `stop` 링크(Tasker 등).
+4. **브로드캐스트 이벤트 API**: HTTP/WS `/events`로 LifeUp 브로드캐스트 수신(LifeUp **설정 → 랩 → 개발자 모드 → Broadcast events** 활성화; Cloud 고급 설정에서 상태 확인·전환).
+5. **HTTP 읽기 API 대폭 확장**: 코인/인벤토리/경험치 기록, 걸음, 통계, 레벨 곡선, 스킬 그룹, 업적 조건 등. 카테고리 목록 `include_hidden` 지원.
+
+**♻️ 최적화**
+
+1. **LAN 검색 개선**: mDNS가 실제 HTTP 포트를 알려 연결이 더 안정적.
+2. **Android 16 대상**. 앱 내 14개 언어.
+
+**🐛 수정**
+
+1. **이벤트 구독 및 서비스 재시작 관련 문제 수정**.
 
 **v2.1.1 (2026/06/16)**
 

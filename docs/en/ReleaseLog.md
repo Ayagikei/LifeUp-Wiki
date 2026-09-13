@@ -11,7 +11,7 @@
 | LifeUp-Android    | v1.106.0              | 2026/09/08                  |
 | LifeUp-iOS        | check [feature/ulives] | 🎉Alternative app available |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
-| LifeUp Cloud(SDK) | v2.1.1                 | 2026/06/16                  |
+| LifeUp Cloud(SDK) | v3.0.1                 | 2026/09/13                  |
 
 (Part of the translation is provided by Machine/AI Translate and may not be accurate)
 
@@ -2917,6 +2917,39 @@ Optimization
 1. First release
 
 ### **LifeUp Cloud**
+
+**v3.0.1 (2026/09/13)**
+
+**✨ Features**
+
+1. **HTTP/MCP read APIs now expose more shop and achievement fields**: shop items include title color, action text, unlist/disable-use flags, purchase/use limits, and limit scope; achievements include color. Requires LifeUp **1.106.0+**.
+
+**♻️ Optimization**
+
+1. **WebSocket event push is on by default** (can be disabled in Advanced); HTTP `GET /events` polling still works.
+
+**v3.0.0 (2026/08/28)**
+
+**ℹ️ Important**
+
+1. **Requires LifeUp 1.106.0+**: journals, statistics, level curve, broadcast events, and related APIs need the matching LifeUp app version.
+
+**✨ Features**
+
+1. **MCP & Skills bridge**: Cursor, Claude, and similar AI clients can connect over LAN to read and act on your LifeUp data. See the [MCP docs](https://wiki.lifeupapp.fun/en/index.html#/guide/api_mcp).
+2. **Scan lifeup:// API QR codes**: help next to Scan explains how to use them with automation tools.
+3. **lifeupcloud:// shortcuts**: the status card exposes `start` / `stop` links for Tasker and similar tools.
+4. **Broadcast events API**: HTTP/WS `/events` receives LifeUp app broadcasts (enable **Settings → Labs → Developer mode → Broadcast events** in LifeUp; Cloud Advanced shows status and can open that switch).
+5. **Expanded HTTP read APIs**: coin/inventory/exp journals, step records, statistics, level curve, skill groups, achievement conditions, and more; category lists support `include_hidden`.
+
+**♻️ Optimization**
+
+1. **Improved LAN discovery**: mDNS advertises the real HTTP port for more reliable connections.
+2. **Targets Android 16**; the app ships in 14 languages.
+
+**🐛 Bug Fixes**
+
+1. **Fixed issues with event subscription and service restart**.
 
 **v2.1.1 (2026/06/16)**
 

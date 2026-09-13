@@ -262,6 +262,10 @@ Untuk detail, lihat parameter broadcast di bawah.
 
 <br/>
 
+### Basics - Unknown parameters
+
+Handler URL Scheme hanya membaca parameter query yang ada di tabel tiap metode. Parameter tambahan diabaikan; permintaan tetap bisa berhasil.
+
 ### Basics - JSON Data Structure
 
 ?> Memerlukan v1.98.0+
@@ -1095,6 +1099,7 @@ Contoh, filter berdasarkan product item id 1: `lifeup://api/goto?page=synthesis&
 | limit_scope     | Cakupan pembatasan     | purchase / use / both | purchase | Tidak | Hanya efektif saat `purchase_limit` tidak kosong; default `purchase` |
 | effects         | Efek penggunaan           | JSON text            | Lihat [Item Effects Structure](#4-item-effects-structure) | Tidak | Efek penggunaan Item |
 | own_number      | Jumlah kepemilikan awal | integer             | 0             | Tidak       | Setel jumlah Inventaris awal  |
+| title_color_string| Title color | color string | #66CCFF | No | Escape `#` as `%23` |
 | unlist          | Sembunyikan dari Toko        | true or false        | false         | Tidak       | Default false                |
 
 **Data balik:**

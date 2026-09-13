@@ -262,6 +262,10 @@ Per i dettagli, consulta i parametri broadcast più sotto.
 
 <br/>
 
+### Basics - Unknown parameters
+
+I gestori URL Scheme leggono solo i parametri query elencati nella tabella di ciascun metodo. I parametri extra vengono ignorati; la richiesta può comunque riuscire.
+
 ### Basics - JSON Data Structure
 
 ?> Richiede v1.98.0+
@@ -1093,7 +1097,9 @@ Ad esempio, filtra per id Oggetto prodotto 1: `lifeup://api/goto?page=synthesis&
 | limit_scope     | Ambito restrizione     | purchase / use / both | purchase | No | Efficace solo quando `purchase_limit` non è vuoto; predefinito `purchase` |
 | effects         | Effetti d'uso           | JSON text            | Vedi [Struttura effetto Oggetto](#4-item-effects-structure) | No | Effetti di utilizzo Oggetto |
 | own_number      | Quantità posseduta iniziale | integer             | 0             | No       | Imposta la quantità iniziale nell'Inventario  |
+| title_color_string| Title color | color string | #66CCFF | No | Escape `#` as `%23` |
 | unlist          | Nascondi dal Negozio        | true or false        | false         | No       | Predefinito false                |
+
 
 **Dati di ritorno:**
 

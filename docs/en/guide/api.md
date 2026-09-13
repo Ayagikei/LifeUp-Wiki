@@ -262,6 +262,10 @@ For details, see the broadcast broadcast parameters below.
 
 <br/>
 
+### Basics - Unknown parameters
+
+URL Scheme handlers only read query parameters listed in each method's parameter table. Extra parameters are ignored; the request can still succeed.
+
 ### Basics - JSON Data Structure
 
 ?> Requires v1.98.0+
@@ -1095,6 +1099,7 @@ For example, filter by product item id 1: `lifeup://api/goto?page=synthesis&filt
 | limit_scope     | Restriction scope     | purchase / use / both | purchase | No | Only effective when `purchase_limit` is not empty; defaults to `purchase` |
 | effects         | Use effects           | JSON text            | See [Item Effects Structure](#4-item-effects-structure) | No | Item usage effects |
 | own_number      | Initial owned quantity | integer             | 0             | No       | Set initial inventory quantity  |
+| title_color_string| Title color | color string | #66CCFF | No | Escape `#` as `%23` |
 | unlist          | Hide from shop        | true or false        | false         | No       | Default is false                |
 
 **Return Data:**

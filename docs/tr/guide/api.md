@@ -262,6 +262,10 @@ Ayrıntılar için aşağıdaki broadcast parametrelerine bakın.
 
 <br/>
 
+### Temel bilgiler - Tabloda olmayan parametreler
+
+URL Scheme yalnızca her yöntemin parametre tablosundaki query parametrelerini okur. Tabloda olmayan parametreler yok sayılır; istek yine de başarılı olabilir.
+
 ### Temel bilgiler - JSON Veri Yapısı
 
 ?> v1.98.0+ gerektirir
@@ -1095,6 +1099,7 @@ Sentez sayfasını bir filtreyle de açabilirsiniz (v1.102.0+):
 | limit_scope     | Kısıtlama kapsamı     | purchase / use / both | purchase | Hayır | Yalnızca `purchase_limit` boş değilken geçerlidir; varsayılan `purchase` |
 | effects         | Kullanım efektleri           | JSON metni            | Bkz. [Eşya Efekti Yapısı](#4-esya-efekti-yapisi) | Hayır | Eşya kullanım efektleri |
 | own_number      | Başlangıç sahip olunan miktar | tam sayı             | 0             | Hayır       | Başlangıç Envanter miktarını ayarlar  |
+| title_color_string| Title color | color string | #66CCFF | No | Escape `#` as `%23` |
 | unlist          | Mağazadan gizle        | true veya false        | false         | Hayır       | Varsayılan false                |
 
 **Dönüş Verileri:**

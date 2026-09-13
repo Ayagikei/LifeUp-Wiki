@@ -11,7 +11,7 @@
 | LifeUp-Android    | v1.106.0              | 2026/09/08                  |
 | LifeUp-iOS        | consulte [feature/ulives] | 🎉App alternativo disponível |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
-| LifeUp Cloud(SDK) | v2.1.1                 | 2026/06/16                  |
+| LifeUp Cloud(SDK) | v3.0.1                 | 2026/09/13                  |
 
 (Parte da tradução foi feita por tradução automática ou IA e pode conter imprecisões)
 
@@ -2884,6 +2884,39 @@ Otimização
 1. Primeiro lançamento
 
 ### **LifeUp Cloud**
+
+**v3.0.1 (2026/09/13)**
+
+**✨ Recursos**
+
+1. **APIs de leitura HTTP/MCP expõem mais campos de loja e conquistas**: cor do título, texto de ação, ocultar/desabilitar uso, limites de compra/uso e escopo; cor da conquista. Requer LifeUp **1.106.0+**.
+
+**♻️ Otimização**
+
+1. **Push WebSocket de eventos ativado por padrão** (pode desativar em Avançado); polling HTTP `GET /events` continua disponível.
+
+**v3.0.0 (2026/08/28)**
+
+**ℹ️ Importante**
+
+1. **Requer LifeUp 1.106.0+**: diários, estatísticas, curva de nível, eventos broadcast e APIs relacionadas precisam da versão correspondente do LifeUp.
+
+**✨ Recursos**
+
+1. **Ponte MCP & Skills**: Cursor, Claude e clientes IA similares conectam-se via LAN para ler e agir no LifeUp. Veja a [documentação MCP](https://wiki.lifeupapp.fun/pt/index.html#/guide/api_mcp).
+2. **Escanear QR codes lifeup:// API**: ajuda ao lado de Escanear.
+3. **Atalhos lifeupcloud://**: cartão de status com links `start` / `stop` (Tasker, etc.).
+4. **API de eventos broadcast**: HTTP/WS `/events` recebe broadcasts do LifeUp (ative **Configurações → Labs → Modo desenvolvedor → Broadcast events** no LifeUp; Avançado no Cloud mostra o status).
+5. **APIs HTTP de leitura ampliadas**: diários de moedas/inventário/exp, passos, estatísticas, curva de nível, grupos de habilidades, condições de conquistas, etc.; listas de categorias com `include_hidden`.
+
+**♻️ Otimização**
+
+1. **Descoberta LAN melhorada**: mDNS anuncia a porta HTTP real.
+2. **Android 16**; 14 idiomas no app.
+
+**🐛 Correções**
+
+1. **Corrigidos problemas de assinatura de eventos e reinício do serviço**.
 
 **v2.1.1 (2026/06/16)**
 
