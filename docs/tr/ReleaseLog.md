@@ -8,10 +8,10 @@
 
 | Platform          | Sürüm                  | Güncelleme Tarihi           |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.106.0              | 2026/09/08                  |
+| LifeUp-Android    | v1.106.0              | 2026/09/23                  |
 | LifeUp-iOS        | check [feature/ulives] | 🎉Alternatif uygulama mevcut |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
-| LifeUp Cloud(SDK) | v3.0.1                 | 2026/09/13                  |
+| LifeUp Cloud(SDK) | v3.0.2                 | 2026/09/24                  |
 
 (Çevirinin bir kısmı makine/AI çeviri ile sağlanmıştır ve doğru olmayabilir)
 
@@ -19,7 +19,7 @@
 
 ### **LifeUp-Android**
 
-**v1.106.0 (2026/09/08)**
+**v1.106.0 (2026/09/23)**
 
 **✨ Özellikler**
 
@@ -31,6 +31,9 @@
 1. **MCP ve otomasyon için genişletilmiş URL Scheme / API**: başarım tamamlama, gizli listeler, coin/XP/envanter kayıtları, adımlar, seviye eğrisi ve istatistikler, broadcast olayları, mağaza/kutu/başarım koşulları vb.
 2. **Daha net API doğrulama ve hata mesajları**: geçersiz parametreler sessiz başarı yerine açık hata döndürür; seviye üretimi, zaman aralıkları ve ceza faktörlerinde daha sıkı kontroller.
 3. **Takvim renkleri uygulama temasına uyumlu**: seçili gün, ilerleme halkası, bugün ve yıl görünümü işaretleri.
+4. **Mağaza ve başarım için query ve ContentProvider okumaları artık yazma alanlarını da döndürür** (renkler, eylem metinleri, listeden kaldırma/kullanımı devre dışı bırakma vb.), otomasyon ve MCP için yazma API’leriyle uyumlu.
+5. **Veritabanı yükseltmesinde yalnızca görevlerce referans verilen gruplar yeniden sıralanır**, yetim grup verisinden kaynaklanan uzun donmalar önlenir.
+6. **Ürün etkisi sorguları arka planda toplu yükleme ile** daha akıcı API/UI yolları.
 
 **🐛 Düzeltmeler**
 
@@ -38,6 +41,11 @@
 2. **Özel niteliklerde sürüklemeden uzun basınca grup sırasının bozulması düzeltildi.**
 3. **Envanter widget kurulumundan çıkınca ürün bağlantı seçicisinin kapanması düzeltildi.**
 4. **API ile miktar değişince envanter widget’ının yenilenmemesi düzeltildi.**
+5. **Tek seferlik görevlerin telafi tamamından sonra gecikmiş kopyalarının silinmemesi düzeltildi.**
+6. **Pomodoro dinlenme ekranının bağlı görev değişince hemen yenilenmemesi düzeltildi.**
+7. **Otomatik ürün kullanımından sonra başarım ilerlemesinin güncellenmemesi düzeltildi.**
+8. **Bazı sayfaları hızlıca yeniden açınca oluşabilecek çökmeler düzeltildi.**
+9. **Bazı sayfalarda geri tuşunun çalışmaması ve kullanım sırasında ara sıra takılma veya çökme düzeltildi.**
 
 **v1.105.5 (2026/09/01)**
 
@@ -2886,6 +2894,12 @@ Optimizasyon
 1. İlk sürüm
 
 ### **LifeUp Cloud**
+
+**v3.0.2 (2026/09/24)**
+
+**♻️ İyileştirme**
+
+1. **Salt okunur HTTP API’leri ETag destekler**: yanıt bir `ETag` içerir. `If-None-Match` gönderildiğinde veri değişmediyse sunucu 304 döner ve indirme atlanır. Resmi MCP istemcisi de değişmeyen okumaları aynı şekilde yeniden kullanır.
 
 **v3.0.1 (2026/09/13)**
 

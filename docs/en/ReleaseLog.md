@@ -8,10 +8,10 @@
 
 | Platform          | Version                | Update Date                 |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.106.0              | 2026/09/08                  |
+| LifeUp-Android    | v1.106.0              | 2026/09/23                  |
 | LifeUp-iOS        | check [feature/ulives] | 🎉Alternative app available |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
-| LifeUp Cloud(SDK) | v3.0.1                 | 2026/09/13                  |
+| LifeUp Cloud(SDK) | v3.0.2                 | 2026/09/24                  |
 
 (Part of the translation is provided by Machine/AI Translate and may not be accurate)
 
@@ -19,7 +19,7 @@
 
 ### **LifeUp-Android**
 
-**v1.106.0 (2026/09/08)**
+**v1.106.0 (2026/09/23)**
 
 **✨ Features**
 
@@ -31,6 +31,9 @@
 1. **Broader URL Scheme / API coverage for MCP and automation**: Adds achievement completion, hidden list queries, coin/exp/inventory journals, step history, level curve and statistics, broadcast events, shop/loot-box/achievement-condition queries, and more.
 2. **Clearer API validation and error messages**: Invalid or out-of-range parameters return explicit errors instead of silent no-ops; stricter checks on edge cases such as level generation, time ranges, and punishment factors.
 3. **Calendar colors now follow the app theme**: Selected day, completion ring, today's date, and year-view markers match your current theme color.
+4. **Query and ContentProvider reads for shop items and achievements now return write-side fields** (colors, action labels, unlisted/disabled-use flags, etc.), aligned with write APIs for easier automation and MCP checks.
+5. **Database upgrades only reorder task groups still referenced by tasks**, avoiding long freezes from orphaned group data.
+6. **Shop-effect lookups run off the main thread with batch loading** for smoother API and UI paths.
 
 **🐛 Bug Fixes**
 
@@ -38,6 +41,11 @@
 2. **Fixed custom attributes jumping out of group order after a long-press with no drag.**
 3. **Fixed the shop-item link picker closing when leaving the inventory widget setup page.**
 4. **Fixed the inventory widget not refreshing after item quantity is changed via API.**
+5. **Fixed overdue copies of single tasks not being removed after makeup completion.**
+6. **Fixed the Pomodoro rest screen not refreshing immediately after switching the linked task.**
+7. **Fixed achievement progress not updating after an item was auto-used.**
+8. **Fixed crashes that could happen when rapidly reopening some pages.**
+9. **Fixed back navigation failing on some pages, and occasional lag or crashes during use.**
 
 **v1.105.5 (2026/09/01)**
 
@@ -2917,6 +2925,12 @@ Optimization
 1. First release
 
 ### **LifeUp Cloud**
+
+**v3.0.2 (2026/09/24)**
+
+**♻️ Optimization**
+
+1. **Read-only HTTP APIs now support ETag**: responses include an `ETag`. Send `If-None-Match` and, when the data is unchanged, the server returns 304 so you can skip the download. The official MCP client reuses unchanged reads the same way.
 
 **v3.0.1 (2026/09/13)**
 

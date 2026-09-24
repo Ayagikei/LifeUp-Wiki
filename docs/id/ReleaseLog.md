@@ -8,10 +8,10 @@
 
 | Platform          | Versi                  | Tanggal Pembaruan           |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.106.0              | 2026/09/08                  |
+| LifeUp-Android    | v1.106.0              | 2026/09/23                  |
 | LifeUp-iOS        | lihat [feature/ulives] | 🎉App alternatif tersedia   |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
-| LifeUp Cloud(SDK) | v3.0.1                 | 2026/09/13                  |
+| LifeUp Cloud(SDK) | v3.0.2                 | 2026/09/24                  |
 
 (Sebagian terjemahan disediakan oleh mesin/AI dan mungkin tidak akurat)
 
@@ -19,7 +19,7 @@
 
 ### **LifeUp-Android**
 
-**v1.106.0 (2026/09/08)**
+**v1.106.0 (2026/09/23)**
 
 **✨ Fitur**
 
@@ -31,6 +31,9 @@
 1. **Perluasan URL Scheme / API untuk MCP dan otomasi**: penyelesaian achievement, daftar tersembunyi, jurnal koin/XP/inventaris, langkah, kurva level & statistik, event broadcast, toko/loot box/syarat achievement, dll.
 2. **Validasi API dan pesan error lebih jelas**: parameter tidak valid mengembalikan error eksplisit, bukan sukses diam-diam; pemeriksaan lebih ketat untuk level, rentang waktu, dan faktor penalti.
 3. **Warna kalender mengikuti tema app**: hari terpilih, cincin progres, hari ini, dan penanda tampilan tahun.
+4. **Baca query dan ContentProvider untuk toko dan achievement kini mengembalikan field tulis** (warna, label aksi, delist/nonaktifkan pakai, dll.), selaras dengan API tulis untuk otomasi dan MCP.
+5. **Saat upgrade DB hanya grup tugas yang masih direferensi yang diurutkan ulang**, mencegah freeze lama akibat grup yatim.
+6. **Lookup efek item di background dengan muat batch** agar jalur API/UI lebih mulus.
 
 **🐛 Perbaikan**
 
@@ -38,6 +41,11 @@
 2. **Memperbaiki urutan grup atribut kustom yang berantakan setelah long-press tanpa drag.**
 3. **Memperbaiki pemilih tautan item yang ikut tertutup saat keluar dari pengaturan widget inventaris.**
 4. **Memperbaiki widget inventaris yang tidak refresh setelah kuantitas diubah via API.**
+5. **Memperbaiki salinan terlambat tugas sekali yang tidak terhapus setelah penyelesaian susulan.**
+6. **Memperbaiki layar istirahat Pomodoro yang tidak langsung refresh setelah mengganti tugas terkait.**
+7. **Memperbaiki progres achievement yang tidak update setelah item dipakai otomatis.**
+8. **Memperbaiki crash saat membuka ulang beberapa halaman dengan cepat.**
+9. **Memperbaiki tombol kembali yang gagal di beberapa halaman, serta lag atau crash sesekali saat digunakan.**
 
 **v1.105.5 (2026/09/01)**
 
@@ -2907,6 +2915,12 @@ Optimisasi
 1. Rilis pertama
 
 ### **LifeUp Cloud**
+
+**v3.0.2 (2026/09/24)**
+
+**♻️ Optimasi**
+
+1. **API HTTP hanya-baca kini mendukung ETag**: respons menyertakan `ETag`. Dengan `If-None-Match`, jika data tidak berubah, server mengembalikan 304 sehingga unduhan bisa dilewati. Klien MCP resmi juga memakai ulang hasil baca yang tidak berubah.
 
 **v3.0.1 (2026/09/13)**
 

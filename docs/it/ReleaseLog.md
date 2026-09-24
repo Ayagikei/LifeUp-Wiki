@@ -8,10 +8,10 @@
 
 | Piattaforma       | Versione               | Data aggiornamento          |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.106.0              | 2026/09/08                  |
+| LifeUp-Android    | v1.106.0              | 2026/09/23                  |
 | LifeUp-iOS        | consulta [feature/ulives] | 🎉App alternativa disponibile |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
-| LifeUp Cloud(SDK) | v3.0.1                 | 2026/09/13                  |
+| LifeUp Cloud(SDK) | v3.0.2                 | 2026/09/24                  |
 
 (Parte della traduzione è fornita da traduzione automatica/IA e potrebbe non essere accurata)
 
@@ -19,7 +19,7 @@
 
 ### **LifeUp-Android**
 
-**v1.106.0 (2026/09/08)**
+**v1.106.0 (2026/09/23)**
 
 **✨ Funzionalità**
 
@@ -31,6 +31,9 @@
 1. **URL Scheme / API ampliati per MCP e automazione**: completamento achievement, liste nascoste, registri monete/EXP/inventario, passi, curva livelli e statistiche, eventi broadcast, negozio/loot box/condizioni achievement, ecc.
 2. **Validazione API ed errori più chiari**: parametri non validi restituiscono errori espliciti invece di successi silenziosi; controlli più rigorosi su generazione livelli, intervalli temporali e fattori penalità.
 3. **Colori del calendario allineati al tema dell’app**: giorno selezionato, anello di progresso, oggi e indicatori della vista annuale.
+4. **Le letture query e ContentProvider per negozio e achievement restituiscono i campi di scrittura** (colori, etichette azione, ritiro/disabilitazione uso, ecc.), allineati alle API di scrittura per automazione e MCP.
+5. **In aggiornamento DB vengono riordinati solo i gruppi di attività ancora referenziati**, evitando blocchi lunghi per gruppi orfani.
+6. **Query effetti articolo in background con caricamento batch** per percorsi API/UI più fluidi.
 
 **🐛 Correzioni**
 
@@ -38,6 +41,11 @@
 2. **Corretto l’ordine dei gruppi di attributi personalizzati dopo pressione prolungata senza trascinamento.**
 3. **Corretto il selettore link articolo che si chiudeva uscendo dalla configurazione del widget inventario.**
 4. **Corretto il widget inventario che non si aggiornava dopo modifica quantità via API.**
+5. **Corretto mancata rimozione delle copie scadute di attività singole dopo completamento di recupero.**
+6. **Corretto mancato aggiornamento immediato della schermata riposo Pomodoro dopo cambio attività collegata.**
+7. **Corretto mancato aggiornamento progresso achievement dopo uso automatico di un articolo.**
+8. **Corretti possibili crash riaprendo rapidamente alcune pagine.**
+9. **Corretta navigazione indietro non funzionante su alcune pagine e lag o crash occasionali durante l’uso.**
 
 **v1.105.5 (2026/09/01)**
 
@@ -2883,6 +2891,12 @@ Ottimizzazioni
 1. Prima versione
 
 ### **LifeUp Cloud**
+
+**v3.0.2 (2026/09/24)**
+
+**♻️ Ottimizzazione**
+
+1. **Le API HTTP di sola lettura supportano ETag**: la risposta include un `ETag`. Con `If-None-Match`, se i dati non cambiano, il server risponde 304 e si evita il download. Il client MCP ufficiale riusa allo stesso modo le letture invariate.
 
 **v3.0.1 (2026/09/13)**
 
