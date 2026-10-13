@@ -19,6 +19,24 @@
 
 ### **LifeUp-Android**
 
+**v1.107.0 (2026/10/13)**
+
+**✨ Fitur**
+
+1. **Cadangan cloud sekarang disimpan sebagai daftar riwayat**, bukan menimpa satu file. Anda dapat melihat, memulihkan, dan menghapus cadangan lama, serta memilih jumlah yang disimpan.
+2. **Salinan aman lokal disimpan otomatis sebelum pemulihan atau pembaruan versi.** Salinan itu nanti dapat dipulihkan atau dihapus dari daftar.
+
+**♻️ Optimasi**
+
+1. **Proses cadangan menampilkan progres dan hasil.** Jika perangkat ini dan cloud berbeda, aplikasi menjelaskan konfliknya dan membiarkan Anda memilih.
+2. **Cadangan otomatis ke folder Unduhan kini memakai nama file terpisah untuk setiap profil.**
+
+**🐛 Perbaikan**
+
+1. **Pengingat relatif mungkin tidak dijadwalkan ulang setelah tugas diedit.**
+2. **Gambar kustom yang dikirim ke widget dikompresi lebih dulu**, agar gambar besar tidak menghilangkan sebagian isi widget, seperti daftar atribut.
+3. **Latar tugas yang diatur melalui API dapat langsung memakai alamat gambar.**
+
 **v1.106.0 (2026/09/23)**
 
 **✨ Fitur**

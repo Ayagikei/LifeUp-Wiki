@@ -19,6 +19,24 @@
 
 ### **LifeUp-Android**
 
+**v1.107.0 (2026/10/13)**
+
+**✨ Funzionalità**
+
+1. **I backup cloud sono ora uno storico**, invece di sovrascrivere un solo file. Puoi vedere, ripristinare ed eliminare i backup precedenti e scegliere quanti conservarli.
+2. **Prima di un ripristino o di un aggiornamento viene conservata automaticamente una copia di sicurezza locale.** Poi puoi ripristinarla o eliminarla.
+
+**♻️ Ottimizzazione**
+
+1. **Il backup mostra avanzamento e risultato.** Se questo dispositivo e il cloud non coincidono, l'app spiega il conflitto e ti fa scegliere.
+2. **I backup automatici nella cartella Download usano un nome file diverso per ogni profilo.**
+
+**🐛 Correzioni**
+
+1. **Un promemoria relativo poteva non essere riprogrammato dopo la modifica di un'attività.**
+2. **Le immagini personalizzate inviate ai widget vengono prima compresse**, così un'immagine grande non fa più sparire parte del widget, come l'elenco degli attributi.
+3. **Lo sfondo di un'attività impostato tramite API può usare direttamente un indirizzo immagine.**
+
 **v1.106.0 (2026/09/23)**
 
 **✨ Funzionalità**

@@ -51,3 +51,6 @@ $RECYCLE.BIN/
 
 # Local notes (ignored)
 .local/
+
+# Pi agent artifacts
+.pi/

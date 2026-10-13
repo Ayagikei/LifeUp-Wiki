@@ -19,6 +19,24 @@
 
 ### **LifeUp-Android**
 
+**v1.107.0 (2026/10/13)**
+
+**✨ Özellikler**
+
+1. **Bulut yedekleri artık geçmiş listesi olarak tutulur**, tek bir dosyanın üzerine yazılmaz. Eski yedekleri görüntüleyebilir, geri yükleyebilir, silebilir ve kaç tanesinin kalacağını seçebilirsiniz.
+2. **Geri yüklemeden veya sürüm yükseltmesinden önce yerel bir güvenlik yedeği otomatik bırakılır.** Bunları daha sonra listeden geri yükleyebilir veya silebilirsiniz.
+
+**♻️ İyileştirme**
+
+1. **Yedekleme ilerlemeyi ve sonucu gösterir.** Bu cihaz ile bulut uyuşmazsa uygulama çakışmayı açıklar ve seçim yaptırır.
+2. **İndirilenler klasörüne yapılan otomatik yedekler artık her profil için ayrı bir dosya adı kullanır.**
+
+**🐛 Düzeltmeler**
+
+1. **Bir görevi düzenledikten sonra göreli hatırlatıcının yeniden ayarlanmaması sorunu düzeltildi.**
+2. **Ana ekran bileşenine gönderilen özel resimler önce sıkıştırılır**, böylece büyük bir resim özellik listesi gibi içeriğin eksik görünmesine yol açmaz.
+3. **API ile görev arka planı ayarlanırken doğrudan bir resim adresi kullanılabilir.**
+
 **v1.106.0 (2026/09/23)**
 
 **✨ Özellikler**

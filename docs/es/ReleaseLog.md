@@ -19,6 +19,24 @@
 
 ### **LifeUp-Android**
 
+**v1.107.0 (2026/10/13)**
+
+**✨ Funciones**
+
+1. **Las copias en la nube ahora se guardan como un historial**, en lugar de sobrescribir un solo archivo. Puedes ver, restaurar y eliminar copias anteriores, y elegir cuántas conservar.
+2. **Antes de restaurar o actualizar la versión se guarda automáticamente una copia de seguridad local.** Después puedes restaurarla o eliminarla.
+
+**♻️ Optimización**
+
+1. **La copia muestra el progreso y el resultado.** Si este dispositivo y la nube no coinciden, la aplicación explica el conflicto y te deja elegir.
+2. **Las copias automáticas en la carpeta Descargas usan ahora un nombre de archivo distinto para cada perfil.**
+
+**🐛 Correcciones**
+
+1. **Se corrigió que un recordatorio relativo pudiera no reprogramarse después de editar una tarea.**
+2. **Las imágenes personalizadas que se envían a los widgets se comprimen antes**, para que una imagen grande no oculte parte del widget, como la lista de atributos.
+3. **El fondo de una tarea configurado mediante la API puede usar directamente una dirección de imagen.**
+
 **v1.106.0 (2026/09/23)**
 
 **✨ Funciones**

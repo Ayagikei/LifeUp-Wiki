@@ -19,6 +19,24 @@
 
 ### **LifeUp-Android**
 
+**v1.107.0 (2026/10/13)**
+
+**✨ Features**
+
+1. **Cloud backups are now kept as a history list** instead of overwriting a single file. You can view, restore, and delete older cloud backups, and choose how many to keep.
+2. **A local safety backup is kept automatically before a restore or an app upgrade.** You can restore or delete these copies later.
+
+**♻️ Optimization**
+
+1. **Backup now shows progress and a clear result.** If this device and the cloud disagree, the app explains the conflict and lets you choose what to do.
+2. **Automatic backups saved to the Downloads folder now use a separate file name for each profile.**
+
+**🐛 Bug Fixes**
+
+1. **Fixed relative reminders that might not be rescheduled after you edit a task.**
+2. **Custom images sent to home-screen widgets are compressed first**, so a large image no longer drops widget content, such as part of an attribute list.
+3. **Task backgrounds set through the API can use an image URL directly.**
+
 **v1.106.0 (2026/09/23)**
 
 **✨ Features**

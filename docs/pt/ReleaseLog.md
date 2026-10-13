@@ -19,6 +19,24 @@
 
 ### **LifeUp-Android**
 
+**v1.107.0 (2026/10/13)**
+
+**✨ Recursos**
+
+1. **Os backups na nuvem agora ficam em uma lista de histórico**, em vez de substituir um único arquivo. Você pode ver, restaurar e excluir backups antigos e escolher quantos manter.
+2. **Antes de uma restauração ou atualização, uma cópia de segurança local é guardada automaticamente.** Depois você pode restaurá-la ou excluí-la.
+
+**♻️ Otimização**
+
+1. **O backup mostra o progresso e o resultado.** Se este aparelho e a nuvem divergirem, o app explica o conflito e deixa você escolher.
+2. **Os backups automáticos na pasta Downloads agora usam um nome de arquivo diferente para cada perfil.**
+
+**🐛 Correções**
+
+1. **Um lembrete relativo podia não ser reagendado depois de editar uma tarefa.**
+2. **As imagens personalizadas enviadas aos widgets são comprimidas antes**, para que uma imagem grande não oculte parte do widget, como a lista de atributos.
+3. **O fundo de uma tarefa definido pela API pode usar diretamente um endereço de imagem.**
+
 **v1.106.0 (2026/09/23)**
 
 **✨ Recursos**

@@ -19,6 +19,24 @@
 
 ### **LifeUp-Android**
 
+**v1.107.0 (2026/10/13)**
+
+**✨ Fonctionnalités**
+
+1. **Les sauvegardes cloud forment maintenant un historique**, au lieu d'écraser un seul fichier. Vous pouvez afficher, restaurer et supprimer les anciennes sauvegardes, et choisir combien les conserver.
+2. **Une copie de sécurité locale est conservée automatiquement avant une restauration ou une mise à jour.** Vous pouvez ensuite la restaurer ou la supprimer.
+
+**♻️ Optimisation**
+
+1. **La sauvegarde affiche sa progression et son résultat.** Si cet appareil et le cloud diffèrent, l'application explique le conflit et vous laisse choisir.
+2. **Les sauvegardes automatiques du dossier Téléchargements utilisent un nom de fichier distinct pour chaque profil.**
+
+**🐛 Corrections**
+
+1. **Un rappel relatif pouvait ne pas être replanifié après la modification d'une tâche.**
+2. **Les images personnalisées envoyées aux widgets sont d'abord compressées**, pour qu'une grande image ne fasse plus disparaître une partie du widget, comme la liste des attributs.
+3. **L'arrière-plan d'une tâche défini via l'API peut utiliser directement une adresse d'image.**
+
 **v1.106.0 (2026/09/23)**
 
 **✨ Fonctionnalités**
