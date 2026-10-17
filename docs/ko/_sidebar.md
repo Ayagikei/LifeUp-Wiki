@@ -23,6 +23,7 @@
   - APIs
     - [📄API 목록](guide/api.md)
     - [☁️LifeUp Cloud](guide/api_cloud.md)
+      - [HTTP API 참조](guide/api-reference.md)
     - [🤖 MCP & Skills](guide/api_mcp.md)
     - [🖥LifeUp Desktop](guide/api_desktop.md)
     - [🤝 커뮤니티 기여](guide/community_contributions.md)

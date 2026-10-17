@@ -23,6 +23,7 @@
   - APIs
     - [📄Lista de APIs](guide/api.md)
     - [☁️LifeUp Cloud](guide/api_cloud.md)
+      - [Referência da API HTTP](guide/api-reference.md)
     - [🤖 MCP & Skills](guide/api_mcp.md)
     - [🖥LifeUp Desktop](guide/api_desktop.md)
 

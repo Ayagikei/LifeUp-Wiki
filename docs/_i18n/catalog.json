@@ -136,8 +136,13 @@
       "name": "api satellites",
       "paths": [
         "guide/api_cloud.md",
+        "guide/api-reference.md",
         "guide/api_mcp.md",
-        "guide/api_desktop.md"
+        "guide/api_desktop.md",
+        "guide/api-common.md",
+        "guide/api-task-model.md",
+        "guide/api-task-queries.md",
+        "guide/api-ledgers.md"
       ]
     },
     "W7": {
@@ -200,7 +205,7 @@
     {
       "path": "_sidebar.md",
       "kind": "md",
-      "bytes": 1368
+      "bytes": 1421
     },
     {
       "path": "category.md",
@@ -258,6 +263,26 @@
       "bytes": 5456
     },
     {
+      "path": "guide/api-common.md",
+      "kind": "md",
+      "bytes": 821
+    },
+    {
+      "path": "guide/api-ledgers.md",
+      "kind": "md",
+      "bytes": 750
+    },
+    {
+      "path": "guide/api-task-model.md",
+      "kind": "md",
+      "bytes": 987
+    },
+    {
+      "path": "guide/api-task-queries.md",
+      "kind": "md",
+      "bytes": 567
+    },
+    {
       "path": "guide/api.md",
       "kind": "md",
       "bytes": 178961
@@ -265,7 +290,12 @@
     {
       "path": "guide/api_cloud.md",
       "kind": "md",
-      "bytes": 16383
+      "bytes": 6353
+    },
+    {
+      "path": "guide/api-reference.md",
+      "kind": "md",
+      "bytes": 65909
     },
     {
       "path": "guide/api_desktop.md",

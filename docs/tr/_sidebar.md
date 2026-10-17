@@ -22,6 +22,7 @@
   - APIs
     - [📄API Listeleri](guide/api.md)
     - [☁️LifeUp Cloud](guide/api_cloud.md)
+      - [HTTP API başvurusu](guide/api-reference.md)
     - [🤖 MCP & Skills](guide/api_mcp.md)
     - [🖥LifeUp Desktop](guide/api_desktop.md)
 - Yenilikler

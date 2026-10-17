@@ -26,6 +26,7 @@
   - [開放介面](guide/api.md)
     - [📄API列表](guide/api.md)
     - [☁️ 雲人升](guide/api_cloud.md)
+      - [HTTP API 參考](guide/api-reference.md)
     - [🤖 MCP & Skills](guide/api_mcp.md)
     - [🖥 桌面端](guide/api_desktop.md)
     - [🤝 社羣貢獻](guide/community_contributions.md)

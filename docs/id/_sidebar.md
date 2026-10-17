@@ -22,6 +22,7 @@
   - APIs
     - [📄Daftar API](guide/api.md)
     - [☁️LifeUp Cloud](guide/api_cloud.md)
+      - [Referensi API HTTP](guide/api-reference.md)
     - [🤖 MCP & Skills](guide/api_mcp.md)
     - [🖥LifeUp Desktop](guide/api_desktop.md)
 - Yang baru
