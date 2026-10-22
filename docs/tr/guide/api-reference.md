@@ -143,6 +143,8 @@ Aşağıdaki tüm alanlar güncel HTTP nesnesinde bulunur. Eksik sağlayıcı de
 | `remindTime` | integer | Milisaniye cinsinden hatırlatma zamanı; yoksa SDK varsayılanı `0`. |
 | `frequency` | integer | Yineleme kodu; `0` bir kez, `1` günlük, `-1` sınırsız. Diğer yineleme modları [görev eylemlerinde](/guide/api) açıklanır. SDK varsayılanı `0`. |
 | `weekdays` | string | Haftanın günleri seçimi; ör. `1,3,5` (pazartesi `1`, pazar `7`); verilmediğinde boştur ve geçmişte daima sabit boş yer tutucudur. |
+| `importance` | integer veya `null` | Önem düzeyi `1`–`4` (artan); App görev aciliyet derecesine (`taskUrgencyDegree`) karşılık gelir. `GET /tasks` ve `GET /tasks/{categoryId}` üzerinde görev listesi ContentProvider sütunu sağladığında dolu; eksik veya NULL sütun SDK tarafından `null` okunur. Geçmiş ContentProvider bu sütunu döndürmez, bu yüzden `/history` burada `null` kullanır; App'in kayıtta aciliyet saklamadığı anlamına gelmez. |
+| `difficulty` | integer veya `null` | Zorluk düzeyi `1`–`4` (artan); App görev zorluk derecesine (`taskDifficultyDegree`) karşılık gelir. `importance` ile aynı `/tasks` ve `/history` ContentProvider davranışı. |
 | `exp` | integer | Yapılandırılmış EXP ödülü, işlem tutarı değil; varsayılan `0`. |
 | `skillIds` | integer array | Ödülle ilişkili özellikler; kullanılamıyorsa boş dizi. |
 | `coin` | integer | Yapılandırılmış coin ödülü; varsayılan `0`. |
@@ -277,7 +279,7 @@ GET http://{host:port}/tasks/1
   "data": [{
     "id": 101, "gid": 10, "name": "Read a chapter", "notes": "",
     "status": 0, "startTime": 1792108800000, "deadline": 1792195199999,
-    "remindTime": 0, "frequency": 1, "weekdays": "",
+    "remindTime": 0, "frequency": 1, "weekdays": "", "importance": 3, "difficulty": 2,
     "exp": 5, "skillIds": [2], "coin": 10, "coinVariable": 0,
     "itemId": 0, "itemAmount": 0, "words": "", "categoryId": 1,
     "order": 0, "nameExtended": "Read a chapter", "endTime": 0,
@@ -315,7 +317,7 @@ GET http://{host:port}/history?offset=0&limit=100&gid=10
   "data": [{
     "id": 100, "gid": 10, "name": "Read a chapter", "notes": "",
     "status": 1, "startTime": 1792022400000, "deadline": 1792108799999,
-    "remindTime": 0, "frequency": 1, "weekdays": "",
+    "remindTime": 0, "frequency": 1, "weekdays": "", "importance": null, "difficulty": null,
     "exp": 5, "skillIds": [2], "coin": 10, "coinVariable": 0,
     "itemId": 0, "itemAmount": 0, "words": "", "categoryId": 1,
     "order": 0, "nameExtended": "", "endTime": 1792072800000,

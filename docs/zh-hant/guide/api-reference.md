@@ -142,6 +142,8 @@ SDK 使用同一個序列化 `Task` 類別提供兩種檢視。本頁以 `Task` 
 | `remindTime` | 整數 | 提醒時間，單位為毫秒；缺失時 SDK 替代值為 `0`。 |
 | `frequency` | 整數 | 重複代碼；`0` 為單次，`1` 為每天，`-1` 為無限。其他重複模式見[任務動作](/guide/api)。SDK 替代值為 `0`。 |
 | `weekdays` | 字串 | 選取的星期，如 `1,3,5`（週一為 `1`，週日為 `7`）；未提供時為空，歷史檢視固定以空值佔位。 |
+| `importance` | 整數或 `null` | 重要程度，取值 `1`–`4`（數值越大越重要），對應 App 的任務緊急度（`taskUrgencyDegree`）。在 `GET /tasks` 與 `GET /tasks/{categoryId}` 中，當任務清單 Provider 提供該欄位時有值；欄位缺失或為 NULL 時 SDK 解析為 `null`。歷史 Provider 不返回該欄位，故 `/history` 此處為 `null`，並不表示 App 未保存該緊急度。 |
+| `difficulty` | 整數或 `null` | 困難程度，取值 `1`–`4`（數值越大越難），對應 App 的任務難度（`taskDifficultyDegree`）。與 `importance` 相同的 `/tasks` 與 `/history` Provider 行為。 |
 | `exp` | 整數 | 設定的經驗獎勵，並非流水數額；預設為 `0`。 |
 | `skillIds` | 整數陣列 | 獎勵關聯的屬性；無法取得時為空陣列。 |
 | `coin` | 整數 | 設定的金幣獎勵；預設為 `0`。 |
@@ -275,7 +277,7 @@ GET http://{host:port}/tasks/1
   "data": [{
     "id": 101, "gid": 10, "name": "Read a chapter", "notes": "",
     "status": 0, "startTime": 1792108800000, "deadline": 1792195199999,
-    "remindTime": 0, "frequency": 1, "weekdays": "",
+    "remindTime": 0, "frequency": 1, "weekdays": "", "importance": 3, "difficulty": 2,
     "exp": 5, "skillIds": [2], "coin": 10, "coinVariable": 0,
     "itemId": 0, "itemAmount": 0, "words": "", "categoryId": 1,
     "order": 0, "nameExtended": "Read a chapter", "endTime": 0,
@@ -313,7 +315,7 @@ GET http://{host:port}/history?offset=0&limit=100&gid=10
   "data": [{
     "id": 100, "gid": 10, "name": "Read a chapter", "notes": "",
     "status": 1, "startTime": 1792022400000, "deadline": 1792108799999,
-    "remindTime": 0, "frequency": 1, "weekdays": "",
+    "remindTime": 0, "frequency": 1, "weekdays": "", "importance": null, "difficulty": null,
     "exp": 5, "skillIds": [2], "coin": 10, "coinVariable": 0,
     "itemId": 0, "itemAmount": 0, "words": "", "categoryId": 1,
     "order": 0, "nameExtended": "", "endTime": 1792072800000,

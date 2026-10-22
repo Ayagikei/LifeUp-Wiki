@@ -143,6 +143,8 @@ All fields below appear in the current HTTP object. Missing provider values are 
 | `remindTime` | integer | Reminder time in milliseconds; SDK fallback `0` if absent. |
 | `frequency` | integer | Recurrence code; `0` once, `1` daily, `-1` unlimited. Other recurrence modes are described in [task actions](/guide/api). SDK fallback `0`. |
 | `weekdays` | string | Weekday selection, e.g. `1,3,5` (Monday `1`, Sunday `7`); empty when not supplied, and a fixed empty placeholder in history. |
+| `importance` | integer or `null` | Importance level `1`–`4` (ascending); corresponds to the App task urgency degree (`taskUrgencyDegree`). Returned on `GET /tasks` and `GET /tasks/{categoryId}` when the task-list ContentProvider exposes the column; SDK parses a missing or NULL column as `null`. The history ContentProvider does not return this column, so `/history` uses `null` here without implying the App lacks stored urgency on the record. |
+| `difficulty` | integer or `null` | Difficulty level `1`–`4` (ascending); corresponds to the App task difficulty degree (`taskDifficultyDegree`). Same `/tasks` versus `/history` ContentProvider behavior as `importance`. |
 | `exp` | integer | Configured EXP reward, not a transaction amount; default `0`. |
 | `skillIds` | integer array | Attributes associated with the reward; empty array if unavailable. |
 | `coin` | integer | Configured coin reward; default `0`. |
@@ -277,7 +279,7 @@ GET http://{host:port}/tasks/1
   "data": [{
     "id": 101, "gid": 10, "name": "Read a chapter", "notes": "",
     "status": 0, "startTime": 1792108800000, "deadline": 1792195199999,
-    "remindTime": 0, "frequency": 1, "weekdays": "",
+    "remindTime": 0, "frequency": 1, "weekdays": "", "importance": 3, "difficulty": 2,
     "exp": 5, "skillIds": [2], "coin": 10, "coinVariable": 0,
     "itemId": 0, "itemAmount": 0, "words": "", "categoryId": 1,
     "order": 0, "nameExtended": "Read a chapter", "endTime": 0,
@@ -315,7 +317,7 @@ GET http://{host:port}/history?offset=0&limit=100&gid=10
   "data": [{
     "id": 100, "gid": 10, "name": "Read a chapter", "notes": "",
     "status": 1, "startTime": 1792022400000, "deadline": 1792108799999,
-    "remindTime": 0, "frequency": 1, "weekdays": "",
+    "remindTime": 0, "frequency": 1, "weekdays": "", "importance": null, "difficulty": null,
     "exp": 5, "skillIds": [2], "coin": 10, "coinVariable": 0,
     "itemId": 0, "itemAmount": 0, "words": "", "categoryId": 1,
     "order": 0, "nameExtended": "", "endTime": 1792072800000,

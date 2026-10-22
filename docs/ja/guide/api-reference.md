@@ -142,6 +142,8 @@ SDK はシリアライズに同じ `Task` クラスを使います。このペ�
 | `remindTime` | integer | リマインダー時刻 (ミリ秒)。未設定時の SDK 代替値は `0`。 |
 | `frequency` | integer | 繰り返しコード。`0` は 1 回、`1` は毎日、`-1` は無制限。ほかの繰り返しモードは[タスクアクション](/guide/api)を参照。SDK の代替値は `0`。 |
 | `weekdays` | string | 曜日の選択。例: `1,3,5` (月曜 `1`、日曜 `7`)。未指定なら空、履歴では固定の空プレースホルダー。 |
+| `importance` | integer または `null` | 重要度 `1`–`4`（昇順）。App のタスク緊急度（`taskUrgencyDegree`）に対応。`GET /tasks` と `GET /tasks/{categoryId}` でタスク一覧 ContentProvider が列を返す場合に値あり。列が無いか NULL のとき SDK は `null`。履歴 ContentProvider は列を返さないため `/history` では `null`（App が記録を保存していない意味ではない）。 |
+| `difficulty` | integer または `null` | 難易度 `1`–`4`（昇順）。App のタスク難易度（`taskDifficultyDegree`）に対応。`importance` と同じ `/tasks` と `/history` の ContentProvider の違い。 |
 | `exp` | integer | 設定 EXP 報酬。取引額ではありません。既定値 `0`。 |
 | `skillIds` | integer array | 報酬に関連する属性。利用できない場合は空配列。 |
 | `coin` | integer | 設定コイン報酬。既定値 `0`。 |
@@ -275,7 +277,7 @@ GET http://{host:port}/tasks/1
   "data": [{
     "id": 101, "gid": 10, "name": "Read a chapter", "notes": "",
     "status": 0, "startTime": 1792108800000, "deadline": 1792195199999,
-    "remindTime": 0, "frequency": 1, "weekdays": "",
+    "remindTime": 0, "frequency": 1, "weekdays": "", "importance": 3, "difficulty": 2,
     "exp": 5, "skillIds": [2], "coin": 10, "coinVariable": 0,
     "itemId": 0, "itemAmount": 0, "words": "", "categoryId": 1,
     "order": 0, "nameExtended": "Read a chapter", "endTime": 0,
@@ -313,7 +315,7 @@ GET http://{host:port}/history?offset=0&limit=100&gid=10
   "data": [{
     "id": 100, "gid": 10, "name": "Read a chapter", "notes": "",
     "status": 1, "startTime": 1792022400000, "deadline": 1792108799999,
-    "remindTime": 0, "frequency": 1, "weekdays": "",
+    "remindTime": 0, "frequency": 1, "weekdays": "", "importance": null, "difficulty": null,
     "exp": 5, "skillIds": [2], "coin": 10, "coinVariable": 0,
     "itemId": 0, "itemAmount": 0, "words": "", "categoryId": 1,
     "order": 0, "nameExtended": "", "endTime": 1792072800000,

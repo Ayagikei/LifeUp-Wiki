@@ -143,6 +143,8 @@ SDK использует один сериализуемый класс `Task` �
 | `remindTime` | integer | Время напоминания в миллисекундах; подстановка SDK при отсутствии — `0`. |
 | `frequency` | integer | Код повторения; `0` однократно, `1` ежедневно, `-1` без ограничений. Другие режимы описаны в [действиях с задачами](/guide/api). Подстановка SDK `0`. |
 | `weekdays` | string | Выбранные дни недели, например `1,3,5` (понедельник `1`, воскресенье `7`); пустая строка, если не задано, а в истории — постоянная пустая заглушка. |
+| `importance` | integer или `null` | Уровень важности `1`–`4` (по возрастанию); соответствует степени срочности задачи в App (`taskUrgencyDegree`). В `GET /tasks` и `GET /tasks/{categoryId}` заполняется, когда ContentProvider списка задач отдаёт столбец; отсутствующий или NULL столбец SDK читает как `null`. ContentProvider истории не возвращает этот столбец, поэтому в `/history` здесь `null`, не означая, что App не хранит срочность в записи. |
+| `difficulty` | integer или `null` | Уровень сложности `1`–`4` (по возрастанию); соответствует степени сложности задачи в App (`taskDifficultyDegree`). То же поведение ContentProvider `/tasks` и `/history`, что у `importance`. |
 | `exp` | integer | Настроенная награда EXP, а не сумма транзакции; по умолчанию `0`. |
 | `skillIds` | массив integer | Характеристики, связанные с наградой; пустой массив при недоступности. |
 | `coin` | integer | Настроенная награда монетами; по умолчанию `0`. |
@@ -277,7 +279,7 @@ GET http://{host:port}/tasks/1
   "data": [{
     "id": 101, "gid": 10, "name": "Read a chapter", "notes": "",
     "status": 0, "startTime": 1792108800000, "deadline": 1792195199999,
-    "remindTime": 0, "frequency": 1, "weekdays": "",
+    "remindTime": 0, "frequency": 1, "weekdays": "", "importance": 3, "difficulty": 2,
     "exp": 5, "skillIds": [2], "coin": 10, "coinVariable": 0,
     "itemId": 0, "itemAmount": 0, "words": "", "categoryId": 1,
     "order": 0, "nameExtended": "Read a chapter", "endTime": 0,
@@ -315,7 +317,7 @@ GET http://{host:port}/history?offset=0&limit=100&gid=10
   "data": [{
     "id": 100, "gid": 10, "name": "Read a chapter", "notes": "",
     "status": 1, "startTime": 1792022400000, "deadline": 1792108799999,
-    "remindTime": 0, "frequency": 1, "weekdays": "",
+    "remindTime": 0, "frequency": 1, "weekdays": "", "importance": null, "difficulty": null,
     "exp": 5, "skillIds": [2], "coin": 10, "coinVariable": 0,
     "itemId": 0, "itemAmount": 0, "words": "", "categoryId": 1,
     "order": 0, "nameExtended": "", "endTime": 1792072800000,
