@@ -19,6 +19,12 @@
 
 ### **LifeUp-Android**
 
+**v1.107.2 (Yakında)**
+
+**🐛 Düzeltmeler**
+
+1. Görev ContentProvider sorgu sonuçlarında önem ve zorluk eksikliği giderildi; üçüncü taraf araçlar görevleri işlerken her iki alanı da kullanabilir.
+
 **v1.107.0 (2026/10/13)**
 
 **✨ Özellikler**
@@ -2912,6 +2918,13 @@ Optimizasyon
 1. İlk sürüm
 
 ### **LifeUp Cloud**
+
+**v3.0.3 (Yakında)**
+
+**♻️ İyileştirme**
+
+1. Görev sorguları, LifeUp v1.107.2 veya üzeriyle kullanıldığında önem ve zorluğu döndürür.
+2. Eşlik eden MCP yardımına sorgu parametreleri, tam yanıt alanları ve yapay zeka aracılarının bölüm bölüm bakabileceği örnekler eklendi.
 
 **v3.0.2 (2026/09/24)**
 

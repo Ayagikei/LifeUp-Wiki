@@ -19,6 +19,12 @@
 
 ### **LifeUp-Android**
 
+**v1.107.2 (À venir)**
+
+**🐛 Corrections**
+
+1. Correction de l’absence d’importance et de difficulté dans les résultats de requête ContentProvider des tâches, pour que les outils tiers puissent utiliser les deux champs lors du traitement des tâches.
+
 **v1.107.0 (2026/10/13)**
 
 **✨ Fonctionnalités**
@@ -2909,6 +2915,13 @@ Optimisation
 1. **Première version**
 
 ### **LifeUp Cloud**
+
+**v3.0.3 (À venir)**
+
+**♻️ Optimisation**
+
+1. Les requêtes de tâches exposent désormais l’importance et la difficulté avec LifeUp v1.107.2 ou ultérieur.
+2. L’aide MCP associée inclut les paramètres de requête, les champs de réponse complets et des exemples consultables par section pour les agents IA.
 
 **v3.0.2 (2026/09/24)**
 

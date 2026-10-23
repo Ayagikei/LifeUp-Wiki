@@ -19,6 +19,12 @@
 
 ### **LifeUp-Android**
 
+**v1.107.2 (Segera hadir)**
+
+**🐛 Perbaikan**
+
+1. Memperbaiki hilangnya tingkat kepentingan dan kesulitan pada hasil kueri ContentProvider tugas, agar alat pihak ketiga dapat memakai kedua field saat memproses tugas.
+
 **v1.107.0 (2026/10/13)**
 
 **✨ Fitur**
@@ -2933,6 +2939,13 @@ Optimisasi
 1. Rilis pertama
 
 ### **LifeUp Cloud**
+
+**v3.0.3 (Segera hadir)**
+
+**♻️ Optimasi**
+
+1. Kueri tugas kini menampilkan tingkat kepentingan dan kesulitan bila dipakai dengan LifeUp v1.107.2 atau lebih baru.
+2. Bantuan MCP pendamping kini mencakup parameter kueri, field respons lengkap, dan contoh yang dapat agent AI telusuri per bagian.
 
 **v3.0.2 (2026/09/24)**
 

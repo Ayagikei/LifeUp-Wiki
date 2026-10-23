@@ -19,6 +19,12 @@
 
 ### **LifeUp-Android**
 
+**v1.107.2 (Upcoming)**
+
+**🐛 Bug Fixes**
+
+1. Fixed missing task importance and difficulty in ContentProvider query results, so third-party tools can use both fields when processing tasks.
+
 **v1.107.0 (2026/10/13)**
 
 **✨ Features**
@@ -2943,6 +2949,13 @@ Optimization
 1. First release
 
 ### **LifeUp Cloud**
+
+**v3.0.3 (Upcoming)**
+
+**♻️ Optimization**
+
+1. Task queries now expose importance and difficulty when used with LifeUp v1.107.2 or later.
+2. The companion MCP help now includes query parameters, complete response fields, and examples that AI agents can look up by section.
 
 **v3.0.2 (2026/09/24)**
 

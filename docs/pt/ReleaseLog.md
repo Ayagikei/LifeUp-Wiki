@@ -19,6 +19,12 @@
 
 ### **LifeUp-Android**
 
+**v1.107.2 (Em breve)**
+
+**🐛 Correções**
+
+1. Corrigida a ausência de importância e dificuldade nos resultados de consulta ContentProvider de tarefas, para que ferramentas de terceiros possam usar ambos os campos ao processar tarefas.
+
 **v1.107.0 (2026/10/13)**
 
 **✨ Recursos**
@@ -2910,6 +2916,13 @@ Otimização
 1. Primeiro lançamento
 
 ### **LifeUp Cloud**
+
+**v3.0.3 (Em breve)**
+
+**♻️ Otimização**
+
+1. As consultas de tarefas passam a expor importância e dificuldade quando usadas com LifeUp v1.107.2 ou superior.
+2. A ajuda MCP complementar inclui parâmetros de consulta, campos de resposta completos e exemplos que agentes de IA podem consultar por secção.
 
 **v3.0.2 (2026/09/24)**
 
