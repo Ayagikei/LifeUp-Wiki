@@ -11,6 +11,7 @@
 - [How to Restore](#how-to-restore)
 - [New Phone Migration](#phone-migration)
 - [Common Issues](#common-issues)
+- [Clear data](#clear-data)
 
 ## 1) Why Backup Matters :id=why-backup
 
@@ -199,3 +200,16 @@ Update LifeUp to latest version, then restore again.
 - Safer strategy: combine cloud backup + periodic local export.
 
 </details>
+
+## 6) Clear data :id=clear-data
+
+Since v1.107.0, clearing data and deleting an account are on their own page. The page shows: “The following actions cannot be undone. Back up your data first.” Back up manually before you continue. This flow does not create a backup for you.
+
+Open `Sidebar` → `Settings` → `Data Backup/Restore/Clear`. That opens `Backup/Restore`. Then open `Clear data & delete account` (`Clear EXP, coins, achievements or history, or delete local data and your account`).
+
+- `Clear Exp Data` — resets EXP to 0. Confirm to continue. The app stays open.
+- `Clear Coin Data` — resets the coin balance to 0. Confirm to continue. The app stays open.
+- `Clear System Achievement Data` — returns system achievements to the locked state. Custom achievements stay as they are. Confirm to continue. The app stays open.
+- `Clear History Data` — select one or more of `Tasks`, `Coins`, `Inventory records`, `Pomodoro records`, and `Feelings`. The delete button becomes available after a 5-second countdown, once at least one type is selected. The app stays open.
+- `Delete Local Data` — deletes the database, settings, and media, and returns the app to its first-install state. Confirm after a 15-second countdown. The app then restarts.
+- `Delete Account (Remote Data)` — deletes this account’s data on the LifeUp servers. Confirm after a 30-second countdown. On-device tasks and other local data stay on the device. After a successful deletion, the app clears the local login session and reopens the main screen.

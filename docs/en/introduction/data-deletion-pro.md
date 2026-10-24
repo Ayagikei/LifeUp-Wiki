@@ -8,9 +8,9 @@ As LifeUp Pro is primarily an offline application, you can manage your data dire
 
 To delete your data, please follow these steps:
 
-1. Go to the 'Settings - Data Backup/Restore/Clear' page in the LifeUp Pro app.
-2. Choose the specific data you wish to delete, such as tasks, item rewards, local thoughts, and offline mode data.
-3. Confirm your action to permanently delete the selected data.
+1. In the LifeUp Pro app, open `Settings` → `Data Backup/Restore/Clear` (the `Backup/Restore` page), then open `Clear data & delete account`.
+2. Choose `Clear Exp Data`, `Clear Coin Data`, `Clear System Achievement Data`, `Clear History Data`, or `Delete Local Data`.
+3. Confirm. EXP, coin, system-achievement, and history clears leave the app open. `Delete Local Data` uses a 15-second countdown, then deletes the database, settings, and media, returns the app to its first-install state, and restarts. Back up manually first.
 
 **Alternatively, uninstalling the LifeUp Pro app from your device will also result in the deletion of all locally stored data.**
 
@@ -28,9 +28,9 @@ When you delete your account, it will remove:
 
 **To delete your LifeUp Pro account, please follow the previously outlined steps:**
 
-1. Navigate to the 'Settings - Data Backup/Restore/Clear' page.
-2. Tap on the 'Delete Account' button at the bottom of the page.
-3. Confirm your action to permanently delete your account and all associated information.
+1. Open `Settings` → `Data Backup/Restore/Clear`, then open `Clear data & delete account`.
+2. Tap `Delete Account (Remote Data)`.
+3. Confirm after the 30-second countdown to delete this account’s data on the LifeUp servers. Back up manually first. On-device tasks and other local data stay on the device.
 
 <br/>
 

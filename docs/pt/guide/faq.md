@@ -360,10 +360,10 @@ Na página `Loja`, pressione e segure o Item e toque no botão `Excluir` no topo
 <details>
 <summary>Como limpo EXP e moedas?</summary>
 
-Vá em:
-`barra lateral` → `Configurações` → `Backup / Restaurar / Limpar dados`
+Desde a v1.107.0, vá em:
+`barra lateral` → `Configurações` → `Backup / Restaurar / Limpar dados` → `Limpar dados e excluir conta`
 
-Você pode limpar valores de EXP e moedas lá.
+Toque em `Limpar dados de expansão` ou `Limpar dados de moedas` e confirme. O App continua aberto. Faça um backup manual antes. Veja [Limpar dados](/guide/backup?id=clear-data).
 
 Observação: se você usa recursos online, exibições relacionadas no servidor podem levar um curto tempo para atualizar.
 

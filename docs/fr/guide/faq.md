@@ -360,10 +360,10 @@ Sur la page `Boutique`, maintenez appuyé sur l'Objet, puis appuyez sur le bouto
 <details>
 <summary>Comment effacer les Points d'Expérience et les pièces ?</summary>
 
-Allez dans :
-`barre latérale` → `Paramètres` → `Sauvegarde des données/Restauration/Effacer`
+Depuis la v1.107.0, allez dans :
+`barre latérale` → `Paramètres` → `Sauvegarde des données/Restauration/Effacer` → `Effacer les données et supprimer le compte`
 
-Vous pouvez y effacer les valeurs de Points d'Expérience et de pièces.
+Appuyez sur `Effacer les données d’expérience` ou `Effacer les données de pièces`, puis confirmez. L’App reste ouverte. Faites d’abord une sauvegarde manuelle. Voir [Effacer les données](/guide/backup?id=clear-data).
 
 Note : si vous utilisez des fonctionnalités en ligne, les affichages côté serveur peuvent mettre un court instant à se rafraîchir.
 

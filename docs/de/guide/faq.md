@@ -360,10 +360,10 @@ Auf der `Shop`-Seite den Gegenstand lange drücken, dann oben auf `Löschen` tip
 <details>
 <summary>Wie setze ich EXP und Münzen zurück?</summary>
 
-Gehe zu:
-`Seitenleiste` → `Einstellungen` → `Daten sichern/wiederherstellen/löschen`
+Seit v1.107.0:
+`Seitenleiste` → `Einstellungen` → `Daten sichern/wiederherstellen/löschen` → `Daten löschen & Konto entfernen`
 
-Dort kannst du EXP- und Münzen-Werte löschen.
+Tippe auf `Exp-Daten löschen` oder `Münzdaten löschen` und bestätige. Die App bleibt geöffnet. Sichere vorher manuell. Siehe [Daten löschen](/guide/backup?id=clear-data).
 
 Hinweis: Nutzt du Online-Funktionen, kann es kurz dauern, bis serverseitige Anzeigen aktualisiert sind.
 

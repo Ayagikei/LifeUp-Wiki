@@ -360,10 +360,10 @@ En la página `Tienda`, mantén pulsado el objeto y luego toca el botón `Elimin
 <details>
 <summary>¿Cómo borro EXP y monedas?</summary>
 
-Ve a:
-`barra lateral` → `Ajustes` → `Respaldo/Restauración/Borrar Datos`
+Desde v1.107.0, ve a:
+`barra lateral` → `Ajustes` → `Respaldo/Restauración/Borrar Datos` → `Borrar datos y eliminar cuenta`
 
-Puedes borrar los valores de EXP y monedas allí.
+Toca `Borrar datos de exp` o `Limpiar datos de monedas` y confirma. La App sigue abierta. Haz antes una copia manual. Consulta [Borrar datos](/guide/backup?id=clear-data).
 
 Nota: si usas funciones en línea, las visualizaciones relacionadas en el servidor pueden tardar un breve periodo en actualizarse.
 

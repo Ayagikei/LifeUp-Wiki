@@ -11,6 +11,7 @@
 - [Nasıl Geri Yüklenir](#how-to-restore)
 - [Yeni Telefona Geçiş](#phone-migration)
 - [Sık Karşılaşılan Sorunlar](#common-issues)
+- [Verileri temizleme](#clear-data)
 
 ## 1) Yedeklemenin Neden Önemli Olduğu :id=why-backup
 
@@ -199,3 +200,16 @@ LifeUp'ı en son sürüme güncelleyin, ardından tekrar geri yükleyin.
 - Daha güvenli strateji: bulut yedeklemesi + periyodik yerel dışa aktarma birleştirin.
 
 </details>
+
+## 6) Verileri temizleme :id=clear-data
+
+v1.107.0’den beri verileri temizleme ve hesabı silme ayrı bir sayfadadır. Sayfada şu uyarı görünür: “Bu işlemler geri alınamaz. Önce verilerinizi yedekleyin.” Devam etmeden önce elle yedek alın. Bu akış sizin için yedek oluşturmaz.
+
+`kenar çubuğu` → `Ayarlar` → `Veri Yedekle/Geri Getir/Sil` yolunu açın. `Yedekle/Geri Yükle` açılır. Ardından `Verileri temizle ve hesabı sil` (`Deneyim, altın, başarım veya geçmişi temizleyin ya da yerel verileri ve hesabı silin`) öğesini açın.
+
+- `Exp verisini sil` — EXP’yi 0 yapar. Devam etmek için onaylayın. App açık kalır.
+- `Bozuklukları Sıfırla` — coin miktarını 0 yapar. Devam etmek için onaylayın. App açık kalır.
+- `Sistem Başarı Verilerini Temizle` — sistem başarımlarını kilitli duruma döndürür. Özel başarımlar burada değişmez. Devam etmek için onaylayın. App açık kalır.
+- `Geçmiş Verilerini Temizle` — `Görevler`, `Bozukluklar`, `Envanter kayıtları`, `Pomodoro kayıtları` ve `Duygular` arasından bir veya daha fazlasını seçin. 5 saniyelik geri sayım bitene ve en az bir tür seçilene kadar silme kullanılamaz. App açık kalır.
+- `Yerel Verileri Sil` — veritabanını, ayarları ve medyayı siler ve App’i ilk kurulum durumuna döndürür. 15 saniyelik geri sayımdan sonra onaylayın. Ardından App yeniden başlar.
+- `Hesabı Sil (Uzak Veriler)` — bu hesabın LifeUp sunucularındaki verilerini siler. 30 saniyelik geri sayımdan sonra onaylayın. Görevler ve diğer yerel veriler cihazda kalır. Silme başarılı olursa App yerel oturumu temizler ve ana ekranı yeniden açar.

@@ -360,10 +360,10 @@ On the `Shop` page, long-press the item, then tap the `trash` button at the top.
 <details>
 <summary>How do I clear EXP and coins?</summary>
 
-Go to:
-`Sidebar` → `Settings` → `Data backup, restore, clear`
+Since v1.107.0, go to:
+`Sidebar` → `Settings` → `Data Backup/Restore/Clear` → `Clear data & delete account`
 
-You can clear EXP and coin values there.
+Tap `Clear Exp Data` or `Clear Coin Data`, then confirm. The app stays open. Back up manually first. See [Clear data](/guide/backup?id=clear-data).
 
 Note: if you use online features, related server-side displays may take a short time to refresh.
 

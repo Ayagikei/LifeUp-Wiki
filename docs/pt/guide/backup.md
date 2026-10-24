@@ -11,6 +11,7 @@
 - [Como restaurar](#how-to-restore)
 - [Migração para celular novo](#phone-migration)
 - [Problemas comuns](#common-issues)
+- [Limpar dados](#clear-data)
 
 ## 1) Por que o backup importa :id=why-backup
 
@@ -199,3 +200,16 @@ Atualize o LifeUp para a versão mais recente e restaure novamente.
 - Estratégia mais segura: combine backup na nuvem + exportação local periódica.
 
 </details>
+
+## 6) Limpar dados :id=clear-data
+
+Desde a v1.107.0, limpar dados e excluir a conta ficam em uma página separada. A página mostra: “Estas ações não podem ser desfeitas. Faça backup dos dados primeiro.” Faça um backup manual antes de continuar. Este fluxo não cria um backup para você.
+
+Abra `barra lateral` → `Configurações` → `Backup / Restaurar / Limpar dados`. Isso abre `Backup / Restauração`. Depois abra `Limpar dados e excluir conta` (`Limpe EXP, moedas, conquistas ou histórico, ou exclua os dados locais e a conta`).
+
+- `Limpar dados de expansão` — zera o EXP. Confirme para continuar. O App continua aberto.
+- `Limpar dados de moedas` — zera as moedas. Confirme para continuar. O App continua aberto.
+- `Limpar dados de conquista` — volta as conquistas do sistema para o estado bloqueado. Conquistas personalizadas permanecem como estão. Confirme para continuar. O App continua aberto.
+- `Limpar histórico` — escolha um ou mais de `Tarefas`, `Moedas`, `Registro de inventário`, `Registros do Pomodoro` e `Reflexões`. Excluir fica indisponível até o fim de uma contagem de 5 segundos e enquanto nenhum tipo estiver marcado. O App continua aberto.
+- `Apagar dados locais` — apaga o banco de dados, as configurações e a mídia, e devolve o App ao estado da primeira instalação. Confirme após uma contagem de 15 segundos. Em seguida o App reinicia.
+- `Excluir conta (Dados Remotos)` — exclui os dados desta conta nos servidores LifeUp. Confirme após uma contagem de 30 segundos. Tarefas e outros dados locais permanecem no aparelho. Se a exclusão for concluída, o App limpa a sessão local e reabre a tela principal.

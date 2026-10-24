@@ -11,6 +11,7 @@
 - [Come ripristinare](#how-to-restore)
 - [Migrazione su un nuovo telefono](#phone-migration)
 - [Problemi comuni](#common-issues)
+- [Cancellare i dati](#clear-data)
 
 ## 1) Perché il backup è importante :id=why-backup
 
@@ -199,3 +200,16 @@ Aggiorna LifeUp all'ultima versione, poi ripristina di nuovo.
 - Strategia più sicura: combina backup cloud + export locale periodico.
 
 </details>
+
+## 6) Cancellare i dati :id=clear-data
+
+Dalla v1.107.0, cancellare i dati ed eliminare l’account è su una pagina separata. La pagina mostra: «Queste azioni non possono essere annullate. Esegui prima un backup dei dati.» Fai prima un backup manuale. Questo flusso non ne crea uno per te.
+
+Apri `barra laterale` → `Impostazioni` → `Backup Dati/Ripristino/Pulizia`. Si apre `Backup/Ripristino`. Poi apri `Cancella dati ed elimina account` (`Cancella EXP, monete, obiettivi o cronologia, oppure elimina dati locali e account`).
+
+- `Elimina Dati Exp` — riporta gli EXP a 0. Conferma per continuare. L’App resta aperta.
+- `Cancella Dati Monete` — riporta le monete a 0. Conferma per continuare. L’App resta aperta.
+- `Cancella i dati di sistema degli obiettivi` — riporta gli obiettivi di sistema allo stato bloccato. Gli obiettivi personalizzati restano com’erano. Conferma per continuare. L’App resta aperta.
+- `Cancella la cronologia` — scegli uno o più tra `Compiti`, `Monete`, `Inventario record`, `Pomodoro records` e `Sensazioni`. Elimina resta disattivato finché non finisce un conto alla rovescia di 5 secondi e non è selezionato almeno un tipo. L’App resta aperta.
+- `Elimina Dati Locali` — elimina database, impostazioni e media, e riporta l’App allo stato della prima installazione. Conferma dopo un conto alla rovescia di 15 secondi. Poi l’App si riavvia.
+- `Elimina Account (Dati Remoti)` — elimina i dati di questo account sui server LifeUp. Conferma dopo un conto alla rovescia di 30 secondi. Compiti e altri dati locali restano sul dispositivo. Se l’eliminazione riesce, l’App cancella la sessione locale e riapre la schermata principale.

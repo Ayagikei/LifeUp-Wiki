@@ -8,9 +8,9 @@ Como o LifeUp Pro é principalmente uma aplicação offline, você pode gerencia
 
 Para excluir seus dados, siga estes passos:
 
-1. Vá à página 'Configurações - Backup/Restauração/Limpeza' no App LifeUp Pro.
-2. Escolha os dados específicos que deseja excluir, como Tarefas, Recompensas de Itens, Reflexões locais e dados do modo offline.
-3. Confirme sua ação para excluir permanentemente os dados selecionados.
+1. No App LifeUp Pro, abra `Configurações` → `Backup / Restaurar / Limpar dados` (`Backup / Restauração`) e depois `Limpar dados e excluir conta`.
+2. Escolha `Limpar dados de expansão`, `Limpar dados de moedas`, `Limpar dados de conquista`, `Limpar histórico` ou `Apagar dados locais`.
+3. Confirme. EXP, moedas, conquistas do sistema e histórico deixam o App aberto. `Apagar dados locais` espera 15 segundos, apaga o banco de dados, as configurações e a mídia, devolve o App ao estado da primeira instalação e o reinicia. Faça um backup manual antes.
 
 **Alternativamente, desinstalar o App LifeUp Pro do seu dispositivo também resultará na exclusão de todos os dados armazenados localmente.**
 
@@ -28,9 +28,9 @@ Quando você exclui sua conta, serão removidos:
 
 **Para excluir sua conta LifeUp Pro, siga os passos descritos anteriormente:**
 
-1. Navegue até a página 'Configurações - Backup/Restauração/Limpeza'.
-2. Toque no botão 'Excluir conta' na parte inferior da página.
-3. Confirme sua ação para excluir permanentemente sua conta e todas as informações associadas.
+1. Abra `Configurações` → `Backup / Restaurar / Limpar dados` e depois `Limpar dados e excluir conta`.
+2. Toque em `Excluir conta (Dados Remotos)`.
+3. Confirme após uma contagem de 30 segundos para excluir os dados desta conta nos servidores LifeUp. Faça um backup manual antes. Tarefas e outros dados locais permanecem no aparelho.
 
 <br/>
 

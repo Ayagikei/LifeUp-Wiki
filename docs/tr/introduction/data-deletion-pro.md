@@ -8,9 +8,9 @@ LifeUp Pro öncelikle çevrimdışı bir uygulama olduğundan verilerinizi doğr
 
 Verilerinizi silmek için şu adımları izleyin:
 
-1. LifeUp Pro App'inde 'Ayarlar - Veri Yedekleme/Geri Yükleme/Temizleme' sayfasına gidin.
-2. Görevler, Eşya Ödülleri, yerel düşünceler ve çevrimdışı mod verileri gibi silmek istediğiniz belirli verileri seçin.
-3. Seçili verileri kalıcı olarak silmek için işleminizi onaylayın.
+1. LifeUp Pro App'te `Ayarlar` → `Veri Yedekle/Geri Getir/Sil` (`Yedekle/Geri Yükle`) yolunu açın, sonra `Verileri temizle ve hesabı sil` öğesini açın.
+2. `Exp verisini sil`, `Bozuklukları Sıfırla`, `Sistem Başarı Verilerini Temizle`, `Geçmiş Verilerini Temizle` veya `Yerel Verileri Sil` arasından seçin.
+3. Onaylayın. EXP, coin, sistem başarımı ve geçmiş temizliği App'i açık bırakır. `Yerel Verileri Sil` 15 saniye bekler, veritabanını, ayarları ve medyayı siler, App'i ilk kurulum durumuna döndürür ve yeniden başlatır. Önce elle yedek alın.
 
 **Alternatif olarak, LifeUp Pro App'ini cihazınızdan kaldırmak da yerel olarak saklanan tüm verilerin silinmesine yol açar.**
 
@@ -28,9 +28,9 @@ Hesabınızı sildiğinizde şunlar kaldırılır:
 
 **LifeUp Pro hesabınızı silmek için daha önce belirtilen adımları izleyin:**
 
-1. 'Ayarlar - Veri Yedekleme/Geri Yükleme/Temizleme' sayfasına gidin.
-2. Sayfanın altındaki 'Hesabı Sil' düğmesine dokunun.
-3. Hesabınızı ve ilişkili tüm bilgileri kalıcı olarak silmek için işleminizi onaylayın.
+1. `Ayarlar` → `Veri Yedekle/Geri Getir/Sil` yolunu açın, sonra `Verileri temizle ve hesabı sil` öğesini açın.
+2. `Hesabı Sil (Uzak Veriler)` öğesine dokunun.
+3. LifeUp sunucularındaki bu hesabın verilerini silmek için 30 saniyelik geri sayımdan sonra onaylayın. Önce elle yedek alın. Görevler ve diğer yerel veriler cihazda kalır.
 
 <br/>
 

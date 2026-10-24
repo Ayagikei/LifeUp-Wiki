@@ -8,9 +8,9 @@ Karena LifeUp Pro terutama adalah App offline, Anda dapat mengelola data langsun
 
 Untuk menghapus data, ikuti langkah-langkah berikut:
 
-1. Buka halaman 'Settings - Data Backup/Restore/Clear' di App LifeUp Pro.
-2. Pilih data spesifik yang ingin dihapus, seperti Tugas, Hadiah Item, catatan lokal, dan data mode offline.
-3. Konfirmasi tindakan Anda untuk menghapus data yang dipilih secara permanen.
+1. Di App LifeUp Pro, buka `Pengaturan` → `Pencadangan/Pemulihan/Hapus Data` (`Cadangkan/Pulihkan`), lalu `Hapus data & akun`.
+2. Pilih `Hapus Data Exp`, `Hapus Data Koin`, `Hapus Data Pencapaian Sistem`, `Hapus Data Riwayat`, atau `Hapus Data Lokal`.
+3. Konfirmasi. Menghapus EXP, koin, pencapaian sistem, dan riwayat membuat App tetap terbuka. `Hapus Data Lokal` menunggu 15 detik, menghapus basis data, pengaturan, dan media, mengembalikan App ke keadaan pertama kali dipasang, lalu memulai ulang. Cadangkan secara manual terlebih dahulu.
 
 **Alternatifnya, menghapus instalasi App LifeUp Pro dari perangkat Anda juga akan menghapus semua data yang disimpan secara lokal.**
 
@@ -28,9 +28,9 @@ Saat Anda menghapus akun, hal berikut akan dihapus:
 
 **Untuk menghapus akun LifeUp Pro, ikuti langkah-langkah yang diuraikan sebelumnya:**
 
-1. Buka halaman 'Settings - Data Backup/Restore/Clear'.
-2. Ketuk tombol 'Delete Account' di bagian bawah halaman.
-3. Konfirmasi tindakan Anda untuk menghapus akun dan semua informasi terkait secara permanen.
+1. Buka `Pengaturan` → `Pencadangan/Pemulihan/Hapus Data`, lalu `Hapus data & akun`.
+2. Ketuk `Hapus Akun (Data Jarak Jauh)`.
+3. Konfirmasi setelah hitung mundur 30 detik untuk menghapus data akun ini di server LifeUp. Cadangkan secara manual terlebih dahulu. Tugas dan data lokal lain tetap di perangkat.
 
 <br/>
 

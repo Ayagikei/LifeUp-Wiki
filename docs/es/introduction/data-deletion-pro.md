@@ -8,9 +8,9 @@ Como LifeUp Pro es principalmente una aplicación offline, puedes gestionar tus 
 
 Para eliminar tus datos, sigue estos pasos:
 
-1. Ve a la página «Ajustes → Respaldo/Restaurar/Borrar» en la App LifeUp Pro.
-2. Elige los datos específicos que deseas eliminar, como Tareas, Recompensas de Objetos, Reflexiones locales y datos del modo sin conexión.
-3. Confirma tu acción para eliminar permanentemente los datos seleccionados.
+1. En la App LifeUp Pro, abre `Ajustes` → `Respaldo/Restauración/Borrar Datos` (`Respaldar/Restaurar`) y luego `Borrar datos y eliminar cuenta`.
+2. Elige `Borrar datos de exp`, `Limpiar datos de monedas`, `Limpiar datos de logros del sistema`, `Limpiar historial` o `Borrar datos locales`.
+3. Confirma. Borrar EXP, monedas, logros del sistema o historial deja la App abierta. `Borrar datos locales` espera 15 segundos, borra la base de datos, los ajustes y los medios, deja la App como en la primera instalación y la reinicia. Haz antes una copia manual.
 
 **Alternativamente, desinstalar la App LifeUp Pro de tu dispositivo también resultará en la eliminación de todos los datos almacenados localmente.**
 
@@ -28,9 +28,9 @@ Cuando eliminas tu cuenta, se eliminará:
 
 **Para eliminar tu cuenta de LifeUp Pro, sigue los pasos descritos anteriormente:**
 
-1. Ve a la página «Ajustes → Respaldo/Restaurar/Borrar».
-2. Toca el botón «Eliminar cuenta» en la parte inferior de la página.
-3. Confirma tu acción para eliminar permanentemente tu cuenta y toda la información asociada.
+1. Abre `Ajustes` → `Respaldo/Restauración/Borrar Datos` y luego `Borrar datos y eliminar cuenta`.
+2. Toca `Eliminar cuenta (datos remotos)`.
+3. Confirma tras una cuenta atrás de 30 segundos para borrar los datos de esta cuenta en los servidores de LifeUp. Haz antes una copia manual. Las tareas y el resto de datos locales siguen en el dispositivo.
 
 <br/>
 

@@ -360,10 +360,10 @@ Görselleri içeren eski bir yedeğiniz hâlâ varsa, önce o yedeği geri yükl
 <details>
 <summary>Deneyim Puanı ve coin'i nasıl temizlerim?</summary>
 
-Şuraya gidin:
-`kenar çubuğu` → `Ayarlar` → `Veri Yedekle/Geri Getir/Sil`
+v1.107.0’den beri şuraya gidin:
+`kenar çubuğu` → `Ayarlar` → `Veri Yedekle/Geri Getir/Sil` → `Verileri temizle ve hesabı sil`
 
-Deneyim Puanı ve coin değerlerini orada temizleyebilirsiniz.
+`Exp verisini sil` veya `Bozuklukları Sıfırla` öğesine dokunup onaylayın. App açık kalır. Önce elle yedek alın. Ayrıntılar: [Verileri temizleme](/guide/backup?id=clear-data).
 
 Not: çevrimiçi özellikler kullanıyorsanız ilgili sunucu tarafı görüntüleri kısa sürede yenilenmeyebilir.
 

@@ -11,6 +11,7 @@
 - [Cómo restaurar](#how-to-restore)
 - [Migración a un teléfono nuevo](#phone-migration)
 - [Problemas frecuentes](#common-issues)
+- [Borrar datos](#clear-data)
 
 ## 1) Por qué importa la copia de seguridad :id=why-backup
 
@@ -199,3 +200,16 @@ Actualiza LifeUp a la última versión y restaura de nuevo.
 - Estrategia más segura: combinar copia en la nube + exportación local periódica.
 
 </details>
+
+## 6) Borrar datos :id=clear-data
+
+Desde v1.107.0, borrar datos y eliminar la cuenta está en una página aparte. La página muestra: «Estas acciones no se pueden deshacer. Haz primero una copia de tus datos.» Haz una copia manual antes de seguir. Este flujo no crea una copia por ti.
+
+Abre `barra lateral` → `Ajustes` → `Respaldo/Restauración/Borrar Datos`. Se abre `Respaldar/Restaurar`. Después abre `Borrar datos y eliminar cuenta` (`Borra EXP, monedas, logros o historial, o elimina los datos locales y la cuenta`).
+
+- `Borrar datos de exp` — devuelve la EXP a 0. Confirma para continuar. La App sigue abierta.
+- `Limpiar datos de monedas` — devuelve las monedas a 0. Confirma para continuar. La App sigue abierta.
+- `Limpiar datos de logros del sistema` — deja los logros del sistema bloqueados. Los logros personales no se restablecen aquí. Confirma para continuar. La App sigue abierta.
+- `Limpiar historial` — elige uno o más de `Tareas`, `Monedas`, `Registro del inventario`, `Registros de pomodoro` y `Reflexiones`. Eliminar sigue desactivado hasta que termina una cuenta atrás de 5 segundos y hay al menos un tipo seleccionado. La App sigue abierta.
+- `Borrar datos locales` — borra la base de datos, los ajustes y los medios, y deja la App como en la primera instalación. Confirma tras una cuenta atrás de 15 segundos. Después la App se reinicia.
+- `Eliminar cuenta (datos remotos)` — borra los datos de esta cuenta en los servidores de LifeUp. Confirma tras una cuenta atrás de 30 segundos. Las tareas y el resto de datos locales siguen en el dispositivo. Si el borrado se completa, la App quita la sesión local y vuelve a abrir la pantalla principal.

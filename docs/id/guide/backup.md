@@ -11,6 +11,7 @@
 - [Cara Pemulihan](#how-to-restore)
 - [Migrasi ke Ponsel Baru](#phone-migration)
 - [Masalah Umum](#common-issues)
+- [Hapus data](#clear-data)
 
 ## 1) Mengapa Backup Penting :id=why-backup
 
@@ -199,3 +200,16 @@ Perbarui LifeUp ke versi terbaru, lalu pulihkan lagi.
 - Strategi lebih aman: gabungkan backup cloud + ekspor lokal berkala.
 
 </details>
+
+## 6) Hapus data :id=clear-data
+
+Sejak v1.107.0, menghapus data dan menghapus akun ada di halaman tersendiri. Halaman menampilkan: “Tindakan berikut tidak dapat dibatalkan. Cadangkan data Anda terlebih dahulu.” Cadangkan secara manual sebelum melanjutkan. Alur ini tidak membuat cadangan untuk Anda.
+
+Buka `bilah sisi` → `Pengaturan` → `Pencadangan/Pemulihan/Hapus Data`. Itu membuka `Cadangkan/Pulihkan`. Lalu buka `Hapus data & akun` (`Hapus EXP, koin, pencapaian, atau riwayat, atau hapus data lokal dan akun`).
+
+- `Hapus Data Exp` — mengembalikan EXP ke 0. Konfirmasi untuk melanjutkan. App tetap terbuka.
+- `Hapus Data Koin` — mengembalikan jumlah koin ke 0. Konfirmasi untuk melanjutkan. App tetap terbuka.
+- `Hapus Data Pencapaian Sistem` — mengembalikan pencapaian sistem ke keadaan terkunci. Pencapaian khusus tidak diubah di sini. Konfirmasi untuk melanjutkan. App tetap terbuka.
+- `Hapus Data Riwayat` — pilih satu atau lebih dari `Tugas`, `Koin`, `Catatan inventaris`, `Catatan Pomodoro`, dan `Perasaan`. Hapus tetap tidak tersedia sampai hitung mundur 5 detik selesai dan setidaknya satu jenis dipilih. App tetap terbuka.
+- `Hapus Data Lokal` — menghapus basis data, pengaturan, dan media, lalu mengembalikan App ke keadaan pertama kali dipasang. Konfirmasi setelah hitung mundur 15 detik. Setelah itu App dimulai ulang.
+- `Hapus Akun (Data Jarak Jauh)` — menghapus data akun ini di server LifeUp. Konfirmasi setelah hitung mundur 30 detik. Tugas dan data lokal lain tetap di perangkat. Jika penghapusan berhasil, App membersihkan sesi login lokal dan membuka kembali layar utama.

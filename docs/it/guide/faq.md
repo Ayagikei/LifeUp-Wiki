@@ -360,10 +360,10 @@ Nella pagina `Negozio`, tieni premuto l'Oggetto, poi tocca il pulsante `Cancella
 <details>
 <summary>Come azzero EXP e monete?</summary>
 
-Vai a:
-`barra laterale` → `Impostazioni` → `Backup Dati/Ripristino/Pulizia`
+Dalla v1.107.0, vai a:
+`barra laterale` → `Impostazioni` → `Backup Dati/Ripristino/Pulizia` → `Cancella dati ed elimina account`
 
-Puoi azzerare i valori di EXP e monete lì.
+Tocca `Elimina Dati Exp` o `Cancella Dati Monete`, poi conferma. L’App resta aperta. Fai prima un backup manuale. Vedi [Cancellare i dati](/guide/backup?id=clear-data).
 
 Nota: se usi funzioni online, le visualizzazioni correlate lato server possono richiedere un breve periodo per aggiornarsi.
 

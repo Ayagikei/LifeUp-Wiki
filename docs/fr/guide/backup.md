@@ -11,6 +11,7 @@
 - [Comment restaurer](#how-to-restore)
 - [Migration vers un nouveau téléphone](#phone-migration)
 - [Problèmes courants](#common-issues)
+- [Effacer les données](#clear-data)
 
 ## 1) Pourquoi la sauvegarde compte :id=why-backup
 
@@ -199,3 +200,16 @@ Mettez LifeUp à jour vers la dernière version, puis restaurez à nouveau.
 - Stratégie plus sûre : combiner sauvegarde cloud + export local périodique.
 
 </details>
+
+## 6) Effacer les données :id=clear-data
+
+Depuis la v1.107.0, l’effacement des données et la suppression du compte sont sur une page séparée. La page affiche : « Ces actions sont irréversibles. Sauvegardez d’abord vos données. » Faites d’abord une sauvegarde manuelle. Ce parcours n’en crée pas une pour vous.
+
+Ouvrez `barre latérale` → `Paramètres` → `Sauvegarde des données/Restauration/Effacer`. Cela ouvre `Sauvegarde/Restauration`. Ouvrez ensuite `Effacer les données et supprimer le compte` (`Effacer l’EXP, les pièces, les succès ou l’historique, ou supprimer les données locales et le compte`).
+
+- `Effacer les données d’expérience` — remet l’EXP à 0. Confirmez pour continuer. L’App reste ouverte.
+- `Effacer les données de pièces` — remet les pièces à 0. Confirmez pour continuer. L’App reste ouverte.
+- `Effacer les données des succès par défaut` — reverrouille les succès du système. Les succès personnalisés restent en l’état. Confirmez pour continuer. L’App reste ouverte.
+- `Effacer l'historique` — choisissez un ou plusieurs éléments parmi `Tâches`, `Pièces`, `Historique de l'inventaire`, `Pomodoro records` et `Ressenti`. Supprimer reste indisponible jusqu’à la fin d’un compte à rebours de 5 secondes et tant qu’aucun type n’est coché. L’App reste ouverte.
+- `Supprimer les données locales` — supprime la base de données, les réglages et les médias, et ramène l’App à son état de première installation. Confirmez après un compte à rebours de 15 secondes. L’App redémarre ensuite.
+- `Supprimer le compte (données distantes)` — supprime les données de ce compte sur les serveurs LifeUp. Confirmez après un compte à rebours de 30 secondes. Les tâches et les autres données locales restent sur l’appareil. Après une suppression réussie, l’App efface la session locale et rouvre l’écran principal.

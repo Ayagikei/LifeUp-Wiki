@@ -11,6 +11,7 @@
 - [Wiederherstellen](#how-to-restore)
 - [Migration auf ein neues Gerät](#phone-migration)
 - [Häufige Probleme](#common-issues)
+- [Daten löschen](#clear-data)
 
 ## 1) Warum Backup wichtig ist :id=why-backup
 
@@ -199,3 +200,16 @@ LifeUp auf die neueste Version aktualisieren, dann erneut wiederherstellen.
 - Sicherere Strategie: Cloud-Backup + regelmäßiger lokaler Export kombinieren.
 
 </details>
+
+## 6) Daten löschen :id=clear-data
+
+Seit v1.107.0 liegen Datenlöschen und Kontoentfernen auf einer eigenen Seite. Die Seite zeigt: „Diese Aktionen können nicht rückgängig gemacht werden. Sichere zuerst deine Daten.“ Sichere vorher manuell. Dieser Ablauf legt kein Backup für dich an.
+
+Öffne `Seitenleiste` → `Einstellungen` → `Daten sichern/wiederherstellen/löschen`. Das öffnet `Sichern/Wiederherstellen`. Öffne dann `Daten löschen & Konto entfernen` (`EP, Münzen, Erfolge oder Verlauf löschen bzw. lokale Daten und Konto entfernen`).
+
+- `Exp-Daten löschen` — setzt EP auf 0. Bestätige, um fortzufahren. Die App bleibt geöffnet.
+- `Münzdaten löschen` — setzt den Münzstand auf 0. Bestätige, um fortzufahren. Die App bleibt geöffnet.
+- `System-Erfolgsdaten löschen` — setzt System-Erfolge auf gesperrt. Eigene Erfolge bleiben unverändert. Bestätige, um fortzufahren. Die App bleibt geöffnet.
+- `Verlaufsdaten löschen` — wähle eines oder mehrere von `Aufgaben`, `Münzen`, `Inventar-Verlauf`, `Pomodoro-Aufzeichnung` und `Gefühle`. Löschen bleibt gesperrt, bis ein 5-Sekunden-Countdown endet und mindestens ein Typ gewählt ist. Die App bleibt geöffnet.
+- `Lokale Daten löschen` — löscht Datenbank, Einstellungen und Medien und setzt die App auf den Zustand der Erstinstallation zurück. Bestätige nach einem 15-Sekunden-Countdown. Danach startet die App neu.
+- `Konto löschen (Daten entfernen)` — löscht die Daten dieses Kontos auf den LifeUp-Servern. Bestätige nach einem 30-Sekunden-Countdown. Aufgaben und andere lokale Daten bleiben auf dem Gerät. Nach erfolgreichem Löschen entfernt die App die lokale Anmeldung und öffnet den Hauptbildschirm erneut.

@@ -140,9 +140,9 @@ Comme LifeUp Pro est principalement une application hors ligne, vous pouvez gér
 
 Pour supprimer vos données, suivez ces étapes :
 
-1. Allez à la page « Paramètres - Sauvegarde/Restauration/Effacement des données » dans l'App LifeUp Pro.
-2. Choisissez les données spécifiques que vous souhaitez supprimer, comme les Tâches, les Récompenses d'Objets, les pensées locales et les données du mode hors ligne.
-3. Confirmez votre action pour supprimer définitivement les données sélectionnées.
+1. Dans l’App LifeUp Pro, ouvrez `Paramètres` → `Sauvegarde des données/Restauration/Effacer` (`Sauvegarde/Restauration`), puis `Effacer les données et supprimer le compte`.
+2. Choisissez `Effacer les données d’expérience`, `Effacer les données de pièces`, `Effacer les données des succès par défaut`, `Effacer l'historique` ou `Supprimer les données locales`.
+3. Confirmez. L’EXP, les pièces, les succès du système et l’historique laissent l’App ouverte. `Supprimer les données locales` attend 15 secondes, supprime la base de données, les réglages et les médias, ramène l’App à son état de première installation, puis la redémarre. Faites d’abord une sauvegarde manuelle.
 
 **Sinon, la désinstallation de l'App LifeUp Pro de votre appareil entraînera également la suppression de toutes les données stockées localement.**
 
@@ -160,9 +160,9 @@ Lorsque vous supprimez votre compte, cela supprimera :
 
 **Pour supprimer votre compte LifeUp Pro, suivez les étapes décrites précédemment :**
 
-1. Accédez à la page « Paramètres - Sauvegarde/Restauration/Effacement des données ».
-2. Appuyez sur le bouton « Supprimer le compte » en bas de la page.
-3. Confirmez votre action pour supprimer définitivement votre compte et toutes les informations associées.
+1. Ouvrez `Paramètres` → `Sauvegarde des données/Restauration/Effacer`, puis `Effacer les données et supprimer le compte`.
+2. Appuyez sur `Supprimer le compte (données distantes)`.
+3. Confirmez après un compte à rebours de 30 secondes pour supprimer les données de ce compte sur les serveurs LifeUp. Faites d’abord une sauvegarde manuelle. Les tâches et les autres données locales restent sur l’appareil.
 
 <br/>
 

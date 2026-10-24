@@ -360,10 +360,10 @@ Di halaman `Belanja`, tekan lama Item, lalu ketuk tombol `Hapus` di atas.
 <details>
 <summary>Bagaimana cara menghapus EXP dan koin?</summary>
 
-Buka:
-`bilah sisi` → `Pengaturan` → `Pencadangan/Pemulihan/Hapus Data`
+Sejak v1.107.0, buka:
+`bilah sisi` → `Pengaturan` → `Pencadangan/Pemulihan/Hapus Data` → `Hapus data & akun`
 
-Anda dapat menghapus nilai EXP dan koin di sana.
+Ketuk `Hapus Data Exp` atau `Hapus Data Koin`, lalu konfirmasi. App tetap terbuka. Cadangkan secara manual terlebih dahulu. Lihat [Hapus data](/guide/backup?id=clear-data).
 
 Catatan: jika Anda menggunakan fitur online, tampilan terkait di sisi server mungkin butuh waktu singkat untuk refresh.
 
