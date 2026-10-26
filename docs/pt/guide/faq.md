@@ -558,17 +558,27 @@ Como o cliente trata a lógica principal localmente, você pode continuar usando
 ## 🧭 Planejamento
 
 <details>
-<summary>Vocês vão adicionar recursos de IA?</summary>
+<summary>Vocês vão adicionar recursos de IA integrados?</summary>
 
-O LifeUp é um app de baixo custo, compra única, mantido por uma equipe pequena. Incorporar recursos de IA prontos para uso diretamente (onde nós arcamos com os custos de API) não é realista dado nosso modelo de preços — a menos que mudássemos para assinatura ou multiplicássemos o preço único várias vezes para corresponder aos custos operacionais de apps modernos de IA. Não vamos fazer isso.
+Por enquanto, não. Decidimos não oferecer IA integrada pronta para uso e orientamos os usuários para **[MCP](/guide/api_mcp.md) + um agente de IA externo**. Com um agente de verdade, o MCP já faz muito mais do que um recurso de IA integrado — e sem precisarmos mudar para assinatura.
 
-Dito isso, o LifeUp é inerentemente compatível com IA:
+**Por que não IA integrada:**
 
-1. Exponemos a maior parte da [API](/guide/api.md) e da funcionalidade principal cedo, tornando-o naturalmente compatível com agentes de IA e ferramentas de terceiros. Ferramentas de IA com capacidades de agente já podem invocar recursos do LifeUp diretamente — criando Tarefas, Itens e muito mais. Na verdade, vimos muitos usuários compartilhar fluxos de trabalho combinando IA com nossa API, incluindo servidores MCP personalizados da API do LifeUp, ferramentas de automação para diários diários gerados por IA e muito mais.
+O LifeUp é um app de baixo custo, compra única, mantido por uma equipe pequena. Oferecer IA integrada pronta para uso (com custos de API por nossa conta) não é realista com nosso modelo de preços — a menos que mudássemos para assinatura ou multiplicássemos o preço único várias vezes para corresponder aos custos operacionais de apps modernos de IA. Não vamos fazer isso.
 
-2. Planejamos introduzir recursos de IA BYOK (Bring Your Own API Key) no futuro. Assim você pode usar sua própria chave para alimentar recursos de IA sem que nós arquemos com os custos contínuos de API.
+**O que oferecemos no lugar — [MCP & Skills](/guide/api_mcp.md):**
 
-3. No fim das contas, IA não é mágica — caso contrário, você poderia facilmente combinar IA com nossa API para alcançar integração completa por conta própria.
+Instale o servidor MCP oficial no Cursor, Claude Desktop, Codex ou qualquer cliente MCP, e o agente se conecta ao seu telefone pela LAN e trabalha diretamente com seus dados do LifeUp: criar Tarefas, Itens e Conquistas, analisar estatísticas, escrever diários.
+
+**Por que isso é mais forte do que IA integrada:**
+
+- **Você escolhe o modelo e o cliente.** Sem ficar preso ao modelo que escolheríamos, e sem cobrança por mensagem da nossa parte.
+- **Pode carregar fluxos de trabalho inteiros.** Ordenar o backlog de hoje, detalhar estatísticas de Pomodoro/Foco/moedas/XP, projetar Tarefas diárias a partir dos níveis dos seus Atributos — não só um prompt e uma resposta.
+- **Configuração com um prompt.** Peça algo como «limpe os exemplos e monte uma configuração completa de desenvolvedor indie» e receba listas, Atributos, Loja e Conquistas de uma vez.
+- **Não fica preso dentro do LifeUp.** Combine com calendário, notas, rastreadores de tarefas e ferramentas de automação, para a IA planejar o dia inteiro em vez de um único app.
+- **Você pode construir em cima.** O MCP é aberto — escreva seu próprio cliente (por exemplo, uma versão web feita por você) ou faça fork do servidor open source e adicione as ferramentas que quiser.
+
+Tudo acima também está acessível pela própria [API](/guide/api.md), se preferir desenvolver sem um agente de IA.
 
 </details>
 

@@ -15,6 +15,9 @@ Pastikan aplikasi Anda telah diperbarui ke **v1.106.0** sebelum menggunakan API 
 
 Pembaruan dirilis secara bertahap melalui Google Play; jika Anda belum menerimanya, harap bersabar — pembaruan akan segera tiba.
 
+> [!TIP]
+> **AI & MCP — cara paling powerful menggunakan antarmuka ini.** LifeUp menyediakan [server MCP dan Skills](/guide/api_mcp.md) resmi (memerlukan LifeUp Cloud). Pasang di Cursor, Claude Desktop, Codex, atau klien MCP apa pun, dan agen terhubung ke ponsel Anda lewat LAN serta bekerja dengan data Anda dalam bahasa sehari-hari: mengurutkan backlog hari ini, memecah statistik, merancang Tugas dari Level Atribut Anda, atau membangun penyiapan gamifikasi tematik lengkap dalam satu prompt — tanpa perlu coding. Karena MCP terbuka, Anda juga dapat membuat klien sendiri (versi web buatan sendiri, misalnya) di atasnya. Lihat **[MCP & Skills](/guide/api_mcp.md)** untuk memulai.
+
 ## Contoh skenario
 
 | Pemanggil | Skenario | Catatan |

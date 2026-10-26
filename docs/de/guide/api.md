@@ -15,6 +15,9 @@ Stelle sicher, dass deine App auf **v1.106.0** aktualisiert ist, bevor du die ne
 
 Das Update wird schrittweise über Google Play ausgerollt. Wenn du es noch nicht erhalten hast, warte bitte — es kommt bald.
 
+> [!TIP]
+> **KI & MCP — der leistungsstärkste Weg, diese Schnittstelle zu nutzen.** LifeUp liefert einen offiziellen [MCP-Server und Skills](/guide/api_mcp.md) (erfordert LifeUp Cloud). Installiere ihn in Cursor, Claude Desktop, Codex oder einem beliebigen MCP-Client, und der Agent verbindet sich über das LAN mit deinem Telefon und arbeitet in natürlicher Sprache mit deinen Daten: das heutige Backlog sortieren, Statistiken aufschlüsseln, Aufgaben aus deinen Attribut-Stufen entwerfen oder in einem Prompt ein komplettes thematisches Gamification-Setup aufbauen — ohne Programmieren. Da MCP offen ist, kannst du auch deinen eigenen Client darauf aufbauen (z. B. eine selbst gebaute Webversion). Siehe **[MCP & Skills](/guide/api_mcp.md)**, um loszulegen.
+
 ## Szenariobeispiel
 
 | Aufrufer | Szenario | Hinweise |

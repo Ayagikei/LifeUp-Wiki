@@ -558,17 +558,27 @@ Weil die Client-Logik lokal läuft, kannst du LifeUp auch bei eingeschränktem N
 ## 🧭 Planung
 
 <details>
-<summary>Wird ihr KI-Funktionen hinzufügen?</summary>
+<summary>Werdet ihr eingebaute KI-Funktionen hinzufügen?</summary>
 
-LifeUp ist eine günstige Einmal-Kauf-App, gepflegt von einem kleinen Team. Fertige KI-Funktionen direkt einzubauen (wo wir die API-Kosten tragen) ist bei unserem Preismodell nicht realistisch — es sei denn, wir wechselten zu Abo oder vervielfachten den Einmalpreis, um moderne KI-App-Betriebskosten abzudecken. Das werden wir nicht tun.
+Vorerst nicht. Wir haben uns gegen eingebaute KI entschieden und verweisen stattdessen auf **[MCP](/guide/api_mcp.md) + einen externen KI-Agenten**. Zusammen mit einem echten Agenten leistet MCP bereits weit mehr als eine eingebaute KI-Funktion — und das, ohne dass wir auf ein Abo umstellen müssen.
 
-LifeUp ist aber von Natur aus KI-freundlich:
+**Warum keine eingebaute KI:**
 
-1. Wir haben früh den Großteil der [API](/guide/api.md) und Kernfunktionalität freigegeben, sodass sie natürlich mit KI-Agenten und Drittanbieter-Tools kompatibel ist. KI-Tools mit Agent-Fähigkeiten können LifeUp-Funktionen bereits direkt aufrufen — Aufgaben, Gegenstände und mehr anlegen. Viele Nutzer teilen Workflows, die KI mit unserer API kombinieren, einschließlich eigener LifeUp-API-MCP-Server, Automatisierung für KI-generierte Tagebucheinträge und mehr.
+LifeUp ist eine günstige Einmal-Kauf-App, gepflegt von einem kleinen Team. Fertige eingebaute KI (wo wir die API-Kosten tragen) ist unter unserem Preismodell nicht realistisch — es sei denn, wir wechselten zum Abo oder vervielfachten den Einmalpreis mehrfach, um modernen KI-App-Betriebskosten gerecht zu werden. Das werden wir nicht tun.
 
-2. Wir planen künftig BYOK-KI (Bring Your Own API Key). So kannst du mit deinem eigenen Key KI-Funktionen nutzen, ohne dass wir laufende API-Kosten tragen.
+**Was wir stattdessen anbieten — [MCP & Skills](/guide/api_mcp.md):**
 
-3. KI ist kein Zauber — sonst könntest du KI genauso gut mit unserer API koppeln und volle Integration selbst erreichen.
+Installiere den offiziellen MCP-Server in Cursor, Claude Desktop, Codex oder einem beliebigen MCP-Client, und der Agent verbindet sich über das LAN mit deinem Telefon und arbeitet direkt mit deinen LifeUp-Daten: Aufgaben, Gegenstände und Erfolge anlegen, Statistiken analysieren, Journale schreiben.
+
+**Warum das stärker ist als eingebaute KI:**
+
+- **Du wählst Modell und Client.** Kein Lock-in auf ein Modell unserer Wahl, und keine Gebühr pro Nachricht von uns.
+- **Es kann ganze Workflows tragen.** Das heutige Backlog sortieren, Pomodoro-/Fokus-/Münz-/Erfahrungspunkte-Statistiken aufschlüsseln, tägliche Aufgaben aus deinen Attribut-Stufen entwerfen — nicht nur ein Prompt und eine Antwort.
+- **Setup mit einem Prompt.** Bitte etwa „Lösche die Beispiele und baue ein vollständiges Indie-Game-Developer-Setup“ und du erhältst Listen, Attribute, Shop und Erfolge auf einen Schlag.
+- **Es steckt nicht in LifeUp fest.** Kombiniere es mit Kalender, Notizen, Task-Trackern und Automatisierungstools, damit KI deinen ganzen Tag plant statt nur eine App.
+- **Du kannst darauf aufbauen.** MCP ist offen — schreib deinen eigenen Client (z. B. eine selbst gebaute Webversion) oder forke den Open-Source-Server und ergänze die Tools, die du brauchst.
+
+Alles oben ist auch über die [API](/guide/api.md) selbst erreichbar, wenn du lieber ohne KI-Agenten baust.
 
 </details>
 

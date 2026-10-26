@@ -558,17 +558,27 @@ Karena klien menangani logika inti secara lokal, Anda tetap dapat menggunakan Li
 ## 🧭 Perencanaan
 
 <details>
-<summary>Apakah Anda akan menambahkan fitur AI?</summary>
+<summary>Apakah Anda akan menambahkan fitur AI bawaan?</summary>
 
-LifeUp adalah app beli sekali berbiaya rendah yang dirawat tim kecil. Membangun fitur AI siap pakai langsung (di mana kami menanggung biaya API) tidak realistis dengan model harga kami — kecuali kami beralih ke model langganan atau mengalikan harga sekali bayar beberapa kali lipat agar sejajar dengan biaya operasional app AI modern. Kami tidak akan melakukan itu.
+Untuk sementara tidak. Kami memutuskan untuk tidak meluncurkan AI bawaan, dan mengarahkan pengguna ke **[MCP](/guide/api_mcp.md) + agen AI eksternal**. Dipadukan dengan agen sungguhan, MCP sudah melakukan jauh lebih banyak daripada fitur AI bawaan — tanpa kami beralih ke langganan.
 
-Namun, LifeUp secara inheren ramah AI:
+**Mengapa bukan AI bawaan:**
 
-1. Kami membuka sebagian besar [API](/guide/api.md) dan fungsionalitas inti sejak awal, sehingga secara alami kompatibel dengan agen AI dan alat pihak ketiga. Alat AI dengan kemampuan agen sudah dapat memanggil fitur LifeUp secara langsung — membuat Tugas, Item, dan lain-lain. Faktanya, kami melihat banyak pengguna membagikan alur kerja yang menggabungkan AI dengan API kami, termasuk server MCP API LifeUp kustom, alat otomasi untuk entri jurnal harian hasil AI, dan lain-lain.
+LifeUp adalah app beli sekali berbiaya rendah yang dirawat tim kecil. Menyediakan AI bawaan siap pakai (di mana kami menanggung biaya API) tidak realistis dengan model harga kami — kecuali kami beralih ke langganan atau mengalikan harga sekali bayar beberapa kali lipat agar sejajar dengan biaya operasional app AI modern. Kami tidak akan melakukan itu.
 
-2. Kami berencana memperkenalkan kemampuan AI BYOK (Bring Your Own API Key) di masa depan. Dengan begitu Anda dapat menggunakan kunci sendiri untuk fitur AI tanpa kami menanggung biaya API berkelanjutan.
+**Yang kami rilis sebagai gantinya — [MCP & Skills](/guide/api_mcp.md):**
 
-3. Pada akhirnya, AI bukan sihir — jika tidak, Anda juga bisa dengan mudah memasangkan AI dengan API kami untuk integrasi penuh sendiri.
+Pasang server MCP resmi di Cursor, Claude Desktop, Codex, atau klien MCP apa pun, dan agen terhubung ke ponsel Anda lewat LAN serta bekerja langsung dengan data LifeUp: membuat Tugas, Item, dan Pencapaian, menganalisis statistik, menulis jurnal.
+
+**Mengapa ini lebih kuat daripada AI bawaan:**
+
+- **Anda memilih model dan klien.** Tidak terkunci pada satu model yang kebetulan kami pilih, dan tidak ada tagihan per pesan dari kami.
+- **Bisa menjalankan seluruh alur kerja.** Mengurutkan backlog hari ini, memecah statistik pomodoro/fokus/koin/XP, merancang Tugas harian dari Level Atribut Anda — bukan sekadar satu prompt dan balasan.
+- **Penyiapan satu prompt.** Minta "bersihkan sampel dan bangun penyiapan pengembang game indie lengkap" dan Anda mendapat daftar, Atribut, Toko, dan Pencapaian sekaligus.
+- **Tidak terjebak di dalam LifeUp.** Gabungkan dengan kalender, catatan, pelacak tugas, dan alat otomasi, sehingga AI merencanakan seluruh hari Anda, bukan hanya satu app.
+- **Anda bisa membangun di atasnya.** MCP terbuka — tulis klien sendiri (versi web buatan sendiri, misalnya), atau fork server open-source dan tambahkan alat yang Anda inginkan.
+
+Semua di atas juga dapat diakses melalui [API](/guide/api.md) jika Anda lebih suka membangun tanpa agen AI.
 
 </details>
 

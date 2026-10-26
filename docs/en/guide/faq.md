@@ -558,17 +558,27 @@ Because the client handles core logic locally, you can keep using LifeUp even wh
 ## 🧭 Planning
 
 <details>
-<summary>Will you add AI features?</summary>
+<summary>Will you add built-in AI features?</summary>
 
-LifeUp is a low-cost, buy-once app maintained by a small team. Building in ready-to-use AI features directly (where we cover the API costs) is not realistic given our pricing model — unless we switched to a subscription model or multiplied the one-time price several times over to match modern AI app operating costs. We're not going to do that.
+Not for now. We decided against shipping built-in AI, and point users to **[MCP](/guide/api_mcp.md) + an external AI agent** instead. Paired with a real agent, MCP already does far more than a built-in AI feature could — and it does it without us moving to a subscription.
 
-That said, LifeUp is inherently AI-friendly:
+**Why not built-in AI:**
 
-1. We exposed most of the [API](/guide/api.md) and core functionality early on, making it naturally compatible with AI agents and third-party tools. AI tools with agent capabilities can already invoke LifeUp's features directly — creating tasks, items, and more. In fact, we've seen many users share workflows combining AI with our API, including custom LifeUp API MCP servers, automation tools for AI-generated daily journal entries, and more.
+LifeUp is a low-cost, buy-once app maintained by a small team. Shipping ready-to-use built-in AI (where we cover the API costs) is not realistic under our pricing model — unless we switched to a subscription model or multiplied the one-time price several times over to match modern AI app operating costs. We're not going to do that.
 
-2. We plan to introduce BYOK (Bring Your Own API Key) AI capabilities in the future. This way you can use your own key to power AI features without us bearing the ongoing API costs.
+**What we shipped instead — [MCP & Skills](/guide/api_mcp.md):**
 
-3. At the end of the day, AI isn't magic — otherwise you could just as easily pair AI with our API to achieve full integration yourself.
+Install the official MCP server in Cursor, Claude Desktop, Codex, or any MCP client, and the agent connects to your phone over the LAN and works with your LifeUp data directly: creating tasks, items, and achievements, analyzing stats, writing journals.
+
+**Why this is stronger than built-in AI:**
+
+- **You pick the model and the client.** Not locked to the one model we happened to choose, and no per-message bill from us.
+- **It can carry a whole workflow.** Sort today's backlog, break down pomodoro/focus/coin/XP stats, design daily tasks from your attribute levels — not just one prompt and a reply.
+- **One-prompt setup.** Ask for "clear the samples and build a complete indie game developer setup" and you get lists, attributes, shop, and achievements in one go.
+- **It isn't trapped inside LifeUp.** Combine it with your calendar, notes, task trackers, and automation tools, so AI can plan your whole day instead of one app.
+- **You can build on it.** MCP is open — write your own client (a self-made web version, for example), or fork the open-source server and add the tools you want.
+
+Everything above is also reachable through the [API](/guide/api.md) itself if you prefer to build without an AI agent.
 
 </details>
 

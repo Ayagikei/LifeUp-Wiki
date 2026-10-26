@@ -558,17 +558,27 @@ Bu şu anlama gelir:
 ## 🧭 Planlama
 
 <details>
-<summary>Yapay zekâ özellikleri ekleyecek misiniz?</summary>
+<summary>Yerleşik yapay zekâ özellikleri ekleyecek misiniz?</summary>
 
-LifeUp, küçük bir ekip tarafından sürdürülen düşük maliyetli, tek seferlik satın alma bir App'tir. Hazır yapay zekâ özelliklerini doğrudan App'e gömmek (API maliyetlerini biz karşılayarak) fiyatlandırma modelimizle gerçekçi değil — abonelik modeline geçmeden veya modern yapay zekâ App işletme maliyetlerine uyacak şekilde tek seferlik fiyatı birkaç kat artırmadan. Bunu yapmayacağız.
+Şimdilik hayır. Yerleşik yapay zekâyı doğrudan App'e koymaktan vazgeçtik; bunun yerine kullanıcıları **[MCP](/guide/api_mcp.md) + harici bir yapay zekâ ajanı** yoluna yönlendiriyoruz. Gerçek bir ajanla eşleştirildiğinde MCP, yerleşik bir yapay zekâ özelliğinin yapabileceklerinden çok daha fazlasını yapar — ve bunu abonelik modeline geçmeden yapar.
 
-Buna rağmen LifeUp doğası gereği yapay zekâ dostudur:
+**Neden yerleşik yapay zekâ değil:**
 
-1. [API](/guide/api.md) ve çoğu temel işlevi erken açığa çıkardık; bu da onu yapay zekâ ajanları ve üçüncü taraf araçlarla doğal olarak uyumlu kılar. Ajan yeteneklerine sahip yapay zekâ araçları LifeUp özelliklerini doğrudan çağırabilir — Görev, Eşya oluşturma ve daha fazlası. Aslında birçok kullanıcının yapay zekâyı API'mizle birleştiren iş akışlarını paylaştığını gördük; özel LifeUp API MCP sunucuları, yapay zekâ üretimli günlük kayıtları için otomasyon araçları ve daha fazlası dahil.
+LifeUp, küçük bir ekip tarafından sürdürülen düşük maliyetli, tek seferlik satın alma bir App'tir. Hazır kullanıma uygun yerleşik yapay zekâyı (API maliyetlerini biz karşılayarak) fiyatlandırma modelimizle sunmak gerçekçi değil — abonelik modeline geçmeden veya modern yapay zekâ App işletme maliyetlerine uyacak şekilde tek seferlik fiyatı birkaç kat artırmadan. Bunu yapmayacağız.
 
-2. Gelecekte BYOK (Bring Your Own API Key) yapay zekâ yetenekleri sunmayı planlıyoruz. Böylece sürekli API maliyetlerini biz karşılamadan kendi anahtarınızla yapay zekâ özelliklerini kullanabilirsiniz.
+**Bunun yerine sunduğumuz — [MCP & Skills](/guide/api_mcp.md):**
 
-3. Sonuçta yapay zekâ sihir değildir — aksi halde yapay zekâyı API'mizle eşleştirerek tam entegrasyonu kendiniz de kolayca sağlayabilirsiniz.
+Resmi MCP sunucusunu Cursor, Claude Desktop, Codex veya herhangi bir MCP istemcisine kurun; ajan LAN üzerinden telefonunuza bağlanır ve LifeUp verilerinizle doğrudan çalışır: Görev, Eşya ve Başarım oluşturma, istatistikleri analiz etme, günlük yazma.
+
+**Bunun yerleşik yapay zekâdan daha güçlü olmasının nedenleri:**
+
+- **Modeli ve istemciyi siz seçersiniz.** Bizim seçtiğimiz tek bir modele kilitlenmezsiniz ve bizden mesaj başına fatura gelmez.
+- **Tüm bir iş akışını üstlenebilir.** Bugünün birikimini sıralama, pomodoro/odak/jeton/XP istatistiklerini ayrıştırma, Özellik Seviyelerinize göre günlük Görevler tasarlama — yalnızca bir istem ve yanıt değil.
+- **Tek prompt ile kurulum.** "Örnekleri temizle ve eksiksiz bir indie oyun geliştirici kurulumu oluştur" deyin; listeler, özellikler, Mağaza ve Başarımlar tek seferde gelsin.
+- **LifeUp içinde hapsolmuş değil.** Takviminiz, notlarınız, görev takipçileriniz ve otomasyon araçlarınızla birleştirin; yapay zekâ tüm gününüzü planlasın, tek bir App ile sınırlı kalmasın.
+- **Üzerine inşa edebilirsiniz.** MCP açıktır — kendi istemcinizi yazabilirsiniz (örneğin kendi web sürümünüz) veya açık kaynak sunucuyu fork edip istediğiniz araçları ekleyebilirsiniz.
+
+Yukarıdakilerin tamamına yapay zekâ ajanı olmadan da doğrudan [API](/guide/api.md) üzerinden ulaşılabilir.
 
 </details>
 

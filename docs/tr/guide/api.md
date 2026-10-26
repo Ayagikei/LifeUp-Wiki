@@ -15,6 +15,9 @@ En yeni API'yi kullanmadan önce uygulamanızın **v1.106.0** sürümüne günce
 
 Güncelleme Google Play üzerinden kademeli olarak yayınlanmaktadır; henüz almadıysanız lütfen bekleyin — yakında gelecektir.
 
+> [!TIP]
+> **Yapay zekâ ve MCP — bu arayüzü kullanmanın en güçlü yolu.** LifeUp resmi bir [MCP sunucusu ve Skills](/guide/api_mcp.md) sunar (LifeUp Cloud gerektirir). Cursor, Claude Desktop, Codex veya herhangi bir MCP istemcisine kurun; ajan LAN üzerinden telefonunuza bağlanır ve verilerinizle düz dille çalışır: bugünün birikimini sıralama, istatistikleri ayrıştırma, Özellik Seviyelerinize göre Görev tasarlama veya tek prompt ile eksiksiz temalı oyunlaştırma kurulumu oluşturma — kod yazmaya gerek yok. MCP açık olduğu için üzerine kendi istemcinizi de oluşturabilirsiniz (örneğin kendi web sürümünüz). Başlamak için **[MCP & Skills](/guide/api_mcp.md)** sayfasına bakın.
+
 ## Senaryo örneği
 
 | Çağıran | Senaryo | Notlar |

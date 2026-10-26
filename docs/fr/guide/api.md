@@ -15,6 +15,9 @@ Assurez-vous que votre App a été mise à jour vers **v1.106.0** avant d'utilis
 
 La mise à jour se déploie progressivement via Google Play ; si vous ne l'avez pas encore reçue, soyez patient, elle arrivera bientôt.
 
+> [!TIP]
+> **IA & MCP — la façon la plus puissante d'utiliser cette interface.** LifeUp propose un [serveur MCP et Skills](/guide/api_mcp.md) officiels (nécessite LifeUp Cloud). Installez-le dans Cursor, Claude Desktop, Codex ou tout client MCP, et l'agent se connecte à votre téléphone via le LAN pour travailler avec vos données en langage naturel : trier le backlog du jour, décomposer les statistiques, concevoir des Tâches selon vos Niveaux d'Attributs, ou construire une gamification thématique complète en un seul prompt — sans coder. Comme MCP est ouvert, vous pouvez aussi créer votre propre client (par exemple une version web maison) par-dessus. Consultez **[MCP & Skills](/guide/api_mcp.md)** pour commencer.
+
 ## Exemple de scénario
 
 | Appelant | Scénario | Notes |
