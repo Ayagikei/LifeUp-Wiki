@@ -19,6 +19,12 @@
 
 ### **LifeUp-Android**
 
+**v1.107.2 (Demnächst)**
+
+**🐛 Fehlerbehebungen**
+
+1. In ContentProvider-Abfrageergebnissen für Aufgaben fehlten Wichtigkeit und Schwierigkeit – behoben, damit Drittanbieter-Tools beide Felder bei der Aufgabenverarbeitung nutzen können.
+
 **v1.107.0 (2026/10/13)**
 
 **✨ Funktionen**
@@ -2910,6 +2916,13 @@ Optimierung
 1. Erstveröffentlichung
 
 ### **LifeUp Cloud**
+
+**v3.0.3 (Demnächst)**
+
+**♻️ Optimierung**
+
+1. Aufgabenabfragen liefern jetzt Wichtigkeit und Schwierigkeit, wenn LifeUp v1.107.2 oder neuer verwendet wird.
+2. Die begleitende MCP-Hilfe enthält jetzt Abfrageparameter, vollständige Antwortfelder und Beispiele, die KI-Agenten abschnittsweise nachschlagen können.
 
 **v3.0.2 (2026/09/24)**
 

@@ -143,6 +143,8 @@ Semua kolom di bawah muncul dalam objek HTTP saat ini. Nilai penyedia yang tidak
 | `remindTime` | integer | Waktu pengingat dalam milidetik; nilai pengganti SDK `0` jika tidak ada. |
 | `frequency` | integer | Kode pengulangan; `0` sekali, `1` harian, `-1` tanpa batas. Mode pengulangan lain dijelaskan dalam [tindakan tugas](/guide/api). Nilai pengganti SDK `0`. |
 | `weekdays` | string | Pilihan hari, misalnya `1,3,5` (Senin `1`, Minggu `7`); kosong jika tidak diberikan, dan selalu menjadi placeholder kosong pada riwayat. |
+| `importance` | integer atau `null` | Tingkat kepentingan `1`–`4` (meningkat); sesuai derajat urgensi tugas App (`taskUrgencyDegree`). Ada di `GET /tasks` dan `GET /tasks/{categoryId}` bila ContentProvider daftar tugas mengekspos kolom; kolom hilang atau NULL di-parse SDK sebagai `null`. ContentProvider riwayat tidak mengembalikan kolom ini, jadi `/history` memakai `null` di sini tanpa berarti App tidak menyimpan urgensi pada rekaman. |
+| `difficulty` | integer atau `null` | Tingkat kesulitan `1`–`4` (meningkat); sesuai derajat kesulitan tugas App (`taskDifficultyDegree`). Perilaku ContentProvider `/tasks` versus `/history` sama seperti `importance`. |
 | `exp` | integer | Hadiah EXP yang dikonfigurasi, bukan jumlah transaksi; bawaan `0`. |
 | `skillIds` | larik integer | Atribut yang terkait dengan hadiah; larik kosong jika tidak tersedia. |
 | `coin` | integer | Hadiah koin yang dikonfigurasi; bawaan `0`. |
@@ -277,7 +279,7 @@ GET http://{host:port}/tasks/1
   "data": [{
     "id": 101, "gid": 10, "name": "Read a chapter", "notes": "",
     "status": 0, "startTime": 1792108800000, "deadline": 1792195199999,
-    "remindTime": 0, "frequency": 1, "weekdays": "",
+    "remindTime": 0, "frequency": 1, "weekdays": "", "importance": 3, "difficulty": 2,
     "exp": 5, "skillIds": [2], "coin": 10, "coinVariable": 0,
     "itemId": 0, "itemAmount": 0, "words": "", "categoryId": 1,
     "order": 0, "nameExtended": "Read a chapter", "endTime": 0,
@@ -315,7 +317,7 @@ GET http://{host:port}/history?offset=0&limit=100&gid=10
   "data": [{
     "id": 100, "gid": 10, "name": "Read a chapter", "notes": "",
     "status": 1, "startTime": 1792022400000, "deadline": 1792108799999,
-    "remindTime": 0, "frequency": 1, "weekdays": "",
+    "remindTime": 0, "frequency": 1, "weekdays": "", "importance": null, "difficulty": null,
     "exp": 5, "skillIds": [2], "coin": 10, "coinVariable": 0,
     "itemId": 0, "itemAmount": 0, "words": "", "categoryId": 1,
     "order": 0, "nameExtended": "", "endTime": 1792072800000,

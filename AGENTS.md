@@ -100,6 +100,12 @@ docsify serve ./docs
 kotlinc -script opencc.main.kts
 ```
 
+## Commit and Pull Request Language
+
+- Write commit subjects and bodies in **English**.
+- Write pull request titles and descriptions in **English**.
+- Keep the existing Conventional Commits style, for example: `docs(api): 📝 document task importance and difficulty`.
+
 ## Agent Working Agreement
 
 - Prefer minimal, focused changes.

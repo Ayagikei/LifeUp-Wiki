@@ -142,6 +142,8 @@ SDK는 하나의 직렬화 `Task` 클래스를 두 가지 뷰에 사용합니다
 | `remindTime` | integer | 알림 시각(밀리초). 없을 때 SDK 대체값 `0`. |
 | `frequency` | integer | 반복 코드. `0` 한 번, `1` 매일, `-1` 무제한. 다른 반복 방식은 [작업 액션](/guide/api)을 참조하세요. SDK 대체값 `0`. |
 | `weekdays` | string | 요일 선택. 예: `1,3,5` (월요일 `1`, 일요일 `7`). 미지정 시 빈 값이며 기록에서는 고정 빈 플레이스홀더입니다. |
+| `importance` | integer 또는 `null` | 중요도 `1`–`4`(오름차순). App 작업 긴급도(`taskUrgencyDegree`)에 해당. `GET /tasks` 및 `GET /tasks/{categoryId}`에서 작업 목록 ContentProvider가 열을 제공할 때 값 있음. 열 누락 또는 NULL이면 SDK는 `null`. 기록 ContentProvider는 열을 반환하지 않아 `/history`에서는 `null`(App에 저장된 긴급도가 없다는 뜻은 아님). |
+| `difficulty` | integer 또는 `null` | 난이도 `1`–`4`(오름차순). App 작업 난이도(`taskDifficultyDegree`)에 해당. `importance`와 동일한 `/tasks` 대 `/history` ContentProvider 동작. |
 | `exp` | integer | 설정된 EXP 보상이며 거래 금액이 아닙니다. 기본값 `0`. |
 | `skillIds` | integer array | 보상에 연결된 속성. 사용할 수 없으면 빈 배열. |
 | `coin` | integer | 설정된 코인 보상. 기본값 `0`. |
@@ -275,7 +277,7 @@ GET http://{host:port}/tasks/1
   "data": [{
     "id": 101, "gid": 10, "name": "Read a chapter", "notes": "",
     "status": 0, "startTime": 1792108800000, "deadline": 1792195199999,
-    "remindTime": 0, "frequency": 1, "weekdays": "",
+    "remindTime": 0, "frequency": 1, "weekdays": "", "importance": 3, "difficulty": 2,
     "exp": 5, "skillIds": [2], "coin": 10, "coinVariable": 0,
     "itemId": 0, "itemAmount": 0, "words": "", "categoryId": 1,
     "order": 0, "nameExtended": "Read a chapter", "endTime": 0,
@@ -313,7 +315,7 @@ GET http://{host:port}/history?offset=0&limit=100&gid=10
   "data": [{
     "id": 100, "gid": 10, "name": "Read a chapter", "notes": "",
     "status": 1, "startTime": 1792022400000, "deadline": 1792108799999,
-    "remindTime": 0, "frequency": 1, "weekdays": "",
+    "remindTime": 0, "frequency": 1, "weekdays": "", "importance": null, "difficulty": null,
     "exp": 5, "skillIds": [2], "coin": 10, "coinVariable": 0,
     "itemId": 0, "itemAmount": 0, "words": "", "categoryId": 1,
     "order": 0, "nameExtended": "", "endTime": 1792072800000,

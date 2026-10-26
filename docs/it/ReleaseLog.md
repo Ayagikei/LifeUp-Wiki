@@ -19,6 +19,12 @@
 
 ### **LifeUp-Android**
 
+**v1.107.2 (In arrivo)**
+
+**🐛 Correzioni**
+
+1. Corretta l’assenza di importanza e difficoltà nei risultati delle query ContentProvider delle attività, così gli strumenti di terze parti possono usare entrambi i campi nell’elaborazione delle attività.
+
 **v1.107.0 (2026/10/13)**
 
 **✨ Funzionalità**
@@ -2909,6 +2915,13 @@ Ottimizzazioni
 1. Prima versione
 
 ### **LifeUp Cloud**
+
+**v3.0.3 (In arrivo)**
+
+**♻️ Ottimizzazione**
+
+1. Le query sulle attività espongono ora importanza e difficoltà se usate con LifeUp v1.107.2 o versioni successive.
+2. L’help MCP di accompagnamento include parametri di query, campi di risposta completi ed esempi consultabili per sezione dagli agenti IA.
 
 **v3.0.2 (2026/09/24)**
 

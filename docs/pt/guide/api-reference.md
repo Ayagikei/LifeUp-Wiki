@@ -143,6 +143,8 @@ Todos os campos abaixo aparecem no objeto HTTP atual. Valores ausentes no proved
 | `remindTime` | integer | Hora do lembrete em milissegundos; valor alternativo do SDK `0` se ausente. |
 | `frequency` | integer | Código de recorrência; `0` uma vez, `1` diariamente, `-1` ilimitado. Outros modos são descritos em [ações de tarefas](/guide/api). Valor alternativo do SDK `0`. |
 | `weekdays` | string | Seleção de dias da semana, por exemplo `1,3,5` (segunda-feira `1`, domingo `7`); vazio quando não fornecido e sempre um campo vazio de preenchimento no histórico. |
+| `importance` | integer ou `null` | Nível de importância `1`–`4` (ascendente); corresponde ao grau de urgência da tarefa na App (`taskUrgencyDegree`). Presente em `GET /tasks` e `GET /tasks/{categoryId}` quando o ContentProvider da lista expõe a coluna; coluna ausente ou NULL é interpretada como `null` pelo SDK. O ContentProvider de histórico não devolve esta coluna, logo `/history` usa `null` aqui sem implicar que a App não guarde a urgência no registo. |
+| `difficulty` | integer ou `null` | Nível de dificuldade `1`–`4` (ascendente); corresponde ao grau de dificuldade da tarefa na App (`taskDifficultyDegree`). Mesmo comportamento do ContentProvider `/tasks` versus `/history` que `importance`. |
 | `exp` | integer | Recompensa EXP configurada, não o valor de uma transação; padrão `0`. |
 | `skillIds` | integer array | Atributos associados à recompensa; array vazio se indisponíveis. |
 | `coin` | integer | Recompensa em moedas configurada; padrão `0`. |
@@ -277,7 +279,7 @@ GET http://{host:port}/tasks/1
   "data": [{
     "id": 101, "gid": 10, "name": "Read a chapter", "notes": "",
     "status": 0, "startTime": 1792108800000, "deadline": 1792195199999,
-    "remindTime": 0, "frequency": 1, "weekdays": "",
+    "remindTime": 0, "frequency": 1, "weekdays": "", "importance": 3, "difficulty": 2,
     "exp": 5, "skillIds": [2], "coin": 10, "coinVariable": 0,
     "itemId": 0, "itemAmount": 0, "words": "", "categoryId": 1,
     "order": 0, "nameExtended": "Read a chapter", "endTime": 0,
@@ -315,7 +317,7 @@ GET http://{host:port}/history?offset=0&limit=100&gid=10
   "data": [{
     "id": 100, "gid": 10, "name": "Read a chapter", "notes": "",
     "status": 1, "startTime": 1792022400000, "deadline": 1792108799999,
-    "remindTime": 0, "frequency": 1, "weekdays": "",
+    "remindTime": 0, "frequency": 1, "weekdays": "", "importance": null, "difficulty": null,
     "exp": 5, "skillIds": [2], "coin": 10, "coinVariable": 0,
     "itemId": 0, "itemAmount": 0, "words": "", "categoryId": 1,
     "order": 0, "nameExtended": "", "endTime": 1792072800000,

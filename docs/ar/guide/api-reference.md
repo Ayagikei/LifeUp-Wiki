@@ -142,6 +142,8 @@
 | `remindTime` | integer | وقت التذكير بالمللي ثانية؛ القيمة البديلة في SDK عند الغياب `0`. |
 | `frequency` | integer | رمز التكرار؛ `0` لمرة واحدة، `1` يوميًا، `-1` بلا حد. تصف [إجراءات المهام](/guide/api) أوضاع التكرار الأخرى. القيمة البديلة في SDK هي `0`. |
 | `weekdays` | string | اختيار أيام الأسبوع، مثل `1,3,5` (الاثنين `1`، الأحد `7`)؛ فارغ عند عدم توفيره، وقيمة نائبة فارغة ثابتة في السجل. |
+| `importance` | integer أو `null` | مستوى الأهمية `1`–`4` (تصاعدي)؛ يطابق درجة استعجال المهمة في App (`taskUrgencyDegree`). يظهر في `GET /tasks` و`GET /tasks/{categoryId}` عندما يعرض ContentProvider قائمة المهام العمود؛ عمود مفقود أو NULL يُفسَّر SDK كـ `null`. ContentProvider السجل لا يُرجع هذا العمود، لذا `/history` يستخدم `null` هنا دون أن يعني أن App لا تخزّن الاستعجال في السجل. |
+| `difficulty` | integer أو `null` | مستوى الصعوبة `1`–`4` (تصاعدي)؛ يطابق درجة صعوبة المهمة في App (`taskDifficultyDegree`). نفس سلوك ContentProvider لـ `/tasks` مقابل `/history` مثل `importance`. |
 | `exp` | integer | مكافأة EXP المهيّأة، وليست مقدار معاملة؛ الافتراضي `0`. |
 | `skillIds` | مصفوفة integer | السمات المرتبطة بالمكافأة؛ مصفوفة فارغة إذا لم تتوفر. |
 | `coin` | integer | مكافأة العملات المهيّأة؛ الافتراضي `0`. |
@@ -275,7 +277,7 @@ GET http://{host:port}/tasks/1
   "data": [{
     "id": 101, "gid": 10, "name": "Read a chapter", "notes": "",
     "status": 0, "startTime": 1792108800000, "deadline": 1792195199999,
-    "remindTime": 0, "frequency": 1, "weekdays": "",
+    "remindTime": 0, "frequency": 1, "weekdays": "", "importance": 3, "difficulty": 2,
     "exp": 5, "skillIds": [2], "coin": 10, "coinVariable": 0,
     "itemId": 0, "itemAmount": 0, "words": "", "categoryId": 1,
     "order": 0, "nameExtended": "Read a chapter", "endTime": 0,
@@ -313,7 +315,7 @@ GET http://{host:port}/history?offset=0&limit=100&gid=10
   "data": [{
     "id": 100, "gid": 10, "name": "Read a chapter", "notes": "",
     "status": 1, "startTime": 1792022400000, "deadline": 1792108799999,
-    "remindTime": 0, "frequency": 1, "weekdays": "",
+    "remindTime": 0, "frequency": 1, "weekdays": "", "importance": null, "difficulty": null,
     "exp": 5, "skillIds": [2], "coin": 10, "coinVariable": 0,
     "itemId": 0, "itemAmount": 0, "words": "", "categoryId": 1,
     "order": 0, "nameExtended": "", "endTime": 1792072800000,
