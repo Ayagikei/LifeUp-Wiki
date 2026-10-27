@@ -1,8 +1,8 @@
-<h1 align="center" padding="100">ulives : Gamifiez votre vie sur iOS ! ✨</h1>
+<h1 align="center" padding="100">ulives : Gamifiez votre vie sur iOS, iPadOS, macOS et Android ! ✨</h1>
 
 Salut, aventuriers LifeUp ! 👋
 
-Nous sommes ravis d'annoncer le lancement de **ulives**, une toute nouvelle app de gestion de Tâches gamifiée, conçue from scratch et exclusivement pour iOS ! 🎉
+Nous sommes ravis d'annoncer le lancement de **ulives**, une toute nouvelle app de gestion de Tâches gamifiée, conçue from scratch et pour iOS, iPadOS, macOS et Android ! 🎉
 
 Depuis longtemps, LifeUp aide les utilisateurs à gamifier leur vie sur Android. Nous avons repris les concepts essentiels que vous aimez, les avons réimaginés et créé une expérience fraîche optimisée pour l'écosystème iOS et son style de design unique. ulives n'est pas seulement un port, c'est une évolution significative ! 🚀
 
@@ -52,28 +52,30 @@ Voici un aperçu de ce qui **arrive bientôt** :
 **Notes importantes :**
 
 *   ulives étant une app entièrement nouvelle, **les données LifeUp et les licences premium ne peuvent pas être transférées**.
-*   Pour soutenir le développement continu (comme les futures fonctionnalités IA ✨ et effets avancés !) et espérer passer à temps plein sur nos apps, **le prix de ulives Premium est plus élevé** que celui de LifeUp. Nous pensons que les fonctionnalités enrichies et le développement iOS dédié justifient ce changement.
+*   Pour soutenir le développement continu (comme les futures fonctionnalités IA ✨ et effets avancés !) et espérer passer à temps plein sur nos apps, **le prix de ulives Premium est plus élevé** que celui de LifeUp. Nous pensons que les fonctionnalités enrichies et le développement multiplateforme justifient ce changement.
 
 ## 🤓 Détails techniques
 
 Pour ceux intéressés par la tech derrière ulives : nous l'avons construite avec **Kotlin Multiplatform** pour la logique principale et **SwiftUI natif** pour l'interface utilisateur.
 
-Cette approche nous permet de livrer une expérience iOS vraiment native, à l'aise sur la plateforme, tout en partageant potentiellement la logique principale entre plateformes à l'avenir — peut-être même ulives sur Android un jour ! 🤖➡️🍏
+Cette approche nous permet de livrer une expérience iOS vraiment native, à l'aise sur la plateforme, tout en partageant la logique principale entre plateformes. ulives est aussi disponible sur [Android (Google Play)](https://play.google.com/store/apps/details?id=io.ulives.plana).
 
 ## Engagement envers les deux plateformes 💪
 
-Pas d'inquiétude, utilisateurs Android ! Nous restons engagés à **maintenir et mettre à jour LifeUp (Android) et ulives (iOS)** en parallèle.
+Pas d'inquiétude, utilisateurs Android ! Nous restons engagés à **maintenir et mettre à jour LifeUp (Android) et ulives (iOS, iPadOS, macOS et Android)** en parallèle.
 
 P.S. Nous travaillons déjà sur de nouvelles fonctionnalités pour LifeUp, comme les Succès répétables (p. ex. débloquer tous les N Niveaux d'un Attribut) — bientôt disponibles ! 😉
 
 ---
 
-Prêt à commencer votre nouvelle quête sur iOS ?
+Prêt à commencer votre nouvelle quête ?
 
 **Téléchargez ulives dès aujourd'hui !** 👇
 [<img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" width="150">](https://apps.apple.com/us/app/ulives-gamify-your-tasks/id6743084261)
 
 [https://apps.apple.com/us/app/ulives-gamify-your-tasks/id6743084261](https://apps.apple.com/us/app/ulives-gamify-your-tasks/id6743084261)
+
+[Google Play (Android)](https://play.google.com/store/apps/details?id=io.ulives.plana)
 
 Nous avons hâte que vous essayiez ulives et d'entendre ce que vous en pensez ! Que la nouvelle aventure commence ! 🎮
 

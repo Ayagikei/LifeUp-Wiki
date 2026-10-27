@@ -19,7 +19,7 @@
 | Başarımlar | - Tekrar türü Başarımlar | ~ | P2 | ✅ Yayınlandı |
 | Veri Sistemi | - Veri ve görsellerin ayrı yedeklenmesi<br/>- Kısmi veri dışa/içe aktarma desteği<br/>- Yerleşik çoklu dosya geçişi desteği | - WebDAV büyük dosya yüklemelerinde kolayca başarısız olur.<br/>- Kısmi dışa/içe aktarma Ödül sistemlerini paylaşmak için kullanılabilir.<br/>- Yerleşik çoklu dosyalar veriyi temizlemeden kolay test için. | P1 | 🚧 |
 | Çoklu platform (Flutter yönü) | - Flutter ile çapraz platform sürümü geliştirmeyi öğrenmeye ve kullanmaya devam | - iOS sürümü prototip geliştirme | P2 | 🚧 Duraklatıldı |
-| Çoklu platform (KMP yönü) | - KMP kullanarak daha fazla olasılık keşfetme | - Gelecek için KMP teknolojisini keşfetme ve öğrenme | P0 | ✅ ulives yayınlandı - iOS yeni App |
+| Çoklu platform (KMP yönü) | - KMP kullanarak daha fazla olasılık keşfetme | - Gelecek için KMP teknolojisini keşfetme ve öğrenme | P0 | ✅ ulives yayınlandı (iOS, iPadOS, macOS, Android) |
 
 Özetle:
 

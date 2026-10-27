@@ -103,17 +103,17 @@
 同时《人升》也是一款使用纯 Android 原生技术开发的应用，以便深层次利用 Android 的能力和提供最高级别的流畅体验。
 
 目前《人升》没有 iOS 版本。
-**但我们已经推出了专门为 iOS 用户设计的效率应用 [ulives](https://apps.apple.com/us/app/ulives-gamify-your-tasks/id6743084261)！它继承了《人升》的核心理念，并针对苹果生态系统进行了优化。**
+**但我们已经推出了跨平台效率应用 [ulives](https://apps.apple.com/us/app/ulives-gamify-your-tasks/id6743084261)（iOS、iPadOS、macOS、Android 与鸿蒙）！它继承了《人升》的核心理念。Android 见 [Google Play](https://play.google.com/store/apps/details?id=io.ulives.plana)。**
 
 **如果你想在电脑端使用《人升》**，为保持数据一致，建议优先使用厂商提供的投屏/跨屏功能，或使用第三方工具 `scrcpy`。
 
 **如果你使用的是 iOS 端，想体验类似《人升》的应用：**
 
-**1. 推荐尝试我们的 iOS 应用 [ulives](https://apps.apple.com/us/app/ulives-gamify-your-tasks/id6743084261)。**
+**1. 推荐尝试 [ulives](https://apps.apple.com/us/app/ulives-gamify-your-tasks/id6743084261)（iOS / iPadOS / macOS；Android 见 [Google Play](https://play.google.com/store/apps/details?id=io.ulives.plana)，鸿蒙原生版也已上线）。**
 2. 使用电脑 Android 模拟器、Windows 11 安卓子系统体验《人升》。
 3. 或者使用其他的优秀平替应用。
 
-> 我们有跨平台开发计划，但能力有限，不可能短期内完成从零开始的学习和开发。具体规划和原因请查看下面的《常见问题》。
+> ulives 现已支持 iOS、iPadOS、macOS、Android 与鸿蒙。更多背景请查看下面的《常见问题》。
 
 #### # 兼容性配置
 

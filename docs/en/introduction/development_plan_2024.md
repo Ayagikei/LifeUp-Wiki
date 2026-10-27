@@ -19,7 +19,7 @@
 | Achievements | - Repeat-type achievements | ~ | P2 | ✅ Released |
 | Data System | - Separate backup of data and images<br/>- Support partial data export/import<br/>- Support built-in multi-file switching | - WebDAV uploading large files fails easily.<br/>- Partial export/import can be used for sharing reward systems.<br/>- Built-in multi-files for easy testing without clearing data. | P1 | 🚧 |
 | Multi-platform (Flutter direction) | - Continue learning and using Flutter for cross-platform version | - iOS version prototype development | P2 | 🚧 Paused |
-| Multi-platform (KMP direction) | - Explore more possibilities using KMP | - Explore and learn KMP technology for the future | P0 | ✅ Released ulives - iOS new app |
+| Multi-platform (KMP direction) | - Explore more possibilities using KMP | - Explore and learn KMP technology for the future | P0 | ✅ Released ulives (iOS, iPadOS, macOS, Android) |
 
 In summary:
 

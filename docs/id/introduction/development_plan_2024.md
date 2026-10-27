@@ -20,7 +20,7 @@
 | Pencapaian | - Pencapaian tipe ulang | ~ | P2 | ✅ Dirilis |
 | Sistem Data | - Backup terpisah data dan gambar<br/>- Dukung ekspor/impor data sebagian<br/>- Dukung pergantian multi-file bawaan | - Upload WebDAV file besar mudah gagal.<br/>- Ekspor/impor sebagian dapat dipakai untuk berbagi sistem Hadiah.<br/>- Multi-file bawaan untuk pengujian mudah tanpa menghapus data. | P1 | 🚧 |
 | Multi-platform (arah Flutter) | - Terus belajar dan memakai Flutter untuk versi lintas platform | - Pengembangan prototipe versi iOS | P2 | 🚧 Dijeda |
-| Multi-platform (arah KMP) | - Eksplorasi lebih banyak kemungkinan memakai KMP | - Eksplorasi dan belajar teknologi KMP untuk masa depan | P0 | ✅ Dirilis ulives - app iOS baru |
+| Multi-platform (arah KMP) | - Eksplorasi lebih banyak kemungkinan memakai KMP | - Eksplorasi dan belajar teknologi KMP untuk masa depan | P0 | ✅ Dirilis ulives (iOS, iPadOS, macOS, Android) |
 
 Ringkasnya:
 

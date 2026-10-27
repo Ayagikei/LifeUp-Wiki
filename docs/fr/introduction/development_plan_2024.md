@@ -20,7 +20,7 @@
 | Succès | - Succès de type répétition | ~ | P2 | ✅ Publiée |
 | Système de données | - Sauvegarde séparée des données et images<br/>- Prise en charge export/import partiel de données<br/>- Prise en charge du basculement multi-fichiers intégré | - L'upload WebDAV de gros fichiers échoue facilement.<br/>- L'export/import partiel peut servir à partager des systèmes de Récompenses.<br/>- Multi-fichiers intégrés pour faciliter les tests sans effacer les données. | P1 | 🚧 |
 | Multi-plateforme (direction Flutter) | - Continuer à apprendre et utiliser Flutter pour la version multi-plateforme | - Prototype de version iOS | P2 | 🚧 En pause |
-| Multi-plateforme (direction KMP) | - Explorer plus de possibilités avec KMP | - Explorer et apprendre la technologie KMP pour l'avenir | P0 | ✅ Publié ulives - nouvelle App iOS |
+| Multi-plateforme (direction KMP) | - Explorer plus de possibilités avec KMP | - Explorer et apprendre la technologie KMP pour l'avenir | P0 | ✅ Publié ulives (iOS, iPadOS, macOS, Android) |
 
 En résumé :
 

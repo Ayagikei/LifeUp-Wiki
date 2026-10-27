@@ -1,8 +1,8 @@
-<h1 align="center" padding="100">ulives: iOS'ta hayatınızı oyunlaştırın! ✨</h1>
+<h1 align="center" padding="100">ulives: iOS, iPadOS, macOS ve Android'de hayatınızı oyunlaştırın! ✨</h1>
 
 Merhaba LifeUp maceracıları! 👋
 
-Sıfırdan geliştirilmiş, yalnızca iOS için tasarlanmış yepyeni bir oyunlaştırılmış görev yönetimi uygulaması **ulives**'ın lansmanını duyurmaktan heyecan duyuyoruz! 🎉
+Sıfırdan geliştirilmiş, iOS, iPadOS, macOS ve Android için tasarlanmış yepyeni bir oyunlaştırılmış görev yönetimi uygulaması **ulives**'ın lansmanını duyurmaktan heyecan duyuyoruz! 🎉
 
 LifeUp uzun süredir Android kullanıcılarının hayatlarını oyunlaştırmasına yardımcı oluyor. Şimdi sevdiğiniz temel kavramları yeniden hayal ettik ve iOS ekosistemi ile kendine özgü tasarım stiline göre optimize ettik. ulives'ı yalnızca bir port değil, önemli bir evrim olarak düşünün! 🚀
 
@@ -52,28 +52,30 @@ ulives yepyeni (v1.0!) olduğundan bazı pürüzler veya hatalarla karşılaşab
 **Önemli notlar:**
 
 *   ulives tamamen yeni bir uygulama olduğundan **LifeUp verileri ve premium lisanslar aktarılamaz**.
-*   Süregelen geliştirmeyi, gelecekteki genişlemeleri (yapay zeka özellikleri ✨ ve havalı efektler gibi!) ve umarız uygulamalarımızda tam zamanlı çalışmaya geçişi desteklemek için **ulives Premium fiyatı LifeUp'tan daha yüksektir**. Gelişmiş özellikler ve ayrılmış iOS geliştirmesinin bu değişikliği haklı kıldığına inanıyoruz.
+*   Süregelen geliştirmeyi, gelecekteki genişlemeleri (yapay zeka özellikleri ✨ ve havalı efektler gibi!) ve umarız uygulamalarımızda tam zamanlı çalışmaya geçişi desteklemek için **ulives Premium fiyatı LifeUp'tan daha yüksektir**. Gelişmiş özellikler ve çapraz platform geliştirmenin bu değişikliği haklı kıldığına inanıyoruz.
 
 ## 🤓 Teknik detaylar
 
 ulives'ın arkasındaki teknolojiyle ilgilenenler için: çekirdek mantık için **Kotlin Multiplatform**, kullanıcı arayüzü için **yerel SwiftUI** kullandık.
 
-Bu yaklaşım, platformda gerçekten yerel bir iOS deneyimi sunmamızı sağlarken çekirdek mantığı gelecekte platformlar arasında paylaşmamıza da olanak tanır — belki bir gün ulives'ı Android'e de getiririz! 🤖➡️🍏
+Bu yaklaşım, platformda gerçekten yerel bir iOS deneyimi sunmamızı sağlarken çekirdek mantığı platformlar arasında paylaşır. ulives artık [Android (Google Play)](https://play.google.com/store/apps/details?id=io.ulives.plana) üzerinde de yayında.
 
 ## Her iki platforma bağlılık 💪
 
-Endişelenmeyin, Android kullanıcıları! **LifeUp (Android) ve ulives (iOS)** uygulamalarını eş zamanlı olarak sürdürmeye ve güncellemeye devam ediyoruz.
+Endişelenmeyin, Android kullanıcıları! **LifeUp (Android) ve ulives (iOS, iPadOS, macOS ve Android)** uygulamalarını eş zamanlı olarak sürdürmeye ve güncellemeye devam ediyoruz.
 
 Not: LifeUp için de tekrarlanabilir Başarımlar (ör. bir Özelliğin her N seviyesinde kilidi açma) gibi heyecan verici yeni özellikler üzerinde çalışıyoruz — yakında! 😉
 
 ---
 
-iOS'ta yeni maceranıza başlamaya hazır mısınız?
+Yeni maceranıza başlamaya hazır mısınız?
 
 **ulives'ı bugün indirin!** 👇
 [<img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" width="150">](https://apps.apple.com/us/app/ulives-gamify-your-tasks/id6743084261)
 
 [https://apps.apple.com/us/app/ulives-gamify-your-tasks/id6743084261](https://apps.apple.com/us/app/ulives-gamify-your-tasks/id6743084261)
+
+[Google Play (Android)](https://play.google.com/store/apps/details?id=io.ulives.plana)
 
 ulives'ı denemenizi sabırsızlıkla bekliyoruz ve düşüncelerinizi duymak için sabırsızlanıyoruz! Yeni macera başlasın! 🎮
 

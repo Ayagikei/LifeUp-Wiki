@@ -11,7 +11,7 @@ LifeUp'ı 2020'de ilk piyasaya sürdüğümüzde bağımsız App'ler hâlâ nisp
 
 Ancak pek hoş olmayan birçok eğilim de gördük: her bir veya iki ayda bir yeni App çıkarıp lansmandan sonra terk etmek; tamamen yapay zekâ üretimi kodla, gerçek mühendislik olmadan, hatalarla dolu, kötü performanslı ve bakımı imkânsız App'ler; App bitmeden önce onlarca dolardan yüzlere fırlayan agresif hype odaklı fiyatlandırma ve kullanıcıları «ömür boyu» üyelik almaya zorlayan acil forum gönderileri; ya da v1 ömür boyu üyelikle para kazanıp neredeyse hiç bakmayan, sonra aniden v2.0 ile «dirilerek» yeniden ömür boyu üyelik satan App'ler — yalnızca App'in bakımsız kalması, bozulması veya listeden kaldırılması ve ömür boyu üyeliklerin fiilen değersiz kalması.
 
-Buna karşılık LifeUp, uzun vadeli bakımı önemseyen geliştiriciler tarafından inşa edilir: 400'den fazla sürümle ~6 yıllık kesintisiz yineleme. Tek seferlik satın alma modelinde kaldık ve yıllar içindeki mütevazı ayarlamalardan sonra bile fiyatlarımız çoğu benzer App'in çok altında kaldı. LifeUp ayrıca benzersiz şekilde bir [API](/guide/api.md) ve [açık kaynak masaüstü istemcisi](/guide/api_desktop.md) sunar; böylece LifeUp'ı yapay zekâ ve kendi geliştirme becerilerinizle kendi iş akışlarınıza entegre edebilir — hatta üzerine inşa edebilirsiniz. LifeUp ayrıca orijinal medya dosyalarınız ve bir SQLite veritabanını içeren tam veri dışa aktarma yedeklemelerini destekler — verileriniz her zaman size aittir ve siz kontrol edersiniz. Diğer App'lerle uyumlu biçimlere dönüştürebilir, yapay zekâ ile analiz ettirip grafikler üretebilir ve daha fazlasını yapabilirsiniz (bunların hepsi API ile de — ve genelde daha doğrudan — mümkündür). Yedeğinizi doğrudan yeni iOS App'imiz [ulives](https://app.ulives.io/) içine de aktarabilirsiniz.
+Buna karşılık LifeUp, uzun vadeli bakımı önemseyen geliştiriciler tarafından inşa edilir: 400'den fazla sürümle ~6 yıllık kesintisiz yineleme. Tek seferlik satın alma modelinde kaldık ve yıllar içindeki mütevazı ayarlamalardan sonra bile fiyatlarımız çoğu benzer App'in çok altında kaldı. LifeUp ayrıca benzersiz şekilde bir [API](/guide/api.md) ve [açık kaynak masaüstü istemcisi](/guide/api_desktop.md) sunar; böylece LifeUp'ı yapay zekâ ve kendi geliştirme becerilerinizle kendi iş akışlarınıza entegre edebilir — hatta üzerine inşa edebilirsiniz. LifeUp ayrıca orijinal medya dosyalarınız ve bir SQLite veritabanını içeren tam veri dışa aktarma yedeklemelerini destekler — verileriniz her zaman size aittir ve siz kontrol edersiniz. Diğer App'lerle uyumlu biçimlere dönüştürebilir, yapay zekâ ile analiz ettirip grafikler üretebilir ve daha fazlasını yapabilirsiniz (bunların hepsi API ile de — ve genelde daha doğrudan — mümkündür). Yedeğinizi doğrudan iOS, iPadOS, macOS ve Android için çapraz platform App'imiz [ulives](https://app.ulives.io/) içine de aktarabilirsiniz.
 
 Bazı özellikler ve arayüz ayrıntıları hâlâ cilalanıyor; bunları adım adım iyileştiriyoruz.
 
@@ -585,7 +585,7 @@ Yukarıdakilerin tamamına yapay zekâ ajanı olmadan da doğrudan [API](/guide/
 <details>
 <summary>LifeUp'ın iOS sürümü olacak mı?</summary>
 
-**2025**'te iOS kullanıcıları için (iPadOS ve Apple Silicon Mac'te de) yeni çapraz platform verimlilik App'i [ulives](https://app.ulives.io/)'ı piyasaya sürdük.
+**2025**'te iOS, iPadOS, macOS (Apple Silicon) ve [Android (Google Play)](https://play.google.com/store/apps/details?id=io.ulives.plana) için yeni çapraz platform verimlilik App'i [ulives](https://app.ulives.io/)'ı piyasaya sürdük.
 
 LifeUp'ın doğrudan iOS'a port edilmesi gerçekçi değil:
 

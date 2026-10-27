@@ -19,7 +19,7 @@
 | Obiettivi | - Obiettivi ripetibili | ~ | P2 | ✅ Rilasciato |
 | Sistema dati | - Backup separato di dati e immagini<br/>- Supporto export/import parziale dati<br/>- Supporto cambio multi-file integrato | - Upload WebDAV di file grandi fallisce facilmente.<br/>- Export/import parziale può essere usato per condividere sistemi di Ricompense.<br/>- Multi-file integrati per test facili senza cancellare dati. | P1 | 🚧 |
 | Multi-platform (direzione Flutter) | - Continuare a imparare e usare Flutter per versione cross-platform | - Sviluppo prototipo versione iOS | P2 | 🚧 In pausa |
-| Multi-platform (direzione KMP) | - Esplorare più possibilità usando KMP | - Esplorare e imparare tecnologia KMP per il futuro | P0 | ✅ Rilasciato ulives - nuova app iOS |
+| Multi-platform (direzione KMP) | - Esplorare più possibilità usando KMP | - Esplorare e imparare tecnologia KMP per il futuro | P0 | ✅ Rilasciato ulives (iOS, iPadOS, macOS, Android) |
 
 In sintesi:
 
