@@ -20,7 +20,7 @@
 | 업적 확장 | - 주/월/년 유형 통계<br/>- 다른 업적 해금 조건 | - 업적 시스템에 더 다양한 해금 조건으로 풍부한 업적 경험 필요. | P2 | 🚧 |
 | 데이터 시스템 | - 데이터와 이미지 백업 분리<br/>- 부분 데이터 내보내기/가져오기 지원<br/>- 내장 다중 파일 전환 지원 | - WebDAV 대용량 파일 업로드 실패 쉬움, 무료 클라우드 트래픽 제한, 이미지 포함 전체 백업 너무 큼.<br/>- 부분 내보내기/가져오기로 보상 시스템 공유 가능.<br/>- 내장 다중 파일로 데이터를 반복 삭제하지 않고 시스템 전환·디버깅 가능. | P1 | 🚧 |
 | API | - 모든 기본 기능을 아우르도록 API 역량·커버리지 확장 | - 생각 관련 작업 등 일부 API 아직 부족.<br/>- LifeUp이 만능일 수는 없지만 API로 각자 LifeUp을 사용자 지정·확장하고 오픈 소스 커뮤니티 실현 가능. | P1 | 🚧 |
-| **ulives** 개발 | - **ulives** 기능 지속 개선<br/>- 멀티 플랫폼 지원 탐색(iOS/iPadOS/macOS/기타) | - **ulives**는 현대적 크로스 플랫폼 기술로 개발된 LifeUp 차세대 제품.<br/>- 향후 Android 또는 다른 플랫폼으로 확장 가능. | P0 | 🚧 |
+| **ulives** 개발 | - **ulives** 기능 지속 개선<br/>- 멀티 플랫폼 지원 탐색(iOS/iPadOS/macOS/Android/기타) | - **ulives**는 현대적 크로스 플랫폼 기술로 개발된 LifeUp 차세대 제품.<br/>- 현재 iOS, iPadOS, macOS, Android를 지원하며, 향후 더 많은 플랫폼 지원 계획. | P0 | 🚧 |
 
 요약:
 
@@ -58,7 +58,7 @@ LifeUp은 Android 기술 기반이며 개발 중 많은 로직과 역사적 호�
 - 기반은 복합 인덱스조차 지원하지 않아 성능 병목.
 - 대용량 데이터에서 App 성능 최적화에 상당한 노력 지속.
 
-**ulives**에는 현대적 크로스 플랫폼 기술(Kotlin Multiplatform)로 이를 재검토·개발했습니다. 향후 Android 또는 다른 플랫폼으로 확장 가능(현재는 iOS, iPadOS, macOS만 지원).
+**ulives**에는 현대적 크로스 플랫폼 기술(Kotlin Multiplatform)로 이를 재검토·개발했습니다. 현재 iOS, iPadOS, macOS, Android를 지원하며, 향후 더 많은 플랫폼 지원을 계획하고 있습니다.
 
 **비용 및 가격**
 
@@ -113,4 +113,4 @@ LifeUp, **ulives**, 기타 App의 장기 유지보수를 고집합니다. LifeUp
 
 ---
 
-> 미리보기: 2025년 Kotlin Multiplatform으로 개발한 **ulives**도 출시했으며, 현재 iOS, iPadOS, macOS만 지원하고 향후 더 많은 플랫폼 지원 계획.
+> 미리보기: 2025년 Kotlin Multiplatform으로 개발한 **ulives**도 출시했으며, 현재 iOS, iPadOS, macOS, Android를 지원하고 향후 더 많은 플랫폼 지원 계획.

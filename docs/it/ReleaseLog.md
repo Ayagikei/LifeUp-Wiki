@@ -8,7 +8,7 @@
 
 | Piattaforma       | Versione               | Data aggiornamento          |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.106.0              | 2026/09/23                  |
+| LifeUp-Android    | v1.107.0              | 2026/10/13                  |
 | LifeUp-iOS        | consulta [feature/ulives] | 🎉App alternativa disponibile |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
 | LifeUp Cloud(SDK) | v3.0.2                 | 2026/09/24                  |

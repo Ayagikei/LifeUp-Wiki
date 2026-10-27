@@ -20,7 +20,7 @@
 | Başarım Genişletmesi | - Haftalık/aylık/yıllık tür istatistikleri<br/>- Diğer Başarım koşullarının kilidini açma | - Başarım sistemi daha zengin Başarım deneyimi için daha çeşitli kilidi açma koşullarına ihtiyaç duyuyor. | P2 | 🚧 |
 | Veri Sistemi | - Veri ve görsellerin ayrı yedeklenmesi<br/>- Kısmi veri dışa/içe aktarma desteği<br/>- Yerleşik çoklu dosya geçişi desteği | - WebDAV büyük dosya yüklemelerinde kolayca başarısız olur, ücretsiz bulut hizmetlerinin trafik limitleri vardır, görsellerle tam yedekleme çok büyüktür.<br/>- Kısmi dışa/içe aktarma kullanıcıların Ödül sistemlerini paylaşması için kullanılabilir.<br/>- Yerleşik çoklu dosyalar kullanıcıların veriyi tekrar tekrar temizlemeden sistemler arasında doğrudan geçiş yapmasına olanak tanır. | P1 | 🚧 |
 | API | - Tüm temel işlevleri kapsayacak şekilde API yeteneklerini ve kapsamını genişletme | - Düşünce ile ilgili bazı işlemler gibi bazı API'ler hâlâ eksik.<br/>- LifeUp her şeyi kapsayamaz, ancak API herkesin LifeUp'ını özelleştirmesine ve genişletmesine ve açık kaynak topluluğunu gerçekleştirmesine olanak tanır. | P1 | 🚧 |
-| **ulives** Geliştirme | - **ulives** özelliklerini iyileştirmeye devam<br/>- Çoklu platform desteğini keşfetme (iOS/iPadOS/macOS/diğerleri) | - **ulives** LifeUp'ın yeni nesil ürünüdür, modern çapraz platform teknolojisiyle geliştirilmiştir.<br/>- Gelecekte Android veya diğer platformlara geçiş mümkün olabilir. | P0 | 🚧 |
+| **ulives** Geliştirme | - **ulives** özelliklerini iyileştirmeye devam<br/>- Çoklu platform desteğini keşfetme (iOS/iPadOS/macOS/Android/diğerleri) | - **ulives** LifeUp'ın yeni nesil ürünüdür, modern çapraz platform teknolojisiyle geliştirilmiştir.<br/>- Şu an iOS, iPadOS, macOS ve Android destekleniyor; gelecekte daha fazla platform planlanıyor. | P0 | 🚧 |
 
 Özetle:
 
@@ -58,7 +58,7 @@ Teknolojik olarak LifeUp bazı mayınlara da bastı:
 - Altyapı bile bileşik indeksleri desteklemiyor; performans darboğazlarına yol açıyor.
 - Büyük veri hacimlerinde App performansını sürekli optimize etmek için önemli çaba harcadık.
 
-**ulives** için bu yönleri modern çapraz platform teknolojisi (Kotlin Multiplatform) ile yeniden inceleyip geliştirdik. Gelecekteki olasılıklar Android veya diğer platformlara geçişi içerebilir (şu an yalnızca iOS, iPadOS ve macOS destekleniyor).
+**ulives** için bu yönleri modern çapraz platform teknolojisi (Kotlin Multiplatform) ile yeniden inceleyip geliştirdik. Şu an iOS, iPadOS, macOS ve Android destekleniyor; gelecekte daha fazla platform desteği planlanıyor.
 
 **Maliyet ve Fiyatlandırma**
 
@@ -113,4 +113,4 @@ Kullanıcılarımızdan gelen ezici destek, ürünlerimizi sürdürmeye ve günc
 
 ---
 
-> Önizleme: 2025'te Kotlin Multiplatform ile geliştirilen **ulives**'ı da piyasaya sürdük; şu an yalnızca iOS, iPadOS ve macOS destekleniyor, gelecekte daha fazla platform desteği planlanıyor.
+> Önizleme: 2025'te Kotlin Multiplatform ile geliştirilen **ulives**'ı da piyasaya sürdük; şu an iOS, iPadOS, macOS ve Android destekleniyor, gelecekte daha fazla platform desteği planlanıyor.

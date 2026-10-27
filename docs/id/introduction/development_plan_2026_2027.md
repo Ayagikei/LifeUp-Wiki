@@ -21,7 +21,7 @@ Berbeda dari 2024-2025, kami berharap terus meningkatkan modul yang ada di LifeU
 | Perluasan Pencapaian | - Statistik tipe mingguan/bulanan/tahunan<br/>- Kondisi buka Pencapaian lain | - Sistem Pencapaian butuh kondisi buka lebih beragam untuk pengalaman Pencapaian lebih kaya. | P2 | 🚧 |
 | Sistem Data | - Backup terpisah data dan gambar<br/>- Dukung ekspor/impor data sebagian<br/>- Dukung pergantian multi-file bawaan | - Upload WebDAV file besar mudah gagal, layanan cloud gratis punya batas trafik, backup penuh dengan gambar terlalu besar.<br/>- Ekspor/impor sebagian dapat dipakai pengguna untuk berbagi sistem Hadiah.<br/>- Multi-file bawaan memungkinkan pengguna langsung beralih antar sistem untuk debugging tanpa menghapus data berulang. | P1 | 🚧 |
 | API | - Perluas kemampuan dan cakupan API ke semua fungsi dasar | - Masih kurang beberapa API seperti operasi terkait thought.<br/>- LifeUp tidak bisa all-in-one, tetapi API memungkinkan semua orang menyesuaikan dan memperluas LifeUp mereka, serta mewujudkan komunitas open source. | P1 | 🚧 |
-| Pengembangan **ulives** | - Terus meningkatkan fitur **ulives**<br/>- Eksplorasi dukungan multi-platform (iOS/iPadOS/macOS/lainnya) | - **ulives** adalah produk generasi berikutnya LifeUp, dikembangkan dengan teknologi lintas platform modern.<br/>- Di masa depan berpotensi melintasi Android atau platform lain. | P0 | 🚧 |
+| Pengembangan **ulives** | - Terus meningkatkan fitur **ulives**<br/>- Eksplorasi dukungan multi-platform (iOS/iPadOS/macOS/Android/lainnya) | - **ulives** adalah produk generasi berikutnya LifeUp, dikembangkan dengan teknologi lintas platform modern.<br/>- Saat ini tersedia di iOS, iPadOS, macOS, dan Android, dengan rencana platform lain di masa depan. | P0 | 🚧 |
 
 Ringkasnya:
 
@@ -59,7 +59,7 @@ Secara teknologi, LifeUp juga menginjak beberapa ranjau:
 - Dasar bahkan tidak mendukung composite index, menyebabkan bottleneck performa.
 - Kami habiskan effort cukup besar terus mengoptimalkan performa app di volume data besar.
 
-Untuk **ulives**, kami memakai teknologi lintas platform modern (Kotlin Multiplatform) untuk meninjau ulang dan mengembangkan aspek-aspek ini. Kemungkinan masa depan meliputi melintasi Android atau platform lain (saat ini hanya mendukung iOS, iPadOS, dan macOS).
+Untuk **ulives**, kami memakai teknologi lintas platform modern (Kotlin Multiplatform) untuk meninjau ulang dan mengembangkan aspek-aspek ini. Saat ini tersedia di iOS, iPadOS, macOS, dan Android, dengan rencana mendukung lebih banyak platform di masa depan.
 
 **Biaya dan Harga**
 
@@ -114,4 +114,4 @@ Dukungan luar biasa dari pengguna kami yang mendorong kami terus memelihara dan 
 
 ---
 
-> Pratinjau: Pada 2025 kami juga meluncurkan **ulives**, dikembangkan memakai Kotlin Multiplatform, saat ini hanya mendukung iOS, iPadOS, dan macOS, dengan rencana mendukung lebih banyak platform di masa depan.
+> Pratinjau: Pada 2025 kami juga meluncurkan **ulives**, dikembangkan memakai Kotlin Multiplatform, saat ini mendukung iOS, iPadOS, macOS, dan Android, dengan rencana mendukung lebih banyak platform di masa depan.

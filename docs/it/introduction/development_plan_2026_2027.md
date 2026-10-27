@@ -20,7 +20,7 @@ A differenza del 2024-2025, nel 2026-2027 prevediamo di continuare a migliorare 
 | Espansione Obiettivi | - Statistiche tipo settimanale/mensile/annuale<br/>- Sblocco altre condizioni Obiettivi | - Il sistema Obiettivi necessita condizioni di sblocco più diverse per un'esperienza Obiettivi più ricca. | P2 | 🚧 |
 | Sistema dati | - Backup separato di dati e immagini<br/>- Supporto export/import parziale dati<br/>- Supporto cambio multi-file integrato | - Upload WebDAV di file grandi fallisce facilmente, i servizi cloud gratuiti hanno limiti di traffico, backup completo con immagini troppo grande.<br/>- Export/import parziale può essere usato dagli utenti per condividere sistemi di Ricompense.<br/>- Multi-file integrati permettono agli utenti di passare direttamente tra sistemi per debug senza cancellare ripetutamente i dati. | P1 | 🚧 |
 | API | - Espandere capacità e copertura API a tutte le funzioni di base | - Mancano ancora alcune API come alcune operazioni relative a thought.<br/>- LifeUp non può essere all-in-one, ma l'API permette a tutti di personalizzare ed espandere il proprio LifeUp e realizzare una community open source. | P1 | 🚧 |
-| Sviluppo **ulives** | - Continuare a migliorare funzioni **ulives**<br/>- Esplorare supporto multi-platform (iOS/iPadOS/macOS/altri) | - **ulives** è il prodotto di nuova generazione di LifeUp, sviluppato con tecnologia cross-platform moderna.<br/>- In futuro potrebbe espandersi ad Android o altre piattaforme. | P0 | 🚧 |
+| Sviluppo **ulives** | - Continuare a migliorare funzioni **ulives**<br/>- Esplorare supporto multi-platform (iOS/iPadOS/macOS/Android/altri) | - **ulives** è il prodotto di nuova generazione di LifeUp, sviluppato con tecnologia cross-platform moderna.<br/>- Ora disponibile su iOS, iPadOS, macOS e Android; in futuro altre piattaforme. | P0 | 🚧 |
 
 In sintesi:
 
@@ -58,7 +58,7 @@ Tecnologicamente, LifeUp ha anche calciato alcune mine:
 - Il sottostante non supporta nemmeno indici compositi, causando colli di bottiglia performance.
 - Abbiamo speso considerevole sforzo ottimizzando continuamente le performance app sotto grandi volumi di dati.
 
-Per **ulives**, abbiamo usato tecnologia cross-platform moderna (Kotlin Multiplatform) per riesaminare e sviluppare questi aspetti. Possibilità future includono espansione ad Android o altre piattaforme (attualmente supporta solo iOS, iPadOS e macOS).
+Per **ulives**, abbiamo usato tecnologia cross-platform moderna (Kotlin Multiplatform) per riesaminare e sviluppare questi aspetti. Ora è disponibile su iOS, iPadOS, macOS e Android, con piani di supportare più piattaforme in futuro.
 
 **Costi e pricing**
 
@@ -113,4 +113,4 @@ Il supporto travolgente dei nostri utenti è ciò che ci spinge a continuare a m
 
 ---
 
-> Anteprima: Nel 2025 abbiamo anche lanciato **ulives**, sviluppato usando Kotlin Multiplatform, attualmente supporta solo iOS, iPadOS e macOS, con piani di supportare più piattaforme in futuro.
+> Anteprima: Nel 2025 abbiamo anche lanciato **ulives**, sviluppato usando Kotlin Multiplatform, attualmente supporta iOS, iPadOS, macOS e Android, con piani di supportare più piattaforme in futuro.

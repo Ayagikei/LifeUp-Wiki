@@ -21,7 +21,7 @@ A diferencia de 2024-2025, en 2026-2027 esperamos seguir mejorando los módulos 
 | Ampliación de Logros | - Estadísticas semanales/mensuales/anuales<br/>- Otras condiciones de desbloqueo de Logros | - El sistema de Logros necesita condiciones de desbloqueo más diversas para una experiencia de Logros más rica. | P2 | 🚧 |
 | Sistema de datos | - Copia de seguridad separada de datos e imágenes<br/>- Exportación/importación parcial de datos<br/>- Cambio entre múltiples archivos integrados | - WebDAV falla fácilmente al subir archivos grandes, servicios en la nube gratuitos tienen límites de tráfico, copia completa con imágenes es demasiado grande.<br/>- Exportación/importación parcial puede usarse para que usuarios compartan sistemas de Recompensas.<br/>- Múltiples archivos integrados permiten cambiar directamente entre sistemas para depurar sin borrar datos repetidamente. | P1 | 🚧 |
 | API | - Ampliar capacidades y cobertura de API a todas las funciones básicas | - Aún faltan algunas APIs como operaciones relacionadas con reflexiones.<br/>- LifeUp no puede ser todo en uno, pero la API permite que cada uno personalice y amplíe su LifeUp, y materialice una comunidad open source. | P1 | 🚧 |
-| Desarrollo de **ulives** | - Seguir mejorando funciones de **ulives**<br/>- Explorar soporte multiplataforma (iOS/iPadOS/macOS/otros) | - **ulives** es el producto de nueva generación de LifeUp, desarrollado con tecnología multiplataforma moderna.<br/>- En el futuro podría expandirse a Android u otras plataformas. | P0 | 🚧 |
+| Desarrollo de **ulives** | - Seguir mejorando funciones de **ulives**<br/>- Explorar soporte multiplataforma (iOS/iPadOS/macOS/Android/otros) | - **ulives** es el producto de nueva generación de LifeUp, desarrollado con tecnología multiplataforma moderna.<br/>- Ya disponible en iOS, iPadOS, macOS y Android; más plataformas en el futuro. | P0 | 🚧 |
 
 En resumen:
 
@@ -59,7 +59,7 @@ Tecnológicamente, LifeUp también pisó algunas minas:
 - Lo subyacente ni siquiera admite índices compuestos, causando cuellos de botella de rendimiento.
 - Hemos dedicado un esfuerzo considerable a optimizar continuamente el rendimiento de la app con grandes volúmenes de datos.
 
-Para **ulives**, usamos tecnología multiplataforma moderna (Kotlin Multiplatform) para reexaminar y desarrollar estos aspectos. Posibilidades futuras incluyen cruzar a Android u otras plataformas (actualmente solo admite iOS, iPadOS y macOS).
+Para **ulives**, usamos tecnología multiplataforma moderna (Kotlin Multiplatform) para reexaminar y desarrollar estos aspectos. Ya está disponible en iOS, iPadOS, macOS y Android, con planes de admitir más plataformas en el futuro.
 
 **Coste y precios**
 
@@ -114,4 +114,4 @@ El abrumador apoyo de nuestros usuarios es lo que nos impulsa a seguir mantenien
 
 ---
 
-> Avance: En 2025 también lanzamos **ulives**, desarrollado con Kotlin Multiplatform, actualmente solo compatible con iOS, iPadOS y macOS, con planes de admitir más plataformas en el futuro.
+> Avance: En 2025 también lanzamos **ulives**, desarrollado con Kotlin Multiplatform, actualmente compatible con iOS, iPadOS, macOS y Android, con planes de admitir más plataformas en el futuro.
