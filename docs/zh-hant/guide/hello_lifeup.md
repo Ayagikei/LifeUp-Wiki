@@ -103,17 +103,17 @@
 同時《人升》也是一款使用純 Android 原生技術開發的應用，以便深層次利用 Android 的能力和提供最高階別的流暢體驗。
 
 目前《人升》沒有 iOS 版本。
-**但我們已經推出了專門為 iOS 使用者設計的效率應用 [ulives](https://apps.apple.com/us/app/ulives-gamify-your-tasks/id6743084261)！它繼承了《人升》的核心理念，並針對蘋果生態系統進行了最佳化。**
+**但我們已經推出了跨平臺效率應用 [ulives](https://apps.apple.com/us/app/ulives-gamify-your-tasks/id6743084261)（iOS、iPadOS、macOS 與 Android）！它繼承了《人升》的核心理念。Android 見 [Google Play](https://play.google.com/store/apps/details?id=io.ulives.plana)。**
 
 **如果你想在電腦端使用《人升》**，為保持資料一致，建議優先使用廠商提供的投屏/跨屏功能，或使用第三方工具 `scrcpy`。
 
 **如果你使用的是 iOS 端，想體驗類似《人升》的應用：**
 
-**1. 推薦嘗試我們的 iOS 應用 [ulives](https://apps.apple.com/us/app/ulives-gamify-your-tasks/id6743084261)。**
+**1. 推薦嘗試 [ulives](https://apps.apple.com/us/app/ulives-gamify-your-tasks/id6743084261)（iOS / iPadOS / macOS；Android 見 [Google Play](https://play.google.com/store/apps/details?id=io.ulives.plana)）。**
 2. 使用電腦 Android 模擬器、Windows 11 安卓子系統體驗《人升》。
 3. 或者使用其他的優秀平替應用。
 
-> 我們有跨平臺開發計劃，但能力有限，不可能短期內完成從零開始的學習和開發。具體規劃和原因請檢視下面的《常見問題》。
+> ulives 現已支援 iOS、iPadOS、macOS 與 Android。更多背景請檢視下面的《常見問題》。
 
 #### # 相容性配置
 

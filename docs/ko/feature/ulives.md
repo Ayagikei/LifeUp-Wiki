@@ -1,8 +1,8 @@
-<h1 align="center" padding="100">ulives: iOS에서 인생을 게이미피케이션하세요! ✨</h1>
+<h1 align="center" padding="100">ulives: iOS, iPadOS, macOS, Android에서 인생을 게이미피케이션하세요! ✨</h1>
 
 LifeUp 모험가 여러분! 👋
 
-처음부터 새롭게 만든 iOS 전용 게이미피케이션 작업 관리 App **ulives** 출시를 기쁜 마음으로 알려드립니다! 🎉
+처음부터 새롭게 만든 iOS, iPadOS, macOS, Android용 게이미피케이션 작업 관리 App **ulives** 출시를 기쁜 마음으로 알려드립니다! 🎉
 
 오랫동안 LifeUp은 Android에서 사용자들의 인생을 게이미피케이션하는 데 도움을 주었습니다. 이제 여러분이 사랑하는 핵심 개념을 가져와 iOS 생태계와 고유한 디자인 스타일에 맞게 재구상하고, 새로운 경험을 만들었습니다. ulives를 단순한 포팅이 아니라 큰 진화로 생각해 주세요! 🚀
 
@@ -52,28 +52,30 @@ ulives는 완전히 새로운 App(v1.0!)이므로, 거친 부분이나 버그를
 **중요 참고 사항:**
 
 *   ulives는 완전히 새로운 App이므로 **LifeUp 데이터와 프리미엄 라이선스는 이전할 수 없습니다**.
-*   지속적인 개발, 향후 확장(잠재적 AI 기능 ✨ 및 멋진 효과 등!), 그리고 희망적으로 App 전담 풀타임 작업으로의 전환을 지원하기 위해 **ulives Premium 가격은 LifeUp보다 높습니다**. 향상된 기능과 iOS 전용 개발이 이 변화를 정당화한다고 믿습니다.
+*   지속적인 개발, 향후 확장(잠재적 AI 기능 ✨ 및 멋진 효과 등!), 그리고 희망적으로 App 전담 풀타임 작업으로의 전환을 지원하기 위해 **ulives Premium 가격은 LifeUp보다 높습니다**. 향상된 기능과 크로스 플랫폼 개발이 이 변화를 정당화한다고 믿습니다.
 
 ## 🤓 기술 정보
 
 ulives 기술에 관심 있는 분들을 위해: 핵심 로직은 **Kotlin Multiplatform**으로, 사용자 인터페이스는 **네이티브 SwiftUI**로 구축했습니다.
 
-이 접근 방식으로 플랫폼에 자연스럽게 어울리는 진정한 네이티브 iOS 경험을 제공하면서, 향후 플랫폼 간 핵심 로직 공유도 가능합니다 — 언젠가 ulives를 Android에도 가져올 수도 있습니다! 🤖➡️🍏
+이 접근 방식으로 플랫폼에 자연스럽게 어울리는 진정한 네이티브 iOS 경험을 제공하면서, 플랫폼 간 핵심 로직을 공유합니다. ulives는 이제 [Android(Google Play)](https://play.google.com/store/apps/details?id=io.ulives.plana)에도 있습니다.
 
 ## 두 플랫폼에 대한 약속 💪
 
-Android 사용자도 걱정하지 마세요! **LifeUp(Android)과 ulives(iOS) 모두를 동시에 유지·업데이트**할 것을 약속합니다.
+Android 사용자도 걱정하지 마세요! **LifeUp(Android)과 ulives(iOS, iPadOS, macOS, Android) 모두를 동시에 유지·업데이트**할 것을 약속합니다.
 
 P.S. LifeUp에도 반복형 업적(예: 속성 N레벨마다 해금) 같은 흥미로운 새 기능을 이미 개발 중입니다 — 곧 출시! 😉
 
 ---
 
-iOS에서 새로운 퀘스트를 시작할 준비가 되셨나요?
+새로운 퀘스트를 시작할 준비가 되셨나요?
 
 **지금 ulives를 다운로드하세요!** 👇
 [<img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" width="150">](https://apps.apple.com/us/app/ulives-gamify-your-tasks/id6743084261)
 
 [https://apps.apple.com/us/app/ulives-gamify-your-tasks/id6743084261](https://apps.apple.com/us/app/ulives-gamify-your-tasks/id6743084261)
+
+[Google Play(Android)](https://play.google.com/store/apps/details?id=io.ulives.plana)
 
 ulives를 사용해 보시고 여러분의 생각을 듣고 싶습니다! 새로운 모험이 시작됩니다! 🎮
 

@@ -20,7 +20,7 @@
 | Conquistas | - Conquistas de tipo repetível | ~ | P2 | ✅ Lançado |
 | Sistema de dados | - Backup separado de dados e imagens<br/>- Suportar exportação/importação parcial de dados<br/>- Suportar troca de múltiplos arquivos integrada | - Upload WebDAV de arquivos grandes falha facilmente.<br/>- Exportação/importação parcial pode ser usada para compartilhar sistemas de Recompensas.<br/>- Múltiplos arquivos integrados para testes fáceis sem limpar dados. | P1 | 🚧 |
 | Multiplataforma (direção Flutter) | - Continuar aprendendo e usando Flutter para versão multiplataforma | - Desenvolvimento de protótipo da versão iOS | P2 | 🚧 Pausado |
-| Multiplataforma (direção KMP) | - Explorar mais possibilidades usando KMP | - Explorar e aprender tecnologia KMP para o futuro | P0 | ✅ Lançado ulives - novo app iOS |
+| Multiplataforma (direção KMP) | - Explorar mais possibilidades usando KMP | - Explorar e aprender tecnologia KMP para o futuro | P0 | ✅ Lançado ulives (iOS, iPadOS, macOS, Android) |
 
 Em resumo:
 

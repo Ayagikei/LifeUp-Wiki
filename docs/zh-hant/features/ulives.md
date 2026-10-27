@@ -1,10 +1,10 @@
-<h1 align="center" padding="100">ulives: 在 iOS 上將生活遊戲化！✨</h1>
+<h1 align="center" padding="100">ulives: 在 iOS、iPadOS、macOS 與 Android 上將生活遊戲化！✨</h1>
 
 ?> 2025/05/19: 我們現已釋出1.1.0版本引入了「物品的隨機獎勵使用效果」和「專注」（番茄鍾/倒計時/正計時）功能，歡迎體驗和反饋~人升也已經推出了「重複成就」內測體驗。
 
 嘿，人升的冒險者們！👋
 
-我們激動地宣佈 **ulives** 正式釋出！這是一款完全從零開始、專為 iOS 打造的全新遊戲化任務管理應用！🎉
+我們激動地宣佈 **ulives** 正式釋出！這是一款完全從零開始、面向 iOS、iPadOS、macOS 與 Android 的全新遊戲化任務管理應用！🎉
 
 長久以來，人升一直在 Android 平臺上幫助大家將生活遊戲化。現在，我們將您喜愛的核心概念進行了重新構想，並針對 iOS 生態系統及其獨特的設計風格，打造了煥然一新的體驗。請將 ulives 視為一次重要的進化，而非簡單的移植！🚀
 
@@ -54,13 +54,13 @@ ulives 引入了多項激動人心的升級，使您的任務遊戲化體驗更�
 **重要提示：**
 
 *   由於 ulives 定位是一個全新的應用程式，且開發團隊有所變動，**人升的資料和高階會員無法轉移**。
-*   爲了支援持續開發、未來的功能擴充套件（例如潛在的 AI 功能 ✨ 和酷炫特效！），並希望能過渡到全職開發我們的應用程式，**ulives 高階版的價格會高於人升**。我們相信，增強的功能和專注的 iOS 開發值得這次調整。
+*   爲了支援持續開發、未來的功能擴充套件（例如潛在的 AI 功能 ✨ 和酷炫特效！），並希望能過渡到全職開發我們的應用程式，**ulives 高階版的價格會高於人升**。我們相信，增強的功能和跨平臺開發值得這次調整。
 
 ## 🤓 技術細節
 
 如果您對 ulives 背後的技術感興趣：我們使用 **Kotlin Multiplatform** 構建核心邏輯，並結合 **原生 SwiftUI** 構建用戶界面。
 
-這種方法使我們能夠提供真正原生的 iOS 體驗，使其在平臺上的感覺非常自然，同時也使我們未來有可能跨平臺共享核心邏輯——也許有一天還能將 ulives 帶到 Android！🤖➡️🍏
+這種方法使我們能夠提供真正原生的 iOS 體驗，使其在平臺上的感覺非常自然，同時也可以跨平臺共享核心邏輯。ulives 現已上架 [Android（Google Play）](https://play.google.com/store/apps/details?id=io.ulives.plana)。
 
 ## 對兩大平臺的承諾 💪
 
@@ -70,12 +70,14 @@ P.S. 我們也正在為人升開發激動人心的新功能，例如可重複達
 
 ---
 
-準備好在 iOS 上開始您的新徵程了嗎？
+準備好開始您的新徵程了嗎？
 
 **立即下載 ulives！** 👇
 [<img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" width="150">](https://apps.apple.com/us/app/ulives-gamify-your-tasks/id6743084261)
 
 [https://apps.apple.com/us/app/ulives-gamify-your-tasks/id6743084261](https://apps.apple.com/us/app/ulives-gamify-your-tasks/id6743084261)
+
+[Google Play（Android）](https://play.google.com/store/apps/details?id=io.ulives.plana)
 
 我們非常期待您嘗試 ulives，並迫不及待想聽聽您的想法！讓新的冒險開始吧！🎮
 

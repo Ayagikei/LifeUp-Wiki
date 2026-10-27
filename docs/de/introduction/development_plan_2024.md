@@ -20,7 +20,7 @@
 | Erfolge | - Wiederholungs-Erfolge | ~ | P2 | ✅ Veröffentlicht |
 | Datensystem | - Getrenntes Backup von Daten und Bildern<br/>- Teil-Export/-Import<br/>- Integrierter Multi-Datei-Wechsel | - WebDAV-Upload großer Dateien scheitert leicht.<br/>- Teil-Export/-Import zum Teilen von Belohnungssystemen.<br/>- Multi-Dateien für Tests ohne Datenlöschung. | P1 | 🚧 |
 | Multi-Plattform (Flutter) | - Flutter weiter für plattformübergreifende Version | - iOS-Prototyp | P2 | 🚧 Pausiert |
-| Multi-Plattform (KMP) | - Mehr Möglichkeiten mit KMP erkunden | - KMP-Technologie für die Zukunft lernen | P0 | ✅ ulives – neue iOS-App veröffentlicht |
+| Multi-Plattform (KMP) | - Mehr Möglichkeiten mit KMP erkunden | - KMP-Technologie für die Zukunft lernen | P0 | ✅ ulives veröffentlicht (iOS, iPadOS, macOS, Android) |
 
 Zusammenfassung:
 

@@ -843,7 +843,7 @@ v1.92 版本已经增加了更为完善的统计功能。
 
 《人升》本身是基于 Android 原生技术开发的离线应用，无法在不大幅重写的前提下直接迁移到 iOS，并同时保持数据结构与业务逻辑的一致性。
 
-因此，我们在 **2025 年**发布了面向 iOS 用户的新应用 [ulives](https://apps.apple.com/us/app/ulives-gamify-your-tasks/id6743084261)（官网：[ulives.lifeupapp.net](https://ulives.lifeupapp.net/)）。
+因此，我们在 **2025 年**发布了面向 iOS、iPadOS、macOS 与 Android 的新应用 [ulives](https://apps.apple.com/us/app/ulives-gamify-your-tasks/id6743084261)（官网：[ulives.lifeupapp.net](https://ulives.lifeupapp.net/)；Android：[Google Play](https://play.google.com/store/apps/details?id=io.ulives.plana)；鸿蒙原生版也已上线）。
 
 ulives 不是对《人升》的简单移植，而是我们在重组团队后，基于跨平台技术重新打造的新产品：
 

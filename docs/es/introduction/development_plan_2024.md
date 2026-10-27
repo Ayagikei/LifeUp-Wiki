@@ -20,7 +20,7 @@
 | Logros | - Logros de tipo repetición | ~ | P2 | ✅ Publicado |
 | Sistema de datos | - Copia de seguridad separada de datos e imágenes<br/>- Exportación/importación parcial de datos<br/>- Cambio entre múltiples archivos integrados | - WebDAV falla fácilmente al subir archivos grandes.<br/>- Exportación/importación parcial puede usarse para compartir sistemas de Recompensas.<br/>- Múltiples archivos integrados para pruebas fáciles sin borrar datos. | P1 | 🚧 |
 | Multiplataforma (dirección Flutter) | - Seguir aprendiendo y usando Flutter para versión multiplataforma | - Prototipo de versión iOS | P2 | 🚧 En pausa |
-| Multiplataforma (dirección KMP) | - Explorar más posibilidades con KMP | - Explorar y aprender tecnología KMP para el futuro | P0 | ✅ Publicado ulives — nueva app iOS |
+| Multiplataforma (dirección KMP) | - Explorar más posibilidades con KMP | - Explorar y aprender tecnología KMP para el futuro | P0 | ✅ Publicado ulives (iOS, iPadOS, macOS, Android) |
 
 En resumen:
 

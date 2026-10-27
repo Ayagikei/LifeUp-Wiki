@@ -1,8 +1,8 @@
-<h1 align="center" padding="100">ulives: iOS で人生をゲーミフィケーション！ ✨</h1>
+<h1 align="center" padding="100">ulives: iOS、iPadOS、macOS、Android で人生をゲーミフィケーション！ ✨</h1>
 
 LifeUp アドベンチャーの皆さん！ 👋
 
-**ulives** のローンチをお知らせします。iOS 専用に一から作られた、まったく新しいゲーミフィケーション型タスク管理 App です！ 🎉
+**ulives** のローンチをお知らせします。iOS、iPadOS、macOS、Android 向けに一から作られた、まったく新しいゲーミフィケーション型タスク管理 App です！ 🎉
 
 長年、LifeUp は Android ユーザーが人生をゲーミフィケーションするのを助けてきました。今回、皆さんが愛するコアコンセプトを取り入れ、iOS エコシステムとその独特のデザインスタイルに最適化した新しい体験を作り上げました。ulives は単なる移植ではなく、大きな進化だと考えてください！ 🚀
 
@@ -52,28 +52,30 @@ ulives はまったく新しい App（v1.0!）のため、荒削りな部分や�
 **重要な注意：**
 
 *   ulives は完全に新しい App のため、**LifeUp のデータとプレミアムライセンスは移行できません**。
-*   継続的な開発、将来の拡張（潜在的な AI 機能 ✨ やクールな効果など！）、できれば App 開発への専念への移行を支えるため、**ulives Premium の価格は LifeUp より高く**設定しています。強化された機能と iOS 向けの専念開発が、この変更を正当化すると考えています。
+*   継続的な開発、将来の拡張（潜在的な AI 機能 ✨ やクールな効果など！）、できれば App 開発への専念への移行を支えるため、**ulives Premium の価格は LifeUp より高く**設定しています。強化された機能と クロスプラットフォーム開発が、この変更を正当化すると考えています。
 
 ## 🤓 技術的な豆知識
 
 ulives の技術に興味がある方へ：コアロジックに **Kotlin Multiplatform**、ユーザーインターフェースに **ネイティブ SwiftUI** を使用しました。
 
-このアプローチにより、プラットフォームにぴったり馴染む真のネイティブ iOS 体験を提供しつつ、将来コアロジックをプラットフォーム間で共有できる可能性もあります — いつか ulives を Android に持ってくる日もあるかも！ 🤖➡️🍏
+このアプローチにより、プラットフォームにぴったり馴染む真のネイティブ iOS 体験を提供しつつ、コアロジックをプラットフォーム間で共有しています。ulives は [Android（Google Play）](https://play.google.com/store/apps/details?id=io.ulives.plana) でも公開されています。
 
 ## 両プラットフォームへのコミットメント 💪
 
-Android ユーザーもご心配なく！ **LifeUp（Android）と ulives（iOS）の両方を並行してメンテナンス・更新**することにコミットしています。
+Android ユーザーもご心配なく！ **LifeUp（Android）と ulives（iOS、iPadOS、macOS、Android）の両方を並行してメンテナンス・更新**することにコミットしています。
 
 追伸：LifeUp 向けのエキサイティングな新機能（例：繰り返し可能な実績 — 属性レベルが N ごとに解除など）も既に開発中です — 近日公開！ 😉
 
 ---
 
-iOS で新しいクエストを始める準備はできましたか？
+新しいクエストを始める準備はできましたか？
 
 **今すぐ ulives をダウンロード！** 👇
 [<img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" width="150">](https://apps.apple.com/us/app/ulives-gamify-your-tasks/id6743084261)
 
 [https://apps.apple.com/us/app/ulives-gamify-your-tasks/id6743084261](https://apps.apple.com/us/app/ulives-gamify-your-tasks/id6743084261)
+
+[Google Play（Android）](https://play.google.com/store/apps/details?id=io.ulives.plana)
 
 ulives を試していただき、ご感想をお聞きできるのを楽しみにしています！ 新しい冒険を始めましょう！ 🎮
 
