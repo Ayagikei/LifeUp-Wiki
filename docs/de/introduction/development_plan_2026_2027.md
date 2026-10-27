@@ -21,7 +21,7 @@ Anders als 2024–2025 erwarten wir 2026–2027 Verbesserungen bestehender Modul
 | Erfolge erweitern | - Wöchentliche/monatliche/jährliche Statistiken<br/>- Weitere Freischalt-Bedingungen | - Erfolgssystem braucht vielfältigere Bedingungen für reichere Erlebnisse. | P2 | 🚧 |
 | Datensystem | - Getrenntes Backup von Daten und Bildern<br/>- Teil-Export/-Import<br/>- Integrierter Multi-Datei-Wechsel | - WebDAV-Upload großer Dateien scheitert leicht, kostenlose Clouds Traffic-Limits, Vollbackup mit Bildern zu groß.<br/>- Teil-Export/-Import zum Teilen von Belohnungssystemen.<br/>- Multi-Dateien zum Wechseln zwischen Systemen ohne wiederholtes Löschen. | P1 | 🚧 |
 | API | - API-Fähigkeiten und Abdeckung auf alle Basisfunktionen | - Einige APIs fehlen noch, z. B. gedankenbezogene Operationen.<br/>- LifeUp muss nicht alles können; API ermöglicht Anpassung, Erweiterung und Open-Source-Community. | P1 | 🚧 |
-| **ulives**-Entwicklung | - **ulives**-Features weiter ausbauen<br/>- Multi-Plattform erkunden (iOS/iPadOS/macOS/andere) | - **ulives** ist LifeUps nächste Generation, mit moderner Cross-Platform-Technologie.<br/>- Perspektivisch auch Android oder andere Plattformen. | P0 | 🚧 |
+| **ulives**-Entwicklung | - **ulives**-Features weiter ausbauen<br/>- Multi-Plattform erkunden (iOS/iPadOS/macOS/Android/andere) | - **ulives** ist LifeUps nächste Generation, mit moderner Cross-Platform-Technologie.<br/>- Derzeit auf iOS, iPadOS, macOS und Android; perspektivisch weitere Plattformen. | P0 | 🚧 |
 
 Zusammenfassung:
 
@@ -59,7 +59,7 @@ Technisch auch Fallstricke:
 - Basis ohne zusammengesetzte Indizes — Performance-Engpässe.
 - Viel Aufwand für Performance bei großen Datenmengen.
 
-Für **ulives** moderne Cross-Platform-Technologie (Kotlin Multiplatform). Perspektivisch Android oder andere Plattformen (derzeit iOS, iPadOS, macOS).
+Für **ulives** moderne Cross-Platform-Technologie (Kotlin Multiplatform). Derzeit auf iOS, iPadOS, macOS und Android, perspektivisch weitere Plattformen.
 
 **Kosten und Preis**
 
@@ -114,4 +114,4 @@ Die Unterstützung der Nutzer treibt uns an, Produkte weiter zu pflegen und zu a
 
 ---
 
-> Vorschau: 2025 auch **ulives** mit Kotlin Multiplatform, derzeit iOS, iPadOS und macOS, perspektivisch mehr Plattformen.
+> Vorschau: 2025 auch **ulives** mit Kotlin Multiplatform, derzeit iOS, iPadOS, macOS und Android, perspektivisch mehr Plattformen.

@@ -21,7 +21,7 @@ Contrairement à 2024-2025, nous prévoyons de continuer à améliorer les modul
 | Extension Succès | - Statistiques de type hebdomadaire/mensuel/annuel<br/>- Déverrouiller d'autres conditions de Succès | - Le système de Succès a besoin de conditions de déverrouillage plus diversifiées pour une expérience de Succès plus riche. | P2 | 🚧 |
 | Système de données | - Sauvegarde séparée des données et images<br/>- Prise en charge export/import partiel de données<br/>- Prise en charge du basculement multi-fichiers intégré | - L'upload WebDAV de gros fichiers échoue facilement, les services cloud gratuits ont des limites de trafic, la sauvegarde complète avec images est trop volumineuse.<br/>- L'export/import partiel peut servir aux utilisateurs à partager des systèmes de Récompenses.<br/>- Les multi-fichiers intégrés permettent aux utilisateurs de basculer directement entre systèmes pour le débogage sans effacer les données à répétition. | P1 | 🚧 |
 | API | - Élargir les capacités et la couverture API à toutes les fonctions de base | - Il manque encore certaines API comme certaines opérations liées aux pensées.<br/>- LifeUp ne peut pas tout faire, mais l'API permet à chacun de personnaliser et d'étendre son LifeUp, et de réaliser une communauté open source. | P1 | 🚧 |
-| Développement **ulives** | - Continuer à améliorer les fonctionnalités **ulives**<br/>- Explorer le support multi-plateforme (iOS/iPadOS/macOS/autres) | - **ulives** est le produit de nouvelle génération de LifeUp, développé avec une technologie multi-plateforme moderne.<br/>- À l'avenir, extension possible vers Android ou d'autres plateformes. | P0 | 🚧 |
+| Développement **ulives** | - Continuer à améliorer les fonctionnalités **ulives**<br/>- Explorer le support multi-plateforme (iOS/iPadOS/macOS/Android/autres) | - **ulives** est le produit de nouvelle génération de LifeUp, développé avec une technologie multi-plateforme moderne.<br/>- Désormais disponible sur iOS, iPadOS, macOS et Android, avec d'autres plateformes possibles plus tard. | P0 | 🚧 |
 
 En résumé :
 
@@ -59,7 +59,7 @@ Technologiquement, LifeUp a aussi marché sur des mines :
 - La couche sous-jacente ne supporte même pas les index composites, causant des goulots d'étranglement de performance.
 - Nous avons consacré un effort considérable à optimiser continuellement les performances de l'App sous de grands volumes de données.
 
-Pour **ulives**, nous avons utilisé une technologie multi-plateforme moderne (Kotlin Multiplatform) pour réexaminer et développer ces aspects. Les possibilités futures incluent l'extension vers Android ou d'autres plateformes (actuellement ne supporte que iOS, iPadOS et macOS).
+Pour **ulives**, nous avons utilisé une technologie multi-plateforme moderne (Kotlin Multiplatform) pour réexaminer et développer ces aspects. Il est désormais disponible sur iOS, iPadOS, macOS et Android, avec des plans pour supporter plus de plateformes à l'avenir.
 
 **Coût et tarification**
 
@@ -114,4 +114,4 @@ Le soutien massif de nos utilisateurs est ce qui nous pousse à continuer à mai
 
 ---
 
-> Aperçu : En 2025 nous avons aussi lancé **ulives**, développée avec Kotlin Multiplatform, ne supportant actuellement que iOS, iPadOS et macOS, avec des plans pour supporter plus de plateformes à l'avenir.
+> Aperçu : En 2025 nous avons aussi lancé **ulives**, développée avec Kotlin Multiplatform, prenant actuellement en charge iOS, iPadOS, macOS et Android, avec des plans pour supporter plus de plateformes à l'avenir.

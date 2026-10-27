@@ -20,7 +20,7 @@ Unlike 2024-2025, we expect to continue improving existing modules of LifeUp and
 | Achievement Expansion | - Weekly/monthly/yearly type statistics<br/>- Unlock other achievement conditions | - Achievement system needs more diverse unlock conditions for richer achievement experience. | P2 | 🚧 |
 | Data System | - Separate backup of data and images<br/>- Support partial data export/import<br/>- Support built-in multi-file switching | - WebDAV uploading large files fails easily, free cloud services have traffic limits, full backup with images is too large.<br/>- Partial export/import can be used for users to share reward systems.<br/>- Built-in multi-files allow users to directly switch between systems for debugging without clearing data repeatedly. | P1 | 🚧 |
 | API | - Expand API capabilities and coverage to all basic functions | - Still missing some APIs like some thought-related operations.<br/>- LifeUp can't be all-in-one, but API enables everyone to customize and expand their LifeUp, and realize open source community. | P1 | 🚧 |
-| **ulives** Development | - Continue improving **ulives** features<br/>- Explore multi-platform support (iOS/iPadOS/macOS/others) | - **ulives** is LifeUp's next generation product, developed with modern cross-platform technology.<br/>- Future有望 cross Android or other platforms. | P0 | 🚧 |
+| **ulives** Development | - Continue improving **ulives** features<br/>- Explore multi-platform support (iOS/iPadOS/macOS/Android/others) | - **ulives** is LifeUp's next generation product, developed with modern cross-platform technology.<br/>- Now available on iOS, iPadOS, macOS, and Android, with more platforms possible later. | P0 | 🚧 |
 
 In summary:
 
@@ -58,7 +58,7 @@ Technologically, LifeUp also stepped on some landmines:
 - The underlying doesn't even support composite indexes, causing performance bottlenecks.
 - We've spent considerable effort continuously optimizing app performance under large data volumes.
 
-For **ulives**, we used modern cross-platform technology (Kotlin Multiplatform) to re-examine and develop these aspects. Future possibilities include crossing Android or other platforms (currently only supports iOS, iPadOS, and macOS).
+For **ulives**, we used modern cross-platform technology (Kotlin Multiplatform) to re-examine and develop these aspects. It is now available on iOS, iPadOS, macOS, and Android, with plans to support more platforms in the future.
 
 **Cost and Pricing**
 
@@ -113,4 +113,4 @@ The overwhelming support from our users is what drives us to continue maintainin
 
 ---
 
-> Preview: In 2025 we also launched **ulives**, developed using Kotlin Multiplatform, currently only supporting iOS, iPadOS, and macOS, with plans to support more platforms in the future.
+> Preview: In 2025 we also launched **ulives**, developed using Kotlin Multiplatform, currently supporting iOS, iPadOS, macOS, and Android, with plans to support more platforms in the future.
