@@ -7,7 +7,7 @@ Use this reference for LifeUp Cloud request parameters and complete HTTP respons
 | Resource | Methods and paths | Parameters and model |
 | --- | --- | --- |
 | Common rules | JSON responses, authorization, cache conditions, pagination | [Conventions](#representations), [cache and auth](#auth-cache), [pagination](#pagination) |
-| Tasks | `GET /tasks`, `GET /tasks/{categoryId}`, `GET /tasks_categories` | [Queries](#get-tasks), [task model](#task-fields), [categories](#get-tasks-categories) |
+| Tasks | `GET /tasks`, `GET /tasks/{categoryId}`, `GET /tasks_categories`, `GET /smart_lists/{type}/tasks` | [Queries](#get-tasks), [smart lists by type](#get-smart-list-tasks), [task model](#task-fields), [categories](#get-tasks-categories) |
 | Task history | `GET /history` | [Parameters](#get-history), [timestamps](#task-times), [daily reports](#daily-report) |
 | Items | `GET /items`, `GET /items/{listId}`, `GET /items_categories` | [Item IDs, category IDs and full models](#get-items) |
 | Skills | `GET /skills`, `GET /skill_groups` | [Skills and groups](#get-skills) |
@@ -114,11 +114,11 @@ For the current HTTP SDK, date bounds are forwarded only when **both** parse as 
 
 ## MCP differences :id=mcp-differences
 
-MCP list tools default to `limit=20`, clamp it to `1..100`, and clamp `offset` to at least `0`. They send pagination to server-paged resources such as history/journals, but fetch full HTTP arrays and slice locally for resources such as tasks. Their `items`, `count`, `hasMore` and optional `total` belong to the MCP envelope. `detail=false` also removes fields from each record; use `detail=true` when the full HTTP model is needed.
+MCP list tools default to `limit=20`, clamp it to `1..100`, and clamp `offset` to at least `0`. They send pagination to server-paged resources such as history/journals, but fetch full HTTP arrays and slice locally for resources such as tasks. Their `items`, `count`, `hasMore` and optional `total` belong to the MCP envelope. `detail=false` also removes fields from each record; use `detail=true` when the full HTTP model is needed. For tasks, optional `smartListType` (`daily`, `weekly`, `monthly`) calls `GET /smart_lists/{type}/tasks` and is mutually exclusive with `categoryId`.
 
 ## Sources and version scope :id=api-common-sources
 
-These references describe the current public SDK and the corresponding LifeUp provider behavior. Examples use invented data. Source links are implementation references, not proof that a particular installed version contains every field: [HTTP routes](https://github.com/Ayagikei/LifeUp-SDK/blob/main/http/src/main/java/net/lifeupapp/lifeup/http/service/KtorService.kt), [HTTP wrapper](https://github.com/Ayagikei/LifeUp-SDK/blob/main/http/src/main/java/net/lifeupapp/lifeup/http/vo/HttpResponse.kt), [MCP query mapping](https://github.com/Ayagikei/LifeUp-SDK/blob/main/mcp/src/query.ts).
+These references describe the current public SDK and the corresponding LifeUp provider behavior. Examples use invented data. Source links are implementation references, not proof that a particular installed version contains every field: [HTTP routes](https://github.com/Ayagikei/LifeUp-SDK/blob/main/http/src/main/java/net/lifeupapp/lifeup/http/service/KtorService.kt), [HTTP wrapper](https://github.com/Ayagikei/LifeUp-SDK/blob/main/http/src/main/java/net/lifeupapp/lifeup/http/vo/HttpResponse.kt), [MCP query mapping](https://github.com/Ayagikei/LifeUp-SDK/blob/main/mcp/src/query.ts). Smart-list task queries (`GET /smart_lists/{type}/tasks`) match the LifeUp **1.107.4** provider contract in source as of **2026-11-02**; older App builds without that URI fail like other unknown ContentProvider paths—check `/info` before relying on them.
 
 
 ## Task and history data models :id=task-history-models
@@ -138,6 +138,7 @@ All fields below appear in the current HTTP object. Missing provider values are 
 | `name` | string | Task name. A missing provider name becomes `ERROR: name is null`. |
 | `notes` | string | Notes; empty string if absent. |
 | `status` | integer | Task status; missing value defaults to `0`. See the status table below. |
+| `isFrozen` | boolean or `null` | Frozen state, independent of `status` (`status=0` can still be frozen). Actual boolean when the LifeUp provider and Cloud SDK expose the column; `null` when the column is missing or null on older Apps—unknown, not the same as `false`. |
 | `startTime` | integer | Configured start time in milliseconds; SDK fallback `0`. |
 | `deadline` | integer | Due time in milliseconds; SDK fallback `0` if absent. |
 | `remindTime` | integer | Reminder time in milliseconds; SDK fallback `0` if absent. |
@@ -160,6 +161,9 @@ All fields below appear in the current HTTP object. Missing provider values are 
 | `subTasks` | `SubTask[]` | Nested subtasks; empty array if unavailable. |
 | `countProgress` | `TaskCountProgress` or `null` | Count-progress snapshot when available; can appear in both views. |
 | `repeatEndCondition` | `TaskRepeatEndCondition` or `null` | Repetition end rule in `/tasks`; always `null` in `/history`. |
+
+> [!NOTE]
+> Adding `isFrozen` does not change existing list membership or default filtering; filter on this field in the client when available. The field requires an updated LifeUp provider and Cloud SDK—MCP alone cannot supply it. After Cloud is updated, MCP task/history records include `isFrozen` with `detail=true`; older MCP compact whitelists may omit it until MCP is updated.
 
 ### Task status and timestamps :id=task-times
 
@@ -278,7 +282,7 @@ GET http://{host:port}/tasks/1
   "message": "success",
   "data": [{
     "id": 101, "gid": 10, "name": "Read a chapter", "notes": "",
-    "status": 0, "startTime": 1792108800000, "deadline": 1792195199999,
+    "status": 0, "isFrozen": false, "startTime": 1792108800000, "deadline": 1792195199999,
     "remindTime": 0, "frequency": 1, "weekdays": "", "importance": 3, "difficulty": 2,
     "exp": 5, "skillIds": [2], "coin": 10, "coinVariable": 0,
     "itemId": 0, "itemAmount": 0, "words": "", "categoryId": 1,
@@ -290,6 +294,36 @@ GET http://{host:port}/tasks/1
 ```
 
 **Behavior and errors:** list selection/order follows LifeUp's task-list logic; this endpoint does not promise ordering by completion time. A successful `data: []` means the selected task list returned no records. Permission/provider failures use the [common error wrapper](/guide/api-reference?id=response-errors); they are not empty arrays. For completion reporting, use `/history` below rather than this route's `endTime`.
+
+> [!NOTE]
+> Default `/tasks`, `/tasks/-1` (All), and smart lists queried by a known smart-list category ID apply the same archived/deleted/missing-source filtering as the App smart-list views. Direct `/tasks/{categoryId}` for a specific normal list—including an archived one—still returns that list's unfinished tasks. Prefer [GET /smart_lists/{type}/tasks](#get-smart-list-tasks) when you need daily/weekly/monthly members without enabling smart lists or resolving IDs.
+
+### GET /smart_lists/{type}/tasks :id=get-smart-list-tasks
+
+Query **unfinished** tasks for the daily, weekly, or monthly smart list using App date/week/month rules. Smart lists do not need to be enabled in the App, and callers do not need a smart-list category ID. The response is the same flat `Task[]` as [GET /tasks](#get-tasks); each record keeps its original normal-list `categoryId`. This route is read-only: it does not create, enable, or restore smart-list categories or change list preferences; App week-start, date, and frozen-task rules are unchanged.
+
+| Parameter | Location | Type | Required | Default / behavior |
+| --- | --- | --- | --- | --- |
+| `type` | Path | string | Yes | Lowercase `daily`, `weekly`, or `monthly` only. |
+
+No query parameters, pagination, or `categoryId` on this route.
+
+```text
+GET http://{host:port}/smart_lists/daily/tasks
+GET http://{host:port}/smart_lists/weekly/tasks
+GET http://{host:port}/smart_lists/monthly/tasks
+content://net.sarasarasa.lifeup.provider.api/smart_lists/daily/tasks
+```
+
+SDK: `TasksApi.listSmartListTasks(SmartListType.DAILY)` (also `WEEKLY`, `MONTHLY`).
+
+**Sorting:** When a category row exists for that smart type—even if disabled—saved sort preferences apply. When no row was ever created, ordering follows the All list (`-1`) configuration, not whichever list is open in the App UI.
+
+**Legacy ID path:** `/tasks_categories` may return enabled smart lists with `type` `10`/`11`/`12` and a real `id` (for example `{"id":37,"type":10,...}` → `GET /tasks/37`). Type is not an ID; use the returned `id` rather than substituting `10`/`11`/`12` for `categoryId` (a normal or smart list can legitimately have `id` `10`, `11`, or `12`).
+
+**Errors:** Invalid `type` returns HTTP `200` with body `code=500` and a message containing `invalid parameter`; the backend query is not run. Paths missing the `type` segment or omitting the `/tasks` segment return HTTP `404`. Provider permission failures use the [common error wrapper](/guide/api-reference?id=response-errors) (for example body `code=10001` when the Cursor is null). App versions without this URI surface an unknown-path error; do not fall back to All tasks.
+
+**MCP:** `list_tasks({ smartListType: "daily" })` or `list_data({ resource: "tasks", smartListType: "daily" })`. `smartListType` excludes `categoryId` (including `0`) and is rejected on non-task resources. Compact/detail output and client-side paging match other task list calls.
 
 ### GET /history :id=get-history
 
@@ -316,7 +350,7 @@ GET http://{host:port}/history?offset=0&limit=100&gid=10
   "message": "success",
   "data": [{
     "id": 100, "gid": 10, "name": "Read a chapter", "notes": "",
-    "status": 1, "startTime": 1792022400000, "deadline": 1792108799999,
+    "status": 1, "isFrozen": true, "startTime": 1792022400000, "deadline": 1792108799999,
     "remindTime": 0, "frequency": 1, "weekdays": "", "importance": null, "difficulty": null,
     "exp": 5, "skillIds": [2], "coin": 10, "coinVariable": 0,
     "itemId": 0, "itemAmount": 0, "words": "", "categoryId": 1,
@@ -514,7 +548,7 @@ Returns `ShopCategory[]`. Optional `include_hidden` defaults to `false`; only th
 
 ### GET /tasks_categories :id=get-tasks-categories
 
-Returns `TaskCategory[]`, including the all category and archived categories. No query parameters or pagination. The HTTP server does not expose `/tasks_categories/{id}`. Category sort/filter values are stored app preferences; this endpoint does not apply them as request filters.
+Returns `TaskCategory[]`, including the all category and archived categories. Enabled daily/weekly/monthly smart lists appear with `type` `10`/`11`/`12` and their stored category `id`; disabled smart lists are omitted. No query parameters or pagination. The HTTP server does not expose `/tasks_categories/{id}`. Category sort/filter values are stored app preferences; this endpoint does not apply them as request filters.
 
 ```json
 {"code":200,"message":"success","data":[{"id":1,"name":"Daily","isAsc":true,"sort":"order","filter":"","order":0,"status":0,"type":0}]}
@@ -531,7 +565,7 @@ Returns `TaskCategory[]`, including the all category and archived categories. No
 | `filter` | string | Stored grouping/filter preference. |
 | `order` | integer | Category order. |
 | `status` | integer | 0 normal; 1 archived. |
-| `type` | integer | 0 normal; smart lists use 10 daily, 11 weekly, 12 monthly, 20 doing. |
+| `type` | integer | 0 normal; smart lists use 10 daily, 11 weekly, 12 monthly. |
 
 ## Skills and skill groups :id=get-skills
 

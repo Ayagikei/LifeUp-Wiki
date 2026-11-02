@@ -7,7 +7,7 @@ LifeUp Cloud istek parametreleri ve tam HTTP yanıt modelleri için bu başvuruy
 | Kaynak | Yöntemler ve yollar | Parametreler ve model |
 | --- | --- | --- |
 | Ortak kurallar | JSON yanıtları, yetkilendirme, önbellek koşulları, sayfalama | [Kurallar](#representations), [önbellek ve yetkilendirme](#auth-cache), [sayfalama](#pagination) |
-| Görevler | `GET /tasks`, `GET /tasks/{categoryId}`, `GET /tasks_categories` | [Sorgular](#get-tasks), [görev modeli](#task-fields), [kategoriler](#get-tasks-categories) |
+| Görevler | `GET /tasks`, `GET /tasks/{categoryId}`, `GET /tasks_categories`, `GET /smart_lists/{type}/tasks` | [Sorgular](#get-tasks), [türe göre akıllı listeler](#get-smart-list-tasks), [görev modeli](#task-fields), [kategoriler](#get-tasks-categories) |
 | Görev geçmişi | `GET /history` | [Parametreler](#get-history), [zaman damgaları](#task-times), [günlük raporlar](#daily-report) |
 | Eşyalar | `GET /items`, `GET /items/{listId}`, `GET /items_categories` | [Eşya ID'leri, kategori ID'leri ve tam modeller](#get-items) |
 | Özellikler | `GET /skills`, `GET /skill_groups` | [Özellikler ve gruplar](#get-skills) |
@@ -114,11 +114,11 @@ Güncel HTTP SDK, tarih sınırlarını yalnızca **ikisi de** tam sayı olarak 
 
 ## MCP farkları :id=mcp-differences
 
-MCP liste araçları varsayılan olarak `limit=20` kullanır, bunu `1..100` aralığıyla sınırlar ve `offset` için en az `0` uygular. Geçmiş/işlem günlükleri gibi sunucuda sayfalanan kaynaklara sayfalama gönderir; görevler gibi kaynaklarda ise tam HTTP dizisini alıp yerel olarak dilimler. `items`, `count`, `hasMore` ve isteğe bağlı `total`, MCP zarfına aittir. `detail=false` ayrıca her kayıttan alanları kaldırır; tam HTTP modeli gerektiğinde `detail=true` kullanın.
+MCP liste araçları varsayılan olarak `limit=20` kullanır, bunu `1..100` aralığıyla sınırlar ve `offset` için en az `0` uygular. Geçmiş/işlem günlükleri gibi sunucuda sayfalanan kaynaklara sayfalama gönderir; görevler gibi kaynaklarda ise tam HTTP dizisini alıp yerel olarak dilimler. `items`, `count`, `hasMore` ve isteğe bağlı `total`, MCP zarfına aittir. `detail=false` ayrıca her kayıttan alanları kaldırır; tam HTTP modeli gerektiğinde `detail=true` kullanın. Görevlerde isteğe bağlı `smartListType` (`daily`, `weekly`, `monthly`) `GET /smart_lists/{type}/tasks` çağrısını yapar ve `categoryId` ile birlikte kullanılamaz.
 
 ## Kaynaklar ve sürüm kapsamı :id=api-common-sources
 
-Bu başvurular güncel herkese açık SDK'yı ve karşılık gelen LifeUp sağlayıcısının davranışını açıklar. Örneklerde uydurma veriler kullanılır. Kaynak bağlantıları uygulama başvurusudur; yüklü belirli bir sürümün tüm alanları içerdiğinin kanıtı değildir: [HTTP rotaları](https://github.com/Ayagikei/LifeUp-SDK/blob/main/http/src/main/java/net/lifeupapp/lifeup/http/service/KtorService.kt), [HTTP sarmalayıcısı](https://github.com/Ayagikei/LifeUp-SDK/blob/main/http/src/main/java/net/lifeupapp/lifeup/http/vo/HttpResponse.kt), [MCP sorgu eşlemesi](https://github.com/Ayagikei/LifeUp-SDK/blob/main/mcp/src/query.ts).
+Bu başvurular güncel herkese açık SDK'yı ve karşılık gelen LifeUp sağlayıcısının davranışını açıklar. Örneklerde uydurma veriler kullanılır. Kaynak bağlantıları uygulama başvurusudur; yüklü belirli bir sürümün tüm alanları içerdiğinin kanıtı değildir: [HTTP rotaları](https://github.com/Ayagikei/LifeUp-SDK/blob/main/http/src/main/java/net/lifeupapp/lifeup/http/service/KtorService.kt), [HTTP sarmalayıcısı](https://github.com/Ayagikei/LifeUp-SDK/blob/main/http/src/main/java/net/lifeupapp/lifeup/http/vo/HttpResponse.kt), [MCP sorgu eşlemesi](https://github.com/Ayagikei/LifeUp-SDK/blob/main/mcp/src/query.ts). Akıllı liste görev sorguları (`GET /smart_lists/{type}/tasks`), kaynak kodda **2026-11-02** itibarıyla LifeUp **1.107.4** sağlayıcı sözleşmesiyle uyumludur; bu URI olmayan eski App derlemeleri diğer bilinmeyen ContentProvider yolları gibi başarısız olur — güvenmeden önce `/info` ile kontrol edin.
 
 
 ## Görev ve geçmiş veri modelleri :id=task-history-models
@@ -138,6 +138,7 @@ Aşağıdaki tüm alanlar güncel HTTP nesnesinde bulunur. Eksik sağlayıcı de
 | `name` | string | Görev adı. Sağlayıcıda ad yoksa `ERROR: name is null` olur. |
 | `notes` | string | Notlar; yoksa boş metin. |
 | `status` | integer | Görev durumu; eksik değer varsayılan olarak `0` olur. Aşağıdaki durum tablosuna bakın. |
+| `isFrozen` | boolean veya `null` | Donmuş durum, `status`ten bağımsız (`status=0` donmuş olabilir). LifeUp sağlayıcısı ve Cloud SDK sütunu verdiğinde gerçek boolean; eski App'te sütun yok/null ise `null` (bilinmiyor, `false` ile aynı değil). |
 | `startTime` | integer | Milisaniye cinsinden yapılandırılmış başlangıç zamanı; SDK varsayılanı `0`. |
 | `deadline` | integer | Milisaniye cinsinden son tarih; yoksa SDK varsayılanı `0`. |
 | `remindTime` | integer | Milisaniye cinsinden hatırlatma zamanı; yoksa SDK varsayılanı `0`. |
@@ -160,6 +161,10 @@ Aşağıdaki tüm alanlar güncel HTTP nesnesinde bulunur. Eksik sağlayıcı de
 | `subTasks` | `SubTask[]` | İç içe alt görevler; kullanılamıyorsa boş dizi. |
 | `countProgress` | `TaskCountProgress` or `null` | Varsa sayaç ilerlemesinin anlık görüntüsü; her iki görünümde de bulunabilir. |
 | `repeatEndCondition` | `TaskRepeatEndCondition` or `null` | `/tasks` için yineleme bitiş kuralı; `/history` içinde daima `null`. |
+
+
+> [!NOTE]
+> `isFrozen` alanının eklenmesi mevcut liste üyeliğini veya varsayılan filtrelemeyi değiştirmez; alan kullanılabilir olduğunda istemci tarafında bu alana göre filtreleyin. Alan güncellenmiş LifeUp sağlayıcısı ve Cloud SDK gerektirir—MCP tek başına sağlayamaz. Cloud güncellendikten sonra MCP task/history kayıtları `detail=true` ile `isFrozen` içerir; eski MCP compact beyaz listeleri MCP güncellenene kadar atlayabilir.
 
 ### Görev durumu ve zaman damgaları :id=task-times
 
@@ -278,7 +283,7 @@ GET http://{host:port}/tasks/1
   "message": "success",
   "data": [{
     "id": 101, "gid": 10, "name": "Read a chapter", "notes": "",
-    "status": 0, "startTime": 1792108800000, "deadline": 1792195199999,
+    "status": 0, "isFrozen": false, "startTime": 1792108800000, "deadline": 1792195199999,
     "remindTime": 0, "frequency": 1, "weekdays": "", "importance": 3, "difficulty": 2,
     "exp": 5, "skillIds": [2], "coin": 10, "coinVariable": 0,
     "itemId": 0, "itemAmount": 0, "words": "", "categoryId": 1,
@@ -290,6 +295,36 @@ GET http://{host:port}/tasks/1
 ```
 
 **Davranış ve hatalar:** liste seçimi/sıralaması LifeUp'ın görev listesi mantığını izler; bu uç nokta tamamlama zamanına göre sıralama sözü vermez. Başarılı bir `data: []`, seçilen görev listesinin kayıt döndürmediği anlamına gelir. İzin/sağlayıcı hataları [ortak hata sarmalayıcısını](/guide/api-reference?id=response-errors) kullanır; boş dizi değildir. Tamamlama raporları için bu rotanın `endTime` alanı yerine aşağıdaki `/history` kullanın.
+
+> [!NOTE]
+> Varsayılan `/tasks`, `/tasks/-1` (Tümü) rotaları ve bilinen bir akıllı liste kategori kimliğiyle sorgulanan akıllı listeler, App akıllı liste görünümleriyle aynı arşivlenmiş/silinmiş/eksik kaynak filtrelemesini uygular. Belirli bir normal liste — arşivlenmiş dahil — için doğrudan `GET /tasks/{categoryId}` yine o listenin bitmemiş görevlerini döndürür. Akıllı listeleri etkinleştirmeden veya kimlik çözmeden günlük/haftalık/aylık üyelere ihtiyaç duyduğunuzda [GET /smart_lists/{type}/tasks](#get-smart-list-tasks) tercih edin.
+
+### GET /smart_lists/{type}/tasks :id=get-smart-list-tasks
+
+App tarih/hafta/ay kurallarına göre günlük, haftalık veya aylık akıllı listenin **bitmemiş** görevlerini sorgular. Akıllı listelerin App’te etkin olması gerekmez ve çağıranların akıllı liste kategori kimliğine ihtiyacı yoktur. Yanıt, [GET /tasks](#get-tasks) ile aynı düz `Task[]` dizisidir; her kayıt orijinal normal liste `categoryId` değerini korur. Bu rota salt okunurdur; akıllı liste kategorileri oluşturmaz, etkinleştirmez veya geri yüklemez ve liste tercihlerini değiştirmez; App hafta başlangıcı, tarih ve dondurulmuş görev kuralları değişmez.
+
+| Parametre | Konum | Tür | Zorunlu | Varsayılan / davranış |
+| --- | --- | --- | --- | --- |
+| `type` | Path | string | Evet | Yalnızca küçük harf `daily`, `weekly` veya `monthly`. |
+
+Bu rotada sorgu parametresi, sayfalama veya `categoryId` yoktur.
+
+```text
+GET http://{host:port}/smart_lists/daily/tasks
+GET http://{host:port}/smart_lists/weekly/tasks
+GET http://{host:port}/smart_lists/monthly/tasks
+content://net.sarasarasa.lifeup.provider.api/smart_lists/daily/tasks
+```
+
+SDK: `TasksApi.listSmartListTasks(SmartListType.DAILY)` (`WEEKLY`, `MONTHLY` de).
+
+**Sıralama:** Bu akıllı tür için bir kategori satırı varsa — devre dışı olsa bile — kayıtlı sıralama tercihleri uygulanır. Hiç satır oluşturulmadıysa sıralama, App arayüzünde açık liste yerine Tümü (`-1`) listesinin yapılandırmasını izler.
+
+**Eski kimlik yolu:** `/tasks_categories`, etkin akıllı listeleri `type` `10`/`11`/`12` ve gerçek bir `id` ile döndürebilir (ör. `{"id":37,"type":10,...}` → `GET /tasks/37`). Tür bir kimlik değildir; `10`/`11`/`12` değerlerini `categoryId` yerine kullanmak yerine dönen `id` değerini kullanın (normal veya akıllı listenin `id` değeri meşru olarak `10`, `11` veya `12` olabilir).
+
+**Hatalar:** Geçersiz `type`, HTTP `200` ve `invalid parameter` içeren mesajla body `code=500` döndürür; arka uç sorgusu çalıştırılmaz. `type` segmenti eksik veya `/tasks` segmenti atlanmış yollar HTTP `404` döndürür. Sağlayıcı izin hataları [ortak hata sarmalayıcısını](/guide/api-reference?id=response-errors) kullanır (ör. Cursor null iken body `code=10001`). Bu URI olmayan App sürümleri bilinmeyen yol hatası verir; Tümü görevlere düşmeyin.
+
+**MCP:** `list_tasks({ smartListType: "daily" })` veya `list_data({ resource: "tasks", smartListType: "daily" })`. `smartListType`, `categoryId` ( `0` dahil) ile birlikte kullanılamaz ve görev dışı kaynaklarda reddedilir. Compact/detail çıktı ve istemci tarafı sayfalama diğer görev listesi çağrılarıyla aynıdır.
 
 ### GET /history :id=get-history
 
@@ -316,7 +351,7 @@ GET http://{host:port}/history?offset=0&limit=100&gid=10
   "message": "success",
   "data": [{
     "id": 100, "gid": 10, "name": "Read a chapter", "notes": "",
-    "status": 1, "startTime": 1792022400000, "deadline": 1792108799999,
+    "status": 1, "isFrozen": true, "startTime": 1792022400000, "deadline": 1792108799999,
     "remindTime": 0, "frequency": 1, "weekdays": "", "importance": null, "difficulty": null,
     "exp": 5, "skillIds": [2], "coin": 10, "coinVariable": 0,
     "itemId": 0, "itemAmount": 0, "words": "", "categoryId": 1,
@@ -514,7 +549,7 @@ Bir takvim günü için yerel `dayStart` ve `nextDayStart` hesaplayıp `[dayStar
 
 ### GET /tasks_categories :id=get-tasks-categories
 
-Tümü kategorisi ve arşivlenmiş kategoriler dahil `TaskCategory[]` döndürür. Sorgu parametresi veya sayfalama yoktur. HTTP sunucusu `/tasks_categories/{id}` sunmaz. Kategori sıralama/filtre değerleri kayıtlı uygulama tercihleridir; bu uç nokta bunları istek filtresi olarak uygulamaz.
+Tümü kategorisi ve arşivlenmiş kategoriler dahil `TaskCategory[]` döndürür. Etkin günlük/haftalık/aylık akıllı listeler `type` `10`/`11`/`12` ve kayıtlı kategori `id` ile görünür; devre dışı akıllı listeler dahil edilmez. Sorgu parametresi veya sayfalama yoktur. HTTP sunucusu `/tasks_categories/{id}` sunmaz. Kategori sıralama/filtre değerleri kayıtlı uygulama tercihleridir; bu uç nokta bunları istek filtresi olarak uygulamaz.
 
 ```json
 {"code":200,"message":"success","data":[{"id":1,"name":"Daily","isAsc":true,"sort":"order","filter":"","order":0,"status":0,"type":0}]}
@@ -531,7 +566,7 @@ Tümü kategorisi ve arşivlenmiş kategoriler dahil `TaskCategory[]` döndürü
 | `filter` | string | Kayıtlı gruplama/filtreleme tercihi. |
 | `order` | integer | Kategori sırası. |
 | `status` | integer | 0 normal; 1 arşivlenmiş. |
-| `type` | integer | 0 normal; akıllı listelerde 10 günlük, 11 haftalık, 12 aylık, 20 yapılıyor. |
+| `type` | integer | 0 normal; akıllı listelerde 10 günlük, 11 haftalık, 12 aylık. |
 
 ## Özellikler ve özellik grupları :id=get-skills
 

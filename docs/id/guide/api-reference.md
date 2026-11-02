@@ -7,7 +7,7 @@ Gunakan referensi ini untuk parameter permintaan LifeUp Cloud dan model respons 
 | Sumber daya | Metode dan jalur | Parameter dan model |
 | --- | --- | --- |
 | Aturan umum | Respons JSON, otorisasi, kondisi cache, paginasi | [Konvensi](#representations), [cache dan otorisasi](#auth-cache), [paginasi](#pagination) |
-| Tugas | `GET /tasks`, `GET /tasks/{categoryId}`, `GET /tasks_categories` | [Kueri](#get-tasks), [model tugas](#task-fields), [kategori](#get-tasks-categories) |
+| Tugas | `GET /tasks`, `GET /tasks/{categoryId}`, `GET /tasks_categories`, `GET /smart_lists/{type}/tasks` | [Kueri](#get-tasks), [daftar pintar menurut jenis](#get-smart-list-tasks), [model tugas](#task-fields), [kategori](#get-tasks-categories) |
 | Riwayat tugas | `GET /history` | [Parameter](#get-history), [stempel waktu](#task-times), [laporan harian](#daily-report) |
 | Item | `GET /items`, `GET /items/{listId}`, `GET /items_categories` | [ID item, ID kategori, dan model lengkap](#get-items) |
 | Atribut | `GET /skills`, `GET /skill_groups` | [Atribut dan grup](#get-skills) |
@@ -114,11 +114,11 @@ Pada SDK HTTP saat ini, batas tanggal diteruskan hanya jika **keduanya** dapat d
 
 ## Perbedaan MCP :id=mcp-differences
 
-Alat daftar MCP memakai nilai bawaan `limit=20`, membatasinya ke `1..100`, dan membatasi `offset` agar setidaknya `0`. Alat ini mengirim paginasi ke sumber daya yang dipaginasi server seperti riwayat/jurnal, tetapi mengambil seluruh larik HTTP dan memotongnya secara lokal untuk sumber daya seperti tugas. `items`, `count`, `hasMore`, dan `total` opsionalnya termasuk pembungkus MCP. `detail=false` juga menghapus kolom dari setiap rekaman; gunakan `detail=true` saat memerlukan model HTTP lengkap.
+Alat daftar MCP memakai nilai bawaan `limit=20`, membatasinya ke `1..100`, dan membatasi `offset` agar setidaknya `0`. Alat ini mengirim paginasi ke sumber daya yang dipaginasi server seperti riwayat/jurnal, tetapi mengambil seluruh larik HTTP dan memotongnya secara lokal untuk sumber daya seperti tugas. `items`, `count`, `hasMore`, dan `total` opsionalnya termasuk pembungkus MCP. `detail=false` juga menghapus kolom dari setiap rekaman; gunakan `detail=true` saat memerlukan model HTTP lengkap. Untuk tugas, `smartListType` opsional (`daily`, `weekly`, `monthly`) memanggil `GET /smart_lists/{type}/tasks` dan saling eksklusif dengan `categoryId`.
 
 ## Sumber dan cakupan versi :id=api-common-sources
 
-Referensi ini menjelaskan SDK publik saat ini dan perilaku penyedia LifeUp yang terkait. Contoh memakai data rekaan. Tautan sumber adalah referensi implementasi, bukan bukti bahwa versi tertentu yang terpasang memuat semua kolom: [rute HTTP](https://github.com/Ayagikei/LifeUp-SDK/blob/main/http/src/main/java/net/lifeupapp/lifeup/http/service/KtorService.kt), [pembungkus HTTP](https://github.com/Ayagikei/LifeUp-SDK/blob/main/http/src/main/java/net/lifeupapp/lifeup/http/vo/HttpResponse.kt), [pemetaan kueri MCP](https://github.com/Ayagikei/LifeUp-SDK/blob/main/mcp/src/query.ts).
+Referensi ini menjelaskan SDK publik saat ini dan perilaku penyedia LifeUp yang terkait. Contoh memakai data rekaan. Tautan sumber adalah referensi implementasi, bukan bukti bahwa versi tertentu yang terpasang memuat semua kolom: [rute HTTP](https://github.com/Ayagikei/LifeUp-SDK/blob/main/http/src/main/java/net/lifeupapp/lifeup/http/service/KtorService.kt), [pembungkus HTTP](https://github.com/Ayagikei/LifeUp-SDK/blob/main/http/src/main/java/net/lifeupapp/lifeup/http/vo/HttpResponse.kt), [pemetaan kueri MCP](https://github.com/Ayagikei/LifeUp-SDK/blob/main/mcp/src/query.ts). Kueri tugas daftar pintar (`GET /smart_lists/{type}/tasks`) sesuai kontrak penyedia LifeUp **1.107.4** di sumber per **2026-11-02**; build App lama tanpa URI itu gagal seperti jalur ContentProvider tidak dikenal lainnya — periksa `/info` sebelum mengandalkannya.
 
 
 ## Model data tugas dan riwayat :id=task-history-models
@@ -138,6 +138,7 @@ Semua kolom di bawah muncul dalam objek HTTP saat ini. Nilai penyedia yang tidak
 | `name` | string | Nama tugas. Nama penyedia yang tidak ada menjadi `ERROR: name is null`. |
 | `notes` | string | Catatan; string kosong jika tidak ada. |
 | `status` | integer | Status tugas; nilai yang tidak ada menjadi `0`. Lihat tabel status di bawah. |
+| `isFrozen` | boolean atau `null` | Status beku, independen dari `status` (`status=0` bisa beku). Boolean aktual saat provider LifeUp dan Cloud SDK mengekspos kolom; `null` di App lama tanpa kolom/null (tidak diketahui, bukan sama dengan `false`). |
 | `startTime` | integer | Waktu mulai yang dikonfigurasi dalam milidetik; nilai pengganti SDK `0`. |
 | `deadline` | integer | Tenggat dalam milidetik; nilai pengganti SDK `0` jika tidak ada. |
 | `remindTime` | integer | Waktu pengingat dalam milidetik; nilai pengganti SDK `0` jika tidak ada. |
@@ -160,6 +161,10 @@ Semua kolom di bawah muncul dalam objek HTTP saat ini. Nilai penyedia yang tidak
 | `subTasks` | `SubTask[]` | Subtugas bertingkat; larik kosong jika tidak tersedia. |
 | `countProgress` | `TaskCountProgress` atau `null` | Snapshot progres hitungan jika tersedia; dapat muncul pada kedua tampilan. |
 | `repeatEndCondition` | `TaskRepeatEndCondition` atau `null` | Aturan akhir pengulangan pada `/tasks`; selalu `null` pada `/history`. |
+
+
+> [!NOTE]
+> Menambahkan `isFrozen` tidak mengubah keanggotaan atau filter bawaan daftar yang ada; filter di klien dengan field ini bila tersedia. Field memerlukan provider LifeUp dan Cloud SDK yang diperbarui—MCP saja tidak bisa menyediakannya. Setelah Cloud diperbarui, record task/history MCP menyertakan `isFrozen` dengan `detail=true`; whitelist compact MCP lama dapat mengabaikannya hingga MCP diperbarui.
 
 ### Status dan stempel waktu tugas :id=task-times
 
@@ -278,7 +283,7 @@ GET http://{host:port}/tasks/1
   "message": "success",
   "data": [{
     "id": 101, "gid": 10, "name": "Read a chapter", "notes": "",
-    "status": 0, "startTime": 1792108800000, "deadline": 1792195199999,
+    "status": 0, "isFrozen": false, "startTime": 1792108800000, "deadline": 1792195199999,
     "remindTime": 0, "frequency": 1, "weekdays": "", "importance": 3, "difficulty": 2,
     "exp": 5, "skillIds": [2], "coin": 10, "coinVariable": 0,
     "itemId": 0, "itemAmount": 0, "words": "", "categoryId": 1,
@@ -290,6 +295,36 @@ GET http://{host:port}/tasks/1
 ```
 
 **Perilaku dan kesalahan:** pemilihan/urutan daftar mengikuti logika daftar tugas LifeUp; endpoint ini tidak menjanjikan urutan berdasarkan waktu penyelesaian. `data: []` yang berhasil berarti daftar tugas terpilih tidak mengembalikan rekaman. Kegagalan izin/penyedia memakai [pembungkus kesalahan bersama](/guide/api-reference?id=response-errors); hasilnya bukan larik kosong. Untuk laporan penyelesaian, gunakan `/history` di bawah, bukan `endTime` rute ini.
+
+> [!NOTE]
+> Rute bawaan `/tasks`, `/tasks/-1` (Semua), dan daftar pintar yang diquery dengan ID kategori daftar pintar yang dikenal menerapkan filter sumber yang diarsipkan, dihapus, atau hilang sama seperti tampilan daftar pintar App. `GET /tasks/{categoryId}` langsung untuk daftar normal tertentu — termasuk yang diarsipkan — tetap mengembalikan tugas belum selesai daftar itu. Utamakan [GET /smart_lists/{type}/tasks](#get-smart-list-tasks) bila Anda butuh anggota harian/mingguan/bulanan tanpa mengaktifkan daftar pintar atau menyelesaikan ID.
+
+### GET /smart_lists/{type}/tasks :id=get-smart-list-tasks
+
+Mengquery tugas **belum selesai** untuk daftar pintar harian, mingguan, atau bulanan sesuai aturan tanggal/minggu/bulan App. Daftar pintar tidak perlu diaktifkan di App, dan pemanggil tidak memerlukan ID kategori daftar pintar. Responsnya adalah `Task[]` datar yang sama dengan [GET /tasks](#get-tasks); setiap rekaman mempertahankan `categoryId` daftar normal aslinya. Rute ini hanya-baca: tidak membuat, mengaktifkan, atau memulihkan kategori daftar pintar dan tidak mengubah preferensi daftar; aturan awal minggu, tanggal, dan tugas beku App tetap sama.
+
+| Parameter | Lokasi | Tipe | Wajib | Bawaan / perilaku |
+| --- | --- | --- | --- | --- |
+| `type` | Path | string | Ya | Hanya `daily`, `weekly`, atau `monthly` huruf kecil. |
+
+Tidak ada parameter kueri, paginasi, atau `categoryId` pada rute ini.
+
+```text
+GET http://{host:port}/smart_lists/daily/tasks
+GET http://{host:port}/smart_lists/weekly/tasks
+GET http://{host:port}/smart_lists/monthly/tasks
+content://net.sarasarasa.lifeup.provider.api/smart_lists/daily/tasks
+```
+
+SDK: `TasksApi.listSmartListTasks(SmartListType.DAILY)` (juga `WEEKLY`, `MONTHLY`).
+
+**Pengurutan:** Bila ada baris kategori untuk jenis pintar itu — meski dinonaktifkan — preferensi urutan tersimpan diterapkan. Bila baris belum pernah dibuat, urutan mengikuti konfigurasi daftar Semua (`-1`), bukan daftar yang terbuka di UI App.
+
+**Jalur ID lama:** `/tasks_categories` dapat mengembalikan daftar pintar yang diaktifkan dengan `type` `10`/`11`/`12` dan `id` nyata (mis. `{"id":37,"type":10,...}` → `GET /tasks/37`). Jenis bukan ID; gunakan `id` yang dikembalikan, jangan mengganti `10`/`11`/`12` sebagai `categoryId` (daftar normal atau pintar dapat sah memiliki `id` `10`, `11`, atau `12`).
+
+**Kesalahan:** `type` tidak valid mengembalikan HTTP `200` dengan body `code=500` dan pesan berisi `invalid parameter`; kueri backend tidak dijalankan. Jalur tanpa segmen `type` atau tanpa segmen `/tasks` mengembalikan HTTP `404`. Kegagalan izin penyedia memakai [pembungkus kesalahan bersama](/guide/api-reference?id=response-errors) (mis. body `code=10001` saat Cursor null). Versi App tanpa URI ini menampilkan kesalahan jalur tidak dikenal; jangan fallback ke Semua tugas.
+
+**MCP:** `list_tasks({ smartListType: "daily" })` atau `list_data({ resource: "tasks", smartListType: "daily" })`. `smartListType` mengecualikan `categoryId` (termasuk `0`) dan ditolak pada sumber daya selain tugas. Output ringkas/detail dan paginasi klien sama dengan panggilan daftar tugas lainnya.
 
 ### GET /history :id=get-history
 
@@ -316,7 +351,7 @@ GET http://{host:port}/history?offset=0&limit=100&gid=10
   "message": "success",
   "data": [{
     "id": 100, "gid": 10, "name": "Read a chapter", "notes": "",
-    "status": 1, "startTime": 1792022400000, "deadline": 1792108799999,
+    "status": 1, "isFrozen": true, "startTime": 1792022400000, "deadline": 1792108799999,
     "remindTime": 0, "frequency": 1, "weekdays": "", "importance": null, "difficulty": null,
     "exp": 5, "skillIds": [2], "coin": 10, "coinVariable": 0,
     "itemId": 0, "itemAmount": 0, "words": "", "categoryId": 1,
@@ -514,7 +549,7 @@ Mengembalikan `ShopCategory[]`. `include_hidden` opsional bernilai awal `false`;
 
 ### GET /tasks_categories :id=get-tasks-categories
 
-Mengembalikan `TaskCategory[]`, termasuk kategori semua dan kategori arsip. Tanpa parameter kueri atau paginasi. Server HTTP tidak menyediakan `/tasks_categories/{id}`. Nilai pengurutan/filter kategori adalah preferensi app tersimpan; endpoint ini tidak menerapkannya sebagai filter permintaan.
+Mengembalikan `TaskCategory[]`, termasuk kategori semua dan kategori arsip. Daftar pintar harian/mingguan/bulanan yang diaktifkan muncul dengan `type` `10`/`11`/`12` dan `id` kategori tersimpan; daftar pintar nonaktif dihilangkan. Tanpa parameter kueri atau paginasi. Server HTTP tidak menyediakan `/tasks_categories/{id}`. Nilai pengurutan/filter kategori adalah preferensi app tersimpan; endpoint ini tidak menerapkannya sebagai filter permintaan.
 
 ```json
 {"code":200,"message":"success","data":[{"id":1,"name":"Daily","isAsc":true,"sort":"order","filter":"","order":0,"status":0,"type":0}]}
@@ -531,7 +566,7 @@ Mengembalikan `TaskCategory[]`, termasuk kategori semua dan kategori arsip. Tanp
 | `filter` | string | Preferensi pengelompokan/filter tersimpan. |
 | `order` | integer | Urutan kategori. |
 | `status` | integer | 0 normal; 1 diarsipkan. |
-| `type` | integer | 0 normal; daftar pintar menggunakan 10 harian, 11 mingguan, 12 bulanan, 20 sedang dikerjakan. |
+| `type` | integer | 0 normal; daftar pintar menggunakan 10 harian, 11 mingguan, 12 bulanan. |
 
 ## Atribut dan grup atribut :id=get-skills
 

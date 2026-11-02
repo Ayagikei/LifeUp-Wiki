@@ -7,7 +7,7 @@
 | Ресурс | Методы и пути | Параметры и модель |
 | --- | --- | --- |
 | Общие правила | Ответы JSON, авторизация, условия кэширования, разбиение на страницы | [Соглашения](#representations), [кэш и авторизация](#auth-cache), [страницы](#pagination) |
-| Задачи | `GET /tasks`, `GET /tasks/{categoryId}`, `GET /tasks_categories` | [Запросы](#get-tasks), [модель задачи](#task-fields), [категории](#get-tasks-categories) |
+| Задачи | `GET /tasks`, `GET /tasks/{categoryId}`, `GET /tasks_categories`, `GET /smart_lists/{type}/tasks` | [Запросы](#get-tasks), [умные списки по типу](#get-smart-list-tasks), [модель задачи](#task-fields), [категории](#get-tasks-categories) |
 | История задач | `GET /history` | [Параметры](#get-history), [временные метки](#task-times), [дневные отчёты](#daily-report) |
 | Предметы | `GET /items`, `GET /items/{listId}`, `GET /items_categories` | [ID предметов, ID категорий и полные модели](#get-items) |
 | Навыки | `GET /skills`, `GET /skill_groups` | [Навыки и группы](#get-skills) |
@@ -114,11 +114,11 @@ MCP использует отдельное представление клие�
 
 ## Отличия MCP :id=mcp-differences
 
-Инструменты списков MCP по умолчанию используют `limit=20`, ограничивают его диапазоном `1..100`, а `offset` — снизу значением `0`. Для ресурсов с серверной пагинацией, например истории/журналов, они передают параметры пагинации серверу, а для ресурсов вроде задач получают полный массив HTTP и выделяют страницу локально. Их поля `items`, `count`, `hasMore` и необязательное `total` принадлежат обёртке MCP. `detail=false` также удаляет поля из каждой записи; если нужна полная модель HTTP, используйте `detail=true`.
+Инструменты списков MCP по умолчанию используют `limit=20`, ограничивают его диапазоном `1..100`, а `offset` — снизу значением `0`. Для ресурсов с серверной пагинацией, например истории/журналов, они передают параметры пагинации серверу, а для ресурсов вроде задач получают полный массив HTTP и выделяют страницу локально. Их поля `items`, `count`, `hasMore` и необязательное `total` принадлежат обёртке MCP. `detail=false` также удаляет поля из каждой записи; если нужна полная модель HTTP, используйте `detail=true`. Для задач необязательный `smartListType` (`daily`, `weekly`, `monthly`) вызывает `GET /smart_lists/{type}/tasks` и несовместим с `categoryId`.
 
 ## Источники и область версий :id=api-common-sources
 
-Эти справочники описывают текущий публичный SDK и соответствующее поведение провайдера LifeUp. В примерах используются вымышленные данные. Ссылки на исходники служат справкой по реализации, а не доказательством наличия всех полей в конкретной установленной версии: [маршруты HTTP](https://github.com/Ayagikei/LifeUp-SDK/blob/main/http/src/main/java/net/lifeupapp/lifeup/http/service/KtorService.kt), [обёртка HTTP](https://github.com/Ayagikei/LifeUp-SDK/blob/main/http/src/main/java/net/lifeupapp/lifeup/http/vo/HttpResponse.kt), [сопоставление запросов MCP](https://github.com/Ayagikei/LifeUp-SDK/blob/main/mcp/src/query.ts).
+Эти справочники описывают текущий публичный SDK и соответствующее поведение провайдера LifeUp. В примерах используются вымышленные данные. Ссылки на исходники служат справкой по реализации, а не доказательством наличия всех полей в конкретной установленной версии: [маршруты HTTP](https://github.com/Ayagikei/LifeUp-SDK/blob/main/http/src/main/java/net/lifeupapp/lifeup/http/service/KtorService.kt), [обёртка HTTP](https://github.com/Ayagikei/LifeUp-SDK/blob/main/http/src/main/java/net/lifeupapp/lifeup/http/vo/HttpResponse.kt), [сопоставление запросов MCP](https://github.com/Ayagikei/LifeUp-SDK/blob/main/mcp/src/query.ts). Запросы задач умных списков (`GET /smart_lists/{type}/tasks`) соответствуют контракту провайдера LifeUp **1.107.4** в исходниках на **2026-11-02**; более старые сборки App без этого URI завершаются ошибкой, как и другие неизвестные пути ContentProvider — проверьте `/info` перед использованием.
 
 
 ## Модели данных задач и истории :id=task-history-models
@@ -138,6 +138,7 @@ SDK использует один сериализуемый класс `Task` �
 | `name` | string | Название задачи. Отсутствующее название провайдера становится `ERROR: name is null`. |
 | `notes` | string | Заметки; пустая строка при отсутствии. |
 | `status` | integer | Статус задачи; при отсутствии используется `0`. См. таблицу статусов ниже. |
+| `isFrozen` | boolean или `null` | Состояние «заморожено», независимо от `status` (`status=0` может быть заморожен). Фактический boolean, когда провайдер LifeUp и Cloud SDK отдают столбец; `null` в старых App без столбца/null (неизвестно, не то же самое, что `false`). |
 | `startTime` | integer | Настроенное время начала в миллисекундах; подстановка SDK `0`. |
 | `deadline` | integer | Срок выполнения в миллисекундах; подстановка SDK при отсутствии — `0`. |
 | `remindTime` | integer | Время напоминания в миллисекундах; подстановка SDK при отсутствии — `0`. |
@@ -160,6 +161,10 @@ SDK использует один сериализуемый класс `Task` �
 | `subTasks` | `SubTask[]` | Вложенные подзадачи; пустой массив при недоступности. |
 | `countProgress` | `TaskCountProgress` или `null` | Снимок прогресса счётчика, если доступен; может присутствовать в обоих представлениях. |
 | `repeatEndCondition` | `TaskRepeatEndCondition` или `null` | Правило окончания повторений в `/tasks`; всегда `null` в `/history`. |
+
+
+> [!NOTE]
+> Добавление `isFrozen` не меняет состав и фильтрацию по умолчанию существующих списков; фильтруйте на клиенте по этому полю, когда оно доступно. Поле требует обновлённого провайдера LifeUp и Cloud SDK — один MCP его не даст. После обновления Cloud записи task/history в MCP включают `isFrozen` при `detail=true`; старые compact‑whitelist MCP могут опускать поле до обновления MCP.
 
 ### Статусы и временные метки задачи :id=task-times
 
@@ -278,7 +283,7 @@ GET http://{host:port}/tasks/1
   "message": "success",
   "data": [{
     "id": 101, "gid": 10, "name": "Read a chapter", "notes": "",
-    "status": 0, "startTime": 1792108800000, "deadline": 1792195199999,
+    "status": 0, "isFrozen": false, "startTime": 1792108800000, "deadline": 1792195199999,
     "remindTime": 0, "frequency": 1, "weekdays": "", "importance": 3, "difficulty": 2,
     "exp": 5, "skillIds": [2], "coin": 10, "coinVariable": 0,
     "itemId": 0, "itemAmount": 0, "words": "", "categoryId": 1,
@@ -290,6 +295,36 @@ GET http://{host:port}/tasks/1
 ```
 
 **Поведение и ошибки:** выбор и порядок списка следуют логике списка задач LifeUp; конечная точка не гарантирует сортировку по времени выполнения. Успешный `data: []` означает, что выбранный список задач не вернул записей. Ошибки разрешений/провайдера используют [общую обёртку ошибок](/guide/api-reference?id=response-errors), а не пустые массивы. Для отчётов о выполнении используйте `/history` ниже, а не `endTime` этого маршрута.
+
+> [!NOTE]
+> Маршруты по умолчанию `/tasks`, `/tasks/-1` (Все) и умные списки, запрашиваемые по известному ID категории умного списка, применяют ту же фильтрацию архивных, удалённых или отсутствующих исходных категорий, что и представления умных списков в App. Прямой `GET /tasks/{categoryId}` для конкретного обычного списка — включая архивный — по-прежнему возвращает незавершённые задачи этого списка. Предпочитайте [GET /smart_lists/{type}/tasks](#get-smart-list-tasks), если нужны участники дня/недели/месяца без включения умных списков и без разрешения ID.
+
+### GET /smart_lists/{type}/tasks :id=get-smart-list-tasks
+
+Запрашивает **незавершённые** задачи умного списка на день, неделю или месяц по правилам даты/недели/месяца App. Умные списки не обязаны быть включены в App, и вызывающей стороне не нужен ID категории умного списка. Ответ — тот же плоский `Task[]`, что и у [GET /tasks](#get-tasks); каждая запись сохраняет исходный `categoryId` обычного списка. Маршрут только для чтения: он не создаёт, не включает и не восстанавливает категории умных списков и не меняет настройки списков; правила начала недели, даты и замороженных задач в App не меняются.
+
+| Параметр | Расположение | Тип | Обязателен | По умолчанию / поведение |
+| --- | --- | --- | --- | --- |
+| `type` | Path | string | Да | Только строчные `daily`, `weekly` или `monthly`. |
+
+На этом маршруте нет параметров запроса, пагинации или `categoryId`.
+
+```text
+GET http://{host:port}/smart_lists/daily/tasks
+GET http://{host:port}/smart_lists/weekly/tasks
+GET http://{host:port}/smart_lists/monthly/tasks
+content://net.sarasarasa.lifeup.provider.api/smart_lists/daily/tasks
+```
+
+SDK: `TasksApi.listSmartListTasks(SmartListType.DAILY)` (также `WEEKLY`, `MONTHLY`).
+
+**Сортировка:** Если для этого типа умного списка существует строка категории — даже отключённая — применяются сохранённые настройки сортировки. Если строка никогда не создавалась, порядок следует конфигурации списка Все (`-1`), а не списку, открытому в UI App.
+
+**Устаревший путь по ID:** `/tasks_categories` может возвращать включённые умные списки с `type` `10`/`11`/`12` и реальным `id` (например `{"id":37,"type":10,...}` → `GET /tasks/37`). Тип — это не ID; используйте возвращённый `id`, а не подставляйте `10`/`11`/`12` вместо `categoryId` (у обычного или умного списка `id` вполне может быть `10`, `11` или `12`).
+
+**Ошибки:** Недопустимый `type` возвращает HTTP `200` с body `code=500` и сообщением, содержащим `invalid parameter`; запрос к backend не выполняется. Пути без сегмента `type` или без сегмента `/tasks` возвращают HTTP `404`. Ошибки разрешений провайдера используют [общую обёртку ошибок](/guide/api-reference?id=response-errors) (например body `code=10001`, когда Cursor равен null). Версии App без этого URI сообщают об неизвестном пути; не откатывайтесь ко всем задачам.
+
+**MCP:** `list_tasks({ smartListType: "daily" })` или `list_data({ resource: "tasks", smartListType: "daily" })`. `smartListType` исключает `categoryId` (включая `0`) и отклоняется для ресурсов, отличных от задач. Компактный/подробный вывод и клиентская пагинация совпадают с другими вызовами списка задач.
 
 ### GET /history :id=get-history
 
@@ -316,7 +351,7 @@ GET http://{host:port}/history?offset=0&limit=100&gid=10
   "message": "success",
   "data": [{
     "id": 100, "gid": 10, "name": "Read a chapter", "notes": "",
-    "status": 1, "startTime": 1792022400000, "deadline": 1792108799999,
+    "status": 1, "isFrozen": true, "startTime": 1792022400000, "deadline": 1792108799999,
     "remindTime": 0, "frequency": 1, "weekdays": "", "importance": null, "difficulty": null,
     "exp": 5, "skillIds": [2], "coin": 10, "coinVariable": 0,
     "itemId": 0, "itemAmount": 0, "words": "", "categoryId": 1,
@@ -514,7 +549,7 @@ GET http://{host:port}/coin_records?offset=0&limit=100&time_range_start=17920224
 
 ### GET /tasks_categories :id=get-tasks-categories
 
-Возвращает `TaskCategory[]`, включая категорию всех задач и архивные категории. Параметров и разбиения на страницы нет. Сервер HTTP не предоставляет `/tasks_categories/{id}`. Значения сортировки/фильтрации категории — сохранённые настройки приложения; эндпоинт не применяет их как фильтры запроса.
+Возвращает `TaskCategory[]`, включая категорию всех задач и архивные категории. Включённые умные списки на день/неделю/месяц появляются с `type` `10`/`11`/`12` и сохранённым `id` категории; отключённые умные списки опускаются. Параметров и разбиения на страницы нет. Сервер HTTP не предоставляет `/tasks_categories/{id}`. Значения сортировки/фильтрации категории — сохранённые настройки приложения; эндпоинт не применяет их как фильтры запроса.
 
 ```json
 {"code":200,"message":"success","data":[{"id":1,"name":"Daily","isAsc":true,"sort":"order","filter":"","order":0,"status":0,"type":0}]}
@@ -531,7 +566,7 @@ GET http://{host:port}/coin_records?offset=0&limit=100&time_range_start=17920224
 | `filter` | string | Сохранённая настройка группировки/фильтрации. |
 | `order` | integer | Порядок категории. |
 | `status` | integer | 0 обычная; 1 архивная. |
-| `type` | integer | 0 обычная; умные списки: 10 на день, 11 на неделю, 12 на месяц, 20 в работе. |
+| `type` | integer | 0 обычная; умные спискi: 10 на день, 11 на неделю, 12 на месяц. |
 
 ## Навыки и группы навыков :id=get-skills
 

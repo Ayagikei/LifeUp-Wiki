@@ -7,7 +7,7 @@
 | 資源 | 方法與路徑 | 參數與模型 |
 | --- | --- | --- |
 | 共用規則 | JSON 回應、授權、快取條件、分頁 | [規則](#representations)、[快取與授權](#auth-cache)、[分頁](#pagination) |
-| 任務 | `GET /tasks`, `GET /tasks/{categoryId}`, `GET /tasks_categories` | [查詢](#get-tasks)、[任務模型](#task-fields)、[分類](#get-tasks-categories) |
+| 任務 | `GET /tasks`, `GET /tasks/{categoryId}`, `GET /tasks_categories`, `GET /smart_lists/{type}/tasks` | [查詢](#get-tasks)、[依類型查智慧清單](#get-smart-list-tasks)、[任務模型](#task-fields)、[分類](#get-tasks-categories) |
 | 任務歷史 | `GET /history` | [參數](#get-history)、[時間戳記](#task-times)、[日報](#daily-report) |
 | 商品 | `GET /items`, `GET /items/{listId}`, `GET /items_categories` | [商品 ID、分類 ID 與完整模型](#get-items) |
 | 屬性 | `GET /skills`, `GET /skill_groups` | [屬性與群組](#get-skills) |
@@ -114,11 +114,11 @@ HTTP JSON 共用 `HttpResponse<T>` 包裝：
 
 ## MCP 的差異 :id=mcp-differences
 
-MCP 列表工具預設 `limit=20`，將其限制在 `1..100`，並將 `offset` 限制為至少 `0`。歷史、流水等資源由伺服器分頁；任務等資源則先讀取完整 HTTP 陣列，再於用戶端擷取。`items`、`count`、`hasMore` 及選填的 `total` 屬於 MCP 包裝。`detail=false` 也會移除每筆紀錄中的部分欄位；需要完整 HTTP 模型時使用 `detail=true`。
+MCP 列表工具預設 `limit=20`，將其限制在 `1..100`，並將 `offset` 限制為至少 `0`。歷史、流水等資源由伺服器分頁；任務等資源則先讀取完整 HTTP 陣列，再於用戶端擷取。`items`、`count`、`hasMore` 及選填的 `total` 屬於 MCP 包裝。`detail=false` 也會移除每筆紀錄中的部分欄位；需要完整 HTTP 模型時使用 `detail=true`。任務列表可選 `smartListType`（`daily`、`weekly`、`monthly`）對應 `GET /smart_lists/{type}/tasks`，與 `categoryId` 互斥。
 
 ## 來源與版本範圍 :id=api-common-sources
 
-本參考描述目前公開 SDK 及對應的人升 Provider 行為，範例使用虛構資料。原始碼連結用於核對實作，不能證明某個已安裝版本具備全部欄位：[HTTP 路由](https://github.com/Ayagikei/LifeUp-SDK/blob/main/http/src/main/java/net/lifeupapp/lifeup/http/service/KtorService.kt)、[HTTP 包裝](https://github.com/Ayagikei/LifeUp-SDK/blob/main/http/src/main/java/net/lifeupapp/lifeup/http/vo/HttpResponse.kt)、[MCP 查詢對應](https://github.com/Ayagikei/LifeUp-SDK/blob/main/mcp/src/query.ts)。
+本參考描述目前公開 SDK 及對應的人升 Provider 行為，範例使用虛構資料。原始碼連結用於核對實作，不能證明某個已安裝版本具備全部欄位：[HTTP 路由](https://github.com/Ayagikei/LifeUp-SDK/blob/main/http/src/main/java/net/lifeupapp/lifeup/http/service/KtorService.kt)、[HTTP 包裝](https://github.com/Ayagikei/LifeUp-SDK/blob/main/http/src/main/java/net/lifeupapp/lifeup/http/vo/HttpResponse.kt)、[MCP 查詢對應](https://github.com/Ayagikei/LifeUp-SDK/blob/main/mcp/src/query.ts)。依類型查詢智慧清單（`GET /smart_lists/{type}/tasks`）與原始碼中人升 **1.107.4** Provider 契約一致（截至 **2026-11-02**）；未提供該 URI 的舊版 App 會依其它未知 ContentProvider 路徑報錯，使用前請透過 `/info` 確認。
 
 ## 任務與歷史資料模型 :id=task-history-models
 
@@ -137,6 +137,7 @@ SDK 使用同一個序列化 `Task` 類別提供兩種檢視。本頁以 `Task` 
 | `name` | 字串 | 任務名稱。Provider 缺少名稱時改為 `ERROR: name is null`。 |
 | `notes` | 字串 | 備註；缺失時為空字串。 |
 | `status` | 整數 | 任務狀態；缺失時預設為 `0`。見下方狀態表。 |
+| `isFrozen` | 布林或 `null` | 冷凍狀態，與 `status` 獨立（`status=0` 仍可能為冷凍）。LifeUp Provider 與 Cloud SDK 暴露該欄時為實際布林值；舊版 App 無該欄或欄位為 null 時為 `null`（未知，不等同於 `false`）。 |
 | `startTime` | 整數 | 設定的開始時間，單位為毫秒；SDK 替代值為 `0`。 |
 | `deadline` | 整數 | 截止時間，單位為毫秒；缺失時 SDK 替代值為 `0`。 |
 | `remindTime` | 整數 | 提醒時間，單位為毫秒；缺失時 SDK 替代值為 `0`。 |
@@ -159,6 +160,10 @@ SDK 使用同一個序列化 `Task` 類別提供兩種檢視。本頁以 `Task` 
 | `subTasks` | `SubTask[]` | 巢狀子任務；無法取得時為空陣列。 |
 | `countProgress` | `TaskCountProgress` 或 `null` | 可取得時的計數進度快照；兩種檢視均可能包含。 |
 | `repeatEndCondition` | `TaskRepeatEndCondition` 或 `null` | `/tasks` 中的重複結束規則；`/history` 中一律為 `null`。 |
+
+
+> [!NOTE]
+> 新增 `isFrozen` 欄位不會改變現有列表成員或預設篩選；可根據欄位在用戶端自行過濾。該欄位需要已更新的 LifeUp Provider 與 Cloud SDK，僅靠 MCP 無法提供。Cloud 更新後，MCP 任務/歷史記錄在 `detail=true` 時會包含 `isFrozen`；未更新的 MCP 精簡白名單可能仍省略該欄。
 
 ### 任務狀態與時間戳記 :id=task-times
 
@@ -276,7 +281,7 @@ GET http://{host:port}/tasks/1
   "message": "success",
   "data": [{
     "id": 101, "gid": 10, "name": "Read a chapter", "notes": "",
-    "status": 0, "startTime": 1792108800000, "deadline": 1792195199999,
+    "status": 0, "isFrozen": false, "startTime": 1792108800000, "deadline": 1792195199999,
     "remindTime": 0, "frequency": 1, "weekdays": "", "importance": 3, "difficulty": 2,
     "exp": 5, "skillIds": [2], "coin": 10, "coinVariable": 0,
     "itemId": 0, "itemAmount": 0, "words": "", "categoryId": 1,
@@ -288,6 +293,36 @@ GET http://{host:port}/tasks/1
 ```
 
 **行為與錯誤：** 列表選取及排序遵循人升任務列表邏輯；此介面不保證依完成時間排序。成功的 `data: []` 表示選定的任務列表未回傳紀錄。權限/Provider 失敗採用[共用錯誤包裝](/guide/api-reference?id=response-errors)，不屬於空陣列。統計完成情況時應使用下方的 `/history`，而非此路由的 `endTime`。
+
+> [!NOTE]
+> 預設 `/tasks`、`/tasks/-1`（全部）以及透過已知智慧清單分類 ID 查詢時，會與人升 App 智慧清單檢視一致地排除來源分類已封存、已刪除或不存在的任務。對某個一般清單（含已封存清單）直接 `GET /tasks/{categoryId}` 仍會回傳該清單下的未完成任務。若需日/週/月成員且不必啟用智慧清單或解析 ID，請使用 [GET /smart_lists/{type}/tasks](#get-smart-list-tasks)。
+
+### GET /smart_lists/{type}/tasks :id=get-smart-list-tasks
+
+依 App 的日/週/月規則查詢**未完成**的智慧清單任務。不要求在 App 中啟用智慧清單，也不要求事先知道智慧清單的分類 ID。回應為與 [GET /tasks](#get-tasks) 相同的扁平 `Task[]`；每筆任務的 `categoryId` 仍為其所屬一般清單 ID。此路由為唯讀：不會建立、啟用或還原智慧清單分類，也不會變更清單偏好；App 的週起始、日期與凍結任務規則不變。
+
+| 參數 | 位置 | 型別 | 必需 | 預設值 / 行為 |
+| --- | --- | --- | --- | --- |
+| `type` | 路徑 | 字串 | 是 | 僅接受小寫 `daily`、`weekly`、`monthly`。 |
+
+本路由不支援查詢參數、分頁或 `categoryId`。
+
+```text
+GET http://{host:port}/smart_lists/daily/tasks
+GET http://{host:port}/smart_lists/weekly/tasks
+GET http://{host:port}/smart_lists/monthly/tasks
+content://net.sarasarasa.lifeup.provider.api/smart_lists/daily/tasks
+```
+
+SDK：`TasksApi.listSmartListTasks(SmartListType.DAILY)`（亦可用 `WEEKLY`、`MONTHLY`）。
+
+**排序：** 若該智慧類型在資料庫中有分類紀錄（即使已關閉），沿用已儲存的排序偏好；若從未建立紀錄，則依「全部」清單（`-1`）的排序設定，而非 App 目前開啟的清單頁。
+
+**舊 ID 路徑：** `/tasks_categories` 可能回傳已啟用的智慧清單，`type` 為 `10`/`11`/`12` 並帶有真實 `id`（例如 `{"id":37,"type":10,...}` → `GET /tasks/37`）。類型不是 ID；請使用回傳的 `id`，勿將 `10`/`11`/`12` 當成 `categoryId` 替代（一般或智慧清單的 `id` 完全可能是 `10`、`11` 或 `12`）。
+
+**錯誤：** 非法 `type` 回傳 HTTP `200` 且 body `code=500`、訊息含 `invalid parameter`，不會執行查詢。缺少 `type` 段或未帶 `/tasks` 段的路徑回傳 HTTP `404`。Provider 權限失敗見[共用錯誤包裝](/guide/api-reference?id=response-errors)（例如 Cursor 為空時 body `code=10001`）。不含該 URI 的 App 版本會回報未知路徑錯誤；請勿回退為查詢全部任務。
+
+**MCP：** `list_tasks({ smartListType: "daily" })` 或 `list_data({ resource: "tasks", smartListType: "daily" })`。`smartListType` 與 `categoryId`（含 `0`）互斥；用於非 tasks 資源會被拒絕。精簡/詳情輸出與用戶端分頁與其它任務列表呼叫一致。
 
 ### GET /history :id=get-history
 
@@ -314,7 +349,7 @@ GET http://{host:port}/history?offset=0&limit=100&gid=10
   "message": "success",
   "data": [{
     "id": 100, "gid": 10, "name": "Read a chapter", "notes": "",
-    "status": 1, "startTime": 1792022400000, "deadline": 1792108799999,
+    "status": 1, "isFrozen": true, "startTime": 1792022400000, "deadline": 1792108799999,
     "remindTime": 0, "frequency": 1, "weekdays": "", "importance": null, "difficulty": null,
     "exp": 5, "skillIds": [2], "coin": 10, "coinVariable": 0,
     "itemId": 0, "itemAmount": 0, "words": "", "categoryId": 1,
@@ -511,7 +546,7 @@ GET http://{host:port}/coin_records?offset=0&limit=100&time_range_start=17920224
 
 ### GET /tasks_categories :id=get-tasks-categories
 
-回傳 `TaskCategory[]`，包含「全部」及已封存分類。沒有查詢參數或分頁。HTTP 伺服器未提供 `/tasks_categories/{id}`。分類的排序／篩選值為 App 儲存的偏好，本介面不將其作為請求篩選條件。
+回傳 `TaskCategory[]`，包含「全部」及已封存分類。已啟用的日/週/月智慧清單以 `type` `10`/`11`/`12` 及對應分類 `id` 出現；未啟用的智慧清單不會出現。沒有查詢參數或分頁。HTTP 伺服器未提供 `/tasks_categories/{id}`。分類的排序／篩選值為 App 儲存的偏好，本介面不將其作為請求篩選條件。
 
 ```json
 {"code":200,"message":"success","data":[{"id":1,"name":"Daily","isAsc":true,"sort":"order","filter":"","order":0,"status":0,"type":0}]}
@@ -528,7 +563,7 @@ GET http://{host:port}/coin_records?offset=0&limit=100&time_range_start=17920224
 | `filter` | string | 儲存的分組／篩選偏好。 |
 | `order` | integer | 分類排序值。 |
 | `status` | integer | 0 一般；1 已封存。 |
-| `type` | integer | 0 一般；智慧清單：10 每日、11 每週、12 每月、20 進行中。 |
+| `type` | integer | 0 一般；智慧清單：10 每日、11 每週、12 每月。 |
 
 ## 屬性與屬性群組 :id=get-skills
 
