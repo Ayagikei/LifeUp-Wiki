@@ -62,7 +62,7 @@
 
 ## 鸿蒙系统兼容性
 
-人升仅对双框架鸿蒙系统（HarmonyOS 4.3.0 及以下）兼容；鸿蒙 5 及以上可通过「卓易通」运行 Android 版，或改用 **[ulives 鸿蒙原生版](https://ulives.lifeupapp.net/)**（AppGallery，限时免费公测）。
+人升仅对双框架鸿蒙系统（HarmonyOS 4.3.0 及以下）兼容；鸿蒙 5 及以上可通过「卓易通」运行 Android 版，或改用 **[ulives 鸿蒙原生版](https://ulives.lifeupapp.net/)**（AppGallery，限时免费公测）。在卓易通中若无法直接调起微信登录，**v1.105.3 起**可使用微信扫码登录：用已安装微信的备用手机扫码即可，鸿蒙平板、电脑同样适用。当前版本过旧时，请前往[官网下载最新 APK](https://lifeupapp.fun/zh/index.html#cta)。
 
 完整说明与限制请见：[鸿蒙系统兼容性说明](guide/harmonyos-compatibility.md)。
 
