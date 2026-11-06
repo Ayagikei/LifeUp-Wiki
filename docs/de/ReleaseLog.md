@@ -111,6 +111,17 @@
 
 1. **Problem behoben, bei dem sich in bestimmten Fällen abnormale Aufgabendaten ansammeln konnten**: Dadurch konnten Aufgabenoperationen wie Sortieren oder Löschen langsam oder ohne Reaktion sein. Das Update bereinigt betroffene ungültige Daten automatisch und verbessert die Leistung bei großen Aufgabenverläufen.
 
+**v1.105.4 (2026/08/30)**
+
+**♻️ Optimierung**
+
+1. **Ladeleistung der Smart-Listen für Tag, Woche und Monat verbessert, wenn viele Aufgaben keine Frist haben.**
+
+**🐛 Fehlerbehebungen**
+
+1. **Behoben, dass neu gestartete überfällige Einzelaufgaben nicht in den Smart-Listen für Tag, Woche und Monat erschienen.**
+2. **Behoben, dass lange Aufgabennamen auf der Aufgabendetailseite den Listennamen darüber überdeckten.**
+
 **v1.105.3 (2026/08/26)**
 
 **🐛 Fehlerbehebungen**

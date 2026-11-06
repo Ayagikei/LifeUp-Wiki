@@ -111,6 +111,17 @@
 
 1. **Belirli durumlarda anormal Görev verilerinin birikebilmesi sorunu düzeltildi**: Bu durum, sıralama veya silme gibi Görev işlemlerinin yavaşlamasına veya yanıt vermemesine neden olabiliyordu. Güncelleme, etkilenen geçersiz verileri otomatik olarak temizler ve büyük Görev geçmişlerinde performansı iyileştirir.
 
+**v1.105.4 (2026/08/30)**
+
+**♻️ Optimizasyon**
+
+1. **Çok sayıda Görevin süresi olmadığında gün, hafta ve ay akıllı listelerinin yükleme performansı iyileştirildi.**
+
+**🐛 Hata Düzeltmeleri**
+
+1. **Yeniden başlatılan gecikmiş tek seferlik Görevlerin gün, hafta ve ay akıllı listelerinde görünmemesi düzeltildi.**
+2. **Görev ayrıntı sayfasında uzun Görev adlarının üstteki liste adıyla çakışması düzeltildi.**
+
 **v1.105.3 (2026/08/26)**
 
 **🐛 Hata Düzeltmeleri**

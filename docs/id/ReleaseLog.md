@@ -111,6 +111,17 @@
 
 1. **Memperbaiki masalah akumulasi data Tugas yang tidak normal dalam kondisi tertentu**: Hal ini dapat membuat operasi Tugas seperti pengurutan atau penghapusan menjadi lambat atau tidak responsif. Pembaruan secara otomatis membersihkan data tidak valid yang terpengaruh dan meningkatkan kinerja pada riwayat Tugas yang besar.
 
+**v1.105.4 (2026/08/30)**
+
+**♻️ Optimisasi**
+
+1. **Kinerja pemuatan daftar pintar harian, mingguan, dan bulanan ditingkatkan saat banyak Tugas tidak memiliki tenggat.**
+
+**🐛 Perbaikan Bug**
+
+1. **Memperbaiki Tugas sekali yang terlambat lalu dimulai ulang tidak muncul di daftar pintar harian, mingguan, dan bulanan.**
+2. **Memperbaiki nama Tugas yang panjang menimpa nama daftar di atasnya pada halaman detail Tugas.**
+
 **v1.105.3 (2026/08/26)**
 
 **🐛 Perbaikan Bug**

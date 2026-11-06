@@ -111,6 +111,17 @@
 
 1. **Corretto un problema per cui dati anomali dei Compiti potevano accumularsi in certi casi**: Ciò poteva rendere lente o non reattive operazioni sui Compiti come ordinamento o eliminazione. L'aggiornamento pulisce automaticamente i dati non validi interessati e migliora le prestazioni con cronologie estese di Compiti.
 
+**v1.105.4 (2026/08/30)**
+
+**♻️ Ottimizzazione**
+
+1. **Migliorate le prestazioni di caricamento delle liste intelligenti di giorno, settimana e mese quando molti Compiti non hanno una scadenza.**
+
+**🐛 Correzioni bug**
+
+1. **Corretti i Compiti singoli scaduti e riavviati che non comparivano nelle liste intelligenti di giorno, settimana e mese.**
+2. **Corretti i nomi di Compito troppo lunghi che si sovrapponevano al nome dell'elenco nella pagina di dettaglio del Compito.**
+
 **v1.105.3 (2026/08/26)**
 
 **🐛 Correzioni bug**

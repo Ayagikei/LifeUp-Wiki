@@ -111,6 +111,17 @@
 
 1. **Corregido un problema en el que los datos anómalos de Tareas podían acumularse en ciertos casos**: Esto podía hacer que operaciones como ordenar o eliminar Tareas fueran lentas o no respondieran. La actualización limpia automáticamente los datos inválidos afectados y mejora el rendimiento con historiales extensos de Tareas.
 
+**v1.105.4 (2026/08/30)**
+
+**♻️ Optimización**
+
+1. **Mejorado el rendimiento de carga de las listas inteligentes de día, semana y mes cuando muchas Tareas no tienen plazo.**
+
+**🐛 Correcciones de errores**
+
+1. **Corregido que las Tareas únicas atrasadas y reiniciadas no aparecieran en las listas inteligentes de día, semana y mes.**
+2. **Corregido que los nombres largos de Tarea se superpusieran al nombre de la lista en la página de detalle de la Tarea.**
+
 **v1.105.3 (2026/08/26)**
 
 **🐛 Correcciones de errores**

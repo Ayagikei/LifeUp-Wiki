@@ -111,6 +111,17 @@
 
 1. **Correction d'un problème où des données de Tâches anormales pouvaient s'accumuler dans certains cas** : Cela pouvait rendre les opérations sur les Tâches, comme le tri ou la suppression, lentes ou sans réponse. La mise à jour nettoie automatiquement les données invalides concernées et améliore les performances avec de longs historiques de Tâches.
 
+**v1.105.4 (2026/08/30)**
+
+**♻️ Optimisation**
+
+1. **Chargement des listes intelligentes du jour, de la semaine et du mois amélioré lorsqu'un grand nombre de Tâches n'ont pas d'échéance.**
+
+**🐛 Corrections**
+
+1. **Correction des Tâches uniques en retard relancées qui n'apparaissaient pas dans les listes intelligentes du jour, de la semaine et du mois.**
+2. **Correction des noms de Tâche trop longs qui chevauchaient le nom de la liste sur la page de détail de la Tâche.**
+
 **v1.105.3 (2026/08/26)**
 
 **🐛 Corrections**
