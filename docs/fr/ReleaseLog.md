@@ -8,7 +8,7 @@
 
 | Plateforme        | Version                | Date de mise à jour         |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.107.0              | 2026/10/13                  |
+| LifeUp-Android    | v1.107.4              | 2026/11/04                  |
 | LifeUp-iOS        | voir [feature/ulives] | 🎉App alternative disponible |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
 | LifeUp Cloud(SDK) | v3.0.2                 | 2026/09/24                  |
@@ -19,11 +19,45 @@
 
 ### **LifeUp-Android**
 
-**v1.107.2 (À venir)**
+**v1.107.4 (2026/11/04)**
+
+**✨ Fonctionnalités**
+
+1. **Aperçu et gestion du stockage** : ouvrez Sauvegarde/Restauration → Gestion du stockage pour voir l'espace utilisé par la base de données, les images et pièces jointes, les sons, les copies de sécurité locales, les sauvegardes du chemin par défaut et le cache d'images, puis ouvrir le gestionnaire correspondant.
+2. **Vous pouvez effacer les restes de sauvegarde inutilisés, les miniatures de widgets expirées, les paquets d'installation restants et le cache d'images en ligne.** Vider le cache des widgets actualise les widgets de l'écran d'accueil. Les images et les sons habituels restent dans leurs gestionnaires existants.
+3. **La dernière complétion d'une tâche répétée peut être annulée un jour plus tard tant qu'elle est encore dans le délai**, si le cycle suivant n'a pas été modifié et n'a aucun avancement. Les tâches d'équipe ne peuvent toujours pas être annulées. L'annulation est refusée si elle perturberait des modifications, des comptes, des sous-tâches ou du temps de focus non réglé ultérieurs.
+
+**♻️ Optimisation**
+
+1. **Les requêtes de tâches peuvent cibler séparément les listes intelligentes du jour, de la semaine et du mois**, et chaque tâche inclut désormais son propre indicateur de gel. La recherche par id de liste est inchangée.
+
+**🐛 Corrections**
+
+1. Correction du blocage de l'app pendant la recherche de tâches à dégeler.
+2. Correction de notes de tâche qui pouvaient s'afficher incorrectement lorsque la note était vide.
+3. Correction des copies de sécurité locales qui cessaient de tourner après l'annulation d'une restauration échouée.
+4. Correction des anciennes copies de sécurité qui importaient plus que les vraies données utilisateur. L'ancien paquet est supprimé après un import réussi.
+
+**v1.107.3 (2026/10/28)**
+
+**🐛 Corrections**
+
+1. **Correction des sauvegardes locales parfois signalées comme échouées.** Si un nouvel instantané ne peut pas être pris, l'app revient à l'ancien export de base de données. Un échec conserve la sauvegarde valide précédente et affiche une raison précise.
+2. **Correction d'un plantage lorsqu'une autre app ou un widget d'écran d'accueil lisait des données avant l'initialisation des réglages.**
+3. **Correction du lien de téléchargement par navigateur dans la boîte de progression de mise à jour intégrée.**
+4. **Correction de mauvaises traductions**, dont des chaînes serbes encore en phrases anglaises complètes, « supprimer les données » décrit comme une nouvelle installation, l'EXP mal traduit et des fautes de grammaire évidentes dans l'anglais d'origine.
+
+**v1.107.2 (2026/10/23)**
 
 **🐛 Corrections**
 
 1. Correction de l’absence d’importance et de difficulté dans les résultats de requête ContentProvider des tâches, pour que les outils tiers puissent utiliser les deux champs lors du traitement des tâches.
+
+**v1.107.1 (2026/10/17)**
+
+**🐛 Corrections**
+
+1. **Correction de l'historique pomodoro et focus sur une plage de dates qui renvoyait la mauvaise page.** Les enregistrements sont maintenant paginés du plus récent au plus ancien.
 
 **v1.107.0 (2026/10/13)**
 

@@ -8,7 +8,7 @@
 
 | Plataforma        | Versão                | Data de atualização         |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.107.0              | 2026/10/13                  |
+| LifeUp-Android    | v1.107.4              | 2026/11/04                  |
 | LifeUp-iOS        | consulte [feature/ulives] | 🎉App alternativo disponível |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
 | LifeUp Cloud(SDK) | v3.0.2                 | 2026/09/24                  |
@@ -19,11 +19,45 @@
 
 ### **LifeUp-Android**
 
-**v1.107.2 (Em breve)**
+**v1.107.4 (2026/11/04)**
+
+**✨ Recursos**
+
+1. **Visão geral e gestão do armazenamento**: abra Backup/Restaurar → Gestão de armazenamento para ver o espaço usado pelo banco de dados, imagens e anexos, sons, cópias de segurança locais, backups do caminho padrão e cache de imagens, e ir ao gerenciador correspondente.
+2. **Você pode limpar restos de backup ociosos, miniaturas de widgets expiradas, pacotes de instalação restantes e o cache de imagens online.** Limpar o cache de widgets atualiza os widgets da tela inicial. Imagens e sons comuns continuam nos gerenciadores existentes.
+3. **A conclusão mais recente de uma tarefa repetida pode ser desfeita em um dia posterior enquanto ainda estiver no prazo**, desde que o próximo ciclo não tenha sido editado e não tenha progresso. Tarefas de equipe ainda não podem ser desfeitas. O desfazer é recusado quando perturbaria edições, contagens, subtarefas ou tempo de foco não liquidado posteriores.
+
+**♻️ Otimização**
+
+1. **As consultas de tarefas podem mirar separadamente as listas inteligentes de dia, semana e mês**, e cada tarefa agora inclui o próprio indicador de congelamento. A busca por id da lista não muda.
+
+**🐛 Correções**
+
+1. Corrigido o travamento do app ao procurar tarefas para descongelar.
+2. Corrigidas notas de tarefa que podiam aparecer de forma incorreta quando a nota estava vazia.
+3. Corrigidas cópias de segurança locais que paravam de rotacionar depois que uma restauração com falha era revertida.
+4. Corrigidas cópias de segurança antigas que importavam mais do que os dados reais do usuário. O pacote antigo é removido após uma importação bem-sucedida.
+
+**v1.107.3 (2026/10/28)**
+
+**🐛 Correções**
+
+1. **Corrigidos backups locais que às vezes eram informados como falha.** Se um novo snapshot não puder ser feito, o app volta à exportação antiga do banco de dados. Uma falha mantém o backup bom anterior e mostra um motivo específico.
+2. **Corrigida uma falha quando outro app ou um widget da tela inicial lia dados antes de as configurações serem inicializadas.**
+3. **Corrigido o link de download no navegador na janela de progresso da atualização no app.**
+4. **Corrigidas traduções incorretas**, incluindo textos em sérvio que ainda eram frases inteiras em inglês, "excluir dados" descrito como uma instalação nova, EXP traduzido de forma errada e erros claros de gramática no inglês original.
+
+**v1.107.2 (2026/10/23)**
 
 **🐛 Correções**
 
 1. Corrigida a ausência de importância e dificuldade nos resultados de consulta ContentProvider de tarefas, para que ferramentas de terceiros possam usar ambos os campos ao processar tarefas.
+
+**v1.107.1 (2026/10/17)**
+
+**🐛 Correções**
+
+1. **Corrigido o histórico de pomodoro e foco de um intervalo de datas que devolvia a página errada.** Os registros agora são paginados do mais novo ao mais antigo.
 
 **v1.107.0 (2026/10/13)**
 

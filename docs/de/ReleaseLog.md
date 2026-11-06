@@ -8,7 +8,7 @@
 
 | Plattform          | Version                | Aktualisierungsdatum                 |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.107.0              | 2026/10/13                  |
+| LifeUp-Android    | v1.107.4              | 2026/11/04                  |
 | LifeUp-iOS        | check [feature/ulives] | 🎉Alternative App verfügbar |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
 | LifeUp Cloud(SDK) | v3.0.2                 | 2026/09/24                  |
@@ -19,11 +19,45 @@
 
 ### **LifeUp-Android**
 
-**v1.107.2 (Demnächst)**
+**v1.107.4 (2026/11/04)**
+
+**✨ Funktionen**
+
+1. **Speicherübersicht und -verwaltung**: Öffne Backup/Wiederherstellen → Speicherverwaltung, um den belegten Platz von Datenbank, Bildern und Anhängen, Tönen, lokalen Sicherheitskopien, Backups des Standardpfads und dem Bildcache zu sehen und zur passenden Verwaltung zu springen.
+2. **Du kannst ungenutzte Backup-Reste, abgelaufene Widget-Vorschaubilder, übrige Installationspakete und den Online-Bildcache löschen.** Das Leeren des Widget-Caches aktualisiert die Startbildschirm-Widgets. Reguläre Bilder und Töne bleiben in ihren bisherigen Verwaltungen.
+3. **Die letzte Erledigung einer wiederkehrenden Aufgabe lässt sich an einem späteren Tag rückgängig machen, solange sie noch innerhalb der Frist liegt**, sofern der nächste Zyklus nicht bearbeitet wurde und keinen Fortschritt hat. Teamaufgaben lassen sich weiterhin nicht rückgängig machen. Das Rückgängigmachen wird abgelehnt, wenn es spätere Bearbeitungen, Zählungen, Unteraufgaben oder nicht abgerechnete Fokuszeit stören würde.
+
+**♻️ Optimierung**
+
+1. **Aufgabenabfragen können die Smart-Listen für Tag, Woche und Monat getrennt ansprechen**, und jede Aufgabe enthält jetzt eine eigene Markierung, ob sie eingefroren ist. Die Suche nach Listen-ID bleibt unverändert.
+
+**🐛 Fehlerbehebungen**
+
+1. Behoben, dass die App beim Suchen von Aufgaben zum Aufheben des eingefrorenen Zustands hängen blieb.
+2. Behoben, dass Aufgabennotizen falsch dargestellt werden konnten, wenn die Notiz leer war.
+3. Behoben, dass lokale Sicherheitskopien nach dem Zurückrollen einer fehlgeschlagenen Wiederherstellung nicht mehr rotierten.
+4. Behoben, dass alte Sicherheitskopien mehr als die echten Nutzerdaten importierten. Das alte Paket wird nach einem erfolgreichen Import entfernt.
+
+**v1.107.3 (2026/10/28)**
+
+**🐛 Fehlerbehebungen**
+
+1. **Behoben, dass lokale Backups manchmal als fehlgeschlagen gemeldet wurden.** Wenn kein neuer Snapshot erstellt werden kann, greift die App auf den älteren Datenbankexport zurück. Ein Fehlschlag behält das vorherige gute Backup und zeigt einen konkreten Grund.
+2. **Behoben, dass die App abstürzte, wenn eine andere App oder ein Startbildschirm-Widget Daten las, bevor die Einstellungen initialisiert waren.**
+3. **Behoben, dass der Browser-Download-Link im Fortschrittsdialog der In-App-Aktualisierung ungültig war.**
+4. **Fehlübersetzungen korrigiert**, darunter serbische Texte, die noch ganze englische Sätze waren, „Daten löschen“, das als Neuinstallation beschrieben wurde, falsch übersetzte EXP und klare Grammatikfehler im englischen Original.
+
+**v1.107.2 (2026/10/23)**
 
 **🐛 Fehlerbehebungen**
 
 1. In ContentProvider-Abfrageergebnissen für Aufgaben fehlten Wichtigkeit und Schwierigkeit – behoben, damit Drittanbieter-Tools beide Felder bei der Aufgabenverarbeitung nutzen können.
+
+**v1.107.1 (2026/10/17)**
+
+**🐛 Fehlerbehebungen**
+
+1. **Behoben, dass Pomodoro- und Fokusverlauf für einen Datumsbereich die falsche Seite lieferte.** Einträge werden jetzt von neu nach alt seitenweise geladen.
 
 **v1.107.0 (2026/10/13)**
 

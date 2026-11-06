@@ -8,7 +8,7 @@
 
 | Platform          | Versi                  | Tanggal Pembaruan           |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.107.0              | 2026/10/13                  |
+| LifeUp-Android    | v1.107.4              | 2026/11/04                  |
 | LifeUp-iOS        | lihat [feature/ulives] | 🎉App alternatif tersedia   |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
 | LifeUp Cloud(SDK) | v3.0.2                 | 2026/09/24                  |
@@ -19,11 +19,45 @@
 
 ### **LifeUp-Android**
 
-**v1.107.2 (Segera hadir)**
+**v1.107.4 (2026/11/04)**
+
+**✨ Fitur**
+
+1. **Ringkasan dan pengelolaan penyimpanan**: buka Cadangan/Pulihkan → Pengelolaan penyimpanan untuk melihat ruang yang dipakai basis data, gambar dan lampiran, suara, salinan aman lokal, cadangan jalur bawaan, serta cache gambar, lalu masuk ke pengelola yang sesuai.
+2. **Anda dapat membersihkan sisa cadangan yang tidak terpakai, gambar mini widget yang kedaluwarsa, paket pemasang yang tersisa, dan cache gambar daring.** Membersihkan cache widget menyegarkan widget layar utama. Gambar dan suara biasa tetap di pengelola yang sudah ada.
+3. **Penyelesaian terbaru tugas berulang dapat dibatalkan di hari berikutnya selama masih dalam tenggat**, selama siklus berikutnya belum diedit dan tidak memiliki progres. Tugas tim tetap tidak dapat dibatalkan. Pembatalan ditolak jika akan mengganggu edit, hitungan, subtugas, atau waktu fokus yang belum diselesaikan setelahnya.
+
+**♻️ Optimasi**
+
+1. **Kueri tugas dapat menargetkan daftar pintar harian, mingguan, dan bulanan secara terpisah**, dan setiap tugas kini menyertakan tanda bekunya sendiri. Pencarian berdasarkan id daftar tidak berubah.
+
+**🐛 Perbaikan**
+
+1. Memperbaiki aplikasi yang macet saat mencari tugas untuk membuka pembekuannya.
+2. Memperbaiki catatan tugas yang dapat tampil salah saat catatan kosong.
+3. Memperbaiki salinan aman lokal yang berhenti bergilir setelah pemulihan yang gagal dikembalikan.
+4. Memperbaiki salinan aman lama yang mengimpor lebih dari data pengguna yang sebenarnya. Paket lama dihapus setelah impor berhasil.
+
+**v1.107.3 (2026/10/28)**
+
+**🐛 Perbaikan**
+
+1. **Memperbaiki cadangan lokal yang kadang dilaporkan gagal.** Jika snapshot baru tidak dapat diambil, aplikasi kembali ke ekspor basis data yang lama. Kegagalan mempertahankan cadangan baik sebelumnya dan menampilkan alasan yang spesifik.
+2. **Memperbaiki crash saat aplikasi lain atau widget layar utama membaca data sebelum pengaturan diinisialisasi.**
+3. **Memperbaiki tautan unduh browser di dialog progres pembaruan dalam aplikasi.**
+4. **Memperbaiki terjemahan yang keliru**, termasuk string Serbia yang masih berupa kalimat Inggris utuh, "hapus data" yang dijelaskan sebagai pemasangan baru, EXP yang diterjemahkan salah, dan kesalahan tata bahasa Inggris yang jelas.
+
+**v1.107.2 (2026/10/23)**
 
 **🐛 Perbaikan**
 
 1. Memperbaiki hilangnya tingkat kepentingan dan kesulitan pada hasil kueri ContentProvider tugas, agar alat pihak ketiga dapat memakai kedua field saat memproses tugas.
+
+**v1.107.1 (2026/10/17)**
+
+**🐛 Perbaikan**
+
+1. **Memperbaiki riwayat pomodoro dan fokus untuk rentang tanggal yang mengembalikan halaman yang salah.** Catatan kini dibagi halaman dari yang terbaru ke yang terlama.
 
 **v1.107.0 (2026/10/13)**
 
