@@ -51,7 +51,7 @@
 
 ​    官网链接：https://connect.qq.com/
 
-​    隐私政策链接：https://wiki.connect.qq.com/QQ互联SDK隐私保护声明
+​    隐私政策链接：[https://wiki.connect.qq.com/qq%E4%BA%92%E8%81%94sdk%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4%E5%A3%B0%E6%98%8E/](https://wiki.connect.qq.com/qq%E4%BA%92%E8%81%94sdk%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4%E5%A3%B0%E6%98%8E/)
 
 <br />
 
@@ -111,7 +111,7 @@
 
 ​    官网链接：https://www.umeng.com/
 
-​    隐私政策链接：https://sentry.io/privacy/
+​    隐私政策链接：https://www.umeng.com/page/policy
 
 <br />
 

@@ -51,7 +51,7 @@
 
 ​    官網連結：https://connect.qq.com/
 
-​    隱私政策連結：https://wiki.connect.qq.com/QQ互聯SDK隱私保護宣告
+​    隱私政策連結：[https://wiki.connect.qq.com/qq%E4%BA%92%E8%81%94sdk%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4%E5%A3%B0%E6%98%8E/](https://wiki.connect.qq.com/qq%E4%BA%92%E8%81%94sdk%E9%9A%90%E7%A7%81%E4%BF%9D%E6%8A%A4%E5%A3%B0%E6%98%8E/)
 
 <br />
 
@@ -111,7 +111,7 @@
 
 ​    官網連結：https://www.umeng.com/
 
-​    隱私政策連結：https://sentry.io/privacy/
+​    隱私政策連結：https://www.umeng.com/page/policy
 
 <br />
 
