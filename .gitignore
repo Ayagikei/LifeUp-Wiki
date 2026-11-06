@@ -54,3 +54,7 @@ $RECYCLE.BIN/
 
 # Pi agent artifacts
 .pi/
+
+# Local tool cache and config
+scripts/__pycache__/
+.unipi/
