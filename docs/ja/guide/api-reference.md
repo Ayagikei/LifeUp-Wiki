@@ -7,7 +7,7 @@ LifeUp Cloud の要求パラメーターと完全な HTTP 応答モデルを記�
 | リソース | メソッドとパス | パラメーターとモデル |
 | --- | --- | --- |
 | 共通規則 | JSON 応答、権限、キャッシュ条件、ページ取得 | [規則](#representations)、[キャッシュと認証](#auth-cache)、[ページ取得](#pagination) |
-| タスク | `GET /tasks`, `GET /tasks/{categoryId}`, `GET /tasks_categories` | [クエリ](#get-tasks)、[タスクモデル](#task-fields)、[カテゴリ](#get-tasks-categories) |
+| タスク | `GET /tasks`, `GET /tasks/{categoryId}`, `GET /tasks_categories`, `GET /smart_lists/{type}/tasks` | [クエリ](#get-tasks)、[タイプ別スマートリスト](#get-smart-list-tasks)、[タスクモデル](#task-fields)、[カテゴリ](#get-tasks-categories) |
 | タスク履歴 | `GET /history` | [パラメーター](#get-history)、[時刻](#task-times)、[日次レポート](#daily-report) |
 | アイテム | `GET /items`, `GET /items/{listId}`, `GET /items_categories` | [アイテム・カテゴリ ID と完全なモデル](#get-items) |
 | 属性 | `GET /skills`, `GET /skill_groups` | [属性とグループ](#get-skills) |
@@ -114,11 +114,11 @@ JSON リソースの読み取り成功には強い SHA-256 `ETag` と `Cache-Con
 
 ## MCP との違い :id=mcp-differences
 
-MCP リストツールは既定で `limit=20` を使い、`1..100` に制限し、`offset` は 0 以上に調整します。履歴や履歴台帳のようにサーバー側でページ分割されるリソースにはページ指定を渡しますが、タスクのような全件 HTTP 配列は取得後にローカルで分割します。`items`、`count`、`hasMore`、任意の `total` は MCP エンベロープの項目です。`detail=false` では各レコードのフィールドも削られます。HTTP モデル全体が必要な場合は `detail=true` を使ってください。
+MCP リストツールは既定で `limit=20` を使い、`1..100` に制限し、`offset` は 0 以上に調整します。履歴や履歴台帳のようにサーバー側でページ分割されるリソースにはページ指定を渡しますが、タスクのような全件 HTTP 配列は取得後にローカルで分割します。`items`、`count`、`hasMore`、任意の `total` は MCP エンベロープの項目です。`detail=false` では各レコードのフィールドも削られます。HTTP モデル全体が必要な場合は `detail=true` を使ってください。タスクでは任意の `smartListType`（`daily`、`weekly`、`monthly`）が `GET /smart_lists/{type}/tasks` を呼び出し、`categoryId` と同時には指定できません。
 
 ## 情報源とバージョン範囲 :id=api-common-sources
 
-このリファレンスは現行の公開 SDK と対応する LifeUp プロバイダーの動作を説明します。例のデータは架空です。ソースリンクは実装の参照先であり、インストール済みの特定バージョンが全フィールドを備えることの証明ではありません。[HTTP ルート](https://github.com/Ayagikei/LifeUp-SDK/blob/main/http/src/main/java/net/lifeupapp/lifeup/http/service/KtorService.kt)、[HTTP ラッパー](https://github.com/Ayagikei/LifeUp-SDK/blob/main/http/src/main/java/net/lifeupapp/lifeup/http/vo/HttpResponse.kt)、[MCP クエリ変換](https://github.com/Ayagikei/LifeUp-SDK/blob/main/mcp/src/query.ts)。
+このリファレンスは現行の公開 SDK と対応する LifeUp プロバイダーの動作を説明します。例のデータは架空です。ソースリンクは実装の参照先であり、インストール済みの特定バージョンが全フィールドを備えることの証明ではありません。[HTTP ルート](https://github.com/Ayagikei/LifeUp-SDK/blob/main/http/src/main/java/net/lifeupapp/lifeup/http/service/KtorService.kt)、[HTTP ラッパー](https://github.com/Ayagikei/LifeUp-SDK/blob/main/http/src/main/java/net/lifeupapp/lifeup/http/vo/HttpResponse.kt)、[MCP クエリ変換](https://github.com/Ayagikei/LifeUp-SDK/blob/main/mcp/src/query.ts)。タイプ別スマートリスト（`GET /smart_lists/{type}/tasks`）は **2026-11-02** 時点のソースにおける LifeUp **1.107.4** プロバイダー契約に一致します。この URI のない旧 App では他の未知 ContentProvider パスと同様に失敗します。利用前に `/info` で確認してください。
 
 ## タスクと履歴のデータモデル :id=task-history-models
 
@@ -137,6 +137,7 @@ SDK はシリアライズに同じ `Task` クラスを使います。このペ�
 | `name` | string | タスク名。プロバイダーに名前がない場合は `ERROR: name is null` になります。 |
 | `notes` | string | メモ。未設定の場合は空文字列。 |
 | `status` | integer | タスクの状態。未設定時の既定値は `0`。下の状態表を参照。 |
+| `isFrozen` | boolean または `null` | 冷凍状態。`status` とは独立（`status=0` でも冷凍のことがある）。LifeUp Provider と Cloud SDK が列を公開するときは実際の真偽値。旧 App で列がない/null のときは `null`（不明で、`false` と同じではない）。 |
 | `startTime` | integer | 設定された開始時刻 (ミリ秒)。SDK の代替値は `0`。 |
 | `deadline` | integer | 期限 (ミリ秒)。未設定時の SDK 代替値は `0`。 |
 | `remindTime` | integer | リマインダー時刻 (ミリ秒)。未設定時の SDK 代替値は `0`。 |
@@ -159,6 +160,10 @@ SDK はシリアライズに同じ `Task` クラスを使います。このペ�
 | `subTasks` | `SubTask[]` | ネストしたサブタスク。利用できない場合は空配列。 |
 | `countProgress` | `TaskCountProgress` または `null` | 利用可能な場合の進捗スナップショット。どちらのビューにも現れる場合があります。 |
 | `repeatEndCondition` | `TaskRepeatEndCondition` または `null` | `/tasks` の繰り返し終了規則。`/history` では常に `null`。 |
+
+
+> [!NOTE]
+> `isFrozen` フィールドの追加は、既存の一覧メンバー構成や既定フィルタを変えません。利用可能なときはクライアント側でこのフィールドに基づいてフィルタしてください。表示には更新済みの LifeUp Provider と Cloud SDK が必要で、MCP だけでは値を作れません。Cloud 更新後、MCP の task/history は `detail=true` で `isFrozen` を含みます。古い MCP の compact ホワイトリストは MCP 更新まで省略する場合があります。
 
 ### タスクの状態と時刻 :id=task-times
 
@@ -276,7 +281,7 @@ GET http://{host:port}/tasks/1
   "message": "success",
   "data": [{
     "id": 101, "gid": 10, "name": "Read a chapter", "notes": "",
-    "status": 0, "startTime": 1792108800000, "deadline": 1792195199999,
+    "status": 0, "isFrozen": false, "startTime": 1792108800000, "deadline": 1792195199999,
     "remindTime": 0, "frequency": 1, "weekdays": "", "importance": 3, "difficulty": 2,
     "exp": 5, "skillIds": [2], "coin": 10, "coinVariable": 0,
     "itemId": 0, "itemAmount": 0, "words": "", "categoryId": 1,
@@ -288,6 +293,36 @@ GET http://{host:port}/tasks/1
 ```
 
 **動作とエラー:** リストの選択と順序は LifeUp のタスクリスト規則に従います。このエンドポイントは完了時刻による並べ替えを保証しません。成功応答の `data: []` は選択したタスクリストにレコードがないことを示します。権限/プロバイダーの失敗は[共通エラーラッパー](/guide/api-reference?id=response-errors)で返り、空配列ではありません。完了を報告する場合は、このルートの `endTime` ではなく下記 `/history` を使ってください。
+
+> [!NOTE]
+> 既定の `/tasks`、`/tasks/-1`（すべて）、および既知のスマートリストカテゴリ ID によるクエリは、App のスマートリスト表示と同様に、ソースカテゴリがアーカイブ済み・削除済み・存在しないタスクを除外します。特定の通常リスト（アーカイブ済みを含む）への直接 `GET /tasks/{categoryId}` は、そのリストの未完了タスクを返します。スマートリストを有効にしたり ID を解決したりせず日/週/月のメンバーが必要な場合は [GET /smart_lists/{type}/tasks](#get-smart-list-tasks) を使ってください。
+
+### GET /smart_lists/{type}/tasks :id=get-smart-list-tasks
+
+App の日/週/月規則に基づき、**未完了**のスマートリストタスクを取得します。App でスマートリストを有効にする必要はなく、スマートリストのカテゴリ ID も不要です。応答は [GET /tasks](#get-tasks) と同じフラットな `Task[]` で、各レコードの `categoryId` は元の通常リスト ID のままです。このルートは読み取り専用で、スマートリストのカテゴリを作成・有効化・復元したり、リストの設定を変更したりしません。App の週開始・日付・凍結タスクのルールも変わりません。
+
+| パラメーター | 場所 | 型 | 必須 | 既定値 / 動作 |
+| --- | --- | --- | --- | --- |
+| `type` | パス | 文字列 | はい | 小文字の `daily`、`weekly`、`monthly` のみ。 |
+
+このルートにクエリパラメーター、ページ分割、`categoryId` はありません。
+
+```text
+GET http://{host:port}/smart_lists/daily/tasks
+GET http://{host:port}/smart_lists/weekly/tasks
+GET http://{host:port}/smart_lists/monthly/tasks
+content://net.sarasarasa.lifeup.provider.api/smart_lists/daily/tasks
+```
+
+SDK: `TasksApi.listSmartListTasks(SmartListType.DAILY)`（`WEEKLY`、`MONTHLY` も可）。
+
+**並べ替え:** そのスマートタイプのカテゴリ行が存在する場合（無効でも）、保存済みの並べ替え設定を使います。一度も作成されていない場合は、App で開いているリストではなく「すべて」リスト（`-1`）の設定に従います。
+
+**従来の ID パス:** `/tasks_categories` は有効なスマートリストを `type` `10`/`11`/`12` と実際の `id` で返すことがあります（例: `{"id":37,"type":10,...}` → `GET /tasks/37`）。タイプは ID ではありません。返された `id` を使い、`10`/`11`/`12` を `categoryId` の代わりに使わないでください（通常リストやスマートリストの `id` が `10`/`11`/`12` であること自体は問題ありません）。
+
+**エラー:** 無効な `type` は HTTP `200` と body `code=500`、メッセージに `invalid parameter` を含み、バックエンドクエリは実行されません。`type` セグメントが欠ける、または `/tasks` セグメントを省略したパスは HTTP `404` です。プロバイダー権限の失敗は[共通エラーラッパー](/guide/api-reference?id=response-errors)（例: Cursor が null のとき body `code=10001`）。この URI のない App バージョンは未知パスエラーを返します。すべてのタスクへのフォールバックはしないでください。
+
+**MCP:** `list_tasks({ smartListType: "daily" })` または `list_data({ resource: "tasks", smartListType: "daily" })`。`smartListType` は `categoryId`（`0` を含む）と排他的で、タスク以外のリソースでは拒否されます。compact/detail 出力とクライアント側ページ分割は他のタスクリスト呼び出しと同じです。
 
 ### GET /history :id=get-history
 
@@ -314,7 +349,7 @@ GET http://{host:port}/history?offset=0&limit=100&gid=10
   "message": "success",
   "data": [{
     "id": 100, "gid": 10, "name": "Read a chapter", "notes": "",
-    "status": 1, "startTime": 1792022400000, "deadline": 1792108799999,
+    "status": 1, "isFrozen": true, "startTime": 1792022400000, "deadline": 1792108799999,
     "remindTime": 0, "frequency": 1, "weekdays": "", "importance": null, "difficulty": null,
     "exp": 5, "skillIds": [2], "coin": 10, "coinVariable": 0,
     "itemId": 0, "itemAmount": 0, "words": "", "categoryId": 1,
@@ -511,7 +546,7 @@ EXP の `value` は属性ごとの量です。EXP の `totalValue` を記録間�
 
 ### GET /tasks_categories :id=get-tasks-categories
 
-「すべて」とアーカイブ済みカテゴリを含む `TaskCategory[]` を返します。クエリパラメーター、ページネーション、`/tasks_categories/{id}` はありません。カテゴリの並べ替え・フィルター値はアプリの保存設定であり、この要求に適用されるフィルターではありません。
+「すべて」とアーカイブ済みカテゴリを含む `TaskCategory[]` を返します。有効な日/週/月スマートリストは `type` `10`/`11`/`12` と保存されたカテゴリ `id` で現れます。無効なスマートリストは含まれません。クエリパラメーター、ページネーション、`/tasks_categories/{id}` はありません。カテゴリの並べ替え・フィルター値はアプリの保存設定であり、この要求に適用されるフィルターではありません。
 
 ```json
 {"code":200,"message":"success","data":[{"id":1,"name":"Daily","isAsc":true,"sort":"order","filter":"","order":0,"status":0,"type":0}]}
@@ -528,7 +563,7 @@ EXP の `value` は属性ごとの量です。EXP の `totalValue` を記録間�
 | `filter` | string | 保存されたグループ分け・フィルター設定。 |
 | `order` | integer | カテゴリの並び順。 |
 | `status` | integer | 0 通常、1 アーカイブ済み。 |
-| `type` | integer | 0 通常。スマートリストは 10 毎日、11 毎週、12 毎月、20 進行中。 |
+| `type` | integer | 0 通常。スマートリストは 10 毎日、11 毎週、12 毎月。 |
 
 ## 属性と属性グループ :id=get-skills
 

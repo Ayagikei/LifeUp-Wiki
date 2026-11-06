@@ -7,7 +7,7 @@
 | المورد | الطرق والمسارات | المعاملات والنموذج |
 | --- | --- | --- |
 | القواعد المشتركة | استجابات JSON والأذونات وشروط التخزين المؤقت والصفحات | [القواعد](#representations)، [التخزين والإذن](#auth-cache)، [الصفحات](#pagination) |
-| المهام | `GET /tasks`, `GET /tasks/{categoryId}`, `GET /tasks_categories` | [الاستعلامات](#get-tasks)، [نموذج المهمة](#task-fields)، [الفئات](#get-tasks-categories) |
+| المهام | `GET /tasks`, `GET /tasks/{categoryId}`, `GET /tasks_categories`, `GET /smart_lists/{type}/tasks` | [الاستعلامات](#get-tasks)، [القوائم الذكية حسب النوع](#get-smart-list-tasks)، [نموذج المهمة](#task-fields)، [الفئات](#get-tasks-categories) |
 | سجل المهام | `GET /history` | [المعاملات](#get-history)، [الأوقات](#task-times)، [التقارير اليومية](#daily-report) |
 | العناصر | `GET /items`, `GET /items/{listId}`, `GET /items_categories` | [معرّفات العناصر والفئات والنماذج الكاملة](#get-items) |
 | المهارات | `GET /skills`, `GET /skill_groups` | [المهارات والمجموعات](#get-skills) |
@@ -114,11 +114,11 @@
 
 ## اختلافات MCP :id=mcp-differences
 
-تستخدم أدوات القوائم في MCP القيمة الافتراضية `limit=20`، وتقيّدها إلى `1..100`، وتقيّد `offset` بحيث لا يقل عن `0`. ترسل معاملات الصفحات إلى الموارد التي يرقّمها الخادم مثل السجل/سجلات المعاملات، لكنها تجلب مصفوفات HTTP كاملة وتقتطعها محليًا لموارد مثل المهام. تنتمي `items` و`count` و`hasMore` و`total` الاختياري إلى غلاف MCP. كما يزيل `detail=false` حقولًا من كل سجل؛ استخدم `detail=true` عند الحاجة إلى نموذج HTTP الكامل.
+تستخدم أدوات القوائم في MCP القيمة الافتراضية `limit=20`، وتقيّدها إلى `1..100`، وتقيّد `offset` بحيث لا يقل عن `0`. ترسل معاملات الصفحات إلى الموارد التي يرقّمها الخادم مثل السجل/سجلات المعاملات، لكنها تجلب مصفوفات HTTP كاملة وتقتطعها محليًا لموارد مثل المهام. تنتمي `items` و`count` و`hasMore` و`total` الاختياري إلى غلاف MCP. كما يزيل `detail=false` حقولًا من كل سجل؛ استخدم `detail=true` عند الحاجة إلى نموذج HTTP الكامل. للمهام، يستدعي `smartListType` الاختياري (`daily`، `weekly`، `monthly`) `GET /smart_lists/{type}/tasks` ولا يجتمع مع `categoryId`.
 
 ## المصادر ونطاق الإصدارات :id=api-common-sources
 
-تصف هذه المراجع SDK العام الحالي وسلوك مزوّد LifeUp المقابل. تستخدم الأمثلة بيانات مختلقة. روابط المصدر مراجع للتنفيذ، وليست إثباتًا بأن إصدارًا مثبتًا بعينه يحتوي جميع الحقول: [مسارات HTTP](https://github.com/Ayagikei/LifeUp-SDK/blob/main/http/src/main/java/net/lifeupapp/lifeup/http/service/KtorService.kt)، [غلاف HTTP](https://github.com/Ayagikei/LifeUp-SDK/blob/main/http/src/main/java/net/lifeupapp/lifeup/http/vo/HttpResponse.kt)، [ربط استعلامات MCP](https://github.com/Ayagikei/LifeUp-SDK/blob/main/mcp/src/query.ts).
+تصف هذه المراجع SDK العام الحالي وسلوك مزوّد LifeUp المقابل. تستخدم الأمثلة بيانات مختلقة. روابط المصدر مراجع للتنفيذ، وليست إثباتًا بأن إصدارًا مثبتًا بعينه يحتوي جميع الحقول: [مسارات HTTP](https://github.com/Ayagikei/LifeUp-SDK/blob/main/http/src/main/java/net/lifeupapp/lifeup/http/service/KtorService.kt)، [غلاف HTTP](https://github.com/Ayagikei/LifeUp-SDK/blob/main/http/src/main/java/net/lifeupapp/lifeup/http/vo/HttpResponse.kt)، [ربط استعلامات MCP](https://github.com/Ayagikei/LifeUp-SDK/blob/main/mcp/src/query.ts). استعلامات مهام القوائم الذكية (`GET /smart_lists/{type}/tasks`) تطابق عقد مزوّد LifeUp **1.107.4** في المصدر اعتبارًا من **2026-11-02**؛ إصدارات App أقدم بلا ذلك URI تفشل كمسارات ContentProvider غير معروفة أخرى — تحقق من `/info` قبل الاعتماد عليها.
 
 ## نماذج بيانات المهام والسجل :id=task-history-models
 
@@ -137,6 +137,7 @@
 | `name` | string | اسم المهمة. يتحول اسم المزوّد الغائب إلى `ERROR: name is null`. |
 | `notes` | string | الملاحظات؛ سلسلة فارغة عند الغياب. |
 | `status` | integer | حالة المهمة؛ القيمة الافتراضية عند الغياب `0`. راجع جدول الحالات أدناه. |
+| `isFrozen` | boolean أو `null` | حالة التجميد، مستقلة عن `status` (`status=0` قد تكون مجمدة). قيمة منطقية فعلية عندما يعرض موفر LifeUp وCloud SDK العمود؛ `null` في إصدارات App قديمة بلا عمود أو بقيمة null (غير معروف، وليس مثل `false`). |
 | `startTime` | integer | وقت البدء المهيّأ بالمللي ثانية؛ القيمة البديلة في SDK هي `0`. |
 | `deadline` | integer | وقت الاستحقاق بالمللي ثانية؛ القيمة البديلة في SDK عند الغياب `0`. |
 | `remindTime` | integer | وقت التذكير بالمللي ثانية؛ القيمة البديلة في SDK عند الغياب `0`. |
@@ -159,6 +160,10 @@
 | `subTasks` | `SubTask[]` | المهام الفرعية المتداخلة؛ مصفوفة فارغة إذا لم تتوفر. |
 | `countProgress` | `TaskCountProgress` أو `null` | لقطة لتقدم العدّ عند توفرها؛ قد تظهر في كلا العرضين. |
 | `repeatEndCondition` | `TaskRepeatEndCondition` أو `null` | قاعدة إنهاء التكرار في `/tasks`؛ دائمًا `null` في `/history`. |
+
+
+> [!NOTE]
+> إضافة `isFrozen` لا تغيّر عضوية القوائم الحالية أو التصفية الافتراضية؛ صفِّ في العميل حسب هذا الحقل عند توفره. يتطلب الحقل موفر LifeUp وCloud SDK محدَّثين — MCP وحده لا يمكنه توفيره. بعد تحديث Cloud، سجلات task/history في MCP تتضمن `isFrozen` مع `detail=true`؛ قوائم MCP المختصرة القديمة قد تحذف الحقل حتى تحديث MCP.
 
 ### حالة المهمة والطوابع الزمنية :id=task-times
 
@@ -276,7 +281,7 @@ GET http://{host:port}/tasks/1
   "message": "success",
   "data": [{
     "id": 101, "gid": 10, "name": "Read a chapter", "notes": "",
-    "status": 0, "startTime": 1792108800000, "deadline": 1792195199999,
+    "status": 0, "isFrozen": false, "startTime": 1792108800000, "deadline": 1792195199999,
     "remindTime": 0, "frequency": 1, "weekdays": "", "importance": 3, "difficulty": 2,
     "exp": 5, "skillIds": [2], "coin": 10, "coinVariable": 0,
     "itemId": 0, "itemAmount": 0, "words": "", "categoryId": 1,
@@ -288,6 +293,36 @@ GET http://{host:port}/tasks/1
 ```
 
 **السلوك والأخطاء:** يتبع اختيار القائمة وترتيبها منطق قائمة المهام في LifeUp؛ ولا تضمن نقطة النهاية الترتيب بحسب وقت الإكمال. تعني الاستجابة الناجحة `data: []` أن قائمة المهام المحددة لم تُعد سجلات. تستخدم أخطاء الإذن/المزوّد [غلاف الأخطاء المشترك](/guide/api-reference?id=response-errors)، وليست مصفوفات فارغة. لتقارير الإكمال، استخدم `/history` أدناه بدلًا من `endTime` في هذا المسار.
+
+> [!NOTE]
+> مسارات `/tasks` و`/tasks/-1` (الكل) الافتراضية، والقوائم الذكية المُستعلَم عنها بمعرّف فئة قائمة ذكية معروف، تطبّق نفس تصفية المصادر المؤرشفة أو المحذوفة أو المفقودة كما في عروض القوائم الذكية في التطبيق. يظل `GET /tasks/{categoryId}` المباشر لقائمة عادية محددة — بما فيها المؤرشفة — يُرجع المهام غير المكتملة لتلك القائمة. فضّل [GET /smart_lists/{type}/tasks](#get-smart-list-tasks) عند الحاجة إلى أعضاء يومي/أسبوعي/شهري دون تفعيل القوائم الذكية أو حل المعرّفات.
+
+### GET /smart_lists/{type}/tasks :id=get-smart-list-tasks
+
+يستعلم عن المهام **غير المكتملة** للقائمة الذكية اليومية أو الأسبوعية أو الشهرية وفق قواعد التاريخ/الأسبوع/الشهر في التطبيق. لا يلزم تفعيل القوائم الذكية في التطبيق، ولا يحتاج المستدعي إلى معرّف فئة قائمة ذكية. الاستجابة هي نفس `Task[]` المسطح لـ [GET /tasks](#get-tasks)؛ يحتفظ كل سجل بـ`categoryId` قائمته العادية الأصلية. هذا المسار للقراءة فقط: لا ينشئ أو يفعّل أو يستعيد فئات القوائم الذكية ولا يغيّر تفضيلات القوائم؛ قواعد بداية الأسبوع والتاريخ والمهام المجمّدة في التطبيق تبقى كما هي.
+
+| المعامل | الموضع | النوع | مطلوب | الافتراضي / السلوك |
+| --- | --- | --- | --- | --- |
+| `type` | المسار | string | نعم | `daily` أو `weekly` أو `monthly` بأحرف صغيرة فقط. |
+
+لا معاملات استعلام ولا صفحات ولا `categoryId` في هذا المسار.
+
+```text
+GET http://{host:port}/smart_lists/daily/tasks
+GET http://{host:port}/smart_lists/weekly/tasks
+GET http://{host:port}/smart_lists/monthly/tasks
+content://net.sarasarasa.lifeup.provider.api/smart_lists/daily/tasks
+```
+
+SDK: `TasksApi.listSmartListTasks(SmartListType.DAILY)` (أيضًا `WEEKLY`، `MONTHLY`).
+
+**الترتيب:** عند وجود صف فئة لنوع القائمة الذكية — حتى إن كان معطّلًا — تُطبَّق تفضيلات الترتيب المحفوظة. إذا لم يُنشأ صف قط، يتبع الترتيب إعداد قائمة الكل (`-1`)، وليس القائمة المفتوحة في واجهة التطبيق.
+
+**مسار المعرّف القديم:** قد يُرجع `/tasks_categories` قوائم ذكية مفعّلة بـ`type` `10`/`11`/`12` و`id` فعلي (مثل `{"id":37,"type":10,...}` → `GET /tasks/37`). النوع ليس معرّفًا؛ استخدم `id` المُرجَع بدلًا من استبدال `10`/`11`/`12` بـ`categoryId` (قد يكون `id` قائمة عادية أو ذكية `10` أو `11` أو `12` بشكل مشروع).
+
+**الأخطاء:** يُرجع `type` غير صالح HTTP `200` مع body `code=500` ورسالة تحتوي `invalid parameter`؛ لا تُنفَّذ استعلامات الخلفية. المسارات التي تفتقد مقطع `type` أو مقطع `/tasks` تُرجع HTTP `404`. أخطاء إذن المزوّد تستخدم [غلاف الأخطاء المشترك](/guide/api-reference?id=response-errors) (مثل body `code=10001` عندما يكون Cursor null). إصدارات التطبيق بلا هذا URI تُظهر خطأ مسار غير معروف؛ لا ترجع إلى كل المهام.
+
+**MCP:** `list_tasks({ smartListType: "daily" })` أو `list_data({ resource: "tasks", smartListType: "daily" })`. يستبعد `smartListType` `categoryId` (بما في ذلك `0`) ويُرفض على موارد غير المهام. المخرجات المختصرة/التفصيلية والصفحات على العميل تطابق استدعاءات قوائم المهام الأخرى.
 
 ### GET /history :id=get-history
 
@@ -314,7 +349,7 @@ GET http://{host:port}/history?offset=0&limit=100&gid=10
   "message": "success",
   "data": [{
     "id": 100, "gid": 10, "name": "Read a chapter", "notes": "",
-    "status": 1, "startTime": 1792022400000, "deadline": 1792108799999,
+    "status": 1, "isFrozen": true, "startTime": 1792022400000, "deadline": 1792108799999,
     "remindTime": 0, "frequency": 1, "weekdays": "", "importance": null, "difficulty": null,
     "exp": 5, "skillIds": [2], "coin": 10, "coinVariable": 0,
     "itemId": 0, "itemAmount": 0, "words": "", "categoryId": 1,
@@ -511,7 +546,7 @@ GET http://{host:port}/coin_records?offset=0&limit=100&time_range_start=17920224
 
 ### GET /tasks_categories :id=get-tasks-categories
 
-يعيد `TaskCategory[]`، بما فيها فئة الكل والفئات المؤرشفة. لا معاملات استعلام ولا صفحات. لا يوفّر HTTP المسار `/tasks_categories/{id}`. قيم ترتيب/تصفية الفئة تفضيلات محفوظة في التطبيق وليست مرشحات تُطبّق على الطلب.
+يعيد `TaskCategory[]`، بما فيها فئة الكل والفئات المؤرشفة. تظهر القوائم الذكية اليومية/الأسبوعية/الشهرية المفعّلة بـ`type` `10`/`11`/`12` و`id` الفئة المخزّن؛ تُحذف القوائم الذكية المعطّلة. لا معاملات استعلام ولا صفحات. لا يوفّر HTTP المسار `/tasks_categories/{id}`. قيم ترتيب/تصفية الفئة تفضيلات محفوظة في التطبيق وليست مرشحات تُطبّق على الطلب.
 
 ```json
 {"code":200,"message":"success","data":[{"id":1,"name":"Daily","isAsc":true,"sort":"order","filter":"","order":0,"status":0,"type":0}]}
@@ -528,7 +563,7 @@ GET http://{host:port}/coin_records?offset=0&limit=100&time_range_start=17920224
 | `filter` | string | تفضيل التجميع/التصفية المحفوظ. |
 | `order` | integer | ترتيب الفئة. |
 | `status` | integer | 0 عادية؛ 1 مؤرشفة. |
-| `type` | integer | 0 عادية؛ القوائم الذكية: 10 يومية، 11 أسبوعية، 12 شهرية، 20 قيد التنفيذ. |
+| `type` | integer | 0 عادية؛ القوائم الذكية: 10 يومية، 11 أسبوعية، 12 شهرية. |
 
 ## المهارات ومجموعاتها :id=get-skills
 

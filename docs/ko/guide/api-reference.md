@@ -7,7 +7,7 @@ LifeUp Cloud 요청 매개변수와 전체 HTTP 응답 모델을 설명합니다
 | 리소스 | 메서드 및 경로 | 매개변수 및 모델 |
 | --- | --- | --- |
 | 공통 규칙 | JSON 응답, 권한, 캐시 조건, 페이지 나누기 | [규칙](#representations), [캐시와 인증](#auth-cache), [페이지 나누기](#pagination) |
-| 할 일 | `GET /tasks`, `GET /tasks/{categoryId}`, `GET /tasks_categories` | [조회](#get-tasks), [할 일 모델](#task-fields), [카테고리](#get-tasks-categories) |
+| 할 일 | `GET /tasks`, `GET /tasks/{categoryId}`, `GET /tasks_categories`, `GET /smart_lists/{type}/tasks` | [조회](#get-tasks), [유형별 스마트 목록](#get-smart-list-tasks), [할 일 모델](#task-fields), [카테고리](#get-tasks-categories) |
 | 할 일 기록 | `GET /history` | [매개변수](#get-history), [시각](#task-times), [일일 보고서](#daily-report) |
 | 상품 | `GET /items`, `GET /items/{listId}`, `GET /items_categories` | [상품·카테고리 ID 및 전체 모델](#get-items) |
 | 능력 | `GET /skills`, `GET /skill_groups` | [능력 및 그룹](#get-skills) |
@@ -114,11 +114,11 @@ Cloud 토큰을 설정했다면 `Authorization`에 정확한 원시 값을 보�
 
 ## MCP와의 차이 :id=mcp-differences
 
-MCP 목록 도구는 기본 `limit=20`을 사용하고 `1..100`으로 제한하며 `offset`을 최소 0으로 조정합니다. 기록처럼 서버에서 페이지 처리하는 리소스에는 페이지 매개변수를 전달하지만, 작업처럼 전체 HTTP 배열을 반환하는 리소스는 가져온 뒤 로컬에서 분할합니다. `items`, `count`, `hasMore` 및 선택적 `total`은 MCP 봉투에 속합니다. `detail=false`는 각 레코드의 필드도 제거합니다. 전체 HTTP 모델이 필요하면 `detail=true`를 사용하세요.
+MCP 목록 도구는 기본 `limit=20`을 사용하고 `1..100`으로 제한하며 `offset`을 최소 0으로 조정합니다. 기록처럼 서버에서 페이지 처리하는 리소스에는 페이지 매개변수를 전달하지만, 작업처럼 전체 HTTP 배열을 반환하는 리소스는 가져온 뒤 로컬에서 분할합니다. `items`, `count`, `hasMore` 및 선택적 `total`은 MCP 봉투에 속합니다. `detail=false`는 각 레코드의 필드도 제거합니다. 전체 HTTP 모델이 필요하면 `detail=true`를 사용하세요. 작업 목록에는 선택적 `smartListType`(`daily`, `weekly`, `monthly`)이 `GET /smart_lists/{type}/tasks`를 호출하며 `categoryId`와 함께 지정할 수 없습니다.
 
 ## 출처 및 버전 범위 :id=api-common-sources
 
-이 참조는 현재 공개 SDK와 이에 대응하는 LifeUp 제공자 동작을 설명합니다. 예제는 가상의 데이터입니다. 소스 링크는 구현 참고 자료이며 특정 설치 버전에 모든 필드가 포함된다는 증거는 아닙니다. [HTTP 경로](https://github.com/Ayagikei/LifeUp-SDK/blob/main/http/src/main/java/net/lifeupapp/lifeup/http/service/KtorService.kt), [HTTP 래퍼](https://github.com/Ayagikei/LifeUp-SDK/blob/main/http/src/main/java/net/lifeupapp/lifeup/http/vo/HttpResponse.kt), [MCP 쿼리 매핑](https://github.com/Ayagikei/LifeUp-SDK/blob/main/mcp/src/query.ts).
+이 참조는 현재 공개 SDK와 이에 대응하는 LifeUp 제공자 동작을 설명합니다. 예제는 가상의 데이터입니다. 소스 링크는 구현 참고 자료이며 특정 설치 버전에 모든 필드가 포함된다는 증거는 아닙니다. [HTTP 경로](https://github.com/Ayagikei/LifeUp-SDK/blob/main/http/src/main/java/net/lifeupapp/lifeup/http/service/KtorService.kt), [HTTP 래퍼](https://github.com/Ayagikei/LifeUp-SDK/blob/main/http/src/main/java/net/lifeupapp/lifeup/http/vo/HttpResponse.kt), [MCP 쿼리 매핑](https://github.com/Ayagikei/LifeUp-SDK/blob/main/mcp/src/query.ts). 유형별 스마트 목록(`GET /smart_lists/{type}/tasks`)은 **2026-11-02** 기준 소스의 LifeUp **1.107.4** 제공자 계약과 일치합니다. 해당 URI가 없는 구 App 빌드는 다른 알 수 없는 ContentProvider 경로처럼 실패합니다. 사용 전 `/info`를 확인하세요.
 
 ## 작업 및 기록 데이터 모델 :id=task-history-models
 
@@ -137,6 +137,7 @@ SDK는 하나의 직렬화 `Task` 클래스를 두 가지 뷰에 사용합니다
 | `name` | string | 작업 이름. 제공자 이름이 누락되면 `ERROR: name is null`이 됩니다. |
 | `notes` | string | 메모. 없으면 빈 문자열. |
 | `status` | integer | 작업 상태. 누락 시 기본값 `0`. 아래 상태 표 참조. |
+| `isFrozen` | boolean 또는 `null` | 동결 상태. `status`와 독립(`status=0`이어도 동결 가능). LifeUp Provider와 Cloud SDK가 열을 노출하면 실제 불리언. 구 App에서 열이 없거나 null이면 `null`(알 수 없음, `false`와 동일하지 않음). |
 | `startTime` | integer | 설정된 시작 시각(밀리초). SDK 대체값 `0`. |
 | `deadline` | integer | 기한(밀리초). 없을 때 SDK 대체값 `0`. |
 | `remindTime` | integer | 알림 시각(밀리초). 없을 때 SDK 대체값 `0`. |
@@ -159,6 +160,10 @@ SDK는 하나의 직렬화 `Task` 클래스를 두 가지 뷰에 사용합니다
 | `subTasks` | `SubTask[]` | 중첩된 하위 작업. 사용할 수 없으면 빈 배열. |
 | `countProgress` | `TaskCountProgress` 또는 `null` | 제공되는 경우의 개수 진행 상태 스냅샷. 두 뷰 모두에 나타날 수 있습니다. |
 | `repeatEndCondition` | `TaskRepeatEndCondition` 또는 `null` | `/tasks`의 반복 종료 규칙. `/history`에서는 항상 `null`입니다. |
+
+
+> [!NOTE]
+> `isFrozen` 필드 추가는 기존 목록 멤버십과 기본 필터를 바꾸지 않습니다. 필드를 사용할 수 있을 때 클라이언트에서 이 필드로 필터하세요. 필드는 업데이트된 LifeUp Provider와 Cloud SDK가 필요하며 MCP만으로는 제공할 수 없습니다. Cloud 업데이트 후 MCP task/history는 `detail=true`일 때 `isFrozen`을 포함합니다. 이전 MCP compact 화이트리스트는 MCP 업데이트 전까지 생략할 수 있습니다.
 
 ### 작업 상태 및 타임스탬프 :id=task-times
 
@@ -276,7 +281,7 @@ GET http://{host:port}/tasks/1
   "message": "success",
   "data": [{
     "id": 101, "gid": 10, "name": "Read a chapter", "notes": "",
-    "status": 0, "startTime": 1792108800000, "deadline": 1792195199999,
+    "status": 0, "isFrozen": false, "startTime": 1792108800000, "deadline": 1792195199999,
     "remindTime": 0, "frequency": 1, "weekdays": "", "importance": 3, "difficulty": 2,
     "exp": 5, "skillIds": [2], "coin": 10, "coinVariable": 0,
     "itemId": 0, "itemAmount": 0, "words": "", "categoryId": 1,
@@ -288,6 +293,36 @@ GET http://{host:port}/tasks/1
 ```
 
 **동작 및 오류:** 목록 선택/순서는 LifeUp 작업 목록 규칙을 따릅니다. 이 엔드포인트는 완료 시각 기준 정렬을 보장하지 않습니다. 성공 응답의 `data: []`는 선택한 작업 목록에 레코드가 없다는 뜻입니다. 권한/제공자 오류는 [공통 오류 래퍼](/guide/api-reference?id=response-errors)로 반환되며 빈 배열이 아닙니다. 완료를 보고할 때는 이 경로의 `endTime` 대신 아래 `/history`를 사용하세요.
+
+> [!NOTE]
+> 기본 `/tasks`, `/tasks/-1`(전체), 알려진 스마트 목록 카테고리 ID로 조회하는 스마트 목록은 App 스마트 목록 보기와 동일하게 소스 카테고리가 보관·삭제·누락된 작업을 제외합니다. 특정 일반 목록(보관 목록 포함)에 대한 직접 `GET /tasks/{categoryId}`는 해당 목록의 미완료 작업을 반환합니다. 스마트 목록을 켜거나 ID를 해석하지 않고 일/주/월 구성원이 필요하면 [GET /smart_lists/{type}/tasks](#get-smart-list-tasks)를 사용하세요.
+
+### GET /smart_lists/{type}/tasks :id=get-smart-list-tasks
+
+App의 일/주/월 규칙으로 일/주/월 스마트 목록의 **미완료** 작업을 조회합니다. App에서 스마트 목록을 활성화할 필요가 없으며 스마트 목록 카테고리 ID도 필요 없습니다. 응답은 [GET /tasks](#get-tasks)와 동일한 평면 `Task[]`이며 각 레코드는 원래 일반 목록 `categoryId`를 유지합니다. 이 경로는 읽기 전용이며 스마트 목록 카테고리를 만들거나 활성화·복원하거나 목록 설정을 바꾸지 않습니다. App의 주 시작일·날짜·동결 작업 규칙도 변하지 않습니다.
+
+| 매개변수 | 위치 | 유형 | 필수 | 기본값 / 동작 |
+| --- | --- | --- | --- | --- |
+| `type` | Path | string | 예 | 소문자 `daily`, `weekly`, `monthly`만 허용. |
+
+이 경로에는 쿼리 매개변수, 페이지네이션, `categoryId`가 없습니다.
+
+```text
+GET http://{host:port}/smart_lists/daily/tasks
+GET http://{host:port}/smart_lists/weekly/tasks
+GET http://{host:port}/smart_lists/monthly/tasks
+content://net.sarasarasa.lifeup.provider.api/smart_lists/daily/tasks
+```
+
+SDK: `TasksApi.listSmartListTasks(SmartListType.DAILY)` (`WEEKLY`, `MONTHLY`도 가능).
+
+**정렬:** 해당 스마트 유형의 카테고리 행이 있으면(비활성 포함) 저장된 정렬 설정이 적용됩니다. 한 번도 생성되지 않았으면 App UI에서 열린 목록이 아니라 전체(`-1`) 목록 설정을 따릅니다.
+
+**레거시 ID 경로:** `/tasks_categories`는 활성화된 스마트 목록을 `type` `10`/`11`/`12`와 실제 `id`로 반환할 수 있습니다(예: `{"id":37,"type":10,...}` → `GET /tasks/37`). 유형(type)은 ID가 아닙니다. 반환된 `id`를 사용하고, `10`/`11`/`12`를 `categoryId` 대신 쓰지 마세요(일반 또는 스마트 목록의 `id`가 `10`/`11`/`12`일 수 있습니다).
+
+**오류:** 잘못된 `type`은 HTTP `200`과 body `code=500`, 메시지에 `invalid parameter`가 포함되며 백엔드 쿼리는 실행되지 않습니다. `type` 세그먼트가 없거나 `/tasks` 세그먼트가 빠진 경로는 HTTP `404`입니다. 제공자 권한 실패는 [공통 오류 래퍼](/guide/api-reference?id=response-errors)를 사용합니다(예: Cursor가 null이면 body `code=10001`). 이 URI가 없는 App 버전은 알 수 없는 경로 오류를 반환합니다. 전체 작업으로 대체하지 마세요.
+
+**MCP:** `list_tasks({ smartListType: "daily" })` 또는 `list_data({ resource: "tasks", smartListType: "daily" })`. `smartListType`은 `categoryId`(`0` 포함)와 배타적이며 작업이 아닌 리소스에서는 거부됩니다. compact/detail 출력과 클라이언트 페이지네이션은 다른 작업 목록 호출과 같습니다.
 
 ### GET /history :id=get-history
 
@@ -314,7 +349,7 @@ GET http://{host:port}/history?offset=0&limit=100&gid=10
   "message": "success",
   "data": [{
     "id": 100, "gid": 10, "name": "Read a chapter", "notes": "",
-    "status": 1, "startTime": 1792022400000, "deadline": 1792108799999,
+    "status": 1, "isFrozen": true, "startTime": 1792022400000, "deadline": 1792108799999,
     "remindTime": 0, "frequency": 1, "weekdays": "", "importance": null, "difficulty": null,
     "exp": 5, "skillIds": [2], "coin": 10, "coinVariable": 0,
     "itemId": 0, "itemAmount": 0, "words": "", "categoryId": 1,
@@ -511,7 +546,7 @@ EXP `value`는 속성별 값입니다. EXP `totalValue`를 기록 간에 무조�
 
 ### GET /tasks_categories :id=get-tasks-categories
 
-전체 및 보관된 카테고리를 포함한 `TaskCategory[]`를 반환합니다. 쿼리 매개변수나 페이지 나누기가 없으며 `/tasks_categories/{id}`도 제공하지 않습니다. 카테고리의 정렬·필터 값은 앱에 저장된 설정이며 요청 필터로 적용되지 않습니다.
+전체 및 보관된 카테고리를 포함한 `TaskCategory[]`를 반환합니다. 활성화된 일/주/월 스마트 목록은 `type` `10`/`11`/`12`와 저장된 카테고리 `id`로 나타납니다. 비활성 스마트 목록은 생략됩니다. 쿼리 매개변수나 페이지 나누기가 없으며 `/tasks_categories/{id}`도 제공하지 않습니다. 카테고리의 정렬·필터 값은 앱에 저장된 설정이며 요청 필터로 적용되지 않습니다.
 
 ```json
 {"code":200,"message":"success","data":[{"id":1,"name":"Daily","isAsc":true,"sort":"order","filter":"","order":0,"status":0,"type":0}]}
@@ -528,7 +563,7 @@ EXP `value`는 속성별 값입니다. EXP `totalValue`를 기록 간에 무조�
 | `filter` | string | 저장된 그룹화·필터 설정. |
 | `order` | integer | 카테고리 순서. |
 | `status` | integer | 0 일반, 1 보관됨. |
-| `type` | integer | 0 일반. 스마트 목록은 10 매일, 11 매주, 12 매월, 20 진행 중. |
+| `type` | integer | 0 일반. 스마트 목록은 10 매일, 11 매주, 12 매월. |
 
 ## 능력과 능력 그룹 :id=get-skills
 

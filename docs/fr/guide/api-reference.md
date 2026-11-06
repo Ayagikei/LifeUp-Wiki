@@ -7,7 +7,7 @@ Cette référence décrit les paramètres de requête LifeUp Cloud et les modèl
 | Ressource | Méthodes et chemins | Paramètres et modèle |
 | --- | --- | --- |
 | Règles communes | Réponses JSON, autorisation, conditions de cache, pagination | [Conventions](#representations), [cache et authentification](#auth-cache), [pagination](#pagination) |
-| Tâches | `GET /tasks`, `GET /tasks/{categoryId}`, `GET /tasks_categories` | [Requêtes](#get-tasks), [modèle de tâche](#task-fields), [catégories](#get-tasks-categories) |
+| Tâches | `GET /tasks`, `GET /tasks/{categoryId}`, `GET /tasks_categories`, `GET /smart_lists/{type}/tasks` | [Requêtes](#get-tasks), [listes intelligentes par type](#get-smart-list-tasks), [modèle de tâche](#task-fields), [catégories](#get-tasks-categories) |
 | Historique des tâches | `GET /history` | [Paramètres](#get-history), [horodatages](#task-times), [rapports quotidiens](#daily-report) |
 | Objets | `GET /items`, `GET /items/{listId}`, `GET /items_categories` | [Identifiants d’objets, de catégories et modèles complets](#get-items) |
 | Attributs | `GET /skills`, `GET /skill_groups` | [Attributs et groupes](#get-skills) |
@@ -114,11 +114,11 @@ Le SDK HTTP actuel transmet les limites de date uniquement si **les deux** sont 
 
 ## Différences avec MCP :id=mcp-differences
 
-Les outils de listes MCP utilisent `limit=20` par défaut, le limitent à `1..100` et fixent `offset` à au moins `0`. Ils transmettent la pagination aux ressources paginées côté serveur comme l’historique/les journaux, mais récupèrent les tableaux HTTP complets puis les découpent localement pour les tâches. Leurs `items`, `count`, `hasMore` et `total` facultatif appartiennent à l’enveloppe MCP. `detail=false` supprime aussi des champs de chaque enregistrement ; utilisez `detail=true` si le modèle HTTP complet est nécessaire.
+Les outils de listes MCP utilisent `limit=20` par défaut, le limitent à `1..100` et fixent `offset` à au moins `0`. Ils transmettent la pagination aux ressources paginées côté serveur comme l’historique/les journaux, mais récupèrent les tableaux HTTP complets puis les découpent localement pour les tâches. Leurs `items`, `count`, `hasMore` et `total` facultatif appartiennent à l’enveloppe MCP. `detail=false` supprime aussi des champs de chaque enregistrement ; utilisez `detail=true` si le modèle HTTP complet est nécessaire. Pour les tâches, le `smartListType` facultatif (`daily`, `weekly`, `monthly`) appelle `GET /smart_lists/{type}/tasks` et est incompatible avec `categoryId`.
 
 ## Sources et portée des versions :id=api-common-sources
 
-Ces références décrivent le SDK public actuel et le comportement correspondant du fournisseur LifeUp. Les exemples utilisent des données fictives. Les liens vers le code sont des références d’implémentation, sans prouver qu’une version installée donnée contient chaque champ : [routes HTTP](https://github.com/Ayagikei/LifeUp-SDK/blob/main/http/src/main/java/net/lifeupapp/lifeup/http/service/KtorService.kt), [enveloppe HTTP](https://github.com/Ayagikei/LifeUp-SDK/blob/main/http/src/main/java/net/lifeupapp/lifeup/http/vo/HttpResponse.kt), [correspondance des requêtes MCP](https://github.com/Ayagikei/LifeUp-SDK/blob/main/mcp/src/query.ts).
+Ces références décrivent le SDK public actuel et le comportement correspondant du fournisseur LifeUp. Les exemples utilisent des données fictives. Les liens vers le code sont des références d’implémentation, sans prouver qu’une version installée donnée contient chaque champ : [routes HTTP](https://github.com/Ayagikei/LifeUp-SDK/blob/main/http/src/main/java/net/lifeupapp/lifeup/http/service/KtorService.kt), [enveloppe HTTP](https://github.com/Ayagikei/LifeUp-SDK/blob/main/http/src/main/java/net/lifeupapp/lifeup/http/vo/HttpResponse.kt), [correspondance des requêtes MCP](https://github.com/Ayagikei/LifeUp-SDK/blob/main/mcp/src/query.ts). Les requêtes de tâches par liste intelligente (`GET /smart_lists/{type}/tasks`) correspondent au contrat fournisseur LifeUp **1.107.4** dans les sources au **2026-11-02** ; les builds App plus anciens sans cet URI échouent comme les autres chemins ContentProvider inconnus — vérifiez `/info` avant de vous y fier.
 
 ## Modèles de données des tâches et de l’historique :id=task-history-models
 
@@ -137,6 +137,7 @@ Tous les champs ci-dessous apparaissent dans l’objet HTTP actuel. Les valeurs 
 | `name` | string | Nom de la tâche. Un nom absent du fournisseur devient `ERROR: name is null`. |
 | `notes` | string | Notes ; chaîne vide si absentes. |
 | `status` | integer | Statut de la tâche ; `0` si absent. Voir le tableau des statuts. |
+| `isFrozen` | boolean ou `null` | État gelé, indépendant de `status` (`status=0` peut être gelé). Booléen réel lorsque le fournisseur LifeUp et le Cloud SDK exposent la colonne ; `null` sur d’anciennes Apps sans colonne ou null (inconnu, pas équivalent à `false`). |
 | `startTime` | integer | Heure de début configurée en millisecondes ; remplacement SDK `0`. |
 | `deadline` | integer | Échéance en millisecondes ; remplacement SDK `0` si absente. |
 | `remindTime` | integer | Heure de rappel en millisecondes ; remplacement SDK `0` si absente. |
@@ -159,6 +160,10 @@ Tous les champs ci-dessous apparaissent dans l’objet HTTP actuel. Les valeurs 
 | `subTasks` | `SubTask[]` | Sous-tâches imbriquées ; tableau vide si indisponibles. |
 | `countProgress` | `TaskCountProgress` ou `null` | Instantané de progression du compteur si disponible ; peut figurer dans les deux vues. |
 | `repeatEndCondition` | `TaskRepeatEndCondition` ou `null` | Règle de fin de répétition dans `/tasks` ; toujours `null` dans `/history`. |
+
+
+> [!NOTE]
+> L’ajout de `isFrozen` ne modifie pas l’appartenance ni le filtrage par défaut des listes existantes ; filtrez côté client sur ce champ lorsqu’il est disponible. Le champ exige un fournisseur LifeUp et un Cloud SDK à jour — MCP seul ne peut pas le fournir. Après mise à jour Cloud, les enregistrements task/history MCP incluent `isFrozen` avec `detail=true` ; d’anciennes listes compactes MCP peuvent l’omettre jusqu’à la mise à jour MCP.
 
 ### Statut et horodatages des tâches :id=task-times
 
@@ -276,7 +281,7 @@ GET http://{host:port}/tasks/1
   "message": "success",
   "data": [{
     "id": 101, "gid": 10, "name": "Read a chapter", "notes": "",
-    "status": 0, "startTime": 1792108800000, "deadline": 1792195199999,
+    "status": 0, "isFrozen": false, "startTime": 1792108800000, "deadline": 1792195199999,
     "remindTime": 0, "frequency": 1, "weekdays": "", "importance": 3, "difficulty": 2,
     "exp": 5, "skillIds": [2], "coin": 10, "coinVariable": 0,
     "itemId": 0, "itemAmount": 0, "words": "", "categoryId": 1,
@@ -288,6 +293,36 @@ GET http://{host:port}/tasks/1
 ```
 
 **Comportement et erreurs :** la sélection et l’ordre suivent la logique des listes de tâches LifeUp ; cet endpoint ne garantit pas un tri par heure d’achèvement. Un `data: []` réussi signifie que la liste sélectionnée n’a renvoyé aucun enregistrement. Les échecs d’autorisation/fournisseur utilisent l’[enveloppe commune d’erreur](/guide/api-reference?id=response-errors), pas des tableaux vides. Pour les rapports d’achèvement, utilisez `/history` plutôt que le `endTime` de cette route.
+
+> [!NOTE]
+> Les routes par défaut `/tasks`, `/tasks/-1` (Toutes) et les listes intelligentes interrogées via un ID de catégorie connu appliquent le même filtrage des sources archivées, supprimées ou manquantes que les vues de listes intelligentes de l’App. Un `GET /tasks/{categoryId}` direct pour une liste normale précise — y compris archivée — renvoie toujours les tâches inachevées de cette liste. Préférez [GET /smart_lists/{type}/tasks](#get-smart-list-tasks) lorsque vous avez besoin des membres journaliers/hebdomadaires/mensuels sans activer les listes intelligentes ni résoudre des ID.
+
+### GET /smart_lists/{type}/tasks :id=get-smart-list-tasks
+
+Interroge les tâches **inachevées** de la liste intelligente quotidienne, hebdomadaire ou mensuelle selon les règles jour/semaine/mois de l’App. Les listes intelligentes n’ont pas besoin d’être activées dans l’App et l’appelant n’a pas besoin d’un ID de catégorie de liste intelligente. La réponse est le même `Task[]` plat que [GET /tasks](#get-tasks) ; chaque enregistrement conserve son `categoryId` de liste normale d’origine. Cette route est en lecture seule : elle ne crée, n’active ni ne restaure de catégories de listes intelligentes et ne modifie pas les préférences de listes ; les règles de début de semaine, de date et de tâches gelées de l’App restent inchangées.
+
+| Paramètre | Emplacement | Type | Obligatoire | Défaut / comportement |
+| --- | --- | --- | --- | --- |
+| `type` | Path | string | Oui | Uniquement `daily`, `weekly` ou `monthly` en minuscules. |
+
+Aucun paramètre de requête, pagination ni `categoryId` sur cette route.
+
+```text
+GET http://{host:port}/smart_lists/daily/tasks
+GET http://{host:port}/smart_lists/weekly/tasks
+GET http://{host:port}/smart_lists/monthly/tasks
+content://net.sarasarasa.lifeup.provider.api/smart_lists/daily/tasks
+```
+
+SDK : `TasksApi.listSmartListTasks(SmartListType.DAILY)` (aussi `WEEKLY`, `MONTHLY`).
+
+**Tri :** Lorsqu’une ligne de catégorie existe pour ce type intelligent — même désactivée — les préférences de tri enregistrées s’appliquent. Si aucune ligne n’a jamais été créée, l’ordre suit la configuration de la liste Toutes (`-1`), pas la liste ouverte dans l’UI de l’App.
+
+**Chemin ID hérité :** `/tasks_categories` peut renvoyer des listes intelligentes activées avec `type` `10`/`11`/`12` et un `id` réel (par ex. `{"id":37,"type":10,...}` → `GET /tasks/37`). Le type n’est pas un ID ; utilisez l’`id` renvoyé plutôt que de substituer `10`/`11`/`12` à `categoryId` (une liste normale ou intelligente peut légitimement avoir `id` `10`, `11` ou `12`).
+
+**Erreurs :** Un `type` invalide renvoie HTTP `200` avec body `code=500` et un message contenant `invalid parameter` ; la requête backend n’est pas exécutée. Les chemins sans segment `type` ou sans segment `/tasks` renvoient HTTP `404`. Les échecs d’autorisation du fournisseur utilisent l’[enveloppe commune d’erreur](/guide/api-reference?id=response-errors) (par ex. body `code=10001` lorsque le Cursor est null). Les versions de l’App sans cet URI signalent une erreur de chemin inconnu ; ne revenez pas à Toutes les tâches.
+
+**MCP :** `list_tasks({ smartListType: "daily" })` ou `list_data({ resource: "tasks", smartListType: "daily" })`. `smartListType` exclut `categoryId` (y compris `0`) et est rejeté sur les ressources autres que les tâches. La sortie compacte/détaillée et la pagination côté client correspondent aux autres appels de listes de tâches.
 
 ### GET /history :id=get-history
 
@@ -314,7 +349,7 @@ GET http://{host:port}/history?offset=0&limit=100&gid=10
   "message": "success",
   "data": [{
     "id": 100, "gid": 10, "name": "Read a chapter", "notes": "",
-    "status": 1, "startTime": 1792022400000, "deadline": 1792108799999,
+    "status": 1, "isFrozen": true, "startTime": 1792022400000, "deadline": 1792108799999,
     "remindTime": 0, "frequency": 1, "weekdays": "", "importance": null, "difficulty": null,
     "exp": 5, "skillIds": [2], "coin": 10, "coinVariable": 0,
     "itemId": 0, "itemAmount": 0, "words": "", "categoryId": 1,
@@ -511,7 +546,7 @@ Renvoie `ShopCategory[]`. `include_hidden` est facultatif, par défaut `false` ;
 
 ### GET /tasks_categories :id=get-tasks-categories
 
-Renvoie `TaskCategory[]`, incluant la catégorie « Toutes » et les catégories archivées. Aucun paramètre ni pagination. Le serveur HTTP n’expose pas `/tasks_categories/{id}`. Les valeurs de tri/filtre sont des préférences enregistrées de l’App ; ce point de terminaison ne les applique pas comme filtres de requête.
+Renvoie `TaskCategory[]`, incluant la catégorie « Toutes » et les catégories archivées. Les listes intelligentes quotidiennes/hebdomadaires/mensuelles activées apparaissent avec `type` `10`/`11`/`12` et leur `id` de catégorie enregistré ; les listes désactivées sont omises. Aucun paramètre ni pagination. Le serveur HTTP n’expose pas `/tasks_categories/{id}`. Les valeurs de tri/filtre sont des préférences enregistrées de l’App ; ce point de terminaison ne les applique pas comme filtres de requête.
 
 ```json
 {"code":200,"message":"success","data":[{"id":1,"name":"Daily","isAsc":true,"sort":"order","filter":"","order":0,"status":0,"type":0}]}
@@ -528,7 +563,7 @@ Renvoie `TaskCategory[]`, incluant la catégorie « Toutes » et les catégories
 | `filter` | string | Préférence enregistrée de regroupement/filtre. |
 | `order` | integer | Ordre de la catégorie. |
 | `status` | integer | 0 normale ; 1 archivée. |
-| `type` | integer | 0 normale ; listes intelligentes : 10 quotidienne, 11 hebdomadaire, 12 mensuelle, 20 en cours. |
+| `type` | integer | 0 normale ; listes intelligentes : 10 quotidienne, 11 hebdomadaire, 12 mensuelle. |
 
 ## Attributs et groupes d’attributs :id=get-skills
 
