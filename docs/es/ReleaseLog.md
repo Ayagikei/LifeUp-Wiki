@@ -8,7 +8,7 @@
 
 | Plataforma        | Versión                | Fecha de actualización      |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.107.0              | 2026/10/13                  |
+| LifeUp-Android    | v1.107.4              | 2026/11/04                  |
 | LifeUp-iOS        | consulta [feature/ulives] | 🎉App alternativa disponible |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
 | LifeUp Cloud(SDK) | v3.0.2                 | 2026/09/24                  |
@@ -19,11 +19,45 @@
 
 ### **LifeUp-Android**
 
-**v1.107.2 (Próximamente)**
+**v1.107.4 (2026/11/04)**
+
+**✨ Funciones**
+
+1. **Resumen y gestión del almacenamiento**: abre Copia de seguridad/Restaurar → Gestión de almacenamiento para ver el espacio de la base de datos, imágenes y adjuntos, sonidos, copias de seguridad locales, copias de la ruta predeterminada y la caché de imágenes, y saltar al gestor correspondiente.
+2. **Puedes borrar restos de copias en desuso, miniaturas de widgets caducadas, paquetes de instalación sobrantes y la caché de imágenes en línea.** Borrar la caché de widgets actualiza los widgets de la pantalla de inicio. Las imágenes y los sonidos normales siguen en sus gestores actuales.
+3. **La última finalización de una tarea repetitiva se puede deshacer en un día posterior mientras siga dentro del plazo**, siempre que el ciclo siguiente no se haya editado y no tenga progreso. Las tareas de equipo siguen sin poder deshacerse. La anulación se rechaza si alteraría ediciones, recuentos, subtareas o tiempo de enfoque sin liquidar posteriores.
+
+**♻️ Optimización**
+
+1. **Las consultas de tareas pueden dirigirse por separado a las listas inteligentes de día, semana y mes**, y cada tarea incluye ahora su propia marca de congelación. La búsqueda por id de lista no cambia.
+
+**🐛 Correcciones**
+
+1. Se corrigió que la app se quedara bloqueada al buscar tareas para descongelarlas.
+2. Se corrigió que las notas de una tarea pudieran mostrarse mal cuando la nota estaba vacía.
+3. Se corrigió que las copias de seguridad locales dejaran de rotar después de revertir una restauración fallida.
+4. Se corrigió que las copias de seguridad antiguas importaran más que los datos reales del usuario. El paquete antiguo se elimina tras una importación correcta.
+
+**v1.107.3 (2026/10/28)**
+
+**🐛 Correcciones**
+
+1. **Se corrigió que las copias locales a veces se informaran como fallidas.** Si no se puede tomar una instantánea nueva, la app vuelve a la exportación de base de datos anterior. Un fallo conserva la copia buena previa y muestra un motivo concreto.
+2. **Se corrigió un cierre al leer datos desde otra app o un widget de la pantalla de inicio antes de inicializar los ajustes.**
+3. **Se corrigió el enlace de descarga en el navegador del diálogo de progreso de actualización dentro de la app.**
+4. **Se corrigieron traducciones erróneas**, incluidas cadenas en serbio que seguían siendo frases completas en inglés, «eliminar datos» descrito como una instalación nueva, EXP traducido de forma incorrecta y errores claros de gramática en el inglés original.
+
+**v1.107.2 (2026/10/23)**
 
 **🐛 Correcciones**
 
 1. Se corrigió la ausencia de importancia y dificultad en los resultados de consulta del ContentProvider de tareas, para que herramientas de terceros puedan usar ambos campos al procesar tareas.
+
+**v1.107.1 (2026/10/17)**
+
+**🐛 Correcciones**
+
+1. **Se corrigió que el historial de pomodoro y enfoque de un intervalo de fechas devolviera la página incorrecta.** Los registros se paginan ahora del más reciente al más antiguo.
 
 **v1.107.0 (2026/10/13)**
 
@@ -76,6 +110,17 @@
 **🐛 Correcciones de errores**
 
 1. **Corregido un problema en el que los datos anómalos de Tareas podían acumularse en ciertos casos**: Esto podía hacer que operaciones como ordenar o eliminar Tareas fueran lentas o no respondieran. La actualización limpia automáticamente los datos inválidos afectados y mejora el rendimiento con historiales extensos de Tareas.
+
+**v1.105.4 (2026/08/30)**
+
+**♻️ Optimización**
+
+1. **Mejorado el rendimiento de carga de las listas inteligentes de día, semana y mes cuando muchas Tareas no tienen plazo.**
+
+**🐛 Correcciones de errores**
+
+1. **Corregido que las Tareas únicas atrasadas y reiniciadas no aparecieran en las listas inteligentes de día, semana y mes.**
+2. **Corregido que los nombres largos de Tarea se superpusieran al nombre de la lista en la página de detalle de la Tarea.**
 
 **v1.105.3 (2026/08/26)**
 

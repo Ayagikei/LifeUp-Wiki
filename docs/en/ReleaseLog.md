@@ -8,7 +8,7 @@
 
 | Platform          | Version                | Update Date                 |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.107.0              | 2026/10/13                  |
+| LifeUp-Android    | v1.107.4              | 2026/11/04                  |
 | LifeUp-iOS        | check [feature/ulives] | 🎉Alternative app available |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
 | LifeUp Cloud(SDK) | v3.0.2                 | 2026/09/24                  |
@@ -19,11 +19,45 @@
 
 ### **LifeUp-Android**
 
-**v1.107.2 (Upcoming)**
+**v1.107.4 (2026/11/04)**
+
+**✨ Features**
+
+1. **Storage overview and management**: open Backup/Restore → Storage management to see space used by the database, images and attachments, sounds, local safety backups, default-path backups, and image cache, then jump to the matching manager.
+2. **You can clear idle backup leftovers, expired widget thumbnails, leftover installer packages, and the online image cache.** Clearing the widget cache refreshes home-screen widgets. Regular images and sounds stay in their existing managers.
+3. **A repeating task's latest completion can be undone on a later day while it is still within the deadline**, as long as the next cycle has not been edited and has no progress. Team tasks still cannot be undone. The undo is refused when it would disturb later edits, counts, subtasks, or unsettled focus time.
+
+**♻️ Optimization**
+
+1. **Task queries can target the day, week, and month smart lists separately**, and each task now includes its own frozen flag. Lookup by list id is unchanged.
+
+**🐛 Bug Fixes**
+
+1. Fixed the app stalling while looking up tasks to unfreeze.
+2. Fixed task notes that could render incorrectly when the note was empty.
+3. Fixed local safety backups that stopped rotating after a failed restore was rolled back.
+4. Fixed old safety backups importing more than the real user data. The old package is removed after a successful import.
+
+**v1.107.3 (2026/10/28)**
+
+**🐛 Bug Fixes**
+
+1. **Fixed local backups that were sometimes reported as failed.** If a new snapshot cannot be taken, the app falls back to the older database export. A failure keeps the previous good backup and shows a specific reason.
+2. **Fixed a crash when another app or a home-screen widget read data before settings were initialized.**
+3. **Fixed the browser download link in the in-app update progress dialog.**
+4. **Corrected mistranslations**, including Serbian strings that were still full English sentences, "delete data" described as a fresh install, EXP translated incorrectly, and clear English grammar errors.
+
+**v1.107.2 (2026/10/23)**
 
 **🐛 Bug Fixes**
 
 1. Fixed missing task importance and difficulty in ContentProvider query results, so third-party tools can use both fields when processing tasks.
+
+**v1.107.1 (2026/10/17)**
+
+**🐛 Bug Fixes**
+
+1. **Fixed pomodoro and focus history for a date range returning the wrong page.** Records are now paged from newest to oldest.
 
 **v1.107.0 (2026/10/13)**
 

@@ -8,7 +8,7 @@
 
 | Piattaforma       | Versione               | Data aggiornamento          |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.107.0              | 2026/10/13                  |
+| LifeUp-Android    | v1.107.4              | 2026/11/04                  |
 | LifeUp-iOS        | consulta [feature/ulives] | 🎉App alternativa disponibile |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
 | LifeUp Cloud(SDK) | v3.0.2                 | 2026/09/24                  |
@@ -19,11 +19,45 @@
 
 ### **LifeUp-Android**
 
-**v1.107.2 (In arrivo)**
+**v1.107.4 (2026/11/04)**
+
+**✨ Funzionalità**
+
+1. **Panoramica e gestione dello spazio**: apri Backup/Ripristino → Gestione spazio per vedere lo spazio usato da database, immagini e allegati, suoni, copie di sicurezza locali, backup del percorso predefinito e cache immagini, poi passare al gestore corrispondente.
+2. **Puoi cancellare residui di backup inutilizzati, miniature dei widget scadute, pacchetti di installazione rimasti e la cache delle immagini online.** Svuotare la cache dei widget aggiorna i widget della schermata Home. Immagini e suoni normali restano nei gestori esistenti.
+3. **L'ultimo completamento di un'attività ripetuta può essere annullato in un giorno successivo finché è ancora entro la scadenza**, se il ciclo successivo non è stato modificato e non ha progressi. I Compiti di squadra non si possono ancora annullare. L'annullamento viene rifiutato se disturberebbe modifiche, conteggi, sotto-attività o tempo di focus non liquidato successivi.
+
+**♻️ Ottimizzazione**
+
+1. **Le query sulle attività possono rivolgersi separatamente alle liste intelligenti di giorno, settimana e mese**, e ogni attività include ora il proprio stato di congelamento. La ricerca per id elenco resta invariata.
+
+**🐛 Correzioni**
+
+1. Corretto il blocco dell'app durante la ricerca di attività da scongelare.
+2. Corrette le note delle attività che potevano apparire in modo errato quando la nota era vuota.
+3. Corrette le copie di sicurezza locali che smettevano di ruotare dopo il rollback di un ripristino non riuscito.
+4. Corrette le vecchie copie di sicurezza che importavano più dei dati reali dell'utente. Il vecchio pacchetto viene rimosso dopo un import riuscito.
+
+**v1.107.3 (2026/10/28)**
+
+**🐛 Correzioni**
+
+1. **Corretti i backup locali a volte segnalati come non riusciti.** Se non è possibile creare un nuovo snapshot, l'app torna all'esportazione del database precedente. Un errore conserva il backup valido precedente e mostra un motivo preciso.
+2. **Corretto un arresto anomalo quando un'altra app o un widget della schermata Home leggeva i dati prima dell'inizializzazione delle impostazioni.**
+3. **Corretto il link di download nel browser nella finestra di avanzamento dell'aggiornamento in-app.**
+4. **Corrette traduzioni errate**, incluse stringhe serbe ancora in frasi inglesi intere, «elimina dati» descritto come una nuova installazione, EXP tradotto in modo errato ed errori grammaticali evidenti nell'inglese originale.
+
+**v1.107.2 (2026/10/23)**
 
 **🐛 Correzioni**
 
 1. Corretta l’assenza di importanza e difficoltà nei risultati delle query ContentProvider delle attività, così gli strumenti di terze parti possono usare entrambi i campi nell’elaborazione delle attività.
+
+**v1.107.1 (2026/10/17)**
+
+**🐛 Correzioni**
+
+1. **Corretta la cronologia pomodoro e focus per un intervallo di date che restituiva la pagina sbagliata.** I record sono ora paginati dal più recente al più vecchio.
 
 **v1.107.0 (2026/10/13)**
 
@@ -76,6 +110,17 @@
 **🐛 Correzioni bug**
 
 1. **Corretto un problema per cui dati anomali dei Compiti potevano accumularsi in certi casi**: Ciò poteva rendere lente o non reattive operazioni sui Compiti come ordinamento o eliminazione. L'aggiornamento pulisce automaticamente i dati non validi interessati e migliora le prestazioni con cronologie estese di Compiti.
+
+**v1.105.4 (2026/08/30)**
+
+**♻️ Ottimizzazione**
+
+1. **Migliorate le prestazioni di caricamento delle liste intelligenti di giorno, settimana e mese quando molti Compiti non hanno una scadenza.**
+
+**🐛 Correzioni bug**
+
+1. **Corretti i Compiti singoli scaduti e riavviati che non comparivano nelle liste intelligenti di giorno, settimana e mese.**
+2. **Corretti i nomi di Compito troppo lunghi che si sovrapponevano al nome dell'elenco nella pagina di dettaglio del Compito.**
 
 **v1.105.3 (2026/08/26)**
 

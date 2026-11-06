@@ -8,7 +8,7 @@
 
 | Platform          | Sürüm                  | Güncelleme Tarihi           |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.107.0              | 2026/10/13                  |
+| LifeUp-Android    | v1.107.4              | 2026/11/04                  |
 | LifeUp-iOS        | check [feature/ulives] | 🎉Alternatif uygulama mevcut |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
 | LifeUp Cloud(SDK) | v3.0.2                 | 2026/09/24                  |
@@ -19,11 +19,45 @@
 
 ### **LifeUp-Android**
 
-**v1.107.2 (Yakında)**
+**v1.107.4 (2026/11/04)**
+
+**✨ Özellikler**
+
+1. **Depolama özeti ve yönetimi**: Veritabanı, görseller ve ekler, sesler, yerel güvenlik yedekleri, varsayılan yol yedekleri ve görsel önbelleğinin kapladığı alanı görmek ve ilgili yöneticiye geçmek için Yedekleme/Geri yükleme → Depolama yönetimini açın.
+2. **Boşta kalan yedek kalıntılarını, süresi dolmuş bileşen küçük resimlerini, kalan yükleyici paketlerini ve çevrimiçi görsel önbelleğini temizleyebilirsiniz.** Bileşen önbelleğini temizlemek ana ekran bileşenlerini yeniler. Normal görseller ve sesler mevcut yöneticilerinde kalır.
+3. **Yinelenen bir görevin son tamamlaması, süre içindeyse sonraki bir günde geri alınabilir**; sonraki döngü düzenlenmemiş ve ilerleme yoksa. Ekip görevleri hâlâ geri alınamaz. Sonraki düzenlemeleri, sayımları, alt görevleri veya hesaplanmamış odak süresini bozacaksa geri alma reddedilir.
+
+**♻️ İyileştirme**
+
+1. **Görev sorguları gün, hafta ve ay akıllı listelerini ayrı ayrı hedefleyebilir** ve her görev artık kendi dondurulma işaretini içerir. Liste kimliğiyle arama değişmedi.
+
+**🐛 Düzeltmeler**
+
+1. Görevlerin dondurulmasını kaldırmak için aranırken uygulamanın takılması düzeltildi.
+2. Not boşken görev notlarının yanlış görüntülenebilmesi düzeltildi.
+3. Başarısız bir geri yükleme geri alındıktan sonra yerel güvenlik yedeklerinin dönmeyi bırakması düzeltildi.
+4. Eski güvenlik yedeklerinin gerçek kullanıcı verisinden fazlasını içe aktarması düzeltildi. Başarılı içe aktarmadan sonra eski paket kaldırılır.
+
+**v1.107.3 (2026/10/28)**
+
+**🐛 Düzeltmeler**
+
+1. **Bazen başarısız olarak bildirilen yerel yedekler düzeltildi.** Yeni bir anlık görüntü alınamazsa uygulama eski veritabanı dışa aktarımına döner. Bir hata önceki sağlam yedeği korur ve belirli bir neden gösterir.
+2. **Ayarlar başlatılmadan önce başka bir uygulama veya ana ekran bileşeni veri okuduğunda oluşan çökme düzeltildi.**
+3. **Uygulama içi güncelleme ilerleme penceresindeki tarayıcı indirme bağlantısı düzeltildi.**
+4. **Hatalı çeviriler düzeltildi**; hâlâ tam İngilizce cümle olan Sırpça dizeler, "veriyi sil"in yeni kurulum olarak anlatılması, yanlış çevrilen EXP ve İngilizce özgün metindeki açık dilbilgisi hataları buna dahildir.
+
+**v1.107.2 (2026/10/23)**
 
 **🐛 Düzeltmeler**
 
 1. Görev ContentProvider sorgu sonuçlarında önem ve zorluk eksikliği giderildi; üçüncü taraf araçlar görevleri işlerken her iki alanı da kullanabilir.
+
+**v1.107.1 (2026/10/17)**
+
+**🐛 Düzeltmeler**
+
+1. **Bir tarih aralığı için pomodoro ve odak geçmişinin yanlış sayfa döndürmesi düzeltildi.** Kayıtlar artık yeniden eskiye sayfalanır.
 
 **v1.107.0 (2026/10/13)**
 
@@ -76,6 +110,17 @@
 **🐛 Hata Düzeltmeleri**
 
 1. **Belirli durumlarda anormal Görev verilerinin birikebilmesi sorunu düzeltildi**: Bu durum, sıralama veya silme gibi Görev işlemlerinin yavaşlamasına veya yanıt vermemesine neden olabiliyordu. Güncelleme, etkilenen geçersiz verileri otomatik olarak temizler ve büyük Görev geçmişlerinde performansı iyileştirir.
+
+**v1.105.4 (2026/08/30)**
+
+**♻️ Optimizasyon**
+
+1. **Çok sayıda Görevin süresi olmadığında gün, hafta ve ay akıllı listelerinin yükleme performansı iyileştirildi.**
+
+**🐛 Hata Düzeltmeleri**
+
+1. **Yeniden başlatılan gecikmiş tek seferlik Görevlerin gün, hafta ve ay akıllı listelerinde görünmemesi düzeltildi.**
+2. **Görev ayrıntı sayfasında uzun Görev adlarının üstteki liste adıyla çakışması düzeltildi.**
 
 **v1.105.3 (2026/08/26)**
 
