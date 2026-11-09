@@ -8,16 +8,27 @@
 
 | Platform          | Versi                  | Tanggal Pembaruan           |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.107.4              | 2026/11/04                  |
+| LifeUp-Android    | v1.107.5              | 2026/11/09                  |
 | LifeUp-iOS        | lihat [feature/ulives] | 🎉App alternatif tersedia   |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
-| LifeUp Cloud(SDK) | v3.0.2                 | 2026/09/24                  |
+| LifeUp Cloud(SDK) | v3.0.5                 | 2026/11/09                  |
 
 (Sebagian terjemahan disediakan oleh mesin/AI dan mungkin tidak akurat)
 
 <!-- tabs:start -->
 
 ### **LifeUp-Android**
+
+**v1.107.5 (2026/11/09)**
+
+**♻️ Optimasi**
+
+1. **Alat eksternal kini memuat daftar tugas lebih cepat saat Anda punya banyak tugas.** Hadiah, progres hitungan, syarat pengulangan, dan subtugas dimuat secara batch.
+2. **Peluncuran pertama setelah pembaruan lebih cepat.** Cadangan keamanan pembaruan tidak lagi mengulangi salinan basis data penuh dan pemeriksaan integritas setiap kali.
+
+**🐛 Perbaikan**
+
+1. **Memperbaiki crash dan peluncuran yang tidak responsif terkait widget layar utama serta peluncuran pertama setelah pembaruan.**
 
 **v1.107.4 (2026/11/04)**
 
@@ -2985,7 +2996,29 @@ Optimisasi
 
 ### **LifeUp Cloud**
 
-**v3.0.3 (Segera hadir)**
+**v3.0.5 (2026/11/09)**
+
+**✨ Fitur**
+
+1. **Menambahkan diagnostik koneksi.** Saat koneksi gagal atau permintaan habis waktu, Anda dapat melihat tahap, API, dan durasinya untuk memecahkan masalah.
+2. **Menambahkan penyiapan MCP sekali ketuk di layar beranda.** Ketuk untuk menyalin instruksi penyiapan bagi alat AI yang mendukung MCP.
+
+**♻️ Optimasi**
+
+1. **Akses bersamaan dari beberapa alat lebih stabil.** MCP baru menghindari kemacetan permintaan, sehingga permintaan ringan seperti info versi tidak lagi tertunda oleh kueri tugas besar. Klien lama dan skrip otomasi tetap berperilaku seperti sebelumnya.
+2. **Penyiapan awal lebih mudah diikuti.** Setiap izin menampilkan statusnya dan bagian dilipat setelah penyiapan selesai. Aplikasi juga membedakan apakah LifeUp belum terpasang, tidak berjalan, atau belum diotorisasi.
+
+**v3.0.4 (2026/11/06)**
+
+**✨ Fitur**
+
+1. **Salin alamat IP, port, atau IP:port** dalam format yang Anda butuhkan saat menghubungkan perangkat lain.
+2. **Kueri langsung tugas daftar pintar harian, mingguan, atau bulanan**, tanpa harus mengaktifkan daftar di App terlebih dahulu. Kueri ID kategori yang ada tetap tersedia. Memerlukan LifeUp **v1.107.4+**.
+3. **Kueri tugas dan riwayat mengekspos field independen `isFrozen`**, agar dasbor pihak ketiga dapat membedakan tugas yang dibekukan. Memerlukan LifeUp App dan Cloud yang diperbarui; pada App lama, field yang hilang dikembalikan sebagai `null` (tidak diketahui), bukan false. Menambahkan field tidak mengubah status tugas atau penyaringan tugas beku yang ada.
+
+**MCP v0.1.5** pendamping menambahkan `smartListType` untuk kueri harian, mingguan, dan bulanan, mempertahankan `isFrozen` pada hasil ringkas dan detail, serta memperbarui bantuan kueri.
+
+**v3.0.3 (2026/10/26)**
 
 **♻️ Optimasi**
 

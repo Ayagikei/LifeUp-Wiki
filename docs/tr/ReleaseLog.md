@@ -8,16 +8,27 @@
 
 | Platform          | Sürüm                  | Güncelleme Tarihi           |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.107.4              | 2026/11/04                  |
+| LifeUp-Android    | v1.107.5              | 2026/11/09                  |
 | LifeUp-iOS        | check [feature/ulives] | 🎉Alternatif uygulama mevcut |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
-| LifeUp Cloud(SDK) | v3.0.2                 | 2026/09/24                  |
+| LifeUp Cloud(SDK) | v3.0.5                 | 2026/11/09                  |
 
 (Çevirinin bir kısmı makine/AI çeviri ile sağlanmıştır ve doğru olmayabilir)
 
 <!-- tabs:start -->
 
 ### **LifeUp-Android**
+
+**v1.107.5 (2026/11/09)**
+
+**♻️ İyileştirme**
+
+1. **Çok sayıda göreviniz varken harici araçlar görev listelerini daha hızlı yükler.** Ödüller, sayım ilerlemesi, tekrar koşulları ve alt görevler toplu olarak yüklenir.
+2. **Güncellemeden sonraki ilk açılış daha hızlı.** Yükseltme güvenlik yedeği artık her seferinde tam veritabanı kopyası ve bütünlük denetimini tekrarlamıyor.
+
+**🐛 Düzeltmeler**
+
+1. **Ana ekran bileşenleri ve güncellemeden sonraki ilk açılışla ilgili çökmeler ile yanıtsız başlatmalar düzeltildi.**
 
 **v1.107.4 (2026/11/04)**
 
@@ -2964,7 +2975,29 @@ Optimizasyon
 
 ### **LifeUp Cloud**
 
-**v3.0.3 (Yakında)**
+**v3.0.5 (2026/11/09)**
+
+**✨ Özellikler**
+
+1. **Bağlantı tanılama eklendi.** Bağlantı başarısız olduğunda veya istek zaman aşımına uğradığında aşamayı, API’yi ve süreyi görerek sorun giderilebilir.
+2. **Ana ekranda tek dokunuşla MCP kurulumu eklendi.** MCP uyumlu bir yapay zeka aracı için kurulum yönergelerini kopyalamak üzere dokunun.
+
+**♻️ İyileştirme**
+
+1. **Birden fazla araçtan eşzamanlı erişim daha kararlı.** Yeni MCP istek tıkanıklığını önler; sürüm bilgisi gibi hafif istekler artık büyük görev sorguları yüzünden gecikmez. Eski istemciler ve otomasyon betikleri mevcut davranışlarını korur.
+2. **İlk kurulumu takip etmek daha kolay.** Her izin durumunu gösterir ve kurulum tamamlanınca bölüm kapanır. Uygulama ayrıca LifeUp’ın yüklü olmaması, çalışmaması veya yetkilendirilmemiş olmasını ayırt eder.
+
+**v3.0.4 (2026/11/06)**
+
+**✨ Özellikler**
+
+1. **Başka bir cihaza bağlanırken ihtiyacınız olan biçimde IP adresi, bağlantı noktası veya IP:port kopyalayın.**
+2. **Günlük, haftalık veya aylık akıllı liste görevlerini doğrudan sorgulayın**; önce App’te listeleri etkinleştirmeniz gerekmez. Mevcut kategori kimliği sorguları kullanılmaya devam eder. LifeUp **v1.107.4+** gerekir.
+3. **Görev ve geçmiş sorguları bağımsız `isFrozen` alanını döndürür**; böylece üçüncü taraf panoları dondurulmuş görevleri ayırt edebilir. Güncel LifeUp App ve Cloud gerekir; eski bir App’te alan yoksa `null` (bilinmiyor) döner, false değildir. Alanın eklenmesi görev durumunu veya mevcut dondurulmuş görev filtrelemesini değiştirmez.
+
+Eşlik eden **MCP v0.1.5**, günlük, haftalık ve aylık sorgular için `smartListType` ekler, özet ve ayrıntılı sonuçlarda `isFrozen`’ı korur ve sorgu yardımını günceller.
+
+**v3.0.3 (2026/10/26)**
 
 **♻️ İyileştirme**
 

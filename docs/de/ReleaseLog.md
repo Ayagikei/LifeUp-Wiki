@@ -8,16 +8,27 @@
 
 | Plattform          | Version                | Aktualisierungsdatum                 |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.107.4              | 2026/11/04                  |
+| LifeUp-Android    | v1.107.5              | 2026/11/09                  |
 | LifeUp-iOS        | check [feature/ulives] | 🎉Alternative App verfügbar |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
-| LifeUp Cloud(SDK) | v3.0.2                 | 2026/09/24                  |
+| LifeUp Cloud(SDK) | v3.0.5                 | 2026/11/09                  |
 
 (Ein Teil der Übersetzung wurde maschinell bzw. per KI erstellt und ist möglicherweise ungenau.)
 
 <!-- tabs:start -->
 
 ### **LifeUp-Android**
+
+**v1.107.5 (2026/11/09)**
+
+**♻️ Optimierung**
+
+1. **Externe Tools laden Aufgabenlisten bei vielen Aufgaben schneller.** Belohnungen, Zählerfortschritt, Wiederholungsbedingungen und Unteraufgaben werden gebündelt geladen.
+2. **Der erste Start nach einem Update ist schneller.** Das Sicherheits-Upgrade-Backup wiederholt nicht mehr bei jedem Mal eine vollständige Datenbankkopie und Integritätsprüfung.
+
+**🐛 Fehlerbehebungen**
+
+1. **Abstürze und nicht reagierende Starts im Zusammenhang mit Startbildschirm-Widgets und dem ersten Start nach einem Update behoben.**
 
 **v1.107.4 (2026/11/04)**
 
@@ -2962,7 +2973,29 @@ Optimierung
 
 ### **LifeUp Cloud**
 
-**v3.0.3 (Demnächst)**
+**v3.0.5 (2026/11/09)**
+
+**✨ Funktionen**
+
+1. **Verbindungsdiagnose hinzugefügt.** Bei Verbindungsfehlern oder Zeitüberschreitungen siehst du Phase, API und Dauer zur Fehlersuche.
+2. **MCP-Einrichtung mit einem Tipp auf dem Startbildschirm.** Tippe darauf, um Einrichtungsanweisungen für ein MCP-fähiges KI-Tool zu kopieren.
+
+**♻️ Optimierung**
+
+1. **Gleichzeitiger Zugriff mehrerer Tools ist stabiler.** Das neue MCP vermeidet Anfragestaus, sodass leichte Anfragen wie Versionsinfos nicht mehr durch große Aufgabenabfragen verzögert werden. Ältere Clients und Automatisierungsskripte behalten ihr bisheriges Verhalten.
+2. **Die Ersteinrichtung ist leichter nachvollziehbar.** Jede Berechtigung zeigt ihren Status, und der Abschnitt klappt nach abgeschlossener Einrichtung ein. Die App unterscheidet auch, ob LifeUp nicht installiert, nicht läuft oder nicht autorisiert ist.
+
+**v3.0.4 (2026/11/06)**
+
+**✨ Funktionen**
+
+1. **Kopiere eine IP-Adresse, einen Port oder IP:Port** im gewünschten Format, wenn du ein anderes Gerät verbindest.
+2. **Frage Aufgaben der täglichen, wöchentlichen oder monatlichen Smart-Listen direkt ab**, ohne die Listen zuerst in der App zu aktivieren. Bestehende Abfragen per Kategorie-ID bleiben verfügbar. Erfordert LifeUp **v1.107.4+**.
+3. **Aufgaben- und Verlaufsabfragen liefern das eigenständige Feld `isFrozen`**, damit Dashboards von Drittanbietern eingefrorene Aufgaben unterscheiden können. Erfordert eine aktualisierte LifeUp App und Cloud; fehlt das Feld in einer älteren App, wird `null` (unbekannt) zurückgegeben, nicht false. Das neue Feld ändert weder den Aufgabenstatus noch die bestehende Filterung eingefrorener Aufgaben.
+
+Das begleitende **MCP v0.1.5** fügt `smartListType` für tägliche, wöchentliche und monatliche Abfragen hinzu, behält `isFrozen` in kompakten und detaillierten Ergebnissen bei und aktualisiert die Abfragehilfe.
+
+**v3.0.3 (2026/10/26)**
 
 **♻️ Optimierung**
 
