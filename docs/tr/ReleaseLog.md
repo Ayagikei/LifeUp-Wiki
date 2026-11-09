@@ -11,7 +11,7 @@
 | LifeUp-Android    | v1.107.5              | 2026/11/09                  |
 | LifeUp-iOS        | check [feature/ulives] | 🎉Alternatif uygulama mevcut |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
-| LifeUp Cloud(SDK) | v3.0.4                 | 2026/11/06                  |
+| LifeUp Cloud(SDK) | v3.0.5                 | 2026/11/09                  |
 
 (Çevirinin bir kısmı makine/AI çeviri ile sağlanmıştır ve doğru olmayabilir)
 
@@ -28,11 +28,7 @@
 
 **🐛 Düzeltmeler**
 
-1. **Ana ekran bileşenlerinden kaynaklanabilecek çökmeler düzeltildi.** Başlatıcı bir bileşen bağlantısını geri aldığında bazı cihazlar doğrudan çöküyordu.
-2. **Güncellemeden sonraki ilk açılışın yavaş veya yanıtsız olması düzeltildi.** Yükseltme güvenlik yedeğinin hazırlanması ana iş parçacığını bloke ediyordu.
-3. **Emoji görsellerinin bazen bozuk kalması düzeltildi.** Görseller artık geçici bir dosyaya yazılıp değiştiriliyor; böylece başarısız bir yazma artık asla yeniden oluşturulmayan boş bir dosya bırakmıyor.
-4. **Gerçekte geri yüklenememesine rağmen yükseltme güvenlik yedeğinin bazen yeniden kullanılabilir sayılması düzeltildi.**
-5. **Gizlilik iletişim kutusundaki QQ gizlilik politikası bağlantısının açılmaması düzeltildi.**
+1. **Ana ekran bileşenleri ve güncellemeden sonraki ilk açılışla ilgili çökmeler ile yanıtsız başlatmalar düzeltildi.**
 
 **v1.107.4 (2026/11/04)**
 
@@ -2979,7 +2975,7 @@ Optimizasyon
 
 ### **LifeUp Cloud**
 
-**v3.0.5 (Yakında)**
+**v3.0.5 (2026/11/09)**
 
 **✨ Özellikler**
 

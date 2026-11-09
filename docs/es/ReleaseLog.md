@@ -11,7 +11,7 @@
 | LifeUp-Android    | v1.107.5              | 2026/11/09                  |
 | LifeUp-iOS        | consulta [feature/ulives] | 🎉App alternativa disponible |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
-| LifeUp Cloud(SDK) | v3.0.4                 | 2026/11/06                  |
+| LifeUp Cloud(SDK) | v3.0.5                 | 2026/11/09                  |
 
 (Parte de la traducción se ha generado con traducción automática o IA y puede contener imprecisiones)
 
@@ -28,11 +28,7 @@
 
 **🐛 Correcciones**
 
-1. **Corregidos cierres inesperados que podían proceder de los widgets de la pantalla de inicio.** Cuando el launcher recuperaba la conexión de un widget, algunos dispositivos se cerraban por completo.
-2. **Corregido que el primer inicio tras una actualización fuera lento o dejara de responder.** Preparar la copia de seguridad de protección de la actualización bloqueaba el hilo principal.
-3. **Corregido que las imágenes emoji a veces permanecieran rotas.** Las imágenes se escriben ahora en un archivo temporal y se sustituyen, de modo que un fallo de escritura ya no deja un archivo vacío que nunca se reconstruye.
-4. **Corregido que la copia de seguridad de protección de la actualización se tratara a veces como reutilizable cuando en realidad no se podía restaurar.**
-5. **Corregido que el enlace de la política de privacidad de QQ en el diálogo de privacidad no se abriera.**
+1. **Corregidos cierres inesperados y arranques sin respuesta relacionados con los widgets de la pantalla de inicio y el primer inicio tras una actualización.**
 
 **v1.107.4 (2026/11/04)**
 
@@ -2977,7 +2973,7 @@ Optimización
 
 ### **LifeUp Cloud**
 
-**v3.0.5 (Próximamente)**
+**v3.0.5 (2026/11/09)**
 
 **✨ Funciones**
 
