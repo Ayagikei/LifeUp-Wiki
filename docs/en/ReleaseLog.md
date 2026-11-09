@@ -8,7 +8,7 @@
 
 | Platform          | Version                | Update Date                 |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.107.4              | 2026/11/04                  |
+| LifeUp-Android    | v1.107.5              | 2026/11/09                  |
 | LifeUp-iOS        | check [feature/ulives] | 🎉Alternative app available |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
 | LifeUp Cloud(SDK) | v3.0.4                 | 2026/11/06                  |
@@ -19,11 +19,20 @@
 
 ### **LifeUp-Android**
 
-**v1.107.5 (Upcoming)**
+**v1.107.5 (2026/11/09)**
 
 **♻️ Optimization**
 
 1. **External tools now load task lists faster when you have many tasks.** Rewards, count progress, repeat conditions, and subtasks are loaded in batches.
+2. **The first launch after an update is faster.** The upgrade safety backup no longer repeats a full database copy and integrity check every time.
+
+**🐛 Bug Fixes**
+
+1. **Fixed crashes that could come from home-screen widgets.** When the launcher reclaimed a widget connection, some devices crashed outright.
+2. **Fixed the first launch after an update being slow or unresponsive.** Preparing the upgrade safety backup used to block the main thread.
+3. **Fixed emoji images sometimes staying broken.** Images are now written to a temporary file and swapped in, so a failed write no longer leaves an empty file that is never rebuilt.
+4. **Fixed the upgrade safety backup sometimes being treated as reusable when it could not actually be restored.**
+5. **Fixed the QQ privacy-policy link in the privacy dialog not opening.**
 
 **v1.107.4 (2026/11/04)**
 

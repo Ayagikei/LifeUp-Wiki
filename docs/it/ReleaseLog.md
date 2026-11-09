@@ -8,7 +8,7 @@
 
 | Piattaforma       | Versione               | Data aggiornamento          |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.107.4              | 2026/11/04                  |
+| LifeUp-Android    | v1.107.5              | 2026/11/09                  |
 | LifeUp-iOS        | consulta [feature/ulives] | 🎉App alternativa disponibile |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
 | LifeUp Cloud(SDK) | v3.0.4                 | 2026/11/06                  |
@@ -19,11 +19,20 @@
 
 ### **LifeUp-Android**
 
-**v1.107.5 (In arrivo)**
+**v1.107.5 (2026/11/09)**
 
 **♻️ Ottimizzazione**
 
 1. **Gli strumenti esterni caricano gli elenchi di attività più velocemente quando hai molte attività.** Ricompense, avanzamento del conteggio, condizioni di ripetizione e sotto-attività vengono caricate in batch.
+2. **Il primo avvio dopo un aggiornamento è più veloce.** Il backup di sicurezza dell'aggiornamento non ripete più ogni volta una copia completa del database e un controllo di integrità.
+
+**🐛 Correzioni**
+
+1. **Corretti arresti anomali che potevano provenire dai widget della schermata Home.** Quando il launcher recuperava una connessione widget, alcuni dispositivi andavano in crash.
+2. **Corretto il primo avvio dopo un aggiornamento lento o senza risposta.** La preparazione del backup di sicurezza dell'aggiornamento bloccava il thread principale.
+3. **Corrette immagini emoji a volte rimaste rotte.** Le immagini vengono ora scritte in un file temporaneo e sostituite, così un'operazione fallita non lascia più un file vuoto che non viene mai ricostruito.
+4. **Corretto il backup di sicurezza dell'aggiornamento talvolta considerato riutilizzabile quando in realtà non poteva essere ripristinato.**
+5. **Corretto il link all'informativa sulla privacy QQ nella finestra di privacy che non si apriva.**
 
 **v1.107.4 (2026/11/04)**
 

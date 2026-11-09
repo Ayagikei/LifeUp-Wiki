@@ -8,7 +8,7 @@
 
 | Plattform          | Version                | Aktualisierungsdatum                 |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.107.4              | 2026/11/04                  |
+| LifeUp-Android    | v1.107.5              | 2026/11/09                  |
 | LifeUp-iOS        | check [feature/ulives] | 🎉Alternative App verfügbar |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
 | LifeUp Cloud(SDK) | v3.0.4                 | 2026/11/06                  |
@@ -19,11 +19,20 @@
 
 ### **LifeUp-Android**
 
-**v1.107.5 (Demnächst)**
+**v1.107.5 (2026/11/09)**
 
 **♻️ Optimierung**
 
 1. **Externe Tools laden Aufgabenlisten bei vielen Aufgaben schneller.** Belohnungen, Zählerfortschritt, Wiederholungsbedingungen und Unteraufgaben werden gebündelt geladen.
+2. **Der erste Start nach einem Update ist schneller.** Das Sicherheits-Upgrade-Backup wiederholt nicht mehr bei jedem Mal eine vollständige Datenbankkopie und Integritätsprüfung.
+
+**🐛 Fehlerbehebungen**
+
+1. **Abstürze behoben, die von Startbildschirm-Widgets ausgehen konnten.** Wenn der Launcher eine Widget-Verbindung zurückforderte, stürzten einige Geräte sofort ab.
+2. **Behoben, dass der erste Start nach einem Update langsam war oder nicht reagierte.** Die Vorbereitung des Sicherheits-Upgrade-Backups blockierte früher den Hauptthread.
+3. **Behoben, dass Emoji-Bilder manchmal dauerhaft defekt blieben.** Bilder werden nun in eine temporäre Datei geschrieben und ausgetauscht, sodass ein fehlgeschriebener Vorgang keine leere Datei hinterlässt, die nie neu erstellt wird.
+4. **Behoben, dass das Sicherheits-Upgrade-Backup manchmal als wiederverwendbar galt, obwohl es nicht wiederhergestellt werden konnte.**
+5. **Behoben, dass der QQ-Datenschutzlink im Datenschutzdialog nicht geöffnet wurde.**
 
 **v1.107.4 (2026/11/04)**
 

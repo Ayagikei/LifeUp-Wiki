@@ -8,7 +8,7 @@
 
 | Platform          | Versi                  | Tanggal Pembaruan           |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.107.4              | 2026/11/04                  |
+| LifeUp-Android    | v1.107.5              | 2026/11/09                  |
 | LifeUp-iOS        | lihat [feature/ulives] | 🎉App alternatif tersedia   |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
 | LifeUp Cloud(SDK) | v3.0.4                 | 2026/11/06                  |
@@ -19,11 +19,20 @@
 
 ### **LifeUp-Android**
 
-**v1.107.5 (Segera hadir)**
+**v1.107.5 (2026/11/09)**
 
 **♻️ Optimasi**
 
 1. **Alat eksternal kini memuat daftar tugas lebih cepat saat Anda punya banyak tugas.** Hadiah, progres hitungan, syarat pengulangan, dan subtugas dimuat secara batch.
+2. **Peluncuran pertama setelah pembaruan lebih cepat.** Cadangan keamanan pembaruan tidak lagi mengulangi salinan basis data penuh dan pemeriksaan integritas setiap kali.
+
+**🐛 Perbaikan**
+
+1. **Memperbaiki crash yang bisa berasal dari widget layar utama.** Saat launcher mengambil kembali koneksi widget, beberapa perangkat langsung crash.
+2. **Memperbaiki peluncuran pertama setelah pembaruan yang lambat atau tidak responsif.** Menyiapkan cadangan keamanan pembaruan dulu memblokir thread utama.
+3. **Memperbaiki gambar emoji yang kadang tetap rusak.** Gambar kini ditulis ke file sementara lalu diganti, sehingga kegagalan menulis tidak lagi meninggalkan file kosong yang tidak pernah dibangun ulang.
+4. **Memperbaiki cadangan keamanan pembaruan yang kadang dianggap dapat digunakan ulang padahal sebenarnya tidak bisa dipulihkan.**
+5. **Memperbaiki tautan kebijakan privasi QQ di dialog privasi yang tidak terbuka.**
 
 **v1.107.4 (2026/11/04)**
 

@@ -8,7 +8,7 @@
 
 | Plataforma        | Versión                | Fecha de actualización      |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.107.4              | 2026/11/04                  |
+| LifeUp-Android    | v1.107.5              | 2026/11/09                  |
 | LifeUp-iOS        | consulta [feature/ulives] | 🎉App alternativa disponible |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
 | LifeUp Cloud(SDK) | v3.0.4                 | 2026/11/06                  |
@@ -19,11 +19,20 @@
 
 ### **LifeUp-Android**
 
-**v1.107.5 (Próximamente)**
+**v1.107.5 (2026/11/09)**
 
 **♻️ Optimización**
 
 1. **Las herramientas externas cargan las listas de tareas más rápido cuando tienes muchas tareas.** Las recompensas, el progreso del contador, las condiciones de repetición y las subtareas se cargan por lotes.
+2. **El primer inicio tras una actualización es más rápido.** La copia de seguridad de protección de la actualización ya no repite cada vez una copia completa de la base de datos y una comprobación de integridad.
+
+**🐛 Correcciones**
+
+1. **Corregidos cierres inesperados que podían proceder de los widgets de la pantalla de inicio.** Cuando el launcher recuperaba la conexión de un widget, algunos dispositivos se cerraban por completo.
+2. **Corregido que el primer inicio tras una actualización fuera lento o dejara de responder.** Preparar la copia de seguridad de protección de la actualización bloqueaba el hilo principal.
+3. **Corregido que las imágenes emoji a veces permanecieran rotas.** Las imágenes se escriben ahora en un archivo temporal y se sustituyen, de modo que un fallo de escritura ya no deja un archivo vacío que nunca se reconstruye.
+4. **Corregido que la copia de seguridad de protección de la actualización se tratara a veces como reutilizable cuando en realidad no se podía restaurar.**
+5. **Corregido que el enlace de la política de privacidad de QQ en el diálogo de privacidad no se abriera.**
 
 **v1.107.4 (2026/11/04)**
 

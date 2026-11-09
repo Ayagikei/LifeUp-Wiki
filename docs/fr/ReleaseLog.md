@@ -8,7 +8,7 @@
 
 | Plateforme        | Version                | Date de mise à jour         |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.107.4              | 2026/11/04                  |
+| LifeUp-Android    | v1.107.5              | 2026/11/09                  |
 | LifeUp-iOS        | voir [feature/ulives] | 🎉App alternative disponible |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
 | LifeUp Cloud(SDK) | v3.0.4                 | 2026/11/06                  |
@@ -19,11 +19,20 @@
 
 ### **LifeUp-Android**
 
-**v1.107.5 (À venir)**
+**v1.107.5 (2026/11/09)**
 
 **♻️ Optimisation**
 
 1. **Les outils externes chargent les listes de tâches plus vite lorsque vous avez beaucoup de tâches.** Les récompenses, la progression du compteur, les conditions de répétition et les sous-tâches sont chargées par lots.
+2. **Le premier lancement après une mise à jour est plus rapide.** La sauvegarde de sécurité de mise à niveau ne répète plus à chaque fois une copie complète de la base de données et une vérification d'intégrité.
+
+**🐛 Corrections**
+
+1. **Corrigé des plantages pouvant provenir des widgets de l'écran d'accueil.** Lorsque le lanceur récupérait une connexion de widget, certains appareils plantaient net.
+2. **Corrigé le premier lancement après une mise à jour lent ou sans réponse.** La préparation de la sauvegarde de sécurité de mise à niveau bloquait auparavant le fil principal.
+3. **Corrigé des images emoji parfois restées cassées.** Les images sont désormais écrites dans un fichier temporaire puis remplacées, de sorte qu'un échec d'écriture ne laisse plus un fichier vide jamais reconstruit.
+4. **Corrigé le cas où la sauvegarde de sécurité de mise à niveau était traitée comme réutilisable alors qu'elle ne pouvait pas être restaurée.**
+5. **Corrigé le lien de politique de confidentialité QQ dans la boîte de dialogue de confidentialité qui ne s'ouvrait pas.**
 
 **v1.107.4 (2026/11/04)**
 
