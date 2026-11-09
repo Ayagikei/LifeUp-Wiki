@@ -11,13 +11,19 @@
 | LifeUp-Android    | v1.107.4              | 2026/11/04                  |
 | LifeUp-iOS        | consulta [feature/ulives] | 🎉App alternativa disponibile |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
-| LifeUp Cloud(SDK) | v3.0.2                 | 2026/09/24                  |
+| LifeUp Cloud(SDK) | v3.0.4                 | 2026/11/06                  |
 
 (Parte della traduzione è fornita da traduzione automatica/IA e potrebbe non essere accurata)
 
 <!-- tabs:start -->
 
 ### **LifeUp-Android**
+
+**v1.107.5 (In arrivo)**
+
+**♻️ Ottimizzazione**
+
+1. **Gli strumenti esterni caricano gli elenchi di attività più velocemente quando hai molte attività.** Ricompense, avanzamento del conteggio, condizioni di ripetizione e sotto-attività vengono caricate in batch.
 
 **v1.107.4 (2026/11/04)**
 
@@ -2961,7 +2967,29 @@ Ottimizzazioni
 
 ### **LifeUp Cloud**
 
-**v3.0.3 (In arrivo)**
+**v3.0.5 (In arrivo)**
+
+**✨ Funzionalità**
+
+1. **Aggiunta la diagnostica di connessione.** Se una connessione fallisce o una richiesta va in timeout, puoi vedere fase, API e tempi per risolvere il problema.
+2. **Configurazione MCP con un tocco nella schermata Home.** Toccala per copiare le istruzioni per uno strumento IA compatibile MCP.
+
+**♻️ Ottimizzazione**
+
+1. **L’accesso concorrente da più strumenti è più stabile.** Il nuovo MCP evita la congestione delle richieste, quindi richieste leggere come le info versione non sono più ritardate da query di attività grandi. Client e script di automazione più vecchi mantengono il comportamento esistente.
+2. **La configurazione iniziale è più facile da seguire.** Ogni autorizzazione mostra il proprio stato e la sezione si comprime al termine. L’app distingue anche se LifeUp non è installato, non è in esecuzione o non è autorizzato.
+
+**v3.0.4 (2026/11/06)**
+
+**✨ Funzionalità**
+
+1. **Copia un indirizzo IP, una porta o IP:porta** nel formato che ti serve quando colleghi un altro dispositivo.
+2. **Interroga direttamente le attività delle liste intelligenti giornaliera, settimanale o mensile**, senza attivare prima le liste nell’App. Le query per ID categoria restano disponibili. Richiede LifeUp **v1.107.4+**.
+3. **Le query di attività e cronologia espongono il campo indipendente `isFrozen`**, così le dashboard di terze parti possono distinguere le attività congelate. Richiede LifeUp App e Cloud aggiornati; su un’App precedente un campo assente viene restituito come `null` (sconosciuto), non false. L’aggiunta del campo non cambia lo stato delle attività né il filtraggio esistente delle attività congelate.
+
+Il **MCP v0.1.5** associato aggiunge `smartListType` per le query giornaliere, settimanali e mensili, mantiene `isFrozen` nei risultati compatti e dettagliati e aggiorna la guida alle query.
+
+**v3.0.3 (2026/10/26)**
 
 **♻️ Ottimizzazione**
 

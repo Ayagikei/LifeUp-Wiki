@@ -11,13 +11,19 @@
 | LifeUp-Android    | v1.107.4              | 2026/11/04                  |
 | LifeUp-iOS        | consulta [feature/ulives] | 🎉App alternativa disponible |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
-| LifeUp Cloud(SDK) | v3.0.2                 | 2026/09/24                  |
+| LifeUp Cloud(SDK) | v3.0.4                 | 2026/11/06                  |
 
 (Parte de la traducción se ha generado con traducción automática o IA y puede contener imprecisiones)
 
 <!-- tabs:start -->
 
 ### **LifeUp-Android**
+
+**v1.107.5 (Próximamente)**
+
+**♻️ Optimización**
+
+1. **Las herramientas externas cargan las listas de tareas más rápido cuando tienes muchas tareas.** Las recompensas, el progreso del contador, las condiciones de repetición y las subtareas se cargan por lotes.
 
 **v1.107.4 (2026/11/04)**
 
@@ -2962,7 +2968,29 @@ Optimización
 
 ### **LifeUp Cloud**
 
-**v3.0.3 (Próximamente)**
+**v3.0.5 (Próximamente)**
+
+**✨ Funciones**
+
+1. **Se añadió diagnóstico de conexión.** Cuando falla una conexión o una solicitud agota el tiempo de espera, puedes ver la etapa, la API y el tiempo para facilitar la resolución de problemas.
+2. **Se añadió configuración MCP con un toque en la pantalla de inicio.** Tócala para copiar instrucciones de configuración para una herramienta de IA compatible con MCP.
+
+**♻️ Optimización**
+
+1. **El acceso concurrente desde varias herramientas es más estable.** El nuevo MCP evita la congestión de solicitudes, así que peticiones ligeras como la información de versión ya no se retrasan por consultas grandes de tareas. Los clientes antiguos y los scripts de automatización conservan su comportamiento actual.
+2. **La configuración inicial es más fácil de seguir.** Cada permiso muestra su estado y la sección se pliega cuando la configuración termina. La app también distingue si LifeUp no está instalado, no se está ejecutando o no está autorizado.
+
+**v3.0.4 (2026/11/06)**
+
+**✨ Funciones**
+
+1. **Copia una dirección IP, un puerto o IP:puerto** en el formato que necesites al conectar otro dispositivo.
+2. **Consulta directamente las tareas de las listas inteligentes diaria, semanal o mensual**, sin activar antes las listas en la App. Las consultas por ID de categoría siguen disponibles. Requiere LifeUp **v1.107.4+**.
+3. **Las consultas de tareas e historial exponen el campo independiente `isFrozen`**, para que los paneles de terceros distingan las tareas congeladas. Requiere LifeUp App y Cloud actualizados; si un App antiguo no tiene el campo, se devuelve `null` (desconocido), no false. Añadir el campo no cambia el estado de la tarea ni el filtrado existente de tareas congeladas.
+
+El **MCP v0.1.5** complementario añade `smartListType` para consultas diarias, semanales y mensuales, conserva `isFrozen` en resultados compactos y detallados, y actualiza la ayuda de consultas.
+
+**v3.0.3 (2026/10/26)**
 
 **♻️ Optimización**
 

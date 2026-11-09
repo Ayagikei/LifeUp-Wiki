@@ -11,13 +11,19 @@
 | LifeUp-Android    | v1.107.4              | 2026/11/04                  |
 | LifeUp-iOS        | check [feature/ulives] | 🎉Alternative app available |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
-| LifeUp Cloud(SDK) | v3.0.2                 | 2026/09/24                  |
+| LifeUp Cloud(SDK) | v3.0.4                 | 2026/11/06                  |
 
 (Part of the translation is provided by Machine/AI Translate and may not be accurate)
 
 <!-- tabs:start -->
 
 ### **LifeUp-Android**
+
+**v1.107.5 (Upcoming)**
+
+**♻️ Optimization**
+
+1. **External tools now load task lists faster when you have many tasks.** Rewards, count progress, repeat conditions, and subtasks are loaded in batches.
 
 **v1.107.4 (2026/11/04)**
 
@@ -2984,7 +2990,29 @@ Optimization
 
 ### **LifeUp Cloud**
 
-**v3.0.3 (Upcoming)**
+**v3.0.5 (Upcoming)**
+
+**✨ Features**
+
+1. **Added connection diagnostics.** When a connection fails or a request times out, you can see its stage, API, and timing to help troubleshoot.
+2. **Added one-tap MCP setup on the home screen.** Tap it to copy setup instructions for an MCP-compatible AI tool.
+
+**♻️ Optimization**
+
+1. **Concurrent access from multiple tools is more stable.** The new MCP avoids request congestion, so lightweight requests such as version info are no longer delayed by large task queries. Older clients and automation scripts keep their existing behavior.
+2. **Initial setup is easier to follow.** Each permission shows its status and the section collapses once setup is complete. The app also distinguishes whether LifeUp is not installed, not running, or not authorized.
+
+**v3.0.4 (2026/11/06)**
+
+**✨ Features**
+
+1. **Copy an IP address, port, or IP:port** in the format you need when connecting another device.
+2. **Query daily, weekly, or monthly smart-list tasks directly**, without enabling the lists in the App first. Existing category-ID queries remain available. Requires LifeUp **v1.107.4+**.
+3. **Task and history queries expose the independent `isFrozen` field**, so third-party dashboards can distinguish frozen tasks. Requires an updated LifeUp App and Cloud; a missing field on an older App is returned as `null` (unknown), not false. Adding the field does not change task status or existing frozen-task filtering.
+
+The companion **MCP v0.1.5** adds `smartListType` for daily, weekly, and monthly queries, preserves `isFrozen` in compact and detailed results, and updates query help.
+
+**v3.0.3 (2026/10/26)**
 
 **♻️ Optimization**
 
