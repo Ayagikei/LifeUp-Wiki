@@ -19,6 +19,18 @@
 
 ### **LifeUp-Android**
 
+**v1.107.8 (Demnächst)**
+
+**♻️ Optimierung**
+
+1. **Das Wiederherstellen eines Backups ist schneller und verbraucht weniger Speicher.** Die App kopiert beim Wiederherstellen nicht mehr wiederholt die gesamte Datenbank, sodass der Gewinn mit der Datenbankgröße wächst.
+
+**🐛 Fehlerbehebungen**
+
+1. **Wiederherstellungen schlugen bei großen Backup-Dateien fehl – behoben.** Der Entpackschritt hatte Grenzen für Größe und Dateianzahl, sodass Backups mit vielen Mediendateien pauschal abgelehnt werden konnten.
+2. **Behoben, dass beim Importieren einer einzelnen Datenbankdatei die Einstellungen gelöscht wurden.** Jetzt wird nur ersetzt, was das Backup tatsächlich enthält; andere Einstellungen bleiben unverändert.
+3. **Behoben, dass automatische Backups nach einem unterbrochenen Upload dauerhaft ausgeschaltet blieben.**
+
 **v1.107.5 (2026/11/09)**
 
 **♻️ Optimierung**
