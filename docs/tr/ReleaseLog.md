@@ -19,6 +19,18 @@
 
 ### **LifeUp-Android**
 
+**v1.107.8 (Yakında)**
+
+**♻️ İyileştirme**
+
+1. **Yedek geri yüklemesi daha hızlı ve daha az depolama kullanır.** Uygulama geri yükleme sırasında artık tüm veritabanını tekrar tekrar kopyalamıyor; kazanç veritabanı boyutu arttıkça artıyor.
+
+**🐛 Düzeltmeler**
+
+1. **Büyük yedek dosyaları için başarısız olan geri yüklemeler düzeltildi.** Açma adımında boyut ve dosya sayısı sınırları vardı; çok sayıda medya dosyası içeren yedekler doğrudan reddedilebiliyordu.
+2. **Tek bir veritabanı dosyası içe aktarırken ayarların silinmesi düzeltildi.** Artık yalnızca yedekte gerçekten bulunanlar değiştiriliyor; diğer ayarlar olduğu gibi kalıyor.
+3. **Kesintiye uğrayan bir yüklemeden sonra otomatik yedeklemenin kalıcı olarak kapalı kalması düzeltildi.**
+
 **v1.107.5 (2026/11/09)**
 
 **♻️ İyileştirme**

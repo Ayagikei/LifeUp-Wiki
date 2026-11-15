@@ -19,6 +19,18 @@
 
 ### **LifeUp-Android**
 
+**v1.107.8 (In arrivo)**
+
+**♻️ Ottimizzazione**
+
+1. **Il ripristino di un backup è più veloce e usa meno spazio di archiviazione.** L'app non copia più ripetutamente l'intero database durante il ripristino, quindi il vantaggio cresce con la dimensione del database.
+
+**🐛 Correzioni**
+
+1. **Corretti i ripristini che fallivano con file di backup di grandi dimensioni.** La fase di decompressione aveva limiti di dimensione e di numero di file, quindi i backup con molti file multimediali potevano essere rifiutati del tutto.
+2. **Corretto l'importazione di un singolo file di database che cancellava le impostazioni.** Ora viene sostituito solo ciò che il backup contiene effettivamente; le altre impostazioni restano invariate.
+3. **Corretto il fatto che i backup automatici restassero disattivati dopo un caricamento interrotto.**
+
 **v1.107.5 (2026/11/09)**
 
 **♻️ Ottimizzazione**

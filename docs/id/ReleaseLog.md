@@ -19,6 +19,18 @@
 
 ### **LifeUp-Android**
 
+**v1.107.8 (Segera hadir)**
+
+**♻️ Optimasi**
+
+1. **Memulihkan cadangan lebih cepat dan memakai lebih sedikit penyimpanan.** Aplikasi tidak lagi menyalin seluruh basis data berulang kali saat pemulihan, sehingga keuntungannya bertambah seiring ukuran basis data.
+
+**🐛 Perbaikan**
+
+1. **Memperbaiki pemulihan yang gagal untuk file cadangan besar.** Langkah ekstraksi memiliki batas ukuran dan jumlah file, sehingga cadangan dengan banyak file media bisa langsung ditolak.
+2. **Memperbaiki impor satu file basis data yang menghapus pengaturan Anda.** Hanya isi cadangan yang benar-benar ada yang diganti sekarang; pengaturan lain tetap seperti semula.
+3. **Memperbaiki cadangan otomatis yang tetap mati setelah satu unggahan terputus.**
+
 **v1.107.5 (2026/11/09)**
 
 **♻️ Optimasi**

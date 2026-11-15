@@ -19,6 +19,18 @@
 
 ### **LifeUp-Android**
 
+**v1.107.8 (À venir)**
+
+**♻️ Optimisation**
+
+1. **Restaurer une sauvegarde est plus rapide et utilise moins d'espace de stockage.** L'application ne copie plus toute la base de données à répétition pendant la restauration, de sorte que le gain augmente avec la taille de la base de données.
+
+**🐛 Corrections**
+
+1. **Corrigé les restaurations qui échouaient pour les fichiers de sauvegarde volumineux.** L'étape de décompression avait des limites de taille et de nombre de fichiers, de sorte que les sauvegardes contenant beaucoup de fichiers multimédias pouvaient être rejetées purement et simplement.
+2. **Corrigé l'import d'un seul fichier de base de données qui effaçait vos paramètres.** Seul le contenu réel de la sauvegarde est désormais remplacé ; les autres paramètres restent inchangés.
+3. **Corrigé le fait que les sauvegardes automatiques restaient désactivées après un envoi interrompu.**
+
 **v1.107.5 (2026/11/09)**
 
 **♻️ Optimisation**

@@ -19,6 +19,18 @@
 
 ### **LifeUp-Android**
 
+**v1.107.8 (Próximamente)**
+
+**♻️ Optimización**
+
+1. **Restaurar una copia de seguridad es más rápido y usa menos almacenamiento.** La aplicación ya no copia repetidamente toda la base de datos durante la restauración, de modo que la mejora aumenta con el tamaño de la base de datos.
+
+**🐛 Correcciones**
+
+1. **Se corrigieron fallos al restaurar copias de seguridad grandes.** El paso de descompresión tenía límites de tamaño y de número de archivos, por lo que las copias con muchos archivos multimedia podían rechazarse por completo.
+2. **Se corrigió que al importar un solo archivo de base de datos se borraran los ajustes.** Ahora solo se sustituye lo que la copia de seguridad contiene realmente; el resto de ajustes se mantienen.
+3. **Se corrigió que las copias automáticas quedaran desactivadas de forma permanente tras una subida interrumpida.**
+
 **v1.107.5 (2026/11/09)**
 
 **♻️ Optimización**

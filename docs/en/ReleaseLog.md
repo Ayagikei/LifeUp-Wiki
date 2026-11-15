@@ -19,6 +19,18 @@
 
 ### **LifeUp-Android**
 
+**v1.107.8 (Upcoming)**
+
+**♻️ Optimization**
+
+1. **Restoring a backup is faster and uses less storage.** The app no longer copies the whole database repeatedly while restoring, so the gain grows with database size.
+
+**🐛 Bug Fixes**
+
+1. **Fixed restores failing for large backup files.** The unpack step had size and file-count limits, so backups with many media files could be rejected outright.
+2. **Fixed importing a single database file clearing your settings.** Only what the backup actually contains is replaced now; other settings stay as they are.
+3. **Fixed automatic backups staying off for good after one interrupted upload.**
+
 **v1.107.5 (2026/11/09)**
 
 **♻️ Optimization**
