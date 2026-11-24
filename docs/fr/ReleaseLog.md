@@ -19,6 +19,13 @@
 
 ### **LifeUp-Android**
 
+**v1.109.0 (À venir)**
+
+**✨ Fonctionnalités**
+
+1. **Nouveau widget « Tâches (moderne) » pour l'écran d'accueil, au design plus moderne.**
+2. **Un même thème et une même opacité de fond peuvent être définis pour les widgets de tâches modernes, de pièces, d’attributs, de boutique et d’inventaire.**
+
 **v1.107.8 (À venir)**
 
 **♻️ Optimisation**

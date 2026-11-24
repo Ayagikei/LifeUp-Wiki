@@ -19,6 +19,13 @@
 
 ### **LifeUp-Android**
 
+**v1.109.0 (Demnächst)**
+
+**✨ Funktionen**
+
+1. **Neues Widget „Aufgaben (modern)“ für den Startbildschirm mit einem aktualisierten, modernen Design.**
+2. **Gemeinsames Thema und Hintergrunddeckkraft für die Widgets für moderne Aufgaben, Münzen, Attribute, Shop und Inventar einstellbar.**
+
 **v1.107.8 (Demnächst)**
 
 **♻️ Optimierung**

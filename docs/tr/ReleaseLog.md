@@ -19,6 +19,13 @@
 
 ### **LifeUp-Android**
 
+**v1.109.0 (Yakında)**
+
+**✨ Özellikler**
+
+1. **Ana ekran için yeni «Görevler (modern)» widget'ı; daha modern bir tasarım.**
+2. **Modern görev, jeton, özellik, dükkan ve envanter widgetları için ortak tema ve arka plan opaklığı ayarlanabilir.**
+
 **v1.107.8 (Yakında)**
 
 **♻️ İyileştirme**

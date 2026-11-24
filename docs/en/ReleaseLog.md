@@ -19,6 +19,13 @@
 
 ### **LifeUp-Android**
 
+**v1.109.0 (Upcoming)**
+
+**✨ Features**
+
+1. **Add the new Tasks (Modern) home-screen widget with an updated modern design.**
+2. **Set a shared theme and background opacity for the modern task, coin, attribute, shop, and inventory widgets.**
+
 **v1.107.8 (Upcoming)**
 
 **♻️ Optimization**

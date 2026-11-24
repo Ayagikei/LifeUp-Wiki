@@ -19,6 +19,13 @@
 
 ### **LifeUp-Android**
 
+**v1.109.0 (In arrivo)**
+
+**✨ Funzionalità**
+
+1. **Nuovo widget «Compiti (moderni)» per la schermata Home, con un design più moderno.**
+2. **Tema condiviso e opacità dello sfondo impostabili per i widget di compiti moderni, monete, attributi, negozio e inventario.**
+
 **v1.107.8 (In arrivo)**
 
 **♻️ Ottimizzazione**

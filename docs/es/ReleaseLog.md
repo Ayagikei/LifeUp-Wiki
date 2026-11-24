@@ -19,6 +19,13 @@
 
 ### **LifeUp-Android**
 
+**v1.109.0 (Próximamente)**
+
+**✨ Funciones**
+
+1. **Nuevo widget «Tareas (modernas)» en la pantalla de inicio con un diseño más moderno.**
+2. **Tema compartido y opacidad del fondo configurables para los widgets de tareas modernas, monedas, atributos, tienda e inventario.**
+
 **v1.107.8 (Próximamente)**
 
 **♻️ Optimización**

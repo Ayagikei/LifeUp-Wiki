@@ -19,6 +19,13 @@
 
 ### **LifeUp-Android**
 
+**v1.109.0 (Segera hadir)**
+
+**✨ Fitur**
+
+1. **Widget layar utama «Tugas (Modern)» baru dengan desain yang lebih modern.**
+2. **Tema bersama dan opasitas latar dapat diatur untuk widget tugas modern, koin, atribut, toko, dan inventaris.**
+
 **v1.107.8 (Segera hadir)**
 
 **♻️ Optimasi**
