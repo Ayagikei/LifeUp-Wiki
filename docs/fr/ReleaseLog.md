@@ -8,7 +8,7 @@
 
 | Plateforme        | Version                | Date de mise à jour         |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.107.5              | 2026/11/09                  |
+| LifeUp-Android    | v1.108.2              | 2026/11/18                  |
 | LifeUp-iOS        | voir [feature/ulives] | 🎉App alternative disponible |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
 | LifeUp Cloud(SDK) | v3.0.5                 | 2026/11/09                  |
@@ -19,7 +19,37 @@
 
 ### **LifeUp-Android**
 
-**v1.107.8 (À venir)**
+**v1.108.3 (À venir)**
+
+**🐛 Corrections**
+
+1. **Corrigé des blocages possibles** lors de l'utilisation d'un article de la boutique via un URL scheme ou au démarrage d'un compte à rebours d'article.
+
+**v1.108.2 (2026/11/18)**
+
+**🐛 Corrections**
+
+1. **Corrigé une exigence matérielle de mode portrait qui excluait à tort certains appareils sur Google Play.** Les aperçus d'images dans l'app conservent la même orientation.
+
+**v1.108.1 (2026/11/17)**
+
+**🐛 Corrections**
+
+1. **Corrigé le fait que le statut, la progression et l'ordre des sous-tâches ne se rafraîchissaient pas** après avoir terminé ou annulé une sous-tâche sur l'écran de détails de la tâche.
+
+**v1.108.0 (2026/11/17)**
+
+**✨ Fonctionnalités**
+
+1. **Déplier les sous-tâches dans la liste des tâches.** Activez cette option dans **Paramètres → Labo** pour déplier des sous-tâches, les terminer ou les marquer à nouveau comme non terminées dans la vue carte par défaut et la liste compacte. Désactivé par défaut.
+2. **Voir pièces et XP ensemble.** Les résumés de récompense des sous-tâches affichent désormais l'XP à côté des pièces.
+3. **Personnaliser les règles et le tri.** Allez dans **Paramètres → Paramètres des tâches → Sous-tâches** pour ajuster les règles d'achèvement et l'ordre des sous-tâches terminées.
+
+**🐛 Corrections**
+
+1. **Corrigé le fait que la liste d'historique affichait encore d'anciennes valeurs** après avoir modifié et enregistré un enregistrement d'historique de tâche.
+
+**v1.107.8 (2026/11/15)**
 
 **♻️ Optimisation**
 
@@ -30,6 +60,20 @@
 1. **Corrigé les restaurations qui échouaient pour les fichiers de sauvegarde volumineux.** L'étape de décompression avait des limites de taille et de nombre de fichiers, de sorte que les sauvegardes contenant beaucoup de fichiers multimédias pouvaient être rejetées purement et simplement.
 2. **Corrigé l'import d'un seul fichier de base de données qui effaçait vos paramètres.** Seul le contenu réel de la sauvegarde est désormais remplacé ; les autres paramètres restent inchangés.
 3. **Corrigé le fait que les sauvegardes automatiques restaient désactivées après un envoi interrompu.**
+
+**v1.107.7 (2026/11/14)**
+
+**♻️ Optimisation**
+
+1. **Désactivation temporaire des sauvegardes de sécurité automatiques avant les mises à jour de l'app** pour réduire les ralentissements au démarrage. Les sauvegardes manuelles et les sauvegardes de sécurité automatiques avant restauration restent inchangées.
+
+**v1.107.6 (2026/11/12)**
+
+**♻️ Optimisation**
+
+1. **L'app ne bloque plus le démarrage** si une sauvegarde de sécurité avant mise à jour échoue.
+2. **Jusqu'à trois sauvegardes de sécurité locales sont conservées par défaut.**
+3. **Après avoir restauré une sauvegarde, vous pouvez confirmer vos données directement** sur l'écran Sauvegarde/Restauration.
 
 **v1.107.5 (2026/11/09)**
 

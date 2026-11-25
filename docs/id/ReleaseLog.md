@@ -8,7 +8,7 @@
 
 | Platform          | Versi                  | Tanggal Pembaruan           |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.107.5              | 2026/11/09                  |
+| LifeUp-Android    | v1.108.2              | 2026/11/18                  |
 | LifeUp-iOS        | lihat [feature/ulives] | 🎉App alternatif tersedia   |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
 | LifeUp Cloud(SDK) | v3.0.5                 | 2026/11/09                  |
@@ -19,7 +19,37 @@
 
 ### **LifeUp-Android**
 
-**v1.107.8 (Segera hadir)**
+**v1.108.3 (Segera hadir)**
+
+**🐛 Perbaikan**
+
+1. **Memperbaiki kemungkinan macet** saat menggunakan Item Toko lewat URL Scheme atau memulai hitungan mundur item.
+
+**v1.108.2 (2026/11/18)**
+
+**🐛 Perbaikan**
+
+1. **Memperbaiki persyaratan perangkat keras potret yang secara keliru mengecualikan beberapa perangkat di Google Play.** Pratinjau gambar dalam aplikasi masih memakai orientasi yang sama.
+
+**v1.108.1 (2026/11/17)**
+
+**🐛 Perbaikan**
+
+1. **Memperbaiki status, progres, dan urutan subtugas yang tidak disegarkan** setelah menyelesaikan atau membatalkan subtugas di halaman detail tugas.
+
+**v1.108.0 (2026/11/17)**
+
+**✨ Fitur**
+
+1. **Perluas subtugas di daftar tugas.** Aktifkan di **Pengaturan → Lab** untuk membuka subtugas, menandainya selesai, atau membatalkan status selesai di tampilan kartu default dan daftar ringkas. Secara default nonaktif.
+2. **Lihat koin dan XP bersama.** Ringkasan hadiah subtugas kini menampilkan XP di samping koin.
+3. **Sesuaikan penyelesaian dan penyortiran.** Buka **Pengaturan → Tugas → Subtugas** untuk menyesuaikan aturan penyelesaian dan urutan subtugas yang sudah selesai.
+
+**🐛 Perbaikan**
+
+1. **Memperbaiki daftar riwayat yang masih menampilkan nilai lama** setelah Anda mengedit dan menyimpan catatan riwayat tugas.
+
+**v1.107.8 (2026/11/15)**
 
 **♻️ Optimasi**
 
@@ -30,6 +60,20 @@
 1. **Memperbaiki pemulihan yang gagal untuk file cadangan besar.** Langkah ekstraksi memiliki batas ukuran dan jumlah file, sehingga cadangan dengan banyak file media bisa langsung ditolak.
 2. **Memperbaiki impor satu file basis data yang menghapus pengaturan Anda.** Hanya isi cadangan yang benar-benar ada yang diganti sekarang; pengaturan lain tetap seperti semula.
 3. **Memperbaiki cadangan otomatis yang tetap mati setelah satu unggahan terputus.**
+
+**v1.107.7 (2026/11/14)**
+
+**♻️ Optimasi**
+
+1. **Menonaktifkan sementara cadangan aman otomatis sebelum pembaruan aplikasi** untuk mengurangi jeda saat memulai. Cadangan manual dan cadangan aman otomatis sebelum pemulihan tidak berubah.
+
+**v1.107.6 (2026/11/12)**
+
+**♻️ Optimasi**
+
+1. **Aplikasi tidak lagi memblokir peluncuran** jika cadangan aman sebelum pembaruan gagal.
+2. **Hingga tiga cadangan aman lokal disimpan secara default.**
+3. **Setelah memulihkan cadangan, Anda dapat langsung mengonfirmasi data** di layar Cadangkan/Pulihkan.
 
 **v1.107.5 (2026/11/09)**
 

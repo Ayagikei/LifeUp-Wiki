@@ -8,7 +8,7 @@
 
 | Plataforma        | Versão                | Data de atualização         |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.107.5              | 2026/11/09                  |
+| LifeUp-Android    | v1.108.2              | 2026/11/18                  |
 | LifeUp-iOS        | consulte [feature/ulives] | 🎉App alternativo disponível |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
 | LifeUp Cloud(SDK) | v3.0.5                 | 2026/11/09                  |
@@ -19,7 +19,37 @@
 
 ### **LifeUp-Android**
 
-**v1.107.8 (Em breve)**
+**v1.108.3 (Em breve)**
+
+**🐛 Correções**
+
+1. **Corrigidas possíveis travadas** ao usar um item da loja por URL scheme ou ao iniciar a contagem regressiva de um item.
+
+**v1.108.2 (2026/11/18)**
+
+**🐛 Correções**
+
+1. **Corrigida uma exigência de hardware em modo retrato que excluía incorretamente alguns dispositivos no Google Play.** As pré-visualizações de imagem no app ainda usam a mesma orientação.
+
+**v1.108.1 (2026/11/17)**
+
+**🐛 Correções**
+
+1. **Corrigido o fato de o status, o progresso e a ordem das subtarefas não atualizarem** depois de concluir ou desfazer uma subtarefa na tela de detalhes da tarefa.
+
+**v1.108.0 (2026/11/17)**
+
+**✨ Recursos**
+
+1. **Expandir subtarefas na lista de tarefas.** Ative em **Configurações → Laboratório** para expandir subtarefas, marcá-las como concluídas ou desfazer a conclusão na visualização em cartão padrão e na lista compacta. Desativado por padrão.
+2. **Ver moedas e XP juntos.** Os resumos de recompensa das subtarefas agora mostram XP junto com as moedas.
+3. **Personalizar conclusão e ordenação.** Vá em **Configurações → Tarefas → Subtarefas** para ajustar as regras de conclusão e como as subtarefas concluídas são ordenadas.
+
+**🐛 Correções**
+
+1. **Corrigido o fato de a lista de histórico ainda mostrar valores antigos** depois de editar e salvar um registro de histórico da tarefa.
+
+**v1.107.8 (2026/11/15)**
 
 **♻️ Otimização**
 
@@ -30,6 +60,20 @@
 1. **Corrigidas falhas ao restaurar arquivos de backup grandes.** A etapa de descompactação tinha limites de tamanho e de quantidade de arquivos, de modo que backups com muitos arquivos de mídia podiam ser rejeitados imediatamente.
 2. **Corrigido o fato de importar um único arquivo de banco de dados apagar as configurações.** Agora apenas o que o backup realmente contém é substituído; as demais configurações permanecem como estão.
 3. **Corrigido o fato de os backups automáticos permanecerem desativados após um envio interrompido.**
+
+**v1.107.7 (2026/11/14)**
+
+**♻️ Otimização**
+
+1. **Backups de segurança automáticos antes de atualizações do app temporariamente desativados** para reduzir lentidão na inicialização. Backups manuais e backups de segurança automáticos antes da restauração permanecem inalterados.
+
+**v1.107.6 (2026/11/12)**
+
+**♻️ Otimização**
+
+1. **O app não bloqueia mais a inicialização** se um backup de segurança pré-atualização falhar.
+2. **Até três backups de segurança locais são mantidos por padrão.**
+3. **Depois de restaurar um backup, você pode confirmar seus dados diretamente** na tela “Backup / Restauração”.
 
 **v1.107.5 (2026/11/09)**
 

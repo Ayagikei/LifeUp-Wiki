@@ -8,7 +8,7 @@
 
 | Plataforma        | Versión                | Fecha de actualización      |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.107.5              | 2026/11/09                  |
+| LifeUp-Android    | v1.108.2              | 2026/11/18                  |
 | LifeUp-iOS        | consulta [feature/ulives] | 🎉App alternativa disponible |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
 | LifeUp Cloud(SDK) | v3.0.5                 | 2026/11/09                  |
@@ -19,7 +19,37 @@
 
 ### **LifeUp-Android**
 
-**v1.107.8 (Próximamente)**
+**v1.108.3 (Próximamente)**
+
+**🐛 Correcciones**
+
+1. **Se corrigieron posibles bloqueos** al usar un artículo de la tienda mediante URL Scheme o al iniciar la cuenta atrás de un artículo.
+
+**v1.108.2 (2026/11/18)**
+
+**🐛 Correcciones**
+
+1. **Se corrigió un requisito de hardware en vertical que excluía incorrectamente algunos dispositivos en Google Play.** Las vistas previas de imagen en la app mantienen la misma orientación.
+
+**v1.108.1 (2026/11/17)**
+
+**🐛 Correcciones**
+
+1. **Se corrigió que el estado, el progreso y el orden de las subtareas no se actualizaran** tras completar o deshacer una subtarea en la pantalla de detalle de la tarea.
+
+**v1.108.0 (2026/11/17)**
+
+**✨ Funciones**
+
+1. **Expandir subtareas en la lista de tareas.** Actívalo en **Ajustes → Experimental** para expandir subtareas, marcarlas como completadas o desmarcarlas en la vista de tarjeta predeterminada y en la lista compacta. Está desactivado por defecto.
+2. **Ver monedas y XP juntos.** Los resúmenes de recompensa de subtareas muestran XP además de monedas.
+3. **Personalizar finalización y orden.** Ve a **Ajustes → Ajustes de la tarea → Subtareas** para ajustar las reglas de finalización y el orden de las subtareas completadas.
+
+**🐛 Correcciones**
+
+1. **Se corrigió que la lista del historial siguiera mostrando valores antiguos** después de editar y guardar un registro del historial de tareas.
+
+**v1.107.8 (2026/11/15)**
 
 **♻️ Optimización**
 
@@ -30,6 +60,20 @@
 1. **Se corrigieron fallos al restaurar copias de seguridad grandes.** El paso de descompresión tenía límites de tamaño y de número de archivos, por lo que las copias con muchos archivos multimedia podían rechazarse por completo.
 2. **Se corrigió que al importar un solo archivo de base de datos se borraran los ajustes.** Ahora solo se sustituye lo que la copia de seguridad contiene realmente; el resto de ajustes se mantienen.
 3. **Se corrigió que las copias automáticas quedaran desactivadas de forma permanente tras una subida interrumpida.**
+
+**v1.107.7 (2026/11/14)**
+
+**♻️ Optimización**
+
+1. **Se desactivaron temporalmente las copias de seguridad automáticas antes de actualizar la app** para reducir bloqueos al inicio. Las copias manuales y las copias automáticas antes de restaurar no cambian.
+
+**v1.107.6 (2026/11/12)**
+
+**♻️ Optimización**
+
+1. **La app ya no bloquea el arranque** si falla una copia de seguridad de protección antes de actualizar.
+2. **Por defecto se conservan hasta tres copias de seguridad locales.**
+3. **Tras restaurar una copia, puedes confirmar tus datos directamente** en la pantalla «Respaldar/Restaurar».
 
 **v1.107.5 (2026/11/09)**
 
