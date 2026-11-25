@@ -8,7 +8,7 @@
 
 | Platform          | Version                | Update Date                 |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.107.5              | 2026/11/09                  |
+| LifeUp-Android    | v1.108.2              | 2026/11/18                  |
 | LifeUp-iOS        | check [feature/ulives] | 🎉Alternative app available |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
 | LifeUp Cloud(SDK) | v3.0.5                 | 2026/11/09                  |
@@ -19,7 +19,37 @@
 
 ### **LifeUp-Android**
 
-**v1.107.8 (Upcoming)**
+**v1.108.3 (Upcoming)**
+
+**🐛 Bug Fixes**
+
+1. **Fixed possible freezes** when using a shop item via a URL scheme or starting an item countdown.
+
+**v1.108.2 (2026/11/18)**
+
+**🐛 Bug Fixes**
+
+1. **Fixed a portrait hardware requirement that incorrectly excluded some devices on Google Play.** In-app image previews still use the same orientation.
+
+**v1.108.1 (2026/11/17)**
+
+**🐛 Bug Fixes**
+
+1. **Fixed subtask status, progress, and order not refreshing** after completing or undoing a subtask on the task details screen.
+
+**v1.108.0 (2026/11/17)**
+
+**✨ Features**
+
+1. **Expand subtasks in the task list.** Turn this on in **Settings → Labs** to expand subtasks, mark them complete, or undo their completion in the default card and compact list views. It’s off by default.
+2. **See coins and XP together.** Subtask reward summaries now show XP alongside coins.
+3. **Customize completion and sorting.** Go to **Settings → Task → Subtasks** to adjust completion rules and how completed subtasks are ordered.
+
+**🐛 Bug Fixes**
+
+1. **Fixed the history list still showing old values** after you edited and saved a task history record.
+
+**v1.107.8 (2026/11/15)**
 
 **♻️ Optimization**
 
@@ -30,6 +60,20 @@
 1. **Fixed restores failing for large backup files.** The unpack step had size and file-count limits, so backups with many media files could be rejected outright.
 2. **Fixed importing a single database file clearing your settings.** Only what the backup actually contains is replaced now; other settings stay as they are.
 3. **Fixed automatic backups staying off for good after one interrupted upload.**
+
+**v1.107.7 (2026/11/14)**
+
+**♻️ Optimization**
+
+1. **Temporarily disabled automatic safety backups before app upgrades** to reduce startup stalls. Manual backups and automatic safety backups before restores are unchanged.
+
+**v1.107.6 (2026/11/12)**
+
+**♻️ Optimization**
+
+1. **The app no longer blocks startup** if a pre-upgrade safety backup fails.
+2. **Up to three local safety backups are kept by default.**
+3. **After restoring a backup, you can confirm your data directly** on the Backup/Restore screen.
 
 **v1.107.5 (2026/11/09)**
 

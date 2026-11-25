@@ -8,7 +8,7 @@
 
 | Plattform          | Version                | Aktualisierungsdatum                 |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.107.5              | 2026/11/09                  |
+| LifeUp-Android    | v1.108.2              | 2026/11/18                  |
 | LifeUp-iOS        | check [feature/ulives] | 🎉Alternative App verfügbar |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
 | LifeUp Cloud(SDK) | v3.0.5                 | 2026/11/09                  |
@@ -19,7 +19,37 @@
 
 ### **LifeUp-Android**
 
-**v1.107.8 (Demnächst)**
+**v1.108.3 (Demnächst)**
+
+**🐛 Fehlerbehebungen**
+
+1. **Mögliche Einfrierungen behoben** beim Verwenden eines Shop-Gegenstands per URL-Scheme oder beim Start eines Gegenstands-Countdowns.
+
+**v1.108.2 (2026/11/18)**
+
+**🐛 Fehlerbehebungen**
+
+1. **Behoben, dass eine Portrait-Hardware-Anforderung einige Geräte bei Google Play fälschlich ausschloss.** In-App-Bildvorschauen verwenden weiterhin dieselbe Ausrichtung.
+
+**v1.108.1 (2026/11/17)**
+
+**🐛 Fehlerbehebungen**
+
+1. **Behoben, dass Status, Fortschritt und Reihenfolge von Unteraufgaben nicht aktualisiert wurden**, nachdem eine Unteraufgabe auf dem Aufgabendetailbildschirm abgeschlossen oder rückgängig gemacht wurde.
+
+**v1.108.0 (2026/11/17)**
+
+**✨ Funktionen**
+
+1. **Unteraufgaben in der Aufgabenliste ausklappen.** Aktiviere dies unter **Einstellungen → Labor**, um Unteraufgaben in der Standardkarten- und kompakten Listenansicht auszuklappen, als erledigt zu markieren oder den Abschluss rückgängig zu machen. Standardmäßig aus.
+2. **Münzen und XP zusammen anzeigen.** Belohnungsübersichten von Unteraufgaben zeigen jetzt XP neben Münzen.
+3. **Abschluss und Sortierung anpassen.** Gehe zu **Einstellungen → Aufgaben → Unteraufgaben**, um Abschlussregeln und die Sortierung abgeschlossener Unteraufgaben anzupassen.
+
+**🐛 Fehlerbehebungen**
+
+1. **Behoben, dass die Verlaufsliste nach dem Bearbeiten und Speichern eines Aufgabenverlaufs-Eintrags noch alte Werte anzeigte.**
+
+**v1.107.8 (2026/11/15)**
 
 **♻️ Optimierung**
 
@@ -30,6 +60,20 @@
 1. **Wiederherstellungen schlugen bei großen Backup-Dateien fehl – behoben.** Der Entpackschritt hatte Grenzen für Größe und Dateianzahl, sodass Backups mit vielen Mediendateien pauschal abgelehnt werden konnten.
 2. **Behoben, dass beim Importieren einer einzelnen Datenbankdatei die Einstellungen gelöscht wurden.** Jetzt wird nur ersetzt, was das Backup tatsächlich enthält; andere Einstellungen bleiben unverändert.
 3. **Behoben, dass automatische Backups nach einem unterbrochenen Upload dauerhaft ausgeschaltet blieben.**
+
+**v1.107.7 (2026/11/14)**
+
+**♻️ Optimierung**
+
+1. **Automatische Sicherheits-Backups vor App-Upgrades vorübergehend deaktiviert**, um Startverzögerungen zu reduzieren. Manuelle Backups und automatische Sicherheits-Backups vor Wiederherstellungen bleiben unverändert.
+
+**v1.107.6 (2026/11/12)**
+
+**♻️ Optimierung**
+
+1. **Die App blockiert den Start nicht mehr**, wenn ein Sicherheits-Backup vor dem Upgrade fehlschlägt.
+2. **Standardmäßig werden bis zu drei lokale Sicherheits-Backups aufbewahrt.**
+3. **Nach dem Wiederherstellen eines Backups kannst du deine Daten direkt** auf dem Bildschirm „Sichern/Wiederherstellen“ bestätigen.
 
 **v1.107.5 (2026/11/09)**
 

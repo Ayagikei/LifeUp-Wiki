@@ -8,7 +8,7 @@
 
 | Piattaforma       | Versione               | Data aggiornamento          |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.107.5              | 2026/11/09                  |
+| LifeUp-Android    | v1.108.2              | 2026/11/18                  |
 | LifeUp-iOS        | consulta [feature/ulives] | 🎉App alternativa disponibile |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
 | LifeUp Cloud(SDK) | v3.0.5                 | 2026/11/09                  |
@@ -19,7 +19,37 @@
 
 ### **LifeUp-Android**
 
-**v1.107.8 (In arrivo)**
+**v1.108.3 (In arrivo)**
+
+**🐛 Correzioni**
+
+1. **Corretti possibili blocchi** quando si usa un articolo del negozio tramite URL scheme o si avvia un conto alla rovescia di un articolo.
+
+**v1.108.2 (2026/11/18)**
+
+**🐛 Correzioni**
+
+1. **Corretto un requisito hardware in modalità verticale che escludeva erroneamente alcuni dispositivi su Google Play.** Le anteprime immagine in-app usano ancora la stessa orientazione.
+
+**v1.108.1 (2026/11/17)**
+
+**🐛 Correzioni**
+
+1. **Corretto il fatto che stato, progresso e ordine delle sotto-attività non si aggiornavano** dopo aver completato o annullato una sotto-attività nella schermata dei dettagli dell'attività.
+
+**v1.108.0 (2026/11/17)**
+
+**✨ Funzionalità**
+
+1. **Espandi le sotto-attività nell'elenco attività.** Attivalo in **Impostazioni → Lab** per espandere le sotto-attività, completarle o annullarne il completamento nella vista scheda predefinita e nell'elenco compatto. Disattivato per impostazione predefinita.
+2. **Vedi monete e XP insieme.** I riepiloghi ricompensa delle sotto-attività mostrano ora l'XP accanto alle monete.
+3. **Personalizza completamento e ordinamento.** Vai in **Impostazioni → Compito → Sotto-attività** per regolare le regole di completamento e l'ordine delle sotto-attività completate.
+
+**🐛 Correzioni**
+
+1. **Corretto il fatto che l'elenco cronologia mostrava ancora valori vecchi** dopo aver modificato e salvato un record della cronologia attività.
+
+**v1.107.8 (2026/11/15)**
 
 **♻️ Ottimizzazione**
 
@@ -30,6 +60,20 @@
 1. **Corretti i ripristini che fallivano con file di backup di grandi dimensioni.** La fase di decompressione aveva limiti di dimensione e di numero di file, quindi i backup con molti file multimediali potevano essere rifiutati del tutto.
 2. **Corretto l'importazione di un singolo file di database che cancellava le impostazioni.** Ora viene sostituito solo ciò che il backup contiene effettivamente; le altre impostazioni restano invariate.
 3. **Corretto il fatto che i backup automatici restassero disattivati dopo un caricamento interrotto.**
+
+**v1.107.7 (2026/11/14)**
+
+**♻️ Ottimizzazione**
+
+1. **Backup di sicurezza automatici prima degli aggiornamenti dell'app temporaneamente disattivati** per ridurre i rallentamenti all'avvio. Backup manuali e backup di sicurezza automatici prima del ripristino restano invariati.
+
+**v1.107.6 (2026/11/12)**
+
+**♻️ Ottimizzazione**
+
+1. **L'app non blocca più l'avvio** se un backup di sicurezza pre-aggiornamento fallisce.
+2. **Per impostazione predefinita si conservano fino a tre backup di sicurezza locali.**
+3. **Dopo aver ripristinato un backup, puoi confermare i tuoi dati direttamente** nella schermata Backup/Ripristino.
 
 **v1.107.5 (2026/11/09)**
 

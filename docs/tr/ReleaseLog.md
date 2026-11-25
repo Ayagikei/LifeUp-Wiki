@@ -8,7 +8,7 @@
 
 | Platform          | Sürüm                  | Güncelleme Tarihi           |
 | :---------------- |:-----------------------|:----------------------------|
-| LifeUp-Android    | v1.107.5              | 2026/11/09                  |
+| LifeUp-Android    | v1.108.2              | 2026/11/18                  |
 | LifeUp-iOS        | check [feature/ulives] | 🎉Alternatif uygulama mevcut |
 | LifeUp-Desktop    | v1.2.0                 | 2025/01/01                  |
 | LifeUp Cloud(SDK) | v3.0.5                 | 2026/11/09                  |
@@ -19,7 +19,37 @@
 
 ### **LifeUp-Android**
 
-**v1.107.8 (Yakında)**
+**v1.108.3 (Yakında)**
+
+**🐛 Düzeltmeler**
+
+1. **URL Scheme ile bir Mağaza Eşyası kullanırken veya bir Eşya geri sayımı başlatırken oluşabilecek takılmalar düzeltildi.**
+
+**v1.108.2 (2026/11/18)**
+
+**🐛 Düzeltmeler**
+
+1. **Google Play’de bazı cihazları yanlışlıkla dışlayan dikey ekran donanım gereksinimi düzeltildi.** Uygulama içi görsel önizlemelerin yönü aynı kaldı.
+
+**v1.108.1 (2026/11/17)**
+
+**🐛 Düzeltmeler**
+
+1. **Görev ayrıntı sayfasında bir alt görevi tamamladıktan veya geri aldıktan sonra alt görev durumu, ilerleme ve sırasının yenilenmemesi düzeltildi.**
+
+**v1.108.0 (2026/11/17)**
+
+**✨ Özellikler**
+
+1. **Görev listesinde alt görevleri genişletme.** **Ayarlar → Lab** bölümünden açın; varsayılan kart ve kompakt liste görünümlerinde alt görevleri genişletebilir, tamamlayabilir veya tamamlamayı geri alabilirsiniz. Varsayılan olarak kapalıdır.
+2. **Jeton ve XP birlikte görünsün.** Alt görev ödül özetlerinde artık jetonların yanında XP de gösterilir.
+3. **Tamamlama ve sıralamayı özelleştirin.** **Ayarlar → Görev → Alt görevler** bölümüne giderek tamamlama kurallarını ve tamamlanmış alt görevlerin sıralamasını ayarlayın.
+
+**🐛 Düzeltmeler**
+
+1. **Bir Görev geçmiş kaydını düzenleyip kaydettikten sonra geçmiş listesinin eski değerleri göstermeye devam etmesi düzeltildi.**
+
+**v1.107.8 (2026/11/15)**
 
 **♻️ İyileştirme**
 
@@ -30,6 +60,20 @@
 1. **Büyük yedek dosyaları için başarısız olan geri yüklemeler düzeltildi.** Açma adımında boyut ve dosya sayısı sınırları vardı; çok sayıda medya dosyası içeren yedekler doğrudan reddedilebiliyordu.
 2. **Tek bir veritabanı dosyası içe aktarırken ayarların silinmesi düzeltildi.** Artık yalnızca yedekte gerçekten bulunanlar değiştiriliyor; diğer ayarlar olduğu gibi kalıyor.
 3. **Kesintiye uğrayan bir yüklemeden sonra otomatik yedeklemenin kalıcı olarak kapalı kalması düzeltildi.**
+
+**v1.107.7 (2026/11/14)**
+
+**♻️ İyileştirme**
+
+1. **Başlangıçtaki takılmaları azaltmak için uygulama yükseltmelerinden önce otomatik güvenlik yedeklemesi geçici olarak devre dışı bırakıldı.** Manuel yedekleme ve geri yükleme öncesi otomatik güvenlik yedeklemeleri değişmedi.
+
+**v1.107.6 (2026/11/12)**
+
+**♻️ İyileştirme**
+
+1. **Yükseltme öncesi güvenlik yedeği başarısız olursa uygulama artık başlangıcı engellemez.**
+2. **Varsayılan olarak en fazla üç yerel güvenlik yedeği tutulur.**
+3. **Bir yedeği geri yükledikten sonra verilerinizi doğrudan Yedekle/Geri Yükle ekranında onaylayabilirsiniz.**
 
 **v1.107.5 (2026/11/09)**
 
